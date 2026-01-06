@@ -1,0 +1,1210 @@
+[
+  {
+    "id": 1,
+    "name": "Bulbizarre",
+    "spawnRate": 10,
+    "catchRateRaw": 45,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/bulbasaur.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/bulbasaur.gif"
+  },
+  {
+    "id": 2,
+    "name": "Herbizarre",
+    "spawnRate": 10,
+    "catchRateRaw": 45,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/ivysaur.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/ivysaur.gif"
+  },
+  {
+    "id": 3,
+    "name": "Florizarre",
+    "spawnRate": 10,
+    "catchRateRaw": 45,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/venusaur.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/venusaur.gif"
+  },
+  {
+    "id": 4,
+    "name": "Salamèche",
+    "spawnRate": 10,
+    "catchRateRaw": 45,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/charmander.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/charmander.gif"
+  },
+  {
+    "id": 5,
+    "name": "Reptincel",
+    "spawnRate": 10,
+    "catchRateRaw": 45,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/charmeleon.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/charmeleon.gif"
+  },
+  {
+    "id": 6,
+    "name": "Dracaufeu",
+    "spawnRate": 10,
+    "catchRateRaw": 45,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/charizard.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/charizard.gif"
+  },
+  {
+    "id": 7,
+    "name": "Carapuce",
+    "spawnRate": 10,
+    "catchRateRaw": 45,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/squirtle.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/squirtle.gif"
+  },
+  {
+    "id": 8,
+    "name": "Carabaffe",
+    "spawnRate": 10,
+    "catchRateRaw": 45,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/wartortle.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/wartortle.gif"
+  },
+  {
+    "id": 9,
+    "name": "Tortank",
+    "spawnRate": 10,
+    "catchRateRaw": 45,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/blastoise.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/blastoise.gif"
+  },
+  {
+    "id": 10,
+    "name": "Chenipan",
+    "spawnRate": 10,
+    "catchRateRaw": 255,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/caterpie.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/caterpie.gif"
+  },
+  {
+    "id": 11,
+    "name": "Chrysacier",
+    "spawnRate": 10,
+    "catchRateRaw": 120,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/metapod.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/metapod.gif"
+  },
+  {
+    "id": 12,
+    "name": "Papilusion",
+    "spawnRate": 10,
+    "catchRateRaw": 45,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/butterfree.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/butterfree.gif"
+  },
+  {
+    "id": 13,
+    "name": "Aspicot",
+    "spawnRate": 10,
+    "catchRateRaw": 255,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/weedle.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/weedle.gif"
+  },
+  {
+    "id": 14,
+    "name": "Coconfort",
+    "spawnRate": 10,
+    "catchRateRaw": 120,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/kakuna.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/kakuna.gif"
+  },
+  {
+    "id": 15,
+    "name": "Dardargnan",
+    "spawnRate": 10,
+    "catchRateRaw": 45,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/beedrill.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/beedrill.gif"
+  },
+  {
+    "id": 16,
+    "name": "Roucool",
+    "spawnRate": 10,
+    "catchRateRaw": 255,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/pidgey.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/pidgey.gif"
+  },
+  {
+    "id": 17,
+    "name": "Roucoups",
+    "spawnRate": 10,
+    "catchRateRaw": 120,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/pidgeotto.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/pidgeotto.gif"
+  },
+  {
+    "id": 18,
+    "name": "Roucarnage",
+    "spawnRate": 10,
+    "catchRateRaw": 45,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/pidgeot.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/pidgeot.gif"
+  },
+  {
+    "id": 19,
+    "name": "Rattata",
+    "spawnRate": 10,
+    "catchRateRaw": 255,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/rattata.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/rattata.gif"
+  },
+  {
+    "id": 20,
+    "name": "Rattatac",
+    "spawnRate": 10,
+    "catchRateRaw": 127,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/raticate.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/raticate.gif"
+  },
+  {
+    "id": 21,
+    "name": "Piafabec",
+    "spawnRate": 10,
+    "catchRateRaw": 255,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/spearow.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/spearow.gif"
+  },
+  {
+    "id": 22,
+    "name": "Rapasdepic",
+    "spawnRate": 10,
+    "catchRateRaw": 90,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/fearow.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/fearow.gif"
+  },
+  {
+    "id": 23,
+    "name": "Abo",
+    "spawnRate": 10,
+    "catchRateRaw": 255,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/ekans.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/ekans.gif"
+  },
+  {
+    "id": 24,
+    "name": "Arbok",
+    "spawnRate": 10,
+    "catchRateRaw": 90,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/arbok.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/arbok.gif"
+  },
+  {
+    "id": 25,
+    "name": "Pikachu",
+    "spawnRate": 10,
+    "catchRateRaw": 190,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/pikachu.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/pikachu.gif"
+  },
+  {
+    "id": 26,
+    "name": "Raichu",
+    "spawnRate": 10,
+    "catchRateRaw": 75,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/raichu.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/raichu.gif"
+  },
+  {
+    "id": 27,
+    "name": "Sabelette",
+    "spawnRate": 10,
+    "catchRateRaw": 255,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/sandshrew.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/sandshrew.gif"
+  },
+  {
+    "id": 28,
+    "name": "Sablaireau",
+    "spawnRate": 10,
+    "catchRateRaw": 90,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/sandslash.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/sandslash.gif"
+  },
+  {
+    "id": 29,
+    "name": "Nidoran♀",
+    "spawnRate": 10,
+    "catchRateRaw": 235,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/nidoran-f.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/nidoran-f.gif"
+  },
+  {
+    "id": 30,
+    "name": "Nidorina",
+    "spawnRate": 10,
+    "catchRateRaw": 120,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/nidorina.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/nidorina.gif"
+  },
+  {
+    "id": 31,
+    "name": "Nidoqueen",
+    "spawnRate": 7,
+    "catchRateRaw": 45,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/nidoqueen.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/nidoqueen.gif"
+  },
+  {
+    "id": 32,
+    "name": "Nidoran♂",
+    "spawnRate": 7,
+    "catchRateRaw": 235,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/nidoran-m.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/nidoran-m.gif"
+  },
+  {
+    "id": 33,
+    "name": "Nidorino",
+    "spawnRate": 7,
+    "catchRateRaw": 120,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/nidorino.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/nidorino.gif"
+  },
+  {
+    "id": 34,
+    "name": "Nidoking",
+    "spawnRate": 7,
+    "catchRateRaw": 45,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/nidoking.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/nidoking.gif"
+  },
+  {
+    "id": 35,
+    "name": "Mélofée",
+    "spawnRate": 7,
+    "catchRateRaw": 150,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/clefairy.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/clefairy.gif"
+  },
+  {
+    "id": 36,
+    "name": "Mélodelfe",
+    "spawnRate": 7,
+    "catchRateRaw": 25,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/clefable.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/clefable.gif"
+  },
+  {
+    "id": 37,
+    "name": "Goupix",
+    "spawnRate": 7,
+    "catchRateRaw": 190,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/vulpix.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/vulpix.gif"
+  },
+  {
+    "id": 38,
+    "name": "Feunard",
+    "spawnRate": 7,
+    "catchRateRaw": 75,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/ninetales.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/ninetales.gif"
+  },
+  {
+    "id": 39,
+    "name": "Rondoudou",
+    "spawnRate": 7,
+    "catchRateRaw": 170,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/jigglypuff.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/jigglypuff.gif"
+  },
+  {
+    "id": 40,
+    "name": "Grodoudou",
+    "spawnRate": 7,
+    "catchRateRaw": 50,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/wigglytuff.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/wigglytuff.gif"
+  },
+  {
+    "id": 41,
+    "name": "Nosferapti",
+    "spawnRate": 7,
+    "catchRateRaw": 255,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/zubat.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/zubat.gif"
+  },
+  {
+    "id": 42,
+    "name": "Nosferalto",
+    "spawnRate": 7,
+    "catchRateRaw": 90,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/golbat.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/golbat.gif"
+  },
+  {
+    "id": 43,
+    "name": "Mystherbe",
+    "spawnRate": 7,
+    "catchRateRaw": 255,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/oddish.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/oddish.gif"
+  },
+  {
+    "id": 44,
+    "name": "Ortide",
+    "spawnRate": 7,
+    "catchRateRaw": 120,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/gloom.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/gloom.gif"
+  },
+  {
+    "id": 45,
+    "name": "Rafflesia",
+    "spawnRate": 7,
+    "catchRateRaw": 45,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/vileplume.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/vileplume.gif"
+  },
+  {
+    "id": 46,
+    "name": "Paras",
+    "spawnRate": 7,
+    "catchRateRaw": 190,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/paras.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/paras.gif"
+  },
+  {
+    "id": 47,
+    "name": "Parasect",
+    "spawnRate": 7,
+    "catchRateRaw": 75,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/parasect.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/parasect.gif"
+  },
+  {
+    "id": 48,
+    "name": "Mimitoss",
+    "spawnRate": 7,
+    "catchRateRaw": 190,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/venonat.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/venonat.gif"
+  },
+  {
+    "id": 49,
+    "name": "Aéromite",
+    "spawnRate": 7,
+    "catchRateRaw": 75,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/venomoth.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/venomoth.gif"
+  },
+  {
+    "id": 50,
+    "name": "Taupiqueur",
+    "spawnRate": 7,
+    "catchRateRaw": 255,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/diglett.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/diglett.gif"
+  },
+  {
+    "id": 51,
+    "name": "Triopikeur",
+    "spawnRate": 7,
+    "catchRateRaw": 50,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/dugtrio.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/dugtrio.gif"
+  },
+  {
+    "id": 52,
+    "name": "Miaouss",
+    "spawnRate": 7,
+    "catchRateRaw": 255,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/meowth.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/meowth.gif"
+  },
+  {
+    "id": 53,
+    "name": "Persian",
+    "spawnRate": 7,
+    "catchRateRaw": 90,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/persian.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/persian.gif"
+  },
+  {
+    "id": 54,
+    "name": "Psykokwak",
+    "spawnRate": 7,
+    "catchRateRaw": 190,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/psyduck.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/psyduck.gif"
+  },
+  {
+    "id": 55,
+    "name": "Akwakwak",
+    "spawnRate": 7,
+    "catchRateRaw": 75,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/golduck.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/golduck.gif"
+  },
+  {
+    "id": 56,
+    "name": "Férosinge",
+    "spawnRate": 7,
+    "catchRateRaw": 190,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/mankey.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/mankey.gif"
+  },
+  {
+    "id": 57,
+    "name": "Colossinge",
+    "spawnRate": 7,
+    "catchRateRaw": 75,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/primeape.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/primeape.gif"
+  },
+  {
+    "id": 58,
+    "name": "Caninos",
+    "spawnRate": 7,
+    "catchRateRaw": 190,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/growlithe.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/growlithe.gif"
+  },
+  {
+    "id": 59,
+    "name": "Arcanin",
+    "spawnRate": 7,
+    "catchRateRaw": 75,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/arcanine.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/arcanine.gif"
+  },
+  {
+    "id": 60,
+    "name": "Ptitard",
+    "spawnRate": 7,
+    "catchRateRaw": 255,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/poliwag.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/poliwag.gif"
+  },
+  {
+    "id": 61,
+    "name": "Têtarte",
+    "spawnRate": 5,
+    "catchRateRaw": 120,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/poliwhirl.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/poliwhirl.gif"
+  },
+  {
+    "id": 62,
+    "name": "Tartard",
+    "spawnRate": 5,
+    "catchRateRaw": 45,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/poliwrath.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/poliwrath.gif"
+  },
+  {
+    "id": 63,
+    "name": "Abra",
+    "spawnRate": 5,
+    "catchRateRaw": 200,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/abra.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/abra.gif"
+  },
+  {
+    "id": 64,
+    "name": "Kadabra",
+    "spawnRate": 5,
+    "catchRateRaw": 100,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/kadabra.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/kadabra.gif"
+  },
+  {
+    "id": 65,
+    "name": "Alakazam",
+    "spawnRate": 5,
+    "catchRateRaw": 50,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/alakazam.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/alakazam.gif"
+  },
+  {
+    "id": 66,
+    "name": "Machoc",
+    "spawnRate": 5,
+    "catchRateRaw": 180,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/machop.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/machop.gif"
+  },
+  {
+    "id": 67,
+    "name": "Machopeur",
+    "spawnRate": 5,
+    "catchRateRaw": 90,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/machoke.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/machoke.gif"
+  },
+  {
+    "id": 68,
+    "name": "Mackogneur",
+    "spawnRate": 5,
+    "catchRateRaw": 45,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/machamp.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/machamp.gif"
+  },
+  {
+    "id": 69,
+    "name": "Chétiflor",
+    "spawnRate": 5,
+    "catchRateRaw": 255,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/bellsprout.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/bellsprout.gif"
+  },
+  {
+    "id": 70,
+    "name": "Boustiflor",
+    "spawnRate": 5,
+    "catchRateRaw": 120,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/weepinbell.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/weepinbell.gif"
+  },
+  {
+    "id": 71,
+    "name": "Empiflor",
+    "spawnRate": 5,
+    "catchRateRaw": 45,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/victreebel.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/victreebel.gif"
+  },
+  {
+    "id": 72,
+    "name": "Tentacool",
+    "spawnRate": 5,
+    "catchRateRaw": 190,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/tentacool.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/tentacool.gif"
+  },
+  {
+    "id": 73,
+    "name": "Tentacruel",
+    "spawnRate": 5,
+    "catchRateRaw": 60,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/tentacruel.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/tentacruel.gif"
+  },
+  {
+    "id": 74,
+    "name": "Racaillou",
+    "spawnRate": 5,
+    "catchRateRaw": 255,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/geodude.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/geodude.gif"
+  },
+  {
+    "id": 75,
+    "name": "Gravalanch",
+    "spawnRate": 5,
+    "catchRateRaw": 120,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/graveler.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/graveler.gif"
+  },
+  {
+    "id": 76,
+    "name": "Grolem",
+    "spawnRate": 5,
+    "catchRateRaw": 45,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/golem.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/golem.gif"
+  },
+  {
+    "id": 77,
+    "name": "Ponyta",
+    "spawnRate": 5,
+    "catchRateRaw": 190,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/ponyta.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/ponyta.gif"
+  },
+  {
+    "id": 78,
+    "name": "Galopa",
+    "spawnRate": 5,
+    "catchRateRaw": 60,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/rapidash.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/rapidash.gif"
+  },
+  {
+    "id": 79,
+    "name": "Ramoloss",
+    "spawnRate": 5,
+    "catchRateRaw": 190,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/slowpoke.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/slowpoke.gif"
+  },
+  {
+    "id": 80,
+    "name": "Flagadoss",
+    "spawnRate": 5,
+    "catchRateRaw": 75,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/slowbro.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/slowbro.gif"
+  },
+  {
+    "id": 81,
+    "name": "Magnéti",
+    "spawnRate": 5,
+    "catchRateRaw": 190,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/magnemite.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/magnemite.gif"
+  },
+  {
+    "id": 82,
+    "name": "Magnéton",
+    "spawnRate": 5,
+    "catchRateRaw": 60,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/magneton.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/magneton.gif"
+  },
+  {
+    "id": 83,
+    "name": "Canarticho",
+    "spawnRate": 5,
+    "catchRateRaw": 45,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/farfetchd.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/farfetchd.gif"
+  },
+  {
+    "id": 84,
+    "name": "Doduo",
+    "spawnRate": 5,
+    "catchRateRaw": 190,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/doduo.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/doduo.gif"
+  },
+  {
+    "id": 85,
+    "name": "Dodrio",
+    "spawnRate": 5,
+    "catchRateRaw": 45,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/dodrio.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/dodrio.gif"
+  },
+  {
+    "id": 86,
+    "name": "Otaria",
+    "spawnRate": 5,
+    "catchRateRaw": 190,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/seel.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/seel.gif"
+  },
+  {
+    "id": 87,
+    "name": "Lamantine",
+    "spawnRate": 5,
+    "catchRateRaw": 75,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/dewgong.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/dewgong.gif"
+  },
+  {
+    "id": 88,
+    "name": "Tadmorv",
+    "spawnRate": 5,
+    "catchRateRaw": 190,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/grimer.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/grimer.gif"
+  },
+  {
+    "id": 89,
+    "name": "Grotadmorv",
+    "spawnRate": 5,
+    "catchRateRaw": 75,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/muk.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/muk.gif"
+  },
+  {
+    "id": 90,
+    "name": "Kokiyas",
+    "spawnRate": 5,
+    "catchRateRaw": 190,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/shellder.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/shellder.gif"
+  },
+  {
+    "id": 91,
+    "name": "Crustabri",
+    "spawnRate": 3,
+    "catchRateRaw": 60,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/cloyster.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/cloyster.gif"
+  },
+  {
+    "id": 92,
+    "name": "Fantominus",
+    "spawnRate": 3,
+    "catchRateRaw": 190,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/gastly.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/gastly.gif"
+  },
+  {
+    "id": 93,
+    "name": "Spectrum",
+    "spawnRate": 3,
+    "catchRateRaw": 90,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/haunter.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/haunter.gif"
+  },
+  {
+    "id": 94,
+    "name": "Ectoplasma",
+    "spawnRate": 3,
+    "catchRateRaw": 45,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/gengar.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/gengar.gif"
+  },
+  {
+    "id": 95,
+    "name": "Onix",
+    "spawnRate": 3,
+    "catchRateRaw": 45,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/onix.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/onix.gif"
+  },
+  {
+    "id": 96,
+    "name": "Soporifik",
+    "spawnRate": 3,
+    "catchRateRaw": 190,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/drowzee.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/drowzee.gif"
+  },
+  {
+    "id": 97,
+    "name": "Hypnomade",
+    "spawnRate": 3,
+    "catchRateRaw": 75,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/hypno.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/hypno.gif"
+  },
+  {
+    "id": 98,
+    "name": "Krabby",
+    "spawnRate": 3,
+    "catchRateRaw": 225,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/krabby.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/krabby.gif"
+  },
+  {
+    "id": 99,
+    "name": "Krabboss",
+    "spawnRate": 3,
+    "catchRateRaw": 60,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/kingler.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/kingler.gif"
+  },
+  {
+    "id": 100,
+    "name": "Voltorbe",
+    "spawnRate": 3,
+    "catchRateRaw": 190,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/voltorb.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/voltorb.gif"
+  },
+  {
+    "id": 101,
+    "name": "Électrode",
+    "spawnRate": 3,
+    "catchRateRaw": 60,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/electrode.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/electrode.gif"
+  },
+  {
+    "id": 102,
+    "name": "Noeunoeuf",
+    "spawnRate": 3,
+    "catchRateRaw": 90,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/exeggcute.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/exeggcute.gif"
+  },
+  {
+    "id": 103,
+    "name": "Noadkoko",
+    "spawnRate": 3,
+    "catchRateRaw": 45,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/exeggutor.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/exeggutor.gif"
+  },
+  {
+    "id": 104,
+    "name": "Osselait",
+    "spawnRate": 3,
+    "catchRateRaw": 190,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/cubone.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/cubone.gif"
+  },
+  {
+    "id": 105,
+    "name": "Ossatueur",
+    "spawnRate": 3,
+    "catchRateRaw": 75,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/marowak.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/marowak.gif"
+  },
+  {
+    "id": 106,
+    "name": "Kicklee",
+    "spawnRate": 3,
+    "catchRateRaw": 45,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/hitmonlee.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/hitmonlee.gif"
+  },
+  {
+    "id": 107,
+    "name": "Tygnon",
+    "spawnRate": 3,
+    "catchRateRaw": 45,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/hitmonchan.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/hitmonchan.gif"
+  },
+  {
+    "id": 108,
+    "name": "Excelangue",
+    "spawnRate": 3,
+    "catchRateRaw": 45,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/lickitung.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/lickitung.gif"
+  },
+  {
+    "id": 109,
+    "name": "Smogo",
+    "spawnRate": 3,
+    "catchRateRaw": 190,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/koffing.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/koffing.gif"
+  },
+  {
+    "id": 110,
+    "name": "Smogogo",
+    "spawnRate": 3,
+    "catchRateRaw": 60,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/weezing.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/weezing.gif"
+  },
+  {
+    "id": 111,
+    "name": "Rhinocorne",
+    "spawnRate": 3,
+    "catchRateRaw": 120,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/rhyhorn.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/rhyhorn.gif"
+  },
+  {
+    "id": 112,
+    "name": "Rhinoféros",
+    "spawnRate": 3,
+    "catchRateRaw": 60,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/rhydon.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/rhydon.gif"
+  },
+  {
+    "id": 113,
+    "name": "Leveinard",
+    "spawnRate": 3,
+    "catchRateRaw": 30,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/chansey.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/chansey.gif"
+  },
+  {
+    "id": 114,
+    "name": "Saquedeneu",
+    "spawnRate": 3,
+    "catchRateRaw": 45,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/tangela.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/tangela.gif"
+  },
+  {
+    "id": 115,
+    "name": "Kangourex",
+    "spawnRate": 3,
+    "catchRateRaw": 45,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/kangaskhan.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/kangaskhan.gif"
+  },
+  {
+    "id": 116,
+    "name": "Hypotrempe",
+    "spawnRate": 3,
+    "catchRateRaw": 225,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/horsea.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/horsea.gif"
+  },
+  {
+    "id": 117,
+    "name": "Hypocéan",
+    "spawnRate": 3,
+    "catchRateRaw": 75,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/seadra.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/seadra.gif"
+  },
+  {
+    "id": 118,
+    "name": "Poissirène",
+    "spawnRate": 3,
+    "catchRateRaw": 225,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/goldeen.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/goldeen.gif"
+  },
+  {
+    "id": 119,
+    "name": "Poissoroy",
+    "spawnRate": 3,
+    "catchRateRaw": 60,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/seaking.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/seaking.gif"
+  },
+  {
+    "id": 120,
+    "name": "Stari",
+    "spawnRate": 3,
+    "catchRateRaw": 225,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/staryu.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/staryu.gif"
+  },
+  {
+    "id": 121,
+    "name": "Staross",
+    "spawnRate": 1,
+    "catchRateRaw": 60,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/starmie.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/starmie.gif"
+  },
+  {
+    "id": 122,
+    "name": "M. Mime",
+    "spawnRate": 1,
+    "catchRateRaw": 45,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/mr-mime.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/mr-mime.gif"
+  },
+  {
+    "id": 123,
+    "name": "Insécateur",
+    "spawnRate": 1,
+    "catchRateRaw": 45,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/scyther.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/scyther.gif"
+  },
+  {
+    "id": 124,
+    "name": "Lippoutou",
+    "spawnRate": 1,
+    "catchRateRaw": 45,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/jynx.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/jynx.gif"
+  },
+  {
+    "id": 125,
+    "name": "Élektek",
+    "spawnRate": 1,
+    "catchRateRaw": 45,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/electabuzz.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/electabuzz.gif"
+  },
+  {
+    "id": 126,
+    "name": "Magmar",
+    "spawnRate": 1,
+    "catchRateRaw": 45,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/magmar.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/magmar.gif"
+  },
+  {
+    "id": 127,
+    "name": "Scarabrute",
+    "spawnRate": 1,
+    "catchRateRaw": 45,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/pinsir.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/pinsir.gif"
+  },
+  {
+    "id": 128,
+    "name": "Tauros",
+    "spawnRate": 1,
+    "catchRateRaw": 45,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/tauros.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/tauros.gif"
+  },
+  {
+    "id": 129,
+    "name": "Magicarpe",
+    "spawnRate": 1,
+    "catchRateRaw": 255,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/magikarp.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/magikarp.gif"
+  },
+  {
+    "id": 130,
+    "name": "Léviator",
+    "spawnRate": 1,
+    "catchRateRaw": 45,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/gyarados.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/gyarados.gif"
+  },
+  {
+    "id": 131,
+    "name": "Lokhlass",
+    "spawnRate": 1,
+    "catchRateRaw": 45,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/lapras.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/lapras.gif"
+  },
+  {
+    "id": 132,
+    "name": "Métamorph",
+    "spawnRate": 1,
+    "catchRateRaw": 35,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/ditto.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/ditto.gif"
+  },
+  {
+    "id": 133,
+    "name": "Évoli",
+    "spawnRate": 1,
+    "catchRateRaw": 45,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/eevee.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/eevee.gif"
+  },
+  {
+    "id": 134,
+    "name": "Aquali",
+    "spawnRate": 1,
+    "catchRateRaw": 45,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/vaporeon.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/vaporeon.gif"
+  },
+  {
+    "id": 135,
+    "name": "Voltali",
+    "spawnRate": 1,
+    "catchRateRaw": 45,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/jolteon.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/jolteon.gif"
+  },
+  {
+    "id": 136,
+    "name": "Pyroli",
+    "spawnRate": 1,
+    "catchRateRaw": 45,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/flareon.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/flareon.gif"
+  },
+  {
+    "id": 137,
+    "name": "Porygon",
+    "spawnRate": 1,
+    "catchRateRaw": 45,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/porygon.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/porygon.gif"
+  },
+  {
+    "id": 138,
+    "name": "Amonita",
+    "spawnRate": 1,
+    "catchRateRaw": 45,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/omanyte.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/omanyte.gif"
+  },
+  {
+    "id": 139,
+    "name": "Amonistar",
+    "spawnRate": 1,
+    "catchRateRaw": 45,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/omastar.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/omastar.gif"
+  },
+  {
+    "id": 140,
+    "name": "Kabuto",
+    "spawnRate": 1,
+    "catchRateRaw": 45,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/kabuto.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/kabuto.gif"
+  },
+  {
+    "id": 141,
+    "name": "Kabutops",
+    "spawnRate": 1,
+    "catchRateRaw": 45,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/kabutops.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/kabutops.gif"
+  },
+  {
+    "id": 142,
+    "name": "Ptéra",
+    "spawnRate": 1,
+    "catchRateRaw": 45,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/aerodactyl.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/aerodactyl.gif"
+  },
+  {
+    "id": 143,
+    "name": "Ronflex",
+    "spawnRate": 1,
+    "catchRateRaw": 25,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/snorlax.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/snorlax.gif"
+  },
+  {
+    "id": 144,
+    "name": "Artikodin",
+    "spawnRate": 1,
+    "catchRateRaw": 3,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/articuno.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/articuno.gif"
+  },
+  {
+    "id": 145,
+    "name": "Électhor",
+    "spawnRate": 1,
+    "catchRateRaw": 3,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/zapdos.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/zapdos.gif"
+  },
+  {
+    "id": 146,
+    "name": "Sulfura",
+    "spawnRate": 1,
+    "catchRateRaw": 3,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/moltres.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/moltres.gif"
+  },
+  {
+    "id": 147,
+    "name": "Minidraco",
+    "spawnRate": 1,
+    "catchRateRaw": 45,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/dratini.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/dratini.gif"
+  },
+  {
+    "id": 148,
+    "name": "Draco",
+    "spawnRate": 1,
+    "catchRateRaw": 45,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/dragonair.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/dragonair.gif"
+  },
+  {
+    "id": 149,
+    "name": "Dracolosse",
+    "spawnRate": 1,
+    "catchRateRaw": 45,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/dragonite.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/dragonite.gif"
+  },
+  {
+    "id": 150,
+    "name": "Mewtwo",
+    "spawnRate": 1,
+    "catchRateRaw": 3,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/mewtwo.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/mewtwo.gif"
+  },
+  {
+    "id": 151,
+    "name": "Mew",
+    "spawnRate": 1,
+    "catchRateRaw": 45,
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/mew.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/mew.gif"
+  }
+]
