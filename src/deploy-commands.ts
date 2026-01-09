@@ -10,11 +10,17 @@ const commands = [
     .setName('cheat')
     .setDescription('Triche pour obtenir des Pokémon rapidement.'),
   new SlashCommandBuilder()
-    .setName('capture')
-    .setDescription('Capture un Pokémon sauvage.'),
+    .setName('random-capture')
+    .setDescription('Capture un Pokémon sauvage aléatoire.'),
     new SlashCommandBuilder()
-  .setName('pokedex')
-  .setDescription('Voir ton nombre de Pokémon capturés.')
+  .setName('random-pokedex')
+  .setDescription('Voir ton nombre de Pokémon capturés avec /random-capture.'),
+  new SlashCommandBuilder()
+    .setName('get-shiny-rate')
+    .setDescription('Affiche le taux d\'apparition des Pokémon shinys.'),
+  new SlashCommandBuilder()
+    .setName('help')
+    .setDescription('Affiche la liste des commandes disponibles.')
 ];
 
 const rest = new REST({ version: '10' }).setToken(process.env.DISCORD_TOKEN!);

@@ -1,20 +1,27 @@
 import 'dotenv/config';
-import { Client, GatewayIntentBits, Events, EmbedBuilder, CacheType, ChatInputCommandInteraction } from 'discord.js';
+import { Client, GatewayIntentBits, Events, EmbedBuilder } from 'discord.js';
 
 import pokemonGen1 from '../data/pokemon-gen1.json';
 
 import { pingCommand } from './commands/ping';
 import { cheatCommand } from './commands/cheat';
-import { getRandomPokemon } from './methods/getRandomPokemon';
-import { displaySuccessCapture } from './methods/displaySuccessCapture';
-import { addPokemonToPokedexIfNew } from './methods/addPokemonToPokedexIfNew';
-import { editFooter } from './methods/editFooter';
-import { displayPokedex } from './methods/displayPokedex';
-import { checkIfUserCanCatch } from './methods/checkIfUserCanCatch';
+import { getRandomPokemon } from './methods/pokemon/getRandomPokemon';
+import { addPokemonToPokedexIfNew } from './methods/pokedex/addPokemonToPokedexIfNew';
+import { editFooter } from './methods/embed/editFooter';
+import { checkIfUserCanCatch } from './methods/cooldown/checkIfUserCanCatch';
+import { randomPokedexCommand } from './commands/random-pokedex';
+import { displayPokemonInLogs } from './methods/console-logs/displayPokemonInLog';
+import { isTheRandomPokemonGonnaBeShiny } from './methods/pokemon/isTheRandomPokemonGonnaBeShiny';
+import { displayShinyInLogs } from './methods/console-logs/displayShinyInLogs';
+import { displaySpriteInLogs } from './methods/console-logs/displaySpriteInLogs';
+import { getPokemonSpriteUrl } from './methods/pokemon/getPokemonSpriteUrl';
+import { displayInLogsIfPokemonAddedToPokedex } from './methods/console-logs/displayInLogsIfPokemonAddedToPokedex';
+import { buildEmbed } from './methods/embed/buildEmbed';
+import { buildTitleForRandomCaptureEmbed } from './methods/embed/buildTitleForRandomCaptureEmbed';
+import { buildDescriptionForPokemonCaptureEmbed } from './methods/embed/buildDescriptionForRandomCaptureEmbed';
+import { defineRarityColor } from './methods/pokemon/defineRarityColor';
 
-const catchCooldown = new Map(); // userId -> timestamp
-// const CATCH_COOLDOWN_MS = 30 * 60 * 1000
-// const CATCH_COOLDOWN_MS = 10 * 1000;
+const catchCooldown = new Map();
 
 const client = new Client({
     intents: [
@@ -42,20 +49,23 @@ client.on(Events.InteractionCreate, async (interaction) => {
     if (!interaction.isChatInputCommand()) return;
 
     if (interaction.commandName === 'ping') {
-        pingCommand(interaction);
+        return pingCommand(interaction);
     }
 
     if (interaction.commandName === 'cheat') {
-        cheatCommand(interaction);
+        return cheatCommand(interaction);
     }
 
-    if (interaction.commandName === 'pokedex') {
+    if (interaction.commandName === 'random-pokedex') {
         await interaction.deferReply();
-        const embed = displayPokedex(interaction);
-        return interaction.editReply({ embeds: [embed] });
+        return await randomPokedexCommand(interaction);
     }
 
-    if (interaction.commandName === 'capture') {
+    if (interaction.commandName === 'get-shiny-rate') {
+        return interaction.reply('Le taux d\'apparition des Pokémon shinys est de 1 chance sur ' + process.env.SHINY_RATE);
+    }
+
+    if (interaction.commandName === 'random-capture') {
         await interaction.deferReply();
 
         //vérifier le cooldown
@@ -66,47 +76,43 @@ client.on(Events.InteractionCreate, async (interaction) => {
         }
 
         const random = getRandomPokemon(pokemonGen1);
-        if (!random) {
-            return interaction.editReply({ content: '❌ Erreur lors de la sélection du Pokémon.' });
-        } else {
-            console.log('Pokémon obtenu:', random);
-            console.log("L'id du Pokémon est :", random.id);
-        }
+        displayPokemonInLogs(interaction, random);
 
-        const SHINY_RATE = 1 / 512;
-        const isShiny = Math.random() < SHINY_RATE;
-        if (!isShiny) {
-            console.log(random.name + " n'est pas shiny.");
-        } else {
-            console.log(random.name + " est shiny.");
-        }
+        const isShiny = isTheRandomPokemonGonnaBeShiny();
+        displayShinyInLogs(isShiny, random);
 
-        const spriteUrl = isShiny ? random.shinyImage : random.image;
-        if (!spriteUrl) {
-            return interaction.editReply({ content: '❌ Erreur lors de la récupération du sprite du pokemon' });
-        }
+        const spriteUrl = getPokemonSpriteUrl(isShiny, random);
+        displaySpriteInLogs(interaction, spriteUrl);
 
         const isAdded = addPokemonToPokedexIfNew(interaction, random.id);
-        if (isAdded) {
-            console.log(`${random.name} a été ajouté au pokédex de ${interaction.user.globalName}.`);
-        }else{
-            console.log(`${random.name} était déjà dans le pokédex de ${interaction.user.globalName}.`);
-        }
+        displayInLogsIfPokemonAddedToPokedex(interaction, isAdded, random);
 
+        const color = defineRarityColor(random.catchRateRaw, isShiny);
+        const title = buildTitleForRandomCaptureEmbed(isShiny, random, color);
+        const description = buildDescriptionForPokemonCaptureEmbed(interaction, random, isShiny, isAdded);
         const footer = editFooter(interaction, random.name, !isAdded);
-        console.log("Le Footer du message sera :", footer);
-        const embed = new EmbedBuilder()
-            .setTitle(
-                isShiny
-                    ? `✨ ${random.name} shiny sauvage apparaît !`
-                    : `${random.name} sauvage apparaît !`
-            )
-            .setImage(spriteUrl)
-            .setColor(isShiny ? 0xFFD700 : 0x0099FF)
-            .setFooter({ text: footer });
+        console.log("Le message du Footer sera :", footer);
 
-        await displaySuccessCapture(interaction,  random, spriteUrl, embed, isShiny);
+        const embed = buildEmbed(title, spriteUrl, color.color, description, footer);
+
         return interaction.editReply({ embeds: [embed] });
+    }
+
+    if (interaction.commandName === 'help') {
+        await interaction.deferReply();
+        const helpEmbed = new EmbedBuilder()
+            .setColor(0x0099FF)
+            .setTitle('Aide - Commandes Disponibles')
+            .setDescription('Voici les commandes que vous pouvez utiliser avec le bot Pokemon-Rangers :')
+            .addFields(
+                { name: '/ping', value: 'Vérifie si le bot est en ligne.' },
+                { name: '/random-capture', value: 'Attrape un Pokémon aléatoire.' },
+                { name: '/random-pokedex', value: 'Affiche la liste des pokemons capturés avec /random-capture (à ne pas confondre avec le pokedex classique).' },
+                { name: '/cheat', value: 'Commande de triche à utiliser à vos risques et périls.' },
+                { name: '/get-shiny-rate', value: 'Affiche le taux d\'apparition des pokemon shinys.' }
+            )
+            .setFooter({ text: 'Amusez-vous bien avec Pokémon-Rangers !' });
+        return interaction.editReply({ embeds: [helpEmbed] });
     }
 
 });

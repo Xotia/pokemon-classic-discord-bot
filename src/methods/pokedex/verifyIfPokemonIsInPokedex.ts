@@ -1,8 +1,8 @@
 //Verifier si le pokemon est déjà dans le pokedex du joueur
 
-import { getPokemonName } from "./getPokemonName";
+import { getPokemonName } from "../pokemon/getPokemonName";
 
-export function verifyIfPokemonIsOnPokedex(playerData: Record<string, { name: string, captures: number[] }>, pokemonId: number, userId: string): boolean {
+export function verifyIfPokemonIsInPokedex(playerData: Record<string, { name: string, randomCaptures: number[] }>, pokemonId: number, userId: string): boolean {
     const pokemonName = getPokemonName(pokemonId);
     const player = playerData[userId];
     const trainerName = player ? player.name : "Inconnu";
@@ -14,7 +14,7 @@ export function verifyIfPokemonIsOnPokedex(playerData: Record<string, { name: st
     
     console.log(`Vérification si le pokémon ${pokemonName} (ID: ${pokemonId}) est déjà dans le pokédex de ${trainerName}...`);
     
-    if (player.captures.includes(pokemonId)) {
+    if (player.randomCaptures && player.randomCaptures.includes(pokemonId)) {
         console.log(`Le pokémon ${pokemonName} (ID: ${pokemonId}) est déjà dans le pokédex de ${trainerName}.`);
         return true;
     }

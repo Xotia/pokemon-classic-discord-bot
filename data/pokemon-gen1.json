@@ -467,7 +467,7 @@
     "id": 59,
     "name": "Arcanin",
     "spawnRate": 7,
-    "catchRateRaw": 75,
+    "catchRateRaw": 25,
     "image": "https://play.pokemonshowdown.com/sprites/xyani/arcanine.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/arcanine.gif"
   },
@@ -1203,7 +1203,7 @@
     "id": 151,
     "name": "Mew",
     "spawnRate": 1,
-    "catchRateRaw": 45,
+    "catchRateRaw": 3,
     "image": "https://play.pokemonshowdown.com/sprites/xyani/mew.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/mew.gif"
   }

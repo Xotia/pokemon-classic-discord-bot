@@ -1,4 +1,4 @@
-import pokemonGen1 from '../../data/pokemon-gen1.json';
+import pokemonGen1 from '../../../data/pokemon-gen1.json';
 
 export function getPokemonName(pokemonId: number): string | null {
     const pokemon = pokemonGen1.find(p => p.id === pokemonId);
