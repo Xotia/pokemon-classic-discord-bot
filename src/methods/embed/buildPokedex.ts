@@ -1,7 +1,7 @@
-import { getPokemonName } from "./getPokemonName";
+import { getPokemonName } from "../pokemon/getPokemonName";
 
 export function buildPokedex(playerPokedex: number[]): string {
-    if (playerPokedex.length === 0) {
+    if (!playerPokedex || playerPokedex.length === 0) {
         return "Ton Pokédex est vide.";
     }else{
         // Trier les Pokémon par ID

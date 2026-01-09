@@ -14,9 +14,6 @@ build/
 *.js
 *.js.map
 
-# Data files
-data/
-
 # Logs
 logs/
 *.log
@@ -40,6 +37,9 @@ Thumbs.db
 # Testing
 coverage/
 .nyc_output/
+tests/
+.test.ts
+.config.ts
 
 # Misc
 .cache/
