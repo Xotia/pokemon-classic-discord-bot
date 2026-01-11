@@ -23,17 +23,19 @@ export async function displayRandomPokedex(interaction: any): Promise<void> {
 
     // Diviser les randomCaptures en pages
     const randomCaptures = data.randomCaptures;
-    const totalPages = Math.ceil(randomCaptures.length / POKEMON_PER_PAGE);
+    //Trier les Pokémon par numéro
+    randomCaptures.sort((a, b) => a - b);
+    const totalPages = Math.ceil(randomCaptures.length / POKEMON_PER_PAGE);// Calcul du nombre total de pages
     let currentPage = 0;
 
     // Fonction pour créer l'embed d'une page
     const createPageEmbed = (page: number): EmbedBuilder => {
         const start = page * POKEMON_PER_PAGE;
-        const end = Math.min(start + POKEMON_PER_PAGE, randomCaptures.length);
-        const pageRandomCaptures = randomCaptures.slice(start, end);
+        const end = Math.min(start + POKEMON_PER_PAGE, randomCaptures.length);// Calcul des indices de début et de fin
+        const pageRandomCaptures = randomCaptures.slice(start, end);// Extraction des captures pour la page actuelle
         
         const pokedex = buildPokedex(pageRandomCaptures);
-        const pokemonNumberThatStillNeedToBeCaptured = 151 - data.randomCaptures.length;
+        const pokemonNumberThatStillNeedToBeCaptured = 151 - data.randomCaptures.length;// Nombre de Pokémon restant à capturer
         const footer = `Page ${page + 1}/${totalPages} • Il te reste ${pokemonNumberThatStillNeedToBeCaptured} Pokémon à capturer !`;
 
         return new EmbedBuilder()
