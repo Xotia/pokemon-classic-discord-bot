@@ -228,8 +228,8 @@
     "name": "Nidoran♀",
     "spawnRate": 10,
     "catchRateRaw": 235,
-    "image": "https://play.pokemonshowdown.com/sprites/xyani/nidoran-f.gif",
-    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/nidoran-f.gif"
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/nidoranf.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/nidoranf.gif"
   },
   {
     "id": 30,
@@ -252,8 +252,8 @@
     "name": "Nidoran♂",
     "spawnRate": 7,
     "catchRateRaw": 235,
-    "image": "https://play.pokemonshowdown.com/sprites/xyani/nidoran-m.gif",
-    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/nidoran-m.gif"
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/nidoranm.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/nidoranm.gif"
   },
   {
     "id": 33,
@@ -972,8 +972,8 @@
     "name": "M. Mime",
     "spawnRate": 1,
     "catchRateRaw": 45,
-    "image": "https://play.pokemonshowdown.com/sprites/xyani/mr-mime.gif",
-    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/mr-mime.gif"
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/mrmime.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/mrmime.gif"
   },
   {
     "id": 123,
