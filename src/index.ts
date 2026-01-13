@@ -1,7 +1,8 @@
 import 'dotenv/config';
-import { Client, GatewayIntentBits, Events, EmbedBuilder } from 'discord.js';
 
-import pokemonGen1 from '../data/pokemon-gen1.json';
+import { loadPokemon } from './utils/loadData';
+
+import { Client, GatewayIntentBits, Events, EmbedBuilder } from 'discord.js';
 
 import { pingCommand } from './commands/ping';
 import { cheatCommand } from './commands/cheat';
@@ -20,7 +21,9 @@ import { buildEmbed } from './methods/embed/buildEmbed';
 import { buildTitleForRandomCaptureEmbed } from './methods/embed/buildTitleForRandomCaptureEmbed';
 import { buildDescriptionForPokemonCaptureEmbed } from './methods/embed/buildDescriptionForRandomCaptureEmbed';
 import { defineRarityColor } from './methods/pokemon/defineRarityColor';
+import { createProfileIfNeeded } from './methods/file/createProfileIfNeeded';
 
+const pokemonList = loadPokemon();
 const catchCooldown = new Map();
 
 const client = new Client({
@@ -39,6 +42,24 @@ client.once(Events.ClientReady, (c: typeof client) => {
 client.login(process.env.DISCORD_TOKEN);
 
 client.on(Events.InteractionCreate, async (interaction) => {
+    if (!interaction.isChatInputCommand() || !interaction.user?.id) {
+        console.warn('❌ Interaction invalide:', !!interaction.user?.id);
+        return;
+    }
+
+    if (!interaction.user) {
+        console.error('❌ Interaction sans user');
+        return;
+    }
+
+    if (!interaction.user.globalName) {
+        console.warn('⚠️ User sans globalName, utilise username:', {
+            id: interaction.user.id,
+            username: interaction.user.username,
+            hasGlobalName: !!interaction.user.globalName
+        });
+    }
+
     console.log('➡️ Interaction reçue:', {
         id: interaction.id,
         type: interaction.type,
@@ -75,7 +96,9 @@ client.on(Events.InteractionCreate, async (interaction) => {
             return;
         }
 
-        const random = getRandomPokemon(pokemonGen1);
+        createProfileIfNeeded(interaction);
+
+        const random = getRandomPokemon(pokemonList);
         displayPokemonInLogs(interaction, random);
 
         const isShiny = isTheRandomPokemonGonnaBeShiny();
@@ -90,6 +113,7 @@ client.on(Events.InteractionCreate, async (interaction) => {
         const color = defineRarityColor(random.catchRateRaw, isShiny);
         const title = buildTitleForRandomCaptureEmbed(isShiny, random, color);
         const description = buildDescriptionForPokemonCaptureEmbed(interaction, random, isShiny, isAdded);
+        console.log("isAdded = " + isAdded);
         const footer = editFooter(interaction, random.name, !isAdded);
         console.log("Le message du Footer sera :", footer);
 

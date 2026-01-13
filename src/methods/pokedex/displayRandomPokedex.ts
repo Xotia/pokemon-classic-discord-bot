@@ -1,20 +1,15 @@
 
 import { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle, ComponentType } from 'discord.js';
-import players from '../../../data/players.json';
 import { buildPokedex } from '../embed/buildPokedex';
-
-interface PlayerData {
-    randomCaptures: number[];
-}
-
+import { Player } from '../../types/Player';
+import { getPlayer } from '../../utils/loadPlayer';
 
 const POKEMON_PER_PAGE = parseInt(process.env.POKEMON_PER_PAGE || '20');
 const BUTTON_TIMEOUT = parseInt(process.env.BUTTON_TIMEOUT || '120000');
-const playerData = players as Record<string, PlayerData>;
 
 export async function displayRandomPokedex(interaction: any): Promise<void> {
     const userId = interaction.user.id;
-    const data = playerData[userId];
+    const data = getPlayer(userId.toString()) as Player;
 
     if (!data || !data.randomCaptures || data.randomCaptures.length === 0) {
         await interaction.editReply("Tu n'as encore capturé aucun Pokémon.");

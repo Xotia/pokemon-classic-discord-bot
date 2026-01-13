@@ -1,6 +1,11 @@
+import { Player } from '../../types/Player';
 //Ajouter le pokemon rencontré au pokedex du joueur
 
-export function addToPokedex(playerData: Record<string, { name: string; randomCaptures: number[] }>, pokemonId: number, userId: string): void {   
-        playerData[userId].randomCaptures.push(pokemonId);
-        console.log(`Le pokémon ${pokemonId} a été ajouté au pokédex de ${playerData[userId].name}.`);
+export function addToPokedex(player: Player | null, pokemonId: number): void {
+        if (!player) {
+                console.error('❌ Player null dans addToPokedex');
+                return;
+        }
+        player.randomCaptures.push(pokemonId);
+        console.log(`Pokémon ${pokemonId} ajouté à ${player.name}`);
 }
