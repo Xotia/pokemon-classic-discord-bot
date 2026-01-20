@@ -77,8 +77,15 @@ npm run start
 ## 📝 Variables d'environnement requises (.env)
 
 ```
-DISCORD_TOKEN=votre_token_ici
-DISCORD_CLIENT_ID=votre_client_id_ici
+DISCORD_TOKEN=
+APPLICATION_ID=
+PUBLIC_KEY=
+GUILD_ID=
+SHINY_RATE=
+COOLDOWN=
+POKEMON_PER_PAGE=
+BUTTON_TIMEOUT=
+
 ```
 
-Créez un fichier `.env` à la racine du projet avec vos identifiants Discord.
+Créez un fichier `.env` à la racine du projet avec vos identifiants Discord et vos variables.

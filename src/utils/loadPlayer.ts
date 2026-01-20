@@ -4,18 +4,16 @@ import { PLAYERS_DB } from '../config/paths';
 import { Player } from '../types/Player';
 
 const playerCache: Map<string, Player> = new Map();
-const CACHE_TIMEOUT = 2 * 60 * 1000; // A modifier si besoin
+const CACHE_TIMEOUT = 2 * 60 * 1000;
 const cacheTimes = new Map<string, number>();
 
 export function getPlayer(userId: string): Player | null {
-  // 1. Vérifier cache récent
   const cached = playerCache.get(userId);
   const lastLoad = cacheTimes.get(userId) || 0;
   if (cached && Date.now() - lastLoad < CACHE_TIMEOUT) {
     return cached;
   }
 
-  // 2. Charger depuis disque
   try {
     const allPlayers = JSON.parse(fs.readFileSync(PLAYERS_DB, 'utf8'));
     const player = allPlayers[userId] || null;

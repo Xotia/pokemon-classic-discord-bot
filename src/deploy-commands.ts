@@ -1,5 +1,6 @@
 import { REST, Routes, SlashCommandBuilder } from 'discord.js';
 import 'dotenv/config';
+import logger from './utils/logger';
 
 const commands = [
   new SlashCommandBuilder()
@@ -12,22 +13,25 @@ const commands = [
   new SlashCommandBuilder()
     .setName('random-capture')
     .setDescription('Capture un Pokémon sauvage aléatoire.'),
-    new SlashCommandBuilder()
-  .setName('random-pokedex')
-  .setDescription('Voir ton nombre de Pokémon capturés avec /random-capture.'),
+  new SlashCommandBuilder()
+    .setName('random-pokedex')
+    .setDescription('Voir ton nombre de Pokémon capturés avec /random-capture.'),
   new SlashCommandBuilder()
     .setName('get-shiny-rate')
     .setDescription('Affiche le taux d\'apparition des Pokémon shinys.'),
   new SlashCommandBuilder()
     .setName('help')
-    .setDescription('Affiche la liste des commandes disponibles.')
+    .setDescription('Affiche la liste des commandes disponibles.'),
+  new SlashCommandBuilder()
+    .setName('random-stats')
+    .setDescription('Affiche les statistiques du bot.')
 ];
 
 const rest = new REST({ version: '10' }).setToken(process.env.DISCORD_TOKEN!);
 
 (async () => {
   try {
-    console.log('Déploiement des commandes...');
+    logger.info('Déploiement des commandes...');
     await rest.put(
       Routes.applicationGuildCommands(
         process.env.APPLICATION_ID!,
@@ -35,8 +39,9 @@ const rest = new REST({ version: '10' }).setToken(process.env.DISCORD_TOKEN!);
       ),
       { body: commands },
     );
-    console.log('Commandes déployées.');
+    logger.info('Commandes déployées.');
   } catch (error) {
+    logger.info(`❌ Erreur : ${error}`);
     console.error(error);
   }
 })();
