@@ -10,7 +10,7 @@ Format basé sur [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - **Pokédex enrichi** 
   - Quantité de captures par Pokémon (`15x Bulbizarre`)
   - Indicateur shiny (`✨2` si capturé)
-  - Compteur global : `42/151 Pokémon` + "X restants à capturer"
+  - Compteur global : `42/151 Pokémon` + \"X restants à capturer\"
 
 - **Commande `/stats`** 
   - Stats serveur
@@ -29,7 +29,7 @@ Format basé sur [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Stats & Données
 
 - 💥 BREAKING CHANGE : Format players.json modifié
-- randomCaptures: { "1": { total: 15, shiny: 2 } }
+- randomCaptures: { \"1\": { total: 15, shiny: 2 } }
 
 ### Nouvelles méthodes
 
@@ -53,7 +53,7 @@ commands/randomStatsCommand
 ### Corrections
 
 ✅ [object Promise] → await getPokemonName()
-✅ Warning "stats vide" → parse random.totalCaptures
+✅ Warning \"stats vide\" → parse random.totalCaptures
 ✅ TypeScript strict (async/await partout)
 
 ### Docs & Logs
