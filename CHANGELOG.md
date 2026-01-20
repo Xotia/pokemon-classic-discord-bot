@@ -3,6 +3,68 @@
 Tous les changements notables du **Pokémon Classic Discord Bot** sont documentés ici.  
 Format basé sur [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+# [1.3.0] - 2026-01-20
+
+## ✨ **Nouvelles fonctionnalités pour les joueurs**
+
+- **Pokédex enrichi** 
+  - Quantité de captures par Pokémon (`15x Bulbizarre`)
+  - Indicateur shiny (`✨2` si capturé)
+  - Compteur global : `42/151 Pokémon` + "X restants à capturer"
+
+- **Commande `/stats`** 
+  - Stats serveur
+  - Classement TOP joueurs
+  - **TOP 3 Pokémons** les plus capturés (🥇🥈🥉)
+
+- **??0** **αʖ0цŧ�**
+
+## 🎮 **Améliorations gameplay**
+
+- **Nom bot corrigé** dans les messages
+- **Tri ID** Pokédex (1, 4, 7... logique)
+
+## 🔧 **Modifications techniques**
+
+### Stats & Données
+
+- 💥 BREAKING CHANGE : Format players.json modifié
+- randomCaptures: { "1": { total: 15, shiny: 2 } }
+
+### Nouvelles méthodes
+
+utils/getPlayerAvatar.ts
+utils/loadPokemonStats.ts
+utils/logger.ts
+utils/playerStats.ts
+
+stats/random
+├── addPokemonInPlayerRandomTotalCaptures
+├── addPokemonInRandomTotalCaptures
+├── addPokemonInRandomTotalPokemonCaptures
+├── addRandomShinyCaptureForPlayer
+└── addShinyInTotalRandomShinyCaptures
+
+pokedex/addRandomCaptureToPlayer
+pokedex/isPokemonInRandomPokedex
+
+commands/randomStatsCommand
+
+### Corrections
+
+✅ [object Promise] → await getPokemonName()
+✅ Warning "stats vide" → parse random.totalCaptures
+✅ TypeScript strict (async/await partout)
+
+### Docs & Logs
+
+📝 README.md corrigé
+📊 Logs détaillés Pokédex/stats
+
+## 🚀 **Commandes disponibles**
+
+/stats → Stats serveur + TOP 3
+
 ## [1.2.1] - 2026-01-13
 
 ### Changements pour les joueurs ✨

@@ -1,21 +1,30 @@
 import { getPokemonName } from "../pokemon/getPokemonName";
+import logger from "../../utils/logger";
+import { Player } from "../../types/Player";
 
-export function buildPokedex(playerPokedex: number[] | null | undefined): string {
-  if (!playerPokedex || playerPokedex.length === 0) {
+export async function buildPokedex(
+  randomCaptures: number[], 
+  player: Player
+): Promise<string> {
+  if (!randomCaptures || randomCaptures.length === 0) {
     return "Ton Pokédex est vide.";
-  } else {
-    const sortedPokedex = playerPokedex.sort((a, b) => a - b);
-    let entries = "";
-    for (let i = 0; i < sortedPokedex.length; i++) {
-      const pokemonName = getPokemonName(sortedPokedex[i]);
-      if (pokemonName) {
-        const entry = `${sortedPokedex[i]} - ${pokemonName}\n`;
-        entries += entry;
-        console.log("Entrée ajoutée à entries :", entry);
-      }
-    }
-    console.log("Pokedex construit :");
-    console.log(entries);
-    return entries;
   }
+
+  let entries = '';
+  
+  for (const pokemonId of randomCaptures.sort((a, b) => a - b)) {
+    const pokemonName = await getPokemonName(pokemonId);
+    
+    if (pokemonName && player.randomCaptures?.[pokemonId]) { 
+      const stats = player.randomCaptures[pokemonId];
+      const shinyCount = stats.shiny > 0 ? ` ✨${stats.shiny}` : '';
+
+      entries += `**${pokemonId}** - ${pokemonName} (${stats.total})${shinyCount}\n`;
+    }
+  }
+
+  logger.info("Pokedex construit :");
+  logger.info(entries);
+
+  return entries.trim();
 }

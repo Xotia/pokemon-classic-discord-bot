@@ -1,4 +1,3 @@
-// checkIfUserCanCatch.ts
 import { ChatInputCommandInteraction } from 'discord.js';
 import { displayCannotCatchMessage } from '../message/displayCannotCatchMessage';
 
