@@ -108,9 +108,8 @@ client.on(Events.InteractionCreate, async (interaction) => {
         await interaction.deferReply();
 
         //vérifier le cooldown
-        const canCatch = await checkIfUserCanCatch(interaction, catchCooldown);
+        const canCatch = await checkIfUserCanCatch(interaction);
         if (!canCatch) {
-            // la réponse a déjà été envoyée via editReply dans displayCannotCatchMessage
             return;
         }
 
@@ -174,6 +173,7 @@ client.on(Events.InteractionCreate, async (interaction) => {
                 { name: '/ping', value: 'Vérifie si le bot est en ligne.' },
                 { name: '/random-capture', value: 'Attrape un Pokémon aléatoire.' },
                 { name: '/random-pokedex', value: 'Affiche la liste des pokemons capturés avec /random-capture (à ne pas confondre avec le pokedex classique).' },
+                { name: '/random-stats', value: 'Affiche les statistiques du bot' },
                 { name: '/cheat', value: 'Commande de triche à utiliser à vos risques et périls.' },
                 { name: '/get-shiny-rate', value: 'Affiche le taux d\'apparition des pokemon shinys.' }
             )
