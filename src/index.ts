@@ -107,7 +107,7 @@ client.on(Events.InteractionCreate, async (interaction) => {
     if (interaction.commandName === 'random-capture') {
         await interaction.deferReply();
 
-        //vérifier le cooldown
+        //vérification
         const canCatch = await checkIfUserCanCatch(interaction);
         if (!canCatch) {
             return;
@@ -115,25 +115,41 @@ client.on(Events.InteractionCreate, async (interaction) => {
 
         createProfileIfNeeded(interaction);
         const player = getPlayer(interaction.user.id);
-        if (!player){
+        if (!player) {
             logger.info(`Joueur avec l'ID ${interaction.user.id} non trouvé.`);
             return false;
         }
 
+        //Récupération des infos
         getPlayerAvatar(interaction, 128);
 
+        //calcul
         const random = getRandomPokemon(pokemonList);
+        const isShiny = isTheRandomPokemonGonnaBeShiny();
+        const spriteUrl = getPokemonSpriteUrl(isShiny, random);
+        const isInPokedex = isPokemonInRandomPokedex(player, random.id, interaction.user.id);
+
+        //Réponse Discord
+        const color = defineRarityColor(random.catchRateRaw, isShiny);
+        const title = buildTitleForRandomCaptureEmbed(isShiny, random, color);
+        const description = buildDescriptionForPokemonCaptureEmbed(interaction, random, isShiny, !isInPokedex);
+        const footer = editFooter(interaction, random.name, isInPokedex);
+        const embed = buildEmbed(title, spriteUrl, color.color, description, footer);
+
+        await interaction.editReply({ embeds: [embed] });
+
+        //Logs
         displayPokemonInLogs(interaction, random);
         console.log(`Le Pokémon capturé est ${random.name} (ID: ${random.id})`);
-
-        const isShiny = isTheRandomPokemonGonnaBeShiny();
         displayShinyInLogs(isShiny, random);
-        
-        const spriteUrl = getPokemonSpriteUrl(isShiny, random);
         displaySpriteInLogs(interaction, spriteUrl);
-
-        const isInPokedex = isPokemonInRandomPokedex(player, random.id, interaction.user.id);
         displayInLogsIfPokemonAddedToPokedex(interaction, !isInPokedex, random);
+        logger.info("isInPokedex = " + isInPokedex);
+        logger.info({
+            event: "footer_message",
+            message: "Le message du Footer sera",
+            content: footer
+        });
 
         //Statistiques
         await addPokemonInRandomTotalCaptures();
@@ -145,22 +161,6 @@ client.on(Events.InteractionCreate, async (interaction) => {
         }
         addRandomCaptureToPlayer(player, random.id, isShiny);
         savePlayerData(interaction, player);
-
-
-        const color = defineRarityColor(random.catchRateRaw, isShiny);
-        const title = buildTitleForRandomCaptureEmbed(isShiny, random, color);
-        const description = buildDescriptionForPokemonCaptureEmbed(interaction, random, isShiny, !isInPokedex);
-        logger.info("isInPokedex = " + isInPokedex);
-        const footer = editFooter(interaction, random.name, isInPokedex);
-        logger.info({
-            event: "footer_message",
-            message: "Le message du Footer sera",
-            content: footer
-        });
-
-        const embed = buildEmbed(title, spriteUrl, color.color, description, footer);
-
-        return interaction.editReply({ embeds: [embed] });
     }
 
     if (interaction.commandName === 'help') {
