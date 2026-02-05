@@ -3,6 +3,12 @@
 Tous les changements notables du **Pokémon Classic Discord Bot** sont documentés ici.  
 Format basé sur [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+# [1.3.2] - 2026-02-05
+
+## Corrections mineurs
+- Correction du nombre de pokémon unique capturé par chaque joueur.
+- Restructuration de la commande /random-capture afin d'optimiser le temps de réponse (on doit être en dessous de 3 sec pour éviter le timeout de Discord)
+
 # [1.3.1] - 2026-01-25
 
 ## Corrections mineurs
