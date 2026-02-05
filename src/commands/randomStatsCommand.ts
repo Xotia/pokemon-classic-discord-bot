@@ -4,6 +4,7 @@ import {
 } from 'discord.js';
 
 import { loadPokemonStats } from '../utils/loadPokemonStats'; 
+import { getUniquePokemonCaughtByPlayer } from '../methods/file/getUniquePokemonCaughtByPlayer';
 
 
 export async function execute(interaction: ChatInputCommandInteraction) {
@@ -43,7 +44,7 @@ export async function execute(interaction: ChatInputCommandInteraction) {
           name: '🥇 **TOP JOUEURS**',
           value: playerRanking.length 
             ? playerRanking.slice(0, 10).map((p, i) => 
-                `${i + 1} - **${p.name.padEnd(15)}** ${p.total} | ${p.uniques} différents | ✨${p.shinies}`
+                `${i + 1} - **${p.name.padEnd(15)}** ${p.total} | ${getUniquePokemonCaughtByPlayer(p.name)} différents | ✨${p.shinies}`
               ).join('\n')
             : 'Aucune stat disponible',
           inline: false
