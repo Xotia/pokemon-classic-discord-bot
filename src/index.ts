@@ -10,6 +10,7 @@ import { execute } from './commands/getStatsCommand';
 import { captureCommand } from './commands/captureCommand';
 import { helpCommand } from './commands/helpCommand';
 import { getPity } from './commands/getPityCommand';
+import { getRarityCommand } from './commands/getRarityCommand';
 
 const client = new Client({
     intents: [
@@ -63,6 +64,10 @@ client.on(Events.InteractionCreate, async (interaction) => {
 
     if (interaction.commandName === 'pity') {
         return await getPity(interaction);
+    }
+
+    if (interaction.commandName === 'get-rarity') {
+        return await getRarityCommand(interaction);
     }
 
     if (interaction.commandName === 'cheat') {

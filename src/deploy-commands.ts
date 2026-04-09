@@ -27,7 +27,10 @@ const commands = [
     .setDescription('Affiche le statut du compteur de pity.'),
   new SlashCommandBuilder()
     .setName('stats')
-    .setDescription('Affiche les statistiques du bot.')
+    .setDescription('Affiche les statistiques du bot.'),
+      new SlashCommandBuilder()
+    .setName('get-rarity')
+    .setDescription('Affiche les taux de rareté des Pokémon.')
 ];
 
 const rest = new REST({ version: '10' }).setToken(process.env.DISCORD_TOKEN!);

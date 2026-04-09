@@ -3,17 +3,40 @@
 Tous les changements notables du **Pokémon Classic Discord Bot** sont documentés ici.  
 Format basé sur [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+# [2.0.3] - 2026-04-09
+
+# Ajouts
+- Nouvelle commande **/get-rarity** pour connaitre  les chances actuelles d’apparition par rareté.
+
+## Modifications
+- Ajout de /get-rarity dans /help
+
+## Corrections
+- Patchnote
+
+# [2.0.2] - 2026-04-09
+
+## Corrections
+- Modification du numéro de version dans package.json
+- Delete import inutiles dans captureCommand.ts
+- Delete pokemonGen2 paths
+
+# [2.0.1] - 2026-04-09
+
+## Corrections
+- Update README.md, .gitignore et ajout de src/types
+
 # [2.0.0] - 2026-04-09
 
 ## Ajouts
 - ✨ **Ajout de la seconde génération** ✨
-- Il n'est (normalement?) plus possible que le pokémon capturé soit deux fois le même.
+- Il n'est (normalement?) plus possible que le pokémon qui vient d'être capturé soit identique au précédent.
 - Ajout de la "**Pity**" : En gros si vous avez pas de chance, le jeu a pitié de vous et vous augmente vos chances pour le prochain /capture. Si lors des **10 dernières captures** vous n'avez pas eu un pokemon de rareté "**Très Rare**" ou +, la prochaine capture sera boostée.
 - Vous pouvez consulter votre compteur actuel de pitié avec **la nouvelle commande /pity**
 
 ## Modifications
 - **random-capture** devient "**capture**", tout simplement.
-- La commande "/capture" repose dorénavent sur un système similaire à un gatcha : Chaque pokémon a une rareté, plus il est rare, plus il sera difficile de le capturer ! La liste des rareté ainsi que les taux seront prochainement consultable.
+- La commande "**/capture**" repose dorénavent sur un système similaire à un **gatcha** : Chaque pokémon a une **rareté, plus il est rare, plus il sera difficile de le capturer !** La liste des rareté ainsi que les taux seront prochainement consultable.
 - Toutes mentions "random" dans le code a été retiré.
 
 ## Corrections mineurs
