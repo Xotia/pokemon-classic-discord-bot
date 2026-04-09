@@ -3,7 +3,6 @@ import logger from '../utils/logger';
 import { checkIfUserCanCatch } from '../methods/cooldown/checkIfUserCanCatch';
 import { createProfileIfNeeded } from '../methods/file/createProfileIfNeeded';
 import { getPlayer } from '../utils/loadPlayer';
-import { rollRarity } from '../methods/rarity/rollRarity';
 import { isThePokemonGonnaBeShiny } from '../methods/pokemon/isThePokemonGonnaBeShiny'
 import { getPokemonSpriteUrl } from '../methods/pokemon/getPokemonSpriteUrl'
 import { isPokemonInPokedex } from '../methods/pokedex/isPokemonInPokedex'
@@ -15,9 +14,6 @@ import { buildEmbed } from '../methods/embed/buildEmbed';
 import { savePlayerData } from '../methods/file/savePlayerData';
 import { displayLogs } from '../methods/console-logs/displayLogs';
 import { addAllStats } from '../methods/stats/addAllStats';
-import { getNewPokemon } from '../methods/pokemon/getNewPokemon';
-import { pitySystem } from '../methods/pity/pitySystem';
-import { resetPityCounterIfNeeded } from '../methods/pity/resetPityCounterIfNeeded';
 import { getNewGatchaPokemon } from '../methods/gatcha/getNewGatchaPokemon';
 
 export async function captureCommand(interaction: any) {
