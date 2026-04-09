@@ -5,8 +5,9 @@ export interface PokemonCaptureStats {
 
 export interface Player {
   name: string;
-  randomCaptures: Record<number, PokemonCaptureStats>;
+  captureList: Record<number, PokemonCaptureStats>;
   lastCapture?: number;
+  pityCounter: number;
 }
 
 export type PlayersRecord = Record<string, Player>;

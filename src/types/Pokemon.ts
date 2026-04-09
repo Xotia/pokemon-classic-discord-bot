@@ -1,8 +1,9 @@
+import { Rarity } from "../config/rarity";
+
 export interface Pokemon {
     id: number;
     name: string;
-    spawnRate: number;
-    catchRateRaw: number;
+    rarity: Rarity;
     image: string;
     shinyImage: string;
 }

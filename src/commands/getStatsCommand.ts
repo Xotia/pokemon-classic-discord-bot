@@ -18,8 +18,7 @@ export async function execute(interaction: ChatInputCommandInteraction) {
         name: playerName,
         total: stats.playerTotals?.[playerName] || 0,
         uniques: Object.keys(pokemons).length,
-        shinies: stats.shinyCaptures?.[playerName] || 0,
-        randomShinies: stats.random?.shinyCaptures?.[playerName] || 0
+        shinies: stats.shinyCaptures?.[playerName] || 0
       }))
       .sort((a, b) => b.uniques - a.uniques);
 
