@@ -18,6 +18,7 @@ import { getNewGatchaPokemon } from '../methods/gatcha/getNewGatchaPokemon';
 
 export async function captureCommand(interaction: any) {
     await interaction.deferReply();
+    const generation = interaction.options.getString('generation') ?? 'all';
     createProfileIfNeeded(interaction);
 
     logger.info('Exécution de /capture par', interaction.user.tag);
@@ -34,7 +35,7 @@ export async function captureCommand(interaction: any) {
     }
 
     //calcul
-    const { pokemonCatched, rarity } = await getNewGatchaPokemon(player);
+    const { pokemonCatched, rarity } = await getNewGatchaPokemon(player, generation);
 
     if (pokemonCatched) {
         const isShiny = isThePokemonGonnaBeShiny();

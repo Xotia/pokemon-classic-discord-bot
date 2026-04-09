@@ -21,14 +21,24 @@ const commands = [
     .setDescription('Affiche la liste des commandes disponibles.'),
   new SlashCommandBuilder()
     .setName('capture')
-    .setDescription('Capture d\'un Pokémon aléatoire avec un système de rareté inspiré d\'un gatcha.'),
+    .setDescription('Capture d\'un Pokémon aléatoire avec un système de rareté inspiré d\'un gatcha.')
+    .addStringOption(option =>
+      option
+        .setName('generation')
+        .setDescription('Choisis la génération à capturer')
+        .setRequired(false)
+        .addChoices(
+          { name: 'Kanto (Generation 1)', value: 'gen1' },
+          { name: 'Johto (Generation 2)', value: 'gen2' },
+        )
+    ),
   new SlashCommandBuilder()
     .setName('pity')
     .setDescription('Affiche le statut du compteur de pity.'),
   new SlashCommandBuilder()
     .setName('stats')
     .setDescription('Affiche les statistiques du bot.'),
-      new SlashCommandBuilder()
+  new SlashCommandBuilder()
     .setName('get-rarity')
     .setDescription('Affiche les taux de rareté des Pokémon.')
 ];
