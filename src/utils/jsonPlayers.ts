@@ -1,6 +1,5 @@
 import { promises as fs } from 'fs';
 import { PLAYERS_DB } from '../config/paths';
-import logger from './logger';
 import { Player } from '../types/Player';
 
 export async function readPlayers(): Promise<{ [userId: string]: Player }> {
@@ -8,7 +7,7 @@ export async function readPlayers(): Promise<{ [userId: string]: Player }> {
     const data = await fs.readFile(PLAYERS_DB, 'utf8');
     return JSON.parse(data);
   } catch (error) {
-    return {}; // Fichier vide ou inexistant
+    return {}; 
   }
 }
 
