@@ -15,6 +15,7 @@ export async function helpCommand(interaction: any) {
             { name: '/cheat', value: 'Commande de triche à utiliser à vos risques et périls.' },
             { name: '/get-shiny-rate', value: 'Affiche le taux d\'apparition des pokemon shinys.' },
             { name: '/pity', value: 'Affiche l\'état du compteur de pity.' },
+            { name: '/get-rarity', value: 'Affiche les taux de rareté des Pokémon.' },
         )
         .setFooter({ text: 'Amusez-vous bien avec Creatures Hoarder (Bot Pokémon) !' });
     return interaction.editReply({ embeds: [helpEmbed] });
