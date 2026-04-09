@@ -11,11 +11,8 @@ const commands = [
     .setName('cheat')
     .setDescription('Triche pour obtenir des Pokémon rapidement.'),
   new SlashCommandBuilder()
-    .setName('random-capture')
-    .setDescription('Capture un Pokémon sauvage aléatoire.'),
-  new SlashCommandBuilder()
-    .setName('random-pokedex')
-    .setDescription('Voir ton nombre de Pokémon capturés avec /random-capture.'),
+    .setName('pokedex')
+    .setDescription('Voir ton nombre de Pokémon capturés avec /capture.'),
   new SlashCommandBuilder()
     .setName('get-shiny-rate')
     .setDescription('Affiche le taux d\'apparition des Pokémon shinys.'),
@@ -23,7 +20,13 @@ const commands = [
     .setName('help')
     .setDescription('Affiche la liste des commandes disponibles.'),
   new SlashCommandBuilder()
-    .setName('random-stats')
+    .setName('capture')
+    .setDescription('Capture d\'un Pokémon aléatoire avec un système de rareté inspiré d\'un gatcha.'),
+  new SlashCommandBuilder()
+    .setName('pity')
+    .setDescription('Affiche le statut du compteur de pity.'),
+  new SlashCommandBuilder()
+    .setName('stats')
     .setDescription('Affiche les statistiques du bot.')
 ];
 

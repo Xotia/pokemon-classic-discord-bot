@@ -3,6 +3,22 @@
 Tous les changements notables du **Pokémon Classic Discord Bot** sont documentés ici.  
 Format basé sur [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+# [2.0.0] - 2026-04-09
+
+## Ajouts
+- ✨ **Ajout de la seconde génération** ✨
+- Il n'est (normalement?) plus possible que le pokémon capturé soit deux fois le même.
+- Ajout de la "**Pity**" : En gros si vous avez pas de chance, le jeu a pitié de vous et vous augmente vos chances pour le prochain /capture. Si lors des **10 dernières captures** vous n'avez pas eu un pokemon de rareté "**Très Rare**" ou +, la prochaine capture sera boostée.
+- Vous pouvez consulter votre compteur actuel de pitié avec **la nouvelle commande /pity**
+
+## Modifications
+- **random-capture** devient "**capture**", tout simplement.
+- La commande "/capture" repose dorénavent sur un système similaire à un gatcha : Chaque pokémon a une rareté, plus il est rare, plus il sera difficile de le capturer ! La liste des rareté ainsi que les taux seront prochainement consultable.
+- Toutes mentions "random" dans le code a été retiré.
+
+## Corrections mineurs
+- Clean code.
+
 # [1.3.2] - 2026-02-05
 
 ## Corrections mineurs
@@ -51,16 +67,16 @@ utils/logger.ts
 utils/playerStats.ts
 
 stats/random
-├── addPokemonInPlayerRandomTotalCaptures
-├── addPokemonInRandomTotalCaptures
-├── addPokemonInRandomTotalPokemonCaptures
-├── addRandomShinyCaptureForPlayer
-└── addShinyInTotalRandomShinyCaptures
+├── addPokemonInPlayerTotalCaptures
+├── addPokemonInTotalCaptures
+├── addPokemonInTotalPokemonCaptures
+├── addShinyCaptureForPlayer
+└── addShinyInTotalShinyCaptures
 
-pokedex/addRandomCaptureToPlayer
-pokedex/isPokemonInRandomPokedex
+pokedex/addCaptureToPlayer
+pokedex/isPokemonInPokedex
 
-commands/randomStatsCommand
+commands/getStatsCommand
 
 ### Corrections
 

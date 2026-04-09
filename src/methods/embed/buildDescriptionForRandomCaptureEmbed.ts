@@ -1,4 +1,4 @@
-export function buildDescriptionForPokemonCaptureEmbed(interaction: any, pokemon: { id: number; name: string; spawnRate: number; catchRateRaw: number; image: string; shinyImage: string; }, isShiny: boolean, isAdded: boolean) {
+export function buildDescriptionForPokemonCaptureEmbed(interaction: any, pokemon: { id: number; name: string; rarity: string; image: string; shinyImage: string; }, isShiny: boolean, isAdded: boolean) {
 
     const trainerName = interaction.user.globalName || interaction.user.username;
     const catchMessage = isShiny

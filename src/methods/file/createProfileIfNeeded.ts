@@ -14,7 +14,7 @@ export function createProfileIfNeeded(interaction: any) {
     const playerData = JSON.parse(fs.readFileSync(PLAYERS_DB, 'utf-8')) as Record<string, Player>;
     if (!playerData[userId]) {
         logger.info(`Création d'un nouveau profil pour le joueur ${userName} (ID: ${userId}).`);
-        playerData[userId] = { name: userName, randomCaptures: [] };
+        playerData[userId] = { name: userName, captureList: [], pityCounter: 0 };
         fs.writeFileSync(PLAYERS_DB, JSON.stringify(playerData, null, 2), 'utf-8');
     } else {
         logger.info(`Le profil pour le joueur ${userName} (ID: ${userId}) existe déjà.`);

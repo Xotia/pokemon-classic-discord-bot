@@ -1,7 +1,7 @@
 import { Player } from "../../types/Player";
 import { getPlayer } from "../../utils/loadPlayer";
 import logger from "../../utils/logger";
-import { getTotalPokemonNumber } from "../pokemon/getTotalPokemonNumber";
+import { getTotalPokemonNumber } from "../pokedex/getTotalPokemonNumber";
 import { getUserIdFromUserName } from "./getUserIdFromUserName";
 
 export function getPlayerNumberThatStillNeedToBeCaptured(player: string): number {
@@ -10,14 +10,14 @@ export function getPlayerNumberThatStillNeedToBeCaptured(player: string): number
     const data = getPlayer(userId.toString()) as Player | null;
     console.log("Données du joueur récupérées:", data);
 
-    if (!data || Object.keys(data.randomCaptures).length === 0) {
+    if (!data || Object.keys(data.captureList).length === 0) {
         logger.info(`Le joueur ${userId} n'a encore capturé aucun Pokémon.`);
         return 0;
     }
 
     try {
         const totalPokemonNumber = getTotalPokemonNumber();
-        const uniqueCount = Object.keys(data.randomCaptures).length;
+        const uniqueCount = Object.keys(data.captureList).length;
         const pokemonNumberThatStillNeedToBeCaptured = totalPokemonNumber - uniqueCount;
         return pokemonNumberThatStillNeedToBeCaptured;
     } catch (error) {

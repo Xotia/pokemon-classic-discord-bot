@@ -8,6 +8,6 @@ export function displayCannotCatchMessage(
   const remainingSeconds = Math.floor((timeLeftMs % 60000) / 1000);
 
   return interaction.editReply(
-    `⏳ Tu dois encore attendre ${remainingMinutes} minute(s) et ${remainingSeconds} seconde(s) avant de refaire /random-capture.`,
+    `⏳ Tu dois encore attendre ${remainingMinutes} minute(s) et ${remainingSeconds} seconde(s) avant de refaire /capture.`,
   );
 }

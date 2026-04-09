@@ -1,6 +1,6 @@
 import logger from '../../utils/logger';
 
-export function displayPokemonInLogs(interaction: any, random: { id: number; name: string; spawnRate: number; catchRateRaw: number; image: string; shinyImage: string; }) {
+export function displayPokemonInLogs(interaction: any, random: { id: number; name: string; rarity: string; image: string; shinyImage: string; }) {
     if (!random) {
         return interaction.editReply({ content: '❌ Erreur lors de la sélection du Pokémon.' });
     } else {
