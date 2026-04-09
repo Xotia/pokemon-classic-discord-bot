@@ -3,6 +3,16 @@
 Tous les changements notables du **Pokémon Classic Discord Bot** sont documentés ici.  
 Format basé sur [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+# [2.0.4] - 2026-04-09
+
+# Ajouts
+- Vous avez maintenant la possibilité de préciser la génération du pokemon que vous souhaitez capturer avec /capture.
+- Vous devez pour cela préciser /capture 1 pour la génération 1 ou /capture 2 pour la génération 2 (il y a une aide normalement).
+- C'est facultatif, si vous ne le précisez pas, la capture se fera dans une génération aléatoire.
+
+## Modifications
+- Modification du numéro de version
+
 # [2.0.3] - 2026-04-09
 
 # Ajouts
