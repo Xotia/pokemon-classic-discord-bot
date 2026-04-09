@@ -201,3 +201,7 @@ data/
 
 # utils
 /utils
+
+#backups
+backups/
+backups.sh
