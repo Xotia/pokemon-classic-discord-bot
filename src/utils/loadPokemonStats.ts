@@ -25,12 +25,12 @@ export async function loadPokemonStats(): Promise<PokemonStats> {
     const fileData = JSON.parse(raw);
     
     return {
-      totalCaptures: fileData.random?.totalCaptures || fileData.totalCaptures || 0,
-      totalShinyCaptures: fileData.random?.totalShinyCaptures || 0,
-      playerTotals: fileData.random?.playerTotals || fileData.playerTotals || {},
-      pokemonPerPlayer: fileData.random?.pokemonPerPlayer || fileData.pokemonPerPlayer || {},
-      shinyCaptures: fileData.random?.shinyCaptures || fileData.shinyCaptures || {},
-      pokemonsTotals: fileData.random?.pokemonsTotals || fileData.pokemonsTotals || {}
+      totalCaptures: fileData.totalCaptures || fileData.totalCaptures || 0,
+      totalShinyCaptures: fileData.totalShinyCaptures || 0,
+      playerTotals: fileData.playerTotals || fileData.playerTotals || {},
+      pokemonPerPlayer: fileData.pokemonPerPlayer || fileData.pokemonPerPlayer || {},
+      shinyCaptures: fileData.shinyCaptures || fileData.shinyCaptures || {},
+      pokemonsTotals: fileData.pokemonsTotals || fileData.pokemonsTotals || {}
     };
   } catch (error) {
     console.error('Erreur stats:', error);
