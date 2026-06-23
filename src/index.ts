@@ -16,6 +16,9 @@ import { startRaidScheduler } from './features/raid/raidScheduler.js';
 
 import { raidCommand } from "./commands/raidCommand";
 import { loadUnlockedZones } from "./utils/loadUnlockedZones";
+import { readPlayers, readPokemonList } from "./features/raid/prepareRaidDefenderFromPlayerPokemon";
+import { TYPE_LABELS } from "./config/typeLabels";
+import path from "node:path";
 
 type Zone = { id: string; label: string };
 
@@ -38,6 +41,70 @@ client.login(process.env.DISCORD_TOKEN);
 
 client.on(Events.InteractionCreate, async (interaction) => {
   if (interaction.isAutocomplete()) {
+    if (interaction.commandName === "raid") {
+      const focusedOption = interaction.options.getFocused(true);
+
+      if (focusedOption.name === "type") {
+        try {
+          const search = focusedOption.value.toLowerCase();
+          const pokemonName = interaction.options.getString("pokemon_name");
+
+          let availableTypes: string[];
+
+          if (pokemonName) {
+            const pokemonList = await readPokemonList(path.resolve("data/pokemon-list.json"));
+            const pokemon = pokemonList.find((p) => p.name.toLowerCase() === pokemonName.toLowerCase());
+            availableTypes = pokemon ? pokemon.types : Object.keys(TYPE_LABELS);
+          } else {
+            availableTypes = Object.keys(TYPE_LABELS);
+          }
+
+          const suggestions = availableTypes
+            .filter((t) => {
+              const label = TYPE_LABELS[t] ?? t;
+              return label.toLowerCase().includes(search) || t.toLowerCase().includes(search);
+            })
+            .slice(0, 25)
+            .map((t) => ({ name: TYPE_LABELS[t] ?? t, value: t }));
+
+          await interaction.respond(suggestions);
+        } catch {
+          await interaction.respond([]);
+        }
+        return;
+      }
+
+      if (focusedOption.name === "pokemon_name") {
+        try {
+          const search = focusedOption.value.toLowerCase();
+          const players = await readPlayers(path.resolve("data/players.json"));
+          const player = players[interaction.user.id];
+
+          if (!player?.captureList) {
+            await interaction.respond([]);
+            return;
+          }
+
+          const seasonPokemonIds = Object.entries(player.captureList)
+            .filter(([, stats]) => stats.capturedInCurrentSeason)
+            .map(([id]) => Number(id));
+
+          const pokemonList = await readPokemonList(path.resolve("data/pokemon-list.json"));
+
+          const suggestions = pokemonList
+            .filter((p) => seasonPokemonIds.includes(p.id))
+            .filter((p) => p.name.toLowerCase().includes(search))
+            .slice(0, 25)
+            .map((p) => ({ name: p.name, value: p.name }));
+
+          await interaction.respond(suggestions);
+        } catch {
+          await interaction.respond([]);
+        }
+      }
+      return;
+    }
+
     if (interaction.commandName === "capture") {
       const focusedOption = interaction.options.getFocused(true);
 

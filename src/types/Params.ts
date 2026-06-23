@@ -3,6 +3,7 @@ export type BuildDescriptionParams = {
   isShiny: boolean;
   isNewPokemon: boolean;
   trainerName: string;
+  zone?: string;
 };
 
 export type EditFooterParams = {
@@ -24,5 +25,6 @@ export type BuildCapturedPokemonEmbedParams = {
   leveledUp?: boolean;
   newLevel?: number;
   isAlreadyInPokedex?: boolean;
+  zone?: string;
 };
 

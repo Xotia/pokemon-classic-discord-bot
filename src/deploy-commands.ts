@@ -81,26 +81,7 @@ const commands = [
         .setName("type")
         .setDescription("Choisis le type d'attaque que ton pokémon utilisera")
         .setRequired(false)
-        .addChoices(
-          { name: "Normal", value: "normal" },
-          { name: "Eau", value: "water" },
-          { name: "Feu", value: "fire" },
-          { name: "Plante", value: "grass" },
-          { name: "Electrik", value: "electric" },
-          { name: "Insecte", value: "bug" },
-          { name: "Poison", value: "poison" },
-          { name: "Vol", value: "fly" },
-          { name: "Combat", value: "fighting" },
-          { name: "Roche", value: "rock" },
-          { name: "Sol", value: "ground" },
-          { name: "Psy", value: "psychic" },
-          { name: "Spectre", value: "ghost" },
-          { name: "Ténèbres", value: "dark" },
-          { name: "Glace", value: "ice" },
-          { name: "Acier", value: "steel" },
-          { name: "Dragon", value: "dragon" },
-          { name: "Fée", value: "fairy" },
-        ),
+        .setAutocomplete(true),
     )
     .toJSON(),
   new SlashCommandBuilder()

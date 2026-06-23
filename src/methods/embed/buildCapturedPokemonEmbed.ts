@@ -17,6 +17,7 @@ export function buildCapturedPokemonEmbed({
   leveledUp = false,
   newLevel,
   isAlreadyInPokedex,
+  zone,
 }: BuildCapturedPokemonEmbedParams) {
   const spriteUrl = getPokemonSpriteUrl(isShiny, pokemon);
   const isInPokedex = isAlreadyInPokedex ?? isPokemonInPokedex(player, pokemon.id, playerId);
@@ -29,6 +30,7 @@ export function buildCapturedPokemonEmbed({
     isShiny,
     isNewPokemon: !isInPokedex,
     trainerName,
+    zone,
   });
 
   const levelUpMessage =
