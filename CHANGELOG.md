@@ -3,6 +3,28 @@
 Tous les changements notables du **Pokémon Classic Discord Bot** sont documentés ici.  
 Format basé sur [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+# [3.0.1] - 2026-06-23
+
+## Ajouts
+
+### Affichage de la zone de capture
+- La **zone de capture** est désormais affichée dans l'embed d'annonce de capture (ex : `📍 Zone : Étang aigri`).
+- Le nom de la zone est affiché en **français** (label) et non en ID anglais.
+
+### Autocomplete amélioré pour `/raid`
+- Le paramètre **`pokemon_name`** propose désormais en autocomplete uniquement les Pokémon que le joueur a **capturés durant la saison en cours** (`capturedInCurrentSeason`).
+- Le paramètre **`type`** est passé en autocomplete dynamique : si un Pokémon est sélectionné, seuls ses types sont proposés ; sinon, la liste complète est affichée.
+
+## Corrections
+
+### Boucle infinie à la capture
+- Correction d'une **boucle infinie** dans `getNewPokemon` lorsqu'une zone ne contenait qu'un seul Pokémon de la rareté tirée (et que ce Pokémon était le même que le dernier capturé). Le système essaie désormais 10 fois maximum avant d'accepter le doublon.
+
+## Modifications
+- Numéro de version : 3.0.0 → 3.0.1.
+
+---
+
 # [3.0.0] - 2026-06-22
 
 ## Ajouts
