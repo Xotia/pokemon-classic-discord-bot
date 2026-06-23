@@ -1,6 +1,7 @@
 import { ChatInputCommandInteraction } from 'discord.js';
 import { displayCannotCatchMessage } from '../message/displayCannotCatchMessage';
 import { updatePlayer } from '../../utils/jsonPlayers';
+import logger from '../../utils/logger';
 
 const CATCH_COOLDOWN_MS = parseFloat(process.env.COOLDOWN || '30') * 60 * 1000; // Minutes → ms
 
@@ -16,6 +17,7 @@ export async function checkIfUserCanCatch(
   if (lastCapture && now - lastCapture < CATCH_COOLDOWN_MS) {
     const timeLeft = CATCH_COOLDOWN_MS - (now - lastCapture);
     await displayCannotCatchMessage(interaction, timeLeft);
+    logger.info(`User ${interaction.user.tag} attempted to catch during cooldown. Time left: ${timeLeft} ms`);
     return false;
   }
 

@@ -3,6 +3,124 @@
 Tous les changements notables du **Pokémon Classic Discord Bot** sont documentés ici.  
 Format basé sur [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+# [3.0.0] - 2026-06-22
+
+## Ajouts
+
+### Système de zones de capture
+- **Zones de capture** : Chaque Pokémon est désormais assigné à une ou plusieurs zones géographiques.
+- **Paramètre zone dans `/capture`** : Le joueur peut choisir une zone en plus de la génération, ou laisser le tirage aléatoire parmi les zones débloquées.
+- **Autocomplete** sur le champ zone pour faciliter la sélection.
+- **Système de déblocage progressif** : Les zones sont séparées entre `zones_unlocked.json` (accessibles) et `zones_to_unlock.json` (à débloquer via les raids).
+- **Chargement dynamique des zones** : Les zones débloquées sont relues depuis le fichier JSON à chaque appel, plus besoin de redémarrer le bot après un déblocage.
+- **Downgrade de rareté par zone** : Si aucun Pokémon n'existe à la rareté tirée pour la zone, le système descend automatiquement d'un cran de rareté.
+
+### Système XP & Niveaux
+- **XP à la capture** : XP gagnée basée sur les HP du Pokémon capturé (×10 si shiny).
+- **Formule de niveau** style Pokémon (`4 × level³ / 5`), niveau max 100.
+- **Notification de level-up** dans l'embed de capture.
+- **Champs `xp` et `level`** ajoutés au profil joueur.
+
+### Système de saisons
+- **Flag `capturedInCurrentSeason`** sur chaque entrée de capture dans le Pokédex.
+- **Marqueur visuel 🎯** dans le Pokédex pour les Pokémon capturés en saison.
+- **Compteur de saison** dans le Pokédex : affiche le nombre de Pokémon différents capturés durant la saison en cours.
+- Condition requise pour participer aux raids.
+
+### Système de Raid
+- **Nouvelle commande `/raid <pokemon> [type]`** : Inscris un de tes Pokémon pour défendre le centre de recherche contre un Pokémon enragé.
+- **Raids quotidiens automatiques** : Un raid s'ouvre automatiquement chaque jour, avec une période d'inscription de 8 heures.
+- **Annonce Discord automatique** : Un message est envoyé dans le salon avec le nom du Pokémon, sa zone, sa difficulté, son type d'attaque et l'heure de fermeture des inscriptions.
+- **Résolution automatique** : Le combat est résolu automatiquement à l'heure configurée en comparant les stats de l'équipe de défense à celles du boss.
+- **Bonus/malus de type** : Les multiplicateurs d'efficacité de type sont appliqués sur l'attaque (efficacité du défenseur contre le boss) et la défense (faiblesse du défenseur face au boss).
+- **Récompenses de victoire** :
+  - XP = HP de base du Pokémon du raid × 10, attribuée à chaque participant.
+  - Compteur `raidWins` incrémenté pour chaque participant.
+  - Le Pokémon du raid est capturé automatiquement par un participant tiré au sort (avec mise à jour des stats).
+- **Déblocage de zone** : Si la zone du raid n'est pas encore débloquée, elle est ajoutée à `zones_unlocked.json` et retirée de `zones_to_unlock.json` après une victoire.
+- **Message de résultat** : Message de victoire (vert) ou défaite (rouge) avec récompenses ou stats manquantes en texte naturel.
+- **Mode debug** : Ouverture toutes les 2 min, résolution toutes les 3 min (configurable via `RAID_SCHEDULER_MODE`).
+
+### Refactoring commande `/cheat`
+- `/cheat` est désormais fonctionnel avec les paramètres `player`, `pokemon` et `shiny`.
+- Réservé à l'admin (`ADMIN_ID`).
+- Gère la recherche du joueur par nom, la recherche du Pokémon par nom, la mise à jour du Pokédex et des stats.
+
+### Enrichissement des données Pokémon
+- **Stats complètes** : HP, attaque, défense, attaque spé., défense spé., vitesse ajoutées à chaque Pokémon.
+- **Types** : Chaque Pokémon a désormais ses types (eau, feu, plante, etc.).
+- **Effectiveness** : Tables d'efficacité attaque/défense par type pour chaque Pokémon.
+- **Génération** : Champ `generation` ajouté.
+- **Données Gen 1 enrichies** : `pokemon-gen1.json` entièrement reconstruit avec stats, types, zones et effectiveness.
+
+### Nouveaux fichiers et utilitaires
+- **Types** : `Params.ts`, `Embed.ts`, `zones.ts`, types raid (`RaidBoss`, `RaidDefender`, `RaidResult`, `RaidReward`, `RaidState`, `RaidStats`, `RaidStatus`).
+- **Embeds** : `buildCapturedPokemonEmbed.ts`, `buildCaptureEmbed.ts`, `buildPokedexPageEmbed.ts`, `isValidHttpUrl.ts` (extrait de `buildEmbed.ts`).
+- **Joueur** : `getCapturePlayer.ts`, `getPlayerByName.ts`, `getPlayerIdByName.ts`, `markPokemonAsCapturedInCurrentSeason.ts`, `savePlayerDataById.ts`, `registerCapturedPokemon.ts`.
+- **Pokémon** : `getPokemonByName.ts`, `getPokemonById.ts`, `getCapturedPokemonHp.ts`, `handleSuccessfulCapture.ts`, `handleNoPokemonFound.ts`, `tryCatchPokemon.ts`, `getRandomPokemonType.ts`.
+- **Rareté** : `downgradeRarity.ts`, `getPokemonByRarity.ts`.
+- **Zones** : `resolveCaptureLocation.ts`, `getAllZones.ts`, `getGenerationByZone.ts`, `getZonesByGeneration.ts`, `findZoneById.ts`, `pickRandomZone.ts`, `isZoneInGeneration.ts`, `getMaxGeneration.ts`, `logCaptureLocationSelection.ts`.
+- **XP** : `xp.ts` (calcul XP, niveaux, level-up).
+- **Config** : `url.ts`, `raid.config.ts`, `typeLabels.ts` (traduction française des types).
+- **Stats joueur** : `addPokemonInPlayerTotalCaptures.ts`, `addRarityInPlayerStats.ts`, `addShinyCaptureForPlayer.ts`, `addPokemonInpokemonPerPlayerList.ts`.
+- **Utilitaires data** : `buildPokemonJson.ts`, `createGenJson.ts`, `fetchPokemon.ts`, `fetchSpecies.ts`, `getPokemonStats.ts`, `getPokemonTypes.ts`, `injectZones.ts`, `add-captured-in-current-season.ts`, `add-generation-to-pokemon.ts`, `addXpAndLevelToPlayers.ts`.
+- **Tests Vitest** : 28 tests couvrant le système de raid, XP et pity.
+
+### Autres
+- **Traduction française des types** : Tous les types d'attaque sont affichés en français (annonce raid, inscription, résultat).
+- **Fichier `FEATURES.md`** : Documentation complète de toutes les fonctionnalités du bot.
+- **Checklist de tests manuels** : `data/spec/RAID_TESTING_CHECKLIST.md`.
+- **Classement raids dans `/stats`** : Affiche le top 5 des joueurs par nombre de raids remportés.
+- **Commande `/raid`** ajoutée dans `/help`.
+- **Constante `RARITY_ORDER`** ajoutée dans `rarity.ts`.
+
+## Modifications
+
+### Refactoring `/capture`
+- Commande entièrement réécrite : découpage en fonctions dédiées (`resolveCaptureLocation`, `getCapturePlayer`, `tryCatchPokemon`, `handleSuccessfulCapture`, `handleNoPokemonFound`).
+- Gestion des zones et de la génération avec inférence automatique.
+- `/capture` restreint aux zones débloquées uniquement.
+
+### Refactoring Pokédex
+- **Pokédex paginé** avec boutons Discord (premier, précédent, suivant, dernier).
+- Affichage enrichi : numéro, nom, nombre de captures, shinys, marqueur saison, niveau joueur, progression.
+- Pokédex construit par pages avec `buildPokedexPageEmbed.ts`.
+
+### Refactoring embeds
+- `buildEmbed` accepte désormais un paramètre `fields` optionnel pour les champs additionnels.
+- `editFooter` refactoré pour accepter un objet `EditFooterParams` (au lieu de `interaction`) avec XP gagnée et level-up.
+- `buildDescriptionForPokemonCaptureEmbed` refactoré pour accepter un objet `BuildDescriptionParams` avec `trainerName` (au lieu de `interaction`).
+- `isValidHttpUrl` extrait dans son propre fichier.
+
+### Refactoring profil joueur
+- `Player.captureList` passe de `array` à `Record<string, PokemonCaptureStats>` avec `total`, `shiny` et `capturedInCurrentSeason`.
+- Initialisation du profil avec `xp: 0` et `level: 1`.
+
+### Refactoring stats
+- `addAllStats` refactoré : ne prend plus `interaction` en paramètre, prend directement le `Player`.
+- Ajout de `markPokemonAsCapturedInCurrentSeason` dans le flux de stats.
+
+### Refactoring gacha
+- `getNewGatchaPokemon` accepte maintenant un paramètre `zone` et gère le downgrade de rareté par zone.
+- `getRandomPokemonFromRarity` filtre par zone si fournie.
+
+### Autres modifications
+- **`/cheat` corrigé** : L'indication "possède déjà ce Pokémon" est maintenant vérifiée sur le joueur cible et non sur l'admin.
+- **Correction du calcul d'efficacité de type dans les raids** : Les multiplicateurs étaient inversés.
+- **`/pokedex`** : Ajout de `createProfileIfNeeded` à l'entrée de la commande.
+- **`tsconfig.json`** : Migration vers `NodeNext` module resolution, ajout de `strict: true`.
+- **`package.json`** : Ajout de `node-cron`, `csv-parse`, `pino`, `pino-pretty`. Ajout de `vitest` en devDependencies.
+- **Numéro de version** : 2.0.4 → 3.0.0.
+
+## Suppressions
+- **Ancien format `captureList` en tableau** : Remplacé par un `Record<string, PokemonCaptureStats>`.
+- **Dépendance directe à `interaction`** dans `editFooter` et `buildDescriptionForPokemonCaptureEmbed` : Remplacée par des objets de paramètres typés.
+- **`isValidHttpUrl` inline** dans `buildEmbed.ts` : Extrait dans son propre fichier.
+- **Import inutilisé `ActionRow`** supprimé de `buildDisabledPokedexButtons.ts`.
+- **Duplication `readPlayers`/`readPokemonList`** : Nettoyée dans `RegisterRaidDefender.ts`.
+
+---
+
 # [2.0.4] - 2026-04-09
 
 # Ajouts

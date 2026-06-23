@@ -4,8 +4,12 @@ import { POKEMON_GEN2_DB } from '../../config/paths';
 import { Pokemon } from '../../types/Pokemon';
 import logger from '../../utils/logger';
 
-export function getRandomPokemonFromRarity(rarity: string, generation: string): Pokemon | null {
-  let pool;
+export function getRandomPokemonFromRarity(
+  rarity: string,
+  generation: string,
+  zoneId?: string  // optionnel : si fourni, filtre par zone
+): Pokemon | null {
+  let pool: Pokemon[];
 
   switch (generation) {
     case 'gen1':
@@ -19,14 +23,20 @@ export function getRandomPokemonFromRarity(rarity: string, generation: string): 
       break;
   }
 
+  // Filtre par zone si fournie
+  if (zoneId) {
+    pool = pool.filter((p: Pokemon) => p.zones?.includes(zoneId));
+  }
+
   if (pool.length === 0) {
-    console.warn(`⚠️ Aucun Pokémon avec rareté "${rarity}"`);
+    const context = zoneId ? `rareté "${rarity}" dans la zone "${zoneId}"` : `rareté "${rarity}"`;
+    console.warn(`⚠️ Aucun Pokémon avec ${context}`);
     return null;
   }
 
   const randomIndex = Math.floor(Math.random() * pool.length);
   const pokemon = pool[randomIndex];
 
-  logger.info(`🎯 Capturé: ${pokemon.name} (${rarity})`);
+  logger.info(`🎯 Capturé: ${pokemon.name} (${rarity}${zoneId ? ` | ${zoneId}` : ''})`);
   return pokemon;
 }

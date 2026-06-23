@@ -1,0 +1,1 @@
+export type RaidStatus = "idle" | "registration" | "resolved" | "reward_pending";

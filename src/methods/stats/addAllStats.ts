@@ -9,17 +9,22 @@ import { addShinyCaptureForPlayer } from "./player/addShinyCaptureForPlayer";
 import { addShinyInTotalShinyCaptures } from "./addShinyInTotalShinyCaptures";
 import { addRarityInPlayerStats } from "./player/addRarityInPlayerStats";
 import { addCaptureToLastCapture } from "./addCaptureToLastCapture";
+import logger from "../../utils/logger";
+import { markPokemonAsCapturedInCurrentSeason } from "../player/markPokemonAsCapturedInCurrentSeason";
 
-export async function addAllStats(interaction: any, pokemonCatched: Pokemon, isShiny: boolean, player: Player): Promise<void> {
+export async function addAllStats(pokemonCatched: Pokemon, isShiny: boolean, player: Player): Promise<void> {
     await addPokemonInTotalCaptures();
-    await addPokemonInPlayerTotalCaptures(interaction.user.globalName || interaction.user.username);
+    await addPokemonInPlayerTotalCaptures(player.name);
     await addPokemonInTotalPokemonCaptures(pokemonCatched.name);
     await addRarityInStats(pokemonCatched.rarity);
-    await addRarityInPlayerStats(interaction.user.globalName || interaction.user.username, pokemonCatched.rarity);
+    await addRarityInPlayerStats(player.name, pokemonCatched.rarity);
+    markPokemonAsCapturedInCurrentSeason(player, pokemonCatched.id);
     if (isShiny) {
+        logger.info(`✨ ${pokemonCatched.name} est shiny ! Mise à jour des statistiques...`);
         await addShinyInTotalShinyCaptures();
-        await addShinyCaptureForPlayer(interaction.user.globalName || interaction.user.username);
+        await addShinyCaptureForPlayer(player.name);
     }
-    await addCaptureToPlayer(player, pokemonCatched.id, isShiny);
-    await addCaptureToLastCapture(interaction.user.globalName || interaction.user.username, pokemonCatched.id);
+    // logger.info(`addAllStats player=${JSON.stringify(player)}`);
+    await addCaptureToPlayer(player, pokemonCatched.name);
+    await addCaptureToLastCapture(player.name, pokemonCatched.id);
 }
