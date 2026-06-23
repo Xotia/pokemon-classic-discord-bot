@@ -14,7 +14,7 @@ export function isPokemonInPokedex(playerData: Player, pokemonId: number, userId
 
     logger.info(`Vérification si le pokémon ${pokemonName} (ID: ${pokemonId}) est déjà dans le pokédex de ${trainerName}...`);
 
-    if (playerData.captureList[pokemonId]) {
+    if (playerData.captureList?.[pokemonId]) {
         logger.info(`✅ ${pokemonName} (ID: ${pokemonId}) trouvé dans pokédex de ${trainerName} → total:${playerData.captureList[pokemonId].total} shiny:${playerData.captureList[pokemonId].shiny}`);
         return true;
     }

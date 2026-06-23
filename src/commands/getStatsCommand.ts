@@ -3,8 +3,10 @@ import {
   ChatInputCommandInteraction
 } from 'discord.js';
 
-import { loadPokemonStats } from '../utils/loadPokemonStats'; 
-import { getUniquePokemonCaughtByPlayer } from '../methods/file/getUniquePokemonCaughtByPlayer';
+import { loadPokemonStats } from '../utils/loadPokemonStats';
+import { getUniquePokemonCaughtByPlayer } from '../methods/player/getUniquePokemonCaughtByPlayer';
+import { readPlayers } from '../utils/jsonPlayers';
+import { Player } from '../types/Player';
 
 
 export async function execute(interaction: ChatInputCommandInteraction) {
@@ -46,6 +48,20 @@ export async function execute(interaction: ChatInputCommandInteraction) {
                 `${i + 1} - **${p.name.padEnd(15)}** ${p.total} | ${getUniquePokemonCaughtByPlayer(p.name)} différents | ✨${p.shinies}`
               ).join('\n')
             : 'Aucune stat disponible',
+          inline: false
+        },
+        {
+          name: '⚔️ **TOP RAIDS**',
+          value: await (async () => {
+            const players = await readPlayers();
+            const raidRanking = Object.values(players)
+              .filter((p: Player) => (p.raidWins ?? 0) > 0)
+              .sort((a: Player, b: Player) => (b.raidWins ?? 0) - (a.raidWins ?? 0))
+              .slice(0, 5);
+            return raidRanking.length
+              ? raidRanking.map((p: Player, i: number) => `${i + 1} - **${p.name}** — ${p.raidWins} victoire${(p.raidWins ?? 0) > 1 ? 's' : ''}`).join('\n')
+              : 'Aucun raid remporté pour le moment';
+          })(),
           inline: false
         },
         {

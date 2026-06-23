@@ -16,6 +16,7 @@ export async function helpCommand(interaction: any) {
             { name: '/get-shiny-rate', value: 'Affiche le taux d\'apparition des pokemon shinys.' },
             { name: '/pity', value: 'Affiche l\'état du compteur de pity.' },
             { name: '/get-rarity', value: 'Affiche les taux de rareté des Pokémon.' },
+            { name: '/raid', value: 'Inscris un de tes Pokémon pour défendre le centre de recherche lors du raid quotidien.' },
         )
         .setFooter({ text: 'Amusez-vous bien avec Creatures Hoarder (Bot Pokémon) !' });
     return interaction.editReply({ embeds: [helpEmbed] });

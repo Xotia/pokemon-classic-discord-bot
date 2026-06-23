@@ -1,12 +1,12 @@
-import { createProfileIfNeeded } from '../methods/file/createProfileIfNeeded';
+import { createProfileIfNeeded } from '../methods/player/createProfileIfNeeded';
 import { getPlayer } from '../utils/loadPlayer';
 import logger from '../utils/logger';
 
 export async function getPity(interaction: any) {
     await interaction.deferReply();
-    logger.info('🏓 Exécution de /pity pour', interaction.user.globalName || interaction.user.username);
-
     createProfileIfNeeded(interaction);
+
+    logger.info('🏓 Exécution de /pity pour', interaction.user.globalName || interaction.user.username);
 
     const player = await getPlayer(interaction.user.id);
     if (!player) {

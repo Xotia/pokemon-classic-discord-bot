@@ -37,3 +37,15 @@ export const rarityBoostedList: RarityData[] = [
   { rarity: 'legendary', weight: 5000, color: 0xFFD700, french: 'Légendaire' },
   { rarity: 'unknown', weight: 1000, color: 0xCCCCCC, french: 'Inconnu' },
 ];
+
+export const RARITY_ORDER = [
+  "common",
+  "uncommon",
+  "rare",
+  "very_rare",
+  "epic",
+  "ultra_rare",
+  "mythic",
+  "legendary",
+  "unknown",
+] as const satisfies readonly Rarity[];

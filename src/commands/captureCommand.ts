@@ -1,66 +1,45 @@
-import logger from '../utils/logger';
-
-import { checkIfUserCanCatch } from '../methods/cooldown/checkIfUserCanCatch';
-import { createProfileIfNeeded } from '../methods/file/createProfileIfNeeded';
-import { getPlayer } from '../utils/loadPlayer';
-import { isThePokemonGonnaBeShiny } from '../methods/pokemon/isThePokemonGonnaBeShiny'
-import { getPokemonSpriteUrl } from '../methods/pokemon/getPokemonSpriteUrl'
-import { isPokemonInPokedex } from '../methods/pokedex/isPokemonInPokedex'
-import { defineRarityColor } from '../methods/rarity/defineRarityColor';
-import { buildTitleForRandomCaptureEmbed } from '../methods/embed/buildTitleForRandomCaptureEmbed';
-import { buildDescriptionForPokemonCaptureEmbed } from '../methods/embed/buildDescriptionForRandomCaptureEmbed';
-import { editFooter } from '../methods/embed/editFooter';
-import { buildEmbed } from '../methods/embed/buildEmbed';
-import { savePlayerData } from '../methods/file/savePlayerData';
-import { displayLogs } from '../methods/console-logs/displayLogs';
-import { addAllStats } from '../methods/stats/addAllStats';
-import { getNewGatchaPokemon } from '../methods/gatcha/getNewGatchaPokemon';
+import { checkIfUserCanCatch } from "../methods/cooldown/checkIfUserCanCatch";
+import { logCaptureLocationSelection } from "../methods/zones/logCaptureLocationSelection";
+import { resolveCaptureLocation } from "../methods/zones/resolveCaptureLocation";
+import { getCapturePlayer } from "../methods/player/getCapturePlayer";
+import { tryCatchPokemon } from "../methods/pokemon/tryCatchPokemon";
+import { handleNoPokemonFound } from "../methods/pokemon/handleNoPokemonFound";
+import { handleSuccessfulCapture } from "../methods/pokemon/handleSuccessfulCapture";
+import { createProfileIfNeeded } from "../methods/player/createProfileIfNeeded";
 
 export async function captureCommand(interaction: any) {
-    await interaction.deferReply();
-    const generation = interaction.options.getString('generation') ?? 'all';
-    createProfileIfNeeded(interaction);
+  await interaction.deferReply();
+  createProfileIfNeeded(interaction);
+  
+  const location = await resolveCaptureLocation(interaction);
+  if (!location) return;
 
-    logger.info('Exécution de /capture par', interaction.user.tag);
-    //vérification
-    const canCatch = await checkIfUserCanCatch(interaction);
-    if (!canCatch) {
-        return;
-    }
-    
-    const player = getPlayer(interaction.user.id);
-    if (!player) {
-        logger.info(`Joueur avec l'ID ${interaction.user.id} non trouvé.`);
-        return false;
-    }
+  logCaptureLocationSelection(location);
 
-    //calcul
-    const { pokemonCatched, rarity } = await getNewGatchaPokemon(player, generation);
+  const { generation, zone } = location;
 
-    if (pokemonCatched) {
-        const isShiny = isThePokemonGonnaBeShiny();
-        const spriteUrl = getPokemonSpriteUrl(isShiny, pokemonCatched);
-        const isInPokedex = isPokemonInPokedex(player, pokemonCatched.id, interaction.user.id);
-        console.log(`🎉 Capturé: ${pokemonCatched.name} (${rarity})`);
+  const canCatch = await checkIfUserCanCatch(interaction);
+  if (!canCatch) return;
 
-        //Réponse Discord
-        const color = defineRarityColor(pokemonCatched.rarity, isShiny);
-        const title = buildTitleForRandomCaptureEmbed(isShiny, pokemonCatched, color);
-        const description = buildDescriptionForPokemonCaptureEmbed(interaction, pokemonCatched, isShiny, !isInPokedex);
-        const footer = editFooter(interaction, pokemonCatched.name, isInPokedex);
-        const embed = buildEmbed(title, spriteUrl, color.color, description, footer);
-        await interaction.editReply({ embeds: [embed] });
+  const player = getCapturePlayer(interaction);
+  if (!player) return;
 
-        //Logs
-        displayLogs(interaction, pokemonCatched, isShiny, !isInPokedex, footer);
+  const { pokemonCatched, rarity } = await tryCatchPokemon(
+    player,
+    generation,
+    zone,
+  );
 
-        //Statistiques
-        await addAllStats(interaction, pokemonCatched, isShiny, player)
-        savePlayerData(interaction, player);
+  if (!pokemonCatched) {
+    await handleNoPokemonFound(interaction, rarity);
+    return;
+  }
 
-    } else {
-        console.log(`😞 Aucun Pokémon ${rarity} disponible`);
-        await interaction.editReply(`😞 Aucun Pokémon ${rarity} disponible`);
-    }
-
+  await handleSuccessfulCapture(
+    interaction,
+    player,
+    pokemonCatched,
+    rarity,
+    zone,
+  );
 }

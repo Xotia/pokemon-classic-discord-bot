@@ -1,5 +1,7 @@
-import { displayPokedex } from '../methods/pokedex/displayPokedex';
+import { createProfileIfNeeded } from "../methods/player/createProfileIfNeeded";
+import { displayPokedex } from "../methods/pokedex/displayPokedex";
 
 export async function pokedexCommand(interaction: any) {
-    return displayPokedex(interaction);
+  createProfileIfNeeded(interaction);
+  return displayPokedex(interaction);
 }

@@ -12,6 +12,7 @@ export function addCaptureToLastCapture(playerName: string, pokemonId: number): 
                 pokemon: pokemonId
             };
             await fs.writeFile(STATS_DB, JSON.stringify(stats, null, 2), 'utf-8');
+            logger.info(`✅ Mise à jour de lastPokemonCaptured: ${playerName} a capturé le Pokémon ID ${pokemonId}`);
             resolve();
         } catch (error) {
             logger.info(`❌ Erreur addCaptureToLastCapture: ${(error as Error).message}`);

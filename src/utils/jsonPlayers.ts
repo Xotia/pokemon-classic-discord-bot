@@ -17,7 +17,10 @@ export async function writePlayers(players: { [userId: string]: Player }): Promi
 
 export async function updatePlayer(userId: string, updateFn: (player: Player) => void): Promise<void> {
   const players = await readPlayers();
-  const player = players[userId] || { name: '', randomCaptures: [], pokedex: [] };
+  const player = players[userId];
+  if (!player) {
+    throw new Error(`Player with ID ${userId} not found`);
+  }
   updateFn(player);
   players[userId] = player;
   await writePlayers(players);
