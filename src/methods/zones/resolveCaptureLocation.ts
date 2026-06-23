@@ -1,8 +1,17 @@
 import { CaptureLocationSelection, Zone } from '../../types/zones';
 import logger from '../../utils/logger';
+import { loadUnlockedZones } from '../../utils/loadUnlockedZones';
 import { getGenerationByZone } from './getGenerationByZone';
 import { getMaxGeneration } from './getMaxGeneration';
 import { getZonesByGeneration } from './getZonesByGeneration';
+
+function resolveZoneId(input: string): string | undefined {
+  const allZones = Object.values(loadUnlockedZones()).flat();
+  const byId = allZones.find((z) => z.id === input);
+  if (byId) return byId.id;
+  const byLabel = allZones.find((z) => z.label === input);
+  return byLabel?.id;
+}
 
 export async function resolveCaptureLocation(
   interaction: any,
@@ -12,8 +21,12 @@ export async function resolveCaptureLocation(
   const generationOption = interaction.options.getString("generation");
   const zoneOption = interaction.options.getString("zone");
 
-  const inferredGenerationFromZone = zoneOption
-    ? getGenerationByZone(zoneOption)
+  const resolvedZoneId = zoneOption
+    ? resolveZoneId(zoneOption)
+    : undefined;
+
+  const inferredGenerationFromZone = resolvedZoneId
+    ? getGenerationByZone(resolvedZoneId)
     : undefined;
 
   const isGenerationChosenByUser = generationOption != null;
@@ -33,7 +46,7 @@ export async function resolveCaptureLocation(
     throw new Error(`Aucune zone trouvée pour la génération ${generation}`);
   }
 
-  if (zoneOption && !generationZones.some((zone) => zone.id === zoneOption)) {
+  if (resolvedZoneId && !generationZones.some((zone) => zone.id === resolvedZoneId)) {
     logger.info(
       `❌ Zone invalide: zone=${zoneOption}, generation=${generation}`,
     );
@@ -43,9 +56,9 @@ export async function resolveCaptureLocation(
     return null;
   }
 
-  const isZoneRandom = zoneOption == null;
+  const isZoneRandom = resolvedZoneId == null;
   const zone =
-    zoneOption ??
+    resolvedZoneId ??
     generationZones[Math.floor(Math.random() * generationZones.length)].id;
 
   const selectedZone = generationZones.find((z) => z.id === zone);
