@@ -29,7 +29,6 @@ tests/
 tsconfig.vitest.json
 
 # Scripts one-shot (migration, build data, etc.)
-src/scripts/
 src/utils/send-lore.js
 src/utils/sendAuroraLoreMessage.js
 
