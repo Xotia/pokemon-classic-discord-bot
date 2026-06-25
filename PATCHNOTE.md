@@ -1,32 +1,20 @@
-# Mise à jour 3.0.1 — Améliorations de confort
+# Mise à jour 3.0.2 — Commande /raid-squad
 
 ---
 
-## Zone de capture visible
+## Nouvelle commande `/raid-squad`
 
-Lorsque vous capturez un Pokémon dans une zone, celle-ci est désormais affichée directement dans le message de capture :
+Consultez en un coup d'œil les informations du raid en cours et la composition de l'équipe de défense !
 
-> 📍 Zone : **Étang aigri**
-
-Plus besoin de se souvenir d'où vous étiez !
-
----
-
-## `/raid` plus intuitif
-
-### Autocomplete sur le Pokémon
-
-En tapant `/raid`, le champ **pokemon** vous propose désormais uniquement les Pokémon que vous avez **capturés cette saison**. Fini les erreurs de frappe ou les tentatives avec un Pokémon non éligible.
-
-### Autocomplete sur le type d'attaque
-
-Le champ **type** s'adapte au Pokémon choisi : seuls les types correspondant à votre Pokémon sont proposés. Si aucun Pokémon n'est encore sélectionné, tous les types restent disponibles.
+La commande affiche :
+- Les détails du **raid actif** (Pokémon boss, zone, difficulté, type d'attaque)
+- La **liste des défenseurs** inscrits avec leurs Pokémon
 
 ---
 
-## Correction de bug
+## Améliorations
 
-- Correction d'une **boucle infinie** qui pouvait survenir lors d'un `/capture` dans une zone avec très peu de Pokémon d'une rareté donnée.
+- Mise à jour de la commande `/help` avec les descriptions actualisées de `/capture`, `/pokedex` et l'ajout de `/raid-squad`.
 
 ---
 
