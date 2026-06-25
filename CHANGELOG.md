@@ -3,6 +3,23 @@
 Tous les changements notables du **Pokémon Classic Discord Bot** sont documentés ici.  
 Format basé sur [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+# [3.0.2] - 2026-06-25
+
+## Ajouts
+
+### Nouvelle commande `/raid-squad`
+- Affiche les **informations du raid en cours** (Pokémon boss, zone, difficulté, type d'attaque) et la **composition de l'équipe de défense** avec les Pokémon inscrits.
+- Commande enregistrée dans `deploy-commands.ts` et ajoutée dans `/help`.
+
+### Mise à jour de `/help`
+- Description de `/capture` et `/pokedex` actualisées.
+- Ajout de `/raid-squad` dans la liste des commandes.
+
+## Modifications
+- Numéro de version : 3.0.1 → 3.0.2.
+
+---
+
 # [3.0.1] - 2026-06-23
 
 ## Ajouts
