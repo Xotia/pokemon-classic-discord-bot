@@ -96,6 +96,10 @@ const commands = [
     .setName("get-rarity")
     .setDescription("Affiche les taux de rareté des Pokémon.")
     .toJSON(),
+    new SlashCommandBuilder()
+    .setName("raid-squad")
+    .setDescription("Affiche les infos du raid et la composition actuel de l'équipe de défense.")
+    .toJSON(),
 ];
 
 const rest = new REST({ version: "10" }).setToken(process.env.DISCORD_TOKEN!);
