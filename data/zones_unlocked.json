@@ -25,6 +25,10 @@
     {
       "id": "sour-pond",
       "label": "Étang aigri"
+    },
+    {
+      "id": "incandescent-tower",
+      "label": "Tour incandescente"
     }
   ]
 }

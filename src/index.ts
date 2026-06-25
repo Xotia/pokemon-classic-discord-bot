@@ -19,6 +19,7 @@ import { loadUnlockedZones } from "./utils/loadUnlockedZones";
 import { readPlayers, readPokemonList } from "./features/raid/prepareRaidDefenderFromPlayerPokemon";
 import { TYPE_LABELS } from "./config/typeLabels";
 import path from "node:path";
+import { getRaidInfo } from "./commands/getRaidInfo";
 
 type Zone = { id: string; label: string };
 
@@ -206,5 +207,9 @@ client.on(Events.InteractionCreate, async (interaction) => {
 
   if (interaction.commandName === "help") {
     return helpCommand(interaction);
+  }
+
+  if (interaction.commandName === "raid-squad") {
+    return getRaidInfo(interaction);
   }
 });
