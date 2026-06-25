@@ -11,6 +11,10 @@
     {
       "id": "steep-path",
       "label": "Chemin Escarpé"
+    },
+    {
+      "id": "verdant-plain",
+      "label": "Plaine Verdoyante"
     }
   ],
   "gen2": [
