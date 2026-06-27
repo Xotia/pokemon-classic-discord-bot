@@ -3,6 +3,14 @@
 Tous les changements notables du **Pokémon Classic Discord Bot** sont documentés ici.  
 Format basé sur [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+# [3.2.1] - 2026-06-27
+
+## Suppressions
+- Suppression de `data/rollRarityJson.json` — fichier inutilisé, les statistiques de rareté sont déjà sauvegardées dans `data/stats.json`.
+- `rollRarityJson.json` ajouté au `.gitignore`.
+
+---
+
 # [3.2.0] - 2026-06-27
 
 ## Ajouts

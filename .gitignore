@@ -36,6 +36,7 @@ src/scripts/sendAuroraLoreMessage.js
 data/players.json
 data/stats.json
 data/raid.json
+data/rollRarityJson.json
 data/zones_to_unlock.json
 data/zones_unlocked.json
 
