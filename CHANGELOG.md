@@ -3,6 +3,23 @@
 Tous les changements notables du **Pokémon Classic Discord Bot** sont documentés ici.  
 Format basé sur [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+# [3.2.0] - 2026-06-27
+
+## Ajouts
+
+### Génération dynamique de `pokemon-list.json`
+- `pokemon-list.json` n'est plus versionné dans Git — il est désormais **généré automatiquement** avant chaque build via le script `scripts/generate-pokemon-list.js`.
+- Par défaut, le script concatène `pokemon-gen1.json` et `pokemon-gen2.json`.
+- Variable d'environnement `EXTRA_POKEMON_FILES` : permet d'ajouter des fichiers JSON supplémentaires à la liste (ex : `EXTRA_POKEMON_FILES=othermons.json`). Plusieurs fichiers séparés par des virgules sont supportés.
+- `othermons.json` ajouté au `.gitignore` — fichier personnalisé uploadé manuellement par serveur (ex : faux Pokémon du 1er avril).
+
+## Modifications
+- Nouveau script npm `generate-pokemon-list` ajouté au pipeline `build`.
+- `pokemon-list.json` et `othermons.json` ajoutés au `.gitignore`.
+- Numéro de version : 3.1.0 → 3.2.0.
+
+---
+
 # [3.1.0] - 2026-06-27
 
 ## Ajouts
@@ -12,11 +29,15 @@ Format basé sur [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - **Top Shiny** — classement des joueurs par nombre de shinys capturés
 - **Top Level** — classement des joueurs par niveau et XP
 - **Top Pokédex** — classement par complétion du Pokédex (uniques/total avec pourcentage)
+- **Top Pokédex Saison** — classement par complétion du Pokédex sur la saison en cours
 - **Top Raids** — inchangé
 - **Top 3 Pokémons** — inchangé
 
-### Script de maintenance RP
-- Nouveau script `send-maintenance.ts` pour envoyer un message de maintenance RP dans le salon principal Discord.
+### Scripts de maintenance RP
+- `send-maintenance.ts` — message de maintenance longue (embed orange)
+- `send-back-online.ts` — annonce de reprise après maintenance longue (embed vert)
+- `send-quick-maintenance.ts` — message de micro-maintenance (embed jaune)
+- `send-quick-back-online.ts` — annonce de reprise après micro-maintenance (embed vert)
 - Nouvelle variable d'environnement `MAIN_CHANNEL_ID` pour configurer le salon principal.
 
 ### Horaires de raid configurables

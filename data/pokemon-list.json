@@ -178,15 +178,14 @@
     ],
     "effectiveness": {
       "defense": {
+        "bug": 1,
+        "fairy": 0.5,
+        "fire": 1,
         "grass": 0.5,
-        "fire": 0.5,
-        "water": 2,
-        "ice": 0.5,
-        "ground" : 2,
-        "insect": 0.5,
-        "rock": 2,
+        "ice": 1,
         "steel": 0.5,
-        "fairy": 0.5
+        "flying": 2,
+        "poison": 2
       },
       "attack": {
         "dragon": 0.5,
@@ -226,15 +225,14 @@
     ],
     "effectiveness": {
       "defense": {
+        "bug": 1,
+        "fairy": 0.5,
+        "fire": 1,
         "grass": 0.5,
-        "fire": 0.5,
-        "water": 2,
-        "ice": 0.5,
-        "ground" : 2,
-        "insect": 0.5,
-        "rock": 2,
+        "ice": 1,
         "steel": 0.5,
-        "fairy": 0.5
+        "flying": 2,
+        "poison": 2
       },
       "attack": {
         "dragon": 0.5,
@@ -1688,15 +1686,14 @@
     ],
     "effectiveness": {
       "defense": {
+        "bug": 1,
+        "fairy": 0.5,
+        "fire": 1,
         "grass": 0.5,
-        "fire": 0.5,
-        "water": 2,
-        "ice": 0.5,
-        "ground" : 2,
-        "insect": 0.5,
-        "rock": 2,
+        "ice": 1,
         "steel": 0.5,
-        "fairy": 0.5
+        "flying": 2,
+        "poison": 2
       },
       "attack": {
         "dragon": 0.5,
@@ -1738,15 +1735,14 @@
     ],
     "effectiveness": {
       "defense": {
+        "bug": 1,
+        "fairy": 0.5,
+        "fire": 1,
         "grass": 0.5,
-        "fire": 0.5,
-        "water": 2,
-        "ice": 0.5,
-        "ground" : 2,
-        "insect": 0.5,
-        "rock": 2,
+        "ice": 1,
         "steel": 0.5,
-        "fairy": 0.5
+        "flying": 2,
+        "poison": 2
       },
       "attack": {
         "dragon": 0.5,
@@ -2720,15 +2716,14 @@
     ],
     "effectiveness": {
       "defense": {
+        "bug": 1,
+        "fairy": 0.5,
+        "fire": 1,
         "grass": 0.5,
-        "fire": 0.5,
-        "water": 2,
-        "ice": 0.5,
-        "ground" : 2,
-        "insect": 0.5,
-        "rock": 2,
+        "ice": 1,
         "steel": 0.5,
-        "fairy": 0.5
+        "flying": 2,
+        "poison": 2
       },
       "attack": {
         "dragon": 0.5,
@@ -2771,15 +2766,14 @@
     ],
     "effectiveness": {
       "defense": {
+        "bug": 1,
+        "fairy": 0.5,
+        "fire": 1,
         "grass": 0.5,
-        "fire": 0.5,
-        "water": 2,
-        "ice": 0.5,
-        "ground" : 2,
-        "insect": 0.5,
-        "rock": 2,
+        "ice": 1,
         "steel": 0.5,
-        "fairy": 0.5
+        "flying": 2,
+        "poison": 2
       },
       "attack": {
         "dragon": 0.5,
@@ -3672,15 +3666,14 @@
     ],
     "effectiveness": {
       "defense": {
+        "bug": 1,
+        "fairy": 0.5,
+        "fire": 1,
         "grass": 0.5,
-        "fire": 0.5,
-        "water": 2,
-        "ice": 0.5,
-        "ground" : 2,
-        "insect": 0.5,
-        "rock": 2,
+        "ice": 1,
         "steel": 0.5,
-        "fairy": 0.5
+        "flying": 2,
+        "poison": 2
       },
       "attack": {
         "dragon": 0.5,
@@ -3720,15 +3713,14 @@
     ],
     "effectiveness": {
       "defense": {
+        "bug": 1,
+        "fairy": 0.5,
+        "fire": 1,
         "grass": 0.5,
-        "fire": 0.5,
-        "water": 2,
-        "ice": 0.5,
-        "ground" : 2,
-        "insect": 0.5,
-        "rock": 2,
+        "ice": 1,
         "steel": 0.5,
-        "fairy": 0.5
+        "flying": 2,
+        "poison": 2
       },
       "attack": {
         "dragon": 0.5,
@@ -5998,15 +5990,14 @@
     ],
     "effectiveness": {
       "defense": {
+        "bug": 1,
+        "fairy": 0.5,
+        "fire": 1,
         "grass": 0.5,
-        "fire": 0.5,
-        "water": 2,
-        "ice": 0.5,
-        "ground" : 2,
-        "insect": 0.5,
-        "rock": 2,
+        "ice": 1,
         "steel": 0.5,
-        "fairy": 0.5
+        "flying": 2,
+        "poison": 2
       },
       "attack": {
         "dragon": 0.5,
@@ -6441,15 +6432,14 @@
     ],
     "effectiveness": {
       "defense": {
+        "bug": 1,
+        "fairy": 0.5,
+        "fire": 1,
         "grass": 0.5,
-        "fire": 0.5,
-        "water": 2,
-        "ice": 0.5,
-        "ground" : 2,
-        "insect": 0.5,
-        "rock": 2,
+        "ice": 1,
         "steel": 0.5,
-        "fairy": 0.5
+        "flying": 2,
+        "poison": 2
       },
       "attack": {
         "dragon": 0.5,
@@ -7179,9 +7169,22 @@
       "speed": 100
     },
     "zones": [
+      "pastoral-route",
+      "verdant-plain",
       "primeval-forest",
+      "safari-zone",
       "fragrant-clearing",
-      "isolated-valley"
+      "calm-river",
+      "rough-beach",
+      "wild-ocean",
+      "ice-cave",
+      "abandoned-industrial-city",
+      "steep-path",
+      "isolated-valley",
+      "towering-mountain",
+      "grim-cave",
+      "rumbling-volcano",
+      "haunted-tower"
     ],
     "generation": 1
   },
@@ -7341,15 +7344,14 @@
     ],
     "effectiveness": {
       "defense": {
+        "bug": 1,
+        "fairy": 0.5,
+        "fire": 1,
         "grass": 0.5,
-        "fire": 0.5,
-        "water": 2,
-        "ice": 0.5,
-        "ground" : 2,
-        "insect": 0.5,
-        "rock": 2,
+        "ice": 1,
         "steel": 0.5,
-        "fairy": 0.5
+        "flying": 2,
+        "poison": 2
       },
       "attack": {
         "dragon": 0.5,
@@ -7387,15 +7389,14 @@
     ],
     "effectiveness": {
       "defense": {
+        "bug": 1,
+        "fairy": 0.5,
+        "fire": 1,
         "grass": 0.5,
-        "fire": 0.5,
-        "water": 2,
-        "ice": 0.5,
-        "ground" : 2,
-        "insect": 0.5,
-        "rock": 2,
+        "ice": 1,
         "steel": 0.5,
-        "fairy": 0.5
+        "flying": 2,
+        "poison": 2
       },
       "attack": {
         "dragon": 0.5,
@@ -7433,15 +7434,14 @@
     ],
     "effectiveness": {
       "defense": {
+        "bug": 1,
+        "fairy": 0.5,
+        "fire": 1,
         "grass": 0.5,
-        "fire": 0.5,
-        "water": 2,
-        "ice": 0.5,
-        "ground" : 2,
-        "insect": 0.5,
-        "rock": 2,
+        "ice": 1,
         "steel": 0.5,
-        "fairy": 0.5
+        "flying": 2,
+        "poison": 2
       },
       "attack": {
         "dragon": 0.5,
@@ -8108,8 +8108,7 @@
       "speed": 67
     },
     "zones": [
-      "roaring-sea",
-      "cape-of-good-hope-lighthouse"
+      "roaring-sea"
     ],
     "generation": 2
   },
@@ -10264,15 +10263,14 @@
     ],
     "effectiveness": {
       "defense": {
+        "bug": 1,
+        "fairy": 0.5,
+        "fire": 1,
         "grass": 0.5,
-        "fire": 0.5,
-        "water": 2,
-        "ice": 0.5,
-        "ground" : 2,
-        "insect": 0.5,
-        "rock": 2,
+        "ice": 1,
         "steel": 0.5,
-        "fairy": 0.5
+        "flying": 2,
+        "poison": 2
       },
       "attack": {
         "dragon": 0.5,
@@ -11289,15 +11287,14 @@
     ],
     "effectiveness": {
       "defense": {
+        "bug": 1,
+        "fairy": 0.5,
+        "fire": 1,
         "grass": 0.5,
-        "fire": 0.5,
-        "water": 2,
-        "ice": 0.5,
-        "ground" : 2,
-        "insect": 0.5,
-        "rock": 2,
+        "ice": 1,
         "steel": 0.5,
-        "fairy": 0.5
+        "flying": 2,
+        "poison": 2
       },
       "attack": {
         "dragon": 0.5,
@@ -11451,15 +11448,14 @@
     ],
     "effectiveness": {
       "defense": {
+        "bug": 1,
+        "fairy": 0.5,
+        "fire": 1,
         "grass": 0.5,
-        "fire": 0.5,
-        "water": 2,
-        "ice": 0.5,
-        "ground" : 2,
-        "insect": 0.5,
-        "rock": 2,
+        "ice": 1,
         "steel": 0.5,
-        "fairy": 0.5
+        "flying": 2,
+        "poison": 2
       },
       "attack": {
         "dragon": 0.5,
@@ -11857,40 +11853,5 @@
       "dark-woods"
     ],
     "generation": 2
-  },
-  {
-    "id": 4097,
-    "name": "GUIIIZA96",
-    "rarity": "unknown",
-    "image": "https://i.imgur.com/sbFhO1I.png",
-    "shinyImage": "https://i.imgur.com/sbFhO1I.png"
-  },
-  {
-    "id": 4098,
-    "name": "Gwall",
-    "rarity": "unknown",
-    "image": "https://i.imgur.com/OiGPo3Y.png",
-    "shinyImage": "https://i.imgur.com/OiGPo3Y.png"
-  },
-  {
-    "id": 4099,
-    "name": "Karnute",
-    "rarity": "unknown",
-    "image": "https://i.imgur.com/W4K64tj.png",
-    "shinyImage": "https://i.imgur.com/W4K64tj.png"
-  },
-  {
-    "id": 4100,
-    "name": "TheQueenJuno",
-    "rarity": "unknown",
-    "image": "https://i.imgur.com/MkheLLM.png",
-    "shinyImage": "https://i.imgur.com/MkheLLM.png"
-  },
-  {
-    "id": 4101,
-    "name": "Xotia",
-    "rarity": "unknown",
-    "image": "https://i.imgur.com/8HQZ75J.png",
-    "shinyImage": "https://i.imgur.com/8HQZ75J.png"
   }
 ]
