@@ -11,7 +11,7 @@ export async function helpCommand(interaction: any) {
             { name: '/ping', value: 'Vérifie si le bot est en ligne.' },
             { name: '/capture', value: 'Attrape un Pokémon, la zone de recherche et la génération sont des paramètres facultatifs.' },
             { name: '/pokedex', value: 'Affiche la liste des pokemons capturés avec /capture.' },
-            { name: '/stats', value: 'Affiche les statistiques du bot' },
+            { name: '/leaderboard', value: 'Affiche le classement des joueurs' },
             { name: '/cheat', value: 'Commande de triche à utiliser à vos risques et périls.' },
             { name: '/get-shiny-rate', value: 'Affiche le taux d\'apparition des pokemon shinys.' },
             { name: '/pity', value: 'Affiche l\'état du compteur de pity.' },

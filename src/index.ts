@@ -186,7 +186,7 @@ client.on(Events.InteractionCreate, async (interaction) => {
     return await pokedexCommand(interaction);
   }
 
-  if (interaction.commandName === "stats") {
+  if (interaction.commandName === "leaderboard") {
     return await execute(interaction);
   }
 

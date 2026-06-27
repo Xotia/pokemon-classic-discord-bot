@@ -89,8 +89,8 @@ const commands = [
     .setDescription("Affiche le statut du compteur de pity.")
     .toJSON(),
   new SlashCommandBuilder()
-    .setName("stats")
-    .setDescription("Affiche les statistiques du bot.")
+    .setName("leaderboard")
+    .setDescription("Affiche le classement des joueurs.")
     .toJSON(),
   new SlashCommandBuilder()
     .setName("get-rarity")

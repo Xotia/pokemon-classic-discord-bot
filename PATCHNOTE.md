@@ -1,20 +1,32 @@
-# Mise à jour 3.0.2 — Commande /raid-squad
+# Mise à jour 3.1.0 — Commande /leaderboard
 
 ---
 
-## Nouvelle commande `/raid-squad`
+## `/stats` devient `/leaderboard`
 
-Consultez en un coup d'œil les informations du raid en cours et la composition de l'équipe de défense !
+La commande `/stats` a été renommée `/leaderboard` et enrichie avec de nouveaux classements !
 
-La commande affiche :
-- Les détails du **raid actif** (Pokémon boss, zone, difficulté, type d'attaque)
-- La **liste des défenseurs** inscrits avec leurs Pokémon
+### Classements disponibles
+
+- 🥇 **Top Joueurs** — par captures uniques et totales
+- ✨ **Top Shiny** — par nombre de shinys capturés
+- 📈 **Top Level** — par niveau et XP
+- 📖 **Top Pokédex** — par complétion du Pokédex (avec pourcentage)
+- ⚔️ **Top Raids** — par victoires en raid
+- 🔥 **Top 3 Pokémons** — les Pokémon les plus capturés
 
 ---
 
-## Améliorations
+## Horaires de raid configurables
 
-- Mise à jour de la commande `/help` avec les descriptions actualisées de `/capture`, `/pokedex` et l'ajout de `/raid-squad`.
+Les heures d'ouverture et de fermeture du raid sont désormais configurables via le `.env` :
+
+```env
+RAID_START_HOUR=00 12 * * *
+RAID_END_HOUR=00 20 * * *
+```
+
+Les valeurs sont des expressions cron. Par défaut : raid ouvert à 12h, fermé à 20h.
 
 ---
 
