@@ -15,6 +15,10 @@ Format basé sur [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - **Top Raids** — inchangé
 - **Top 3 Pokémons** — inchangé
 
+### Script de maintenance RP
+- Nouveau script `send-maintenance.ts` pour envoyer un message de maintenance RP dans le salon principal Discord.
+- Nouvelle variable d'environnement `MAIN_CHANNEL_ID` pour configurer le salon principal.
+
 ### Horaires de raid configurables
 - Les heures d'ouverture et de fermeture du raid sont désormais configurables via les variables d'environnement `RAID_START_HOUR` et `RAID_END_HOUR` (expressions cron).
 - Valeurs par défaut : `00 12 * * *` (ouverture à 12h) et `00 20 * * *` (fermeture à 20h).
