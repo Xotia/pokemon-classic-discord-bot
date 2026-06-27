@@ -17,6 +17,18 @@ La commande `/stats` a été renommée `/leaderboard` et enrichie avec de nouvea
 
 ---
 
+## Script de maintenance RP
+
+Nouveau script pour envoyer un message de maintenance immersif dans le salon principal, dans l'univers du Centre AURORA.
+
+```bash
+npx ts-node src/scripts/send-maintenance.ts
+```
+
+Nécessite la variable `MAIN_CHANNEL_ID` dans le `.env`.
+
+---
+
 ## Horaires de raid configurables
 
 Les heures d'ouverture et de fermeture du raid sont désormais configurables via le `.env` :
