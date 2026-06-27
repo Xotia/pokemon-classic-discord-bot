@@ -11,6 +11,7 @@ Format basé sur [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+
 # [3.2.0] - 2026-06-27
 
 ## Ajouts
