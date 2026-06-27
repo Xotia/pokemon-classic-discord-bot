@@ -33,7 +33,9 @@ npm run start
 | Commande | Usage |
 |---|---|
 | `npm run dev` | Lance le bot avec `ts-node` (developpement) |
-| `npm run build` | Compile le TypeScript dans `dist/` |
+| `npm run generate-pokemon-list` | Genere `pokemon-list.json` a partir des fichiers source |
+| `npm run init-data` | Cree `zones_to_unlock.json` et `zones_unlocked.json` a partir des fichiers `.default.json` si absents |
+| `npm run build` | Init data + genere la liste Pokemon + compile le TypeScript dans `dist/` |
 | `npm run deploy` | Enregistre les commandes slash aupres de Discord |
 | `npm run start` | Lance le bot compile (production) |
 
@@ -75,6 +77,9 @@ RAID_NEXT_ZONE_CHANCE=60
 MAIN_CHANNEL_ID=
 RAID_START_HOUR=00 12 * * *
 RAID_END_HOUR=00 20 * * *
+
+# Pokemon list generation (optionnel)
+# EXTRA_POKEMON_FILES=othermons.json
 ```
 
 ---
@@ -104,11 +109,14 @@ src/
   utils/           Utilitaires runtime (logger, chargement fichiers)
   scripts/         Scripts one-shot (migration, build donnees) - exclu du build
 data/
-  pokemon-list.json       Base de donnees complete des Pokemon
+  pokemon-list.json       Base de donnees complete (genere au build)
   pokemon-gen1.json       Pokemon generation 1
   pokemon-gen2.json       Pokemon generation 2
-  zones_unlocked.json     Zones accessibles
-  zones_to_unlock.json    Zones a debloquer via les raids
+  othermons.json          Pokemon custom par serveur (optionnel, non versionne)
+  zones_unlocked.default.json   Zones accessibles (template initial, versionne)
+  zones_unlocked.json           Zones accessibles (copie de travail, non versionnee)
+  zones_to_unlock.default.json  Zones a debloquer via les raids (template initial, versionne)
+  zones_to_unlock.json          Zones a debloquer via les raids (copie de travail, non versionnee)
   zones_all.json          Toutes les zones
   players.json            Profils joueurs (genere au runtime)
   stats.json              Statistiques globales (genere au runtime)

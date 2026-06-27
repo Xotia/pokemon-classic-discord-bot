@@ -45,6 +45,12 @@ data/*.txt
 data/old/
 data/img/
 
+# Data - generated
+data/pokemon-list.json
+
+# Data - custom (uploaded manually per server)
+data/othermons.json
+
 # Data - examples
 data/players_example.json
 data/pokemon-list_example.json
