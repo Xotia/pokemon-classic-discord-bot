@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+require("dotenv").config();
 
 const dataDir = path.resolve(__dirname, "..", "data");
 const output = path.join(dataDir, "pokemon-list.json");
