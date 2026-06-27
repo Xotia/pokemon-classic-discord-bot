@@ -156,12 +156,14 @@ export async function closeRaidAndResolve(): Promise<void> {
 
 export function startRaidScheduler(client: Client): void {
   discordClient = client;
+  const raidStartHour = process.env.RAID_START_HOUR || "00 12 * * *";
+  const raidEndHour = process.env.RAID_END_HOUR || "00 20 * * *";
 
   const openExpression =
-    RAID_SCHEDULER_MODE === "production" ? "00 12 * * *" : "*/2 * * * *";
+    RAID_SCHEDULER_MODE === "production" ? raidStartHour : "*/2 * * * *";
 
   const resolveExpression =
-    RAID_SCHEDULER_MODE === "production" ? "0 20 * * *" : "*/3 * * * *";
+    RAID_SCHEDULER_MODE === "production" ? raidEndHour : "*/3 * * * *";
 
   cron.schedule(
     openExpression,

@@ -36,11 +36,13 @@ Inscription à un raid coopératif avec un Pokémon possédé.
 - Remplacement automatique si le joueur se réinscrit
 - Validation : raid ouvert, Pokémon valide, type valide
 
-### `/stats`
+### `/leaderboard`
 Classement global des joueurs.
 
-- Top joueurs par captures uniques
-- Nombre total de captures, shinys par joueur
+- Top joueurs par captures uniques et totales
+- Top shiny par nombre de shinys capturés
+- Top level par niveau et XP
+- Top raids par victoires
 - Top 3 des Pokémon les plus capturés
 
 ### `/pity`
