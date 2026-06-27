@@ -3,6 +3,28 @@
 Tous les changements notables du **Pokémon Classic Discord Bot** sont documentés ici.  
 Format basé sur [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+# [3.1.0] - 2026-06-27
+
+## Ajouts
+
+### Nouvelle commande `/leaderboard` (remplace `/stats`)
+- **Top Joueurs** — classement par captures uniques et totales (shiny retiré de cette section)
+- **Top Shiny** — classement des joueurs par nombre de shinys capturés
+- **Top Level** — classement des joueurs par niveau et XP
+- **Top Pokédex** — classement par complétion du Pokédex (uniques/total avec pourcentage)
+- **Top Raids** — inchangé
+- **Top 3 Pokémons** — inchangé
+
+### Horaires de raid configurables
+- Les heures d'ouverture et de fermeture du raid sont désormais configurables via les variables d'environnement `RAID_START_HOUR` et `RAID_END_HOUR` (expressions cron).
+- Valeurs par défaut : `00 12 * * *` (ouverture à 12h) et `00 20 * * *` (fermeture à 20h).
+
+## Modifications
+- Commande `/stats` renommée en `/leaderboard` (deploy-commands, index, help, README, FEATURES).
+- Numéro de version : 3.0.2 → 3.1.0.
+
+---
+
 # [3.0.2] - 2026-06-25
 
 ## Ajouts

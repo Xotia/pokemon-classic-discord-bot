@@ -9,7 +9,7 @@ Bot Discord de type gacha Pokemon en TypeScript. Les joueurs capturent des Pokem
 | `/capture [generation] [zone]` | Capture un Pokemon aleatoire dans une zone |
 | `/raid <pokemon> [type]` | Inscrit un Pokemon pour defendre le centre de recherche lors du raid |
 | `/pokedex` | Affiche ton Pokedex pagine avec progression et saison |
-| `/stats` | Classement des joueurs, top Pokemon et top raids |
+| `/leaderboard` | Classement des joueurs, top shiny, top level, top raids et top Pokemon |
 | `/pity` | Affiche le compteur de pity |
 | `/get-rarity` | Affiche les taux de rarete (normal et booste) |
 | `/get-shiny-rate` | Affiche le taux d'apparition des shinys |
@@ -72,6 +72,8 @@ BUTTON_TIMEOUT=120000
 RAID_SCHEDULER_MODE=debug
 RAID_ANNOUNCE_CHANNEL_ID=
 RAID_NEXT_ZONE_CHANCE=60
+RAID_START_HOUR=00 12 * * *
+RAID_END_HOUR=00 20 * * *
 ```
 
 ---
