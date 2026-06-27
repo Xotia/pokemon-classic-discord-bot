@@ -49,6 +49,14 @@ export async function execute(interaction: ChatInputCommandInteraction) {
       .filter(p => p.uniques > 0)
       .sort((a, b) => b.uniques - a.uniques);
 
+    const seasonRanking = Object.values(players)
+      .map((p: Player) => {
+        const seasonCount = Object.values(p.captureList ?? {}).filter(s => s.capturedInCurrentSeason).length;
+        return { name: p.name, seasonCount, percent: Math.round((seasonCount / totalAvailable) * 100) };
+      })
+      .filter(p => p.seasonCount > 0)
+      .sort((a, b) => b.seasonCount - a.seasonCount);
+
     const raidRanking = Object.values(players)
       .filter((p: Player) => (p.raidWins ?? 0) > 0)
       .sort((a: Player, b: Player) => (b.raidWins ?? 0) - (a.raidWins ?? 0))
@@ -105,6 +113,15 @@ export async function execute(interaction: ChatInputCommandInteraction) {
                 `${i + 1} - **${p.name}** — ${p.uniques}/${totalAvailable} (${p.percent}%)`
               ).join('\n')
             : 'Aucun Pokémon capturé pour le moment',
+          inline: false
+        },
+        {
+          name: '🌟 **TOP POKÉDEX SAISON**',
+          value: seasonRanking.length
+            ? seasonRanking.slice(0, 10).map((p, i) =>
+                `${i + 1} - **${p.name}** — ${p.seasonCount}/${totalAvailable} (${p.percent}%)`
+              ).join('\n')
+            : 'Aucune capture cette saison',
           inline: false
         },
         {
