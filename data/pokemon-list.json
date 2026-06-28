@@ -11853,5 +11853,48 @@
       "dark-woods"
     ],
     "generation": 2
+  },
+  {
+    "id": 4096,
+    "name": "MissingNo",
+    "spawnRate": 0,
+    "catchRateRaw": 0,
+    "image": "https://i.imgur.com/XeimGfi.gif",
+    "shinyImage": "https://i.imgur.com/XeimGfi.gif"
+  },
+  {
+    "id": 4097,
+    "name": "GUIIIZA96",
+    "rarity": "unknown",
+    "image": "https://i.imgur.com/sbFhO1I.png",
+    "shinyImage": "https://i.imgur.com/sbFhO1I.png"
+  },
+  {
+    "id": 4098,
+    "name": "Gwall",
+    "rarity": "unknown",
+    "image": "https://i.imgur.com/OiGPo3Y.png",
+    "shinyImage": "https://i.imgur.com/OiGPo3Y.png"
+  },
+  {
+    "id": 4099,
+    "name": "Karnute",
+    "rarity": "unknown",
+    "image": "https://i.imgur.com/W4K64tj.png",
+    "shinyImage": "https://i.imgur.com/W4K64tj.png"
+  },
+  {
+    "id": 4100,
+    "name": "TheQueenJuno",
+    "rarity": "unknown",
+    "image": "https://i.imgur.com/MkheLLM.png",
+    "shinyImage": "https://i.imgur.com/MkheLLM.png"
+  },
+  {
+    "id": 4101,
+    "name": "Xotia",
+    "rarity": "unknown",
+    "image": "https://i.imgur.com/8HQZ75J.png",
+    "shinyImage": "https://i.imgur.com/8HQZ75J.png"
   }
 ]

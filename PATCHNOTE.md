@@ -1,3 +1,23 @@
+# Mise à jour 3.3.0 — Filtrage par type dans l'inscription raid
+
+---
+
+## Autocomplete `/raid` amélioré
+
+Quand tu choisis un **type d'attaque** avant de sélectionner ton Pokémon, la liste de suggestions ne propose plus que les **Pokémon qui possèdent ce type** parmi ceux capturés cette saison.
+
+### Exemple
+
+1. `/raid` → sélectionne le type **Eau**
+2. Tape une lettre dans `pokemon_name`
+3. Seuls tes Pokémon de type Eau capturés cette saison apparaissent (Carapuce, Tortank, Stari…)
+
+Si aucun type n'est sélectionné, le comportement reste inchangé : tous tes Pokémon de la saison sont proposés.
+
+---
+
+---
+
 # Mise à jour 3.2.0 — Génération dynamique de la liste Pokémon
 
 ---

@@ -77,7 +77,12 @@ client.on(Events.InteractionCreate, async (interaction) => {
 
       if (focusedOption.name === "pokemon_name") {
         try {
-          const search = focusedOption.value.toLowerCase();
+          const search = focusedOption.value.trim().toLowerCase();
+          const typeOption = interaction.options.data.find(o => o.name === "type");
+          const rawType = (typeOption?.value as string | undefined) ?? null;
+          const selectedType = rawType
+            ? Object.entries(TYPE_LABELS).find(([key, label]) => key === rawType || label === rawType)?.[0] ?? rawType
+            : null;
           const players = await readPlayers(path.resolve("data/players.json"));
           const player = players[interaction.user.id];
 
@@ -95,6 +100,7 @@ client.on(Events.InteractionCreate, async (interaction) => {
           const suggestions = pokemonList
             .filter((p) => seasonPokemonIds.includes(p.id))
             .filter((p) => p.name.toLowerCase().includes(search))
+            .filter((p) => !selectedType || p.types.includes(selectedType))
             .slice(0, 25)
             .map((p) => ({ name: p.name, value: p.name }));
 

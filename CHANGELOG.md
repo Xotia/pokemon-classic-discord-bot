@@ -3,6 +3,20 @@
 Tous les changements notables du **Pokémon Classic Discord Bot** sont documentés ici.  
 Format basé sur [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+# [3.3.0] - 2026-06-28
+
+## Ajouts
+
+### Filtrage par type dans l'autocomplete de `/raid`
+- Lorsqu'un type d'attaque est sélectionné avant de choisir le Pokémon, l'autocomplete du paramètre **`pokemon_name`** ne propose désormais que les Pokémon possédant ce type (en plus du filtre saison en cours).
+- Fonctionne dès la première lettre saisie dans le champ `pokemon_name`.
+
+## Modifications
+- Numéro de version : 3.2.1 → 3.3.0.
+
+---
+
+
 # [3.2.1] - 2026-06-27
 
 ## Suppressions
