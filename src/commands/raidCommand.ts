@@ -97,7 +97,8 @@ export async function raidCommand(interaction: ChatInputCommandInteraction) {
     }
 
     if (
-      message.includes("Aucun raid n'est actuellement ouvert aux inscriptions.")
+      message.includes("Aucun raid n'est actuellement ouvert aux inscriptions.") ||
+      message.includes("La période d'inscription au raid est terminée.")
     ) {
       await interaction.editReply(
         "Aucun raid n'est actuellement ouvert aux inscriptions.",
