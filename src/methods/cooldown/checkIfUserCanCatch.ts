@@ -3,7 +3,8 @@ import { displayCannotCatchMessage } from '../message/displayCannotCatchMessage'
 import { updatePlayer } from '../../utils/jsonPlayers';
 import logger from '../../utils/logger';
 
-const CATCH_COOLDOWN_MS = parseFloat(process.env.COOLDOWN || '30') * 60 * 1000; // Minutes → ms
+export const CATCH_COOLDOWN_MS = parseFloat(process.env.COOLDOWN || '30') * 60 * 1000; // Minutes → ms
+export const NO_POKEMON_COOLDOWN_MS = 10 * 60 * 1000; // Cooldown réduit quand aucun Pokémon n'est trouvé
 
 export async function checkIfUserCanCatch(
   interaction: ChatInputCommandInteraction,

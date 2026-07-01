@@ -3,6 +3,18 @@
 Tous les changements notables du **Pokémon Classic Discord Bot** sont documentés ici.  
 Format basé sur [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+# [3.4.1] - 2026-07-01
+
+## Corrections
+- Cooldown réduit à **10 minutes** (au lieu du cooldown complet) lorsqu'une capture ne trouve aucun Pokémon.
+- Le message "Aucun Pokémon trouvé" est désormais tiré aléatoirement parmi une dizaine de phrases RP respectant le lore du Centre AURORA, au lieu d'un message fixe.
+
+## Modifications
+- Numéro de version : 3.4.0 → 3.4.1.
+
+---
+
+
 # [3.4.0] - 2026-07-01
 
 ## Ajouts

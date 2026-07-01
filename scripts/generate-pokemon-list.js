@@ -5,6 +5,11 @@ require("dotenv").config();
 const dataDir = path.resolve(__dirname, "..", "data");
 const output = path.join(dataDir, "pokemon-list.json");
 
+if (fs.existsSync(output)) {
+  console.log(`[generate-pokemon-list] pokemon-list.json existe déjà, génération ignorée.`);
+  process.exit(0);
+}
+
 const defaultFiles = ["pokemon-gen1.json", "pokemon-gen2.json"];
 const extraFiles = process.env.EXTRA_POKEMON_FILES
   ? process.env.EXTRA_POKEMON_FILES.split(",").map((f) => f.trim()).filter(Boolean)

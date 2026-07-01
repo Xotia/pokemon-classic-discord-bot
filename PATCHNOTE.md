@@ -1,3 +1,19 @@
+# Mise à jour 3.4.1 — Correction du cooldown sans capture
+
+---
+
+## Cooldown réduit en cas d'échec
+
+Quand `/capture` ne trouve aucun Pokémon, le cooldown appliqué est maintenant de **10 minutes** au lieu du cooldown complet.
+
+## Messages RP variés
+
+Le message "Aucun Pokémon trouvé" est désormais tiré aléatoirement parmi une dizaine de phrases respectant le lore du Centre AURORA, plutôt qu'un texte toujours identique.
+
+---
+
+---
+
 # Mise à jour 3.4.0 — ID et types affichés à la capture
 
 ---
