@@ -1,3 +1,23 @@
+# Mise à jour 3.4.0 — ID et types affichés à la capture
+
+---
+
+## Plus d'infos sur tes captures
+
+L'embed affiché lors d'une capture indique maintenant le **numéro de Pokédex** et le ou les **types** du Pokémon, juste en dessous du message de capture.
+
+### Exemple
+
+```
+Xotia a capturé Bulbizarre !
+🆔 N°1 • Plante / Poison
+📍 Zone : Forêt
+```
+
+---
+
+---
+
 # Mise à jour 3.3.0 — Filtrage par type dans l'inscription raid
 
 ---

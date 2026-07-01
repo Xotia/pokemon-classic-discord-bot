@@ -3,6 +3,19 @@
 Tous les changements notables du **Pokémon Classic Discord Bot** sont documentés ici.  
 Format basé sur [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+# [3.4.0] - 2026-07-01
+
+## Ajouts
+
+### ID et types affichés lors d'une capture
+- L'embed de capture affiche désormais le **numéro de Pokédex** et le ou les **types** du Pokémon capturé, sous le message de capture.
+
+## Modifications
+- Numéro de version : 3.3.0 → 3.4.0.
+
+---
+
+
 # [3.3.0] - 2026-06-28
 
 ## Ajouts
