@@ -70,6 +70,19 @@ function addHours(date: Date, hours: number): string {
   return new Date(date.getTime() + hours * 60 * 60 * 1000).toISOString();
 }
 
+function parseCronHour(cronExpression: string): number {
+  const hourField = cronExpression.trim().split(/\s+/)[1];
+  const hour = Number(hourField);
+  return Number.isFinite(hour) ? hour : 0;
+}
+
+function getRegistrationDurationHours(): number {
+  const startHour = parseCronHour(process.env.RAID_START_HOUR || "00 12 * * *");
+  const endHour = parseCronHour(process.env.RAID_END_HOUR || "00 20 * * *");
+  const diff = endHour - startHour;
+  return diff > 0 ? diff : diff + 24;
+}
+
 function createRaidId(): string {
   return `raid-${Date.now()}`;
 }
@@ -225,7 +238,7 @@ export async function generateRaidState(): Promise<RaidState> {
     status: "registration",
     createdAt,
     registrationOpensAt: createdAt,
-    registrationClosesAt: addHours(now, 8),
+    registrationClosesAt: addHours(now, getRegistrationDurationHours()),
     resolvedAt: null,
     generation: generationNumber,
     zone: zone.label,

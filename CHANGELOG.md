@@ -3,6 +3,18 @@
 Tous les changements notables du **Pokémon Classic Discord Bot** sont documentés ici.  
 Format basé sur [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+# [3.4.2] - 2026-07-01
+
+## Corrections
+- La fin des inscriptions au raid (`registrationClosesAt`) était calculée avec une durée fixe de 8h, indépendante des variables `RAID_START_HOUR` / `RAID_END_HOUR`. Sur un serveur avec une fenêtre de raid différente de 8h (ex : 12h → 22h), les inscriptions se fermaient avant la résolution réelle du raid, provoquant une erreur `La période d'inscription au raid est terminée.` lors d'un `/raid` encore valide.
+- La durée d'inscription est désormais calculée dynamiquement à partir de `RAID_END_HOUR - RAID_START_HOUR`, garantissant que la fin des inscriptions correspond à l'heure de fin de raid configurée.
+
+## Modifications
+- Numéro de version : 3.4.1 → 3.4.2.
+
+---
+
+
 # [3.4.1] - 2026-07-01
 
 ## Corrections

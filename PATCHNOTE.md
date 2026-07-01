@@ -1,3 +1,15 @@
+# Mise à jour 3.4.2 — Correction de la fin d'inscription aux raids
+
+---
+
+## Fin des inscriptions alignée sur la fin du raid
+
+Sur les serveurs où l'heure de fin de raid (`RAID_END_HOUR`) a été personnalisée, les inscriptions pouvaient se fermer **avant** la fin réelle du raid, provoquant une erreur au moment de faire `/raid`. La fin des inscriptions est maintenant calculée à partir de l'écart entre `RAID_START_HOUR` et `RAID_END_HOUR`, donc elle correspond toujours à l'heure de fin de raid configurée.
+
+---
+
+---
+
 # Mise à jour 3.4.1 — Correction du cooldown sans capture
 
 ---
