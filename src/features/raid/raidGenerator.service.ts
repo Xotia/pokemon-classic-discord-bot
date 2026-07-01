@@ -66,21 +66,25 @@ function nowIso(): string {
   return new Date().toISOString();
 }
 
-function addHours(date: Date, hours: number): string {
-  return new Date(date.getTime() + hours * 60 * 60 * 1000).toISOString();
+function addMinutes(date: Date, minutes: number): string {
+  return new Date(date.getTime() + minutes * 60 * 1000).toISOString();
 }
 
-function parseCronHour(cronExpression: string): number {
-  const hourField = cronExpression.trim().split(/\s+/)[1];
+function parseCronMinuteHour(cronExpression: string): { hour: number; minute: number } {
+  const [minuteField, hourField] = cronExpression.trim().split(/\s+/);
+  const minute = Number(minuteField);
   const hour = Number(hourField);
-  return Number.isFinite(hour) ? hour : 0;
+  return {
+    hour: Number.isFinite(hour) ? hour : 0,
+    minute: Number.isFinite(minute) ? minute : 0,
+  };
 }
 
-function getRegistrationDurationHours(): number {
-  const startHour = parseCronHour(process.env.RAID_START_HOUR || "00 12 * * *");
-  const endHour = parseCronHour(process.env.RAID_END_HOUR || "00 20 * * *");
-  const diff = endHour - startHour;
-  return diff > 0 ? diff : diff + 24;
+function getRegistrationDurationMinutes(): number {
+  const start = parseCronMinuteHour(process.env.RAID_START_HOUR || "00 12 * * *");
+  const end = parseCronMinuteHour(process.env.RAID_END_HOUR || "00 20 * * *");
+  const diff = end.hour * 60 + end.minute - (start.hour * 60 + start.minute);
+  return diff > 0 ? diff : diff + 24 * 60;
 }
 
 function createRaidId(): string {
@@ -238,7 +242,7 @@ export async function generateRaidState(): Promise<RaidState> {
     status: "registration",
     createdAt,
     registrationOpensAt: createdAt,
-    registrationClosesAt: addHours(now, getRegistrationDurationHours()),
+    registrationClosesAt: addMinutes(now, getRegistrationDurationMinutes()),
     resolvedAt: null,
     generation: generationNumber,
     zone: zone.label,
