@@ -16,3 +16,19 @@ for (const file of files) {
     console.log(`[init-data] ${file} already exists, skipping`);
   }
 }
+
+const emptyJsonFiles = {
+  "players.json": {},
+  "stats.json": { totalCaptures: 0, totalShinyCaptures: 0, playerTotals: {}, pokemonsTotals: {}, rarity: {} },
+};
+
+for (const [file, defaultContent] of Object.entries(emptyJsonFiles)) {
+  const target = path.join(dataDir, file);
+
+  if (!fs.existsSync(target)) {
+    fs.writeFileSync(target, JSON.stringify(defaultContent, null, 2));
+    console.log(`[init-data] Created ${file} (empty)`);
+  } else {
+    console.log(`[init-data] ${file} already exists, skipping`);
+  }
+}
