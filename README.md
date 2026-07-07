@@ -34,8 +34,7 @@ npm run start
 |---|---|
 | `npm run dev` | Lance le bot avec `ts-node` (developpement) |
 | `npm run generate-pokemon-list` | Genere `pokemon-list.json` a partir des fichiers source |
-| `npm run init-data` | Cree `zones_to_unlock.json` et `zones_unlocked.json` a partir des fichiers `.default.json` si absents |
-| `npm run build` | Init data + genere la liste Pokemon + compile le TypeScript dans `dist/` |
+| `npm run build` | Genere la liste Pokemon + compile le TypeScript dans `dist/` |
 | `npm run deploy` | Enregistre les commandes slash aupres de Discord |
 | `npm run start` | Lance le bot compile (production) |
 
@@ -60,7 +59,6 @@ npm run start
 DISCORD_TOKEN=
 APPLICATION_ID=
 PUBLIC_KEY=
-GUILD_ID=
 ADMIN_ID=
 
 # Gameplay
@@ -70,9 +68,8 @@ PITY_THRESHOLD=10
 POKEMON_PER_PAGE=20
 BUTTON_TIMEOUT=120000
 
-# Raid
+# Raid (horaires/reglages partages entre tous les serveurs)
 RAID_SCHEDULER_MODE=debug
-RAID_ANNOUNCE_CHANNEL_ID=
 RAID_NEXT_ZONE_CHANCE=60
 MAIN_CHANNEL_ID=
 RAID_START_HOUR=00 12 * * *
@@ -81,6 +78,12 @@ RAID_END_HOUR=00 20 * * *
 # Pokemon list generation (optionnel)
 # EXTRA_POKEMON_FILES=othermons.json
 ```
+
+Le bot est multi-serveurs : chaque serveur Discord est declare dans
+`data/guilds.json` (`guildId`, `name`, `raidAnnounceChannelId`), maintenu a
+la main. Les fichiers de donnees (`players.json`, `stats.json`, zones,
+`raid.json`) sont crees automatiquement par serveur dans
+`data/guilds/{guildId}/` au demarrage du bot.
 
 ---
 

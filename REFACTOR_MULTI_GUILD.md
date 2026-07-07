@@ -449,7 +449,7 @@ serveur (voir liste ci-dessous, tout est fait).
 - [x] Mis à jour `README.md` en cohérence (table des commandes npm, section
   variables d'environnement) — pas listé explicitement dans le plan mais
   serait devenu incohérent sinon.
-- [ ] Commit.
+- [x] Commit.
 
 ### Étape 8 — Déploiement global des commandes
 
