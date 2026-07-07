@@ -1,5 +1,5 @@
 import logger from "../../utils/logger";
-import { updatePlayer } from "../../utils/jsonPlayers";
+import { savePlayerData } from "../player/savePlayerData";
 import { CATCH_COOLDOWN_MS, NO_POKEMON_COOLDOWN_MS } from "../cooldown/checkIfUserCanCatch";
 
 const NO_POKEMON_MESSAGES = [
@@ -21,6 +21,7 @@ function getRandomNoPokemonMessage(): string {
 
 export async function handleNoPokemonFound(
   interaction: any,
+  player: any,
   rarity: string,
 ) {
   logger.info(`😞 Aucun Pokémon ${rarity} disponible`);
@@ -29,9 +30,8 @@ export async function handleNoPokemonFound(
   // on le recale pour ne laisser qu'un cooldown de NO_POKEMON_COOLDOWN_MS
   // (sans jamais dépasser le cooldown normal, utile si COOLDOWN est réduit en dev).
   const reducedCooldown = Math.min(CATCH_COOLDOWN_MS, NO_POKEMON_COOLDOWN_MS);
-  await updatePlayer(interaction.user.id, (player) => {
-    player.lastCapture = Date.now() - (CATCH_COOLDOWN_MS - reducedCooldown);
-  });
+  player.lastCapture = Date.now() - (CATCH_COOLDOWN_MS - reducedCooldown);
+  await savePlayerData(interaction, player);
 
   await interaction.editReply(getRandomNoPokemonMessage());
 }

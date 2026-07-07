@@ -31,7 +31,7 @@ export async function captureCommand(interaction: any) {
   );
 
   if (!pokemonCatched) {
-    await handleNoPokemonFound(interaction, rarity);
+    await handleNoPokemonFound(interaction, player, rarity);
     return;
   }
 
