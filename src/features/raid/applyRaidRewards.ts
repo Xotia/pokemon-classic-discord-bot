@@ -1,5 +1,5 @@
 import { promises as fs } from "node:fs";
-import path from "node:path";
+import { playersDb } from "../../config/paths";
 import { Player, PlayersRecord } from "../../types/Player";
 import { RaidState } from "../../types/raid/RaidState";
 import { RaidReward } from "../../types/raid/RaidReward";
@@ -9,22 +9,20 @@ import { addAllStats } from "../../methods/stats/addAllStats";
 import { getPokemonById } from "../../methods/pokemon/getPokemonById";
 import logger from "../../utils/logger";
 
-const PLAYERS_PATH = path.resolve("data/players.json");
-
-async function readPlayers(): Promise<PlayersRecord> {
-  const raw = await fs.readFile(PLAYERS_PATH, "utf-8");
+async function readPlayers(guildId: string): Promise<PlayersRecord> {
+  const raw = await fs.readFile(playersDb(guildId), "utf-8");
   return JSON.parse(raw) as PlayersRecord;
 }
 
-async function writePlayers(players: PlayersRecord): Promise<void> {
-  await fs.writeFile(PLAYERS_PATH, JSON.stringify(players, null, 2), "utf-8");
+async function writePlayers(guildId: string, players: PlayersRecord): Promise<void> {
+  await fs.writeFile(playersDb(guildId), JSON.stringify(players, null, 2), "utf-8");
 }
 
 function pickRandomElement<T>(items: T[]): T {
   return items[Math.floor(Math.random() * items.length)];
 }
 
-export async function applyRaidRewards(state: RaidState): Promise<RaidReward> {
+export async function applyRaidRewards(state: RaidState, guildId: string): Promise<RaidReward> {
   if (!state.result?.success || !state.raidPokemon) {
     logger.info("[RAID] Raid perdu, aucune récompense appliquée.");
     return { xp: 0, raidWin: false, zoneUnlocked: null, capturedByUserId: null, capturedByPlayerName: null };
@@ -33,7 +31,7 @@ export async function applyRaidRewards(state: RaidState): Promise<RaidReward> {
   const bossHp = state.raidPokemon.baseStats.hp;
   const xpReward = bossHp * 10;
 
-  const players = await readPlayers();
+  const players = await readPlayers(guildId);
   const participantIds = state.defenders.map((d) => d.userId);
 
   for (const userId of participantIds) {
@@ -60,7 +58,7 @@ export async function applyRaidRewards(state: RaidState): Promise<RaidReward> {
 
     const pokemonData = getPokemonById(state.raidPokemon.id);
     if (pokemonData) {
-      await addAllStats(pokemonData, false, luckyPlayer);
+      await addAllStats(guildId, pokemonData, false, luckyPlayer);
     }
 
     logger.info(
@@ -68,7 +66,7 @@ export async function applyRaidRewards(state: RaidState): Promise<RaidReward> {
     );
   }
 
-  await writePlayers(players);
+  await writePlayers(guildId, players);
 
   return {
     xp: xpReward,

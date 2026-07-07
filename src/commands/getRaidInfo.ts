@@ -6,17 +6,22 @@ import { buildRaidTeamEmbed } from '../features/raid/buildRaidTeamEmbed';
 
 export async function getRaidInfo(interaction: any) {
     await interaction.deferReply();
-    createProfileIfNeeded(interaction);
+
+    const guildId = interaction.guildId;
+    if (!guildId) {
+        return interaction.editReply("Cette commande n'est disponible que sur un serveur.");
+    }
+    createProfileIfNeeded(interaction, guildId);
 
     logger.info('🏓 Exécution de /get-raid-info pour', interaction.user.globalName || interaction.user.username);
 
-    const player = await getPlayer(interaction.user.id);
+    const player = await getPlayer(guildId, interaction.user.id);
     if (!player) {
         logger.info(`Joueur avec l'ID ${interaction.user.id} non trouvé.`);
         return false;
     }
 
-    const state = await loadRaidState();
+    const state = await loadRaidState(guildId);
     const embed = await buildRaidTeamEmbed(state, interaction.guild);
     await interaction.editReply({ embeds: [embed] });
 }

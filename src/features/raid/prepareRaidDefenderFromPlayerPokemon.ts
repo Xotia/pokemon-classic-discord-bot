@@ -1,6 +1,7 @@
 import { PlayersRecord } from "../../types/Player";
 import { promises as fs } from "node:fs";
 import path from "node:path";
+import { playersDb } from "../../config/paths";
 import { Pokemon } from "../../types/Pokemon";
 import { getRandomPokemonType } from "../../methods/pokemon/getRandomPokemonType";
 import { RegisterRaidDefenderParams } from "../../types/raid/RegisterRaidDefenderParams";
@@ -23,10 +24,11 @@ export async function readPokemonList(
  * Prépare un RegisterRaidDefenderParams à partir du Pokédex du joueur.
  */
 export async function prepareRaidDefenderFromPlayerPokemon(
+  guildId: string,
   discordUserId: string,
   pokemonId: number,
   attackTypeOverride?: string,
-  playersFilePath = path.resolve("data/players.json"),
+  playersFilePath = playersDb(guildId),
   pokemonListFilePath = path.resolve("data/pokemon-list.json"),
 ): Promise<RegisterRaidDefenderParams> {
   const players = await readPlayers(playersFilePath);

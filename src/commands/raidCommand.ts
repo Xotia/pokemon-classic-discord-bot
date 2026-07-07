@@ -12,7 +12,12 @@ export async function raidCommand(interaction: ChatInputCommandInteraction) {
   } catch {
     return;
   }
-  createProfileIfNeeded(interaction);
+  const guildId = interaction.guildId;
+  if (!guildId) {
+    await interaction.editReply("Cette commande n'est disponible que sur un serveur.");
+    return;
+  }
+  createProfileIfNeeded(interaction, guildId);
   const userName = interaction.user.username || interaction.user.tag;
 
   const pokemonName = interaction.options.getString("pokemon_name", true);
@@ -27,12 +32,13 @@ export async function raidCommand(interaction: ChatInputCommandInteraction) {
 
   try {
     const prepared = await prepareRaidDefenderFromPlayerPokemon(
+      guildId,
       interaction.user.id,
       pokemon.id,
       attackTypeOption,
     );
 
-    await registerRaidDefender(prepared);
+    await registerRaidDefender(guildId, prepared);
 
     const confirmationEmbed = buildEmbed(
       "Inscription au raid confirmée",

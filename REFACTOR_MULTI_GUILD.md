@@ -404,8 +404,7 @@ serveur (voir liste ci-dessous, tout est fait).
   - Logguer un événement `raid_scheduler_started` par serveur (avec le
     `guildId`) pour pouvoir confirmer au démarrage que N paires de cron
     jobs sont bien enregistrées.
-- [ ] Commit. (Étape 1, 3, 4 et 5 restent aussi à commit — le tout est
-  toujours dans l'arbre de travail, rien n'a encore été committé.)
+- [x] Commit.
 
 ### Étape 6 — Câblage final + nettoyage des anciennes constantes
 

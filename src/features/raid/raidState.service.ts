@@ -1,26 +1,23 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
-import path from 'node:path';
 import { createEmptyRaidState } from './createEmptyRaidState';
 import { RaidState } from '../../types/raid/RaidState';
+import { guildDir, raidStateDb } from '../../config/paths';
 
-const DATA_DIR = path.resolve(process.cwd(), 'data');
-const RAID_STATE_FILE = path.join(DATA_DIR, 'raid.json');
-
-export async function ensureRaidStateFile(): Promise<void> {
-  await mkdir(DATA_DIR, { recursive: true });
+export async function ensureRaidStateFile(guildId: string): Promise<void> {
+  await mkdir(guildDir(guildId), { recursive: true });
 
   try {
-    await readFile(RAID_STATE_FILE, 'utf-8');
+    await readFile(raidStateDb(guildId), 'utf-8');
   } catch {
-    await saveRaidState(createEmptyRaidState());
+    await saveRaidState(guildId, createEmptyRaidState());
   }
 }
 
-export async function loadRaidState(): Promise<RaidState> {
-  await ensureRaidStateFile();
+export async function loadRaidState(guildId: string): Promise<RaidState> {
+  await ensureRaidStateFile(guildId);
 
   try {
-    const raw = await readFile(RAID_STATE_FILE, 'utf-8');
+    const raw = await readFile(raidStateDb(guildId), 'utf-8');
     const parsed = JSON.parse(raw) as Partial<RaidState>;
 
     return {
@@ -36,15 +33,13 @@ export async function loadRaidState(): Promise<RaidState> {
   }
 }
 
-export async function saveRaidState(state: RaidState): Promise<void> {
-  await mkdir(DATA_DIR, { recursive: true });
-  await writeFile(RAID_STATE_FILE, JSON.stringify(state, null, 2), 'utf-8');
+export async function saveRaidState(guildId: string, state: RaidState): Promise<void> {
+  await mkdir(guildDir(guildId), { recursive: true });
+  await writeFile(raidStateDb(guildId), JSON.stringify(state, null, 2), 'utf-8');
 }
 
-export async function resetRaidState(): Promise<RaidState> {
+export async function resetRaidState(guildId: string): Promise<RaidState> {
   const emptyState = createEmptyRaidState();
-  await saveRaidState(emptyState);
+  await saveRaidState(guildId, emptyState);
   return emptyState;
 }
-
-export { RAID_STATE_FILE };

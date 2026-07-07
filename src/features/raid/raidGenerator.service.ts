@@ -4,6 +4,7 @@ import path from "node:path";
 import { raidConfig } from "../../config/raid.config.js";
 import logger from "../../utils/logger.js";
 import { RaidState } from "../../types/raid/RaidState.js";
+import { zonesUnlockedDb, zonesToUnlockDb } from "../../config/paths.js";
 
 type ZoneEntry = {
   id: string;
@@ -40,10 +41,7 @@ type GenerationKey = "gen1" | "gen2";
 type ZonesDb = Record<GenerationKey, ZoneEntry[]>;
 type UnlockZonesDb = Record<GenerationKey, ZoneEntry[]>;
 
-const DATA_DIR = path.resolve("data");
-const POKEMON_LIST_PATH = path.join(DATA_DIR, "pokemon-list.json");
-const ZONES_TO_UNLOCK_PATH = path.join(DATA_DIR, "zones_to_unlock.json");
-const ZONES_PATH = path.join(DATA_DIR, "zones_unlocked.json");
+const POKEMON_LIST_PATH = path.join(path.resolve("data"), "pokemon-list.json");
 
 async function readJsonFile<T>(filePath: string): Promise<T> {
   const raw = await readFile(filePath, "utf-8");
@@ -213,10 +211,10 @@ function extractResistances(
   );
 }
 
-export async function generateRaidState(): Promise<RaidState> {
+export async function generateRaidState(guildId: string): Promise<RaidState> {
   const pokemonDb = await readJsonFile<PokemonEntry[]>(POKEMON_LIST_PATH);
-  const unlockDb = await readJsonFile<UnlockZonesDb>(ZONES_TO_UNLOCK_PATH);
-  const availableZonesDb = await readJsonFile<ZonesDb>(ZONES_PATH);
+  const unlockDb = await readJsonFile<UnlockZonesDb>(zonesToUnlockDb(guildId));
+  const availableZonesDb = await readJsonFile<ZonesDb>(zonesUnlockedDb(guildId));
 
   const generationNumber = randomInt(1, 2);
   const generationKey = toGenerationKey(generationNumber);
