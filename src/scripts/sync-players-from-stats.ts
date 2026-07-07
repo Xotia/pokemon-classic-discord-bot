@@ -1,7 +1,19 @@
 #!/usr/bin/env tsx
 import fs from "fs/promises";
 import { getPokemonName } from "../methods/pokemon/getPokemonName";
-import { PLAYERS_DB, STATS_DB } from "../config/paths";
+import { playersDb, statsDb } from "../config/paths";
+
+function parseGuildId(argv: string[]): string {
+  const index = argv.indexOf("--guildId");
+  const guildId = index !== -1 ? argv[index + 1] : undefined;
+
+  if (!guildId) {
+    console.error("Usage: tsx src/scripts/sync-players-from-stats.ts --guildId <id>");
+    process.exit(1);
+  }
+
+  return guildId;
+}
 
 // Chemins
 
@@ -18,13 +30,13 @@ interface PokemonStats {
   pokemonPerPlayer: Record<string, Record<string, number>>;
 }
 
-async function syncPlayersFromStats() {
+async function syncPlayersFromStats(guildId: string) {
   console.log("🔄 Synchronisation players.json avec stats...");
 
-  const playersRaw = await fs.readFile(PLAYERS_DB, "utf-8");
+  const playersRaw = await fs.readFile(playersDb(guildId), "utf-8");
   const players: PlayersFile = JSON.parse(playersRaw);
 
-  const statsRaw = await fs.readFile(STATS_DB, "utf-8");
+  const statsRaw = await fs.readFile(statsDb(guildId), "utf-8");
   const stats: PokemonStats = JSON.parse(statsRaw);
 
   let updatedCount = 0;
@@ -51,8 +63,8 @@ async function syncPlayersFromStats() {
     }
   }
 
-  await fs.writeFile(PLAYERS_DB, JSON.stringify(players, null, 2), "utf-8");
+  await fs.writeFile(playersDb(guildId), JSON.stringify(players, null, 2), "utf-8");
   console.log(`✅ ${updatedCount} captures mises à jour !`);
 }
 
-syncPlayersFromStats().catch(console.error);
+syncPlayersFromStats(parseGuildId(process.argv.slice(2))).catch(console.error);

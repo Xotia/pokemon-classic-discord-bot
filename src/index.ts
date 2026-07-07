@@ -20,6 +20,8 @@ import { readPlayers, readPokemonList } from "./features/raid/prepareRaidDefende
 import { TYPE_LABELS } from "./config/typeLabels";
 import path from "node:path";
 import { getRaidInfo } from "./commands/getRaidInfo";
+import { playersDb } from "./config/paths";
+import { loadGuildRegistry, getGuildConfig, ensureGuildDataFiles } from "./config/guilds";
 
 type Zone = { id: string; label: string };
 
@@ -36,11 +38,18 @@ startRaidScheduler(client);
 // Event ready
 client.once(Events.ClientReady, (c: typeof client) => {
   logger.info(`Bot connecté ! Connecté en tant que ${c.user?.tag}`);
+
+  for (const guild of loadGuildRegistry()) {
+    ensureGuildDataFiles(guild.guildId);
+    logger.info(`[GUILDS] Données prêtes pour ${guild.name} (${guild.guildId}).`);
+  }
 });
 
 client.login(process.env.DISCORD_TOKEN);
 
 client.on(Events.InteractionCreate, async (interaction) => {
+  if (!interaction.guildId || !getGuildConfig(interaction.guildId)) return;
+
   if (interaction.isAutocomplete()) {
     if (interaction.commandName === "raid") {
       const focusedOption = interaction.options.getFocused(true);
@@ -77,13 +86,17 @@ client.on(Events.InteractionCreate, async (interaction) => {
 
       if (focusedOption.name === "pokemon_name") {
         try {
+          if (!interaction.guildId) {
+            await interaction.respond([]);
+            return;
+          }
           const search = focusedOption.value.trim().toLowerCase();
           const typeOption = interaction.options.data.find(o => o.name === "type");
           const rawType = (typeOption?.value as string | undefined) ?? null;
           const selectedType = rawType
             ? Object.entries(TYPE_LABELS).find(([key, label]) => key === rawType || label === rawType)?.[0] ?? rawType
             : null;
-          const players = await readPlayers(path.resolve("data/players.json"));
+          const players = await readPlayers(playersDb(interaction.guildId));
           const player = players[interaction.user.id];
 
           if (!player?.captureList) {
@@ -116,9 +129,13 @@ client.on(Events.InteractionCreate, async (interaction) => {
       const focusedOption = interaction.options.getFocused(true);
 
       if (focusedOption.name === "zone") {
+        if (!interaction.guildId) {
+          await interaction.respond([]);
+          return;
+        }
         const generation = interaction.options.getString("generation");
         const search = focusedOption.value.toLowerCase();
-        const unlockedZones = loadUnlockedZones();
+        const unlockedZones = loadUnlockedZones(interaction.guildId);
 
         const pool: Zone[] =
           generation && generation in unlockedZones

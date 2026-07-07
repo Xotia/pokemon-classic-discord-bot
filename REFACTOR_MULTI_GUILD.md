@@ -435,7 +435,7 @@ serveur (voir liste ci-dessous, tout est fait).
   grep -rn "PLAYERS_DB\|STATS_DB\|RAID_STATE_FILE\|ZONES_UNLOCKED_PATH\|ZONES_TO_UNLOCK_PATH" src/
   ```
   → confirmé vide.
-- [ ] Commit.
+- [x] Commit.
 
 ### Étape 7 — Nettoyage config/scripts
 
