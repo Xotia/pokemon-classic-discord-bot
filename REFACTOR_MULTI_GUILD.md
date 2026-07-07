@@ -456,7 +456,7 @@ serveur (voir liste ci-dessous, tout est fait).
 - [x] `src/deploy-commands.ts` : remplacé
   `Routes.applicationGuildCommands(APPLICATION_ID, GUILD_ID)` par
   `Routes.applicationCommands(APPLICATION_ID)`.
-- [ ] Commit séparé (changement opérationnel, facile à revert isolément si
+- [x] Commit séparé (changement opérationnel, facile à revert isolément si
   la propagation globale pose souci).
 
 ### Étape 9 — Migration des données de production

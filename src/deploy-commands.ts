@@ -108,10 +108,7 @@ const rest = new REST({ version: "10" }).setToken(process.env.DISCORD_TOKEN!);
   try {
     logger.info("Déploiement des commandes...");
     await rest.put(
-      Routes.applicationGuildCommands(
-        process.env.APPLICATION_ID!,
-        process.env.GUILD_ID!,
-      ),
+      Routes.applicationCommands(process.env.APPLICATION_ID!),
       { body: commands },
     );
     logger.info("Commandes déployées.");
