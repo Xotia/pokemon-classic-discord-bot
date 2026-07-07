@@ -8,11 +8,12 @@ export const NO_POKEMON_COOLDOWN_MS = 10 * 60 * 1000; // Cooldown réduit quand 
 
 export async function checkIfUserCanCatch(
   interaction: ChatInputCommandInteraction,
+  guildId: string,
 ): Promise<boolean> {
   const userId = interaction.user.id;
   const now = Date.now();
 
-  const players = await import('../../utils/jsonPlayers.js').then(m => m.readPlayers());
+  const players = await import('../../utils/jsonPlayers.js').then(m => m.readPlayers(guildId));
   const lastCapture = players[userId]?.lastCapture;
 
   if (lastCapture && now - lastCapture < CATCH_COOLDOWN_MS) {
@@ -22,7 +23,7 @@ export async function checkIfUserCanCatch(
     return false;
   }
 
-  await updatePlayer(userId, (player) => {
+  await updatePlayer(guildId, userId, (player) => {
     player.lastCapture = now;
   });
 

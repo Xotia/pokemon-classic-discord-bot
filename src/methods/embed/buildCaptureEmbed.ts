@@ -8,6 +8,7 @@ import { buildEmbed } from "./buildEmbed";
 
 export function buildCaptureEmbedPayload(
   interaction: any,
+  guildId: string,
   player: any,
   pokemonCatched: any,
   isShiny: boolean,
@@ -28,6 +29,7 @@ export function buildCaptureEmbedPayload(
   );
 
   const description = buildDescriptionForPokemonCaptureEmbed({
+    guildId,
     pokemon: pokemonCatched,
     isShiny,
     isNewPokemon: !isInPokedex,

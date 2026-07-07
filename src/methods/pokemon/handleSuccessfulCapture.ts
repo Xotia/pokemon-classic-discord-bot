@@ -10,6 +10,7 @@ import { getCapturedPokemonHp } from "./getCapturedPokemonHp";
 
 export async function handleSuccessfulCapture(
   interaction: any,
+  guildId: string,
   player: any,
   pokemonCatched: any,
   rarity: string,
@@ -30,6 +31,7 @@ export async function handleSuccessfulCapture(
   player.level = xpResult.level;
 
   const { embed, footer, isInPokedex } = buildCapturedPokemonEmbed({
+    guildId,
     player,
     playerId: interaction.user.id,
     pokemon: pokemonCatched,
@@ -51,6 +53,6 @@ export async function handleSuccessfulCapture(
 
   registerCapturedPokemon(player, pokemonCatched.id, isShiny);
 
-  await addAllStats(pokemonCatched, isShiny, player);
-  savePlayerData(interaction, player);
+  await addAllStats(guildId, pokemonCatched, isShiny, player);
+  savePlayerData(interaction, guildId, player);
 }

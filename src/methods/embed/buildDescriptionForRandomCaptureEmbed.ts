@@ -2,12 +2,13 @@ import { BuildDescriptionParams } from "../../types/Params";
 import { loadUnlockedZones } from "../../utils/loadUnlockedZones";
 import { getTypeLabel } from "../../config/typeLabels";
 
-function getZoneLabel(zoneId: string): string {
-  const allZones = Object.values(loadUnlockedZones()).flat();
+function getZoneLabel(guildId: string, zoneId: string): string {
+  const allZones = Object.values(loadUnlockedZones(guildId)).flat();
   return allZones.find((z) => z.id === zoneId)?.label ?? zoneId;
 }
 
 export function buildDescriptionForPokemonCaptureEmbed({
+  guildId,
   pokemon,
   isShiny,
   isNewPokemon,
@@ -19,7 +20,7 @@ export function buildDescriptionForPokemonCaptureEmbed({
   return [
     `**${trainerName}** a capturé ${pokemon.name}${isShiny ? " ✨" : ""} !`,
     `🆔 N°${pokemon.id}${typesLabel ? ` • ${typesLabel}` : ""}`,
-    zone ? `📍 Zone : **${getZoneLabel(zone)}**` : "",
+    zone ? `📍 Zone : **${getZoneLabel(guildId, zone)}**` : "",
     isNewPokemon ? `🆕 C'est la première fois que ${trainerName} capture un ${pokemon.name}.` : "",
   ]
     .filter(Boolean)

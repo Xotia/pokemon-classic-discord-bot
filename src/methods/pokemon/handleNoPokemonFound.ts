@@ -21,6 +21,7 @@ function getRandomNoPokemonMessage(): string {
 
 export async function handleNoPokemonFound(
   interaction: any,
+  guildId: string,
   rarity: string,
 ) {
   logger.info(`😞 Aucun Pokémon ${rarity} disponible`);
@@ -29,7 +30,7 @@ export async function handleNoPokemonFound(
   // on le recale pour ne laisser qu'un cooldown de NO_POKEMON_COOLDOWN_MS
   // (sans jamais dépasser le cooldown normal, utile si COOLDOWN est réduit en dev).
   const reducedCooldown = Math.min(CATCH_COOLDOWN_MS, NO_POKEMON_COOLDOWN_MS);
-  await updatePlayer(interaction.user.id, (player) => {
+  await updatePlayer(guildId, interaction.user.id, (player) => {
     player.lastCapture = Date.now() - (CATCH_COOLDOWN_MS - reducedCooldown);
   });
 

@@ -1,4 +1,5 @@
 export type BuildDescriptionParams = {
+  guildId: string;
   pokemon: any;
   isShiny: boolean;
   isNewPokemon: boolean;
@@ -16,6 +17,7 @@ export type EditFooterParams = {
 };
 
 export type BuildCapturedPokemonEmbedParams = {
+  guildId: string;
   player: any;
   playerId: string;
   pokemon: any;

@@ -8,6 +8,7 @@ import { buildEmbed } from "./buildEmbed";
 import { BuildCapturedPokemonEmbedParams } from "../../types/Params";
 
 export function buildCapturedPokemonEmbed({
+  guildId,
   player,
   playerId,
   pokemon,
@@ -26,6 +27,7 @@ export function buildCapturedPokemonEmbed({
   const title = buildTitleForRandomCaptureEmbed(isShiny, pokemon, color);
 
   const baseDescription = buildDescriptionForPokemonCaptureEmbed({
+    guildId,
     pokemon,
     isShiny,
     isNewPokemon: !isInPokedex,

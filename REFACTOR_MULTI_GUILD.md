@@ -303,7 +303,7 @@ Threader `guildId` à travers toute la chaîne de capture :
 - [x] `src/utils/loadUnlockedZones.ts`
 - [x] `src/commands/captureCommand.ts` (+ garde-fou guildId manquant + `ensureGuildDataFiles`)
 - [x] Autocomplete `/capture` dans `src/index.ts`
-- [ ] Commit.
+- [x] Commit.
 
 Threading en cascade non prévu explicitement dans la liste ci-dessus mais
 rendu obligatoire par TypeScript (les fonctions partagées `getPlayer`,
@@ -327,7 +327,9 @@ Réutilise ce qui a été threadé à l'étape 3 :
 - [x] `src/commands/cheatCommand.ts` + `src/methods/player/getPlayerIdByName.ts`
   (devient `getPlayerIdByName(guildId, name)`, cherche uniquement dans ce
   serveur)
-- [ ] Commit.
+- [x] Commit. (groupé avec l'étape 3 dans un seul commit — même chaîne de
+  fonctions partagées, forcé par le compilateur, voir note de cascade
+  ci-dessus)
 
 Fait en même temps qu'étape 3 (forcé par le compilateur, mêmes fonctions
 partagées) : `src/commands/getRaidInfo.ts` et `src/commands/raidCommand.ts`

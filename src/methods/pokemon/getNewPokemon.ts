@@ -2,7 +2,7 @@ import { Pokemon } from '../../types/Pokemon';
 import { getRandomPokemonFromRarity } from './getRandomPokemonFromRarity';
 import { isThisPokemonSameAsLastCapture } from './isThisPokemonSameAsLastCapture';
 
-export async function getNewPokemon(rarity: string, generation: string, zone: string): Promise<Pokemon | null> {
+export async function getNewPokemon(guildId: string, rarity: string, generation: string, zone: string): Promise<Pokemon | null> {
     const MAX_ATTEMPTS = 10;
     let randomPokemonFromRarity;
 
@@ -12,7 +12,7 @@ export async function getNewPokemon(rarity: string, generation: string, zone: st
             console.warn(`⚠️ Aucun Pokémon trouvé pour la rareté "${rarity}"`);
             return null;
         }
-        if (!(await isThisPokemonSameAsLastCapture(randomPokemonFromRarity.id))) {
+        if (!(await isThisPokemonSameAsLastCapture(guildId, randomPokemonFromRarity.id))) {
             return randomPokemonFromRarity;
         }
     }

@@ -1,9 +1,9 @@
-import { STATS_DB } from "../../config/paths";
+import { statsDb } from "../../config/paths";
 import { promises as fs } from "fs";
 import logger from "../../utils/logger";
 
-export async function addPokemonInTotalCaptures(): Promise<void> {
-  const raw = await fs.readFile(STATS_DB, "utf-8");
+export async function addPokemonInTotalCaptures(guildId: string): Promise<void> {
+  const raw = await fs.readFile(statsDb(guildId), "utf-8");
   const stats = JSON.parse(raw) as { totalCaptures?: number };
 
   const current =
@@ -11,5 +11,5 @@ export async function addPokemonInTotalCaptures(): Promise<void> {
   logger.info(`Mise à jour des captures totales: totalCaptures = ${current}}`);
   stats.totalCaptures = current + 1;
   logger.info(`totalCaptures = -> ${current + 1}`);
-  await fs.writeFile(STATS_DB, JSON.stringify(stats, null, 2), "utf-8");
+  await fs.writeFile(statsDb(guildId), JSON.stringify(stats, null, 2), "utf-8");
 }

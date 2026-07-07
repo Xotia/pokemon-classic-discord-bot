@@ -14,11 +14,12 @@ const BUTTON_TIMEOUT = parseInt(process.env.BUTTON_TIMEOUT || "120000", 10);
 
 export async function displayPokedex(
   interaction: ChatInputCommandInteraction,
+  guildId: string,
 ): Promise<void> {
   await interaction.deferReply();
 
   const userId = interaction.user.id;
-  const player = getPlayer(userId) as Player | null;
+  const player = getPlayer(guildId, userId) as Player | null;
 
   if (!player || Object.keys(player.captureList ?? {}).length === 0) {
     await interaction.editReply("Tu n'as encore capturé aucun Pokémon.");

@@ -15,8 +15,14 @@ export async function execute(interaction: ChatInputCommandInteraction) {
   try {
     await interaction.deferReply();
 
-    const stats = await loadPokemonStats();
-    const players = await readPlayers();
+    const guildId = interaction.guildId;
+    if (!guildId) {
+      await interaction.editReply("Cette commande n'est disponible que sur un serveur.");
+      return;
+    }
+
+    const stats = await loadPokemonStats(guildId);
+    const players = await readPlayers(guildId);
     const pokemonList = JSON.parse(await fs.readFile(POKEMON_DB, 'utf-8'));
     const totalAvailable = Object.keys(pokemonList).length;
 
@@ -83,7 +89,7 @@ export async function execute(interaction: ChatInputCommandInteraction) {
           name: '🥇 **TOP JOUEURS**',
           value: playerRanking.length
             ? playerRanking.slice(0, 10).map((p, i) =>
-                `${i + 1} - **${p.name.padEnd(15)}** ${p.total} | ${getUniquePokemonCaughtByPlayer(p.name)} différents`
+                `${i + 1} - **${p.name.padEnd(15)}** ${p.total} | ${getUniquePokemonCaughtByPlayer(guildId, p.name)} différents`
               ).join('\n')
             : 'Aucune stat disponible',
           inline: false

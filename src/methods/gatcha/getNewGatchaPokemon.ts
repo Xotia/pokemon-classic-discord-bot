@@ -7,6 +7,7 @@ import { getPokemonByRarity } from "../rarity/getPokemonByRarity";
 import { rollRarity } from "../rarity/rollRarity";
 
 export async function getNewGatchaPokemon(
+  guildId: string,
   player: any,
   generation: string,
   zone: string,
@@ -16,7 +17,7 @@ export async function getNewGatchaPokemon(
 
   resetPityCounterIfNeeded(player, currentRarity);
 
-  let result = await getPokemonByRarity(generation, zone, currentRarity);
+  let result = await getPokemonByRarity(guildId, generation, zone, currentRarity);
 
   while (!result.pokemonCatched) {
     logger.info(
@@ -47,7 +48,7 @@ export async function getNewGatchaPokemon(
     }
 
     currentRarity = downgradedRarity;
-    result = await getPokemonByRarity(generation, zone, currentRarity);
+    result = await getPokemonByRarity(guildId, generation, zone, currentRarity);
   }
 
   return result;

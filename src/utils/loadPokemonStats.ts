@@ -1,6 +1,6 @@
 import { promises as fs } from 'fs';
 
-import { STATS_DB } from '../config/paths';
+import { statsDb } from '../config/paths';
 
 export interface PokemonStats {
     totalCaptures: number;
@@ -18,10 +18,10 @@ export interface PokemonStats {
     pokemonsTotals: Record<string, number>;
 }
 
-export async function loadPokemonStats(): Promise<PokemonStats> {
-  
+export async function loadPokemonStats(guildId: string): Promise<PokemonStats> {
+
   try {
-    const raw = await fs.readFile(STATS_DB, 'utf-8');
+    const raw = await fs.readFile(statsDb(guildId), 'utf-8');
     const fileData = JSON.parse(raw);
     
     return {

@@ -1,9 +1,9 @@
 import fs from "fs";
-import { PLAYERS_DB } from "../../config/paths";
+import { playersDb } from "../../config/paths";
 import logger from "../../utils/logger";
 import { Player } from "../../types/Player";
 
-export function createProfileIfNeeded(interaction: any) {
+export function createProfileIfNeeded(interaction: any, guildId: string) {
   if (!interaction || !interaction.user) {
     logger.info(`❌ Interaction ou interaction.user manquant !`);
     console.error("❌ Interaction ou interaction.user manquant !", interaction);
@@ -11,7 +11,7 @@ export function createProfileIfNeeded(interaction: any) {
   }
   const userId = interaction.user.id;
   const userName = interaction.user.globalName || interaction.user.username;
-  const playerData = JSON.parse(fs.readFileSync(PLAYERS_DB, "utf-8")) as Record<
+  const playerData = JSON.parse(fs.readFileSync(playersDb(guildId), "utf-8")) as Record<
     string,
     Player
   >;
@@ -26,7 +26,7 @@ export function createProfileIfNeeded(interaction: any) {
       xp: 0,
       level: 1,
     };
-    fs.writeFileSync(PLAYERS_DB, JSON.stringify(playerData, null, 2), "utf-8");
+    fs.writeFileSync(playersDb(guildId), JSON.stringify(playerData, null, 2), "utf-8");
   } else {
     logger.info(
       `Le profil pour le joueur ${userName} (ID: ${userId}) existe déjà.`,

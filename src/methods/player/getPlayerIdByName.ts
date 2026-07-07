@@ -1,9 +1,9 @@
 import fs from "fs";
-import { PLAYERS_DB } from "../../config/paths";
+import { playersDb } from "../../config/paths";
 
-export function getPlayerIdByName(name: string): string | null {
+export function getPlayerIdByName(guildId: string, name: string): string | null {
   try {
-    const allPlayers = JSON.parse(fs.readFileSync(PLAYERS_DB, "utf8"));
+    const allPlayers = JSON.parse(fs.readFileSync(playersDb(guildId), "utf8"));
 
     const normalizedName = name.trim().toLowerCase();
 

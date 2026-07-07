@@ -4,11 +4,16 @@ import logger from '../utils/logger';
 
 export async function getPity(interaction: any) {
     await interaction.deferReply();
-    createProfileIfNeeded(interaction);
+
+    const guildId = interaction.guildId;
+    if (!guildId) {
+        return interaction.editReply("Cette commande n'est disponible que sur un serveur.");
+    }
+    createProfileIfNeeded(interaction, guildId);
 
     logger.info('🏓 Exécution de /pity pour', interaction.user.globalName || interaction.user.username);
 
-    const player = await getPlayer(interaction.user.id);
+    const player = await getPlayer(guildId, interaction.user.id);
     if (!player) {
         logger.info(`Joueur avec l'ID ${interaction.user.id} non trouvé.`);
         return false;

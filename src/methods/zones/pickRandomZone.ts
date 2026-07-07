@@ -2,8 +2,8 @@ import { loadUnlockedZones } from "../../utils/loadUnlockedZones";
 
 type Zone = { id: string; label: string };
 
-export function pickRandomZone(generation: string): Zone {
-  const typedZones = loadUnlockedZones();
+export function pickRandomZone(guildId: string, generation: string): Zone {
+  const typedZones = loadUnlockedZones(guildId);
 
   const pool: Zone[] =
     generation === 'gen1' ? typedZones.gen1 ?? [] :
