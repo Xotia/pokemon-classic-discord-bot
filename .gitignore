@@ -57,6 +57,9 @@ data/pokemon-list.json
 # Data - custom (uploaded manually per server)
 data/othermons.json
 
+# Data - registre des serveurs (guildId visibles, ne doit pas être commit)
+data/guilds.json
+
 # Data - examples
 data/players_example.json
 data/pokemon-list_example.json

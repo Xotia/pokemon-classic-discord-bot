@@ -86,11 +86,14 @@ RAID_END_HOUR=00 20 * * *
 
 Le bot est multi-serveurs : chaque serveur Discord est declare dans
 `data/guilds.json` (`guildId`, `name`, `raidAnnounceChannelId`), maintenu a
-la main. Les fichiers de donnees (`players.json`, `stats.json`, zones,
-`raid.json`) sont crees automatiquement par serveur dans
-`data/guilds/{guildId}/` au demarrage du bot, et les logs applicatifs dans
-`logs/guilds/{guildId}/bot.log` (les evenements sans contexte serveur, comme
-le demarrage du bot, restent dans `logs/bot.log`).
+la main. Ce fichier n'est **pas commit** (il contient des `guildId` reels,
+voir `.gitignore`) : partir de `data/guilds.json.example`, le copier en
+`data/guilds.json` et le remplir avec vos propres serveurs. Les fichiers de
+donnees (`players.json`, `stats.json`, zones, `raid.json`) sont crees
+automatiquement par serveur dans `data/guilds/{guildId}/` au demarrage du
+bot, et les logs applicatifs dans `logs/guilds/{guildId}/bot.log` (les
+evenements sans contexte serveur, comme le demarrage du bot, restent dans
+`logs/bot.log`).
 
 ### Reglages par serveur
 

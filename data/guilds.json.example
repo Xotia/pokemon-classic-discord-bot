@@ -1,0 +1,16 @@
+{
+  "guilds": [
+    {
+      "guildId": "111111111111111111",
+      "name": "Serveur A",
+      "raidAnnounceChannelId": "222222222222222222",
+      "cooldownMinutes": 5,
+      "shinyRate": 50
+    },
+    {
+      "guildId": "333333333333333333",
+      "name": "Serveur B",
+      "raidAnnounceChannelId": "444444444444444444"
+    }
+  ]
+}
