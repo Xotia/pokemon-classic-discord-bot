@@ -1,6 +1,7 @@
 import { createProfileIfNeeded } from '../methods/player/createProfileIfNeeded';
 import { getPlayer } from '../utils/loadPlayer';
-import logger from '../utils/logger';
+import { getLoggerForGuild } from '../utils/logger';
+import { getPityThreshold } from '../config/guildSettings';
 
 export async function getPity(interaction: any) {
     await interaction.deferReply();
@@ -10,6 +11,8 @@ export async function getPity(interaction: any) {
         return interaction.editReply("Cette commande n'est disponible que sur un serveur.");
     }
     createProfileIfNeeded(interaction, guildId);
+    const logger = getLoggerForGuild(guildId);
+    const pityThreshold = getPityThreshold(guildId);
 
     logger.info('🏓 Exécution de /pity pour', interaction.user.globalName || interaction.user.username);
 
@@ -22,8 +25,8 @@ export async function getPity(interaction: any) {
         player.pityCounter = 0;
         logger.info(`Initialisation du compteur de pity pour le joueur ${player.name}`);
     }else{
-        logger.info(`Compteur de pity actuel pour le joueur ${player.name} : ${player.pityCounter}/${process.env.PITY_THRESHOLD}`);
+        logger.info(`Compteur de pity actuel pour le joueur ${player.name} : ${player.pityCounter}/${pityThreshold}`);
     }
-    const pityTime = player.pityCounter >= parseInt(process.env.PITY_THRESHOLD || '10');
-    return interaction.editReply(`Compteur de pity actuel : ${player.pityCounter}/${process.env.PITY_THRESHOLD} - Prochaine capture boostée : ${pityTime ? 'Oui' : 'Non'}`);
+    const pityTime = player.pityCounter >= pityThreshold;
+    return interaction.editReply(`Compteur de pity actuel : ${player.pityCounter}/${pityThreshold} - Prochaine capture boostée : ${pityTime ? 'Oui' : 'Non'}`);
 }

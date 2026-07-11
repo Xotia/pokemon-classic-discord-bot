@@ -1,10 +1,10 @@
 import { readFile } from "node:fs/promises";
-import path from "node:path";
 
-import { raidConfig } from "../../config/raid.config.js";
-import logger from "../../utils/logger.js";
+import { getLoggerForGuild } from "../../utils/logger.js";
 import { RaidState } from "../../types/raid/RaidState.js";
 import { zonesUnlockedDb, zonesToUnlockDb } from "../../config/paths.js";
+import { getRaidNextZoneChance, getRaidStartHour, getRaidEndHour } from "../../config/guildSettings.js";
+import { getPokemonCatalog } from "../../utils/pokemonCatalog.js";
 
 type ZoneEntry = {
   id: string;
@@ -41,8 +41,6 @@ type GenerationKey = "gen1" | "gen2";
 type ZonesDb = Record<GenerationKey, ZoneEntry[]>;
 type UnlockZonesDb = Record<GenerationKey, ZoneEntry[]>;
 
-const POKEMON_LIST_PATH = path.join(path.resolve("data"), "pokemon-list.json");
-
 async function readJsonFile<T>(filePath: string): Promise<T> {
   const raw = await readFile(filePath, "utf-8");
   return JSON.parse(raw) as T;
@@ -78,9 +76,9 @@ function parseCronMinuteHour(cronExpression: string): { hour: number; minute: nu
   };
 }
 
-function getRegistrationDurationMinutes(): number {
-  const start = parseCronMinuteHour(process.env.RAID_START_HOUR || "00 12 * * *");
-  const end = parseCronMinuteHour(process.env.RAID_END_HOUR || "00 20 * * *");
+function getRegistrationDurationMinutes(guildId: string): number {
+  const start = parseCronMinuteHour(getRaidStartHour(guildId));
+  const end = parseCronMinuteHour(getRaidEndHour(guildId));
   const diff = end.hour * 60 + end.minute - (start.hour * 60 + start.minute);
   return diff > 0 ? diff : diff + 24 * 60;
 }
@@ -93,9 +91,9 @@ function toGenerationKey(generationNumber: number): GenerationKey {
   return `gen${generationNumber}` as GenerationKey;
 }
 
-function shouldUseNextZone(): boolean {
+function shouldUseNextZone(guildId: string): boolean {
   const roll = randomInt(1, 100);
-  return roll <= raidConfig.nextZoneChance;
+  return roll <= getRaidNextZoneChance(guildId);
 }
 
 function pickRandomAvailableZone(
@@ -117,17 +115,20 @@ function pickRaidZone(
   generationKey: GenerationKey,
   unlockDb: UnlockZonesDb,
   availableZonesDb: ZonesDb,
+  guildId: string,
 ): ZoneEntry {
+  const logger = getLoggerForGuild(guildId);
+  const nextZoneChance = getRaidNextZoneChance(guildId);
   const currentZones = availableZonesDb[generationKey] ?? [];
   const unlockableZones = unlockDb[generationKey] ?? [];
   const currentZoneIds = new Set(currentZones.map((zone) => zone.id));
   const nextZone = unlockableZones.find((zone) => !currentZoneIds.has(zone.id));
 
-  if (nextZone && shouldUseNextZone()) {
+  if (nextZone && shouldUseNextZone(guildId)) {
     logger.info(
       {
         generationKey,
-        nextZoneChance: raidConfig.nextZoneChance,
+        nextZoneChance,
         selectedZoneId: nextZone.id,
         selectedZoneType: "next",
       },
@@ -146,7 +147,7 @@ function pickRaidZone(
     logger.info(
       {
         generationKey,
-        nextZoneChance: raidConfig.nextZoneChance,
+        nextZoneChance,
         selectedZoneId: selectedZone.id,
         selectedZoneType: "available",
       },
@@ -160,7 +161,7 @@ function pickRaidZone(
     logger.info(
       {
         generationKey,
-        nextZoneChance: raidConfig.nextZoneChance,
+        nextZoneChance,
         selectedZoneId: nextZone.id,
         selectedZoneType: "next-fallback",
       },
@@ -212,14 +213,14 @@ function extractResistances(
 }
 
 export async function generateRaidState(guildId: string): Promise<RaidState> {
-  const pokemonDb = await readJsonFile<PokemonEntry[]>(POKEMON_LIST_PATH);
+  const pokemonDb = getPokemonCatalog(guildId) as unknown as PokemonEntry[];
   const unlockDb = await readJsonFile<UnlockZonesDb>(zonesToUnlockDb(guildId));
   const availableZonesDb = await readJsonFile<ZonesDb>(zonesUnlockedDb(guildId));
 
   const generationNumber = randomInt(1, 2);
   const generationKey = toGenerationKey(generationNumber);
 
-  const zone = pickRaidZone(generationKey, unlockDb, availableZonesDb);
+  const zone = pickRaidZone(generationKey, unlockDb, availableZonesDb, guildId);
   const pokemonsInZone = getPokemonsForZone(zone.id, pokemonDb);
 
   if (pokemonsInZone.length === 0) {
@@ -240,7 +241,7 @@ export async function generateRaidState(guildId: string): Promise<RaidState> {
     status: "registration",
     createdAt,
     registrationOpensAt: createdAt,
-    registrationClosesAt: addMinutes(now, getRegistrationDurationMinutes()),
+    registrationClosesAt: addMinutes(now, getRegistrationDurationMinutes(guildId)),
     resolvedAt: null,
     generation: generationNumber,
     zone: zone.label,

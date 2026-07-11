@@ -1,4 +1,4 @@
-import logger from "../../utils/logger";
+import { getLoggerForGuild } from "../../utils/logger";
 import { getNewGatchaPokemon } from "../gatcha/getNewGatchaPokemon";
 
 export async function tryCatchPokemon(
@@ -7,7 +7,7 @@ export async function tryCatchPokemon(
   generation: string,
   zone: string,
 ) {
-  logger.info(
+  getLoggerForGuild(guildId).info(
     `Tentative de capture dans la zone ${zone} de la génération ${generation}...`,
   );
 

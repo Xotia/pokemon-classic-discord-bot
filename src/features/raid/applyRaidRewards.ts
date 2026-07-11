@@ -7,7 +7,7 @@ import { addXp } from "../../methods/xp/xp";
 import { registerCapturedPokemon } from "../../methods/player/registerCapturedPokemon";
 import { addAllStats } from "../../methods/stats/addAllStats";
 import { getPokemonById } from "../../methods/pokemon/getPokemonById";
-import logger from "../../utils/logger";
+import { getLoggerForGuild } from "../../utils/logger";
 
 async function readPlayers(guildId: string): Promise<PlayersRecord> {
   const raw = await fs.readFile(playersDb(guildId), "utf-8");
@@ -23,6 +23,8 @@ function pickRandomElement<T>(items: T[]): T {
 }
 
 export async function applyRaidRewards(state: RaidState, guildId: string): Promise<RaidReward> {
+  const logger = getLoggerForGuild(guildId);
+
   if (!state.result?.success || !state.raidPokemon) {
     logger.info("[RAID] Raid perdu, aucune récompense appliquée.");
     return { xp: 0, raidWin: false, zoneUnlocked: null, capturedByUserId: null, capturedByPlayerName: null };
@@ -56,7 +58,7 @@ export async function applyRaidRewards(state: RaidState, guildId: string): Promi
     registerCapturedPokemon(luckyPlayer, state.raidPokemon.id, false);
     capturedByPlayerName = luckyPlayer.name;
 
-    const pokemonData = getPokemonById(state.raidPokemon.id);
+    const pokemonData = getPokemonById(guildId, state.raidPokemon.id);
     if (pokemonData) {
       await addAllStats(guildId, pokemonData, false, luckyPlayer);
     }

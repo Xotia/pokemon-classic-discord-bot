@@ -1,8 +1,9 @@
 import fs from 'node:fs/promises';
 import { statsDb } from '../../../config/paths';
-import logger from '../../../utils/logger';
+import { getLoggerForGuild } from '../../../utils/logger';
 
 export async function addRarityInPlayerStats(guildId: string, playerName: string, rarity: string): Promise<void> {
+    const logger = getLoggerForGuild(guildId);
     try {
         const raw = await fs.readFile(statsDb(guildId), 'utf-8');
         let stats = JSON.parse(raw);

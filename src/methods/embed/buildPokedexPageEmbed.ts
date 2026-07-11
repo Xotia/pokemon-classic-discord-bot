@@ -7,19 +7,20 @@ import { Player } from "../../types/Player";
 
 export async function buildPokedexPageEmbed(
   interaction: any,
+  guildId: string,
   player: Player,
   page: number,
   totalPages: number,
   pokemonPerPage: number,
 ) {
   const captureIds = getPokedexCaptureIds(player);
-  const totalPokemonNumber = getTotalPokemonNumber();
+  const totalPokemonNumber = getTotalPokemonNumber(guildId);
 
   const start = page * pokemonPerPage;
   const end = Math.min(start + pokemonPerPage, captureIds.length);
   const pageCaptureList = captureIds.slice(start, end);
 
-  const pokedex = await buildPokedex(pageCaptureList, player);
+  const pokedex = await buildPokedex(guildId, pageCaptureList, player);
 
   const trainerName =
     player.name || interaction.user.globalName || interaction.user.username;

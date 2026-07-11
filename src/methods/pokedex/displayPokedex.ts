@@ -8,15 +8,16 @@ import { getPokedexCaptureIds } from "./getPokedexCaptureIds";
 import { buildPokedexPageEmbed } from "../embed/buildPokedexPageEmbed";
 import { buildPokedexButtons } from "./buildPokedexButtons";
 import { buildDisabledPokedexButtons } from "./buildDisabledPokedexButtons";
-
-const POKEMON_PER_PAGE = parseInt(process.env.POKEMON_PER_PAGE || "20", 10);
-const BUTTON_TIMEOUT = parseInt(process.env.BUTTON_TIMEOUT || "120000", 10);
+import { getPokemonPerPage, getButtonTimeoutMs } from "../../config/guildSettings";
 
 export async function displayPokedex(
   interaction: ChatInputCommandInteraction,
   guildId: string,
 ): Promise<void> {
   await interaction.deferReply();
+
+  const POKEMON_PER_PAGE = getPokemonPerPage(guildId);
+  const BUTTON_TIMEOUT = getButtonTimeoutMs(guildId);
 
   const userId = interaction.user.id;
   const player = getPlayer(guildId, userId) as Player | null;
@@ -34,6 +35,7 @@ export async function displayPokedex(
     embeds: [
       await buildPokedexPageEmbed(
         interaction,
+        guildId,
         player,
         currentPage,
         totalPages,
@@ -81,6 +83,7 @@ export async function displayPokedex(
       embeds: [
         await buildPokedexPageEmbed(
           interaction,
+          guildId,
           player,
           currentPage,
           totalPages,

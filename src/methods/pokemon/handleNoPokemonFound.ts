@@ -1,6 +1,7 @@
-import logger from "../../utils/logger";
+import { getLoggerForGuild } from "../../utils/logger";
 import { updatePlayer } from "../../utils/jsonPlayers";
-import { CATCH_COOLDOWN_MS, NO_POKEMON_COOLDOWN_MS } from "../cooldown/checkIfUserCanCatch";
+import { NO_POKEMON_COOLDOWN_MS } from "../cooldown/checkIfUserCanCatch";
+import { getCooldownMs } from "../../config/guildSettings";
 
 const NO_POKEMON_MESSAGES = [
   "📡 Les capteurs du Centre ne détectent aucune signature Pokémon dans cette zone. Silence radio complet.",
@@ -24,14 +25,15 @@ export async function handleNoPokemonFound(
   guildId: string,
   rarity: string,
 ) {
-  logger.info(`😞 Aucun Pokémon ${rarity} disponible`);
+  getLoggerForGuild(guildId).info(`😞 Aucun Pokémon ${rarity} disponible`);
 
   // checkIfUserCanCatch a déjà posé lastCapture pour un cooldown complet,
   // on le recale pour ne laisser qu'un cooldown de NO_POKEMON_COOLDOWN_MS
   // (sans jamais dépasser le cooldown normal, utile si COOLDOWN est réduit en dev).
-  const reducedCooldown = Math.min(CATCH_COOLDOWN_MS, NO_POKEMON_COOLDOWN_MS);
+  const cooldownMs = getCooldownMs(guildId);
+  const reducedCooldown = Math.min(cooldownMs, NO_POKEMON_COOLDOWN_MS);
   await updatePlayer(guildId, interaction.user.id, (player) => {
-    player.lastCapture = Date.now() - (CATCH_COOLDOWN_MS - reducedCooldown);
+    player.lastCapture = Date.now() - (cooldownMs - reducedCooldown);
   });
 
   await interaction.editReply(getRandomNoPokemonMessage());

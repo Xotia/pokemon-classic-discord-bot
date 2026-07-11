@@ -15,6 +15,7 @@ export function buildCaptureEmbedPayload(
 ) {
   const spriteUrl = getPokemonSpriteUrl(isShiny, pokemonCatched);
   const isInPokedex = isPokemonInPokedex(
+    guildId,
     player,
     pokemonCatched.id,
     interaction.user.id,

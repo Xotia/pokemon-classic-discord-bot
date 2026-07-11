@@ -3,12 +3,11 @@ import {
   ChatInputCommandInteraction
 } from 'discord.js';
 
-import { promises as fs } from 'fs';
 import { loadPokemonStats } from '../utils/loadPokemonStats';
 import { getUniquePokemonCaughtByPlayer } from '../methods/player/getUniquePokemonCaughtByPlayer';
 import { readPlayers } from '../utils/jsonPlayers';
 import { Player } from '../types/Player';
-import { POKEMON_DB } from '../config/paths';
+import { getPokemonCatalog } from '../utils/pokemonCatalog';
 
 
 export async function execute(interaction: ChatInputCommandInteraction) {
@@ -23,8 +22,7 @@ export async function execute(interaction: ChatInputCommandInteraction) {
 
     const stats = await loadPokemonStats(guildId);
     const players = await readPlayers(guildId);
-    const pokemonList = JSON.parse(await fs.readFile(POKEMON_DB, 'utf-8'));
-    const totalAvailable = Object.keys(pokemonList).length;
+    const totalAvailable = getPokemonCatalog(guildId).length;
 
     const playerRanking = Object.entries(stats.pokemonPerPlayer || {})
       .map(([playerName, pokemons = {}]) => ({

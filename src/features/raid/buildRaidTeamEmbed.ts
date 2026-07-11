@@ -18,7 +18,7 @@ export async function buildRaidTeamEmbed(state: RaidState, guild: Guild) {
     );
   }
 
-  const pokemonFromRaid = await getPokemonByName(boss.name);
+  const pokemonFromRaid = await getPokemonByName(guild.id, boss.name);
   const spriteUrl = pokemonFromRaid
     ? getPokemonSpriteUrl(false, pokemonFromRaid)
     : "";

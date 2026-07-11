@@ -9,10 +9,10 @@ import { applyRaidRewards } from "./applyRaidRewards";
 import { unlockRaidZone } from "./unlockRaidZone";
 import { buildRaidResultEmbed } from "./buildRaidResultEmbed";
 import { loadGuildRegistry } from "../../config/guilds";
-import logger from "../../utils/logger";
+import logger, { getLoggerForGuild } from "../../utils/logger";
+import { getRaidSchedulerMode, getRaidStartHour, getRaidEndHour } from "../../config/guildSettings";
 
 const RAID_TIMEZONE = "Europe/Paris";
-const RAID_SCHEDULER_MODE = process.env.RAID_SCHEDULER_MODE ?? "debug";
 
 let discordClient: Client | null = null;
 
@@ -20,13 +20,16 @@ export async function sendRaidAnnouncement(
   client: Client,
   channelId: string,
   embed: EmbedBuilder,
+  guildId?: string,
 ): Promise<void> {
+  const scopedLogger = guildId ? getLoggerForGuild(guildId) : logger;
+
   if (!channelId || channelId.trim().length === 0) {
     throw new Error("[RAID] RAID_ANNOUNCE_CHANNEL_ID manquant.");
   }
 
   const channel = await client.channels.fetch(channelId).catch((error) => {
-    logger.error({
+    scopedLogger.error({
       message: "[RAID] Impossible de fetch le salon d'annonce",
       channelId,
       error: error instanceof Error ? error.message : String(error),
@@ -46,6 +49,7 @@ export async function sendRaidAnnouncement(
 }
 
 export async function openRaidRegistration(guildId: string, announceChannelId: string): Promise<void> {
+  const logger = getLoggerForGuild(guildId);
   const currentState = await loadRaidState(guildId);
 
   if (currentState.status === "registration") {
@@ -73,13 +77,14 @@ export async function openRaidRegistration(guildId: string, announceChannelId: s
     throw new Error("[RAID] Client Discord indisponible.");
   }
 
-  const embed = await buildRaidAnnouncementEmbed(newState);
-  await sendRaidAnnouncement(discordClient, announceChannelId, embed);
+  const embed = await buildRaidAnnouncementEmbed(newState, guildId);
+  await sendRaidAnnouncement(discordClient, announceChannelId, embed, guildId);
 
   logger.info(`[RAID] (${guildId}) Annonce envoyée dans le salon ${announceChannelId}.`);
 }
 
 export async function closeRaidAndResolve(guildId: string, announceChannelId: string): Promise<void> {
+  const logger = getLoggerForGuild(guildId);
   const currentState = await loadRaidState(guildId);
 
   if (currentState.status !== "registration") {
@@ -130,7 +135,7 @@ export async function closeRaidAndResolve(guildId: string, announceChannelId: st
   if (discordClient) {
     try {
       const resultEmbed = buildRaidResultEmbed(finalState);
-      await sendRaidAnnouncement(discordClient, announceChannelId, resultEmbed);
+      await sendRaidAnnouncement(discordClient, announceChannelId, resultEmbed, guildId);
       logger.info(`[RAID] (${guildId}) Message de résultat envoyé.`);
     } catch (error) {
       logger.error({
@@ -156,16 +161,18 @@ export async function closeRaidAndResolve(guildId: string, announceChannelId: st
 
 export function startRaidScheduler(client: Client): void {
   discordClient = client;
-  const raidStartHour = process.env.RAID_START_HOUR || "00 12 * * *";
-  const raidEndHour = process.env.RAID_END_HOUR || "00 20 * * *";
-
-  const openExpression =
-    RAID_SCHEDULER_MODE === "production" ? raidStartHour : "*/2 * * * *";
-
-  const resolveExpression =
-    RAID_SCHEDULER_MODE === "production" ? raidEndHour : "*/3 * * * *";
 
   for (const guild of loadGuildRegistry()) {
+    const schedulerMode = getRaidSchedulerMode(guild.guildId);
+    const raidStartHour = getRaidStartHour(guild.guildId);
+    const raidEndHour = getRaidEndHour(guild.guildId);
+
+    const openExpression =
+      schedulerMode === "production" ? raidStartHour : "*/2 * * * *";
+
+    const resolveExpression =
+      schedulerMode === "production" ? raidEndHour : "*/3 * * * *";
+
     cron.schedule(
       openExpression,
       () => {
@@ -182,11 +189,11 @@ export function startRaidScheduler(client: Client): void {
       { timezone: RAID_TIMEZONE },
     );
 
-    logger.info({
+    getLoggerForGuild(guild.guildId).info({
       event: "raid_scheduler_started",
       guildId: guild.guildId,
       guildName: guild.name,
-      mode: RAID_SCHEDULER_MODE,
+      mode: schedulerMode,
       timezone: RAID_TIMEZONE,
       openCron: openExpression,
       resolveCron: resolveExpression,

@@ -10,6 +10,7 @@ Bot Discord de type gacha Pokemon en TypeScript. Les joueurs capturent des Pokem
 | `/raid <pokemon> [type]` | Inscrit un Pokemon pour defendre le centre de recherche lors du raid |
 | `/pokedex` | Affiche ton Pokedex pagine avec progression et saison |
 | `/leaderboard` | Classement des joueurs, top shiny, top level, top raids et top Pokemon |
+| `/raid-squad` | Affiche l'etat du raid en cours et l'equipe de defense actuelle |
 | `/pity` | Affiche le compteur de pity |
 | `/get-rarity` | Affiche les taux de rarete (normal et booste) |
 | `/get-shiny-rate` | Affiche le taux d'apparition des shinys |
@@ -35,12 +36,15 @@ npm run start
 | `npm run dev` | Lance le bot avec `ts-node` (developpement) |
 | `npm run generate-pokemon-list` | Genere `pokemon-list.json` a partir des fichiers source |
 | `npm run build` | Genere la liste Pokemon + compile le TypeScript dans `dist/` |
-| `npm run deploy` | Enregistre les commandes slash aupres de Discord |
+| `npm run deploy` | Enregistre les commandes slash globalement aupres de Discord (propagation ~1h) |
+| `npm run deploy:dev` | Enregistre les commandes slash en guild-scoped sur les serveurs de `data/guilds.json` (propagation instantanee, pratique en dev/test) |
+| `npm run deploy:dev:clear` | Supprime les commandes guild-scoped (a faire une fois que le deploiement global a propage, pour eviter les doublons dans le picker Discord) |
 | `npm run start` | Lance le bot compile (production) |
 
 ### Workflow developpement
 ```bash
 npm run dev
+npm run deploy:dev
 ```
 
 ### Workflow production / mise a jour
@@ -61,17 +65,18 @@ APPLICATION_ID=
 PUBLIC_KEY=
 ADMIN_ID=
 
-# Gameplay
+# Gameplay - valeurs par defaut pour tous les serveurs (voir "Reglages par
+# serveur" plus bas pour les surcharger individuellement)
 SHINY_RATE=256
 COOLDOWN=30
 PITY_THRESHOLD=10
 POKEMON_PER_PAGE=20
 BUTTON_TIMEOUT=120000
+GENERATION_NUMBER=2
 
-# Raid (horaires/reglages partages entre tous les serveurs)
+# Raid - horaires/reglages par defaut (idem, surchargeables par serveur)
 RAID_SCHEDULER_MODE=debug
 RAID_NEXT_ZONE_CHANCE=60
-MAIN_CHANNEL_ID=
 RAID_START_HOUR=00 12 * * *
 RAID_END_HOUR=00 20 * * *
 
@@ -83,7 +88,61 @@ Le bot est multi-serveurs : chaque serveur Discord est declare dans
 `data/guilds.json` (`guildId`, `name`, `raidAnnounceChannelId`), maintenu a
 la main. Les fichiers de donnees (`players.json`, `stats.json`, zones,
 `raid.json`) sont crees automatiquement par serveur dans
-`data/guilds/{guildId}/` au demarrage du bot.
+`data/guilds/{guildId}/` au demarrage du bot, et les logs applicatifs dans
+`logs/guilds/{guildId}/bot.log` (les evenements sans contexte serveur, comme
+le demarrage du bot, restent dans `logs/bot.log`).
+
+### Reglages par serveur
+
+Chacune des variables de gameplay/raid ci-dessus peut etre surchargee pour
+un serveur precis en ajoutant le champ correspondant a son entree dans
+`data/guilds.json` : `shinyRate`, `cooldownMinutes`, `pityThreshold`,
+`pokemonPerPage`, `buttonTimeoutMs`, `generationNumber`,
+`raidSchedulerMode`, `raidNextZoneChance`, `raidStartHour`, `raidEndHour`.
+Un serveur sans surcharge utilise telles quelles les valeurs du `.env`
+(resolution centralisee dans `src/config/guildSettings.ts`). Exemple :
+
+```json
+{
+  "guilds": [
+    {
+      "guildId": "111111111111111111",
+      "name": "Serveur A",
+      "raidAnnounceChannelId": "222222222222222222",
+      "cooldownMinutes": 5,
+      "shinyRate": 50
+    },
+    {
+      "guildId": "333333333333333333",
+      "name": "Serveur B",
+      "raidAnnounceChannelId": "444444444444444444"
+    }
+  ]
+}
+```
+
+### Ajouter le bot sur un nouveau serveur
+
+1. Inviter le bot avec les scopes `bot` **et** `applications.commands` (sans
+   ce dernier, les commandes slash echouent avec `Missing Access`).
+2. Recuperer le `guildId` du serveur et l'ID du salon d'annonce de raid.
+3. Ajouter une entree dans `data/guilds.json`.
+4. Redemarrer le bot — `ensureGuildDataFiles` cree et seed automatiquement
+   `data/guilds/{guildId}/` au demarrage (`ClientReady`).
+5. Optionnel, pour tester sans attendre la propagation globale (~1h) :
+   `npm run deploy:dev`.
+
+### Scripts d'annonce ponctuelle
+
+`src/scripts/send-lore.js`, `send-lore-new-adventure.js`,
+`send-maintenance.ts`, `send-back-online.ts`, `send-quick-maintenance.ts`,
+`send-quick-back-online.ts` ne lisent plus un salon fixe depuis le `.env` —
+le salon cible se passe explicitement en argument, pour choisir sur quel
+serveur le message est envoye :
+
+```bash
+npx ts-node src/scripts/send-maintenance.ts --channelId <id-du-salon>
+```
 
 ---
 
@@ -92,7 +151,7 @@ la main. Les fichiers de donnees (`players.json`, `stats.json`, zones,
 ```
 src/
   commands/        Commandes slash Discord
-  config/          Configuration (paths, rarete, types, raid)
+  config/          Configuration (paths, guilds, guildSettings, rarete, types)
   features/raid/   Systeme de raid (generation, inscription, resolution, recompenses)
   methods/
     console-logs/  Logs de capture en console
@@ -108,22 +167,30 @@ src/
     stats/         Statistiques globales et par joueur
     xp/            Systeme XP et niveaux
     zones/         Zones de capture (resolution, generation, deblocage)
-  types/           Types TypeScript (Player, Pokemon, Raid, Zones)
-  utils/           Utilitaires runtime (logger, chargement fichiers)
-  scripts/         Scripts one-shot (migration, build donnees) - exclu du build
+  types/           Types TypeScript (Player, Pokemon, Raid, Zones, GuildRegistryEntry)
+  utils/           Utilitaires runtime (logger par serveur, chargement fichiers)
+  scripts/         Scripts one-shot (migration, annonces) - exclu du build
+  deploy-commands.ts       Deploiement global des commandes slash
+  deploy-commands-dev.ts   Deploiement guild-scoped (dev/test, instantane)
+  commandDefinitions.ts    Definitions des commandes slash (source commune aux deux scripts de deploiement)
 data/
+  guilds.json             Registre des serveurs (guildId, name, raidAnnounceChannelId, overrides de gameplay)
+  guilds/{guildId}/       Donnees par serveur, creees automatiquement au demarrage
+    players.json          Profils joueurs
+    stats.json             Statistiques globales et par joueur
+    zones_unlocked.json    Zones accessibles
+    zones_to_unlock.json   Zones a debloquer via les raids
+    raid.json              Etat du raid en cours
   pokemon-list.json       Base de donnees complete (genere au build)
   pokemon-gen1.json       Pokemon generation 1
   pokemon-gen2.json       Pokemon generation 2
-  othermons.json          Pokemon custom par serveur (optionnel, non versionne)
-  zones_unlocked.default.json   Zones accessibles (template initial, versionne)
-  zones_unlocked.json           Zones accessibles (copie de travail, non versionnee)
-  zones_to_unlock.default.json  Zones a debloquer via les raids (template initial, versionne)
-  zones_to_unlock.json          Zones a debloquer via les raids (copie de travail, non versionnee)
+  othermons.json          Pokemon custom (optionnel, non versionne)
+  zones_unlocked.default.json   Template de seed pour un nouveau serveur (versionne)
+  zones_to_unlock.default.json  Template de seed pour un nouveau serveur (versionne)
   zones_all.json          Toutes les zones
-  players.json            Profils joueurs (genere au runtime)
-  stats.json              Statistiques globales (genere au runtime)
-  raid.json               Etat du raid en cours (genere au runtime)
+logs/
+  bot.log                 Evenements sans contexte serveur (demarrage, etc.)
+  guilds/{guildId}/bot.log  Logs applicatifs de ce serveur (captures, raids, stats...)
 ```
 
 ---

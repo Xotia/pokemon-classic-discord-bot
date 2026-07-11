@@ -1,12 +1,13 @@
 import { getPokemonName } from "../pokemon/getPokemonName";
-import logger from "../../utils/logger";
+import { getLoggerForGuild } from "../../utils/logger";
 import { Player } from "../../types/Player";
 
 export async function buildPokedexEntry(
+  guildId: string,
   pokemonId: number,
   player: Player,
 ): Promise<string | null> {
-  const pokemonName = await getPokemonName(pokemonId);
+  const pokemonName = await getPokemonName(guildId, pokemonId);
   const stats = player.captureList?.[String(pokemonId)];
 
   if (!pokemonName || !stats) {
@@ -20,6 +21,7 @@ export async function buildPokedexEntry(
 }
 
 export async function buildPokedex(
+  guildId: string,
   captureList: number[],
   player: Player,
 ): Promise<string> {
@@ -30,11 +32,12 @@ export async function buildPokedex(
   const entries = await Promise.all(
     captureList
       .sort((a, b) => a - b)
-      .map((pokemonId) => buildPokedexEntry(pokemonId, player)),
+      .map((pokemonId) => buildPokedexEntry(guildId, pokemonId, player)),
   );
 
   const result = entries.filter(Boolean).join("\n");
 
+  const logger = getLoggerForGuild(guildId);
   logger.info("Pokedex construit :");
   logger.info(result);
 

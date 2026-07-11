@@ -3,11 +3,17 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
+function parseChannelId(argv: string[]): string | null {
+  const index = argv.indexOf("--channelId");
+  return index !== -1 ? argv[index + 1] : null;
+}
+
 const TOKEN = process.env.DISCORD_TOKEN;
-const CHANNEL_ID = process.env.MAIN_CHANNEL_ID;
+const CHANNEL_ID = parseChannelId(process.argv.slice(2));
 
 if (!TOKEN || !CHANNEL_ID) {
-  console.error("DISCORD_TOKEN et MAIN_CHANNEL_ID requis dans le .env");
+  console.error("Usage: npx ts-node src/scripts/send-back-online.ts --channelId <id>");
+  console.error("DISCORD_TOKEN requis dans le .env, --channelId requis en argument.");
   process.exit(1);
 }
 

@@ -2,10 +2,22 @@ require('dotenv').config();
 const { Client, GatewayIntentBits } = require('discord.js');
 const { sendAuroraLoreMessageNewAdventure } = require('./sendAuroraLoreMessageNewAdventure.js');
 
+function parseChannelId(argv) {
+  const index = argv.indexOf('--channelId');
+  return index !== -1 ? argv[index + 1] : null;
+}
+
+const CHANNEL_ID = parseChannelId(process.argv.slice(2));
+
+if (!CHANNEL_ID) {
+  console.error('Usage: node src/scripts/send-lore-new-adventure.js --channelId <id>');
+  console.error('(copie l\'ID du salon Discord ciblé — clic droit sur le salon > Copier l\'identifiant)');
+  process.exit(1);
+}
+
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
 const TOKEN = process.env.DISCORD_TOKEN;
-const CHANNEL_ID = process.env.LORE_CHANNEL_ID;
 
 client.once('ready', async () => {
   console.log(`Connecté en tant que ${client.user.tag}`);

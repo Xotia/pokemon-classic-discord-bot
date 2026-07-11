@@ -1,9 +1,10 @@
-import logger from '../../utils/logger';
+import { getLoggerForGuild } from '../../utils/logger';
+import { getShinyRate } from '../../config/guildSettings';
 
-export function isThePokemonGonnaBeShiny(): boolean {
-    const shinyRateNumber = parseFloat(process.env.SHINY_RATE || '256');
+export function isThePokemonGonnaBeShiny(guildId: string): boolean {
+    const shinyRateNumber = getShinyRate(guildId);
     const randomValue = Math.random();
     const isShiny = randomValue < (1 / shinyRateNumber);
-    logger.info('randomShinyValue = ' + randomValue + ' | isShiny = ' + isShiny);
+    getLoggerForGuild(guildId).info('randomShinyValue = ' + randomValue + ' | isShiny = ' + isShiny);
     return isShiny;
 }

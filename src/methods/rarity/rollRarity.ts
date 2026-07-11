@@ -1,7 +1,8 @@
 import { Rarity, rarityList, rarityBoostedList } from "../../config/rarity";
-import logger from '../../utils/logger';
+import { getLoggerForGuild } from '../../utils/logger';
 
-export function rollRarity(pityTime: boolean): Rarity {
+export function rollRarity(guildId: string, pityTime: boolean): Rarity {
+    const logger = getLoggerForGuild(guildId);
 
     let rarityListToUse;
 

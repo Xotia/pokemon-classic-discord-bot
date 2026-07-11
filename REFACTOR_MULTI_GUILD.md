@@ -50,22 +50,30 @@ data/
       zones_unlocked.json
       zones_to_unlock.json
       raid.json
+      othermons.json                 <- roster custom propre à ce serveur
     <guildId-2>/
       players.json
       stats.json
       zones_unlocked.json
       zones_to_unlock.json
       raid.json
+      othermons.json
   guilds.json                        <- registre des serveurs (nouveau, voir §2)
-  pokemon-list.json                  <- reste global (catalogue statique)
-  pokemon-gen1.json                  <- reste global
-  pokemon-gen2.json                  <- reste global
+  pokemon-list.json                  <- reste global (catalogue statique, outils dev uniquement)
+  pokemon-gen1.json                  <- reste global (socle partagé par tous les serveurs)
+  pokemon-gen2.json                  <- reste global (socle partagé par tous les serveurs)
   all_types.json                     <- reste global
-  othermons.json                     <- reste global
   rollRarityJson.json                <- reste global
   zones_unlocked.default.json        <- template de seed pour un nouveau serveur
   zones_to_unlock.default.json       <- template de seed pour un nouveau serveur
 ```
+
+> Décision rouverte le 2026-07-11 : `othermons.json` est devenu per-guild
+> (`data/guilds/<guildId>/othermons.json`, roster custom facultatif, vide par
+> défaut) via `getPokemonCatalog(guildId)` dans `src/utils/pokemonCatalog.ts`,
+> qui fusionne gen1 + gen2 + le roster du serveur. `pokemon-list.json` reste
+> généré au build et n'est plus lu par le gameplay — seulement par les
+> scripts dev (`test-raid-pokemon.ts`, `add-generation-to-pokemon.ts`, etc).
 
 **Pourquoi pas un seul fichier `players.json` avec `{ [guildId]: {...} }` ?**
 Parce que ~39 fonctions lisent/écrivent ces fichiers directement, et cette

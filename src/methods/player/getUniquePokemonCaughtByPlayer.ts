@@ -1,9 +1,10 @@
 import { Player } from "../../types/Player";
 import { getPlayer } from "../../utils/loadPlayer";
-import logger from "../../utils/logger";
+import { getLoggerForGuild } from "../../utils/logger";
 import { getPlayerIdByName } from "./getPlayerIdByName";
 
 export function getUniquePokemonCaughtByPlayer(guildId: string, player: string): number {
+    const logger = getLoggerForGuild(guildId);
     try {
         const userId = getPlayerIdByName(guildId, player);
         if (!userId) {

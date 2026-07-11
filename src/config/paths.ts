@@ -33,3 +33,7 @@ export function zonesToUnlockDb(guildId: string): string {
 export function raidStateDb(guildId: string): string {
   return path.join(guildDir(guildId), 'raid.json');
 }
+
+export function othermonsDb(guildId: string): string {
+  return path.join(guildDir(guildId), 'othermons.json');
+}

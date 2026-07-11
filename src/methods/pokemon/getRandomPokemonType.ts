@@ -1,10 +1,10 @@
 import { Pokemon } from "../../types/Pokemon";
 import { getRandomIntInclusive } from "../../utils/getRandomIntInclusive";
-import logger from "../../utils/logger";
+import { getLoggerForGuild } from "../../utils/logger";
 
-export function getRandomPokemonType(pokemonWeNeedRandomStat: Pokemon | undefined) {
+export function getRandomPokemonType(guildId: string, pokemonWeNeedRandomStat: Pokemon | undefined) {
     if (!pokemonWeNeedRandomStat) {
-        logger.info(`Pokemon undefined`);
+        getLoggerForGuild(guildId).info(`Pokemon undefined`);
         return null;
     }
     const types = pokemonWeNeedRandomStat.types;

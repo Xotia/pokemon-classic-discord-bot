@@ -1,8 +1,9 @@
 import { statsDb } from '../../config/paths';
 import { promises as fs } from 'fs';
-import logger from '../../utils/logger';
+import { getLoggerForGuild } from '../../utils/logger';
 
 export function addCaptureToLastCapture(guildId: string, playerName: string, pokemonId: number): Promise<void> {
+    const logger = getLoggerForGuild(guildId);
     return new Promise(async (resolve, reject) => {
         try {
             const raw = await fs.readFile(statsDb(guildId), 'utf-8');

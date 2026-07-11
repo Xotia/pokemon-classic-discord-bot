@@ -16,12 +16,14 @@ import { startRaidScheduler } from './features/raid/raidScheduler.js';
 
 import { raidCommand } from "./commands/raidCommand";
 import { loadUnlockedZones } from "./utils/loadUnlockedZones";
-import { readPlayers, readPokemonList } from "./features/raid/prepareRaidDefenderFromPlayerPokemon";
+import { readPlayers } from "./features/raid/prepareRaidDefenderFromPlayerPokemon";
+import { getPokemonCatalog } from "./utils/pokemonCatalog";
 import { TYPE_LABELS } from "./config/typeLabels";
-import path from "node:path";
 import { getRaidInfo } from "./commands/getRaidInfo";
 import { playersDb } from "./config/paths";
 import { loadGuildRegistry, getGuildConfig, ensureGuildDataFiles } from "./config/guilds";
+import { getLoggerForGuild } from "./utils/logger";
+import { getShinyRate } from "./config/guildSettings";
 
 type Zone = { id: string; label: string };
 
@@ -41,7 +43,7 @@ client.once(Events.ClientReady, (c: typeof client) => {
 
   for (const guild of loadGuildRegistry()) {
     ensureGuildDataFiles(guild.guildId);
-    logger.info(`[GUILDS] Données prêtes pour ${guild.name} (${guild.guildId}).`);
+    getLoggerForGuild(guild.guildId).info(`[GUILDS] Données prêtes pour ${guild.name} (${guild.guildId}).`);
   }
 });
 
@@ -49,6 +51,8 @@ client.login(process.env.DISCORD_TOKEN);
 
 client.on(Events.InteractionCreate, async (interaction) => {
   if (!interaction.guildId || !getGuildConfig(interaction.guildId)) return;
+
+  const logger = getLoggerForGuild(interaction.guildId);
 
   if (interaction.isAutocomplete()) {
     if (interaction.commandName === "raid") {
@@ -62,7 +66,7 @@ client.on(Events.InteractionCreate, async (interaction) => {
           let availableTypes: string[];
 
           if (pokemonName) {
-            const pokemonList = await readPokemonList(path.resolve("data/pokemon-list.json"));
+            const pokemonList = getPokemonCatalog(interaction.guildId);
             const pokemon = pokemonList.find((p) => p.name.toLowerCase() === pokemonName.toLowerCase());
             availableTypes = pokemon ? pokemon.types : Object.keys(TYPE_LABELS);
           } else {
@@ -108,7 +112,7 @@ client.on(Events.InteractionCreate, async (interaction) => {
             .filter(([, stats]) => stats.capturedInCurrentSeason)
             .map(([id]) => Number(id));
 
-          const pokemonList = await readPokemonList(path.resolve("data/pokemon-list.json"));
+          const pokemonList = getPokemonCatalog(interaction.guildId);
 
           const suggestions = pokemonList
             .filter((p) => seasonPokemonIds.includes(p.id))
@@ -216,7 +220,7 @@ client.on(Events.InteractionCreate, async (interaction) => {
   if (interaction.commandName === "get-shiny-rate") {
     return interaction.reply(
       "Le taux d'apparition des Pokémon shinys est de 1 chance sur " +
-        process.env.SHINY_RATE,
+        getShinyRate(interaction.guildId),
     );
   }
 

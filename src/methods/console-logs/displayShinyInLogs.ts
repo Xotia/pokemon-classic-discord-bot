@@ -1,6 +1,7 @@
-import logger from '../../utils/logger';
+import { getLoggerForGuild } from '../../utils/logger';
 
-export function displayShinyInLogs(isShiny: boolean, random: { id: number; name: string; rarity: string; image: string; shinyImage: string; }) {
+export function displayShinyInLogs(guildId: string, isShiny: boolean, random: { id: number; name: string; rarity: string; image: string; shinyImage: string; }) {
+    const logger = getLoggerForGuild(guildId);
     if (!isShiny) {
         logger.info(random.name + " n'est pas shiny.");
     } else {

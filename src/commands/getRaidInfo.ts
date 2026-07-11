@@ -1,6 +1,6 @@
 import { createProfileIfNeeded } from '../methods/player/createProfileIfNeeded';
 import { getPlayer } from '../utils/loadPlayer';
-import logger from '../utils/logger';
+import { getLoggerForGuild } from '../utils/logger';
 import { loadRaidState } from '../features/raid/raidState.service';
 import { buildRaidTeamEmbed } from '../features/raid/buildRaidTeamEmbed';
 
@@ -12,6 +12,7 @@ export async function getRaidInfo(interaction: any) {
         return interaction.editReply("Cette commande n'est disponible que sur un serveur.");
     }
     createProfileIfNeeded(interaction, guildId);
+    const logger = getLoggerForGuild(guildId);
 
     logger.info('🏓 Exécution de /get-raid-info pour', interaction.user.globalName || interaction.user.username);
 

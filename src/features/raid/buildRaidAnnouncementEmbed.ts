@@ -16,7 +16,7 @@ function formatRaidCloseTime(isoDate: string): string {
   }).format(new Date(isoDate));
 }
 
-export async function buildRaidAnnouncementEmbed(state: RaidState) {
+export async function buildRaidAnnouncementEmbed(state: RaidState, guildId: string) {
   const raidPokemon = state.raidPokemon;
   const pokemonName = raidPokemon?.name ?? 'Pokémon inconnu';
   const zoneLabel = raidPokemon?.zone ?? state.zone ?? 'Zone inconnue';
@@ -26,7 +26,7 @@ export async function buildRaidAnnouncementEmbed(state: RaidState) {
     : 'Inconnue';
 
   const pokemonFromRaid =
-    raidPokemon?.name ? await getPokemonByName(raidPokemon.name) : null;
+    raidPokemon?.name ? await getPokemonByName(guildId, raidPokemon.name) : null;
    const spriteUrl = pokemonFromRaid
     ? getPokemonSpriteUrl(false, pokemonFromRaid)
     : '';

@@ -1,8 +1,9 @@
 import { getPlayer } from "../../utils/loadPlayer";
-import logger from "../../utils/logger";
+import { getLoggerForGuild } from "../../utils/logger";
 import { createProfileIfNeeded } from "./createProfileIfNeeded";
 
 export function getCapturePlayer(interaction: any, guildId: string) {
+  const logger = getLoggerForGuild(guildId);
   const userName =
     interaction.user.globalName ||
     interaction.user.username ||

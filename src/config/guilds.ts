@@ -7,6 +7,7 @@ import {
   statsDb,
   zonesUnlockedDb,
   zonesToUnlockDb,
+  othermonsDb,
   ZONES_UNLOCKED_DEFAULT,
   ZONES_TO_UNLOCK_DEFAULT,
 } from './paths';
@@ -58,5 +59,9 @@ export function ensureGuildDataFiles(guildId: string): void {
 
   if (!fs.existsSync(zonesToUnlockDb(guildId))) {
     fs.copyFileSync(ZONES_TO_UNLOCK_DEFAULT, zonesToUnlockDb(guildId));
+  }
+
+  if (!fs.existsSync(othermonsDb(guildId))) {
+    fs.writeFileSync(othermonsDb(guildId), JSON.stringify([], null, 2));
   }
 }

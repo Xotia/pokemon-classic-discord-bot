@@ -21,7 +21,7 @@ export function buildCapturedPokemonEmbed({
   zone,
 }: BuildCapturedPokemonEmbedParams) {
   const spriteUrl = getPokemonSpriteUrl(isShiny, pokemon);
-  const isInPokedex = isAlreadyInPokedex ?? isPokemonInPokedex(player, pokemon.id, playerId);
+  const isInPokedex = isAlreadyInPokedex ?? isPokemonInPokedex(guildId, player, pokemon.id, playerId);
 
   const color = defineRarityColor(pokemon.rarity, isShiny);
   const title = buildTitleForRandomCaptureEmbed(isShiny, pokemon, color);

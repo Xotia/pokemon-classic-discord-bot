@@ -7,7 +7,7 @@ export async function getNewPokemon(guildId: string, rarity: string, generation:
     let randomPokemonFromRarity;
 
     for (let attempt = 0; attempt < MAX_ATTEMPTS; attempt++) {
-        randomPokemonFromRarity = getRandomPokemonFromRarity(rarity, generation, zone);
+        randomPokemonFromRarity = getRandomPokemonFromRarity(guildId, rarity, generation, zone);
         if (!randomPokemonFromRarity) {
             console.warn(`⚠️ Aucun Pokémon trouvé pour la rareté "${rarity}"`);
             return null;

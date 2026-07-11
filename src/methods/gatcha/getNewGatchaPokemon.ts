@@ -1,5 +1,5 @@
 import { Rarity } from "../../config/rarity";
-import logger from "../../utils/logger";
+import { getLoggerForGuild } from "../../utils/logger";
 import { pitySystem } from "../pity/pitySystem";
 import { resetPityCounterIfNeeded } from "../pity/resetPityCounterIfNeeded";
 import { downgradeRarity } from "../rarity/downgradeRarity";
@@ -12,10 +12,11 @@ export async function getNewGatchaPokemon(
   generation: string,
   zone: string,
 ) {
-  const pityTime = pitySystem(player);
-  let currentRarity = rollRarity(pityTime);
+  const logger = getLoggerForGuild(guildId);
+  const pityTime = pitySystem(guildId, player);
+  let currentRarity = rollRarity(guildId, pityTime);
 
-  resetPityCounterIfNeeded(player, currentRarity);
+  resetPityCounterIfNeeded(guildId, player, currentRarity);
 
   let result = await getPokemonByRarity(guildId, generation, zone, currentRarity);
 

@@ -53,7 +53,7 @@ async function syncPlayersFromStats(guildId: string) {
         const pokemonId = parseInt(pokemonIdStr);
 
         // ✅ Await + check null
-        const pokemonName = await getPokemonName(pokemonId);
+        const pokemonName = await getPokemonName(guildId, pokemonId);
         if (pokemonName && playerStats[pokemonName]) {
           captureData.total = playerStats[pokemonName];
           captureData.shiny = 0;

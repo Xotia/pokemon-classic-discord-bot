@@ -1,8 +1,9 @@
 import { statsDb } from '../../../config/paths';
 import { promises as fs } from 'fs';
-import logger from '../../../utils/logger';
+import { getLoggerForGuild } from '../../../utils/logger';
 
 export async function addShinyCaptureForPlayer(guildId: string, playerName: string): Promise<void> {
+  const logger = getLoggerForGuild(guildId);
   try {
     const raw = await fs.readFile(statsDb(guildId), 'utf-8');
     let stats = JSON.parse(raw);

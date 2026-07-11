@@ -1,10 +1,11 @@
 import { getPokemonName } from "../pokemon/getPokemonName";
 import { Player } from "../../types/Player";
 
-import logger from "../../utils/logger";
+import { getLoggerForGuild } from "../../utils/logger";
 
-export function isPokemonInPokedex(playerData: Player, pokemonId: number, userId: string): boolean {
-    const pokemonName = getPokemonName(pokemonId);
+export function isPokemonInPokedex(guildId: string, playerData: Player, pokemonId: number, userId: string): boolean {
+    const logger = getLoggerForGuild(guildId);
+    const pokemonName = getPokemonName(guildId, pokemonId);
     const trainerName = playerData ? playerData.name : "Inconnu";
 
     if (!playerData) {

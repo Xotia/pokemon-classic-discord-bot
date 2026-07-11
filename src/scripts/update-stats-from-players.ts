@@ -61,7 +61,7 @@ async function updateStatsFromPlayers(guildId: string) {
       const pokemonId = Number.parseInt(pokemonIdStr, 10);
       if (Number.isNaN(pokemonId)) continue;
 
-      const pokemonName = await getPokemonName(pokemonId);
+      const pokemonName = await getPokemonName(guildId, pokemonId);
       if (!pokemonName) continue;
 
       playerStats[pokemonName] = captureData.total;

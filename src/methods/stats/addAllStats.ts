@@ -9,7 +9,7 @@ import { addShinyCaptureForPlayer } from "./player/addShinyCaptureForPlayer";
 import { addShinyInTotalShinyCaptures } from "./addShinyInTotalShinyCaptures";
 import { addRarityInPlayerStats } from "./player/addRarityInPlayerStats";
 import { addCaptureToLastCapture } from "./addCaptureToLastCapture";
-import logger from "../../utils/logger";
+import { getLoggerForGuild } from "../../utils/logger";
 import { markPokemonAsCapturedInCurrentSeason } from "../player/markPokemonAsCapturedInCurrentSeason";
 
 export async function addAllStats(guildId: string, pokemonCatched: Pokemon, isShiny: boolean, player: Player): Promise<void> {
@@ -20,7 +20,7 @@ export async function addAllStats(guildId: string, pokemonCatched: Pokemon, isSh
     await addRarityInPlayerStats(guildId, player.name, pokemonCatched.rarity);
     markPokemonAsCapturedInCurrentSeason(player, pokemonCatched.id);
     if (isShiny) {
-        logger.info(`✨ ${pokemonCatched.name} est shiny ! Mise à jour des statistiques...`);
+        getLoggerForGuild(guildId).info(`✨ ${pokemonCatched.name} est shiny ! Mise à jour des statistiques...`);
         await addShinyInTotalShinyCaptures(guildId);
         await addShinyCaptureForPlayer(guildId, player.name);
     }

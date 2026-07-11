@@ -1,6 +1,6 @@
 import { statsDb } from "../../config/paths";
 import { Player } from "../../types/Player";
-import logger from "../../utils/logger";
+import { getLoggerForGuild } from "../../utils/logger";
 import { promises as fs } from "fs";
 
 interface StatsFile {
@@ -56,6 +56,7 @@ export async function addCaptureToPlayer(
   player: Player | null | undefined,
   pokemonName: string,
 ): Promise<void> {
+  const logger = getLoggerForGuild(guildId);
   const playerName = getSafePlayerName(player);
   const safePokemonName = normalizePokemonName(pokemonName);
 

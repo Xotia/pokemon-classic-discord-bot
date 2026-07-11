@@ -1,4 +1,4 @@
-import logger from "../../utils/logger";
+import { getLoggerForGuild } from "../../utils/logger";
 import { displayLogs } from "../console-logs/displayLogs";
 import { buildCapturedPokemonEmbed } from "../embed/buildCapturedPokemonEmbed";
 import { registerCapturedPokemon } from "../player/registerCapturedPokemon";
@@ -16,13 +16,13 @@ export async function handleSuccessfulCapture(
   rarity: string,
   zone: string,
 ) {
-  const isShiny = isThePokemonGonnaBeShiny();
+  const isShiny = isThePokemonGonnaBeShiny(guildId);
   const trainerName = player.name;
 
   const currentXp = typeof player.xp === "number" ? player.xp : 0;
   const previousLevel = typeof player.level === "number" ? player.level : 1;
 
-  const baseXp = getCapturedPokemonHp(pokemonCatched.id);
+  const baseXp = getCapturedPokemonHp(guildId, pokemonCatched.id);
   const gainedXp = isShiny ? baseXp * 10 : baseXp;
   const xpResult = addXp(currentXp, gainedXp);
   const leveledUp = xpResult.level > previousLevel;
@@ -43,13 +43,13 @@ export async function handleSuccessfulCapture(
     zone,
   });
 
-  logger.info(
+  getLoggerForGuild(guildId).info(
     `🎉 Capturé: ${pokemonCatched.name} (Rareté = ${rarity}) (Zone = ${zone})${isShiny ? " (Shiny)" : ""}${!isInPokedex ? " (Nouveau dans le Pokédex)" : ""} | XP gagnée = ${gainedXp} | Niveau = ${xpResult.level}`,
   );
 
   await interaction.editReply({ embeds: [embed] });
 
-  displayLogs(interaction, pokemonCatched, isShiny, !isInPokedex, footer);
+  displayLogs(guildId, interaction, pokemonCatched, isShiny, !isInPokedex, footer);
 
   registerCapturedPokemon(player, pokemonCatched.id, isShiny);
 

@@ -1,9 +1,10 @@
 import fs from 'fs';
 import { playersDb } from '../../config/paths';
 import { Player } from '../../types/Player';
-import logger from '../../utils/logger';
+import { getLoggerForGuild } from '../../utils/logger';
 
 export async function savePlayerData(interaction: any, guildId: string, playerData: Player) {
+  const logger = getLoggerForGuild(guildId);
   try {
     const allPlayers: Record<string, Player> = JSON.parse(
       fs.readFileSync(playersDb(guildId), 'utf8')

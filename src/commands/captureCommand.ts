@@ -23,7 +23,7 @@ export async function captureCommand(interaction: any) {
   const location = await resolveCaptureLocation(interaction, guildId);
   if (!location) return;
 
-  logCaptureLocationSelection(location);
+  logCaptureLocationSelection(guildId, location);
 
   const { generation, zone } = location;
 

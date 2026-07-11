@@ -1,9 +1,10 @@
 import fs from "fs";
 import { playersDb } from "../../config/paths";
-import logger from "../../utils/logger";
+import { getLoggerForGuild } from "../../utils/logger";
 import { Player } from "../../types/Player";
 
 export function createProfileIfNeeded(interaction: any, guildId: string) {
+  const logger = getLoggerForGuild(guildId);
   if (!interaction || !interaction.user) {
     logger.info(`❌ Interaction ou interaction.user manquant !`);
     console.error("❌ Interaction ou interaction.user manquant !", interaction);

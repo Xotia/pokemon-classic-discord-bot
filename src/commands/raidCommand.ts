@@ -23,7 +23,7 @@ export async function raidCommand(interaction: ChatInputCommandInteraction) {
   const pokemonName = interaction.options.getString("pokemon_name", true);
   const attackTypeOption = interaction.options.getString("type") ?? undefined;
 
-  const pokemon = await getPokemonByName(pokemonName);
+  const pokemon = await getPokemonByName(guildId, pokemonName);
 
   if (!pokemon) {
     await interaction.editReply(`Le Pokémon "${pokemonName}" n'existe pas.`);

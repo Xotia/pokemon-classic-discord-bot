@@ -1,8 +1,9 @@
 import { statsDb } from "../../config/paths";
 import { promises as fs } from "fs";
-import logger from "../../utils/logger";
+import { getLoggerForGuild } from "../../utils/logger";
 
 export async function addPokemonInTotalCaptures(guildId: string): Promise<void> {
+  const logger = getLoggerForGuild(guildId);
   const raw = await fs.readFile(statsDb(guildId), "utf-8");
   const stats = JSON.parse(raw) as { totalCaptures?: number };
 

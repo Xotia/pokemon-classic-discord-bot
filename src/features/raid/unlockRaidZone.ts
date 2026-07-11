@@ -1,6 +1,6 @@
 import { promises as fs } from "node:fs";
 import { zonesUnlockedDb, zonesToUnlockDb } from "../../config/paths";
-import logger from "../../utils/logger";
+import { getLoggerForGuild } from "../../utils/logger";
 
 type ZoneEntry = { id: string; label: string };
 type ZonesDb = Record<string, ZoneEntry[]>;
@@ -10,6 +10,7 @@ export async function unlockRaidZone(
   zoneName: string,
   generation: number,
 ): Promise<string | null> {
+  const logger = getLoggerForGuild(guildId);
   const genKey = `gen${generation}`;
 
   const unlockedRaw = await fs.readFile(zonesUnlockedDb(guildId), "utf-8");

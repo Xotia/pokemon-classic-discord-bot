@@ -4,7 +4,7 @@ import { addAllStats } from "../methods/stats/addAllStats";
 import { getPokemonByName } from "../methods/pokemon/getPokemonByName";
 import { getPlayerIdByName } from "../methods/player/getPlayerIdByName";
 import { getPlayer } from "../utils/loadPlayer";
-import logger from "../utils/logger";
+import { getLoggerForGuild } from "../utils/logger";
 import { buildCapturedPokemonEmbed } from "../methods/embed/buildCapturedPokemonEmbed";
 import { isPokemonInPokedex } from "../methods/pokedex/isPokemonInPokedex";
 
@@ -16,7 +16,7 @@ export async function cheatCommand(interaction: any) {
     return interaction.reply("Cette commande n'est disponible que sur un serveur.");
   }
   createProfileIfNeeded(interaction, guildId);
-  logger.info("🏓 Exécution de /cheat pour", callerName);
+  getLoggerForGuild(guildId).info("🏓 Exécution de /cheat pour", callerName);
 
   const OWNER_ID = process.env.ADMIN_ID;
 
@@ -46,7 +46,7 @@ export async function cheatCommand(interaction: any) {
     return;
   }
 
-  const pokemon = await getPokemonByName(pokemonName);
+  const pokemon = await getPokemonByName(guildId, pokemonName);
 
   if (!pokemon) {
     await interaction.editReply(`❌ Pokémon introuvable : ${pokemonName}`);
@@ -54,6 +54,7 @@ export async function cheatCommand(interaction: any) {
   }
 
   const isInPokedexBeforeCapture = isPokemonInPokedex(
+    guildId,
     player,
     pokemon.id,
     playerId,
@@ -86,7 +87,7 @@ export async function cheatCommand(interaction: any) {
     isAlreadyInPokedex: isInPokedexBeforeCapture,
   });
 
-  logger.info(
+  getLoggerForGuild(guildId).info(
     `🛠️ Cheat capture: ${player.name} a reçu ${pokemon.name} (id=${pokemon.id})${isShiny ? " shiny" : ""}${!isInPokedexBeforeCapture ? " (Nouveau dans le Pokédex)" : ""}`,
   );
 

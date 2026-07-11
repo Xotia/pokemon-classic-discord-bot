@@ -1,5 +1,5 @@
 import { CaptureLocationSelection, Zone } from '../../types/zones';
-import logger from '../../utils/logger';
+import { getLoggerForGuild } from '../../utils/logger';
 import { loadUnlockedZones } from '../../utils/loadUnlockedZones';
 import { getGenerationByZone } from './getGenerationByZone';
 import { getMaxGeneration } from './getMaxGeneration';
@@ -17,7 +17,7 @@ export async function resolveCaptureLocation(
   interaction: any,
   guildId: string,
 ): Promise<CaptureLocationSelection | null> {
-  const maxGeneration = getMaxGeneration();
+  const maxGeneration = getMaxGeneration(guildId);
 
   const generationOption = interaction.options.getString("generation");
   const zoneOption = interaction.options.getString("zone");
@@ -48,7 +48,7 @@ export async function resolveCaptureLocation(
   }
 
   if (resolvedZoneId && !generationZones.some((zone) => zone.id === resolvedZoneId)) {
-    logger.info(
+    getLoggerForGuild(guildId).info(
       `❌ Zone invalide: zone=${zoneOption}, generation=${generation}`,
     );
     await interaction.editReply(
