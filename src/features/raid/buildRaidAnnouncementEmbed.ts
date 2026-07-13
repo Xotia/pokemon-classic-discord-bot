@@ -32,15 +32,15 @@ export async function buildRaidAnnouncementEmbed(state: RaidState, guildId: stri
     : '';
 
   const title = `🚨 Un ${pokemonName} enragé attaque le centre de recherche !`;
-
+  const pokemonTypes = raidPokemon?.types ?? [];
   const attackType = raidPokemon?.attackType;
   const attackTypeLabel = attackType ? getTypeLabel(attackType) : '?';
 
   const description = [
     `Le centre de recherche est en alerte.`,
     `Un **${pokemonName}** provenant de **${zoneLabel}** approche.`,
-    `Son type d'attaque : **${attackTypeLabel}**`,
-    '',
+    `Types : ${pokemonTypes.map((t) => getTypeLabel(t)).join(' / ')}`,
+    `Son type d'attaque : **${attackTypeLabel}**`,    '',
     'Pour participer : `/raid <pokemon> [typeAttaque]`',
   ].join('\n');
 
