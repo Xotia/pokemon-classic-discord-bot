@@ -112,6 +112,7 @@ Un serveur sans surcharge utilise telles quelles les valeurs du `.env`
       "guildId": "111111111111111111",
       "name": "Serveur A",
       "raidAnnounceChannelId": "222222222222222222",
+      "generalChannelId": "555555555555555555",
       "cooldownMinutes": 5,
       "shinyRate": 50
     },
@@ -128,7 +129,9 @@ Un serveur sans surcharge utilise telles quelles les valeurs du `.env`
 
 1. Inviter le bot avec les scopes `bot` **et** `applications.commands` (sans
    ce dernier, les commandes slash echouent avec `Missing Access`).
-2. Recuperer le `guildId` du serveur et l'ID du salon d'annonce de raid.
+2. Recuperer le `guildId` du serveur, l'ID du salon d'annonce de raid
+   (`raidAnnounceChannelId`) et, si le serveur a un salon Pokemon general
+   distinct, son ID (`generalChannelId`).
 3. Ajouter une entree dans `data/guilds.json`.
 4. Redemarrer le bot — `ensureGuildDataFiles` cree et seed automatiquement
    `data/guilds/{guildId}/` au demarrage (`ClientReady`).
@@ -137,11 +140,14 @@ Un serveur sans surcharge utilise telles quelles les valeurs du `.env`
 
 ### Scripts d'annonce ponctuelle
 
-`src/scripts/send-lore.js`, `send-lore-new-adventure.js`,
+`src/scripts/send-lore.ts`, `send-lore-new-adventure.ts`,
 `send-maintenance.ts`, `send-back-online.ts`, `send-quick-maintenance.ts`,
-`send-quick-back-online.ts` ne lisent plus un salon fixe depuis le `.env` —
-le salon cible se passe explicitement en argument, pour choisir sur quel
-serveur le message est envoye :
+`send-quick-back-online.ts` ne lisent plus un salon fixe depuis le `.env`.
+Sans argument, ils diffusent sur tous les serveurs du registre
+(`data/guilds.json`) : les scripts de lore ciblent le `generalChannelId` de
+chaque serveur (repli sur `raidAnnounceChannelId` si absent), les autres
+ciblent `raidAnnounceChannelId`. Passer `--channelId <id>` cible un seul
+salon a la place (utile pour tester) :
 
 ```bash
 npx ts-node src/scripts/send-maintenance.ts --channelId <id-du-salon>

@@ -4,6 +4,7 @@
       "guildId": "111111111111111111",
       "name": "Serveur A",
       "raidAnnounceChannelId": "222222222222222222",
+      "generalChannelId": "555555555555555555",
       "cooldownMinutes": 5,
       "shinyRate": 50
     },

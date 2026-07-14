@@ -30,8 +30,7 @@ tests/
 tsconfig.vitest.json
 
 # Scripts one-shot (migration, build data, etc.)
-src/scripts/send-lore.js
-src/scripts/sendAuroraLoreMessage.js
+src/scripts/send-lore.ts
 
 # Data - runtime multi-guild (une entrée par serveur Discord)
 data/guilds/
