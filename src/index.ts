@@ -1,6 +1,6 @@
 import "dotenv/config";
 
-import { Client, GatewayIntentBits, Events } from "discord.js";
+import { Client, GatewayIntentBits, Events, Interaction } from "discord.js";
 
 import { pingCommand } from "./commands/pingCommand";
 import { cheatCommand } from "./commands/cheatCommand";
@@ -37,6 +37,10 @@ const client = new Client({
 
 startRaidScheduler(client);
 
+client.on(Events.Error, (error) => {
+  logger.error({ err: error }, "❌ Erreur client Discord non gérée");
+});
+
 // Event ready
 client.once(Events.ClientReady, (c: typeof client) => {
   logger.info(`Bot connecté ! Connecté en tant que ${c.user?.tag}`);
@@ -50,6 +54,36 @@ client.once(Events.ClientReady, (c: typeof client) => {
 client.login(process.env.DISCORD_TOKEN);
 
 client.on(Events.InteractionCreate, async (interaction) => {
+  try {
+    await handleInteraction(interaction);
+  } catch (error) {
+    console.error("❌ Erreur non gérée dans interactionCreate:", error);
+
+    if (interaction.guildId) {
+      getLoggerForGuild(interaction.guildId).error(
+        { err: error },
+        "❌ Erreur non gérée dans interactionCreate",
+      );
+    }
+
+    if (interaction.isRepliable()) {
+      try {
+        if (interaction.deferred && !interaction.replied) {
+          await interaction.editReply("❌ Une erreur est survenue lors du traitement de la commande.");
+        } else if (!interaction.deferred && !interaction.replied) {
+          await interaction.reply({
+            content: "❌ Une erreur est survenue lors du traitement de la commande.",
+            ephemeral: true,
+          });
+        }
+      } catch {
+        // L'interaction a probablement déjà expiré (ex: DiscordAPIError 10062) : rien à faire de plus.
+      }
+    }
+  }
+});
+
+async function handleInteraction(interaction: Interaction) {
   if (!interaction.guildId || !getGuildConfig(interaction.guildId)) return;
 
   const logger = getLoggerForGuild(interaction.guildId);
@@ -239,4 +273,4 @@ client.on(Events.InteractionCreate, async (interaction) => {
   if (interaction.commandName === "raid-squad") {
     return getRaidInfo(interaction);
   }
-});
+}
