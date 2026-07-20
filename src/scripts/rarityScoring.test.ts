@@ -9,6 +9,11 @@ import {
   computeOneTimeOnlyComponent,
   mapScoreToRarityTier,
   applyEpicFloor,
+  getMaxEncounterChance,
+  getDistinctVersionNames,
+  getDistinctMethods,
+  getEasiestMethod,
+  getEvolutionInfo,
   REFERENCE_MAX_GAMES,
   DEFAULT_METHOD_DIFFICULTY,
 } from "./rarityScoring";
@@ -469,5 +474,192 @@ describe("applyEpicFloor", () => {
 
   it("leaves legendary untouched when already above epic and oneTimeOnly is true", () => {
     expect(applyEpicFloor("legendary", true)).toBe("legendary");
+  });
+});
+
+// ---- getMaxEncounterChance ---------------------------------------------------
+
+describe("getMaxEncounterChance", () => {
+  it("returns null for an empty/undefined encounters list", () => {
+    expect(getMaxEncounterChance([])).toBeNull();
+    expect(getMaxEncounterChance(undefined as any)).toBeNull();
+  });
+
+  it("returns null when no numeric chance is found anywhere (gift-only)", () => {
+    const encounters = [encounterEntry("red", "gift")];
+    expect(getMaxEncounterChance(encounters)).toBeNull();
+  });
+
+  it("returns the highest chance found across a typical multi-game wild Pokémon", () => {
+    const encounters = [
+      encounterEntry("red", "walk", 20),
+      encounterEntry("blue", "walk", 60),
+      encounterEntry("yellow", "grass", 45),
+    ];
+    expect(getMaxEncounterChance(encounters)).toBe(60);
+  });
+
+  it("returns the single recorded chance for a single-version-exclusive case", () => {
+    const encounters = [encounterEntry("emerald", "walk", 15)];
+    expect(getMaxEncounterChance(encounters)).toBe(15);
+  });
+});
+
+// ---- getDistinctVersionNames --------------------------------------------------
+
+describe("getDistinctVersionNames", () => {
+  it("returns an empty array for an empty/undefined encounters list", () => {
+    expect(getDistinctVersionNames([])).toEqual([]);
+    expect(getDistinctVersionNames(undefined as any)).toEqual([]);
+  });
+
+  it("returns a sorted array of distinct version names for a typical multi-game wild Pokémon", () => {
+    const encounters = [
+      encounterEntry("yellow", "walk", 20),
+      encounterEntry("blue", "walk", 60),
+      encounterEntry("red", "grass", 45),
+    ];
+    expect(getDistinctVersionNames(encounters)).toEqual(["blue", "red", "yellow"]);
+  });
+
+  it("returns a single-element array for a single-version-exclusive case", () => {
+    const encounters = [encounterEntry("emerald", "walk", 15)];
+    expect(getDistinctVersionNames(encounters)).toEqual(["emerald"]);
+  });
+
+  it("returns a single-element array for a gift-only case", () => {
+    const encounters = [encounterEntry("red", "gift"), encounterEntry("blue", "gift")];
+    expect(getDistinctVersionNames(encounters)).toEqual(["blue", "red"]);
+  });
+});
+
+// ---- getDistinctMethods --------------------------------------------------------
+
+describe("getDistinctMethods", () => {
+  it("returns an empty array for an empty/undefined encounters list", () => {
+    expect(getDistinctMethods([])).toEqual([]);
+    expect(getDistinctMethods(undefined as any)).toEqual([]);
+  });
+
+  it("returns a sorted array of distinct methods for a typical multi-game wild Pokémon", () => {
+    const encounters = [
+      multiMethodEntry("red", [{ method: "walk" }, { method: "surf" }]),
+      encounterEntry("blue", "grass"),
+    ];
+    expect(getDistinctMethods(encounters)).toEqual(["grass", "surf", "walk"]);
+  });
+
+  it("returns a single-element array for a single-version-exclusive case", () => {
+    const encounters = [encounterEntry("emerald", "rock-smash", 15)];
+    expect(getDistinctMethods(encounters)).toEqual(["rock-smash"]);
+  });
+
+  it("returns ['gift'] for a gift-only case", () => {
+    const encounters = [encounterEntry("red", "gift"), encounterEntry("blue", "gift")];
+    expect(getDistinctMethods(encounters)).toEqual(["gift"]);
+  });
+});
+
+// ---- getEasiestMethod -----------------------------------------------------------
+
+describe("getEasiestMethod", () => {
+  it("returns null for an empty/undefined encounters list", () => {
+    expect(getEasiestMethod([])).toBeNull();
+    expect(getEasiestMethod(undefined as any)).toBeNull();
+  });
+
+  it("picks the easiest method for a typical multi-game wild Pokémon", () => {
+    const encounters = [
+      multiMethodEntry("red", [{ method: "surf" }, { method: "walk" }]),
+      encounterEntry("blue", "gift"),
+    ];
+    expect(getEasiestMethod(encounters)).toBe("walk");
+  });
+
+  it("returns the single method for a single-version-exclusive case", () => {
+    const encounters = [encounterEntry("emerald", "old-rod", 10)];
+    expect(getEasiestMethod(encounters)).toBe("old-rod");
+  });
+
+  it("returns 'gift' for a gift-only case", () => {
+    const encounters = [encounterEntry("red", "gift"), encounterEntry("blue", "gift")];
+    expect(getEasiestMethod(encounters)).toBe("gift");
+  });
+
+  it("falls back to DEFAULT_METHOD_DIFFICULTY ranking for an unrecognized method", () => {
+    const encounters = [
+      multiMethodEntry("red", [{ method: "some-unknown-method" }, { method: "gift" }]),
+    ];
+    // unknown method uses DEFAULT_METHOD_DIFFICULTY (60), which is lower than gift (100)
+    expect(getEasiestMethod(encounters)).toBe("some-unknown-method");
+  });
+});
+
+// ---- getEvolutionInfo -----------------------------------------------------------
+
+describe("getEvolutionInfo", () => {
+  it("returns null when the evolutionChain argument is missing/null", () => {
+    expect(getEvolutionInfo(undefined as any, "bulbasaur")).toBeNull();
+    expect(getEvolutionInfo(null as any, "bulbasaur")).toBeNull();
+    expect(getEvolutionInfo({ chain: undefined } as any, "bulbasaur")).toBeNull();
+  });
+
+  it("returns null when the species is not found in the chain", () => {
+    const chain = {
+      chain: {
+        species: { name: "bulbasaur" },
+        evolution_details: [],
+        evolves_to: [],
+      },
+    };
+    expect(getEvolutionInfo(chain as any, "charmander")).toBeNull();
+  });
+
+  it("returns depth 0 with a null trigger for the base form", () => {
+    const chain = {
+      chain: {
+        species: { name: "bulbasaur" },
+        evolution_details: [],
+        evolves_to: [],
+      },
+    };
+    expect(getEvolutionInfo(chain as any, "bulbasaur")).toEqual({ depth: 0, trigger: null });
+  });
+
+  it("returns depth 1 with the explicit trigger name for a depth-1 evolution", () => {
+    const chain = {
+      chain: {
+        species: { name: "bulbasaur" },
+        evolution_details: [],
+        evolves_to: [
+          {
+            species: { name: "ivysaur" },
+            evolution_details: [{ trigger: { name: "level-up" } }],
+            evolves_to: [],
+          },
+        ],
+      },
+    };
+    expect(getEvolutionInfo(chain as any, "ivysaur")).toEqual({
+      depth: 1,
+      trigger: "level-up",
+    });
+  });
+
+  it("returns null trigger at depth 1 when evolution_details/trigger is missing", () => {
+    const chain = {
+      chain: {
+        species: { name: "eevee" },
+        evolution_details: [],
+        evolves_to: [
+          {
+            species: { name: "vaporeon" },
+            evolution_details: [],
+            evolves_to: [],
+          },
+        ],
+      },
+    };
+    expect(getEvolutionInfo(chain as any, "vaporeon")).toEqual({ depth: 1, trigger: null });
   });
 });

@@ -13,6 +13,28 @@
       "c6_evolution": 0,
       "c7_oneTimeOnly": 100
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 7,
+      "versions": [
+        "alpha-sapphire",
+        "emerald",
+        "heartgold",
+        "omega-ruby",
+        "ruby",
+        "sapphire",
+        "soulsilver"
+      ],
+      "methods": [
+        "gift"
+      ],
+      "easiestMethod": "gift",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
+    },
     "oneTimeOnly": true,
     "flooredToEpic": true
   },
@@ -29,6 +51,26 @@
       "c5_exclusivity": 25,
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 4,
+      "versions": [
+        "the-crown-tundra-shield",
+        "the-crown-tundra-sword",
+        "ultra-moon",
+        "ultra-sun"
+      ],
+      "methods": [
+        "dynamax-adventure",
+        "island-scan"
+      ],
+      "easiestMethod": "dynamax-adventure",
+      "isVersionExclusive": false,
+      "evolutionDepth": 1,
+      "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -47,6 +89,23 @@
       "c6_evolution": 60,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 2,
+      "versions": [
+        "the-crown-tundra-shield",
+        "the-crown-tundra-sword"
+      ],
+      "methods": [
+        "dynamax-adventure"
+      ],
+      "easiestMethod": "dynamax-adventure",
+      "isVersionExclusive": false,
+      "evolutionDepth": 2,
+      "evolutionTrigger": "level-up"
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -63,6 +122,28 @@
       "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 100
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 7,
+      "versions": [
+        "alpha-sapphire",
+        "emerald",
+        "heartgold",
+        "omega-ruby",
+        "ruby",
+        "sapphire",
+        "soulsilver"
+      ],
+      "methods": [
+        "gift"
+      ],
+      "easiestMethod": "gift",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
     },
     "oneTimeOnly": true,
     "flooredToEpic": true
@@ -81,6 +162,26 @@
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 4,
+      "versions": [
+        "the-crown-tundra-shield",
+        "the-crown-tundra-sword",
+        "ultra-moon",
+        "ultra-sun"
+      ],
+      "methods": [
+        "dynamax-adventure",
+        "island-scan"
+      ],
+      "easiestMethod": "dynamax-adventure",
+      "isVersionExclusive": false,
+      "evolutionDepth": 1,
+      "evolutionTrigger": "level-up"
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -97,6 +198,23 @@
       "c5_exclusivity": 75,
       "c6_evolution": 60,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 2,
+      "versions": [
+        "the-crown-tundra-shield",
+        "the-crown-tundra-sword"
+      ],
+      "methods": [
+        "dynamax-adventure"
+      ],
+      "easiestMethod": "dynamax-adventure",
+      "isVersionExclusive": false,
+      "evolutionDepth": 2,
+      "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -115,6 +233,28 @@
       "c6_evolution": 0,
       "c7_oneTimeOnly": 100
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 7,
+      "versions": [
+        "alpha-sapphire",
+        "emerald",
+        "heartgold",
+        "omega-ruby",
+        "ruby",
+        "sapphire",
+        "soulsilver"
+      ],
+      "methods": [
+        "gift"
+      ],
+      "easiestMethod": "gift",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
+    },
     "oneTimeOnly": true,
     "flooredToEpic": true
   },
@@ -131,6 +271,26 @@
       "c5_exclusivity": 25,
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 4,
+      "versions": [
+        "the-crown-tundra-shield",
+        "the-crown-tundra-sword",
+        "ultra-moon",
+        "ultra-sun"
+      ],
+      "methods": [
+        "dynamax-adventure",
+        "island-scan"
+      ],
+      "easiestMethod": "dynamax-adventure",
+      "isVersionExclusive": false,
+      "evolutionDepth": 1,
+      "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -149,6 +309,23 @@
       "c6_evolution": 60,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 2,
+      "versions": [
+        "the-crown-tundra-shield",
+        "the-crown-tundra-sword"
+      ],
+      "methods": [
+        "dynamax-adventure"
+      ],
+      "easiestMethod": "dynamax-adventure",
+      "isVersionExclusive": false,
+      "evolutionDepth": 2,
+      "evolutionTrigger": "level-up"
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -165,6 +342,32 @@
       "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 9,
+      "versions": [
+        "alpha-sapphire",
+        "emerald",
+        "heartgold",
+        "omega-ruby",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "soulsilver",
+        "xd"
+      ],
+      "methods": [
+        "horde",
+        "snag",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -183,6 +386,26 @@
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 33,
+      "gamesCount": 4,
+      "versions": [
+        "diamond",
+        "emerald",
+        "x",
+        "y"
+      ],
+      "methods": [
+        "red-flowers",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 1,
+      "evolutionTrigger": "level-up"
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -199,6 +422,37 @@
       "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 14,
+      "versions": [
+        "alpha-sapphire",
+        "diamond",
+        "emerald",
+        "heartgold",
+        "omega-ruby",
+        "pearl",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "soulsilver",
+        "the-isle-of-armor-shield",
+        "the-isle-of-armor-sword",
+        "x",
+        "y"
+      ],
+      "methods": [
+        "horde",
+        "npc-trade",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -217,6 +471,29 @@
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 7,
+      "versions": [
+        "emerald",
+        "heartgold",
+        "ruby",
+        "sapphire",
+        "soulsilver",
+        "the-crown-tundra-shield",
+        "the-crown-tundra-sword"
+      ],
+      "methods": [
+        "dynamax-adventure",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 1,
+      "evolutionTrigger": "level-up"
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -233,6 +510,34 @@
       "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 60,
+      "gamesCount": 10,
+      "versions": [
+        "alpha-sapphire",
+        "diamond",
+        "emerald",
+        "heartgold",
+        "omega-ruby",
+        "pearl",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "soulsilver"
+      ],
+      "methods": [
+        "headbutt",
+        "honey-tree",
+        "horde",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -251,6 +556,29 @@
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 20,
+      "gamesCount": 7,
+      "versions": [
+        "diamond",
+        "emerald",
+        "heartgold",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "soulsilver"
+      ],
+      "methods": [
+        "honey-tree",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 1,
+      "evolutionTrigger": "level-up"
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -267,6 +595,28 @@
       "c5_exclusivity": 0,
       "c6_evolution": 60,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 33,
+      "gamesCount": 7,
+      "versions": [
+        "diamond",
+        "heartgold",
+        "pearl",
+        "platinum",
+        "soulsilver",
+        "x",
+        "y"
+      ],
+      "methods": [
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 2,
+      "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -285,6 +635,31 @@
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 33,
+      "gamesCount": 9,
+      "versions": [
+        "emerald",
+        "heartgold",
+        "pearl",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "soulsilver",
+        "x",
+        "y"
+      ],
+      "methods": [
+        "honey-tree",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 1,
+      "evolutionTrigger": "level-up"
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -301,6 +676,25 @@
       "c5_exclusivity": 25,
       "c6_evolution": 60,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 10,
+      "gamesCount": 4,
+      "versions": [
+        "heartgold",
+        "pearl",
+        "platinum",
+        "soulsilver"
+      ],
+      "methods": [
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 2,
+      "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -319,6 +713,33 @@
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 60,
+      "gamesCount": 9,
+      "versions": [
+        "alpha-sapphire",
+        "diamond",
+        "emerald",
+        "heartgold",
+        "pearl",
+        "platinum",
+        "sapphire",
+        "shield",
+        "soulsilver"
+      ],
+      "methods": [
+        "horde",
+        "max-raid",
+        "overworld",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -335,6 +756,41 @@
       "c5_exclusivity": 0,
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 60,
+      "gamesCount": 14,
+      "versions": [
+        "black-2",
+        "diamond",
+        "emerald",
+        "heartgold",
+        "pearl",
+        "platinum",
+        "sapphire",
+        "shield",
+        "soulsilver",
+        "ultra-moon",
+        "ultra-sun",
+        "white-2",
+        "x",
+        "y"
+      ],
+      "methods": [
+        "hidden-grotto",
+        "horde",
+        "max-raid",
+        "only-one",
+        "overworld",
+        "surf",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 1,
+      "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -353,6 +809,23 @@
       "c6_evolution": 75,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 1,
+      "versions": [
+        "shield"
+      ],
+      "methods": [
+        "max-raid",
+        "wanderer"
+      ],
+      "easiestMethod": "max-raid",
+      "isVersionExclusive": true,
+      "evolutionDepth": 2,
+      "evolutionTrigger": "use-item"
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -369,6 +842,37 @@
       "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 10,
+      "versions": [
+        "diamond",
+        "emerald",
+        "heartgold",
+        "omega-ruby",
+        "pearl",
+        "platinum",
+        "ruby",
+        "soulsilver",
+        "sword",
+        "xd"
+      ],
+      "methods": [
+        "headbutt",
+        "horde",
+        "max-raid",
+        "npc-trade",
+        "overworld",
+        "snag",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -387,6 +891,39 @@
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 60,
+      "gamesCount": 14,
+      "versions": [
+        "black-2",
+        "diamond",
+        "emerald",
+        "heartgold",
+        "pearl",
+        "platinum",
+        "ruby",
+        "soulsilver",
+        "sword",
+        "ultra-moon",
+        "ultra-sun",
+        "white-2",
+        "x",
+        "y"
+      ],
+      "methods": [
+        "dark-grass",
+        "max-raid",
+        "only-one",
+        "overworld",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 1,
+      "evolutionTrigger": "level-up"
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -403,6 +940,26 @@
       "c5_exclusivity": 50,
       "c6_evolution": 75,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 3,
+      "versions": [
+        "black-2",
+        "sword",
+        "white-2"
+      ],
+      "methods": [
+        "grass-spots",
+        "max-raid",
+        "wanderer"
+      ],
+      "easiestMethod": "grass-spots",
+      "isVersionExclusive": false,
+      "evolutionDepth": 2,
+      "evolutionTrigger": "use-item"
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -421,6 +978,32 @@
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 20,
+      "gamesCount": 9,
+      "versions": [
+        "alpha-sapphire",
+        "emerald",
+        "heartgold",
+        "omega-ruby",
+        "ruby",
+        "sapphire",
+        "soulsilver",
+        "x",
+        "y"
+      ],
+      "methods": [
+        "headbutt",
+        "horde",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -437,6 +1020,35 @@
       "c5_exclusivity": 0,
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 11,
+      "versions": [
+        "black",
+        "diamond",
+        "emerald",
+        "pearl",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "ultra-moon",
+        "ultra-sun",
+        "white",
+        "xd"
+      ],
+      "methods": [
+        "dark-grass",
+        "only-one",
+        "snag",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 1,
+      "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -455,6 +1067,50 @@
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 85,
+      "gamesCount": 22,
+      "versions": [
+        "alpha-sapphire",
+        "black",
+        "diamond",
+        "emerald",
+        "heartgold",
+        "moon",
+        "omega-ruby",
+        "pearl",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "shield",
+        "soulsilver",
+        "sun",
+        "sword",
+        "the-isle-of-armor-shield",
+        "the-isle-of-armor-sword",
+        "ultra-moon",
+        "ultra-sun",
+        "white",
+        "x",
+        "y"
+      ],
+      "methods": [
+        "gift",
+        "horde",
+        "max-raid",
+        "overworld",
+        "overworld-flying",
+        "overworld-water",
+        "surf",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -471,6 +1127,50 @@
       "c5_exclusivity": 0,
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 20,
+      "versions": [
+        "black",
+        "black-2",
+        "diamond",
+        "emerald",
+        "moon",
+        "pearl",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "shield",
+        "sun",
+        "sword",
+        "the-crown-tundra-shield",
+        "the-crown-tundra-sword",
+        "the-isle-of-armor-shield",
+        "the-isle-of-armor-sword",
+        "ultra-moon",
+        "ultra-sun",
+        "white",
+        "white-2"
+      ],
+      "methods": [
+        "dark-grass",
+        "dynamax-adventure",
+        "hidden-grotto",
+        "max-raid",
+        "overworld",
+        "overworld-water",
+        "surf",
+        "walk",
+        "wanderer",
+        "wanderer-water"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 1,
+      "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -489,6 +1189,47 @@
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 19,
+      "versions": [
+        "alpha-sapphire",
+        "diamond",
+        "emerald",
+        "heartgold",
+        "omega-ruby",
+        "pearl",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "shield",
+        "soulsilver",
+        "sword",
+        "the-isle-of-armor-shield",
+        "the-isle-of-armor-sword",
+        "ultra-moon",
+        "ultra-sun",
+        "x",
+        "xd",
+        "y"
+      ],
+      "methods": [
+        "horde",
+        "island-scan",
+        "max-raid",
+        "overworld",
+        "red-flowers",
+        "snag",
+        "walk",
+        "yellow-flowers"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -505,6 +1246,30 @@
       "c5_exclusivity": 0,
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 7,
+      "versions": [
+        "diamond",
+        "pearl",
+        "platinum",
+        "shield",
+        "sword",
+        "x",
+        "y"
+      ],
+      "methods": [
+        "max-raid",
+        "walk",
+        "wanderer"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 1,
+      "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -523,6 +1288,27 @@
       "c6_evolution": 60,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 4,
+      "versions": [
+        "shield",
+        "sword",
+        "the-isle-of-armor-shield",
+        "the-isle-of-armor-sword"
+      ],
+      "methods": [
+        "max-raid",
+        "walk",
+        "wanderer"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 2,
+      "evolutionTrigger": "level-up"
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -539,6 +1325,35 @@
       "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 60,
+      "gamesCount": 12,
+      "versions": [
+        "diamond",
+        "heartgold",
+        "moon",
+        "pearl",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "soulsilver",
+        "sun",
+        "ultra-moon",
+        "ultra-sun",
+        "xd"
+      ],
+      "methods": [
+        "pokespot",
+        "surf",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -557,6 +1372,31 @@
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 50,
+      "gamesCount": 9,
+      "versions": [
+        "heartgold",
+        "moon",
+        "platinum",
+        "soulsilver",
+        "sun",
+        "ultra-moon",
+        "ultra-sun",
+        "x",
+        "y"
+      ],
+      "methods": [
+        "surf",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 1,
+      "evolutionTrigger": "level-up"
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -573,6 +1413,35 @@
       "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 11,
+      "versions": [
+        "alpha-sapphire",
+        "diamond",
+        "emerald",
+        "heartgold",
+        "omega-ruby",
+        "pearl",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "soulsilver",
+        "xd"
+      ],
+      "methods": [
+        "headbutt",
+        "horde",
+        "snag",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -591,6 +1460,28 @@
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 33,
+      "gamesCount": 6,
+      "versions": [
+        "black-2",
+        "heartgold",
+        "soulsilver",
+        "white-2",
+        "x",
+        "y"
+      ],
+      "methods": [
+        "hidden-grotto",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 1,
+      "evolutionTrigger": "level-up"
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -607,6 +1498,30 @@
       "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 20,
+      "gamesCount": 8,
+      "versions": [
+        "diamond",
+        "emerald",
+        "heartgold",
+        "pearl",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "soulsilver"
+      ],
+      "methods": [
+        "headbutt",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -625,6 +1540,29 @@
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 6,
+      "versions": [
+        "black-2",
+        "heartgold",
+        "moon",
+        "soulsilver",
+        "sun",
+        "white-2"
+      ],
+      "methods": [
+        "dark-grass",
+        "island-scan",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 1,
+      "evolutionTrigger": "level-up"
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -641,6 +1579,23 @@
       "c5_exclusivity": 75,
       "c6_evolution": 60,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 4,
+      "gamesCount": 2,
+      "versions": [
+        "black-2",
+        "white-2"
+      ],
+      "methods": [
+        "grass-spots"
+      ],
+      "easiestMethod": "grass-spots",
+      "isVersionExclusive": false,
+      "evolutionDepth": 2,
+      "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -659,6 +1614,38 @@
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 40,
+      "gamesCount": 14,
+      "versions": [
+        "alpha-sapphire",
+        "diamond",
+        "emerald",
+        "heartgold",
+        "omega-ruby",
+        "pearl",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "shield",
+        "soulsilver",
+        "sword",
+        "x",
+        "y"
+      ],
+      "methods": [
+        "horde",
+        "max-raid",
+        "rough-terrain",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -675,6 +1662,28 @@
       "c5_exclusivity": 25,
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 4,
+      "versions": [
+        "shield",
+        "sword",
+        "the-crown-tundra-shield",
+        "the-crown-tundra-sword"
+      ],
+      "methods": [
+        "dynamax-adventure",
+        "max-raid",
+        "overworld",
+        "wanderer"
+      ],
+      "easiestMethod": "dynamax-adventure",
+      "isVersionExclusive": false,
+      "evolutionDepth": 1,
+      "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -693,6 +1702,23 @@
       "c6_evolution": 55,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 5,
+      "gamesCount": 2,
+      "versions": [
+        "shield",
+        "sword"
+      ],
+      "methods": [
+        "max-raid"
+      ],
+      "easiestMethod": "max-raid",
+      "isVersionExclusive": false,
+      "evolutionDepth": 1,
+      "evolutionTrigger": "shed"
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -709,6 +1735,34 @@
       "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 11,
+      "versions": [
+        "alpha-sapphire",
+        "emerald",
+        "heartgold",
+        "omega-ruby",
+        "ruby",
+        "sapphire",
+        "soulsilver",
+        "the-isle-of-armor-shield",
+        "the-isle-of-armor-sword",
+        "x",
+        "y"
+      ],
+      "methods": [
+        "horde",
+        "overworld",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -727,6 +1781,35 @@
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 12,
+      "versions": [
+        "alpha-sapphire",
+        "diamond",
+        "emerald",
+        "omega-ruby",
+        "pearl",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "the-isle-of-armor-shield",
+        "the-isle-of-armor-sword",
+        "x",
+        "y"
+      ],
+      "methods": [
+        "horde",
+        "walk",
+        "wanderer"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 1,
+      "evolutionTrigger": "level-up"
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -743,6 +1826,23 @@
       "c5_exclusivity": 75,
       "c6_evolution": 60,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 2,
+      "versions": [
+        "the-crown-tundra-shield",
+        "the-crown-tundra-sword"
+      ],
+      "methods": [
+        "dynamax-adventure"
+      ],
+      "easiestMethod": "dynamax-adventure",
+      "isVersionExclusive": false,
+      "evolutionDepth": 2,
+      "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -761,6 +1861,41 @@
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 16,
+      "versions": [
+        "alpha-sapphire",
+        "colosseum",
+        "diamond",
+        "emerald",
+        "heartgold",
+        "moon",
+        "omega-ruby",
+        "pearl",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "soulsilver",
+        "sun",
+        "ultra-moon",
+        "ultra-sun",
+        "xd"
+      ],
+      "methods": [
+        "bubbling-spots",
+        "horde",
+        "npc-trade",
+        "snag",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -777,6 +1912,34 @@
       "c5_exclusivity": 0,
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 75,
+      "gamesCount": 11,
+      "versions": [
+        "black-2",
+        "emerald",
+        "moon",
+        "ruby",
+        "sapphire",
+        "sun",
+        "ultra-moon",
+        "ultra-sun",
+        "white-2",
+        "x",
+        "y"
+      ],
+      "methods": [
+        "bubbling-spots",
+        "hidden-grotto",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 1,
+      "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -795,6 +1958,34 @@
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 30,
+      "gamesCount": 11,
+      "versions": [
+        "black-2",
+        "diamond",
+        "heartgold",
+        "pearl",
+        "platinum",
+        "soulsilver",
+        "the-isle-of-armor-shield",
+        "the-isle-of-armor-sword",
+        "white-2",
+        "x",
+        "y"
+      ],
+      "methods": [
+        "overworld",
+        "surf",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -811,6 +2002,42 @@
       "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 17,
+      "versions": [
+        "black-2",
+        "diamond",
+        "emerald",
+        "heartgold",
+        "moon",
+        "pearl",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "soulsilver",
+        "sun",
+        "ultra-moon",
+        "ultra-sun",
+        "white-2",
+        "x",
+        "xd",
+        "y"
+      ],
+      "methods": [
+        "hidden-grotto",
+        "horde",
+        "rock-smash",
+        "snag",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -829,6 +2056,37 @@
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 11,
+      "versions": [
+        "alpha-sapphire",
+        "diamond",
+        "emerald",
+        "omega-ruby",
+        "pearl",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "white-2",
+        "x",
+        "y"
+      ],
+      "methods": [
+        "dark-grass",
+        "horde",
+        "npc-trade",
+        "red-flowers",
+        "walk",
+        "yellow-flowers"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -845,6 +2103,24 @@
       "c5_exclusivity": 75,
       "c6_evolution": 45,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 2,
+      "versions": [
+        "white-2",
+        "xd"
+      ],
+      "methods": [
+        "grass-spots",
+        "snag"
+      ],
+      "easiestMethod": "grass-spots",
+      "isVersionExclusive": false,
+      "evolutionDepth": 1,
+      "evolutionTrigger": "use-item"
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -863,6 +2139,44 @@
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 18,
+      "versions": [
+        "alpha-sapphire",
+        "black",
+        "diamond",
+        "emerald",
+        "heartgold",
+        "moon",
+        "pearl",
+        "platinum",
+        "sapphire",
+        "shield",
+        "sun",
+        "the-crown-tundra-shield",
+        "ultra-moon",
+        "ultra-sun",
+        "white",
+        "x",
+        "xd",
+        "y"
+      ],
+      "methods": [
+        "horde",
+        "max-raid",
+        "overworld",
+        "snag",
+        "sos-encounter",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -879,6 +2193,41 @@
       "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 16,
+      "versions": [
+        "black",
+        "diamond",
+        "emerald",
+        "omega-ruby",
+        "pearl",
+        "platinum",
+        "ruby",
+        "soulsilver",
+        "sword",
+        "the-crown-tundra-sword",
+        "ultra-moon",
+        "ultra-sun",
+        "white",
+        "x",
+        "xd",
+        "y"
+      ],
+      "methods": [
+        "horde",
+        "max-raid",
+        "overworld",
+        "snag",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -897,6 +2246,40 @@
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 15,
+      "versions": [
+        "alpha-sapphire",
+        "black-2",
+        "diamond",
+        "emerald",
+        "heartgold",
+        "omega-ruby",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "soulsilver",
+        "the-crown-tundra-shield",
+        "the-crown-tundra-sword",
+        "white-2",
+        "x",
+        "xd"
+      ],
+      "methods": [
+        "horde",
+        "overworld",
+        "pokespot",
+        "walk",
+        "wanderer"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -913,6 +2296,34 @@
       "c5_exclusivity": 0,
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 10,
+      "versions": [
+        "black-2",
+        "emerald",
+        "heartgold",
+        "ruby",
+        "sapphire",
+        "soulsilver",
+        "the-crown-tundra-shield",
+        "the-crown-tundra-sword",
+        "white-2",
+        "x"
+      ],
+      "methods": [
+        "dynamax-adventure",
+        "red-flowers",
+        "walk",
+        "wanderer"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 1,
+      "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -931,6 +2342,26 @@
       "c6_evolution": 60,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 4,
+      "versions": [
+        "the-crown-tundra-shield",
+        "the-crown-tundra-sword",
+        "ultra-moon",
+        "ultra-sun"
+      ],
+      "methods": [
+        "island-scan",
+        "wanderer"
+      ],
+      "easiestMethod": "island-scan",
+      "isVersionExclusive": false,
+      "evolutionDepth": 2,
+      "evolutionTrigger": "level-up"
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -947,6 +2378,37 @@
       "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 13,
+      "versions": [
+        "alpha-sapphire",
+        "colosseum",
+        "diamond",
+        "heartgold",
+        "omega-ruby",
+        "pearl",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "soulsilver",
+        "x",
+        "xd",
+        "y"
+      ],
+      "methods": [
+        "horde",
+        "npc-trade",
+        "snag",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -965,6 +2427,34 @@
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 75,
+      "gamesCount": 11,
+      "versions": [
+        "black-2",
+        "diamond",
+        "heartgold",
+        "pearl",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "soulsilver",
+        "ultra-moon",
+        "ultra-sun",
+        "white-2"
+      ],
+      "methods": [
+        "hidden-grotto",
+        "only-one",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 1,
+      "evolutionTrigger": "level-up"
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -981,6 +2471,40 @@
       "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 60,
+      "gamesCount": 14,
+      "versions": [
+        "alpha-sapphire",
+        "diamond",
+        "emerald",
+        "heartgold",
+        "omega-ruby",
+        "pearl",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "shield",
+        "soulsilver",
+        "sword",
+        "ultra-moon",
+        "y"
+      ],
+      "methods": [
+        "gift",
+        "horde",
+        "max-raid",
+        "overworld",
+        "walk",
+        "yellow-flowers"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -999,6 +2523,42 @@
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 15,
+      "versions": [
+        "black-2",
+        "emerald",
+        "heartgold",
+        "ruby",
+        "sapphire",
+        "shield",
+        "soulsilver",
+        "sword",
+        "the-crown-tundra-shield",
+        "the-crown-tundra-sword",
+        "ultra-moon",
+        "white-2",
+        "x",
+        "xd",
+        "y"
+      ],
+      "methods": [
+        "dynamax-adventure",
+        "hidden-grotto",
+        "max-raid",
+        "overworld",
+        "snag",
+        "walk",
+        "wanderer"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 1,
+      "evolutionTrigger": "level-up"
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -1015,6 +2575,38 @@
       "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 13,
+      "versions": [
+        "alpha-sapphire",
+        "colosseum",
+        "diamond",
+        "emerald",
+        "heartgold",
+        "omega-ruby",
+        "pearl",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "soulsilver",
+        "x",
+        "y"
+      ],
+      "methods": [
+        "gift",
+        "horde",
+        "npc-trade",
+        "purple-flowers",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -1033,6 +2625,35 @@
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 35,
+      "gamesCount": 12,
+      "versions": [
+        "alpha-sapphire",
+        "diamond",
+        "emerald",
+        "heartgold",
+        "omega-ruby",
+        "pearl",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "soulsilver",
+        "x",
+        "y"
+      ],
+      "methods": [
+        "horde",
+        "purple-flowers",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -1049,6 +2670,33 @@
       "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 33,
+      "gamesCount": 10,
+      "versions": [
+        "diamond",
+        "emerald",
+        "heartgold",
+        "pearl",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "soulsilver",
+        "x",
+        "y"
+      ],
+      "methods": [
+        "purple-flowers",
+        "walk",
+        "yellow-flowers"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -1067,6 +2715,33 @@
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 33,
+      "gamesCount": 10,
+      "versions": [
+        "diamond",
+        "emerald",
+        "heartgold",
+        "pearl",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "soulsilver",
+        "x",
+        "y"
+      ],
+      "methods": [
+        "purple-flowers",
+        "walk",
+        "yellow-flowers"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -1083,6 +2758,50 @@
       "c5_exclusivity": 0,
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 20,
+      "versions": [
+        "alpha-sapphire",
+        "black-2",
+        "diamond",
+        "heartgold",
+        "moon",
+        "omega-ruby",
+        "pearl",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "shield",
+        "soulsilver",
+        "sun",
+        "sword",
+        "the-crown-tundra-shield",
+        "the-crown-tundra-sword",
+        "white-2",
+        "x",
+        "xd",
+        "y"
+      ],
+      "methods": [
+        "dark-grass",
+        "dynamax-adventure",
+        "horde",
+        "island-scan",
+        "max-raid",
+        "purple-flowers",
+        "snag",
+        "walk",
+        "wanderer",
+        "yellow-flowers"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 1,
+      "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -1101,6 +2820,34 @@
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 10,
+      "versions": [
+        "diamond",
+        "emerald",
+        "pearl",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "soulsilver",
+        "x",
+        "xd",
+        "y"
+      ],
+      "methods": [
+        "horde",
+        "purple-flowers",
+        "snag",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -1117,6 +2864,23 @@
       "c5_exclusivity": 75,
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 33,
+      "gamesCount": 2,
+      "versions": [
+        "x",
+        "y"
+      ],
+      "methods": [
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 1,
+      "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -1135,6 +2899,42 @@
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 17,
+      "versions": [
+        "black",
+        "black-2",
+        "diamond",
+        "emerald",
+        "pearl",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "the-isle-of-armor-shield",
+        "the-isle-of-armor-sword",
+        "ultra-moon",
+        "ultra-sun",
+        "white",
+        "white-2",
+        "x",
+        "xd",
+        "y"
+      ],
+      "methods": [
+        "bubbling-spots",
+        "good-rod",
+        "snag",
+        "super-rod",
+        "super-rod-spots"
+      ],
+      "easiestMethod": "good-rod",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -1151,6 +2951,49 @@
       "c5_exclusivity": 0,
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 21,
+      "versions": [
+        "alpha-sapphire",
+        "black",
+        "black-2",
+        "diamond",
+        "emerald",
+        "moon",
+        "omega-ruby",
+        "pearl",
+        "ruby",
+        "sapphire",
+        "sun",
+        "the-crown-tundra-shield",
+        "the-crown-tundra-sword",
+        "the-isle-of-armor-shield",
+        "the-isle-of-armor-sword",
+        "ultra-moon",
+        "ultra-sun",
+        "white",
+        "white-2",
+        "x",
+        "y"
+      ],
+      "methods": [
+        "bubbling-spots",
+        "chase-water",
+        "dynamax-adventure",
+        "gift",
+        "sos-encounter",
+        "sos-from-bubbling-spot",
+        "super-rod",
+        "super-rod-spots"
+      ],
+      "easiestMethod": "super-rod",
+      "isVersionExclusive": false,
+      "evolutionDepth": 1,
+      "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -1169,6 +3012,51 @@
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 22,
+      "versions": [
+        "black",
+        "black-2",
+        "diamond",
+        "emerald",
+        "moon",
+        "pearl",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "shield",
+        "sun",
+        "sword",
+        "the-crown-tundra-shield",
+        "the-crown-tundra-sword",
+        "the-isle-of-armor-shield",
+        "the-isle-of-armor-sword",
+        "ultra-moon",
+        "ultra-sun",
+        "white",
+        "white-2",
+        "x",
+        "y"
+      ],
+      "methods": [
+        "bubbling-spots",
+        "dynamax-adventure",
+        "good-rod",
+        "max-raid",
+        "overworld-water",
+        "super-rod",
+        "surf",
+        "surf-spots",
+        "wanderer-water"
+      ],
+      "easiestMethod": "good-rod",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -1185,6 +3073,46 @@
       "c5_exclusivity": 0,
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 50,
+      "gamesCount": 18,
+      "versions": [
+        "black",
+        "black-2",
+        "diamond",
+        "emerald",
+        "moon",
+        "pearl",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "shield",
+        "sun",
+        "sword",
+        "the-isle-of-armor-shield",
+        "the-isle-of-armor-sword",
+        "ultra-moon",
+        "ultra-sun",
+        "white",
+        "white-2"
+      ],
+      "methods": [
+        "bubbling-spots",
+        "max-raid",
+        "sos-encounter",
+        "sos-from-bubbling-spot",
+        "super-rod",
+        "surf",
+        "surf-spots",
+        "wanderer-water"
+      ],
+      "easiestMethod": "super-rod",
+      "isVersionExclusive": false,
+      "evolutionDepth": 1,
+      "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -1203,6 +3131,35 @@
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 12,
+      "versions": [
+        "alpha-sapphire",
+        "diamond",
+        "emerald",
+        "heartgold",
+        "omega-ruby",
+        "pearl",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "soulsilver",
+        "white-2",
+        "xd"
+      ],
+      "methods": [
+        "horde",
+        "snag",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -1219,6 +3176,31 @@
       "c5_exclusivity": 0,
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 8,
+      "versions": [
+        "alpha-sapphire",
+        "diamond",
+        "omega-ruby",
+        "pearl",
+        "platinum",
+        "white-2",
+        "x",
+        "y"
+      ],
+      "methods": [
+        "dark-grass",
+        "gift",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 1,
+      "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -1237,6 +3219,46 @@
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 20,
+      "versions": [
+        "diamond",
+        "emerald",
+        "heartgold",
+        "moon",
+        "pearl",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "shield",
+        "soulsilver",
+        "sun",
+        "sword",
+        "the-crown-tundra-shield",
+        "the-crown-tundra-sword",
+        "the-isle-of-armor-shield",
+        "the-isle-of-armor-sword",
+        "ultra-moon",
+        "ultra-sun",
+        "x",
+        "y"
+      ],
+      "methods": [
+        "dynamax-adventure",
+        "max-raid",
+        "overworld",
+        "red-flowers",
+        "walk",
+        "wanderer"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -1253,6 +3275,36 @@
       "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 35,
+      "gamesCount": 13,
+      "versions": [
+        "alpha-sapphire",
+        "black-2",
+        "diamond",
+        "emerald",
+        "heartgold",
+        "omega-ruby",
+        "pearl",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "soulsilver",
+        "x",
+        "y"
+      ],
+      "methods": [
+        "horde",
+        "walk",
+        "yellow-flowers"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -1271,6 +3323,28 @@
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 33,
+      "gamesCount": 5,
+      "versions": [
+        "black-2",
+        "ultra-moon",
+        "ultra-sun",
+        "x",
+        "y"
+      ],
+      "methods": [
+        "dark-grass",
+        "only-one",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 1,
+      "evolutionTrigger": "level-up"
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -1287,6 +3361,40 @@
       "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 95,
+      "gamesCount": 16,
+      "versions": [
+        "alpha-sapphire",
+        "diamond",
+        "emerald",
+        "heartgold",
+        "moon",
+        "omega-ruby",
+        "pearl",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "soulsilver",
+        "sun",
+        "ultra-moon",
+        "ultra-sun",
+        "x",
+        "y"
+      ],
+      "methods": [
+        "horde",
+        "purple-flowers",
+        "red-flowers",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -1305,6 +3413,44 @@
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 35,
+      "gamesCount": 18,
+      "versions": [
+        "black-2",
+        "diamond",
+        "emerald",
+        "heartgold",
+        "moon",
+        "pearl",
+        "ruby",
+        "sapphire",
+        "shield",
+        "soulsilver",
+        "sun",
+        "sword",
+        "ultra-moon",
+        "ultra-sun",
+        "white-2",
+        "x",
+        "xd",
+        "y"
+      ],
+      "methods": [
+        "bubbling-spots",
+        "max-raid",
+        "overworld",
+        "pokespot",
+        "rough-terrain",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -1321,6 +3467,33 @@
       "c5_exclusivity": 0,
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 9,
+      "versions": [
+        "black-2",
+        "colosseum",
+        "diamond",
+        "heartgold",
+        "pearl",
+        "shield",
+        "soulsilver",
+        "sword",
+        "white-2"
+      ],
+      "methods": [
+        "dark-grass",
+        "max-raid",
+        "snag",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 1,
+      "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -1339,6 +3512,28 @@
       "c6_evolution": 60,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 4,
+      "versions": [
+        "shield",
+        "sword",
+        "the-crown-tundra-shield",
+        "the-crown-tundra-sword"
+      ],
+      "methods": [
+        "dynamax-adventure",
+        "max-raid",
+        "overworld",
+        "wanderer"
+      ],
+      "easiestMethod": "dynamax-adventure",
+      "isVersionExclusive": false,
+      "evolutionDepth": 2,
+      "evolutionTrigger": "level-up"
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -1355,6 +3550,29 @@
       "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 10,
+      "gamesCount": 8,
+      "versions": [
+        "diamond",
+        "emerald",
+        "heartgold",
+        "pearl",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "soulsilver"
+      ],
+      "methods": [
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -1373,6 +3591,28 @@
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 33,
+      "gamesCount": 7,
+      "versions": [
+        "diamond",
+        "heartgold",
+        "pearl",
+        "platinum",
+        "soulsilver",
+        "x",
+        "y"
+      ],
+      "methods": [
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 1,
+      "evolutionTrigger": "level-up"
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -1389,6 +3629,43 @@
       "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 17,
+      "versions": [
+        "alpha-sapphire",
+        "black-2",
+        "colosseum",
+        "diamond",
+        "emerald",
+        "heartgold",
+        "omega-ruby",
+        "pearl",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "soulsilver",
+        "the-crown-tundra-shield",
+        "the-crown-tundra-sword",
+        "white-2",
+        "x",
+        "y"
+      ],
+      "methods": [
+        "hidden-grotto",
+        "horde",
+        "overworld",
+        "snag",
+        "walk",
+        "wanderer"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -1407,6 +3684,42 @@
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 14,
+      "versions": [
+        "black",
+        "black-2",
+        "emerald",
+        "ruby",
+        "sapphire",
+        "the-crown-tundra-shield",
+        "the-crown-tundra-sword",
+        "ultra-moon",
+        "ultra-sun",
+        "white",
+        "white-2",
+        "x",
+        "xd",
+        "y"
+      ],
+      "methods": [
+        "dark-grass",
+        "dynamax-adventure",
+        "only-one",
+        "purple-flowers",
+        "red-flowers",
+        "snag",
+        "walk",
+        "wanderer"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 1,
+      "evolutionTrigger": "level-up"
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -1423,6 +3736,39 @@
       "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 13,
+      "versions": [
+        "black",
+        "black-2",
+        "diamond",
+        "heartgold",
+        "pearl",
+        "platinum",
+        "ruby",
+        "soulsilver",
+        "white",
+        "white-2",
+        "x",
+        "xd",
+        "y"
+      ],
+      "methods": [
+        "dark-grass",
+        "hidden-grotto",
+        "horde",
+        "snag",
+        "walk",
+        "yellow-flowers"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -1441,6 +3787,38 @@
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 38,
+      "gamesCount": 13,
+      "versions": [
+        "black",
+        "black-2",
+        "diamond",
+        "emerald",
+        "heartgold",
+        "pearl",
+        "platinum",
+        "sapphire",
+        "soulsilver",
+        "white",
+        "white-2",
+        "x",
+        "y"
+      ],
+      "methods": [
+        "dark-grass",
+        "hidden-grotto",
+        "horde",
+        "walk",
+        "yellow-flowers"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -1457,6 +3835,41 @@
       "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 14,
+      "versions": [
+        "black",
+        "black-2",
+        "diamond",
+        "heartgold",
+        "pearl",
+        "platinum",
+        "sapphire",
+        "shield",
+        "soulsilver",
+        "white",
+        "white-2",
+        "x",
+        "xd",
+        "y"
+      ],
+      "methods": [
+        "dark-grass",
+        "max-raid",
+        "overworld",
+        "overworld-dirt",
+        "snag",
+        "surf",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -1475,6 +3888,42 @@
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 15,
+      "versions": [
+        "black",
+        "black-2",
+        "diamond",
+        "emerald",
+        "heartgold",
+        "pearl",
+        "platinum",
+        "ruby",
+        "soulsilver",
+        "sword",
+        "white",
+        "white-2",
+        "x",
+        "xd",
+        "y"
+      ],
+      "methods": [
+        "dark-grass",
+        "max-raid",
+        "overworld",
+        "overworld-dirt",
+        "snag",
+        "surf",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -1491,6 +3940,52 @@
       "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 24,
+      "versions": [
+        "black",
+        "black-2",
+        "diamond",
+        "emerald",
+        "heartgold",
+        "moon",
+        "pearl",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "shield",
+        "soulsilver",
+        "sun",
+        "sword",
+        "the-crown-tundra-shield",
+        "the-crown-tundra-sword",
+        "the-isle-of-armor-shield",
+        "the-isle-of-armor-sword",
+        "ultra-moon",
+        "ultra-sun",
+        "white",
+        "white-2",
+        "x",
+        "y"
+      ],
+      "methods": [
+        "bubbling-spots",
+        "good-rod",
+        "max-raid",
+        "npc-trade",
+        "overworld-water",
+        "super-rod",
+        "super-rod-spots",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -1509,6 +4004,54 @@
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 24,
+      "versions": [
+        "black",
+        "black-2",
+        "diamond",
+        "emerald",
+        "heartgold",
+        "moon",
+        "pearl",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "shield",
+        "soulsilver",
+        "sun",
+        "sword",
+        "the-crown-tundra-shield",
+        "the-crown-tundra-sword",
+        "the-isle-of-armor-shield",
+        "the-isle-of-armor-sword",
+        "ultra-moon",
+        "ultra-sun",
+        "white",
+        "white-2",
+        "x",
+        "y"
+      ],
+      "methods": [
+        "bubbling-spots",
+        "dynamax-adventure",
+        "good-rod",
+        "max-raid",
+        "old-rod",
+        "sos-encounter",
+        "sos-from-bubbling-spot",
+        "super-rod",
+        "super-rod-spots",
+        "wanderer-water"
+      ],
+      "easiestMethod": "good-rod",
+      "isVersionExclusive": false,
+      "evolutionDepth": 1,
+      "evolutionTrigger": "level-up"
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -1525,6 +4068,47 @@
       "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 60,
+      "gamesCount": 18,
+      "versions": [
+        "black-2",
+        "diamond",
+        "emerald",
+        "heartgold",
+        "pearl",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "shield",
+        "soulsilver",
+        "sword",
+        "the-isle-of-armor-shield",
+        "the-isle-of-armor-sword",
+        "ultra-moon",
+        "ultra-sun",
+        "white-2",
+        "x",
+        "y"
+      ],
+      "methods": [
+        "bubbling-spots",
+        "good-rod",
+        "max-raid",
+        "overworld",
+        "overworld-water",
+        "super-rod",
+        "surf",
+        "surf-spots",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -1543,6 +4127,46 @@
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 15,
+      "versions": [
+        "black-2",
+        "diamond",
+        "pearl",
+        "platinum",
+        "shield",
+        "sword",
+        "the-crown-tundra-shield",
+        "the-crown-tundra-sword",
+        "the-isle-of-armor-shield",
+        "the-isle-of-armor-sword",
+        "ultra-moon",
+        "ultra-sun",
+        "white-2",
+        "x",
+        "y"
+      ],
+      "methods": [
+        "dynamax-adventure",
+        "max-raid",
+        "only-one",
+        "overworld",
+        "sos-encounter",
+        "sos-from-bubbling-spot",
+        "super-rod",
+        "surf-spots",
+        "walk",
+        "wanderer",
+        "wanderer-water"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 1,
+      "evolutionTrigger": "level-up"
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -1559,6 +4183,39 @@
       "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 13,
+      "versions": [
+        "black-2",
+        "diamond",
+        "emerald",
+        "heartgold",
+        "pearl",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "shield",
+        "sword",
+        "ultra-moon",
+        "white-2",
+        "xd"
+      ],
+      "methods": [
+        "max-raid",
+        "overworld",
+        "snag",
+        "sos-encounter",
+        "sos-from-bubbling-spot",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -1577,6 +4234,34 @@
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 9,
+      "versions": [
+        "black",
+        "emerald",
+        "ruby",
+        "sapphire",
+        "shield",
+        "sword",
+        "the-crown-tundra-shield",
+        "the-crown-tundra-sword",
+        "white"
+      ],
+      "methods": [
+        "dynamax-adventure",
+        "max-raid",
+        "overworld",
+        "walk",
+        "wanderer"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 1,
+      "evolutionTrigger": "level-up"
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -1593,6 +4278,38 @@
       "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 16,
+      "versions": [
+        "black",
+        "black-2",
+        "diamond",
+        "emerald",
+        "heartgold",
+        "pearl",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "soulsilver",
+        "the-crown-tundra-shield",
+        "the-crown-tundra-sword",
+        "ultra-moon",
+        "ultra-sun",
+        "white",
+        "white-2"
+      ],
+      "methods": [
+        "bubbling-spots",
+        "gift"
+      ],
+      "easiestMethod": "bubbling-spots",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -1611,6 +4328,23 @@
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 2,
+      "versions": [
+        "the-crown-tundra-shield",
+        "the-crown-tundra-sword"
+      ],
+      "methods": [
+        "dynamax-adventure"
+      ],
+      "easiestMethod": "dynamax-adventure",
+      "isVersionExclusive": false,
+      "evolutionDepth": 1,
+      "evolutionTrigger": "level-up"
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -1627,6 +4361,39 @@
       "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 16,
+      "versions": [
+        "black",
+        "black-2",
+        "diamond",
+        "emerald",
+        "heartgold",
+        "pearl",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "soulsilver",
+        "the-crown-tundra-shield",
+        "the-crown-tundra-sword",
+        "ultra-moon",
+        "ultra-sun",
+        "white",
+        "white-2"
+      ],
+      "methods": [
+        "gift",
+        "overworld-water",
+        "wanderer-water"
+      ],
+      "easiestMethod": "overworld-water",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -1645,6 +4412,24 @@
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 2,
+      "versions": [
+        "the-crown-tundra-shield",
+        "the-crown-tundra-sword"
+      ],
+      "methods": [
+        "dynamax-adventure",
+        "wanderer"
+      ],
+      "easiestMethod": "dynamax-adventure",
+      "isVersionExclusive": false,
+      "evolutionDepth": 1,
+      "evolutionTrigger": "level-up"
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -1661,6 +4446,44 @@
       "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 50,
+      "gamesCount": 18,
+      "versions": [
+        "black",
+        "black-2",
+        "diamond",
+        "emerald",
+        "moon",
+        "pearl",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "shield",
+        "sun",
+        "sword",
+        "the-crown-tundra-shield",
+        "the-crown-tundra-sword",
+        "ultra-moon",
+        "ultra-sun",
+        "white",
+        "white-2"
+      ],
+      "methods": [
+        "bubbling-spots",
+        "feebas-tile-fishing",
+        "max-raid",
+        "overworld-water",
+        "super-rod",
+        "super-rod-spots"
+      ],
+      "easiestMethod": "super-rod",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -1679,6 +4502,31 @@
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 8,
+      "versions": [
+        "black",
+        "black-2",
+        "shield",
+        "sword",
+        "the-crown-tundra-shield",
+        "the-crown-tundra-sword",
+        "white",
+        "white-2"
+      ],
+      "methods": [
+        "max-raid",
+        "super-rod-spots",
+        "wanderer-water"
+      ],
+      "easiestMethod": "max-raid",
+      "isVersionExclusive": false,
+      "evolutionDepth": 1,
+      "evolutionTrigger": "level-up"
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -1695,6 +4543,39 @@
       "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 14,
+      "versions": [
+        "alpha-sapphire",
+        "black-2",
+        "diamond",
+        "emerald",
+        "moon",
+        "omega-ruby",
+        "pearl",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "sun",
+        "ultra-moon",
+        "ultra-sun",
+        "white-2"
+      ],
+      "methods": [
+        "gift",
+        "grass-spots",
+        "sos-encounter",
+        "sos-from-bubbling-spot",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -1713,6 +4594,39 @@
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 13,
+      "versions": [
+        "alpha-sapphire",
+        "black-2",
+        "diamond",
+        "emerald",
+        "omega-ruby",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "ultra-moon",
+        "ultra-sun",
+        "white-2",
+        "x",
+        "y"
+      ],
+      "methods": [
+        "bubbling-spots",
+        "dark-grass",
+        "devon-scope",
+        "horde",
+        "rough-terrain",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -1729,6 +4643,33 @@
       "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 11,
+      "versions": [
+        "alpha-sapphire",
+        "emerald",
+        "heartgold",
+        "omega-ruby",
+        "ruby",
+        "sapphire",
+        "soulsilver",
+        "ultra-moon",
+        "ultra-sun",
+        "x",
+        "y"
+      ],
+      "methods": [
+        "horde",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -1747,6 +4688,35 @@
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 12,
+      "versions": [
+        "black-2",
+        "diamond",
+        "emerald",
+        "heartgold",
+        "pearl",
+        "platinum",
+        "sapphire",
+        "soulsilver",
+        "ultra-moon",
+        "ultra-sun",
+        "white-2",
+        "xd"
+      ],
+      "methods": [
+        "gift",
+        "snag",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 1,
+      "evolutionTrigger": "level-up"
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -1763,6 +4733,36 @@
       "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 11,
+      "versions": [
+        "diamond",
+        "emerald",
+        "heartgold",
+        "pearl",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "shield",
+        "soulsilver",
+        "sword",
+        "xd"
+      ],
+      "methods": [
+        "max-raid",
+        "overworld",
+        "snag",
+        "surf",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -1781,6 +4781,36 @@
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 12,
+      "versions": [
+        "diamond",
+        "heartgold",
+        "pearl",
+        "platinum",
+        "ruby",
+        "shield",
+        "soulsilver",
+        "sword",
+        "the-crown-tundra-shield",
+        "the-crown-tundra-sword",
+        "x",
+        "y"
+      ],
+      "methods": [
+        "dynamax-adventure",
+        "max-raid",
+        "walk",
+        "wanderer"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 1,
+      "evolutionTrigger": "level-up"
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -1797,6 +4827,37 @@
       "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 13,
+      "versions": [
+        "black",
+        "black-2",
+        "colosseum",
+        "emerald",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "ultra-moon",
+        "ultra-sun",
+        "white",
+        "white-2",
+        "x",
+        "y"
+      ],
+      "methods": [
+        "dark-grass",
+        "gift",
+        "snag",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -1815,6 +4876,32 @@
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 20,
+      "gamesCount": 10,
+      "versions": [
+        "black",
+        "diamond",
+        "emerald",
+        "heartgold",
+        "pearl",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "soulsilver",
+        "white"
+      ],
+      "methods": [
+        "dark-grass",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 1,
+      "evolutionTrigger": "level-up"
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -1831,6 +4918,49 @@
       "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 21,
+      "versions": [
+        "black",
+        "black-2",
+        "colosseum",
+        "diamond",
+        "emerald",
+        "heartgold",
+        "moon",
+        "pearl",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "soulsilver",
+        "sun",
+        "the-crown-tundra-shield",
+        "the-crown-tundra-sword",
+        "ultra-moon",
+        "ultra-sun",
+        "white",
+        "white-2",
+        "x",
+        "y"
+      ],
+      "methods": [
+        "dark-grass",
+        "dynamax-adventure",
+        "hidden-grotto",
+        "overworld",
+        "snag",
+        "walk",
+        "wanderer",
+        "yellow-flowers"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -1849,6 +4979,30 @@
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 7,
+      "versions": [
+        "alpha-sapphire",
+        "emerald",
+        "omega-ruby",
+        "ruby",
+        "sapphire",
+        "shield",
+        "sword"
+      ],
+      "methods": [
+        "gift-egg",
+        "max-raid",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -1865,6 +5019,44 @@
       "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 19,
+      "versions": [
+        "alpha-sapphire",
+        "diamond",
+        "emerald",
+        "moon",
+        "omega-ruby",
+        "pearl",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "shield",
+        "sun",
+        "sword",
+        "the-crown-tundra-shield",
+        "the-crown-tundra-sword",
+        "ultra-moon",
+        "ultra-sun",
+        "x",
+        "xd",
+        "y"
+      ],
+      "methods": [
+        "horde",
+        "max-raid",
+        "overworld",
+        "snag",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -1883,6 +5075,35 @@
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 8,
+      "versions": [
+        "moon",
+        "shield",
+        "sun",
+        "sword",
+        "the-crown-tundra-shield",
+        "the-crown-tundra-sword",
+        "ultra-moon",
+        "ultra-sun"
+      ],
+      "methods": [
+        "dynamax-adventure",
+        "max-raid",
+        "only-one",
+        "overworld",
+        "sos-encounter",
+        "walk",
+        "wanderer"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 1,
+      "evolutionTrigger": "level-up"
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -1899,6 +5120,49 @@
       "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 21,
+      "versions": [
+        "alpha-sapphire",
+        "black",
+        "black-2",
+        "emerald",
+        "heartgold",
+        "moon",
+        "omega-ruby",
+        "pearl",
+        "ruby",
+        "sapphire",
+        "soulsilver",
+        "sun",
+        "the-crown-tundra-shield",
+        "the-crown-tundra-sword",
+        "ultra-moon",
+        "ultra-sun",
+        "white",
+        "white-2",
+        "x",
+        "xd",
+        "y"
+      ],
+      "methods": [
+        "hidden-grotto",
+        "horde",
+        "island-scan",
+        "overworld",
+        "snag",
+        "surf",
+        "walk",
+        "wanderer"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -1917,6 +5181,35 @@
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 10,
+      "versions": [
+        "black",
+        "black-2",
+        "heartgold",
+        "pearl",
+        "platinum",
+        "soulsilver",
+        "the-crown-tundra-shield",
+        "the-crown-tundra-sword",
+        "white",
+        "white-2"
+      ],
+      "methods": [
+        "dynamax-adventure",
+        "surf",
+        "surf-spots",
+        "walk",
+        "wanderer"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 1,
+      "evolutionTrigger": "level-up"
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -1933,6 +5226,28 @@
       "c5_exclusivity": 0,
       "c6_evolution": 60,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 6,
+      "versions": [
+        "black",
+        "black-2",
+        "the-crown-tundra-shield",
+        "the-crown-tundra-sword",
+        "white",
+        "white-2"
+      ],
+      "methods": [
+        "surf-spots",
+        "wanderer"
+      ],
+      "easiestMethod": "surf-spots",
+      "isVersionExclusive": false,
+      "evolutionDepth": 2,
+      "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -1951,6 +5266,40 @@
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 60,
+      "gamesCount": 15,
+      "versions": [
+        "black",
+        "black-2",
+        "diamond",
+        "emerald",
+        "heartgold",
+        "pearl",
+        "ruby",
+        "sapphire",
+        "soulsilver",
+        "ultra-moon",
+        "ultra-sun",
+        "white",
+        "white-2",
+        "x",
+        "y"
+      ],
+      "methods": [
+        "bubbling-spots",
+        "good-rod",
+        "seaweed",
+        "super-rod",
+        "surf"
+      ],
+      "easiestMethod": "good-rod",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -1967,6 +5316,29 @@
       "c5_exclusivity": 0,
       "c6_evolution": 55,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 15,
+      "gamesCount": 5,
+      "versions": [
+        "black",
+        "black-2",
+        "ultra-moon",
+        "ultra-sun",
+        "x"
+      ],
+      "methods": [
+        "sos-encounter",
+        "sos-from-bubbling-spot",
+        "super-rod",
+        "super-rod-spots"
+      ],
+      "easiestMethod": "super-rod",
+      "isVersionExclusive": false,
+      "evolutionDepth": 1,
+      "evolutionTrigger": "trade"
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -1985,6 +5357,29 @@
       "c6_evolution": 55,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 15,
+      "gamesCount": 5,
+      "versions": [
+        "ultra-moon",
+        "ultra-sun",
+        "white",
+        "white-2",
+        "y"
+      ],
+      "methods": [
+        "sos-encounter",
+        "sos-from-bubbling-spot",
+        "super-rod",
+        "super-rod-spots"
+      ],
+      "easiestMethod": "super-rod",
+      "isVersionExclusive": false,
+      "evolutionDepth": 1,
+      "evolutionTrigger": "trade"
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -2001,6 +5396,49 @@
       "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 20,
+      "versions": [
+        "black",
+        "black-2",
+        "diamond",
+        "emerald",
+        "heartgold",
+        "moon",
+        "pearl",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "soulsilver",
+        "sun",
+        "the-crown-tundra-shield",
+        "the-crown-tundra-sword",
+        "ultra-moon",
+        "ultra-sun",
+        "white",
+        "white-2",
+        "x",
+        "y"
+      ],
+      "methods": [
+        "bubbling-spots",
+        "dynamax-adventure",
+        "good-rod",
+        "old-rod",
+        "overworld-water",
+        "seaweed",
+        "super-rod",
+        "super-rod-spots",
+        "wanderer-water"
+      ],
+      "easiestMethod": "good-rod",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -2019,6 +5457,44 @@
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 70,
+      "gamesCount": 18,
+      "versions": [
+        "black",
+        "black-2",
+        "diamond",
+        "emerald",
+        "heartgold",
+        "moon",
+        "pearl",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "soulsilver",
+        "sun",
+        "ultra-moon",
+        "ultra-sun",
+        "white",
+        "white-2",
+        "x",
+        "y"
+      ],
+      "methods": [
+        "bubbling-spots",
+        "good-rod",
+        "old-rod",
+        "super-rod",
+        "super-rod-spots",
+        "surf"
+      ],
+      "easiestMethod": "good-rod",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -2035,6 +5511,44 @@
       "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 18,
+      "versions": [
+        "alpha-sapphire",
+        "black-2",
+        "emerald",
+        "heartgold",
+        "moon",
+        "omega-ruby",
+        "pearl",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "soulsilver",
+        "sun",
+        "the-crown-tundra-sword",
+        "ultra-moon",
+        "ultra-sun",
+        "white-2",
+        "x",
+        "y"
+      ],
+      "methods": [
+        "hidden-grotto",
+        "horde",
+        "overworld",
+        "walk",
+        "wanderer",
+        "yellow-flowers"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -2053,6 +5567,30 @@
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 33,
+      "gamesCount": 8,
+      "versions": [
+        "heartgold",
+        "moon",
+        "soulsilver",
+        "sun",
+        "ultra-moon",
+        "ultra-sun",
+        "x",
+        "y"
+      ],
+      "methods": [
+        "sos-encounter",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 1,
+      "evolutionTrigger": "level-up"
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -2069,6 +5607,29 @@
       "c5_exclusivity": 0,
       "c6_evolution": 60,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 6,
+      "versions": [
+        "moon",
+        "sun",
+        "the-crown-tundra-sword",
+        "ultra-moon",
+        "ultra-sun",
+        "xd"
+      ],
+      "methods": [
+        "snag",
+        "sos-encounter",
+        "wanderer"
+      ],
+      "easiestMethod": "snag",
+      "isVersionExclusive": false,
+      "evolutionDepth": 2,
+      "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -2087,6 +5648,39 @@
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 16,
+      "versions": [
+        "alpha-sapphire",
+        "diamond",
+        "emerald",
+        "heartgold",
+        "moon",
+        "omega-ruby",
+        "pearl",
+        "platinum",
+        "ruby",
+        "sapphire",
+        "soulsilver",
+        "sun",
+        "the-crown-tundra-shield",
+        "the-crown-tundra-sword",
+        "ultra-moon",
+        "ultra-sun"
+      ],
+      "methods": [
+        "gift",
+        "overworld",
+        "walk"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -2103,6 +5697,38 @@
       "c5_exclusivity": 0,
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
+    },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 12,
+      "versions": [
+        "black",
+        "black-2",
+        "heartgold",
+        "moon",
+        "soulsilver",
+        "sun",
+        "the-crown-tundra-shield",
+        "the-crown-tundra-sword",
+        "white",
+        "white-2",
+        "x",
+        "y"
+      ],
+      "methods": [
+        "dark-grass",
+        "dynamax-adventure",
+        "gift",
+        "hidden-grotto",
+        "walk",
+        "wanderer"
+      ],
+      "easiestMethod": "walk",
+      "isVersionExclusive": false,
+      "evolutionDepth": 1,
+      "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
     "flooredToEpic": false
@@ -2121,6 +5747,30 @@
       "c6_evolution": 60,
       "c7_oneTimeOnly": 0
     },
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 7,
+      "versions": [
+        "black",
+        "black-2",
+        "colosseum",
+        "the-crown-tundra-shield",
+        "the-crown-tundra-sword",
+        "white",
+        "white-2"
+      ],
+      "methods": [
+        "grass-spots",
+        "snag",
+        "wanderer"
+      ],
+      "easiestMethod": "grass-spots",
+      "isVersionExclusive": false,
+      "evolutionDepth": 2,
+      "evolutionTrigger": "level-up"
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -2131,6 +5781,32 @@
     "appliedRule": "priority:is_legendary",
     "finalScore": null,
     "components": null,
+    "rawData": {
+      "isLegendary": true,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 11,
+      "versions": [
+        "alpha-sapphire",
+        "black-2",
+        "emerald",
+        "omega-ruby",
+        "ruby",
+        "sapphire",
+        "the-crown-tundra-shield",
+        "the-crown-tundra-sword",
+        "ultra-moon",
+        "ultra-sun",
+        "white-2"
+      ],
+      "methods": [
+        "only-one"
+      ],
+      "easiestMethod": "only-one",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -2141,6 +5817,32 @@
     "appliedRule": "priority:is_legendary",
     "finalScore": null,
     "components": null,
+    "rawData": {
+      "isLegendary": true,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 11,
+      "versions": [
+        "alpha-sapphire",
+        "black-2",
+        "emerald",
+        "omega-ruby",
+        "ruby",
+        "sapphire",
+        "the-crown-tundra-shield",
+        "the-crown-tundra-sword",
+        "ultra-moon",
+        "ultra-sun",
+        "white-2"
+      ],
+      "methods": [
+        "only-one"
+      ],
+      "easiestMethod": "only-one",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -2151,6 +5853,32 @@
     "appliedRule": "priority:is_legendary",
     "finalScore": null,
     "components": null,
+    "rawData": {
+      "isLegendary": true,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 11,
+      "versions": [
+        "alpha-sapphire",
+        "black-2",
+        "emerald",
+        "omega-ruby",
+        "ruby",
+        "sapphire",
+        "the-crown-tundra-shield",
+        "the-crown-tundra-sword",
+        "ultra-moon",
+        "ultra-sun",
+        "white-2"
+      ],
+      "methods": [
+        "only-one"
+      ],
+      "easiestMethod": "only-one",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -2161,6 +5889,34 @@
     "appliedRule": "priority:is_legendary",
     "finalScore": null,
     "components": null,
+    "rawData": {
+      "isLegendary": true,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 9,
+      "versions": [
+        "alpha-sapphire",
+        "emerald",
+        "heartgold",
+        "omega-ruby",
+        "ruby",
+        "sapphire",
+        "the-crown-tundra-shield",
+        "ultra-moon",
+        "white-2"
+      ],
+      "methods": [
+        "dynamax-adventure",
+        "gift",
+        "only-one",
+        "roaming-grass",
+        "roaming-water"
+      ],
+      "easiestMethod": "dynamax-adventure",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -2171,6 +5927,34 @@
     "appliedRule": "priority:is_legendary",
     "finalScore": null,
     "components": null,
+    "rawData": {
+      "isLegendary": true,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 9,
+      "versions": [
+        "alpha-sapphire",
+        "black-2",
+        "emerald",
+        "omega-ruby",
+        "ruby",
+        "sapphire",
+        "soulsilver",
+        "the-crown-tundra-sword",
+        "ultra-sun"
+      ],
+      "methods": [
+        "dynamax-adventure",
+        "gift",
+        "only-one",
+        "roaming-grass",
+        "roaming-water"
+      ],
+      "easiestMethod": "dynamax-adventure",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -2181,6 +5965,28 @@
     "appliedRule": "priority:is_legendary",
     "finalScore": null,
     "components": null,
+    "rawData": {
+      "isLegendary": true,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 6,
+      "versions": [
+        "alpha-sapphire",
+        "emerald",
+        "heartgold",
+        "sapphire",
+        "the-crown-tundra-shield",
+        "ultra-moon"
+      ],
+      "methods": [
+        "dynamax-adventure",
+        "only-one"
+      ],
+      "easiestMethod": "dynamax-adventure",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -2191,6 +5997,28 @@
     "appliedRule": "priority:is_legendary",
     "finalScore": null,
     "components": null,
+    "rawData": {
+      "isLegendary": true,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 6,
+      "versions": [
+        "emerald",
+        "omega-ruby",
+        "ruby",
+        "soulsilver",
+        "the-crown-tundra-sword",
+        "ultra-sun"
+      ],
+      "methods": [
+        "dynamax-adventure",
+        "only-one"
+      ],
+      "easiestMethod": "dynamax-adventure",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -2201,6 +6029,33 @@
     "appliedRule": "priority:is_legendary",
     "finalScore": null,
     "components": null,
+    "rawData": {
+      "isLegendary": true,
+      "isMythical": false,
+      "maxEncounterChance": 100,
+      "gamesCount": 11,
+      "versions": [
+        "alpha-sapphire",
+        "emerald",
+        "heartgold",
+        "omega-ruby",
+        "ruby",
+        "sapphire",
+        "soulsilver",
+        "the-crown-tundra-shield",
+        "the-crown-tundra-sword",
+        "ultra-moon",
+        "ultra-sun"
+      ],
+      "methods": [
+        "dynamax-adventure",
+        "only-one"
+      ],
+      "easiestMethod": "dynamax-adventure",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -2211,6 +6066,24 @@
     "appliedRule": "priority:is_mythical",
     "finalScore": null,
     "components": null,
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": true,
+      "maxEncounterChance": 100,
+      "gamesCount": 2,
+      "versions": [
+        "ruby",
+        "sapphire"
+      ],
+      "methods": [
+        "colosseum-bonus-disc-us",
+        "pokemon-channel-pal"
+      ],
+      "easiestMethod": "colosseum-bonus-disc-us",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   },
@@ -2221,6 +6094,26 @@
     "appliedRule": "priority:is_mythical",
     "finalScore": null,
     "components": null,
+    "rawData": {
+      "isLegendary": false,
+      "isMythical": true,
+      "maxEncounterChance": 100,
+      "gamesCount": 5,
+      "versions": [
+        "alpha-sapphire",
+        "emerald",
+        "firered",
+        "leafgreen",
+        "omega-ruby"
+      ],
+      "methods": [
+        "only-one"
+      ],
+      "easiestMethod": "only-one",
+      "isVersionExclusive": false,
+      "evolutionDepth": 0,
+      "evolutionTrigger": null
+    },
     "oneTimeOnly": false,
     "flooredToEpic": false
   }

@@ -230,6 +230,95 @@ export function computeOneTimeOnlyComponent(encounters: any[]): number {
   return isOneTimeOnly(encounters) ? 100 : 0;
 }
 
+/**
+ * Raw encounter/spawn rate (%) behind C1 — the max "chance" value found
+ * across all games, or null if no numeric chance was ever recorded.
+ */
+export function getMaxEncounterChance(encounters: any[]): number | null {
+  let maxChance = 0;
+  let found = false;
+
+  for (const locationEntry of encounters ?? []) {
+    const versionDetails = locationEntry?.version_details ?? [];
+    for (const versionDetail of versionDetails) {
+      const encounterDetails = versionDetail?.encounter_details ?? [];
+      for (const detail of encounterDetails) {
+        if (typeof detail?.chance === "number") {
+          found = true;
+          if (detail.chance > maxChance) maxChance = detail.chance;
+        }
+      }
+    }
+  }
+
+  return found ? maxChance : null;
+}
+
+/**
+ * Raw list of distinct game versions the Pokémon appears in, behind C3/C5.
+ */
+export function getDistinctVersionNames(encounters: any[]): string[] {
+  return Array.from(collectDistinctVersionNames(encounters)).sort();
+}
+
+/**
+ * Raw list of distinct obtaining methods found, behind C4/C7.
+ */
+export function getDistinctMethods(encounters: any[]): string[] {
+  const methods = new Set<string>();
+  for (const locationEntry of encounters ?? []) {
+    const versionDetails = locationEntry?.version_details ?? [];
+    for (const versionDetail of versionDetails) {
+      const encounterDetails = versionDetail?.encounter_details ?? [];
+      for (const detail of encounterDetails) {
+        const methodName = detail?.method?.name;
+        if (methodName) methods.add(methodName);
+      }
+    }
+  }
+  return Array.from(methods).sort();
+}
+
+/**
+ * The single easiest (lowest-difficulty) obtaining method found, behind C4.
+ */
+export function getEasiestMethod(encounters: any[]): string | null {
+  const methods = getDistinctMethods(encounters);
+  if (methods.length === 0) return null;
+
+  let min = Infinity;
+  let easiest: string | null = null;
+  for (const method of methods) {
+    const difficulty = METHOD_DIFFICULTY[method] ?? DEFAULT_METHOD_DIFFICULTY;
+    if (difficulty < min) {
+      min = difficulty;
+      easiest = method;
+    }
+  }
+  return easiest;
+}
+
+/**
+ * Raw evolution-chain position (depth + trigger) behind C6, or null if the
+ * species couldn't be located in the chain.
+ */
+export function getEvolutionInfo(
+  evolutionChain: { chain: EvolutionChainNode } | null | undefined,
+  speciesName: string,
+): { depth: number; trigger: string | null } | null {
+  const root = evolutionChain?.chain;
+  if (!root) return null;
+
+  const located = findSpeciesNode(root, speciesName);
+  if (!located) return null;
+
+  const { depth, node } = located;
+  const trigger =
+    depth > 0 ? node?.evolution_details?.[0]?.trigger?.name ?? null : null;
+
+  return { depth, trigger };
+}
+
 export function mapScoreToRarityTier(score: number): Rarity {
   for (const { max, tier } of SCORE_THRESHOLDS) {
     if (score <= max) return tier;

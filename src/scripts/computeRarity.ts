@@ -11,8 +11,13 @@ import {
   computeOneTimeOnlyComponent,
   mapScoreToRarityTier,
   applyEpicFloor,
+  getMaxEncounterChance,
+  getDistinctVersionNames,
+  getDistinctMethods,
+  getEasiestMethod,
+  getEvolutionInfo,
 } from "./rarityScoring";
-import { RarityResult } from "../types/RarityResult";
+import { RarityResult, RawRarityData } from "../types/RarityResult";
 
 const WEIGHT_ENCOUNTER_RATE = 0.25;
 const WEIGHT_GAMES = 0.15;
@@ -45,12 +50,36 @@ export async function computeRarity(id: number): Promise<RarityResult> {
       appliedRule: "priority:species_fetch_failed",
       finalScore: null,
       components: null,
+      rawData: null,
       oneTimeOnly: false,
       flooredToEpic: false,
     };
   }
 
   const name = getFrenchName(species);
+
+  // Fetched unconditionally (even for legendaries/mythicals/absent cases)
+  // so the raw PokéAPI-derived facts can always be inspected for audit,
+  // not just the final priority-rule outcome.
+  const encounters = await fetchEncounters(id);
+  const evolutionChain = await fetchEvolutionChain(species.evolution_chain.url);
+
+  const versions = getDistinctVersionNames(encounters);
+  const evolutionInfo = getEvolutionInfo(evolutionChain, species.name);
+  const oneTimeOnly = isOneTimeOnly(encounters);
+
+  const rawData: RawRarityData = {
+    isLegendary: species.is_legendary === true,
+    isMythical: species.is_mythical === true,
+    maxEncounterChance: getMaxEncounterChance(encounters),
+    gamesCount: versions.length,
+    versions,
+    methods: getDistinctMethods(encounters),
+    easiestMethod: getEasiestMethod(encounters),
+    isVersionExclusive: versions.length <= 1,
+    evolutionDepth: evolutionInfo?.depth ?? null,
+    evolutionTrigger: evolutionInfo?.trigger ?? null,
+  };
 
   if (species.is_mythical === true) {
     return {
@@ -60,7 +89,8 @@ export async function computeRarity(id: number): Promise<RarityResult> {
       appliedRule: "priority:is_mythical",
       finalScore: null,
       components: null,
-      oneTimeOnly: false,
+      rawData,
+      oneTimeOnly,
       flooredToEpic: false,
     };
   }
@@ -73,12 +103,11 @@ export async function computeRarity(id: number): Promise<RarityResult> {
       appliedRule: "priority:is_legendary",
       finalScore: null,
       components: null,
-      oneTimeOnly: false,
+      rawData,
+      oneTimeOnly,
       flooredToEpic: false,
     };
   }
-
-  const encounters = await fetchEncounters(id);
 
   if (Array.isArray(encounters) && encounters.length === 0) {
     return {
@@ -88,12 +117,11 @@ export async function computeRarity(id: number): Promise<RarityResult> {
       appliedRule: "priority:no_encounters_absent",
       finalScore: null,
       components: null,
-      oneTimeOnly: false,
+      rawData,
+      oneTimeOnly,
       flooredToEpic: false,
     };
   }
-
-  const evolutionChain = await fetchEvolutionChain(species.evolution_chain.url);
 
   const c1_encounterRate = computeEncounterRateComponent(encounters);
   const c3_games = computeGamesComponent(encounters);
@@ -112,7 +140,6 @@ export async function computeRarity(id: number): Promise<RarityResult> {
 
   const finalScore = Math.min(100, Math.max(0, rawScore / COMPOSITE_WEIGHT_SUM));
 
-  const oneTimeOnly = isOneTimeOnly(encounters);
   const tierBeforeFloor = mapScoreToRarityTier(finalScore);
   const rarity = applyEpicFloor(tierBeforeFloor, oneTimeOnly);
 
@@ -130,6 +157,7 @@ export async function computeRarity(id: number): Promise<RarityResult> {
       c6_evolution,
       c7_oneTimeOnly,
     },
+    rawData,
     oneTimeOnly,
     flooredToEpic: rarity !== tierBeforeFloor,
   };
