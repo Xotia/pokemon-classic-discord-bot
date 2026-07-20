@@ -113,29 +113,53 @@ export function isOneTimeOnly(encounters: any[]): boolean {
 }
 
 /**
- * C1 — Encounter rate (weight 0.25).
- * Rarer Pokémon have a lower max encounter chance across all games.
+ * Groups `encounter_details` entries by location-area + version + method
+ * (the three-part key that identifies a single spawn table) and sums the
+ * numeric `chance` values within each group, since PokéAPI splits one
+ * spawn table into multiple level-tier slots that share all three fields.
+ * Returns the MAXIMUM of these per-group sums across all groups, or null
+ * if no numeric `chance` was found anywhere.
  */
-export function computeEncounterRateComponent(encounters: any[]): number {
-  let maxChance = 0;
+function computeMaxGroupedEncounterChance(encounters: any[]): number | null {
+  const groupSums = new Map<string, number>();
   let found = false;
 
   for (const locationEntry of encounters ?? []) {
+    const locationName = locationEntry?.location_area?.name;
     const versionDetails = locationEntry?.version_details ?? [];
     for (const versionDetail of versionDetails) {
+      const versionName = versionDetail?.version?.name;
       const encounterDetails = versionDetail?.encounter_details ?? [];
       for (const detail of encounterDetails) {
         if (typeof detail?.chance === "number") {
           found = true;
-          if (detail.chance > maxChance) maxChance = detail.chance;
+          const methodName = detail?.method?.name;
+          const groupKey = `${locationName}|${versionName}|${methodName}`;
+          groupSums.set(groupKey, (groupSums.get(groupKey) ?? 0) + detail.chance);
         }
       }
     }
   }
 
+  if (!found) return null;
+
+  let maxGroupSum = 0;
+  for (const sum of groupSums.values()) {
+    if (sum > maxGroupSum) maxGroupSum = sum;
+  }
+  return maxGroupSum;
+}
+
+/**
+ * C1 — Encounter rate (weight 0.25).
+ * Rarer Pokémon have a lower max encounter chance across all games.
+ */
+export function computeEncounterRateComponent(encounters: any[]): number {
+  const maxChance = computeMaxGroupedEncounterChance(encounters);
+
   // No numeric "chance" found at all (e.g. only gift-style entries with
   // no roaming chance): treat as the rarest case rather than crash.
-  if (!found) return 100;
+  if (maxChance === null) return 100;
 
   return clamp(100 - maxChance, 0, 100);
 }
@@ -315,23 +339,7 @@ export function computeOneTimeOnlyComponent(encounters: any[]): number {
  * across all games, or null if no numeric chance was ever recorded.
  */
 export function getMaxEncounterChance(encounters: any[]): number | null {
-  let maxChance = 0;
-  let found = false;
-
-  for (const locationEntry of encounters ?? []) {
-    const versionDetails = locationEntry?.version_details ?? [];
-    for (const versionDetail of versionDetails) {
-      const encounterDetails = versionDetail?.encounter_details ?? [];
-      for (const detail of encounterDetails) {
-        if (typeof detail?.chance === "number") {
-          found = true;
-          if (detail.chance > maxChance) maxChance = detail.chance;
-        }
-      }
-    }
-  }
-
-  return found ? maxChance : null;
+  return computeMaxGroupedEncounterChance(encounters);
 }
 
 /**

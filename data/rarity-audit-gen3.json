@@ -245,11 +245,11 @@
   {
     "id": 261,
     "name": "Medhyèna",
-    "rarity": "rare",
+    "rarity": "uncommon",
     "appliedRule": "composite",
-    "finalScore": 31.25,
+    "finalScore": 23.4375,
     "components": {
-      "c1_encounterRate": 65,
+      "c1_encounterRate": 40,
       "c3_games": 58.33333333333333,
       "c4_method": 0,
       "c5_exclusivity": 0,
@@ -259,7 +259,7 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 35,
+      "maxEncounterChance": 60,
       "gamesCount": 5,
       "versions": [
         "alpha-sapphire",
@@ -285,9 +285,9 @@
     "name": "Grahyèna",
     "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 58.4375,
+    "finalScore": 55.3125,
     "components": {
-      "c1_encounterRate": 80,
+      "c1_encounterRate": 70,
       "c3_games": 91.66666666666667,
       "c4_method": 0,
       "c5_exclusivity": 100,
@@ -297,7 +297,7 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 20,
+      "maxEncounterChance": 30,
       "gamesCount": 1,
       "versions": [
         "emerald"
@@ -356,9 +356,9 @@
     "name": "Linéon",
     "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 49.0625,
+    "finalScore": 45.9375,
     "components": {
-      "c1_encounterRate": 80,
+      "c1_encounterRate": 70,
       "c3_games": 75,
       "c4_method": 0,
       "c5_exclusivity": 50,
@@ -368,7 +368,7 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 20,
+      "maxEncounterChance": 30,
       "gamesCount": 3,
       "versions": [
         "emerald",
@@ -579,9 +579,9 @@
     "name": "Lombre",
     "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 56.875,
+    "finalScore": 53.75,
     "components": {
-      "c1_encounterRate": 90,
+      "c1_encounterRate": 80,
       "c3_games": 83.33333333333334,
       "c4_method": 0,
       "c5_exclusivity": 75,
@@ -591,7 +591,7 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 10,
+      "maxEncounterChance": 20,
       "gamesCount": 2,
       "versions": [
         "emerald",
@@ -672,9 +672,9 @@
     "name": "Pifeuil",
     "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 58.4375,
+    "finalScore": 56.875,
     "components": {
-      "c1_encounterRate": 95,
+      "c1_encounterRate": 90,
       "c3_games": 83.33333333333334,
       "c4_method": 0,
       "c5_exclusivity": 75,
@@ -684,7 +684,7 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 5,
+      "maxEncounterChance": 10,
       "gamesCount": 2,
       "versions": [
         "emerald",
@@ -726,11 +726,11 @@
   {
     "id": 276,
     "name": "Nirondelle",
-    "rarity": "rare",
+    "rarity": "uncommon",
     "appliedRule": "composite",
-    "finalScore": 35.9375,
+    "finalScore": 29.6875,
     "components": {
-      "c1_encounterRate": 80,
+      "c1_encounterRate": 60,
       "c3_games": 58.33333333333333,
       "c4_method": 0,
       "c5_exclusivity": 0,
@@ -740,7 +740,7 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 20,
+      "maxEncounterChance": 40,
       "gamesCount": 5,
       "versions": [
         "alpha-sapphire",
@@ -799,11 +799,11 @@
   {
     "id": 278,
     "name": "Goélise",
-    "rarity": "uncommon",
+    "rarity": "common",
     "appliedRule": "composite",
-    "finalScore": 23.4375,
+    "finalScore": 12.499999999999996,
     "components": {
-      "c1_encounterRate": 40,
+      "c1_encounterRate": 5,
       "c3_games": 58.33333333333333,
       "c4_method": 0,
       "c5_exclusivity": 0,
@@ -813,7 +813,7 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 60,
+      "maxEncounterChance": 95,
       "gamesCount": 5,
       "versions": [
         "alpha-sapphire",
@@ -840,9 +840,9 @@
     "name": "Bekipan",
     "rarity": "epic",
     "appliedRule": "composite",
-    "finalScore": 61.5625,
+    "finalScore": 61.25,
     "components": {
-      "c1_encounterRate": 96,
+      "c1_encounterRate": 95,
       "c3_games": 75,
       "c4_method": 40,
       "c5_exclusivity": 50,
@@ -852,7 +852,7 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 4,
+      "maxEncounterChance": 5,
       "gamesCount": 3,
       "versions": [
         "emerald",
@@ -1014,9 +1014,9 @@
     "name": "Balignon",
     "rarity": "rare",
     "appliedRule": "composite",
-    "finalScore": 39.0625,
+    "finalScore": 37.5,
     "components": {
-      "c1_encounterRate": 90,
+      "c1_encounterRate": 85,
       "c3_games": 58.33333333333333,
       "c4_method": 0,
       "c5_exclusivity": 0,
@@ -1026,7 +1026,7 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 10,
+      "maxEncounterChance": 15,
       "gamesCount": 5,
       "versions": [
         "alpha-sapphire",
@@ -1074,9 +1074,9 @@
     "name": "Parecool",
     "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 50.3125,
+    "finalScore": 50,
     "components": {
-      "c1_encounterRate": 96,
+      "c1_encounterRate": 95,
       "c3_games": 75,
       "c4_method": 0,
       "c5_exclusivity": 50,
@@ -1086,7 +1086,7 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 4,
+      "maxEncounterChance": 5,
       "gamesCount": 3,
       "versions": [
         "emerald",
@@ -1273,9 +1273,9 @@
     "name": "Ramboum",
     "rarity": "rare",
     "appliedRule": "composite",
-    "finalScore": 42.8125,
+    "finalScore": 40.9375,
     "components": {
-      "c1_encounterRate": 90,
+      "c1_encounterRate": 84,
       "c3_games": 58.33333333333333,
       "c4_method": 0,
       "c5_exclusivity": 0,
@@ -1285,7 +1285,7 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 10,
+      "maxEncounterChance": 16,
       "gamesCount": 5,
       "versions": [
         "alpha-sapphire",
@@ -1370,11 +1370,11 @@
   {
     "id": 297,
     "name": "Hariyama",
-    "rarity": "very_rare",
+    "rarity": "rare",
     "appliedRule": "composite",
-    "finalScore": 49.0625,
+    "finalScore": 44.375,
     "components": {
-      "c1_encounterRate": 80,
+      "c1_encounterRate": 65,
       "c3_games": 75,
       "c4_method": 0,
       "c5_exclusivity": 50,
@@ -1384,7 +1384,7 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 20,
+      "maxEncounterChance": 35,
       "gamesCount": 3,
       "versions": [
         "emerald",
@@ -1523,11 +1523,11 @@
   {
     "id": 302,
     "name": "Ténéfix",
-    "rarity": "very_rare",
+    "rarity": "rare",
     "appliedRule": "composite",
-    "finalScore": 45.3125,
+    "finalScore": 40.625,
     "components": {
-      "c1_encounterRate": 80,
+      "c1_encounterRate": 65,
       "c3_games": 75,
       "c4_method": 0,
       "c5_exclusivity": 50,
@@ -1537,7 +1537,7 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 20,
+      "maxEncounterChance": 35,
       "gamesCount": 3,
       "versions": [
         "alpha-sapphire",
@@ -1559,11 +1559,11 @@
   {
     "id": 303,
     "name": "Mysdibule",
-    "rarity": "very_rare",
+    "rarity": "rare",
     "appliedRule": "composite",
-    "finalScore": 45.3125,
+    "finalScore": 40.625,
     "components": {
-      "c1_encounterRate": 80,
+      "c1_encounterRate": 65,
       "c3_games": 75,
       "c4_method": 0,
       "c5_exclusivity": 50,
@@ -1573,7 +1573,7 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 20,
+      "maxEncounterChance": 35,
       "gamesCount": 3,
       "versions": [
         "emerald",
@@ -1635,9 +1635,9 @@
     "name": "Galegon",
     "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 52.1875,
+    "finalScore": 47.5,
     "components": {
-      "c1_encounterRate": 90,
+      "c1_encounterRate": 75,
       "c3_games": 75,
       "c4_method": 0,
       "c5_exclusivity": 50,
@@ -1647,7 +1647,7 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 10,
+      "maxEncounterChance": 25,
       "gamesCount": 3,
       "versions": [
         "emerald",
@@ -1729,9 +1729,9 @@
     "name": "Charmina",
     "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 56.875,
+    "finalScore": 55.3125,
     "components": {
-      "c1_encounterRate": 90,
+      "c1_encounterRate": 85,
       "c3_games": 83.33333333333334,
       "c4_method": 0,
       "c5_exclusivity": 75,
@@ -1741,7 +1741,7 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 10,
+      "maxEncounterChance": 15,
       "gamesCount": 2,
       "versions": [
         "ruby",
@@ -1873,11 +1873,11 @@
   {
     "id": 312,
     "name": "Négapi",
-    "rarity": "rare",
+    "rarity": "uncommon",
     "appliedRule": "composite",
-    "finalScore": 31.25,
+    "finalScore": 29.6875,
     "components": {
-      "c1_encounterRate": 65,
+      "c1_encounterRate": 60,
       "c3_games": 58.33333333333333,
       "c4_method": 0,
       "c5_exclusivity": 0,
@@ -1887,7 +1887,7 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 35,
+      "maxEncounterChance": 40,
       "gamesCount": 5,
       "versions": [
         "alpha-sapphire",
@@ -1913,9 +1913,9 @@
     "name": "Muciole",
     "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 50,
+    "finalScore": 45.9375,
     "components": {
-      "c1_encounterRate": 95,
+      "c1_encounterRate": 82,
       "c3_games": 75,
       "c4_method": 0,
       "c5_exclusivity": 50,
@@ -1925,7 +1925,7 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 5,
+      "maxEncounterChance": 18,
       "gamesCount": 3,
       "versions": [
         "emerald",
@@ -1948,9 +1948,9 @@
     "name": "Lumivole",
     "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 50,
+    "finalScore": 45.9375,
     "components": {
-      "c1_encounterRate": 95,
+      "c1_encounterRate": 82,
       "c3_games": 75,
       "c4_method": 0,
       "c5_exclusivity": 50,
@@ -1960,7 +1960,7 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 5,
+      "maxEncounterChance": 18,
       "gamesCount": 3,
       "versions": [
         "emerald",
@@ -2020,9 +2020,9 @@
     "name": "Gloupti",
     "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 48.4375,
+    "finalScore": 46.875,
     "components": {
-      "c1_encounterRate": 90,
+      "c1_encounterRate": 85,
       "c3_games": 75,
       "c4_method": 0,
       "c5_exclusivity": 50,
@@ -2032,7 +2032,7 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 10,
+      "maxEncounterChance": 15,
       "gamesCount": 3,
       "versions": [
         "emerald",
@@ -2075,11 +2075,11 @@
   {
     "id": 318,
     "name": "Carvanha",
-    "rarity": "very_rare",
+    "rarity": "uncommon",
     "appliedRule": "composite",
-    "finalScore": 46.5625,
+    "finalScore": 27.8125,
     "components": {
-      "c1_encounterRate": 60,
+      "c1_encounterRate": 0,
       "c3_games": 75,
       "c4_method": 40,
       "c5_exclusivity": 50,
@@ -2089,7 +2089,7 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 40,
+      "maxEncounterChance": 100,
       "gamesCount": 3,
       "versions": [
         "emerald",
@@ -2149,11 +2149,11 @@
   {
     "id": 320,
     "name": "Wailmer",
-    "rarity": "very_rare",
+    "rarity": "uncommon",
     "appliedRule": "composite",
-    "finalScore": 46.5625,
+    "finalScore": 27.8125,
     "components": {
-      "c1_encounterRate": 60,
+      "c1_encounterRate": 0,
       "c3_games": 75,
       "c4_method": 40,
       "c5_exclusivity": 50,
@@ -2163,7 +2163,7 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 40,
+      "maxEncounterChance": 100,
       "gamesCount": 3,
       "versions": [
         "emerald",
@@ -2222,9 +2222,9 @@
     "name": "Chamallot",
     "rarity": "uncommon",
     "appliedRule": "composite",
-    "finalScore": 21.875,
+    "finalScore": 18.749999999999996,
     "components": {
-      "c1_encounterRate": 35,
+      "c1_encounterRate": 25,
       "c3_games": 58.33333333333333,
       "c4_method": 0,
       "c5_exclusivity": 0,
@@ -2234,7 +2234,7 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 65,
+      "maxEncounterChance": 75,
       "gamesCount": 5,
       "versions": [
         "alpha-sapphire",
@@ -2292,11 +2292,11 @@
   {
     "id": 324,
     "name": "Chartor",
-    "rarity": "very_rare",
+    "rarity": "rare",
     "appliedRule": "composite",
-    "finalScore": 45.3125,
+    "finalScore": 42.1875,
     "components": {
-      "c1_encounterRate": 80,
+      "c1_encounterRate": 70,
       "c3_games": 75,
       "c4_method": 0,
       "c5_exclusivity": 50,
@@ -2306,7 +2306,7 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 20,
+      "maxEncounterChance": 30,
       "gamesCount": 3,
       "versions": [
         "emerald",
@@ -2425,11 +2425,11 @@
   {
     "id": 328,
     "name": "Kraknoix",
-    "rarity": "very_rare",
+    "rarity": "rare",
     "appliedRule": "composite",
-    "finalScore": 45.3125,
+    "finalScore": 35.9375,
     "components": {
-      "c1_encounterRate": 80,
+      "c1_encounterRate": 50,
       "c3_games": 75,
       "c4_method": 0,
       "c5_exclusivity": 50,
@@ -2439,7 +2439,7 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 20,
+      "maxEncounterChance": 50,
       "gamesCount": 3,
       "versions": [
         "emerald",
@@ -2460,7 +2460,7 @@
   {
     "id": 329,
     "name": "Vibraninf",
-    "rarity": "epic",
+    "rarity": "very_rare",
     "appliedRule": "priority:no_encounters_inherits_parent",
     "finalScore": null,
     "components": null,
@@ -2482,7 +2482,7 @@
   {
     "id": 330,
     "name": "Libégon",
-    "rarity": "ultra_rare",
+    "rarity": "epic",
     "appliedRule": "priority:no_encounters_inherits_parent",
     "finalScore": null,
     "components": null,
@@ -2506,9 +2506,9 @@
     "name": "Cacnea",
     "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 48.4375,
+    "finalScore": 45.3125,
     "components": {
-      "c1_encounterRate": 90,
+      "c1_encounterRate": 80,
       "c3_games": 75,
       "c4_method": 0,
       "c5_exclusivity": 50,
@@ -2518,7 +2518,7 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 10,
+      "maxEncounterChance": 20,
       "gamesCount": 3,
       "versions": [
         "emerald",
@@ -2601,9 +2601,9 @@
     "name": "Altaria",
     "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 54.0625,
+    "finalScore": 53.4375,
     "components": {
-      "c1_encounterRate": 96,
+      "c1_encounterRate": 94,
       "c3_games": 75,
       "c4_method": 0,
       "c5_exclusivity": 50,
@@ -2613,7 +2613,7 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 4,
+      "maxEncounterChance": 6,
       "gamesCount": 3,
       "versions": [
         "emerald",
@@ -2636,9 +2636,9 @@
     "name": "Mangriff",
     "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 57.8125,
+    "finalScore": 55,
     "components": {
-      "c1_encounterRate": 90,
+      "c1_encounterRate": 81,
       "c3_games": 91.66666666666667,
       "c4_method": 0,
       "c5_exclusivity": 100,
@@ -2648,7 +2648,7 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 10,
+      "maxEncounterChance": 19,
       "gamesCount": 1,
       "versions": [
         "ruby"
@@ -2669,9 +2669,9 @@
     "name": "Séviper",
     "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 53.125,
+    "finalScore": 50.3125,
     "components": {
-      "c1_encounterRate": 90,
+      "c1_encounterRate": 81,
       "c3_games": 83.33333333333334,
       "c4_method": 0,
       "c5_exclusivity": 75,
@@ -2681,7 +2681,7 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 10,
+      "maxEncounterChance": 19,
       "gamesCount": 2,
       "versions": [
         "emerald",
@@ -2703,9 +2703,9 @@
     "name": "Séléroc",
     "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 57.8125,
+    "finalScore": 50,
     "components": {
-      "c1_encounterRate": 90,
+      "c1_encounterRate": 65,
       "c3_games": 91.66666666666667,
       "c4_method": 0,
       "c5_exclusivity": 100,
@@ -2715,7 +2715,7 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 10,
+      "maxEncounterChance": 35,
       "gamesCount": 1,
       "versions": [
         "sapphire"
@@ -2737,9 +2737,9 @@
     "name": "Solaroc",
     "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 53.125,
+    "finalScore": 45.3125,
     "components": {
-      "c1_encounterRate": 90,
+      "c1_encounterRate": 65,
       "c3_games": 83.33333333333334,
       "c4_method": 0,
       "c5_exclusivity": 75,
@@ -2749,7 +2749,7 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 10,
+      "maxEncounterChance": 35,
       "gamesCount": 2,
       "versions": [
         "emerald",
@@ -2770,11 +2770,11 @@
   {
     "id": 339,
     "name": "Barloche",
-    "rarity": "very_rare",
+    "rarity": "uncommon",
     "appliedRule": "composite",
-    "finalScore": 46.5625,
+    "finalScore": 27.8125,
     "components": {
-      "c1_encounterRate": 60,
+      "c1_encounterRate": 0,
       "c3_games": 75,
       "c4_method": 40,
       "c5_exclusivity": 50,
@@ -2784,7 +2784,7 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 40,
+      "maxEncounterChance": 100,
       "gamesCount": 3,
       "versions": [
         "emerald",
@@ -2808,9 +2808,9 @@
     "name": "Barbicha",
     "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 58.125,
+    "finalScore": 56.5625,
     "components": {
-      "c1_encounterRate": 85,
+      "c1_encounterRate": 80,
       "c3_games": 75,
       "c4_method": 40,
       "c5_exclusivity": 50,
@@ -2820,7 +2820,7 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 15,
+      "maxEncounterChance": 20,
       "gamesCount": 3,
       "versions": [
         "emerald",
@@ -2841,11 +2841,11 @@
   {
     "id": 341,
     "name": "Écrapince",
-    "rarity": "very_rare",
+    "rarity": "uncommon",
     "appliedRule": "composite",
-    "finalScore": 46.5625,
+    "finalScore": 27.8125,
     "components": {
-      "c1_encounterRate": 60,
+      "c1_encounterRate": 0,
       "c3_games": 75,
       "c4_method": 40,
       "c5_exclusivity": 50,
@@ -2855,7 +2855,7 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 40,
+      "maxEncounterChance": 100,
       "gamesCount": 3,
       "versions": [
         "emerald",
@@ -2877,7 +2877,7 @@
   {
     "id": 342,
     "name": "Colhomard",
-    "rarity": "epic",
+    "rarity": "rare",
     "appliedRule": "priority:no_encounters_inherits_parent",
     "finalScore": null,
     "components": null,
@@ -2899,11 +2899,11 @@
   {
     "id": 343,
     "name": "Balbuto",
-    "rarity": "very_rare",
+    "rarity": "rare",
     "appliedRule": "composite",
-    "finalScore": 48.4375,
+    "finalScore": 44.0625,
     "components": {
-      "c1_encounterRate": 90,
+      "c1_encounterRate": 76,
       "c3_games": 75,
       "c4_method": 0,
       "c5_exclusivity": 50,
@@ -2913,7 +2913,7 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 10,
+      "maxEncounterChance": 24,
       "gamesCount": 3,
       "versions": [
         "emerald",
@@ -2936,9 +2936,9 @@
     "name": "Kaorine",
     "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 52.1875,
+    "finalScore": 47.5,
     "components": {
-      "c1_encounterRate": 90,
+      "c1_encounterRate": 75,
       "c3_games": 75,
       "c4_method": 0,
       "c5_exclusivity": 50,
@@ -2948,7 +2948,7 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 10,
+      "maxEncounterChance": 25,
       "gamesCount": 3,
       "versions": [
         "emerald",
@@ -3191,7 +3191,7 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
+      "maxEncounterChance": 600,
       "gamesCount": 5,
       "versions": [
         "alpha-sapphire",
@@ -3256,9 +3256,9 @@
     "name": "Branette",
     "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 56.875,
+    "finalScore": 55.3125,
     "components": {
-      "c1_encounterRate": 90,
+      "c1_encounterRate": 85,
       "c3_games": 83.33333333333334,
       "c4_method": 0,
       "c5_exclusivity": 75,
@@ -3268,7 +3268,7 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 10,
+      "maxEncounterChance": 15,
       "gamesCount": 2,
       "versions": [
         "emerald",
@@ -3288,11 +3288,11 @@
   {
     "id": 355,
     "name": "Skelénox",
-    "rarity": "very_rare",
+    "rarity": "uncommon",
     "appliedRule": "composite",
-    "finalScore": 45.3125,
+    "finalScore": 20.3125,
     "components": {
-      "c1_encounterRate": 80,
+      "c1_encounterRate": 0,
       "c3_games": 75,
       "c4_method": 0,
       "c5_exclusivity": 50,
@@ -3302,7 +3302,7 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 20,
+      "maxEncounterChance": 100,
       "gamesCount": 3,
       "versions": [
         "emerald",
@@ -3323,11 +3323,11 @@
   {
     "id": 356,
     "name": "Téraclope",
-    "rarity": "epic",
+    "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 61.5625,
+    "finalScore": 60,
     "components": {
-      "c1_encounterRate": 90,
+      "c1_encounterRate": 85,
       "c3_games": 91.66666666666667,
       "c4_method": 0,
       "c5_exclusivity": 100,
@@ -3337,7 +3337,7 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 10,
+      "maxEncounterChance": 15,
       "gamesCount": 1,
       "versions": [
         "ruby"
@@ -3358,9 +3358,9 @@
     "name": "Tropius",
     "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 50.3125,
+    "finalScore": 48.75,
     "components": {
-      "c1_encounterRate": 96,
+      "c1_encounterRate": 91,
       "c3_games": 75,
       "c4_method": 0,
       "c5_exclusivity": 50,
@@ -3370,7 +3370,7 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 4,
+      "maxEncounterChance": 9,
       "gamesCount": 3,
       "versions": [
         "emerald",
@@ -3393,9 +3393,9 @@
     "name": "Éoko",
     "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 55,
+    "finalScore": 54.6875,
     "components": {
-      "c1_encounterRate": 99,
+      "c1_encounterRate": 98,
       "c3_games": 75,
       "c4_method": 0,
       "c5_exclusivity": 50,
@@ -3405,7 +3405,7 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 1,
+      "maxEncounterChance": 2,
       "gamesCount": 3,
       "versions": [
         "emerald",
@@ -3428,9 +3428,9 @@
     "name": "Absol",
     "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 50.3125,
+    "finalScore": 49.0625,
     "components": {
-      "c1_encounterRate": 96,
+      "c1_encounterRate": 92,
       "c3_games": 75,
       "c4_method": 0,
       "c5_exclusivity": 50,
@@ -3440,7 +3440,7 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 4,
+      "maxEncounterChance": 8,
       "gamesCount": 3,
       "versions": [
         "emerald",
@@ -3501,9 +3501,9 @@
     "name": "Stalgamin",
     "rarity": "rare",
     "appliedRule": "composite",
-    "finalScore": 40.625,
+    "finalScore": 39.0625,
     "components": {
-      "c1_encounterRate": 95,
+      "c1_encounterRate": 90,
       "c3_games": 58.33333333333333,
       "c4_method": 0,
       "c5_exclusivity": 0,
@@ -3513,7 +3513,7 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 5,
+      "maxEncounterChance": 10,
       "gamesCount": 5,
       "versions": [
         "alpha-sapphire",
@@ -3644,9 +3644,9 @@
     "name": "Coquiperl",
     "rarity": "rare",
     "appliedRule": "composite",
-    "finalScore": 44.0625,
+    "finalScore": 42.5,
     "components": {
-      "c1_encounterRate": 40,
+      "c1_encounterRate": 35,
       "c3_games": 75,
       "c4_method": 60,
       "c5_exclusivity": 50,
@@ -3656,7 +3656,7 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 60,
+      "maxEncounterChance": 65,
       "gamesCount": 3,
       "versions": [
         "emerald",
@@ -3723,9 +3723,9 @@
     "name": "Relicanth",
     "rarity": "epic",
     "appliedRule": "composite",
-    "finalScore": 61.5625,
+    "finalScore": 61.25,
     "components": {
-      "c1_encounterRate": 96,
+      "c1_encounterRate": 95,
       "c3_games": 75,
       "c4_method": 60,
       "c5_exclusivity": 50,
@@ -3735,7 +3735,7 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 4,
+      "maxEncounterChance": 5,
       "gamesCount": 3,
       "versions": [
         "emerald",
@@ -3794,9 +3794,9 @@
     "name": "Draby",
     "rarity": "rare",
     "appliedRule": "composite",
-    "finalScore": 39.0625,
+    "finalScore": 34.375,
     "components": {
-      "c1_encounterRate": 90,
+      "c1_encounterRate": 75,
       "c3_games": 58.33333333333333,
       "c4_method": 0,
       "c5_exclusivity": 0,
@@ -3806,7 +3806,7 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 10,
+      "maxEncounterChance": 25,
       "gamesCount": 5,
       "versions": [
         "alpha-sapphire",

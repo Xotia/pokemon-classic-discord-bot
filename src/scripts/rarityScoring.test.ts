@@ -139,6 +139,29 @@ describe("computeEncounterRateComponent", () => {
     const encounters = [encounterEntry("red", "walk", 100)];
     expect(computeEncounterRateComponent(encounters)).toBe(0);
   });
+
+  it("Route 103 Poochyena regression: sums chances within the same location+version+method group instead of taking the max slot", () => {
+    // PokéAPI splits one spawn table into several level-range slots that
+    // all share the same location_area/version/method — these must be
+    // summed (60), not compared for a max (which would wrongly give 20).
+    const encounters = [
+      {
+        location_area: { name: "route-103-area" },
+        version_details: [
+          {
+            version: { name: "emerald" },
+            encounter_details: [
+              { method: { name: "walk" }, chance: 20 },
+              { method: { name: "walk" }, chance: 20 },
+              { method: { name: "walk" }, chance: 10 },
+              { method: { name: "walk" }, chance: 10 },
+            ],
+          },
+        ],
+      },
+    ];
+    expect(computeEncounterRateComponent(encounters)).toBe(40);
+  });
 });
 
 // ---- computeGamesComponent ----------------------------------------------
@@ -575,6 +598,98 @@ describe("getMaxEncounterChance", () => {
   it("returns the single recorded chance for a single-version-exclusive case", () => {
     const encounters = [encounterEntry("emerald", "walk", 15)];
     expect(getMaxEncounterChance(encounters)).toBe(15);
+  });
+
+  it("Route 103 Poochyena regression: sums chances sharing the same location+version+method group rather than taking the max individual slot", () => {
+    const encounters = [
+      {
+        location_area: { name: "route-103-area" },
+        version_details: [
+          {
+            version: { name: "emerald" },
+            encounter_details: [
+              { method: { name: "walk" }, chance: 20 },
+              { method: { name: "walk" }, chance: 20 },
+              { method: { name: "walk" }, chance: 10 },
+              { method: { name: "walk" }, chance: 10 },
+            ],
+          },
+        ],
+      },
+    ];
+    expect(getMaxEncounterChance(encounters)).toBe(60);
+  });
+
+  it("picks the MAX across distinct groups without summing entries that belong to different location/version/method groups", () => {
+    const encounters = [
+      {
+        // Group A: route-103-area | emerald | walk -> sum 60
+        location_area: { name: "route-103-area" },
+        version_details: [
+          {
+            version: { name: "emerald" },
+            encounter_details: [
+              { method: { name: "walk" }, chance: 20 },
+              { method: { name: "walk" }, chance: 20 },
+              { method: { name: "walk" }, chance: 10 },
+              { method: { name: "walk" }, chance: 10 },
+            ],
+          },
+        ],
+      },
+      {
+        // Group B: same location+version as A but a different method ->
+        // must stay a separate group, not merged into A's sum.
+        location_area: { name: "route-103-area" },
+        version_details: [
+          {
+            version: { name: "emerald" },
+            encounter_details: [{ method: { name: "surf" }, chance: 50 }],
+          },
+        ],
+      },
+      {
+        // Group C: a different location entirely, same version+method as A,
+        // with the single highest group sum (90).
+        location_area: { name: "route-102-area" },
+        version_details: [
+          {
+            version: { name: "emerald" },
+            encounter_details: [{ method: { name: "walk" }, chance: 90 }],
+          },
+        ],
+      },
+    ];
+    // Max across groups is 90 (group C). If groups were summed together
+    // instead of compared, this would wrongly return 200 (60 + 50 + 90).
+    expect(getMaxEncounterChance(encounters)).toBe(90);
+  });
+
+  it("does not crash and still forms a valid group when location_area or its name is missing", () => {
+    const missingLocationArea = [
+      {
+        version_details: [
+          {
+            version: { name: "ruby" },
+            encounter_details: [{ method: { name: "walk" }, chance: 25 }],
+          },
+        ],
+      },
+    ];
+    expect(getMaxEncounterChance(missingLocationArea)).toBe(25);
+
+    const locationAreaWithoutName = [
+      {
+        location_area: {},
+        version_details: [
+          {
+            version: { name: "sapphire" },
+            encounter_details: [{ method: { name: "walk" }, chance: 30 }],
+          },
+        ],
+      },
+    ];
+    expect(getMaxEncounterChance(locationAreaWithoutName)).toBe(30);
   });
 });
 
