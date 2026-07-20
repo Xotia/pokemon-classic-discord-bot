@@ -9,6 +9,7 @@ import { buildPokedexPageEmbed } from "../embed/buildPokedexPageEmbed";
 import { buildPokedexButtons } from "./buildPokedexButtons";
 import { buildDisabledPokedexButtons } from "./buildDisabledPokedexButtons";
 import { getPokemonPerPage, getButtonTimeoutMs } from "../../config/guildSettings";
+import { getLoggerForGuild } from "../../utils/logger";
 
 export async function displayPokedex(
   interaction: ChatInputCommandInteraction,
@@ -56,42 +57,51 @@ export async function displayPokedex(
   });
 
   collector.on("collect", async (buttonInteraction: any) => {
-    if (buttonInteraction.user.id !== userId) {
-      await buttonInteraction.reply({
-        content: "Ce n'est pas ton Pokédex !",
-        ephemeral: true,
+    try {
+      if (buttonInteraction.user.id !== userId) {
+        await buttonInteraction.reply({
+          content: "Ce n'est pas ton Pokédex !",
+          ephemeral: true,
+        });
+        return;
+      }
+
+      switch (buttonInteraction.customId) {
+        case "first":
+          currentPage = 0;
+          break;
+        case "prev":
+          currentPage = Math.max(0, currentPage - 1);
+          break;
+        case "next":
+          currentPage = Math.min(totalPages - 1, currentPage + 1);
+          break;
+        case "last":
+          currentPage = totalPages - 1;
+          break;
+      }
+
+      await buttonInteraction.update({
+        embeds: [
+          await buildPokedexPageEmbed(
+            interaction,
+            guildId,
+            player,
+            currentPage,
+            totalPages,
+            POKEMON_PER_PAGE,
+          ),
+        ],
+        components: [buildPokedexButtons(currentPage, totalPages)],
       });
-      return;
+    } catch (error) {
+      // L'interaction a pu expirer (ex: DiscordAPIError 10062, double-clic) : ne jamais laisser
+      // une rejection remonter ici, sinon elle devient une unhandledRejection qui tue le process.
+      getLoggerForGuild(guildId).error(
+        { err: error },
+        "❌ Erreur lors de la pagination du Pokédex",
+      );
     }
-
-    switch (buttonInteraction.customId) {
-      case "first":
-        currentPage = 0;
-        break;
-      case "prev":
-        currentPage = Math.max(0, currentPage - 1);
-        break;
-      case "next":
-        currentPage = Math.min(totalPages - 1, currentPage + 1);
-        break;
-      case "last":
-        currentPage = totalPages - 1;
-        break;
-    }
-
-    await buttonInteraction.update({
-      embeds: [
-        await buildPokedexPageEmbed(
-          interaction,
-          guildId,
-          player,
-          currentPage,
-          totalPages,
-          POKEMON_PER_PAGE,
-        ),
-      ],
-      components: [buildPokedexButtons(currentPage, totalPages)],
-    });
   });
 
   collector.on("end", async () => {
