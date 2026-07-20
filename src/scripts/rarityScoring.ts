@@ -50,9 +50,13 @@ export function filterEncountersToVersions(
   return filtered;
 }
 
-// How many games counts as "widely available" for the C3 component.
-// Adjust this if the reference game count for full availability changes.
-export const REFERENCE_MAX_GAMES = 12;
+// How many distinct (location, version) pairs counts as "widely available"
+// for the C3 component. This counts every unique route/area encountered
+// within every game version, not just distinct games — a Pokémon found at
+// 10 routes in one game and one found at 1 route in that same game must
+// NOT score identically. 25 is a reasoned-but-adjustable starting point:
+// adjust this if the reference count for full availability changes.
+export const REFERENCE_MAX_AVAILABILITY = 25;
 
 export const METHOD_DIFFICULTY: Record<string, number> = {
   walk: 0,
@@ -147,7 +151,13 @@ function computeMaxGroupedEncounterChance(encounters: any[]): number | null {
   for (const sum of groupSums.values()) {
     if (sum > maxGroupSum) maxGroupSum = sum;
   }
-  return maxGroupSum;
+
+  // A single location+version+method group can never legitimately exceed
+  // a 100% chance (e.g. PokéAPI sometimes lists the same guaranteed
+  // "devon-scope" encounter multiple times, once per hiding spot, which
+  // would otherwise sum past 100 — cap it, since it's still just a
+  // guaranteed encounter, not literally more-than-certain).
+  return Math.min(maxGroupSum, 100);
 }
 
 /**
@@ -176,13 +186,30 @@ function collectDistinctVersionNames(encounters: any[]): Set<string> {
   return versions;
 }
 
+function collectDistinctLocationVersionPairs(encounters: any[]): Set<string> {
+  const pairs = new Set<string>();
+  for (const locationEntry of encounters ?? []) {
+    const locationName = locationEntry?.location_area?.name;
+    const versionDetails = locationEntry?.version_details ?? [];
+    for (const versionDetail of versionDetails) {
+      const versionName = versionDetail?.version?.name;
+      if (versionName) pairs.add(`${locationName}|${versionName}`);
+    }
+  }
+  return pairs;
+}
+
 /**
  * C3 — Number of games (weight 0.15).
- * The more games a Pokémon appears in, the more common it is.
+ * The more distinct (location, version) pairs a Pokémon appears in — i.e.
+ * the more routes it's found at, across the more games — the more common
+ * it is. Counting location+version pairs (rather than just distinct
+ * versions) captures both how many games it's in AND how spread out it is
+ * within each game.
  */
 export function computeGamesComponent(encounters: any[]): number {
-  const gamesCount = collectDistinctVersionNames(encounters).size;
-  return clamp(100 - (gamesCount / REFERENCE_MAX_GAMES) * 100, 0, 100);
+  const availabilityCount = collectDistinctLocationVersionPairs(encounters).size;
+  return clamp(100 - (availabilityCount / REFERENCE_MAX_AVAILABILITY) * 100, 0, 100);
 }
 
 /**
@@ -347,6 +374,14 @@ export function getMaxEncounterChance(encounters: any[]): number | null {
  */
 export function getDistinctVersionNames(encounters: any[]): string[] {
   return Array.from(collectDistinctVersionNames(encounters)).sort();
+}
+
+/**
+ * Raw list of distinct (location, version) pairs the Pokémon appears in,
+ * behind C3.
+ */
+export function getDistinctLocationVersionPairs(encounters: any[]): string[] {
+  return Array.from(collectDistinctLocationVersionPairs(encounters)).sort();
 }
 
 /**

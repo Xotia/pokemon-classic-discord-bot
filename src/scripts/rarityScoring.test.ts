@@ -11,11 +11,12 @@ import {
   applyOneTimeOnlyChainFloor,
   getMaxEncounterChance,
   getDistinctVersionNames,
+  getDistinctLocationVersionPairs,
   getDistinctMethods,
   getEasiestMethod,
   getEvolutionInfo,
   getParentSpeciesId,
-  REFERENCE_MAX_GAMES,
+  REFERENCE_MAX_AVAILABILITY,
   DEFAULT_METHOD_DIFFICULTY,
   filterEncountersToVersions,
   GEN3_VERSIONS,
@@ -31,6 +32,25 @@ function encounterEntry(
   const detail: any = { method: { name: method } };
   if (chance !== undefined) detail.chance = chance;
   return {
+    version_details: [
+      {
+        version: { name: versionName },
+        encounter_details: [detail],
+      },
+    ],
+  };
+}
+
+function locationEncounterEntry(
+  locationName: string,
+  versionName: string,
+  method: string,
+  chance?: number,
+) {
+  const detail: any = { method: { name: method } };
+  if (chance !== undefined) detail.chance = chance;
+  return {
+    location_area: { name: locationName },
     version_details: [
       {
         version: { name: versionName },
@@ -171,28 +191,61 @@ describe("computeGamesComponent", () => {
     expect(computeGamesComponent([])).toBe(100);
   });
 
-  it("returns 0 when the Pokémon appears in REFERENCE_MAX_GAMES distinct games", () => {
-    const encounters = Array.from({ length: REFERENCE_MAX_GAMES }, (_, i) =>
-      encounterEntry(`game-${i}`, "walk", 10),
+  it("returns 0 when the Pokémon appears in REFERENCE_MAX_AVAILABILITY distinct (location, version) pairs", () => {
+    // Every entry here has no location_area, but a distinct version each,
+    // so each one is still a distinct location|version pair (undefined|game-i).
+    const encounters = Array.from(
+      { length: REFERENCE_MAX_AVAILABILITY },
+      (_, i) => encounterEntry(`game-${i}`, "walk", 10),
     );
     expect(computeGamesComponent(encounters)).toBe(0);
   });
 
-  it("returns a proportional value for half of REFERENCE_MAX_GAMES", () => {
-    const half = REFERENCE_MAX_GAMES / 2;
-    const encounters = Array.from({ length: half }, (_, i) =>
+  it("returns a proportional value for a partial count of distinct pairs", () => {
+    // REFERENCE_MAX_AVAILABILITY (25) is odd, so use an exact count (10)
+    // instead of "half" to keep the expected value unambiguous.
+    const count = 10;
+    const encounters = Array.from({ length: count }, (_, i) =>
       encounterEntry(`game-${i}`, "walk", 10),
     );
-    expect(computeGamesComponent(encounters)).toBe(50);
+    expect(computeGamesComponent(encounters)).toBeCloseTo(
+      100 - (count / REFERENCE_MAX_AVAILABILITY) * 100,
+    );
   });
 
-  it("counts distinct version names only once even if repeated across locations", () => {
+  it("counts a single location repeated with different methods within the same version as only 1 pair", () => {
+    // Same (undefined location_area, "red" version) key for both entries,
+    // regardless of the different method used => 1 distinct pair, not 2.
     const encounters = [
       encounterEntry("red", "walk", 10),
       encounterEntry("red", "surf", 5),
     ];
-    // Only 1 distinct version => 100 - (1/12)*100
-    expect(computeGamesComponent(encounters)).toBeCloseTo(100 - (1 / REFERENCE_MAX_GAMES) * 100);
+    // Only 1 distinct (location, version) pair => 100 - (1/25)*100
+    expect(computeGamesComponent(encounters)).toBeCloseTo(
+      100 - (1 / REFERENCE_MAX_AVAILABILITY) * 100,
+    );
+  });
+
+  it("Poochyena-breadth regression: counts each distinct location within a SINGLE version as its own pair, not collapsed to 1", () => {
+    // Poochyena-like case: found at 5 different routes, all within the
+    // same "emerald" version. The OLD logic (distinct versions only) would
+    // have counted this as 1 (a single version name, "emerald"), hiding
+    // how widespread the Pokémon actually is within that one game. The
+    // NEW logic counts 5 distinct (location, version) pairs instead.
+    const encounters = [
+      locationEncounterEntry("route-101", "emerald", "walk", 10),
+      locationEncounterEntry("route-102", "emerald", "walk", 10),
+      locationEncounterEntry("route-103", "emerald", "walk", 10),
+      locationEncounterEntry("route-104", "emerald", "walk", 10),
+      locationEncounterEntry("route-105", "emerald", "walk", 10),
+    ];
+
+    // OLD (buggy) behavior would have been:
+    //   computeGamesComponent === 100 - (1 / REFERENCE_MAX_AVAILABILITY) * 100
+    // NEW (correct) behavior:
+    expect(computeGamesComponent(encounters)).toBeCloseTo(
+      100 - (5 / REFERENCE_MAX_AVAILABILITY) * 100,
+    );
   });
 });
 
@@ -620,6 +673,30 @@ describe("getMaxEncounterChance", () => {
     expect(getMaxEncounterChance(encounters)).toBe(60);
   });
 
+  it("Kecleon devon-scope regression: caps a grouped sum at 100 when PokéAPI lists the same guaranteed encounter multiple times under one location+version+method", () => {
+    const encounters = [
+      {
+        location_area: { name: "route-120-area" },
+        version_details: [
+          {
+            version: { name: "ruby" },
+            encounter_details: [
+              { method: { name: "devon-scope" }, chance: 100 },
+              { method: { name: "devon-scope" }, chance: 100 },
+              { method: { name: "devon-scope" }, chance: 100 },
+              { method: { name: "devon-scope" }, chance: 100 },
+              { method: { name: "devon-scope" }, chance: 100 },
+              { method: { name: "devon-scope" }, chance: 100 },
+            ],
+          },
+        ],
+      },
+    ];
+    // Uncapped, the grouped sum would be 600 (6 x 100). A single group can
+    // never legitimately exceed 100%, so the result must be capped there.
+    expect(getMaxEncounterChance(encounters)).toBe(100);
+  });
+
   it("picks the MAX across distinct groups without summing entries that belong to different location/version/method groups", () => {
     const encounters = [
       {
@@ -718,6 +795,49 @@ describe("getDistinctVersionNames", () => {
   it("returns a single-element array for a gift-only case", () => {
     const encounters = [encounterEntry("red", "gift"), encounterEntry("blue", "gift")];
     expect(getDistinctVersionNames(encounters)).toEqual(["blue", "red"]);
+  });
+});
+
+// ---- getDistinctLocationVersionPairs --------------------------------------------
+
+describe("getDistinctLocationVersionPairs", () => {
+  it("returns an empty array for an empty/undefined encounters list", () => {
+    expect(getDistinctLocationVersionPairs([])).toEqual([]);
+    expect(getDistinctLocationVersionPairs(undefined as any)).toEqual([]);
+  });
+
+  it("returns one pair-key per distinct location within a single version", () => {
+    const encounters = [
+      locationEncounterEntry("route-101", "emerald", "walk", 10),
+      locationEncounterEntry("route-102", "emerald", "walk", 10),
+      locationEncounterEntry("route-103", "emerald", "walk", 10),
+    ];
+    expect(getDistinctLocationVersionPairs(encounters)).toEqual([
+      "route-101|emerald",
+      "route-102|emerald",
+      "route-103|emerald",
+    ]);
+  });
+
+  it("treats the same location across different versions as separate pairs", () => {
+    const encounters = [
+      locationEncounterEntry("route-101", "ruby", "walk", 10),
+      locationEncounterEntry("route-101", "sapphire", "walk", 10),
+    ];
+    expect(getDistinctLocationVersionPairs(encounters)).toEqual([
+      "route-101|ruby",
+      "route-101|sapphire",
+    ]);
+  });
+
+  it("does not double-count duplicate entries at the exact same location+version", () => {
+    const encounters = [
+      locationEncounterEntry("route-101", "emerald", "walk", 10),
+      locationEncounterEntry("route-101", "emerald", "surf", 5),
+    ];
+    const result = getDistinctLocationVersionPairs(encounters);
+    expect(result).toHaveLength(1);
+    expect(result).toEqual(["route-101|emerald"]);
   });
 });
 

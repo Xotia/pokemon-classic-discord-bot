@@ -14,6 +14,7 @@ export interface RawRarityData {
   isMythical: boolean;
   maxEncounterChance: number | null;
   gamesCount: number;
+  locationsCount: number;
   versions: string[];
   methods: string[];
   easiestMethod: string | null;
