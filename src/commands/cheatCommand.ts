@@ -1,5 +1,5 @@
 import { createProfileIfNeeded } from "../methods/player/createProfileIfNeeded";
-import { savePlayerDataById } from "../methods/player/savePlayerDataById";
+import { updatePlayer } from "../utils/jsonPlayers";
 import { addAllStats } from "../methods/stats/addAllStats";
 import { getPokemonByName } from "../methods/pokemon/getPokemonByName";
 import { getPlayerIdByName } from "../methods/player/getPlayerIdByName";
@@ -73,7 +73,20 @@ export async function cheatCommand(interaction: any) {
   }
 
   await addAllStats(guildId, pokemon, isShiny, player);
-  await savePlayerDataById(guildId, playerId, player);
+
+  await updatePlayer(guildId, playerId, (fresh) => {
+    fresh.captureList ??= {};
+    fresh.captureList[String(pokemon.id)] ??= {
+      total: 0,
+      shiny: 0,
+      capturedInCurrentSeason: false,
+    };
+    fresh.captureList[String(pokemon.id)].total += 1;
+
+    if (isShiny) {
+      fresh.captureList[String(pokemon.id)].shiny += 1;
+    }
+  });
 
   const trainerName = player.name;
 

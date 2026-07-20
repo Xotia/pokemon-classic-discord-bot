@@ -41,7 +41,11 @@ export async function captureCommand(interaction: any) {
   );
 
   if (!pokemonCatched) {
+<<<<<<< HEAD
     await handleNoPokemonFound(interaction, guildId, rarity);
+=======
+    await handleNoPokemonFound(interaction, player, rarity);
+>>>>>>> c8850500bb4ea9259c8ecf8e5ef6ec336a7462b3
     return;
   }
 

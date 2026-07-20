@@ -1,11 +1,11 @@
 const fs = require('fs');
 const fetch = require('node-fetch');
-const pokemonGen2List = JSON.parse(fs.readFileSync('../../data/gen2.json'));
+const pokemonGen3List = JSON.parse(fs.readFileSync('../../data/gen3.json'));
 
 const POKEMON_API = 'https://pokeapi.co/api/v2/pokemon';
 const SPECIES_API = 'https://pokeapi.co/api/v2/pokemon-species';
-const START_ID = 152;
-const END_ID = 251;
+const START_ID = 252;
+const END_ID = 386;
 
 function makeSpriteUrl(name) {
     const baseName = name.toLowerCase().replace("'", "").replace(".", "").replace(" ", "-");

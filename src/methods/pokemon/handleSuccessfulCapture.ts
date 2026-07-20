@@ -2,7 +2,7 @@ import { getLoggerForGuild } from "../../utils/logger";
 import { displayLogs } from "../console-logs/displayLogs";
 import { buildCapturedPokemonEmbed } from "../embed/buildCapturedPokemonEmbed";
 import { registerCapturedPokemon } from "../player/registerCapturedPokemon";
-import { savePlayerData } from "../player/savePlayerData";
+import { updatePlayer } from "../../utils/jsonPlayers";
 import { addAllStats } from "../stats/addAllStats";
 import { isThePokemonGonnaBeShiny } from "./isThePokemonGonnaBeShiny";
 import { addXp } from "../xp/xp";
@@ -54,5 +54,12 @@ export async function handleSuccessfulCapture(
   registerCapturedPokemon(player, pokemonCatched.id, isShiny);
 
   await addAllStats(guildId, pokemonCatched, isShiny, player);
-  savePlayerData(interaction, guildId, player);
+
+  await updatePlayer(guildId, interaction.user.id, (fresh) => {
+    const xpGain = addXp(typeof fresh.xp === "number" ? fresh.xp : 0, gainedXp);
+    fresh.xp = xpGain.xp;
+    fresh.level = xpGain.level;
+    fresh.pityCounter = player.pityCounter;
+    registerCapturedPokemon(fresh, pokemonCatched.id, isShiny);
+  });
 }

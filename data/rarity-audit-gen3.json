@@ -1,0 +1,2092 @@
+[
+  {
+    "id": 252,
+    "rarity": "epic",
+    "appliedRule": "composite",
+    "finalScore": 32.8125,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 41.666666666666664,
+      "c4_method": 100,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 100
+    },
+    "oneTimeOnly": true,
+    "flooredToEpic": true
+  },
+  {
+    "id": 253,
+    "rarity": "rare",
+    "appliedRule": "composite",
+    "finalScore": 30.625,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 66.66666666666667,
+      "c4_method": 60,
+      "c5_exclusivity": 25,
+      "c6_evolution": 30,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 254,
+    "rarity": "rare",
+    "appliedRule": "composite",
+    "finalScore": 43.75,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 83.33333333333334,
+      "c4_method": 60,
+      "c5_exclusivity": 75,
+      "c6_evolution": 60,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 255,
+    "rarity": "epic",
+    "appliedRule": "composite",
+    "finalScore": 32.8125,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 41.666666666666664,
+      "c4_method": 100,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 100
+    },
+    "oneTimeOnly": true,
+    "flooredToEpic": true
+  },
+  {
+    "id": 256,
+    "rarity": "rare",
+    "appliedRule": "composite",
+    "finalScore": 30.625,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 66.66666666666667,
+      "c4_method": 60,
+      "c5_exclusivity": 25,
+      "c6_evolution": 30,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 257,
+    "rarity": "rare",
+    "appliedRule": "composite",
+    "finalScore": 43.75,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 83.33333333333334,
+      "c4_method": 60,
+      "c5_exclusivity": 75,
+      "c6_evolution": 60,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 258,
+    "rarity": "epic",
+    "appliedRule": "composite",
+    "finalScore": 32.8125,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 41.666666666666664,
+      "c4_method": 100,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 100
+    },
+    "oneTimeOnly": true,
+    "flooredToEpic": true
+  },
+  {
+    "id": 259,
+    "rarity": "rare",
+    "appliedRule": "composite",
+    "finalScore": 30.625,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 66.66666666666667,
+      "c4_method": 60,
+      "c5_exclusivity": 25,
+      "c6_evolution": 30,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 260,
+    "rarity": "rare",
+    "appliedRule": "composite",
+    "finalScore": 43.75,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 83.33333333333334,
+      "c4_method": 60,
+      "c5_exclusivity": 75,
+      "c6_evolution": 60,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 261,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 4.6875,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 25,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 262,
+    "rarity": "rare",
+    "appliedRule": "composite",
+    "finalScore": 40.3125,
+    "components": {
+      "c1_encounterRate": 67,
+      "c3_games": 66.66666666666667,
+      "c4_method": 0,
+      "c5_exclusivity": 25,
+      "c6_evolution": 30,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 263,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 0,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 0,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 264,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 11.5625,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 41.666666666666664,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 30,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 265,
+    "rarity": "uncommon",
+    "appliedRule": "composite",
+    "finalScore": 15.624999999999996,
+    "components": {
+      "c1_encounterRate": 40,
+      "c3_games": 16.666666666666657,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 266,
+    "rarity": "rare",
+    "appliedRule": "composite",
+    "finalScore": 36.5625,
+    "components": {
+      "c1_encounterRate": 80,
+      "c3_games": 41.666666666666664,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 30,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 267,
+    "rarity": "rare",
+    "appliedRule": "composite",
+    "finalScore": 36.25,
+    "components": {
+      "c1_encounterRate": 67,
+      "c3_games": 41.666666666666664,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 60,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 268,
+    "rarity": "uncommon",
+    "appliedRule": "composite",
+    "finalScore": 29.375,
+    "components": {
+      "c1_encounterRate": 67,
+      "c3_games": 25,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 30,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 269,
+    "rarity": "very_rare",
+    "appliedRule": "composite",
+    "finalScore": 51.25,
+    "components": {
+      "c1_encounterRate": 90,
+      "c3_games": 66.66666666666667,
+      "c4_method": 0,
+      "c5_exclusivity": 25,
+      "c6_evolution": 60,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 270,
+    "rarity": "uncommon",
+    "appliedRule": "composite",
+    "finalScore": 17.1875,
+    "components": {
+      "c1_encounterRate": 40,
+      "c3_games": 25,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 271,
+    "rarity": "uncommon",
+    "appliedRule": "composite",
+    "finalScore": 16.25,
+    "components": {
+      "c1_encounterRate": 40,
+      "c3_games": 0,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 30,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 272,
+    "rarity": "very_rare",
+    "appliedRule": "composite",
+    "finalScore": 50.3125,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 91.66666666666667,
+      "c4_method": 60,
+      "c5_exclusivity": 100,
+      "c6_evolution": 75,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 273,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 3.1249999999999982,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 16.666666666666657,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 274,
+    "rarity": "uncommon",
+    "appliedRule": "composite",
+    "finalScore": 16.25,
+    "components": {
+      "c1_encounterRate": 40,
+      "c3_games": 0,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 30,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 275,
+    "rarity": "rare",
+    "appliedRule": "composite",
+    "finalScore": 40.9375,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 75,
+      "c4_method": 60,
+      "c5_exclusivity": 50,
+      "c6_evolution": 75,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 276,
+    "rarity": "uncommon",
+    "appliedRule": "composite",
+    "finalScore": 29.6875,
+    "components": {
+      "c1_encounterRate": 80,
+      "c3_games": 25,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 277,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 5.312500000000002,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 8.333333333333343,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 30,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 278,
+    "rarity": "epic",
+    "appliedRule": "composite",
+    "finalScore": 10.9375,
+    "components": {
+      "c1_encounterRate": 15,
+      "c3_games": 0,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 100
+    },
+    "oneTimeOnly": true,
+    "flooredToEpic": true
+  },
+  {
+    "id": 279,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 3.75,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 0,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 30,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 280,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 0,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 0,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 281,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 11.5625,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 41.666666666666664,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 30,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 282,
+    "rarity": "uncommon",
+    "appliedRule": "composite",
+    "finalScore": 23.125,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 66.66666666666667,
+      "c4_method": 0,
+      "c5_exclusivity": 25,
+      "c6_evolution": 60,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 283,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 12.5,
+    "components": {
+      "c1_encounterRate": 40,
+      "c3_games": 0,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 284,
+    "rarity": "uncommon",
+    "appliedRule": "composite",
+    "finalScore": 24.0625,
+    "components": {
+      "c1_encounterRate": 50,
+      "c3_games": 25,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 30,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 285,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 1.5625000000000016,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 8.333333333333343,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 286,
+    "rarity": "rare",
+    "appliedRule": "composite",
+    "finalScore": 34.0625,
+    "components": {
+      "c1_encounterRate": 67,
+      "c3_games": 50,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 30,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 287,
+    "rarity": "rare",
+    "appliedRule": "composite",
+    "finalScore": 31.25,
+    "components": {
+      "c1_encounterRate": 80,
+      "c3_games": 33.33333333333334,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 288,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 13.125,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 50,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 30,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 289,
+    "rarity": "epic",
+    "appliedRule": "composite",
+    "finalScore": 73.75,
+    "components": {
+      "c1_encounterRate": 96,
+      "c3_games": 83.33333333333334,
+      "c4_method": 60,
+      "c5_exclusivity": 75,
+      "c6_evolution": 60,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 290,
+    "rarity": "uncommon",
+    "appliedRule": "composite",
+    "finalScore": 18.75,
+    "components": {
+      "c1_encounterRate": 60,
+      "c3_games": 0,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 291,
+    "rarity": "rare",
+    "appliedRule": "composite",
+    "finalScore": 30.625,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 66.66666666666667,
+      "c4_method": 60,
+      "c5_exclusivity": 25,
+      "c6_evolution": 30,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 292,
+    "rarity": "epic",
+    "appliedRule": "composite",
+    "finalScore": 72.8125,
+    "components": {
+      "c1_encounterRate": 95,
+      "c3_games": 83.33333333333334,
+      "c4_method": 60,
+      "c5_exclusivity": 75,
+      "c6_evolution": 55,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 293,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 1.5625000000000016,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 8.333333333333343,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 294,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 3.75,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 0,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 30,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 295,
+    "rarity": "rare",
+    "appliedRule": "composite",
+    "finalScore": 43.75,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 83.33333333333334,
+      "c4_method": 60,
+      "c5_exclusivity": 75,
+      "c6_evolution": 60,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 296,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 0,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 0,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 297,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 13.125000000000002,
+    "components": {
+      "c1_encounterRate": 25,
+      "c3_games": 8.333333333333343,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 30,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 298,
+    "rarity": "uncommon",
+    "appliedRule": "composite",
+    "finalScore": 23.4375,
+    "components": {
+      "c1_encounterRate": 70,
+      "c3_games": 8.333333333333343,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 299,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 0,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 0,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 300,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 1.5625000000000016,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 8.333333333333343,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 301,
+    "rarity": "rare",
+    "appliedRule": "composite",
+    "finalScore": 41.875,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 83.33333333333334,
+      "c4_method": 60,
+      "c5_exclusivity": 75,
+      "c6_evolution": 45,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 302,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 0,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 0,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 303,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 0,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 0,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 304,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 0,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 0,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 305,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 6.874999999999997,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 16.666666666666657,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 30,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 306,
+    "rarity": "rare",
+    "appliedRule": "composite",
+    "finalScore": 34.375,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 66.66666666666667,
+      "c4_method": 60,
+      "c5_exclusivity": 25,
+      "c6_evolution": 60,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 307,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 0,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 0,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 308,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 13.125000000000002,
+    "components": {
+      "c1_encounterRate": 25,
+      "c3_games": 8.333333333333343,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 30,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 309,
+    "rarity": "epic",
+    "appliedRule": "composite",
+    "finalScore": 18.75,
+    "components": {
+      "c1_encounterRate": 40,
+      "c3_games": 0,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 100
+    },
+    "oneTimeOnly": true,
+    "flooredToEpic": true
+  },
+  {
+    "id": 310,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 3.75,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 0,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 30,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 311,
+    "rarity": "epic",
+    "appliedRule": "composite",
+    "finalScore": 6.25,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 0,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 100
+    },
+    "oneTimeOnly": true,
+    "flooredToEpic": true
+  },
+  {
+    "id": 312,
+    "rarity": "uncommon",
+    "appliedRule": "composite",
+    "finalScore": 20.3125,
+    "components": {
+      "c1_encounterRate": 65,
+      "c3_games": 0,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 313,
+    "rarity": "uncommon",
+    "appliedRule": "composite",
+    "finalScore": 24.0625,
+    "components": {
+      "c1_encounterRate": 67,
+      "c3_games": 16.666666666666657,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 314,
+    "rarity": "uncommon",
+    "appliedRule": "composite",
+    "finalScore": 24.0625,
+    "components": {
+      "c1_encounterRate": 67,
+      "c3_games": 16.666666666666657,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 315,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 3.75,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 0,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 30,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 316,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 3.1249999999999982,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 16.666666666666657,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 317,
+    "rarity": "very_rare",
+    "appliedRule": "composite",
+    "finalScore": 49.6875,
+    "components": {
+      "c1_encounterRate": 67,
+      "c3_games": 83.33333333333334,
+      "c4_method": 0,
+      "c5_exclusivity": 75,
+      "c6_evolution": 30,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 318,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 7.5,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 0,
+      "c4_method": 40,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 319,
+    "rarity": "epic",
+    "appliedRule": "composite",
+    "finalScore": 17.5,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 0,
+      "c4_method": 40,
+      "c5_exclusivity": 0,
+      "c6_evolution": 30,
+      "c7_oneTimeOnly": 100
+    },
+    "oneTimeOnly": true,
+    "flooredToEpic": true
+  },
+  {
+    "id": 320,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 7.5,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 0,
+      "c4_method": 40,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 321,
+    "rarity": "uncommon",
+    "appliedRule": "composite",
+    "finalScore": 26.875,
+    "components": {
+      "c1_encounterRate": 50,
+      "c3_games": 0,
+      "c4_method": 40,
+      "c5_exclusivity": 0,
+      "c6_evolution": 30,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 322,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 0,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 0,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 323,
+    "rarity": "epic",
+    "appliedRule": "composite",
+    "finalScore": 16.25,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 33.33333333333334,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 30,
+      "c7_oneTimeOnly": 100
+    },
+    "oneTimeOnly": true,
+    "flooredToEpic": true
+  },
+  {
+    "id": 324,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 0,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 0,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 325,
+    "rarity": "uncommon",
+    "appliedRule": "composite",
+    "finalScore": 20.3125,
+    "components": {
+      "c1_encounterRate": 65,
+      "c3_games": 0,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 326,
+    "rarity": "rare",
+    "appliedRule": "composite",
+    "finalScore": 35.625,
+    "components": {
+      "c1_encounterRate": 67,
+      "c3_games": 58.33333333333333,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 30,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 327,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 1.5625,
+    "components": {
+      "c1_encounterRate": 5,
+      "c3_games": 0,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 328,
+    "rarity": "uncommon",
+    "appliedRule": "composite",
+    "finalScore": 20.3125,
+    "components": {
+      "c1_encounterRate": 65,
+      "c3_games": 0,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 329,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 8.4375,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 25,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 30,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 330,
+    "rarity": "rare",
+    "appliedRule": "composite",
+    "finalScore": 34.375,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 66.66666666666667,
+      "c4_method": 60,
+      "c5_exclusivity": 25,
+      "c6_evolution": 60,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 331,
+    "rarity": "rare",
+    "appliedRule": "composite",
+    "finalScore": 34.375,
+    "components": {
+      "c1_encounterRate": 90,
+      "c3_games": 33.33333333333334,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 332,
+    "rarity": "rare",
+    "appliedRule": "composite",
+    "finalScore": 32.5,
+    "components": {
+      "c1_encounterRate": 67,
+      "c3_games": 41.666666666666664,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 30,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 333,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 0,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 0,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 334,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 3.75,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 0,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 30,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 335,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 0,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 0,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 336,
+    "rarity": "uncommon",
+    "appliedRule": "composite",
+    "finalScore": 19.375,
+    "components": {
+      "c1_encounterRate": 62,
+      "c3_games": 0,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 337,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 0,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 0,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 338,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 0,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 0,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 339,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 0,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 0,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 340,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 11.25,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 0,
+      "c4_method": 40,
+      "c5_exclusivity": 0,
+      "c6_evolution": 30,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 341,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 12.5,
+    "components": {
+      "c1_encounterRate": 40,
+      "c3_games": 0,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 342,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 3.75,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 0,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 30,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 343,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 0,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 0,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 344,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 8.4375,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 25,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 30,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 345,
+    "rarity": "epic",
+    "appliedRule": "composite",
+    "finalScore": 17.5,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 0,
+      "c4_method": 60,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 100
+    },
+    "oneTimeOnly": true,
+    "flooredToEpic": true
+  },
+  {
+    "id": 346,
+    "rarity": "rare",
+    "appliedRule": "composite",
+    "finalScore": 40,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 83.33333333333334,
+      "c4_method": 60,
+      "c5_exclusivity": 75,
+      "c6_evolution": 30,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 347,
+    "rarity": "epic",
+    "appliedRule": "composite",
+    "finalScore": 17.5,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 0,
+      "c4_method": 60,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 100
+    },
+    "oneTimeOnly": true,
+    "flooredToEpic": true
+  },
+  {
+    "id": 348,
+    "rarity": "rare",
+    "appliedRule": "composite",
+    "finalScore": 40,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 83.33333333333334,
+      "c4_method": 60,
+      "c5_exclusivity": 75,
+      "c6_evolution": 30,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 349,
+    "rarity": "uncommon",
+    "appliedRule": "composite",
+    "finalScore": 23.125,
+    "components": {
+      "c1_encounterRate": 50,
+      "c3_games": 0,
+      "c4_method": 40,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 350,
+    "rarity": "uncommon",
+    "appliedRule": "composite",
+    "finalScore": 21.25,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 33.33333333333334,
+      "c4_method": 60,
+      "c5_exclusivity": 0,
+      "c6_evolution": 30,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 351,
+    "rarity": "epic",
+    "appliedRule": "composite",
+    "finalScore": 6.25,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 0,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 100
+    },
+    "oneTimeOnly": true,
+    "flooredToEpic": true
+  },
+  {
+    "id": 352,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 0,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 0,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 353,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 1.5625000000000016,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 8.333333333333343,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 354,
+    "rarity": "epic",
+    "appliedRule": "composite",
+    "finalScore": 10,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 0,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 30,
+      "c7_oneTimeOnly": 100
+    },
+    "oneTimeOnly": true,
+    "flooredToEpic": true
+  },
+  {
+    "id": 355,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 1.5625000000000016,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 8.333333333333343,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 356,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 3.75,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 0,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 30,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 357,
+    "rarity": "epic",
+    "appliedRule": "composite",
+    "finalScore": 6.25,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 0,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 100
+    },
+    "oneTimeOnly": true,
+    "flooredToEpic": true
+  },
+  {
+    "id": 358,
+    "rarity": "rare",
+    "appliedRule": "composite",
+    "finalScore": 31.875,
+    "components": {
+      "c1_encounterRate": 80,
+      "c3_games": 16.666666666666657,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 30,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 359,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 0,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 0,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 360,
+    "rarity": "epic",
+    "appliedRule": "composite",
+    "finalScore": 14.0625,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 41.666666666666664,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 100
+    },
+    "oneTimeOnly": true,
+    "flooredToEpic": true
+  },
+  {
+    "id": 361,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 0,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 0,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 362,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 10,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 33.33333333333334,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 30,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 363,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 0,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 0,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 364,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 6.874999999999997,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 16.666666666666657,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 30,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 365,
+    "rarity": "uncommon",
+    "appliedRule": "composite",
+    "finalScore": 28.125,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 50,
+      "c4_method": 60,
+      "c5_exclusivity": 0,
+      "c6_evolution": 60,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 366,
+    "rarity": "uncommon",
+    "appliedRule": "composite",
+    "finalScore": 20,
+    "components": {
+      "c1_encounterRate": 40,
+      "c3_games": 0,
+      "c4_method": 40,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 367,
+    "rarity": "very_rare",
+    "appliedRule": "composite",
+    "finalScore": 51.875,
+    "components": {
+      "c1_encounterRate": 85,
+      "c3_games": 58.33333333333333,
+      "c4_method": 40,
+      "c5_exclusivity": 0,
+      "c6_evolution": 55,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 368,
+    "rarity": "very_rare",
+    "appliedRule": "composite",
+    "finalScore": 51.875,
+    "components": {
+      "c1_encounterRate": 85,
+      "c3_games": 58.33333333333333,
+      "c4_method": 40,
+      "c5_exclusivity": 0,
+      "c6_evolution": 55,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 369,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 7.5,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 0,
+      "c4_method": 40,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 370,
+    "rarity": "uncommon",
+    "appliedRule": "composite",
+    "finalScore": 16.875,
+    "components": {
+      "c1_encounterRate": 30,
+      "c3_games": 0,
+      "c4_method": 40,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 371,
+    "rarity": "common",
+    "appliedRule": "composite",
+    "finalScore": 0,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 0,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 372,
+    "rarity": "rare",
+    "appliedRule": "composite",
+    "finalScore": 30.9375,
+    "components": {
+      "c1_encounterRate": 67,
+      "c3_games": 33.33333333333334,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 30,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 373,
+    "rarity": "uncommon",
+    "appliedRule": "composite",
+    "finalScore": 28.125,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 50,
+      "c4_method": 60,
+      "c5_exclusivity": 0,
+      "c6_evolution": 60,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 374,
+    "rarity": "epic",
+    "appliedRule": "composite",
+    "finalScore": 6.25,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 0,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 0,
+      "c7_oneTimeOnly": 100
+    },
+    "oneTimeOnly": true,
+    "flooredToEpic": true
+  },
+  {
+    "id": 375,
+    "rarity": "epic",
+    "appliedRule": "composite",
+    "finalScore": 10,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 0,
+      "c4_method": 0,
+      "c5_exclusivity": 0,
+      "c6_evolution": 30,
+      "c7_oneTimeOnly": 100
+    },
+    "oneTimeOnly": true,
+    "flooredToEpic": true
+  },
+  {
+    "id": 376,
+    "rarity": "uncommon",
+    "appliedRule": "composite",
+    "finalScore": 26.5625,
+    "components": {
+      "c1_encounterRate": 0,
+      "c3_games": 41.666666666666664,
+      "c4_method": 60,
+      "c5_exclusivity": 0,
+      "c6_evolution": 60,
+      "c7_oneTimeOnly": 0
+    },
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 377,
+    "rarity": "legendary",
+    "appliedRule": "priority:is_legendary",
+    "finalScore": null,
+    "components": null,
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 378,
+    "rarity": "legendary",
+    "appliedRule": "priority:is_legendary",
+    "finalScore": null,
+    "components": null,
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 379,
+    "rarity": "legendary",
+    "appliedRule": "priority:is_legendary",
+    "finalScore": null,
+    "components": null,
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 380,
+    "rarity": "legendary",
+    "appliedRule": "priority:is_legendary",
+    "finalScore": null,
+    "components": null,
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 381,
+    "rarity": "legendary",
+    "appliedRule": "priority:is_legendary",
+    "finalScore": null,
+    "components": null,
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 382,
+    "rarity": "legendary",
+    "appliedRule": "priority:is_legendary",
+    "finalScore": null,
+    "components": null,
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 383,
+    "rarity": "legendary",
+    "appliedRule": "priority:is_legendary",
+    "finalScore": null,
+    "components": null,
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 384,
+    "rarity": "legendary",
+    "appliedRule": "priority:is_legendary",
+    "finalScore": null,
+    "components": null,
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 385,
+    "rarity": "mythic",
+    "appliedRule": "priority:is_mythical",
+    "finalScore": null,
+    "components": null,
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  },
+  {
+    "id": 386,
+    "rarity": "mythic",
+    "appliedRule": "priority:is_mythical",
+    "finalScore": null,
+    "components": null,
+    "oneTimeOnly": false,
+    "flooredToEpic": false
+  }
+]
