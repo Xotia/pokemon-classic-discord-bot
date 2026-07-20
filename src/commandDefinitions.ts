@@ -28,6 +28,10 @@ export const commands = [
     )
     .toJSON(),
   new SlashCommandBuilder()
+    .setName("raid-force-end")
+    .setDescription("[Admin] Force la clôture et la résolution immédiate du raid en cours.")
+    .toJSON(),
+  new SlashCommandBuilder()
     .setName("pokedex")
     .setDescription("Voir ton nombre de Pokémon capturés avec /capture.")
     .toJSON(),
