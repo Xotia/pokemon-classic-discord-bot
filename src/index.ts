@@ -41,6 +41,14 @@ client.on(Events.Error, (error) => {
   logger.error({ err: error }, "❌ Erreur client Discord non gérée");
 });
 
+process.on("unhandledRejection", (reason) => {
+  logger.error({ err: reason }, "❌ unhandledRejection : promesse rejetée non gérée");
+});
+
+process.on("uncaughtException", (error) => {
+  logger.error({ err: error }, "❌ uncaughtException : erreur non capturée");
+});
+
 // Event ready
 client.once(Events.ClientReady, (c: typeof client) => {
   logger.info(`Bot connecté ! Connecté en tant que ${c.user?.tag}`);
