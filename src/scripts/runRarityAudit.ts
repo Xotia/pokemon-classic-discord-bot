@@ -28,11 +28,11 @@ async function main() {
   );
   console.log("Fichier data/rarity-audit-gen3.json généré.");
 
-  console.log("\nid\trarity\t\tfinalScore");
-  console.log("--\t------\t\t----------");
+  console.log("\nid\tname\t\trarity\t\tfinalScore");
+  console.log("--\t----\t\t------\t\t----------");
   for (const r of results as any[]) {
     const score = r.finalScore === null ? "-" : r.finalScore.toFixed(2);
-    console.log(`${r.id}\t${r.rarity}\t${score}`);
+    console.log(`${r.id}\t${r.name}\t${r.rarity}\t${score}`);
   }
 }
 

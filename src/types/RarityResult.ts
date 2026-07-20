@@ -11,6 +11,7 @@ export interface RarityComponents {
 
 export interface RarityResult {
   id: number;
+  name: string | null;
   rarity: Rarity;
   appliedRule:
     | "priority:species_fetch_failed"

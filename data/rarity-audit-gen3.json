@@ -1,6 +1,7 @@
 [
   {
     "id": 252,
+    "name": "Arcko",
     "rarity": "epic",
     "appliedRule": "composite",
     "finalScore": 32.8125,
@@ -17,6 +18,7 @@
   },
   {
     "id": 253,
+    "name": "Massko",
     "rarity": "rare",
     "appliedRule": "composite",
     "finalScore": 30.625,
@@ -33,6 +35,7 @@
   },
   {
     "id": 254,
+    "name": "Jungko",
     "rarity": "rare",
     "appliedRule": "composite",
     "finalScore": 43.75,
@@ -49,6 +52,7 @@
   },
   {
     "id": 255,
+    "name": "Poussifeu",
     "rarity": "epic",
     "appliedRule": "composite",
     "finalScore": 32.8125,
@@ -65,6 +69,7 @@
   },
   {
     "id": 256,
+    "name": "Galifeu",
     "rarity": "rare",
     "appliedRule": "composite",
     "finalScore": 30.625,
@@ -81,6 +86,7 @@
   },
   {
     "id": 257,
+    "name": "Braségali",
     "rarity": "rare",
     "appliedRule": "composite",
     "finalScore": 43.75,
@@ -97,6 +103,7 @@
   },
   {
     "id": 258,
+    "name": "Gobou",
     "rarity": "epic",
     "appliedRule": "composite",
     "finalScore": 32.8125,
@@ -113,6 +120,7 @@
   },
   {
     "id": 259,
+    "name": "Flobio",
     "rarity": "rare",
     "appliedRule": "composite",
     "finalScore": 30.625,
@@ -129,6 +137,7 @@
   },
   {
     "id": 260,
+    "name": "Laggron",
     "rarity": "rare",
     "appliedRule": "composite",
     "finalScore": 43.75,
@@ -145,6 +154,7 @@
   },
   {
     "id": 261,
+    "name": "Medhyèna",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 4.6875,
@@ -161,6 +171,7 @@
   },
   {
     "id": 262,
+    "name": "Grahyèna",
     "rarity": "rare",
     "appliedRule": "composite",
     "finalScore": 40.3125,
@@ -177,6 +188,7 @@
   },
   {
     "id": 263,
+    "name": "Zigzaton",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 0,
@@ -193,6 +205,7 @@
   },
   {
     "id": 264,
+    "name": "Linéon",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 11.5625,
@@ -209,6 +222,7 @@
   },
   {
     "id": 265,
+    "name": "Chenipotte",
     "rarity": "uncommon",
     "appliedRule": "composite",
     "finalScore": 15.624999999999996,
@@ -225,6 +239,7 @@
   },
   {
     "id": 266,
+    "name": "Armulys",
     "rarity": "rare",
     "appliedRule": "composite",
     "finalScore": 36.5625,
@@ -241,6 +256,7 @@
   },
   {
     "id": 267,
+    "name": "Charmillon",
     "rarity": "rare",
     "appliedRule": "composite",
     "finalScore": 36.25,
@@ -257,6 +273,7 @@
   },
   {
     "id": 268,
+    "name": "Blindalys",
     "rarity": "uncommon",
     "appliedRule": "composite",
     "finalScore": 29.375,
@@ -273,6 +290,7 @@
   },
   {
     "id": 269,
+    "name": "Papinox",
     "rarity": "very_rare",
     "appliedRule": "composite",
     "finalScore": 51.25,
@@ -289,6 +307,7 @@
   },
   {
     "id": 270,
+    "name": "Nénupiot",
     "rarity": "uncommon",
     "appliedRule": "composite",
     "finalScore": 17.1875,
@@ -305,6 +324,7 @@
   },
   {
     "id": 271,
+    "name": "Lombre",
     "rarity": "uncommon",
     "appliedRule": "composite",
     "finalScore": 16.25,
@@ -321,6 +341,7 @@
   },
   {
     "id": 272,
+    "name": "Ludicolo",
     "rarity": "very_rare",
     "appliedRule": "composite",
     "finalScore": 50.3125,
@@ -337,6 +358,7 @@
   },
   {
     "id": 273,
+    "name": "Grainipiot",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 3.1249999999999982,
@@ -353,6 +375,7 @@
   },
   {
     "id": 274,
+    "name": "Pifeuil",
     "rarity": "uncommon",
     "appliedRule": "composite",
     "finalScore": 16.25,
@@ -369,6 +392,7 @@
   },
   {
     "id": 275,
+    "name": "Tengalice",
     "rarity": "rare",
     "appliedRule": "composite",
     "finalScore": 40.9375,
@@ -385,6 +409,7 @@
   },
   {
     "id": 276,
+    "name": "Nirondelle",
     "rarity": "uncommon",
     "appliedRule": "composite",
     "finalScore": 29.6875,
@@ -401,6 +426,7 @@
   },
   {
     "id": 277,
+    "name": "Hélédelle",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 5.312500000000002,
@@ -417,6 +443,7 @@
   },
   {
     "id": 278,
+    "name": "Goélise",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 4.6875,
@@ -433,6 +460,7 @@
   },
   {
     "id": 279,
+    "name": "Bekipan",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 3.75,
@@ -449,6 +477,7 @@
   },
   {
     "id": 280,
+    "name": "Tarsal",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 0,
@@ -465,6 +494,7 @@
   },
   {
     "id": 281,
+    "name": "Kirlia",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 11.5625,
@@ -481,6 +511,7 @@
   },
   {
     "id": 282,
+    "name": "Gardevoir",
     "rarity": "uncommon",
     "appliedRule": "composite",
     "finalScore": 23.125,
@@ -497,6 +528,7 @@
   },
   {
     "id": 283,
+    "name": "Arakdo",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 12.5,
@@ -513,6 +545,7 @@
   },
   {
     "id": 284,
+    "name": "Maskadra",
     "rarity": "uncommon",
     "appliedRule": "composite",
     "finalScore": 24.0625,
@@ -529,6 +562,7 @@
   },
   {
     "id": 285,
+    "name": "Balignon",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 1.5625000000000016,
@@ -545,6 +579,7 @@
   },
   {
     "id": 286,
+    "name": "Chapignon",
     "rarity": "rare",
     "appliedRule": "composite",
     "finalScore": 34.0625,
@@ -561,6 +596,7 @@
   },
   {
     "id": 287,
+    "name": "Parecool",
     "rarity": "rare",
     "appliedRule": "composite",
     "finalScore": 31.25,
@@ -577,6 +613,7 @@
   },
   {
     "id": 288,
+    "name": "Vigoroth",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 13.125,
@@ -593,6 +630,7 @@
   },
   {
     "id": 289,
+    "name": "Monaflèmit",
     "rarity": "epic",
     "appliedRule": "composite",
     "finalScore": 73.75,
@@ -609,6 +647,7 @@
   },
   {
     "id": 290,
+    "name": "Ningale",
     "rarity": "uncommon",
     "appliedRule": "composite",
     "finalScore": 18.75,
@@ -625,6 +664,7 @@
   },
   {
     "id": 291,
+    "name": "Ninjask",
     "rarity": "rare",
     "appliedRule": "composite",
     "finalScore": 30.625,
@@ -641,6 +681,7 @@
   },
   {
     "id": 292,
+    "name": "Munja",
     "rarity": "epic",
     "appliedRule": "composite",
     "finalScore": 72.8125,
@@ -657,6 +698,7 @@
   },
   {
     "id": 293,
+    "name": "Chuchmur",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 1.5625000000000016,
@@ -673,6 +715,7 @@
   },
   {
     "id": 294,
+    "name": "Ramboum",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 3.75,
@@ -689,6 +732,7 @@
   },
   {
     "id": 295,
+    "name": "Brouhabam",
     "rarity": "rare",
     "appliedRule": "composite",
     "finalScore": 43.75,
@@ -705,6 +749,7 @@
   },
   {
     "id": 296,
+    "name": "Makuhita",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 0,
@@ -721,6 +766,7 @@
   },
   {
     "id": 297,
+    "name": "Hariyama",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 13.125000000000002,
@@ -737,6 +783,7 @@
   },
   {
     "id": 298,
+    "name": "Azurill",
     "rarity": "uncommon",
     "appliedRule": "composite",
     "finalScore": 23.4375,
@@ -753,6 +800,7 @@
   },
   {
     "id": 299,
+    "name": "Tarinor",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 0,
@@ -769,6 +817,7 @@
   },
   {
     "id": 300,
+    "name": "Skitty",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 1.5625000000000016,
@@ -785,6 +834,7 @@
   },
   {
     "id": 301,
+    "name": "Delcatty",
     "rarity": "rare",
     "appliedRule": "composite",
     "finalScore": 41.875,
@@ -801,6 +851,7 @@
   },
   {
     "id": 302,
+    "name": "Ténéfix",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 0,
@@ -817,6 +868,7 @@
   },
   {
     "id": 303,
+    "name": "Mysdibule",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 0,
@@ -833,6 +885,7 @@
   },
   {
     "id": 304,
+    "name": "Galekid",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 0,
@@ -849,6 +902,7 @@
   },
   {
     "id": 305,
+    "name": "Galegon",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 6.874999999999997,
@@ -865,6 +919,7 @@
   },
   {
     "id": 306,
+    "name": "Galeking",
     "rarity": "rare",
     "appliedRule": "composite",
     "finalScore": 34.375,
@@ -881,6 +936,7 @@
   },
   {
     "id": 307,
+    "name": "Méditikka",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 0,
@@ -897,6 +953,7 @@
   },
   {
     "id": 308,
+    "name": "Charmina",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 13.125000000000002,
@@ -913,6 +970,7 @@
   },
   {
     "id": 309,
+    "name": "Dynavolt",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 12.5,
@@ -929,6 +987,7 @@
   },
   {
     "id": 310,
+    "name": "Élecsprint",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 3.75,
@@ -945,6 +1004,7 @@
   },
   {
     "id": 311,
+    "name": "Posipi",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 0,
@@ -961,6 +1021,7 @@
   },
   {
     "id": 312,
+    "name": "Négapi",
     "rarity": "uncommon",
     "appliedRule": "composite",
     "finalScore": 20.3125,
@@ -977,6 +1038,7 @@
   },
   {
     "id": 313,
+    "name": "Muciole",
     "rarity": "uncommon",
     "appliedRule": "composite",
     "finalScore": 24.0625,
@@ -993,6 +1055,7 @@
   },
   {
     "id": 314,
+    "name": "Lumivole",
     "rarity": "uncommon",
     "appliedRule": "composite",
     "finalScore": 24.0625,
@@ -1009,6 +1072,7 @@
   },
   {
     "id": 315,
+    "name": "Rosélia",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 3.75,
@@ -1025,6 +1089,7 @@
   },
   {
     "id": 316,
+    "name": "Gloupti",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 3.1249999999999982,
@@ -1041,6 +1106,7 @@
   },
   {
     "id": 317,
+    "name": "Avaltout",
     "rarity": "very_rare",
     "appliedRule": "composite",
     "finalScore": 49.6875,
@@ -1057,6 +1123,7 @@
   },
   {
     "id": 318,
+    "name": "Carvanha",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 7.5,
@@ -1073,6 +1140,7 @@
   },
   {
     "id": 319,
+    "name": "Sharpedo",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 11.25,
@@ -1089,6 +1157,7 @@
   },
   {
     "id": 320,
+    "name": "Wailmer",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 7.5,
@@ -1105,6 +1174,7 @@
   },
   {
     "id": 321,
+    "name": "Wailord",
     "rarity": "uncommon",
     "appliedRule": "composite",
     "finalScore": 26.875,
@@ -1121,6 +1191,7 @@
   },
   {
     "id": 322,
+    "name": "Chamallot",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 0,
@@ -1137,6 +1208,7 @@
   },
   {
     "id": 323,
+    "name": "Camérupt",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 10,
@@ -1153,6 +1225,7 @@
   },
   {
     "id": 324,
+    "name": "Chartor",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 0,
@@ -1169,6 +1242,7 @@
   },
   {
     "id": 325,
+    "name": "Spoink",
     "rarity": "uncommon",
     "appliedRule": "composite",
     "finalScore": 20.3125,
@@ -1185,6 +1259,7 @@
   },
   {
     "id": 326,
+    "name": "Groret",
     "rarity": "rare",
     "appliedRule": "composite",
     "finalScore": 35.625,
@@ -1201,6 +1276,7 @@
   },
   {
     "id": 327,
+    "name": "Spinda",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 1.5625,
@@ -1217,6 +1293,7 @@
   },
   {
     "id": 328,
+    "name": "Kraknoix",
     "rarity": "uncommon",
     "appliedRule": "composite",
     "finalScore": 20.3125,
@@ -1233,6 +1310,7 @@
   },
   {
     "id": 329,
+    "name": "Vibraninf",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 8.4375,
@@ -1249,6 +1327,7 @@
   },
   {
     "id": 330,
+    "name": "Libégon",
     "rarity": "rare",
     "appliedRule": "composite",
     "finalScore": 34.375,
@@ -1265,6 +1344,7 @@
   },
   {
     "id": 331,
+    "name": "Cacnea",
     "rarity": "rare",
     "appliedRule": "composite",
     "finalScore": 34.375,
@@ -1281,6 +1361,7 @@
   },
   {
     "id": 332,
+    "name": "Cacturne",
     "rarity": "rare",
     "appliedRule": "composite",
     "finalScore": 32.5,
@@ -1297,6 +1378,7 @@
   },
   {
     "id": 333,
+    "name": "Tylton",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 0,
@@ -1313,6 +1395,7 @@
   },
   {
     "id": 334,
+    "name": "Altaria",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 3.75,
@@ -1329,6 +1412,7 @@
   },
   {
     "id": 335,
+    "name": "Mangriff",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 0,
@@ -1345,6 +1429,7 @@
   },
   {
     "id": 336,
+    "name": "Séviper",
     "rarity": "uncommon",
     "appliedRule": "composite",
     "finalScore": 19.375,
@@ -1361,6 +1446,7 @@
   },
   {
     "id": 337,
+    "name": "Séléroc",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 0,
@@ -1377,6 +1463,7 @@
   },
   {
     "id": 338,
+    "name": "Solaroc",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 0,
@@ -1393,6 +1480,7 @@
   },
   {
     "id": 339,
+    "name": "Barloche",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 0,
@@ -1409,6 +1497,7 @@
   },
   {
     "id": 340,
+    "name": "Barbicha",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 11.25,
@@ -1425,6 +1514,7 @@
   },
   {
     "id": 341,
+    "name": "Écrapince",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 12.5,
@@ -1441,6 +1531,7 @@
   },
   {
     "id": 342,
+    "name": "Colhomard",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 3.75,
@@ -1457,6 +1548,7 @@
   },
   {
     "id": 343,
+    "name": "Balbuto",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 0,
@@ -1473,6 +1565,7 @@
   },
   {
     "id": 344,
+    "name": "Kaorine",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 8.4375,
@@ -1489,6 +1582,7 @@
   },
   {
     "id": 345,
+    "name": "Lilia",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 11.25,
@@ -1505,6 +1599,7 @@
   },
   {
     "id": 346,
+    "name": "Vacilys",
     "rarity": "rare",
     "appliedRule": "composite",
     "finalScore": 40,
@@ -1521,6 +1616,7 @@
   },
   {
     "id": 347,
+    "name": "Anorith",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 11.25,
@@ -1537,6 +1633,7 @@
   },
   {
     "id": 348,
+    "name": "Armaldo",
     "rarity": "rare",
     "appliedRule": "composite",
     "finalScore": 40,
@@ -1553,6 +1650,7 @@
   },
   {
     "id": 349,
+    "name": "Barpau",
     "rarity": "uncommon",
     "appliedRule": "composite",
     "finalScore": 23.125,
@@ -1569,6 +1667,7 @@
   },
   {
     "id": 350,
+    "name": "Milobellus",
     "rarity": "uncommon",
     "appliedRule": "composite",
     "finalScore": 21.25,
@@ -1585,6 +1684,7 @@
   },
   {
     "id": 351,
+    "name": "Morphéo",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 0,
@@ -1601,6 +1701,7 @@
   },
   {
     "id": 352,
+    "name": "Kecleon",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 0,
@@ -1617,6 +1718,7 @@
   },
   {
     "id": 353,
+    "name": "Polichombr",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 1.5625000000000016,
@@ -1633,6 +1735,7 @@
   },
   {
     "id": 354,
+    "name": "Branette",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 3.75,
@@ -1649,6 +1752,7 @@
   },
   {
     "id": 355,
+    "name": "Skelénox",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 1.5625000000000016,
@@ -1665,6 +1769,7 @@
   },
   {
     "id": 356,
+    "name": "Téraclope",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 3.75,
@@ -1681,6 +1786,7 @@
   },
   {
     "id": 357,
+    "name": "Tropius",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 0,
@@ -1697,6 +1803,7 @@
   },
   {
     "id": 358,
+    "name": "Éoko",
     "rarity": "rare",
     "appliedRule": "composite",
     "finalScore": 31.875,
@@ -1713,6 +1820,7 @@
   },
   {
     "id": 359,
+    "name": "Absol",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 0,
@@ -1729,6 +1837,7 @@
   },
   {
     "id": 360,
+    "name": "Okéoké",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 7.812499999999998,
@@ -1745,6 +1854,7 @@
   },
   {
     "id": 361,
+    "name": "Stalgamin",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 0,
@@ -1761,6 +1871,7 @@
   },
   {
     "id": 362,
+    "name": "Oniglali",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 10,
@@ -1777,6 +1888,7 @@
   },
   {
     "id": 363,
+    "name": "Obalie",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 0,
@@ -1793,6 +1905,7 @@
   },
   {
     "id": 364,
+    "name": "Phogleur",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 6.874999999999997,
@@ -1809,6 +1922,7 @@
   },
   {
     "id": 365,
+    "name": "Kaimorse",
     "rarity": "uncommon",
     "appliedRule": "composite",
     "finalScore": 28.125,
@@ -1825,6 +1939,7 @@
   },
   {
     "id": 366,
+    "name": "Coquiperl",
     "rarity": "uncommon",
     "appliedRule": "composite",
     "finalScore": 20,
@@ -1841,6 +1956,7 @@
   },
   {
     "id": 367,
+    "name": "Serpang",
     "rarity": "very_rare",
     "appliedRule": "composite",
     "finalScore": 51.875,
@@ -1857,6 +1973,7 @@
   },
   {
     "id": 368,
+    "name": "Rosabyss",
     "rarity": "very_rare",
     "appliedRule": "composite",
     "finalScore": 51.875,
@@ -1873,6 +1990,7 @@
   },
   {
     "id": 369,
+    "name": "Relicanth",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 7.5,
@@ -1889,6 +2007,7 @@
   },
   {
     "id": 370,
+    "name": "Lovdisc",
     "rarity": "uncommon",
     "appliedRule": "composite",
     "finalScore": 16.875,
@@ -1905,6 +2024,7 @@
   },
   {
     "id": 371,
+    "name": "Draby",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 0,
@@ -1921,6 +2041,7 @@
   },
   {
     "id": 372,
+    "name": "Drackhaus",
     "rarity": "rare",
     "appliedRule": "composite",
     "finalScore": 30.9375,
@@ -1937,6 +2058,7 @@
   },
   {
     "id": 373,
+    "name": "Drattak",
     "rarity": "uncommon",
     "appliedRule": "composite",
     "finalScore": 28.125,
@@ -1953,6 +2075,7 @@
   },
   {
     "id": 374,
+    "name": "Terhal",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 0,
@@ -1969,6 +2092,7 @@
   },
   {
     "id": 375,
+    "name": "Métang",
     "rarity": "common",
     "appliedRule": "composite",
     "finalScore": 3.75,
@@ -1985,6 +2109,7 @@
   },
   {
     "id": 376,
+    "name": "Métalosse",
     "rarity": "uncommon",
     "appliedRule": "composite",
     "finalScore": 26.5625,
@@ -2001,6 +2126,7 @@
   },
   {
     "id": 377,
+    "name": "Regirock",
     "rarity": "legendary",
     "appliedRule": "priority:is_legendary",
     "finalScore": null,
@@ -2010,6 +2136,7 @@
   },
   {
     "id": 378,
+    "name": "Regice",
     "rarity": "legendary",
     "appliedRule": "priority:is_legendary",
     "finalScore": null,
@@ -2019,6 +2146,7 @@
   },
   {
     "id": 379,
+    "name": "Registeel",
     "rarity": "legendary",
     "appliedRule": "priority:is_legendary",
     "finalScore": null,
@@ -2028,6 +2156,7 @@
   },
   {
     "id": 380,
+    "name": "Latias",
     "rarity": "legendary",
     "appliedRule": "priority:is_legendary",
     "finalScore": null,
@@ -2037,6 +2166,7 @@
   },
   {
     "id": 381,
+    "name": "Latios",
     "rarity": "legendary",
     "appliedRule": "priority:is_legendary",
     "finalScore": null,
@@ -2046,6 +2176,7 @@
   },
   {
     "id": 382,
+    "name": "Kyogre",
     "rarity": "legendary",
     "appliedRule": "priority:is_legendary",
     "finalScore": null,
@@ -2055,6 +2186,7 @@
   },
   {
     "id": 383,
+    "name": "Groudon",
     "rarity": "legendary",
     "appliedRule": "priority:is_legendary",
     "finalScore": null,
@@ -2064,6 +2196,7 @@
   },
   {
     "id": 384,
+    "name": "Rayquaza",
     "rarity": "legendary",
     "appliedRule": "priority:is_legendary",
     "finalScore": null,
@@ -2073,6 +2206,7 @@
   },
   {
     "id": 385,
+    "name": "Jirachi",
     "rarity": "mythic",
     "appliedRule": "priority:is_mythical",
     "finalScore": null,
@@ -2082,6 +2216,7 @@
   },
   {
     "id": 386,
+    "name": "Deoxys",
     "rarity": "mythic",
     "appliedRule": "priority:is_mythical",
     "finalScore": null,

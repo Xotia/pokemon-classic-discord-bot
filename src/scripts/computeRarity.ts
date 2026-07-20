@@ -26,6 +26,13 @@ const WEIGHT_ONE_TIME_ONLY = 0.05;
 // rescaled back onto a 0-100 range using this constant.
 const COMPOSITE_WEIGHT_SUM = 0.8;
 
+function getFrenchName(species: any): string {
+  const frenchNameEntry = species.names?.find(
+    (n: any) => n.language && n.language.name === "fr",
+  );
+  return frenchNameEntry ? frenchNameEntry.name : species.name;
+}
+
 export async function computeRarity(id: number): Promise<RarityResult> {
   let species: any;
   try {
@@ -33,6 +40,7 @@ export async function computeRarity(id: number): Promise<RarityResult> {
   } catch (err) {
     return {
       id,
+      name: null,
       rarity: "unknown",
       appliedRule: "priority:species_fetch_failed",
       finalScore: null,
@@ -42,9 +50,12 @@ export async function computeRarity(id: number): Promise<RarityResult> {
     };
   }
 
+  const name = getFrenchName(species);
+
   if (species.is_mythical === true) {
     return {
       id,
+      name,
       rarity: "mythic",
       appliedRule: "priority:is_mythical",
       finalScore: null,
@@ -57,6 +68,7 @@ export async function computeRarity(id: number): Promise<RarityResult> {
   if (species.is_legendary === true) {
     return {
       id,
+      name,
       rarity: "legendary",
       appliedRule: "priority:is_legendary",
       finalScore: null,
@@ -71,6 +83,7 @@ export async function computeRarity(id: number): Promise<RarityResult> {
   if (Array.isArray(encounters) && encounters.length === 0) {
     return {
       id,
+      name,
       rarity: "ultra_rare",
       appliedRule: "priority:no_encounters_absent",
       finalScore: null,
@@ -105,6 +118,7 @@ export async function computeRarity(id: number): Promise<RarityResult> {
 
   return {
     id,
+    name,
     rarity,
     appliedRule: "composite",
     finalScore,
