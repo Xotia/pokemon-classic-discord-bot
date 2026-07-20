@@ -327,15 +327,31 @@ export function mapScoreToRarityTier(score: number): Rarity {
 }
 
 /**
- * Starters/fossils/unique gifts never fall below Epic, even if their
- * raw composite score would otherwise land them in a lower tier.
+ * Cascading, depth-based floor keyed off the evolution chain's ROOT.
+ *
+ * Starters/fossils/unique gifts (one-time-only at the chain root) never
+ * let their evolutions fall below the root's own tier — an evolution
+ * should never be easier to get than what it evolved from. The floor
+ * rises with evolution depth: the root itself floors at epic, its first
+ * evolution floors at ultra_rare, and further evolutions floor at mythic.
+ *
+ * `rootOneTimeOnly` reflects whether the CHAIN ROOT (not necessarily the
+ * Pokémon being scored) is one-time-only; `depth` is the Pokémon's own
+ * position in the evolution chain (0 = root).
  */
-export function applyEpicFloor(tier: Rarity, oneTimeOnly: boolean): Rarity {
-  if (!oneTimeOnly) return tier;
+export function applyOneTimeOnlyChainFloor(
+  tier: Rarity,
+  rootOneTimeOnly: boolean,
+  depth: number,
+): Rarity {
+  if (!rootOneTimeOnly) return tier;
 
-  const epicIndex = RARITY_ORDER.indexOf("epic");
+  const floorTier: Rarity =
+    depth <= 0 ? "epic" : depth === 1 ? "ultra_rare" : "mythic";
+
+  const floorIndex = RARITY_ORDER.indexOf(floorTier);
   const tierIndex = RARITY_ORDER.indexOf(tier);
 
-  if (tierIndex < epicIndex) return "epic";
+  if (tierIndex < floorIndex) return floorTier;
   return tier;
 }

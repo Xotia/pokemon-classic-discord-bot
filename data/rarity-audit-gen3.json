@@ -36,12 +36,12 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": true,
-    "flooredToEpic": true
+    "flooredByChain": true
   },
   {
     "id": 253,
     "name": "Massko",
-    "rarity": "rare",
+    "rarity": "ultra_rare",
     "appliedRule": "composite",
     "finalScore": 30.625,
     "components": {
@@ -73,12 +73,12 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": true
   },
   {
     "id": 254,
     "name": "Jungko",
-    "rarity": "rare",
+    "rarity": "mythic",
     "appliedRule": "composite",
     "finalScore": 43.75,
     "components": {
@@ -107,7 +107,7 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": true
   },
   {
     "id": 255,
@@ -146,12 +146,12 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": true,
-    "flooredToEpic": true
+    "flooredByChain": true
   },
   {
     "id": 256,
     "name": "Galifeu",
-    "rarity": "rare",
+    "rarity": "ultra_rare",
     "appliedRule": "composite",
     "finalScore": 30.625,
     "components": {
@@ -183,12 +183,12 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": true
   },
   {
     "id": 257,
     "name": "Braségali",
-    "rarity": "rare",
+    "rarity": "mythic",
     "appliedRule": "composite",
     "finalScore": 43.75,
     "components": {
@@ -217,7 +217,7 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": true
   },
   {
     "id": 258,
@@ -256,12 +256,12 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": true,
-    "flooredToEpic": true
+    "flooredByChain": true
   },
   {
     "id": 259,
     "name": "Flobio",
-    "rarity": "rare",
+    "rarity": "ultra_rare",
     "appliedRule": "composite",
     "finalScore": 30.625,
     "components": {
@@ -293,12 +293,12 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": true
   },
   {
     "id": 260,
     "name": "Laggron",
-    "rarity": "rare",
+    "rarity": "mythic",
     "appliedRule": "composite",
     "finalScore": 43.75,
     "components": {
@@ -327,7 +327,7 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": true
   },
   {
     "id": 261,
@@ -370,7 +370,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 262,
@@ -407,7 +407,7 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 263,
@@ -455,7 +455,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 264,
@@ -495,7 +495,7 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 265,
@@ -540,7 +540,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 266,
@@ -580,7 +580,7 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 267,
@@ -619,7 +619,7 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 268,
@@ -661,7 +661,7 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 269,
@@ -697,7 +697,7 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 270,
@@ -741,7 +741,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 271,
@@ -793,7 +793,7 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 272,
@@ -827,7 +827,7 @@
       "evolutionTrigger": "use-item"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 273,
@@ -875,7 +875,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 274,
@@ -925,7 +925,7 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 275,
@@ -962,7 +962,7 @@
       "evolutionTrigger": "use-item"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 276,
@@ -1005,7 +1005,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 277,
@@ -1051,7 +1051,7 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 278,
@@ -1112,7 +1112,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 279,
@@ -1173,7 +1173,7 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 280,
@@ -1231,7 +1231,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 281,
@@ -1272,7 +1272,7 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 282,
@@ -1310,7 +1310,7 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 283,
@@ -1356,7 +1356,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 284,
@@ -1398,7 +1398,7 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 285,
@@ -1444,7 +1444,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 286,
@@ -1483,7 +1483,7 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 287,
@@ -1524,7 +1524,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 288,
@@ -1564,7 +1564,7 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 289,
@@ -1598,7 +1598,7 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 290,
@@ -1647,7 +1647,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 291,
@@ -1686,7 +1686,7 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 292,
@@ -1720,7 +1720,7 @@
       "evolutionTrigger": "shed"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 293,
@@ -1765,7 +1765,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 294,
@@ -1811,7 +1811,7 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 295,
@@ -1845,7 +1845,7 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 296,
@@ -1897,7 +1897,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 297,
@@ -1942,7 +1942,7 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 298,
@@ -1987,7 +1987,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 299,
@@ -2040,7 +2040,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 300,
@@ -2088,7 +2088,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 301,
@@ -2123,7 +2123,7 @@
       "evolutionTrigger": "use-item"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 302,
@@ -2178,7 +2178,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 303,
@@ -2230,7 +2230,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 304,
@@ -2281,7 +2281,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 305,
@@ -2326,7 +2326,7 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 306,
@@ -2363,7 +2363,7 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 307,
@@ -2411,7 +2411,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 308,
@@ -2456,7 +2456,7 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 309,
@@ -2507,7 +2507,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 310,
@@ -2560,7 +2560,7 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 311,
@@ -2609,7 +2609,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 312,
@@ -2655,7 +2655,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 313,
@@ -2699,7 +2699,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 314,
@@ -2743,7 +2743,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 315,
@@ -2804,7 +2804,7 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 316,
@@ -2849,7 +2849,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 317,
@@ -2883,7 +2883,7 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 318,
@@ -2936,7 +2936,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 319,
@@ -2996,7 +2996,7 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 320,
@@ -3058,7 +3058,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 321,
@@ -3115,7 +3115,7 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 322,
@@ -3161,7 +3161,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 323,
@@ -3203,7 +3203,7 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 324,
@@ -3260,7 +3260,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 325,
@@ -3307,7 +3307,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 326,
@@ -3346,7 +3346,7 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 327,
@@ -3397,7 +3397,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 328,
@@ -3452,7 +3452,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 329,
@@ -3496,7 +3496,7 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 330,
@@ -3535,7 +3535,7 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 331,
@@ -3575,7 +3575,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 332,
@@ -3614,7 +3614,7 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 333,
@@ -3668,7 +3668,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 334,
@@ -3721,7 +3721,7 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 335,
@@ -3771,7 +3771,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 336,
@@ -3820,7 +3820,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 337,
@@ -3872,7 +3872,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 338,
@@ -3925,7 +3925,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 339,
@@ -3988,7 +3988,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 340,
@@ -4053,7 +4053,7 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 341,
@@ -4111,7 +4111,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 342,
@@ -4168,7 +4168,7 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 343,
@@ -4218,7 +4218,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 344,
@@ -4263,7 +4263,7 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 345,
@@ -4312,7 +4312,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 346,
@@ -4346,7 +4346,7 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 347,
@@ -4396,7 +4396,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 348,
@@ -4431,7 +4431,7 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 349,
@@ -4486,7 +4486,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 350,
@@ -4528,7 +4528,7 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 351,
@@ -4578,7 +4578,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 352,
@@ -4628,7 +4628,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 353,
@@ -4672,7 +4672,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 354,
@@ -4718,7 +4718,7 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 355,
@@ -4765,7 +4765,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 356,
@@ -4812,7 +4812,7 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 357,
@@ -4860,7 +4860,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 358,
@@ -4903,7 +4903,7 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 359,
@@ -4963,7 +4963,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 360,
@@ -5004,7 +5004,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 361,
@@ -5059,7 +5059,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 362,
@@ -5105,7 +5105,7 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 363,
@@ -5165,7 +5165,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 364,
@@ -5211,7 +5211,7 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 365,
@@ -5250,7 +5250,7 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 366,
@@ -5301,7 +5301,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 367,
@@ -5341,7 +5341,7 @@
       "evolutionTrigger": "trade"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 368,
@@ -5381,7 +5381,7 @@
       "evolutionTrigger": "trade"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 369,
@@ -5441,7 +5441,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 370,
@@ -5496,7 +5496,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 371,
@@ -5551,7 +5551,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 372,
@@ -5592,7 +5592,7 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 373,
@@ -5632,7 +5632,7 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 374,
@@ -5682,7 +5682,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 375,
@@ -5731,7 +5731,7 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 376,
@@ -5772,7 +5772,7 @@
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 377,
@@ -5808,7 +5808,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 378,
@@ -5844,7 +5844,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 379,
@@ -5880,7 +5880,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 380,
@@ -5918,7 +5918,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 381,
@@ -5956,7 +5956,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 382,
@@ -5988,7 +5988,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 383,
@@ -6020,7 +6020,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 384,
@@ -6057,7 +6057,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 385,
@@ -6085,7 +6085,7 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   },
   {
     "id": 386,
@@ -6115,6 +6115,6 @@
       "evolutionTrigger": null
     },
     "oneTimeOnly": false,
-    "flooredToEpic": false
+    "flooredByChain": false
   }
 ]

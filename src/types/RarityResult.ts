@@ -36,5 +36,5 @@ export interface RarityResult {
   components: RarityComponents | null;
   rawData: RawRarityData | null;
   oneTimeOnly: boolean;
-  flooredToEpic: boolean;
+  flooredByChain: boolean;
 }

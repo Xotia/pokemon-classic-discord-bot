@@ -8,7 +8,7 @@ import {
   computeEvolutionComponent,
   computeOneTimeOnlyComponent,
   mapScoreToRarityTier,
-  applyEpicFloor,
+  applyOneTimeOnlyChainFloor,
   getMaxEncounterChance,
   getDistinctVersionNames,
   getDistinctMethods,
@@ -441,39 +441,109 @@ describe("mapScoreToRarityTier", () => {
   });
 });
 
-// ---- applyEpicFloor ----------------------------------------------------------
+// ---- applyOneTimeOnlyChainFloor -----------------------------------------------
 
-describe("applyEpicFloor", () => {
-  it("leaves the tier untouched when oneTimeOnly is false, even for a low tier", () => {
-    expect(applyEpicFloor("common", false)).toBe("common");
+describe("applyOneTimeOnlyChainFloor", () => {
+  describe("rootOneTimeOnly = false", () => {
+    it("leaves the tier untouched at depth 0", () => {
+      expect(applyOneTimeOnlyChainFloor("common", false, 0)).toBe("common");
+    });
+
+    it("leaves the tier untouched at depth 1", () => {
+      expect(applyOneTimeOnlyChainFloor("common", false, 1)).toBe("common");
+    });
+
+    it("leaves the tier untouched at depth 2", () => {
+      expect(applyOneTimeOnlyChainFloor("common", false, 2)).toBe("common");
+    });
   });
 
-  it("floors common up to epic when oneTimeOnly is true", () => {
-    expect(applyEpicFloor("common", true)).toBe("epic");
+  describe("rootOneTimeOnly = true, depth 0 (epic floor)", () => {
+    it("raises common up to epic", () => {
+      expect(applyOneTimeOnlyChainFloor("common", true, 0)).toBe("epic");
+    });
+
+    it("raises rare up to epic", () => {
+      expect(applyOneTimeOnlyChainFloor("rare", true, 0)).toBe("epic");
+    });
+
+    it("leaves epic untouched (already at the floor)", () => {
+      expect(applyOneTimeOnlyChainFloor("epic", true, 0)).toBe("epic");
+    });
+
+    it("leaves ultra_rare untouched (already above the floor)", () => {
+      expect(applyOneTimeOnlyChainFloor("ultra_rare", true, 0)).toBe(
+        "ultra_rare",
+      );
+    });
+
+    it("leaves mythic untouched (already above the floor)", () => {
+      expect(applyOneTimeOnlyChainFloor("mythic", true, 0)).toBe("mythic");
+    });
+
+    it("leaves legendary untouched (already above the floor)", () => {
+      expect(applyOneTimeOnlyChainFloor("legendary", true, 0)).toBe(
+        "legendary",
+      );
+    });
   });
 
-  it("floors uncommon up to epic when oneTimeOnly is true", () => {
-    expect(applyEpicFloor("uncommon", true)).toBe("epic");
+  describe("rootOneTimeOnly = true, depth 1 (ultra_rare floor)", () => {
+    it("raises rare up to ultra_rare", () => {
+      expect(applyOneTimeOnlyChainFloor("rare", true, 1)).toBe("ultra_rare");
+    });
+
+    it("raises epic up to ultra_rare", () => {
+      expect(applyOneTimeOnlyChainFloor("epic", true, 1)).toBe("ultra_rare");
+    });
+
+    it("leaves ultra_rare untouched (already at the floor)", () => {
+      expect(applyOneTimeOnlyChainFloor("ultra_rare", true, 1)).toBe(
+        "ultra_rare",
+      );
+    });
+
+    it("leaves legendary untouched (already above the floor)", () => {
+      expect(applyOneTimeOnlyChainFloor("legendary", true, 1)).toBe(
+        "legendary",
+      );
+    });
   });
 
-  it("floors rare up to epic when oneTimeOnly is true", () => {
-    expect(applyEpicFloor("rare", true)).toBe("epic");
+  describe("rootOneTimeOnly = true, depth 2 (mythic floor)", () => {
+    it("raises rare up to mythic", () => {
+      expect(applyOneTimeOnlyChainFloor("rare", true, 2)).toBe("mythic");
+    });
+
+    it("raises ultra_rare up to mythic", () => {
+      expect(applyOneTimeOnlyChainFloor("ultra_rare", true, 2)).toBe(
+        "mythic",
+      );
+    });
+
+    it("leaves legendary untouched (already above the floor)", () => {
+      expect(applyOneTimeOnlyChainFloor("legendary", true, 2)).toBe(
+        "legendary",
+      );
+    });
   });
 
-  it("floors very_rare up to epic when oneTimeOnly is true", () => {
-    expect(applyEpicFloor("very_rare", true)).toBe("epic");
-  });
+  describe("rootOneTimeOnly = true, depth 3+ (still mythic floor, capped)", () => {
+    it("raises rare up to mythic", () => {
+      expect(applyOneTimeOnlyChainFloor("rare", true, 3)).toBe("mythic");
+    });
 
-  it("leaves epic untouched when already at epic and oneTimeOnly is true", () => {
-    expect(applyEpicFloor("epic", true)).toBe("epic");
-  });
+    it("raises ultra_rare up to mythic", () => {
+      expect(applyOneTimeOnlyChainFloor("ultra_rare", true, 3)).toBe(
+        "mythic",
+      );
+    });
 
-  it("leaves ultra_rare untouched when already above epic and oneTimeOnly is true", () => {
-    expect(applyEpicFloor("ultra_rare", true)).toBe("ultra_rare");
-  });
-
-  it("leaves legendary untouched when already above epic and oneTimeOnly is true", () => {
-    expect(applyEpicFloor("legendary", true)).toBe("legendary");
+    it("leaves legendary untouched (already above the floor)", () => {
+      expect(applyOneTimeOnlyChainFloor("legendary", true, 3)).toBe(
+        "legendary",
+      );
+    });
   });
 });
 

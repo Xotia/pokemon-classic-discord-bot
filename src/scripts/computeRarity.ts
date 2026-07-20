@@ -10,7 +10,7 @@ import {
   computeEvolutionComponent,
   computeOneTimeOnlyComponent,
   mapScoreToRarityTier,
-  applyEpicFloor,
+  applyOneTimeOnlyChainFloor,
   getMaxEncounterChance,
   getDistinctVersionNames,
   getDistinctMethods,
@@ -18,6 +18,7 @@ import {
   getEvolutionInfo,
 } from "./rarityScoring";
 import { RarityResult, RawRarityData } from "../types/RarityResult";
+import { Rarity } from "../config/rarity";
 
 const WEIGHT_ENCOUNTER_RATE = 0.25;
 const WEIGHT_GAMES = 0.15;
@@ -38,6 +39,15 @@ function getFrenchName(species: any): string {
   return frenchNameEntry ? frenchNameEntry.name : species.name;
 }
 
+/**
+ * Extracts the trailing numeric id from a PokéAPI resource URL, e.g.
+ * "https://pokeapi.co/api/v2/pokemon-species/252/" -> 252.
+ */
+function extractIdFromUrl(url: string | undefined): number | null {
+  const match = url?.match(/\/(\d+)\/?$/);
+  return match ? Number(match[1]) : null;
+}
+
 export async function computeRarity(id: number): Promise<RarityResult> {
   let species: any;
   try {
@@ -52,7 +62,7 @@ export async function computeRarity(id: number): Promise<RarityResult> {
       components: null,
       rawData: null,
       oneTimeOnly: false,
-      flooredToEpic: false,
+      flooredByChain: false,
     };
   }
 
@@ -67,6 +77,29 @@ export async function computeRarity(id: number): Promise<RarityResult> {
   const versions = getDistinctVersionNames(encounters);
   const evolutionInfo = getEvolutionInfo(evolutionChain, species.name);
   const oneTimeOnly = isOneTimeOnly(encounters);
+  const depth = evolutionInfo?.depth ?? 0;
+
+  // The floor is keyed off the evolution chain's ROOT one-time-only
+  // status, not this Pokémon's own: an evolution of a gifted starter
+  // isn't itself a gift, but it must never rank easier to get than its
+  // own base form. At depth 0 we ARE the root, so reuse what's already
+  // fetched; only fetch the root's own encounters when we're not it.
+  let rootOneTimeOnly = oneTimeOnly;
+  if (depth > 0) {
+    const rootId = extractIdFromUrl(evolutionChain?.chain?.species?.url);
+    if (rootId !== null) {
+      try {
+        const rootEncounters = await fetchEncounters(rootId);
+        rootOneTimeOnly = isOneTimeOnly(rootEncounters);
+      } catch {
+        // If the root's own encounters can't be fetched, fall back to
+        // not flooring rather than crashing the whole computation.
+        rootOneTimeOnly = false;
+      }
+    } else {
+      rootOneTimeOnly = false;
+    }
+  }
 
   const rawData: RawRarityData = {
     isLegendary: species.is_legendary === true,
@@ -82,44 +115,48 @@ export async function computeRarity(id: number): Promise<RarityResult> {
   };
 
   if (species.is_mythical === true) {
+    const rarity = applyOneTimeOnlyChainFloor("mythic", rootOneTimeOnly, depth);
     return {
       id,
       name,
-      rarity: "mythic",
+      rarity,
       appliedRule: "priority:is_mythical",
       finalScore: null,
       components: null,
       rawData,
       oneTimeOnly,
-      flooredToEpic: false,
+      flooredByChain: rarity !== "mythic",
     };
   }
 
   if (species.is_legendary === true) {
+    const rarity = applyOneTimeOnlyChainFloor("legendary", rootOneTimeOnly, depth);
     return {
       id,
       name,
-      rarity: "legendary",
+      rarity,
       appliedRule: "priority:is_legendary",
       finalScore: null,
       components: null,
       rawData,
       oneTimeOnly,
-      flooredToEpic: false,
+      flooredByChain: rarity !== "legendary",
     };
   }
 
   if (Array.isArray(encounters) && encounters.length === 0) {
+    const tierBeforeFloor: Rarity = "ultra_rare";
+    const rarity = applyOneTimeOnlyChainFloor(tierBeforeFloor, rootOneTimeOnly, depth);
     return {
       id,
       name,
-      rarity: "ultra_rare",
+      rarity,
       appliedRule: "priority:no_encounters_absent",
       finalScore: null,
       components: null,
       rawData,
       oneTimeOnly,
-      flooredToEpic: false,
+      flooredByChain: rarity !== tierBeforeFloor,
     };
   }
 
@@ -141,7 +178,7 @@ export async function computeRarity(id: number): Promise<RarityResult> {
   const finalScore = Math.min(100, Math.max(0, rawScore / COMPOSITE_WEIGHT_SUM));
 
   const tierBeforeFloor = mapScoreToRarityTier(finalScore);
-  const rarity = applyEpicFloor(tierBeforeFloor, oneTimeOnly);
+  const rarity = applyOneTimeOnlyChainFloor(tierBeforeFloor, rootOneTimeOnly, depth);
 
   return {
     id,
@@ -159,6 +196,6 @@ export async function computeRarity(id: number): Promise<RarityResult> {
     },
     rawData,
     oneTimeOnly,
-    flooredToEpic: rarity !== tierBeforeFloor,
+    flooredByChain: rarity !== tierBeforeFloor,
   };
 }
