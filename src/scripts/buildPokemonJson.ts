@@ -1,7 +1,7 @@
 import { makeSpriteUrl } from "./makeSpriteUrl";
 import { getRarity } from "./getRarity";
 import { getPokemonTypes } from "./getPokemonTypes";
-import getMultipliers from "./getMultipliers.js";
+import getMultipliers from "./getMultipliers";
 import { getPokemonStats } from "./getPokemonStats";
 
 export function buildPokemonJson(pokemon: any, species: any, id: number) {

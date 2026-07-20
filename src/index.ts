@@ -13,7 +13,7 @@ import { helpCommand } from "./commands/helpCommand";
 import { getPity } from "./commands/getPityCommand";
 import { getRarityCommand } from "./commands/getRarityCommand";
 
-import { startRaidScheduler } from './features/raid/raidScheduler.js';
+import { startRaidScheduler } from './features/raid/raidScheduler';
 
 import { raidCommand } from "./commands/raidCommand";
 import { loadUnlockedZones } from "./utils/loadUnlockedZones";

@@ -1,7 +1,7 @@
 import { Rarity } from "../../config/rarity";
 import { Pokemon } from "../../types/Pokemon";
 import logger from "../../utils/logger";
-import type { RarityData } from "../../config/rarity.js";
+import type { RarityData } from "../../config/rarity";
 import { downgradeRarity } from "../../methods/rarity/downgradeRarity";
 import { rollRarityFromList } from "./rollRaidRarity";
 
