@@ -11,7 +11,8 @@
     "deploy": "npx ts-node src/deploy-commands.ts",
     "deploy:dev": "npx ts-node src/deploy-commands-dev.ts",
     "deploy:dev:clear": "npx ts-node src/deploy-commands-dev.ts --clear",
-    "simulate:capture": "npx ts-node src/scripts/simulateCapture.ts"
+    "simulate:capture": "npx ts-node src/scripts/simulateCapture.ts",
+    "test:rarity": "npx ts-node src/scripts/testRarity.ts"
   },
   "keywords": [],
   "author": "",

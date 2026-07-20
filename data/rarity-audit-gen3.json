@@ -417,19 +417,19 @@
   },
   {
     "id": 278,
-    "rarity": "epic",
+    "rarity": "common",
     "appliedRule": "composite",
-    "finalScore": 10.9375,
+    "finalScore": 4.6875,
     "components": {
       "c1_encounterRate": 15,
       "c3_games": 0,
       "c4_method": 0,
       "c5_exclusivity": 0,
       "c6_evolution": 0,
-      "c7_oneTimeOnly": 100
+      "c7_oneTimeOnly": 0
     },
-    "oneTimeOnly": true,
-    "flooredToEpic": true
+    "oneTimeOnly": false,
+    "flooredToEpic": false
   },
   {
     "id": 279,
@@ -913,19 +913,19 @@
   },
   {
     "id": 309,
-    "rarity": "epic",
+    "rarity": "common",
     "appliedRule": "composite",
-    "finalScore": 18.75,
+    "finalScore": 12.5,
     "components": {
       "c1_encounterRate": 40,
       "c3_games": 0,
       "c4_method": 0,
       "c5_exclusivity": 0,
       "c6_evolution": 0,
-      "c7_oneTimeOnly": 100
+      "c7_oneTimeOnly": 0
     },
-    "oneTimeOnly": true,
-    "flooredToEpic": true
+    "oneTimeOnly": false,
+    "flooredToEpic": false
   },
   {
     "id": 310,
@@ -945,19 +945,19 @@
   },
   {
     "id": 311,
-    "rarity": "epic",
+    "rarity": "common",
     "appliedRule": "composite",
-    "finalScore": 6.25,
+    "finalScore": 0,
     "components": {
       "c1_encounterRate": 0,
       "c3_games": 0,
       "c4_method": 0,
       "c5_exclusivity": 0,
       "c6_evolution": 0,
-      "c7_oneTimeOnly": 100
+      "c7_oneTimeOnly": 0
     },
-    "oneTimeOnly": true,
-    "flooredToEpic": true
+    "oneTimeOnly": false,
+    "flooredToEpic": false
   },
   {
     "id": 312,
@@ -1073,19 +1073,19 @@
   },
   {
     "id": 319,
-    "rarity": "epic",
+    "rarity": "common",
     "appliedRule": "composite",
-    "finalScore": 17.5,
+    "finalScore": 11.25,
     "components": {
       "c1_encounterRate": 0,
       "c3_games": 0,
       "c4_method": 40,
       "c5_exclusivity": 0,
       "c6_evolution": 30,
-      "c7_oneTimeOnly": 100
+      "c7_oneTimeOnly": 0
     },
-    "oneTimeOnly": true,
-    "flooredToEpic": true
+    "oneTimeOnly": false,
+    "flooredToEpic": false
   },
   {
     "id": 320,
@@ -1137,19 +1137,19 @@
   },
   {
     "id": 323,
-    "rarity": "epic",
+    "rarity": "common",
     "appliedRule": "composite",
-    "finalScore": 16.25,
+    "finalScore": 10,
     "components": {
       "c1_encounterRate": 0,
       "c3_games": 33.33333333333334,
       "c4_method": 0,
       "c5_exclusivity": 0,
       "c6_evolution": 30,
-      "c7_oneTimeOnly": 100
+      "c7_oneTimeOnly": 0
     },
-    "oneTimeOnly": true,
-    "flooredToEpic": true
+    "oneTimeOnly": false,
+    "flooredToEpic": false
   },
   {
     "id": 324,
@@ -1489,19 +1489,19 @@
   },
   {
     "id": 345,
-    "rarity": "epic",
+    "rarity": "common",
     "appliedRule": "composite",
-    "finalScore": 17.5,
+    "finalScore": 11.25,
     "components": {
       "c1_encounterRate": 0,
       "c3_games": 0,
       "c4_method": 60,
       "c5_exclusivity": 0,
       "c6_evolution": 0,
-      "c7_oneTimeOnly": 100
+      "c7_oneTimeOnly": 0
     },
-    "oneTimeOnly": true,
-    "flooredToEpic": true
+    "oneTimeOnly": false,
+    "flooredToEpic": false
   },
   {
     "id": 346,
@@ -1521,19 +1521,19 @@
   },
   {
     "id": 347,
-    "rarity": "epic",
+    "rarity": "common",
     "appliedRule": "composite",
-    "finalScore": 17.5,
+    "finalScore": 11.25,
     "components": {
       "c1_encounterRate": 0,
       "c3_games": 0,
       "c4_method": 60,
       "c5_exclusivity": 0,
       "c6_evolution": 0,
-      "c7_oneTimeOnly": 100
+      "c7_oneTimeOnly": 0
     },
-    "oneTimeOnly": true,
-    "flooredToEpic": true
+    "oneTimeOnly": false,
+    "flooredToEpic": false
   },
   {
     "id": 348,
@@ -1585,19 +1585,19 @@
   },
   {
     "id": 351,
-    "rarity": "epic",
+    "rarity": "common",
     "appliedRule": "composite",
-    "finalScore": 6.25,
+    "finalScore": 0,
     "components": {
       "c1_encounterRate": 0,
       "c3_games": 0,
       "c4_method": 0,
       "c5_exclusivity": 0,
       "c6_evolution": 0,
-      "c7_oneTimeOnly": 100
+      "c7_oneTimeOnly": 0
     },
-    "oneTimeOnly": true,
-    "flooredToEpic": true
+    "oneTimeOnly": false,
+    "flooredToEpic": false
   },
   {
     "id": 352,
@@ -1633,19 +1633,19 @@
   },
   {
     "id": 354,
-    "rarity": "epic",
+    "rarity": "common",
     "appliedRule": "composite",
-    "finalScore": 10,
+    "finalScore": 3.75,
     "components": {
       "c1_encounterRate": 0,
       "c3_games": 0,
       "c4_method": 0,
       "c5_exclusivity": 0,
       "c6_evolution": 30,
-      "c7_oneTimeOnly": 100
+      "c7_oneTimeOnly": 0
     },
-    "oneTimeOnly": true,
-    "flooredToEpic": true
+    "oneTimeOnly": false,
+    "flooredToEpic": false
   },
   {
     "id": 355,
@@ -1681,19 +1681,19 @@
   },
   {
     "id": 357,
-    "rarity": "epic",
+    "rarity": "common",
     "appliedRule": "composite",
-    "finalScore": 6.25,
+    "finalScore": 0,
     "components": {
       "c1_encounterRate": 0,
       "c3_games": 0,
       "c4_method": 0,
       "c5_exclusivity": 0,
       "c6_evolution": 0,
-      "c7_oneTimeOnly": 100
+      "c7_oneTimeOnly": 0
     },
-    "oneTimeOnly": true,
-    "flooredToEpic": true
+    "oneTimeOnly": false,
+    "flooredToEpic": false
   },
   {
     "id": 358,
@@ -1729,19 +1729,19 @@
   },
   {
     "id": 360,
-    "rarity": "epic",
+    "rarity": "common",
     "appliedRule": "composite",
-    "finalScore": 14.0625,
+    "finalScore": 7.812499999999998,
     "components": {
       "c1_encounterRate": 0,
       "c3_games": 41.666666666666664,
       "c4_method": 0,
       "c5_exclusivity": 0,
       "c6_evolution": 0,
-      "c7_oneTimeOnly": 100
+      "c7_oneTimeOnly": 0
     },
-    "oneTimeOnly": true,
-    "flooredToEpic": true
+    "oneTimeOnly": false,
+    "flooredToEpic": false
   },
   {
     "id": 361,
@@ -1953,35 +1953,35 @@
   },
   {
     "id": 374,
-    "rarity": "epic",
+    "rarity": "common",
     "appliedRule": "composite",
-    "finalScore": 6.25,
+    "finalScore": 0,
     "components": {
       "c1_encounterRate": 0,
       "c3_games": 0,
       "c4_method": 0,
       "c5_exclusivity": 0,
       "c6_evolution": 0,
-      "c7_oneTimeOnly": 100
+      "c7_oneTimeOnly": 0
     },
-    "oneTimeOnly": true,
-    "flooredToEpic": true
+    "oneTimeOnly": false,
+    "flooredToEpic": false
   },
   {
     "id": 375,
-    "rarity": "epic",
+    "rarity": "common",
     "appliedRule": "composite",
-    "finalScore": 10,
+    "finalScore": 3.75,
     "components": {
       "c1_encounterRate": 0,
       "c3_games": 0,
       "c4_method": 0,
       "c5_exclusivity": 0,
       "c6_evolution": 30,
-      "c7_oneTimeOnly": 100
+      "c7_oneTimeOnly": 0
     },
-    "oneTimeOnly": true,
-    "flooredToEpic": true
+    "oneTimeOnly": false,
+    "flooredToEpic": false
   },
   {
     "id": 376,

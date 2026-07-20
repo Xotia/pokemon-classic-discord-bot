@@ -45,24 +45,33 @@ export const SCORE_THRESHOLDS: { max: number; tier: Rarity }[] = [
 ];
 
 /**
- * True if the Pokémon's encounters response contains a "gift" or
- * "gift-egg" method (starters/fossils/unique NPC gifts).
+ * True if gift/gift-egg is the ONLY method this Pokémon is ever obtained
+ * by (starters/fossils/unique NPC gifts). A Pokémon that's gifted in one
+ * edition but freely wild-catchable in others (e.g. Pikachu in Yellow)
+ * must NOT count as one-time-only — it's still common overall.
  */
 export function isOneTimeOnly(encounters: any[]): boolean {
   if (!Array.isArray(encounters)) return false;
+
+  const methods = new Set<string>();
   for (const locationEntry of encounters) {
     const versionDetails = locationEntry?.version_details ?? [];
     for (const versionDetail of versionDetails) {
       const encounterDetails = versionDetail?.encounter_details ?? [];
       for (const detail of encounterDetails) {
         const methodName = detail?.method?.name;
-        if (methodName === "gift" || methodName === "gift-egg") {
-          return true;
-        }
+        if (methodName) methods.add(methodName);
       }
     }
   }
-  return false;
+
+  const hasGift = methods.has("gift") || methods.has("gift-egg");
+  if (!hasGift) return false;
+
+  for (const method of methods) {
+    if (method !== "gift" && method !== "gift-egg") return false;
+  }
+  return true;
 }
 
 /**
