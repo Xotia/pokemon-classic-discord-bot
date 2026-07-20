@@ -16,9 +16,12 @@ import {
   getDistinctMethods,
   getEasiestMethod,
   getEvolutionInfo,
+  getParentSpeciesId,
+  GEN3_VERSIONS,
+  filterEncountersToVersions,
 } from "./rarityScoring";
 import { RarityResult, RawRarityData } from "../types/RarityResult";
-import { Rarity } from "../config/rarity";
+import { Rarity, RARITY_ORDER } from "../config/rarity";
 
 const WEIGHT_ENCOUNTER_RATE = 0.25;
 const WEIGHT_GAMES = 0.15;
@@ -48,7 +51,10 @@ function extractIdFromUrl(url: string | undefined): number | null {
   return match ? Number(match[1]) : null;
 }
 
-export async function computeRarity(id: number): Promise<RarityResult> {
+export async function computeRarity(
+  id: number,
+  allowedVersions: Set<string> = GEN3_VERSIONS,
+): Promise<RarityResult> {
   let species: any;
   try {
     species = await fetchSpecies(id);
@@ -72,11 +78,12 @@ export async function computeRarity(id: number): Promise<RarityResult> {
   // so the raw PokéAPI-derived facts can always be inspected for audit,
   // not just the final priority-rule outcome.
   const encounters = await fetchEncounters(id);
+  const scopedEncounters = filterEncountersToVersions(encounters, allowedVersions);
   const evolutionChain = await fetchEvolutionChain(species.evolution_chain.url);
 
-  const versions = getDistinctVersionNames(encounters);
+  const versions = getDistinctVersionNames(scopedEncounters);
   const evolutionInfo = getEvolutionInfo(evolutionChain, species.name);
-  const oneTimeOnly = isOneTimeOnly(encounters);
+  const oneTimeOnly = isOneTimeOnly(scopedEncounters);
   const depth = evolutionInfo?.depth ?? 0;
 
   // The floor is keyed off the evolution chain's ROOT one-time-only
@@ -90,7 +97,11 @@ export async function computeRarity(id: number): Promise<RarityResult> {
     if (rootId !== null) {
       try {
         const rootEncounters = await fetchEncounters(rootId);
-        rootOneTimeOnly = isOneTimeOnly(rootEncounters);
+        const scopedRootEncounters = filterEncountersToVersions(
+          rootEncounters,
+          allowedVersions,
+        );
+        rootOneTimeOnly = isOneTimeOnly(scopedRootEncounters);
       } catch {
         // If the root's own encounters can't be fetched, fall back to
         // not flooring rather than crashing the whole computation.
@@ -104,11 +115,11 @@ export async function computeRarity(id: number): Promise<RarityResult> {
   const rawData: RawRarityData = {
     isLegendary: species.is_legendary === true,
     isMythical: species.is_mythical === true,
-    maxEncounterChance: getMaxEncounterChance(encounters),
+    maxEncounterChance: getMaxEncounterChance(scopedEncounters),
     gamesCount: versions.length,
     versions,
-    methods: getDistinctMethods(encounters),
-    easiestMethod: getEasiestMethod(encounters),
+    methods: getDistinctMethods(scopedEncounters),
+    easiestMethod: getEasiestMethod(scopedEncounters),
     isVersionExclusive: versions.length <= 1,
     evolutionDepth: evolutionInfo?.depth ?? null,
     evolutionTrigger: evolutionInfo?.trigger ?? null,
@@ -148,14 +159,29 @@ export async function computeRarity(id: number): Promise<RarityResult> {
     };
   }
 
-  if (Array.isArray(encounters) && encounters.length === 0) {
-    const tierBeforeFloor: Rarity = "ultra_rare";
+  if (scopedEncounters.length === 0) {
+    let tierBeforeFloor: Rarity = "ultra_rare";
+    let appliedRule: RarityResult["appliedRule"] = "priority:no_encounters_absent";
+
+    if (depth > 0) {
+      const parentId = getParentSpeciesId(evolutionChain, species.name);
+      if (parentId !== null) {
+        const parentResult = await computeRarity(parentId, allowedVersions);
+        const bump = evolutionInfo?.trigger === "level-up" ? 1 : 2;
+        const mythicIndex = RARITY_ORDER.indexOf("mythic");
+        const parentIndex = RARITY_ORDER.indexOf(parentResult.rarity);
+        const bumpedIndex = Math.min(parentIndex + bump, mythicIndex);
+        tierBeforeFloor = RARITY_ORDER[bumpedIndex];
+        appliedRule = "priority:no_encounters_inherits_parent";
+      }
+    }
+
     const rarity = applyOneTimeOnlyChainFloor(tierBeforeFloor, rootOneTimeOnly, depth);
     return {
       id,
       name,
       rarity,
-      appliedRule: "priority:no_encounters_absent",
+      appliedRule,
       finalScore: null,
       components: null,
       rawData,
@@ -164,12 +190,12 @@ export async function computeRarity(id: number): Promise<RarityResult> {
     };
   }
 
-  const c1_encounterRate = computeEncounterRateComponent(encounters);
-  const c3_games = computeGamesComponent(encounters);
-  const c4_method = computeMethodComponent(encounters);
-  const c5_exclusivity = computeExclusivityComponent(encounters);
+  const c1_encounterRate = computeEncounterRateComponent(scopedEncounters);
+  const c3_games = computeGamesComponent(scopedEncounters);
+  const c4_method = computeMethodComponent(scopedEncounters);
+  const c5_exclusivity = computeExclusivityComponent(scopedEncounters);
   const c6_evolution = computeEvolutionComponent(evolutionChain, species.name);
-  const c7_oneTimeOnly = computeOneTimeOnlyComponent(encounters);
+  const c7_oneTimeOnly = computeOneTimeOnlyComponent(scopedEncounters);
 
   const rawScore =
     WEIGHT_ENCOUNTER_RATE * c1_encounterRate +

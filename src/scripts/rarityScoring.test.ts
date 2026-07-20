@@ -14,8 +14,11 @@ import {
   getDistinctMethods,
   getEasiestMethod,
   getEvolutionInfo,
+  getParentSpeciesId,
   REFERENCE_MAX_GAMES,
   DEFAULT_METHOD_DIFFICULTY,
+  filterEncountersToVersions,
+  GEN3_VERSIONS,
 } from "./rarityScoring";
 
 // ---- fixture helpers -------------------------------------------------
@@ -731,5 +734,258 @@ describe("getEvolutionInfo", () => {
       },
     };
     expect(getEvolutionInfo(chain as any, "vaporeon")).toEqual({ depth: 1, trigger: null });
+  });
+});
+
+// ---- filterEncountersToVersions ---------------------------------------
+
+describe("filterEncountersToVersions", () => {
+  it("returns [] for non-array input", () => {
+    expect(filterEncountersToVersions(null as any, new Set(["red"]))).toEqual([]);
+    expect(filterEncountersToVersions(undefined as any, new Set(["red"]))).toEqual([]);
+  });
+
+  it("returns [] for an empty encounters array", () => {
+    expect(filterEncountersToVersions([], new Set(["red"]))).toEqual([]);
+  });
+
+  it("drops a location entry whose version_details are all outside the allowed set", () => {
+    const encounters = [
+      {
+        location_area: { name: "route-1" },
+        version_details: [
+          { version: { name: "red" }, encounter_details: [] },
+          { version: { name: "blue" }, encounter_details: [] },
+        ],
+      },
+    ];
+    const result = filterEncountersToVersions(encounters, new Set(["emerald"]));
+    expect(result).toEqual([]);
+  });
+
+  it("keeps a location entry with a mix of allowed/disallowed versions, trimmed to only the allowed ones", () => {
+    const encounters = [
+      {
+        location_area: { name: "route-101" },
+        version_details: [
+          { version: { name: "emerald" }, encounter_details: [{ method: { name: "walk" } }] },
+          { version: { name: "red" }, encounter_details: [{ method: { name: "walk" } }] },
+        ],
+      },
+    ];
+    const result = filterEncountersToVersions(encounters, new Set(["emerald"]));
+    expect(result).toHaveLength(1);
+    expect(result[0].version_details).toHaveLength(1);
+    expect(result[0].version_details[0].version.name).toBe("emerald");
+    expect(
+      result[0].version_details.some((vd: any) => vd.version.name === "red"),
+    ).toBe(false);
+  });
+
+  it("across multiple location entries, keeps only those with at least one allowed version, each correctly trimmed", () => {
+    const allowedOnly = {
+      location_area: { name: "route-102" },
+      version_details: [
+        { version: { name: "emerald" }, encounter_details: [] },
+      ],
+    };
+    const disallowedOnly = {
+      location_area: { name: "route-103" },
+      version_details: [
+        { version: { name: "red" }, encounter_details: [] },
+      ],
+    };
+    const mixed = {
+      location_area: { name: "route-104" },
+      version_details: [
+        { version: { name: "emerald" }, encounter_details: [] },
+        { version: { name: "sapphire" }, encounter_details: [] },
+        { version: { name: "red" }, encounter_details: [] },
+      ],
+    };
+    const encounters = [allowedOnly, disallowedOnly, mixed];
+    const result = filterEncountersToVersions(
+      encounters,
+      new Set(["emerald", "sapphire"]),
+    );
+
+    expect(result).toHaveLength(2);
+    expect(result[0].location_area.name).toBe("route-102");
+    expect(result[0].version_details).toHaveLength(1);
+    expect(result[1].location_area.name).toBe("route-104");
+    expect(result[1].version_details).toHaveLength(2);
+    expect(
+      result[1].version_details.map((vd: any) => vd.version.name).sort(),
+    ).toEqual(["emerald", "sapphire"]);
+  });
+
+  it("does not mutate the input encounters array or its objects", () => {
+    const original = [
+      {
+        location_area: { name: "route-1" },
+        version_details: [
+          { version: { name: "emerald" }, encounter_details: [{ method: { name: "walk" } }] },
+          { version: { name: "red" }, encounter_details: [{ method: { name: "walk" } }] },
+        ],
+      },
+    ];
+    const snapshot = JSON.parse(JSON.stringify(original));
+
+    filterEncountersToVersions(original, new Set(["emerald"]));
+
+    expect(original).toEqual(snapshot);
+    expect(original[0].version_details).toHaveLength(2);
+  });
+
+  it("sanity check with the real GEN3_VERSIONS constant: only the Gen 3 version survives", () => {
+    const encounters = [
+      {
+        location_area: { name: "route-1" },
+        version_details: [
+          { version: { name: "emerald" }, encounter_details: [{ method: { name: "walk" } }] },
+          { version: { name: "sword" }, encounter_details: [{ method: { name: "walk" } }] },
+        ],
+      },
+    ];
+    const result = filterEncountersToVersions(encounters, GEN3_VERSIONS);
+    expect(result).toHaveLength(1);
+    expect(result[0].version_details).toHaveLength(1);
+    expect(result[0].version_details[0].version.name).toBe("emerald");
+  });
+});
+
+// ---- getParentSpeciesId -------------------------------------------------
+
+describe("getParentSpeciesId", () => {
+  it("returns null for the root species (depth 0, no parent)", () => {
+    const chain = {
+      chain: {
+        species: {
+          name: "bulbasaur",
+          url: "https://pokeapi.co/api/v2/pokemon-species/1/",
+        },
+        evolution_details: [],
+        evolves_to: [],
+      },
+    };
+    expect(getParentSpeciesId(chain as any, "bulbasaur")).toBeNull();
+  });
+
+  it("returns the root's numeric id for a depth-1 species", () => {
+    const chain = {
+      chain: {
+        species: {
+          name: "bulbasaur",
+          url: "https://pokeapi.co/api/v2/pokemon-species/1/",
+        },
+        evolution_details: [],
+        evolves_to: [
+          {
+            species: {
+              name: "ivysaur",
+              url: "https://pokeapi.co/api/v2/pokemon-species/2/",
+            },
+            evolution_details: [{ trigger: { name: "level-up" } }],
+            evolves_to: [],
+          },
+        ],
+      },
+    };
+    expect(getParentSpeciesId(chain as any, "ivysaur")).toBe(1);
+  });
+
+  it("returns the immediate parent's numeric id (not the root's) for a depth-2 species", () => {
+    const chain = {
+      chain: {
+        species: {
+          name: "caterpie",
+          url: "https://pokeapi.co/api/v2/pokemon-species/1/",
+        },
+        evolution_details: [],
+        evolves_to: [
+          {
+            species: {
+              name: "metapod",
+              url: "https://pokeapi.co/api/v2/pokemon-species/2/",
+            },
+            evolution_details: [{ trigger: { name: "level-up" } }],
+            evolves_to: [
+              {
+                species: {
+                  name: "butterfree",
+                  url: "https://pokeapi.co/api/v2/pokemon-species/3/",
+                },
+                evolution_details: [{ trigger: { name: "level-up" } }],
+                evolves_to: [],
+              },
+            ],
+          },
+        ],
+      },
+    };
+    expect(getParentSpeciesId(chain as any, "butterfree")).toBe(2);
+  });
+
+  it("returns null when the species is not found anywhere in the chain", () => {
+    const chain = {
+      chain: {
+        species: {
+          name: "bulbasaur",
+          url: "https://pokeapi.co/api/v2/pokemon-species/1/",
+        },
+        evolution_details: [],
+        evolves_to: [],
+      },
+    };
+    expect(getParentSpeciesId(chain as any, "charmander")).toBeNull();
+  });
+
+  it("returns null when evolutionChain is null or undefined", () => {
+    expect(getParentSpeciesId(null, "bulbasaur")).toBeNull();
+    expect(getParentSpeciesId(undefined, "bulbasaur")).toBeNull();
+  });
+
+  it("returns null when evolutionChain.chain is missing", () => {
+    expect(getParentSpeciesId({ chain: undefined } as any, "bulbasaur")).toBeNull();
+  });
+
+  it("returns null when the parent node's species.url is an empty string", () => {
+    const chain = {
+      chain: {
+        species: { name: "bulbasaur", url: "" },
+        evolution_details: [],
+        evolves_to: [
+          {
+            species: {
+              name: "ivysaur",
+              url: "https://pokeapi.co/api/v2/pokemon-species/2/",
+            },
+            evolution_details: [{ trigger: { name: "level-up" } }],
+            evolves_to: [],
+          },
+        ],
+      },
+    };
+    expect(getParentSpeciesId(chain as any, "ivysaur")).toBeNull();
+  });
+
+  it("returns null when the parent node's species.url has no trailing numeric id", () => {
+    const chain = {
+      chain: {
+        species: { name: "bulbasaur", url: "https://pokeapi.co/api/v2/pokemon-species/" },
+        evolution_details: [],
+        evolves_to: [
+          {
+            species: {
+              name: "ivysaur",
+              url: "https://pokeapi.co/api/v2/pokemon-species/2/",
+            },
+            evolution_details: [{ trigger: { name: "level-up" } }],
+            evolves_to: [],
+          },
+        ],
+      },
+    };
+    expect(getParentSpeciesId(chain as any, "ivysaur")).toBeNull();
   });
 });

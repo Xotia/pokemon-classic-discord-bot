@@ -31,6 +31,7 @@ export interface RarityResult {
     | "priority:is_mythical"
     | "priority:is_legendary"
     | "priority:no_encounters_absent"
+    | "priority:no_encounters_inherits_parent"
     | "composite";
   finalScore: number | null;
   components: RarityComponents | null;

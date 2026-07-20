@@ -1,6 +1,6 @@
 {
   "name": "pokemon-classic-discord-bot",
-  "version": "3.4.2",
+  "version": "3.5.0",
   "description": "",
   "main": "index.ts",
   "scripts": {
@@ -13,6 +13,7 @@
     "deploy:dev:clear": "npx ts-node src/deploy-commands-dev.ts --clear",
     "simulate:capture": "npx ts-node src/scripts/simulateCapture.ts",
     "test:rarity": "npx ts-node src/scripts/testRarity.ts",
+    "compare:rarity": "npx ts-node src/scripts/compareRarityWithManual.ts",
     "force-end-raid": "npx ts-node src/scripts/forceEndRaid.ts"
   },
   "keywords": [],

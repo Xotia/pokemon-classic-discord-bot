@@ -12,6 +12,44 @@ function clamp(value: number, min: number, max: number): number {
   return Math.min(max, Math.max(min, value));
 }
 
+// Gen 3 game versions (Ruby/Sapphire/Emerald/FireRed/LeafGreen + the ORAS
+// remakes): used to scope encounter data down to games actually relevant
+// to this generation, instead of PokéAPI's all-generations aggregate.
+export const GEN3_VERSIONS = new Set([
+  "ruby",
+  "sapphire",
+  "emerald",
+  "firered",
+  "leafgreen",
+  "omega-ruby",
+  "alpha-sapphire",
+]);
+
+/**
+ * Filters raw PokéAPI encounter entries down to only the given game
+ * versions. Location-area entries whose `version_details` are entirely
+ * outside `allowedVersions` are dropped altogether (not kept with an
+ * empty array). Pure function: returns a new array, never mutates input.
+ */
+export function filterEncountersToVersions(
+  encounters: any[],
+  allowedVersions: Set<string>,
+): any[] {
+  if (!Array.isArray(encounters)) return [];
+
+  const filtered: any[] = [];
+  for (const locationEntry of encounters) {
+    const versionDetails = locationEntry?.version_details ?? [];
+    const keptVersionDetails = versionDetails.filter((versionDetail: any) =>
+      allowedVersions.has(versionDetail?.version?.name),
+    );
+    if (keptVersionDetails.length > 0) {
+      filtered.push({ ...locationEntry, version_details: keptVersionDetails });
+    }
+  }
+  return filtered;
+}
+
 // How many games counts as "widely available" for the C3 component.
 // Adjust this if the reference game count for full availability changes.
 export const REFERENCE_MAX_GAMES = 12;
@@ -170,7 +208,7 @@ const TRIGGER_BONUS: Record<string, number> = {
 const DEFAULT_TRIGGER_BONUS = 25;
 
 interface EvolutionChainNode {
-  species: { name: string };
+  species: { name: string; url?: string };
   evolution_details: { trigger?: { name?: string } }[];
   evolves_to: EvolutionChainNode[];
 }
@@ -193,6 +231,48 @@ function findSpeciesNode(
     if (found) return found;
   }
   return null;
+}
+
+interface EvolutionChainLocationWithParent {
+  depth: number;
+  node: EvolutionChainNode;
+  parent: EvolutionChainNode | null;
+}
+
+function findSpeciesNodeWithParent(
+  node: EvolutionChainNode,
+  speciesName: string,
+  parent: EvolutionChainNode | null = null,
+  depth = 0,
+): EvolutionChainLocationWithParent | null {
+  if (node?.species?.name === speciesName) {
+    return { depth, node, parent };
+  }
+  for (const child of node?.evolves_to ?? []) {
+    const found = findSpeciesNodeWithParent(child, speciesName, node, depth + 1);
+    if (found) return found;
+  }
+  return null;
+}
+
+/**
+ * Resolves the numeric species id of the immediate pre-evolution (parent)
+ * of `speciesName` within `evolutionChain`, or null if the chain is
+ * missing, the species isn't found, or the species is the chain root
+ * (depth 0, no parent). Pure function, no network calls.
+ */
+export function getParentSpeciesId(
+  evolutionChain: { chain: EvolutionChainNode } | null | undefined,
+  speciesName: string,
+): number | null {
+  const root = evolutionChain?.chain;
+  if (!root) return null;
+
+  const located = findSpeciesNodeWithParent(root, speciesName);
+  if (!located || !located.parent) return null;
+
+  const match = located.parent.species?.url?.match(/\/(\d+)\/?$/);
+  return match ? Number(match[1]) : null;
 }
 
 /**

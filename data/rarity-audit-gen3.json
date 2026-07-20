@@ -4,10 +4,10 @@
     "name": "Arcko",
     "rarity": "epic",
     "appliedRule": "composite",
-    "finalScore": 32.8125,
+    "finalScore": 35.9375,
     "components": {
       "c1_encounterRate": 0,
-      "c3_games": 41.666666666666664,
+      "c3_games": 58.33333333333333,
       "c4_method": 100,
       "c5_exclusivity": 0,
       "c6_evolution": 0,
@@ -17,15 +17,13 @@
       "isLegendary": false,
       "isMythical": false,
       "maxEncounterChance": 100,
-      "gamesCount": 7,
+      "gamesCount": 5,
       "versions": [
         "alpha-sapphire",
         "emerald",
-        "heartgold",
         "omega-ruby",
         "ruby",
-        "sapphire",
-        "soulsilver"
+        "sapphire"
       ],
       "methods": [
         "gift"
@@ -42,82 +40,55 @@
     "id": 253,
     "name": "Massko",
     "rarity": "ultra_rare",
-    "appliedRule": "composite",
-    "finalScore": 30.625,
-    "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 66.66666666666667,
-      "c4_method": 60,
-      "c5_exclusivity": 25,
-      "c6_evolution": 30,
-      "c7_oneTimeOnly": 0
-    },
+    "appliedRule": "priority:no_encounters_inherits_parent",
+    "finalScore": null,
+    "components": null,
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 4,
-      "versions": [
-        "the-crown-tundra-shield",
-        "the-crown-tundra-sword",
-        "ultra-moon",
-        "ultra-sun"
-      ],
-      "methods": [
-        "dynamax-adventure",
-        "island-scan"
-      ],
-      "easiestMethod": "dynamax-adventure",
-      "isVersionExclusive": false,
+      "maxEncounterChance": null,
+      "gamesCount": 0,
+      "versions": [],
+      "methods": [],
+      "easiestMethod": null,
+      "isVersionExclusive": true,
       "evolutionDepth": 1,
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredByChain": true
+    "flooredByChain": false
   },
   {
     "id": 254,
     "name": "Jungko",
     "rarity": "mythic",
-    "appliedRule": "composite",
-    "finalScore": 43.75,
-    "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 83.33333333333334,
-      "c4_method": 60,
-      "c5_exclusivity": 75,
-      "c6_evolution": 60,
-      "c7_oneTimeOnly": 0
-    },
+    "appliedRule": "priority:no_encounters_inherits_parent",
+    "finalScore": null,
+    "components": null,
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 2,
-      "versions": [
-        "the-crown-tundra-shield",
-        "the-crown-tundra-sword"
-      ],
-      "methods": [
-        "dynamax-adventure"
-      ],
-      "easiestMethod": "dynamax-adventure",
-      "isVersionExclusive": false,
+      "maxEncounterChance": null,
+      "gamesCount": 0,
+      "versions": [],
+      "methods": [],
+      "easiestMethod": null,
+      "isVersionExclusive": true,
       "evolutionDepth": 2,
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredByChain": true
+    "flooredByChain": false
   },
   {
     "id": 255,
     "name": "Poussifeu",
     "rarity": "epic",
     "appliedRule": "composite",
-    "finalScore": 32.8125,
+    "finalScore": 35.9375,
     "components": {
       "c1_encounterRate": 0,
-      "c3_games": 41.666666666666664,
+      "c3_games": 58.33333333333333,
       "c4_method": 100,
       "c5_exclusivity": 0,
       "c6_evolution": 0,
@@ -127,15 +98,13 @@
       "isLegendary": false,
       "isMythical": false,
       "maxEncounterChance": 100,
-      "gamesCount": 7,
+      "gamesCount": 5,
       "versions": [
         "alpha-sapphire",
         "emerald",
-        "heartgold",
         "omega-ruby",
         "ruby",
-        "sapphire",
-        "soulsilver"
+        "sapphire"
       ],
       "methods": [
         "gift"
@@ -152,82 +121,55 @@
     "id": 256,
     "name": "Galifeu",
     "rarity": "ultra_rare",
-    "appliedRule": "composite",
-    "finalScore": 30.625,
-    "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 66.66666666666667,
-      "c4_method": 60,
-      "c5_exclusivity": 25,
-      "c6_evolution": 30,
-      "c7_oneTimeOnly": 0
-    },
+    "appliedRule": "priority:no_encounters_inherits_parent",
+    "finalScore": null,
+    "components": null,
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 4,
-      "versions": [
-        "the-crown-tundra-shield",
-        "the-crown-tundra-sword",
-        "ultra-moon",
-        "ultra-sun"
-      ],
-      "methods": [
-        "dynamax-adventure",
-        "island-scan"
-      ],
-      "easiestMethod": "dynamax-adventure",
-      "isVersionExclusive": false,
+      "maxEncounterChance": null,
+      "gamesCount": 0,
+      "versions": [],
+      "methods": [],
+      "easiestMethod": null,
+      "isVersionExclusive": true,
       "evolutionDepth": 1,
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredByChain": true
+    "flooredByChain": false
   },
   {
     "id": 257,
     "name": "Braségali",
     "rarity": "mythic",
-    "appliedRule": "composite",
-    "finalScore": 43.75,
-    "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 83.33333333333334,
-      "c4_method": 60,
-      "c5_exclusivity": 75,
-      "c6_evolution": 60,
-      "c7_oneTimeOnly": 0
-    },
+    "appliedRule": "priority:no_encounters_inherits_parent",
+    "finalScore": null,
+    "components": null,
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 2,
-      "versions": [
-        "the-crown-tundra-shield",
-        "the-crown-tundra-sword"
-      ],
-      "methods": [
-        "dynamax-adventure"
-      ],
-      "easiestMethod": "dynamax-adventure",
-      "isVersionExclusive": false,
+      "maxEncounterChance": null,
+      "gamesCount": 0,
+      "versions": [],
+      "methods": [],
+      "easiestMethod": null,
+      "isVersionExclusive": true,
       "evolutionDepth": 2,
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredByChain": true
+    "flooredByChain": false
   },
   {
     "id": 258,
     "name": "Gobou",
     "rarity": "epic",
     "appliedRule": "composite",
-    "finalScore": 32.8125,
+    "finalScore": 35.9375,
     "components": {
       "c1_encounterRate": 0,
-      "c3_games": 41.666666666666664,
+      "c3_games": 58.33333333333333,
       "c4_method": 100,
       "c5_exclusivity": 0,
       "c6_evolution": 0,
@@ -237,15 +179,13 @@
       "isLegendary": false,
       "isMythical": false,
       "maxEncounterChance": 100,
-      "gamesCount": 7,
+      "gamesCount": 5,
       "versions": [
         "alpha-sapphire",
         "emerald",
-        "heartgold",
         "omega-ruby",
         "ruby",
-        "sapphire",
-        "soulsilver"
+        "sapphire"
       ],
       "methods": [
         "gift"
@@ -262,82 +202,55 @@
     "id": 259,
     "name": "Flobio",
     "rarity": "ultra_rare",
-    "appliedRule": "composite",
-    "finalScore": 30.625,
-    "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 66.66666666666667,
-      "c4_method": 60,
-      "c5_exclusivity": 25,
-      "c6_evolution": 30,
-      "c7_oneTimeOnly": 0
-    },
+    "appliedRule": "priority:no_encounters_inherits_parent",
+    "finalScore": null,
+    "components": null,
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 4,
-      "versions": [
-        "the-crown-tundra-shield",
-        "the-crown-tundra-sword",
-        "ultra-moon",
-        "ultra-sun"
-      ],
-      "methods": [
-        "dynamax-adventure",
-        "island-scan"
-      ],
-      "easiestMethod": "dynamax-adventure",
-      "isVersionExclusive": false,
+      "maxEncounterChance": null,
+      "gamesCount": 0,
+      "versions": [],
+      "methods": [],
+      "easiestMethod": null,
+      "isVersionExclusive": true,
       "evolutionDepth": 1,
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredByChain": true
+    "flooredByChain": false
   },
   {
     "id": 260,
     "name": "Laggron",
     "rarity": "mythic",
-    "appliedRule": "composite",
-    "finalScore": 43.75,
-    "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 83.33333333333334,
-      "c4_method": 60,
-      "c5_exclusivity": 75,
-      "c6_evolution": 60,
-      "c7_oneTimeOnly": 0
-    },
+    "appliedRule": "priority:no_encounters_inherits_parent",
+    "finalScore": null,
+    "components": null,
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 2,
-      "versions": [
-        "the-crown-tundra-shield",
-        "the-crown-tundra-sword"
-      ],
-      "methods": [
-        "dynamax-adventure"
-      ],
-      "easiestMethod": "dynamax-adventure",
-      "isVersionExclusive": false,
+      "maxEncounterChance": null,
+      "gamesCount": 0,
+      "versions": [],
+      "methods": [],
+      "easiestMethod": null,
+      "isVersionExclusive": true,
       "evolutionDepth": 2,
       "evolutionTrigger": "level-up"
     },
     "oneTimeOnly": false,
-    "flooredByChain": true
+    "flooredByChain": false
   },
   {
     "id": 261,
     "name": "Medhyèna",
-    "rarity": "common",
+    "rarity": "rare",
     "appliedRule": "composite",
-    "finalScore": 4.6875,
+    "finalScore": 31.25,
     "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 25,
+      "c1_encounterRate": 65,
+      "c3_games": 58.33333333333333,
       "c4_method": 0,
       "c5_exclusivity": 0,
       "c6_evolution": 0,
@@ -346,22 +259,17 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 9,
+      "maxEncounterChance": 35,
+      "gamesCount": 5,
       "versions": [
         "alpha-sapphire",
         "emerald",
-        "heartgold",
         "omega-ruby",
-        "platinum",
         "ruby",
-        "sapphire",
-        "soulsilver",
-        "xd"
+        "sapphire"
       ],
       "methods": [
         "horde",
-        "snag",
         "walk"
       ],
       "easiestMethod": "walk",
@@ -375,34 +283,30 @@
   {
     "id": 262,
     "name": "Grahyèna",
-    "rarity": "rare",
+    "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 40.3125,
+    "finalScore": 58.4375,
     "components": {
-      "c1_encounterRate": 67,
-      "c3_games": 66.66666666666667,
+      "c1_encounterRate": 80,
+      "c3_games": 91.66666666666667,
       "c4_method": 0,
-      "c5_exclusivity": 25,
+      "c5_exclusivity": 100,
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 33,
-      "gamesCount": 4,
+      "maxEncounterChance": 20,
+      "gamesCount": 1,
       "versions": [
-        "diamond",
-        "emerald",
-        "x",
-        "y"
+        "emerald"
       ],
       "methods": [
-        "red-flowers",
         "walk"
       ],
       "easiestMethod": "walk",
-      "isVersionExclusive": false,
+      "isVersionExclusive": true,
       "evolutionDepth": 1,
       "evolutionTrigger": "level-up"
     },
@@ -414,10 +318,10 @@
     "name": "Zigzaton",
     "rarity": "common",
     "appliedRule": "composite",
-    "finalScore": 0,
+    "finalScore": 12.499999999999996,
     "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 0,
+      "c1_encounterRate": 5,
+      "c3_games": 58.33333333333333,
       "c4_method": 0,
       "c5_exclusivity": 0,
       "c6_evolution": 0,
@@ -426,27 +330,17 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 14,
+      "maxEncounterChance": 95,
+      "gamesCount": 5,
       "versions": [
         "alpha-sapphire",
-        "diamond",
         "emerald",
-        "heartgold",
         "omega-ruby",
-        "pearl",
-        "platinum",
         "ruby",
-        "sapphire",
-        "soulsilver",
-        "the-isle-of-armor-shield",
-        "the-isle-of-armor-sword",
-        "x",
-        "y"
+        "sapphire"
       ],
       "methods": [
         "horde",
-        "npc-trade",
         "walk"
       ],
       "easiestMethod": "walk",
@@ -460,33 +354,28 @@
   {
     "id": 264,
     "name": "Linéon",
-    "rarity": "common",
+    "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 11.5625,
+    "finalScore": 49.0625,
     "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 41.666666666666664,
+      "c1_encounterRate": 80,
+      "c3_games": 75,
       "c4_method": 0,
-      "c5_exclusivity": 0,
+      "c5_exclusivity": 50,
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 7,
+      "maxEncounterChance": 20,
+      "gamesCount": 3,
       "versions": [
         "emerald",
-        "heartgold",
         "ruby",
-        "sapphire",
-        "soulsilver",
-        "the-crown-tundra-shield",
-        "the-crown-tundra-sword"
+        "sapphire"
       ],
       "methods": [
-        "dynamax-adventure",
         "walk"
       ],
       "easiestMethod": "walk",
@@ -502,10 +391,10 @@
     "name": "Chenipotte",
     "rarity": "uncommon",
     "appliedRule": "composite",
-    "finalScore": 15.624999999999996,
+    "finalScore": 23.4375,
     "components": {
       "c1_encounterRate": 40,
-      "c3_games": 16.666666666666657,
+      "c3_games": 58.33333333333333,
       "c4_method": 0,
       "c5_exclusivity": 0,
       "c6_evolution": 0,
@@ -515,22 +404,15 @@
       "isLegendary": false,
       "isMythical": false,
       "maxEncounterChance": 60,
-      "gamesCount": 10,
+      "gamesCount": 5,
       "versions": [
         "alpha-sapphire",
-        "diamond",
         "emerald",
-        "heartgold",
         "omega-ruby",
-        "pearl",
-        "platinum",
         "ruby",
-        "sapphire",
-        "soulsilver"
+        "sapphire"
       ],
       "methods": [
-        "headbutt",
-        "honey-tree",
         "horde",
         "walk"
       ],
@@ -545,33 +427,28 @@
   {
     "id": 266,
     "name": "Armulys",
-    "rarity": "rare",
+    "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 36.5625,
+    "finalScore": 52.1875,
     "components": {
-      "c1_encounterRate": 80,
-      "c3_games": 41.666666666666664,
+      "c1_encounterRate": 90,
+      "c3_games": 75,
       "c4_method": 0,
-      "c5_exclusivity": 0,
+      "c5_exclusivity": 50,
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 20,
-      "gamesCount": 7,
+      "maxEncounterChance": 10,
+      "gamesCount": 3,
       "versions": [
-        "diamond",
         "emerald",
-        "heartgold",
-        "platinum",
         "ruby",
-        "sapphire",
-        "soulsilver"
+        "sapphire"
       ],
       "methods": [
-        "honey-tree",
         "walk"
       ],
       "easiestMethod": "walk",
@@ -585,36 +462,19 @@
   {
     "id": 267,
     "name": "Charmillon",
-    "rarity": "rare",
-    "appliedRule": "composite",
-    "finalScore": 36.25,
-    "components": {
-      "c1_encounterRate": 67,
-      "c3_games": 41.666666666666664,
-      "c4_method": 0,
-      "c5_exclusivity": 0,
-      "c6_evolution": 60,
-      "c7_oneTimeOnly": 0
-    },
+    "rarity": "epic",
+    "appliedRule": "priority:no_encounters_inherits_parent",
+    "finalScore": null,
+    "components": null,
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 33,
-      "gamesCount": 7,
-      "versions": [
-        "diamond",
-        "heartgold",
-        "pearl",
-        "platinum",
-        "soulsilver",
-        "x",
-        "y"
-      ],
-      "methods": [
-        "walk"
-      ],
-      "easiestMethod": "walk",
-      "isVersionExclusive": false,
+      "maxEncounterChance": null,
+      "gamesCount": 0,
+      "versions": [],
+      "methods": [],
+      "easiestMethod": null,
+      "isVersionExclusive": true,
       "evolutionDepth": 2,
       "evolutionTrigger": "level-up"
     },
@@ -624,35 +484,28 @@
   {
     "id": 268,
     "name": "Blindalys",
-    "rarity": "uncommon",
+    "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 29.375,
+    "finalScore": 52.1875,
     "components": {
-      "c1_encounterRate": 67,
-      "c3_games": 25,
+      "c1_encounterRate": 90,
+      "c3_games": 75,
       "c4_method": 0,
-      "c5_exclusivity": 0,
+      "c5_exclusivity": 50,
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 33,
-      "gamesCount": 9,
+      "maxEncounterChance": 10,
+      "gamesCount": 3,
       "versions": [
         "emerald",
-        "heartgold",
-        "pearl",
-        "platinum",
         "ruby",
-        "sapphire",
-        "soulsilver",
-        "x",
-        "y"
+        "sapphire"
       ],
       "methods": [
-        "honey-tree",
         "walk"
       ],
       "easiestMethod": "walk",
@@ -666,33 +519,19 @@
   {
     "id": 269,
     "name": "Papinox",
-    "rarity": "very_rare",
-    "appliedRule": "composite",
-    "finalScore": 51.25,
-    "components": {
-      "c1_encounterRate": 90,
-      "c3_games": 66.66666666666667,
-      "c4_method": 0,
-      "c5_exclusivity": 25,
-      "c6_evolution": 60,
-      "c7_oneTimeOnly": 0
-    },
+    "rarity": "epic",
+    "appliedRule": "priority:no_encounters_inherits_parent",
+    "finalScore": null,
+    "components": null,
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 10,
-      "gamesCount": 4,
-      "versions": [
-        "heartgold",
-        "pearl",
-        "platinum",
-        "soulsilver"
-      ],
-      "methods": [
-        "walk"
-      ],
-      "easiestMethod": "walk",
-      "isVersionExclusive": false,
+      "maxEncounterChance": null,
+      "gamesCount": 0,
+      "versions": [],
+      "methods": [],
+      "easiestMethod": null,
+      "isVersionExclusive": true,
       "evolutionDepth": 2,
       "evolutionTrigger": "level-up"
     },
@@ -702,37 +541,29 @@
   {
     "id": 270,
     "name": "Nénupiot",
-    "rarity": "uncommon",
+    "rarity": "rare",
     "appliedRule": "composite",
-    "finalScore": 17.1875,
+    "finalScore": 40.625,
     "components": {
-      "c1_encounterRate": 40,
-      "c3_games": 25,
+      "c1_encounterRate": 65,
+      "c3_games": 75,
       "c4_method": 0,
-      "c5_exclusivity": 0,
+      "c5_exclusivity": 50,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 60,
-      "gamesCount": 9,
+      "maxEncounterChance": 35,
+      "gamesCount": 3,
       "versions": [
         "alpha-sapphire",
-        "diamond",
         "emerald",
-        "heartgold",
-        "pearl",
-        "platinum",
-        "sapphire",
-        "shield",
-        "soulsilver"
+        "sapphire"
       ],
       "methods": [
         "horde",
-        "max-raid",
-        "overworld",
         "walk"
       ],
       "easiestMethod": "walk",
@@ -746,45 +577,27 @@
   {
     "id": 271,
     "name": "Lombre",
-    "rarity": "uncommon",
+    "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 16.25,
+    "finalScore": 56.875,
     "components": {
-      "c1_encounterRate": 40,
-      "c3_games": 0,
+      "c1_encounterRate": 90,
+      "c3_games": 83.33333333333334,
       "c4_method": 0,
-      "c5_exclusivity": 0,
+      "c5_exclusivity": 75,
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 60,
-      "gamesCount": 14,
+      "maxEncounterChance": 10,
+      "gamesCount": 2,
       "versions": [
-        "black-2",
-        "diamond",
         "emerald",
-        "heartgold",
-        "pearl",
-        "platinum",
-        "sapphire",
-        "shield",
-        "soulsilver",
-        "ultra-moon",
-        "ultra-sun",
-        "white-2",
-        "x",
-        "y"
+        "sapphire"
       ],
       "methods": [
-        "hidden-grotto",
-        "horde",
-        "max-raid",
-        "only-one",
-        "overworld",
-        "surf",
         "walk"
       ],
       "easiestMethod": "walk",
@@ -798,30 +611,18 @@
   {
     "id": 272,
     "name": "Ludicolo",
-    "rarity": "very_rare",
-    "appliedRule": "composite",
-    "finalScore": 50.3125,
-    "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 91.66666666666667,
-      "c4_method": 60,
-      "c5_exclusivity": 100,
-      "c6_evolution": 75,
-      "c7_oneTimeOnly": 0
-    },
+    "rarity": "ultra_rare",
+    "appliedRule": "priority:no_encounters_inherits_parent",
+    "finalScore": null,
+    "components": null,
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 1,
-      "versions": [
-        "shield"
-      ],
-      "methods": [
-        "max-raid",
-        "wanderer"
-      ],
-      "easiestMethod": "max-raid",
+      "maxEncounterChance": null,
+      "gamesCount": 0,
+      "versions": [],
+      "methods": [],
+      "easiestMethod": null,
       "isVersionExclusive": true,
       "evolutionDepth": 2,
       "evolutionTrigger": "use-item"
@@ -832,14 +633,14 @@
   {
     "id": 273,
     "name": "Grainipiot",
-    "rarity": "common",
+    "rarity": "uncommon",
     "appliedRule": "composite",
-    "finalScore": 3.1249999999999982,
+    "finalScore": 20.3125,
     "components": {
       "c1_encounterRate": 0,
-      "c3_games": 16.666666666666657,
+      "c3_games": 75,
       "c4_method": 0,
-      "c5_exclusivity": 0,
+      "c5_exclusivity": 50,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
@@ -847,26 +648,15 @@
       "isLegendary": false,
       "isMythical": false,
       "maxEncounterChance": 100,
-      "gamesCount": 10,
+      "gamesCount": 3,
       "versions": [
-        "diamond",
         "emerald",
-        "heartgold",
         "omega-ruby",
-        "pearl",
-        "platinum",
-        "ruby",
-        "soulsilver",
-        "sword",
-        "xd"
+        "ruby"
       ],
       "methods": [
-        "headbutt",
         "horde",
-        "max-raid",
         "npc-trade",
-        "overworld",
-        "snag",
         "walk"
       ],
       "easiestMethod": "walk",
@@ -880,43 +670,27 @@
   {
     "id": 274,
     "name": "Pifeuil",
-    "rarity": "uncommon",
+    "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 16.25,
+    "finalScore": 58.4375,
     "components": {
-      "c1_encounterRate": 40,
-      "c3_games": 0,
+      "c1_encounterRate": 95,
+      "c3_games": 83.33333333333334,
       "c4_method": 0,
-      "c5_exclusivity": 0,
+      "c5_exclusivity": 75,
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 60,
-      "gamesCount": 14,
+      "maxEncounterChance": 5,
+      "gamesCount": 2,
       "versions": [
-        "black-2",
-        "diamond",
         "emerald",
-        "heartgold",
-        "pearl",
-        "platinum",
-        "ruby",
-        "soulsilver",
-        "sword",
-        "ultra-moon",
-        "ultra-sun",
-        "white-2",
-        "x",
-        "y"
+        "ruby"
       ],
       "methods": [
-        "dark-grass",
-        "max-raid",
-        "only-one",
-        "overworld",
         "walk"
       ],
       "easiestMethod": "walk",
@@ -930,34 +704,19 @@
   {
     "id": 275,
     "name": "Tengalice",
-    "rarity": "rare",
-    "appliedRule": "composite",
-    "finalScore": 40.9375,
-    "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 75,
-      "c4_method": 60,
-      "c5_exclusivity": 50,
-      "c6_evolution": 75,
-      "c7_oneTimeOnly": 0
-    },
+    "rarity": "ultra_rare",
+    "appliedRule": "priority:no_encounters_inherits_parent",
+    "finalScore": null,
+    "components": null,
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 3,
-      "versions": [
-        "black-2",
-        "sword",
-        "white-2"
-      ],
-      "methods": [
-        "grass-spots",
-        "max-raid",
-        "wanderer"
-      ],
-      "easiestMethod": "grass-spots",
-      "isVersionExclusive": false,
+      "maxEncounterChance": null,
+      "gamesCount": 0,
+      "versions": [],
+      "methods": [],
+      "easiestMethod": null,
+      "isVersionExclusive": true,
       "evolutionDepth": 2,
       "evolutionTrigger": "use-item"
     },
@@ -967,12 +726,12 @@
   {
     "id": 276,
     "name": "Nirondelle",
-    "rarity": "uncommon",
+    "rarity": "rare",
     "appliedRule": "composite",
-    "finalScore": 29.6875,
+    "finalScore": 35.9375,
     "components": {
       "c1_encounterRate": 80,
-      "c3_games": 25,
+      "c3_games": 58.33333333333333,
       "c4_method": 0,
       "c5_exclusivity": 0,
       "c6_evolution": 0,
@@ -982,20 +741,15 @@
       "isLegendary": false,
       "isMythical": false,
       "maxEncounterChance": 20,
-      "gamesCount": 9,
+      "gamesCount": 5,
       "versions": [
         "alpha-sapphire",
         "emerald",
-        "heartgold",
         "omega-ruby",
         "ruby",
-        "sapphire",
-        "soulsilver",
-        "x",
-        "y"
+        "sapphire"
       ],
       "methods": [
-        "headbutt",
         "horde",
         "walk"
       ],
@@ -1010,39 +764,28 @@
   {
     "id": 277,
     "name": "Hélédelle",
-    "rarity": "common",
+    "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 5.312500000000002,
+    "finalScore": 52.1875,
     "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 8.333333333333343,
+      "c1_encounterRate": 90,
+      "c3_games": 75,
       "c4_method": 0,
-      "c5_exclusivity": 0,
+      "c5_exclusivity": 50,
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 11,
+      "maxEncounterChance": 10,
+      "gamesCount": 3,
       "versions": [
-        "black",
-        "diamond",
         "emerald",
-        "pearl",
-        "platinum",
         "ruby",
-        "sapphire",
-        "ultra-moon",
-        "ultra-sun",
-        "white",
-        "xd"
+        "sapphire"
       ],
       "methods": [
-        "dark-grass",
-        "only-one",
-        "snag",
         "walk"
       ],
       "easiestMethod": "walk",
@@ -1056,12 +799,12 @@
   {
     "id": 278,
     "name": "Goélise",
-    "rarity": "common",
+    "rarity": "uncommon",
     "appliedRule": "composite",
-    "finalScore": 4.6875,
+    "finalScore": 23.4375,
     "components": {
-      "c1_encounterRate": 15,
-      "c3_games": 0,
+      "c1_encounterRate": 40,
+      "c3_games": 58.33333333333333,
       "c4_method": 0,
       "c5_exclusivity": 0,
       "c6_evolution": 0,
@@ -1070,39 +813,17 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 85,
-      "gamesCount": 22,
+      "maxEncounterChance": 60,
+      "gamesCount": 5,
       "versions": [
         "alpha-sapphire",
-        "black",
-        "diamond",
         "emerald",
-        "heartgold",
-        "moon",
         "omega-ruby",
-        "pearl",
-        "platinum",
         "ruby",
-        "sapphire",
-        "shield",
-        "soulsilver",
-        "sun",
-        "sword",
-        "the-isle-of-armor-shield",
-        "the-isle-of-armor-sword",
-        "ultra-moon",
-        "ultra-sun",
-        "white",
-        "x",
-        "y"
+        "sapphire"
       ],
       "methods": [
-        "gift",
         "horde",
-        "max-raid",
-        "overworld",
-        "overworld-flying",
-        "overworld-water",
         "surf",
         "walk"
       ],
@@ -1117,57 +838,31 @@
   {
     "id": 279,
     "name": "Bekipan",
-    "rarity": "common",
+    "rarity": "epic",
     "appliedRule": "composite",
-    "finalScore": 3.75,
+    "finalScore": 61.5625,
     "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 0,
-      "c4_method": 0,
-      "c5_exclusivity": 0,
+      "c1_encounterRate": 96,
+      "c3_games": 75,
+      "c4_method": 40,
+      "c5_exclusivity": 50,
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 20,
+      "maxEncounterChance": 4,
+      "gamesCount": 3,
       "versions": [
-        "black",
-        "black-2",
-        "diamond",
         "emerald",
-        "moon",
-        "pearl",
-        "platinum",
         "ruby",
-        "sapphire",
-        "shield",
-        "sun",
-        "sword",
-        "the-crown-tundra-shield",
-        "the-crown-tundra-sword",
-        "the-isle-of-armor-shield",
-        "the-isle-of-armor-sword",
-        "ultra-moon",
-        "ultra-sun",
-        "white",
-        "white-2"
+        "sapphire"
       ],
       "methods": [
-        "dark-grass",
-        "dynamax-adventure",
-        "hidden-grotto",
-        "max-raid",
-        "overworld",
-        "overworld-water",
-        "surf",
-        "walk",
-        "wanderer",
-        "wanderer-water"
+        "surf"
       ],
-      "easiestMethod": "walk",
+      "easiestMethod": "surf",
       "isVersionExclusive": false,
       "evolutionDepth": 1,
       "evolutionTrigger": "level-up"
@@ -1178,12 +873,12 @@
   {
     "id": 280,
     "name": "Tarsal",
-    "rarity": "common",
+    "rarity": "rare",
     "appliedRule": "composite",
-    "finalScore": 0,
+    "finalScore": 40.625,
     "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 0,
+      "c1_encounterRate": 95,
+      "c3_games": 58.33333333333333,
       "c4_method": 0,
       "c5_exclusivity": 0,
       "c6_evolution": 0,
@@ -1192,38 +887,18 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 19,
+      "maxEncounterChance": 5,
+      "gamesCount": 5,
       "versions": [
         "alpha-sapphire",
-        "diamond",
         "emerald",
-        "heartgold",
         "omega-ruby",
-        "pearl",
-        "platinum",
         "ruby",
-        "sapphire",
-        "shield",
-        "soulsilver",
-        "sword",
-        "the-isle-of-armor-shield",
-        "the-isle-of-armor-sword",
-        "ultra-moon",
-        "ultra-sun",
-        "x",
-        "xd",
-        "y"
+        "sapphire"
       ],
       "methods": [
         "horde",
-        "island-scan",
-        "max-raid",
-        "overworld",
-        "red-flowers",
-        "snag",
-        "walk",
-        "yellow-flowers"
+        "walk"
       ],
       "easiestMethod": "walk",
       "isVersionExclusive": false,
@@ -1236,38 +911,19 @@
   {
     "id": 281,
     "name": "Kirlia",
-    "rarity": "common",
-    "appliedRule": "composite",
-    "finalScore": 11.5625,
-    "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 41.666666666666664,
-      "c4_method": 0,
-      "c5_exclusivity": 0,
-      "c6_evolution": 30,
-      "c7_oneTimeOnly": 0
-    },
+    "rarity": "very_rare",
+    "appliedRule": "priority:no_encounters_inherits_parent",
+    "finalScore": null,
+    "components": null,
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 7,
-      "versions": [
-        "diamond",
-        "pearl",
-        "platinum",
-        "shield",
-        "sword",
-        "x",
-        "y"
-      ],
-      "methods": [
-        "max-raid",
-        "walk",
-        "wanderer"
-      ],
-      "easiestMethod": "walk",
-      "isVersionExclusive": false,
+      "maxEncounterChance": null,
+      "gamesCount": 0,
+      "versions": [],
+      "methods": [],
+      "easiestMethod": null,
+      "isVersionExclusive": true,
       "evolutionDepth": 1,
       "evolutionTrigger": "level-up"
     },
@@ -1277,35 +933,19 @@
   {
     "id": 282,
     "name": "Gardevoir",
-    "rarity": "uncommon",
-    "appliedRule": "composite",
-    "finalScore": 23.125,
-    "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 66.66666666666667,
-      "c4_method": 0,
-      "c5_exclusivity": 25,
-      "c6_evolution": 60,
-      "c7_oneTimeOnly": 0
-    },
+    "rarity": "epic",
+    "appliedRule": "priority:no_encounters_inherits_parent",
+    "finalScore": null,
+    "components": null,
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 4,
-      "versions": [
-        "shield",
-        "sword",
-        "the-isle-of-armor-shield",
-        "the-isle-of-armor-sword"
-      ],
-      "methods": [
-        "max-raid",
-        "walk",
-        "wanderer"
-      ],
-      "easiestMethod": "walk",
-      "isVersionExclusive": false,
+      "maxEncounterChance": null,
+      "gamesCount": 0,
+      "versions": [],
+      "methods": [],
+      "easiestMethod": null,
+      "isVersionExclusive": true,
       "evolutionDepth": 2,
       "evolutionTrigger": "level-up"
     },
@@ -1315,38 +955,27 @@
   {
     "id": 283,
     "name": "Arakdo",
-    "rarity": "common",
+    "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 12.5,
+    "finalScore": 55.9375,
     "components": {
-      "c1_encounterRate": 40,
-      "c3_games": 0,
+      "c1_encounterRate": 99,
+      "c3_games": 83.33333333333334,
       "c4_method": 0,
-      "c5_exclusivity": 0,
+      "c5_exclusivity": 75,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 60,
-      "gamesCount": 12,
+      "maxEncounterChance": 1,
+      "gamesCount": 2,
       "versions": [
-        "diamond",
-        "heartgold",
-        "moon",
-        "pearl",
-        "platinum",
         "ruby",
-        "sapphire",
-        "soulsilver",
-        "sun",
-        "ultra-moon",
-        "ultra-sun",
-        "xd"
+        "sapphire"
       ],
       "methods": [
-        "pokespot",
         "surf",
         "walk"
       ],
@@ -1361,39 +990,19 @@
   {
     "id": 284,
     "name": "Maskadra",
-    "rarity": "uncommon",
-    "appliedRule": "composite",
-    "finalScore": 24.0625,
-    "components": {
-      "c1_encounterRate": 50,
-      "c3_games": 25,
-      "c4_method": 0,
-      "c5_exclusivity": 0,
-      "c6_evolution": 30,
-      "c7_oneTimeOnly": 0
-    },
+    "rarity": "epic",
+    "appliedRule": "priority:no_encounters_inherits_parent",
+    "finalScore": null,
+    "components": null,
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 50,
-      "gamesCount": 9,
-      "versions": [
-        "heartgold",
-        "moon",
-        "platinum",
-        "soulsilver",
-        "sun",
-        "ultra-moon",
-        "ultra-sun",
-        "x",
-        "y"
-      ],
-      "methods": [
-        "surf",
-        "walk"
-      ],
-      "easiestMethod": "walk",
-      "isVersionExclusive": false,
+      "maxEncounterChance": null,
+      "gamesCount": 0,
+      "versions": [],
+      "methods": [],
+      "easiestMethod": null,
+      "isVersionExclusive": true,
       "evolutionDepth": 1,
       "evolutionTrigger": "level-up"
     },
@@ -1403,12 +1012,12 @@
   {
     "id": 285,
     "name": "Balignon",
-    "rarity": "common",
+    "rarity": "rare",
     "appliedRule": "composite",
-    "finalScore": 1.5625000000000016,
+    "finalScore": 39.0625,
     "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 8.333333333333343,
+      "c1_encounterRate": 90,
+      "c3_games": 58.33333333333333,
       "c4_method": 0,
       "c5_exclusivity": 0,
       "c6_evolution": 0,
@@ -1417,25 +1026,17 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 11,
+      "maxEncounterChance": 10,
+      "gamesCount": 5,
       "versions": [
         "alpha-sapphire",
-        "diamond",
         "emerald",
-        "heartgold",
         "omega-ruby",
-        "pearl",
-        "platinum",
         "ruby",
-        "sapphire",
-        "soulsilver",
-        "xd"
+        "sapphire"
       ],
       "methods": [
-        "headbutt",
         "horde",
-        "snag",
         "walk"
       ],
       "easiestMethod": "walk",
@@ -1449,36 +1050,19 @@
   {
     "id": 286,
     "name": "Chapignon",
-    "rarity": "rare",
-    "appliedRule": "composite",
-    "finalScore": 34.0625,
-    "components": {
-      "c1_encounterRate": 67,
-      "c3_games": 50,
-      "c4_method": 0,
-      "c5_exclusivity": 0,
-      "c6_evolution": 30,
-      "c7_oneTimeOnly": 0
-    },
+    "rarity": "very_rare",
+    "appliedRule": "priority:no_encounters_inherits_parent",
+    "finalScore": null,
+    "components": null,
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 33,
-      "gamesCount": 6,
-      "versions": [
-        "black-2",
-        "heartgold",
-        "soulsilver",
-        "white-2",
-        "x",
-        "y"
-      ],
-      "methods": [
-        "hidden-grotto",
-        "walk"
-      ],
-      "easiestMethod": "walk",
-      "isVersionExclusive": false,
+      "maxEncounterChance": null,
+      "gamesCount": 0,
+      "versions": [],
+      "methods": [],
+      "easiestMethod": null,
+      "isVersionExclusive": true,
       "evolutionDepth": 1,
       "evolutionTrigger": "level-up"
     },
@@ -1488,34 +1072,28 @@
   {
     "id": 287,
     "name": "Parecool",
-    "rarity": "rare",
+    "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 31.25,
+    "finalScore": 50.3125,
     "components": {
-      "c1_encounterRate": 80,
-      "c3_games": 33.33333333333334,
+      "c1_encounterRate": 96,
+      "c3_games": 75,
       "c4_method": 0,
-      "c5_exclusivity": 0,
+      "c5_exclusivity": 50,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 20,
-      "gamesCount": 8,
+      "maxEncounterChance": 4,
+      "gamesCount": 3,
       "versions": [
-        "diamond",
         "emerald",
-        "heartgold",
-        "pearl",
-        "platinum",
         "ruby",
-        "sapphire",
-        "soulsilver"
+        "sapphire"
       ],
       "methods": [
-        "headbutt",
         "walk"
       ],
       "easiestMethod": "walk",
@@ -1529,37 +1107,19 @@
   {
     "id": 288,
     "name": "Vigoroth",
-    "rarity": "common",
-    "appliedRule": "composite",
-    "finalScore": 13.125,
-    "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 50,
-      "c4_method": 0,
-      "c5_exclusivity": 0,
-      "c6_evolution": 30,
-      "c7_oneTimeOnly": 0
-    },
+    "rarity": "epic",
+    "appliedRule": "priority:no_encounters_inherits_parent",
+    "finalScore": null,
+    "components": null,
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 6,
-      "versions": [
-        "black-2",
-        "heartgold",
-        "moon",
-        "soulsilver",
-        "sun",
-        "white-2"
-      ],
-      "methods": [
-        "dark-grass",
-        "island-scan",
-        "walk"
-      ],
-      "easiestMethod": "walk",
-      "isVersionExclusive": false,
+      "maxEncounterChance": null,
+      "gamesCount": 0,
+      "versions": [],
+      "methods": [],
+      "easiestMethod": null,
+      "isVersionExclusive": true,
       "evolutionDepth": 1,
       "evolutionTrigger": "level-up"
     },
@@ -1569,31 +1129,19 @@
   {
     "id": 289,
     "name": "Monaflèmit",
-    "rarity": "epic",
-    "appliedRule": "composite",
-    "finalScore": 73.75,
-    "components": {
-      "c1_encounterRate": 96,
-      "c3_games": 83.33333333333334,
-      "c4_method": 60,
-      "c5_exclusivity": 75,
-      "c6_evolution": 60,
-      "c7_oneTimeOnly": 0
-    },
+    "rarity": "ultra_rare",
+    "appliedRule": "priority:no_encounters_inherits_parent",
+    "finalScore": null,
+    "components": null,
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 4,
-      "gamesCount": 2,
-      "versions": [
-        "black-2",
-        "white-2"
-      ],
-      "methods": [
-        "grass-spots"
-      ],
-      "easiestMethod": "grass-spots",
-      "isVersionExclusive": false,
+      "maxEncounterChance": null,
+      "gamesCount": 0,
+      "versions": [],
+      "methods": [],
+      "easiestMethod": null,
+      "isVersionExclusive": true,
       "evolutionDepth": 2,
       "evolutionTrigger": "level-up"
     },
@@ -1603,12 +1151,12 @@
   {
     "id": 290,
     "name": "Ningale",
-    "rarity": "uncommon",
+    "rarity": "rare",
     "appliedRule": "composite",
-    "finalScore": 18.75,
+    "finalScore": 31.25,
     "components": {
-      "c1_encounterRate": 60,
-      "c3_games": 0,
+      "c1_encounterRate": 65,
+      "c3_games": 58.33333333333333,
       "c4_method": 0,
       "c5_exclusivity": 0,
       "c6_evolution": 0,
@@ -1617,28 +1165,17 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 40,
-      "gamesCount": 14,
+      "maxEncounterChance": 35,
+      "gamesCount": 5,
       "versions": [
         "alpha-sapphire",
-        "diamond",
         "emerald",
-        "heartgold",
         "omega-ruby",
-        "pearl",
-        "platinum",
         "ruby",
-        "sapphire",
-        "shield",
-        "soulsilver",
-        "sword",
-        "x",
-        "y"
+        "sapphire"
       ],
       "methods": [
         "horde",
-        "max-raid",
-        "rough-terrain",
         "walk"
       ],
       "easiestMethod": "walk",
@@ -1652,36 +1189,19 @@
   {
     "id": 291,
     "name": "Ninjask",
-    "rarity": "rare",
-    "appliedRule": "composite",
-    "finalScore": 30.625,
-    "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 66.66666666666667,
-      "c4_method": 60,
-      "c5_exclusivity": 25,
-      "c6_evolution": 30,
-      "c7_oneTimeOnly": 0
-    },
+    "rarity": "very_rare",
+    "appliedRule": "priority:no_encounters_inherits_parent",
+    "finalScore": null,
+    "components": null,
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 4,
-      "versions": [
-        "shield",
-        "sword",
-        "the-crown-tundra-shield",
-        "the-crown-tundra-sword"
-      ],
-      "methods": [
-        "dynamax-adventure",
-        "max-raid",
-        "overworld",
-        "wanderer"
-      ],
-      "easiestMethod": "dynamax-adventure",
-      "isVersionExclusive": false,
+      "maxEncounterChance": null,
+      "gamesCount": 0,
+      "versions": [],
+      "methods": [],
+      "easiestMethod": null,
+      "isVersionExclusive": true,
       "evolutionDepth": 1,
       "evolutionTrigger": "level-up"
     },
@@ -1692,30 +1212,18 @@
     "id": 292,
     "name": "Munja",
     "rarity": "epic",
-    "appliedRule": "composite",
-    "finalScore": 72.8125,
-    "components": {
-      "c1_encounterRate": 95,
-      "c3_games": 83.33333333333334,
-      "c4_method": 60,
-      "c5_exclusivity": 75,
-      "c6_evolution": 55,
-      "c7_oneTimeOnly": 0
-    },
+    "appliedRule": "priority:no_encounters_inherits_parent",
+    "finalScore": null,
+    "components": null,
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 5,
-      "gamesCount": 2,
-      "versions": [
-        "shield",
-        "sword"
-      ],
-      "methods": [
-        "max-raid"
-      ],
-      "easiestMethod": "max-raid",
-      "isVersionExclusive": false,
+      "maxEncounterChance": null,
+      "gamesCount": 0,
+      "versions": [],
+      "methods": [],
+      "easiestMethod": null,
+      "isVersionExclusive": true,
       "evolutionDepth": 1,
       "evolutionTrigger": "shed"
     },
@@ -1727,10 +1235,10 @@
     "name": "Chuchmur",
     "rarity": "common",
     "appliedRule": "composite",
-    "finalScore": 1.5625000000000016,
+    "finalScore": 10.937499999999996,
     "components": {
       "c1_encounterRate": 0,
-      "c3_games": 8.333333333333343,
+      "c3_games": 58.33333333333333,
       "c4_method": 0,
       "c5_exclusivity": 0,
       "c6_evolution": 0,
@@ -1740,23 +1248,16 @@
       "isLegendary": false,
       "isMythical": false,
       "maxEncounterChance": 100,
-      "gamesCount": 11,
+      "gamesCount": 5,
       "versions": [
         "alpha-sapphire",
         "emerald",
-        "heartgold",
         "omega-ruby",
         "ruby",
-        "sapphire",
-        "soulsilver",
-        "the-isle-of-armor-shield",
-        "the-isle-of-armor-sword",
-        "x",
-        "y"
+        "sapphire"
       ],
       "methods": [
         "horde",
-        "overworld",
         "walk"
       ],
       "easiestMethod": "walk",
@@ -1770,12 +1271,12 @@
   {
     "id": 294,
     "name": "Ramboum",
-    "rarity": "common",
+    "rarity": "rare",
     "appliedRule": "composite",
-    "finalScore": 3.75,
+    "finalScore": 42.8125,
     "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 0,
+      "c1_encounterRate": 90,
+      "c3_games": 58.33333333333333,
       "c4_method": 0,
       "c5_exclusivity": 0,
       "c6_evolution": 30,
@@ -1784,26 +1285,18 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 12,
+      "maxEncounterChance": 10,
+      "gamesCount": 5,
       "versions": [
         "alpha-sapphire",
-        "diamond",
         "emerald",
         "omega-ruby",
-        "pearl",
-        "platinum",
         "ruby",
-        "sapphire",
-        "the-isle-of-armor-shield",
-        "the-isle-of-armor-sword",
-        "x",
-        "y"
+        "sapphire"
       ],
       "methods": [
         "horde",
-        "walk",
-        "wanderer"
+        "walk"
       ],
       "easiestMethod": "walk",
       "isVersionExclusive": false,
@@ -1816,31 +1309,19 @@
   {
     "id": 295,
     "name": "Brouhabam",
-    "rarity": "rare",
-    "appliedRule": "composite",
-    "finalScore": 43.75,
-    "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 83.33333333333334,
-      "c4_method": 60,
-      "c5_exclusivity": 75,
-      "c6_evolution": 60,
-      "c7_oneTimeOnly": 0
-    },
+    "rarity": "very_rare",
+    "appliedRule": "priority:no_encounters_inherits_parent",
+    "finalScore": null,
+    "components": null,
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 2,
-      "versions": [
-        "the-crown-tundra-shield",
-        "the-crown-tundra-sword"
-      ],
-      "methods": [
-        "dynamax-adventure"
-      ],
-      "easiestMethod": "dynamax-adventure",
-      "isVersionExclusive": false,
+      "maxEncounterChance": null,
+      "gamesCount": 0,
+      "versions": [],
+      "methods": [],
+      "easiestMethod": null,
+      "isVersionExclusive": true,
       "evolutionDepth": 2,
       "evolutionTrigger": "level-up"
     },
@@ -1852,10 +1333,10 @@
     "name": "Makuhita",
     "rarity": "common",
     "appliedRule": "composite",
-    "finalScore": 0,
+    "finalScore": 10.937499999999996,
     "components": {
       "c1_encounterRate": 0,
-      "c3_games": 0,
+      "c3_games": 58.33333333333333,
       "c4_method": 0,
       "c5_exclusivity": 0,
       "c6_evolution": 0,
@@ -1865,30 +1346,17 @@
       "isLegendary": false,
       "isMythical": false,
       "maxEncounterChance": 100,
-      "gamesCount": 16,
+      "gamesCount": 5,
       "versions": [
         "alpha-sapphire",
-        "colosseum",
-        "diamond",
         "emerald",
-        "heartgold",
-        "moon",
         "omega-ruby",
-        "pearl",
-        "platinum",
         "ruby",
-        "sapphire",
-        "soulsilver",
-        "sun",
-        "ultra-moon",
-        "ultra-sun",
-        "xd"
+        "sapphire"
       ],
       "methods": [
-        "bubbling-spots",
         "horde",
         "npc-trade",
-        "snag",
         "walk"
       ],
       "easiestMethod": "walk",
@@ -1902,38 +1370,28 @@
   {
     "id": 297,
     "name": "Hariyama",
-    "rarity": "common",
+    "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 13.125000000000002,
+    "finalScore": 49.0625,
     "components": {
-      "c1_encounterRate": 25,
-      "c3_games": 8.333333333333343,
+      "c1_encounterRate": 80,
+      "c3_games": 75,
       "c4_method": 0,
-      "c5_exclusivity": 0,
+      "c5_exclusivity": 50,
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 75,
-      "gamesCount": 11,
+      "maxEncounterChance": 20,
+      "gamesCount": 3,
       "versions": [
-        "black-2",
         "emerald",
-        "moon",
         "ruby",
-        "sapphire",
-        "sun",
-        "ultra-moon",
-        "ultra-sun",
-        "white-2",
-        "x",
-        "y"
+        "sapphire"
       ],
       "methods": [
-        "bubbling-spots",
-        "hidden-grotto",
         "walk"
       ],
       "easiestMethod": "walk",
@@ -1947,42 +1405,19 @@
   {
     "id": 298,
     "name": "Azurill",
-    "rarity": "uncommon",
-    "appliedRule": "composite",
-    "finalScore": 23.4375,
-    "components": {
-      "c1_encounterRate": 70,
-      "c3_games": 8.333333333333343,
-      "c4_method": 0,
-      "c5_exclusivity": 0,
-      "c6_evolution": 0,
-      "c7_oneTimeOnly": 0
-    },
+    "rarity": "ultra_rare",
+    "appliedRule": "priority:no_encounters_absent",
+    "finalScore": null,
+    "components": null,
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 30,
-      "gamesCount": 11,
-      "versions": [
-        "black-2",
-        "diamond",
-        "heartgold",
-        "pearl",
-        "platinum",
-        "soulsilver",
-        "the-isle-of-armor-shield",
-        "the-isle-of-armor-sword",
-        "white-2",
-        "x",
-        "y"
-      ],
-      "methods": [
-        "overworld",
-        "surf",
-        "walk"
-      ],
-      "easiestMethod": "walk",
-      "isVersionExclusive": false,
+      "maxEncounterChance": null,
+      "gamesCount": 0,
+      "versions": [],
+      "methods": [],
+      "easiestMethod": null,
+      "isVersionExclusive": true,
       "evolutionDepth": 0,
       "evolutionTrigger": null
     },
@@ -1992,49 +1427,31 @@
   {
     "id": 299,
     "name": "Tarinor",
-    "rarity": "common",
+    "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 0,
+    "finalScore": 49.6875,
     "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 0,
-      "c4_method": 0,
-      "c5_exclusivity": 0,
+      "c1_encounterRate": 70,
+      "c3_games": 75,
+      "c4_method": 40,
+      "c5_exclusivity": 50,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 17,
+      "maxEncounterChance": 30,
+      "gamesCount": 3,
       "versions": [
-        "black-2",
-        "diamond",
         "emerald",
-        "heartgold",
-        "moon",
-        "pearl",
-        "platinum",
         "ruby",
-        "sapphire",
-        "soulsilver",
-        "sun",
-        "ultra-moon",
-        "ultra-sun",
-        "white-2",
-        "x",
-        "xd",
-        "y"
+        "sapphire"
       ],
       "methods": [
-        "hidden-grotto",
-        "horde",
-        "rock-smash",
-        "snag",
-        "walk"
+        "rock-smash"
       ],
-      "easiestMethod": "walk",
+      "easiestMethod": "rock-smash",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
       "evolutionTrigger": null
@@ -2047,10 +1464,10 @@
     "name": "Skitty",
     "rarity": "common",
     "appliedRule": "composite",
-    "finalScore": 1.5625000000000016,
+    "finalScore": 10.937499999999996,
     "components": {
       "c1_encounterRate": 0,
-      "c3_games": 8.333333333333343,
+      "c3_games": 58.33333333333333,
       "c4_method": 0,
       "c5_exclusivity": 0,
       "c6_evolution": 0,
@@ -2060,27 +1477,18 @@
       "isLegendary": false,
       "isMythical": false,
       "maxEncounterChance": 100,
-      "gamesCount": 11,
+      "gamesCount": 5,
       "versions": [
         "alpha-sapphire",
-        "diamond",
         "emerald",
         "omega-ruby",
-        "pearl",
-        "platinum",
         "ruby",
-        "sapphire",
-        "white-2",
-        "x",
-        "y"
+        "sapphire"
       ],
       "methods": [
-        "dark-grass",
         "horde",
         "npc-trade",
-        "red-flowers",
-        "walk",
-        "yellow-flowers"
+        "walk"
       ],
       "easiestMethod": "walk",
       "isVersionExclusive": false,
@@ -2094,31 +1502,18 @@
     "id": 301,
     "name": "Delcatty",
     "rarity": "rare",
-    "appliedRule": "composite",
-    "finalScore": 41.875,
-    "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 83.33333333333334,
-      "c4_method": 60,
-      "c5_exclusivity": 75,
-      "c6_evolution": 45,
-      "c7_oneTimeOnly": 0
-    },
+    "appliedRule": "priority:no_encounters_inherits_parent",
+    "finalScore": null,
+    "components": null,
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 2,
-      "versions": [
-        "white-2",
-        "xd"
-      ],
-      "methods": [
-        "grass-spots",
-        "snag"
-      ],
-      "easiestMethod": "grass-spots",
-      "isVersionExclusive": false,
+      "maxEncounterChance": null,
+      "gamesCount": 0,
+      "versions": [],
+      "methods": [],
+      "easiestMethod": null,
+      "isVersionExclusive": true,
       "evolutionDepth": 1,
       "evolutionTrigger": "use-item"
     },
@@ -2128,48 +1523,29 @@
   {
     "id": 302,
     "name": "Ténéfix",
-    "rarity": "common",
+    "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 0,
+    "finalScore": 45.3125,
     "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 0,
+      "c1_encounterRate": 80,
+      "c3_games": 75,
       "c4_method": 0,
-      "c5_exclusivity": 0,
+      "c5_exclusivity": 50,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 18,
+      "maxEncounterChance": 20,
+      "gamesCount": 3,
       "versions": [
         "alpha-sapphire",
-        "black",
-        "diamond",
         "emerald",
-        "heartgold",
-        "moon",
-        "pearl",
-        "platinum",
-        "sapphire",
-        "shield",
-        "sun",
-        "the-crown-tundra-shield",
-        "ultra-moon",
-        "ultra-sun",
-        "white",
-        "x",
-        "xd",
-        "y"
+        "sapphire"
       ],
       "methods": [
         "horde",
-        "max-raid",
-        "overworld",
-        "snag",
-        "sos-encounter",
         "walk"
       ],
       "easiestMethod": "walk",
@@ -2183,45 +1559,29 @@
   {
     "id": 303,
     "name": "Mysdibule",
-    "rarity": "common",
+    "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 0,
+    "finalScore": 45.3125,
     "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 0,
+      "c1_encounterRate": 80,
+      "c3_games": 75,
       "c4_method": 0,
-      "c5_exclusivity": 0,
+      "c5_exclusivity": 50,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 16,
+      "maxEncounterChance": 20,
+      "gamesCount": 3,
       "versions": [
-        "black",
-        "diamond",
         "emerald",
         "omega-ruby",
-        "pearl",
-        "platinum",
-        "ruby",
-        "soulsilver",
-        "sword",
-        "the-crown-tundra-sword",
-        "ultra-moon",
-        "ultra-sun",
-        "white",
-        "x",
-        "xd",
-        "y"
+        "ruby"
       ],
       "methods": [
         "horde",
-        "max-raid",
-        "overworld",
-        "snag",
         "walk"
       ],
       "easiestMethod": "walk",
@@ -2235,12 +1595,12 @@
   {
     "id": 304,
     "name": "Galekid",
-    "rarity": "common",
+    "rarity": "uncommon",
     "appliedRule": "composite",
-    "finalScore": 0,
+    "finalScore": 29.6875,
     "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 0,
+      "c1_encounterRate": 60,
+      "c3_games": 58.33333333333333,
       "c4_method": 0,
       "c5_exclusivity": 0,
       "c6_evolution": 0,
@@ -2249,31 +1609,18 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 15,
+      "maxEncounterChance": 40,
+      "gamesCount": 5,
       "versions": [
         "alpha-sapphire",
-        "black-2",
-        "diamond",
         "emerald",
-        "heartgold",
         "omega-ruby",
-        "platinum",
         "ruby",
-        "sapphire",
-        "soulsilver",
-        "the-crown-tundra-shield",
-        "the-crown-tundra-sword",
-        "white-2",
-        "x",
-        "xd"
+        "sapphire"
       ],
       "methods": [
         "horde",
-        "overworld",
-        "pokespot",
-        "walk",
-        "wanderer"
+        "walk"
       ],
       "easiestMethod": "walk",
       "isVersionExclusive": false,
@@ -2286,39 +1633,29 @@
   {
     "id": 305,
     "name": "Galegon",
-    "rarity": "common",
+    "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 6.874999999999997,
+    "finalScore": 52.1875,
     "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 16.666666666666657,
+      "c1_encounterRate": 90,
+      "c3_games": 75,
       "c4_method": 0,
-      "c5_exclusivity": 0,
+      "c5_exclusivity": 50,
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 10,
+      "maxEncounterChance": 10,
+      "gamesCount": 3,
       "versions": [
-        "black-2",
         "emerald",
-        "heartgold",
         "ruby",
-        "sapphire",
-        "soulsilver",
-        "the-crown-tundra-shield",
-        "the-crown-tundra-sword",
-        "white-2",
-        "x"
+        "sapphire"
       ],
       "methods": [
-        "dynamax-adventure",
-        "red-flowers",
-        "walk",
-        "wanderer"
+        "walk"
       ],
       "easiestMethod": "walk",
       "isVersionExclusive": false,
@@ -2331,34 +1668,19 @@
   {
     "id": 306,
     "name": "Galeking",
-    "rarity": "rare",
-    "appliedRule": "composite",
-    "finalScore": 34.375,
-    "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 66.66666666666667,
-      "c4_method": 60,
-      "c5_exclusivity": 25,
-      "c6_evolution": 60,
-      "c7_oneTimeOnly": 0
-    },
+    "rarity": "epic",
+    "appliedRule": "priority:no_encounters_inherits_parent",
+    "finalScore": null,
+    "components": null,
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 4,
-      "versions": [
-        "the-crown-tundra-shield",
-        "the-crown-tundra-sword",
-        "ultra-moon",
-        "ultra-sun"
-      ],
-      "methods": [
-        "island-scan",
-        "wanderer"
-      ],
-      "easiestMethod": "island-scan",
-      "isVersionExclusive": false,
+      "maxEncounterChance": null,
+      "gamesCount": 0,
+      "versions": [],
+      "methods": [],
+      "easiestMethod": null,
+      "isVersionExclusive": true,
       "evolutionDepth": 2,
       "evolutionTrigger": "level-up"
     },
@@ -2368,41 +1690,30 @@
   {
     "id": 307,
     "name": "Méditikka",
-    "rarity": "common",
+    "rarity": "rare",
     "appliedRule": "composite",
-    "finalScore": 0,
+    "finalScore": 35.9375,
     "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 0,
+      "c1_encounterRate": 65,
+      "c3_games": 66.66666666666667,
       "c4_method": 0,
-      "c5_exclusivity": 0,
+      "c5_exclusivity": 25,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 13,
+      "maxEncounterChance": 35,
+      "gamesCount": 4,
       "versions": [
         "alpha-sapphire",
-        "colosseum",
-        "diamond",
-        "heartgold",
         "omega-ruby",
-        "pearl",
-        "platinum",
         "ruby",
-        "sapphire",
-        "soulsilver",
-        "x",
-        "xd",
-        "y"
+        "sapphire"
       ],
       "methods": [
         "horde",
-        "npc-trade",
-        "snag",
         "walk"
       ],
       "easiestMethod": "walk",
@@ -2416,38 +1727,27 @@
   {
     "id": 308,
     "name": "Charmina",
-    "rarity": "common",
+    "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 13.125000000000002,
+    "finalScore": 56.875,
     "components": {
-      "c1_encounterRate": 25,
-      "c3_games": 8.333333333333343,
+      "c1_encounterRate": 90,
+      "c3_games": 83.33333333333334,
       "c4_method": 0,
-      "c5_exclusivity": 0,
+      "c5_exclusivity": 75,
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 75,
-      "gamesCount": 11,
+      "maxEncounterChance": 10,
+      "gamesCount": 2,
       "versions": [
-        "black-2",
-        "diamond",
-        "heartgold",
-        "pearl",
-        "platinum",
         "ruby",
-        "sapphire",
-        "soulsilver",
-        "ultra-moon",
-        "ultra-sun",
-        "white-2"
+        "sapphire"
       ],
       "methods": [
-        "hidden-grotto",
-        "only-one",
         "walk"
       ],
       "easiestMethod": "walk",
@@ -2461,12 +1761,12 @@
   {
     "id": 309,
     "name": "Dynavolt",
-    "rarity": "common",
+    "rarity": "uncommon",
     "appliedRule": "composite",
-    "finalScore": 12.5,
+    "finalScore": 23.4375,
     "components": {
       "c1_encounterRate": 40,
-      "c3_games": 0,
+      "c3_games": 58.33333333333333,
       "c4_method": 0,
       "c5_exclusivity": 0,
       "c6_evolution": 0,
@@ -2476,30 +1776,17 @@
       "isLegendary": false,
       "isMythical": false,
       "maxEncounterChance": 60,
-      "gamesCount": 14,
+      "gamesCount": 5,
       "versions": [
         "alpha-sapphire",
-        "diamond",
         "emerald",
-        "heartgold",
         "omega-ruby",
-        "pearl",
-        "platinum",
         "ruby",
-        "sapphire",
-        "shield",
-        "soulsilver",
-        "sword",
-        "ultra-moon",
-        "y"
+        "sapphire"
       ],
       "methods": [
-        "gift",
         "horde",
-        "max-raid",
-        "overworld",
-        "walk",
-        "yellow-flowers"
+        "walk"
       ],
       "easiestMethod": "walk",
       "isVersionExclusive": false,
@@ -2512,47 +1799,29 @@
   {
     "id": 310,
     "name": "Élecsprint",
-    "rarity": "common",
+    "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 3.75,
+    "finalScore": 52.1875,
     "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 0,
+      "c1_encounterRate": 90,
+      "c3_games": 75,
       "c4_method": 0,
-      "c5_exclusivity": 0,
+      "c5_exclusivity": 50,
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 15,
+      "maxEncounterChance": 10,
+      "gamesCount": 3,
       "versions": [
-        "black-2",
         "emerald",
-        "heartgold",
         "ruby",
-        "sapphire",
-        "shield",
-        "soulsilver",
-        "sword",
-        "the-crown-tundra-shield",
-        "the-crown-tundra-sword",
-        "ultra-moon",
-        "white-2",
-        "x",
-        "xd",
-        "y"
+        "sapphire"
       ],
       "methods": [
-        "dynamax-adventure",
-        "hidden-grotto",
-        "max-raid",
-        "overworld",
-        "snag",
-        "walk",
-        "wanderer"
+        "walk"
       ],
       "easiestMethod": "walk",
       "isVersionExclusive": false,
@@ -2567,10 +1836,10 @@
     "name": "Posipi",
     "rarity": "common",
     "appliedRule": "composite",
-    "finalScore": 0,
+    "finalScore": 10.937499999999996,
     "components": {
       "c1_encounterRate": 0,
-      "c3_games": 0,
+      "c3_games": 58.33333333333333,
       "c4_method": 0,
       "c5_exclusivity": 0,
       "c6_evolution": 0,
@@ -2580,27 +1849,17 @@
       "isLegendary": false,
       "isMythical": false,
       "maxEncounterChance": 100,
-      "gamesCount": 13,
+      "gamesCount": 5,
       "versions": [
         "alpha-sapphire",
-        "colosseum",
-        "diamond",
         "emerald",
-        "heartgold",
         "omega-ruby",
-        "pearl",
-        "platinum",
         "ruby",
-        "sapphire",
-        "soulsilver",
-        "x",
-        "y"
+        "sapphire"
       ],
       "methods": [
-        "gift",
         "horde",
         "npc-trade",
-        "purple-flowers",
         "walk"
       ],
       "easiestMethod": "walk",
@@ -2614,12 +1873,12 @@
   {
     "id": 312,
     "name": "Négapi",
-    "rarity": "uncommon",
+    "rarity": "rare",
     "appliedRule": "composite",
-    "finalScore": 20.3125,
+    "finalScore": 31.25,
     "components": {
       "c1_encounterRate": 65,
-      "c3_games": 0,
+      "c3_games": 58.33333333333333,
       "c4_method": 0,
       "c5_exclusivity": 0,
       "c6_evolution": 0,
@@ -2629,24 +1888,16 @@
       "isLegendary": false,
       "isMythical": false,
       "maxEncounterChance": 35,
-      "gamesCount": 12,
+      "gamesCount": 5,
       "versions": [
         "alpha-sapphire",
-        "diamond",
         "emerald",
-        "heartgold",
         "omega-ruby",
-        "pearl",
-        "platinum",
         "ruby",
-        "sapphire",
-        "soulsilver",
-        "x",
-        "y"
+        "sapphire"
       ],
       "methods": [
         "horde",
-        "purple-flowers",
         "walk"
       ],
       "easiestMethod": "walk",
@@ -2660,38 +1911,29 @@
   {
     "id": 313,
     "name": "Muciole",
-    "rarity": "uncommon",
+    "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 24.0625,
+    "finalScore": 50,
     "components": {
-      "c1_encounterRate": 67,
-      "c3_games": 16.666666666666657,
+      "c1_encounterRate": 95,
+      "c3_games": 75,
       "c4_method": 0,
-      "c5_exclusivity": 0,
+      "c5_exclusivity": 50,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 33,
-      "gamesCount": 10,
+      "maxEncounterChance": 5,
+      "gamesCount": 3,
       "versions": [
-        "diamond",
         "emerald",
-        "heartgold",
-        "pearl",
-        "platinum",
         "ruby",
-        "sapphire",
-        "soulsilver",
-        "x",
-        "y"
+        "sapphire"
       ],
       "methods": [
-        "purple-flowers",
-        "walk",
-        "yellow-flowers"
+        "walk"
       ],
       "easiestMethod": "walk",
       "isVersionExclusive": false,
@@ -2704,38 +1946,29 @@
   {
     "id": 314,
     "name": "Lumivole",
-    "rarity": "uncommon",
+    "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 24.0625,
+    "finalScore": 50,
     "components": {
-      "c1_encounterRate": 67,
-      "c3_games": 16.666666666666657,
+      "c1_encounterRate": 95,
+      "c3_games": 75,
       "c4_method": 0,
-      "c5_exclusivity": 0,
+      "c5_exclusivity": 50,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 33,
-      "gamesCount": 10,
+      "maxEncounterChance": 5,
+      "gamesCount": 3,
       "versions": [
-        "diamond",
         "emerald",
-        "heartgold",
-        "pearl",
-        "platinum",
         "ruby",
-        "sapphire",
-        "soulsilver",
-        "x",
-        "y"
+        "sapphire"
       ],
       "methods": [
-        "purple-flowers",
-        "walk",
-        "yellow-flowers"
+        "walk"
       ],
       "easiestMethod": "walk",
       "isVersionExclusive": false,
@@ -2748,55 +1981,31 @@
   {
     "id": 315,
     "name": "Rosélia",
-    "rarity": "common",
+    "rarity": "rare",
     "appliedRule": "composite",
-    "finalScore": 3.75,
+    "finalScore": 39.6875,
     "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 0,
+      "c1_encounterRate": 65,
+      "c3_games": 66.66666666666667,
       "c4_method": 0,
-      "c5_exclusivity": 0,
+      "c5_exclusivity": 25,
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 20,
+      "maxEncounterChance": 35,
+      "gamesCount": 4,
       "versions": [
         "alpha-sapphire",
-        "black-2",
-        "diamond",
-        "heartgold",
-        "moon",
         "omega-ruby",
-        "pearl",
-        "platinum",
         "ruby",
-        "sapphire",
-        "shield",
-        "soulsilver",
-        "sun",
-        "sword",
-        "the-crown-tundra-shield",
-        "the-crown-tundra-sword",
-        "white-2",
-        "x",
-        "xd",
-        "y"
+        "sapphire"
       ],
       "methods": [
-        "dark-grass",
-        "dynamax-adventure",
         "horde",
-        "island-scan",
-        "max-raid",
-        "purple-flowers",
-        "snag",
-        "walk",
-        "wanderer",
-        "yellow-flowers"
+        "walk"
       ],
       "easiestMethod": "walk",
       "isVersionExclusive": false,
@@ -2809,38 +2018,28 @@
   {
     "id": 316,
     "name": "Gloupti",
-    "rarity": "common",
+    "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 3.1249999999999982,
+    "finalScore": 48.4375,
     "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 16.666666666666657,
+      "c1_encounterRate": 90,
+      "c3_games": 75,
       "c4_method": 0,
-      "c5_exclusivity": 0,
+      "c5_exclusivity": 50,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 10,
+      "maxEncounterChance": 10,
+      "gamesCount": 3,
       "versions": [
-        "diamond",
         "emerald",
-        "pearl",
-        "platinum",
         "ruby",
-        "sapphire",
-        "soulsilver",
-        "x",
-        "xd",
-        "y"
+        "sapphire"
       ],
       "methods": [
-        "horde",
-        "purple-flowers",
-        "snag",
         "walk"
       ],
       "easiestMethod": "walk",
@@ -2854,31 +2053,19 @@
   {
     "id": 317,
     "name": "Avaltout",
-    "rarity": "very_rare",
-    "appliedRule": "composite",
-    "finalScore": 49.6875,
-    "components": {
-      "c1_encounterRate": 67,
-      "c3_games": 83.33333333333334,
-      "c4_method": 0,
-      "c5_exclusivity": 75,
-      "c6_evolution": 30,
-      "c7_oneTimeOnly": 0
-    },
+    "rarity": "epic",
+    "appliedRule": "priority:no_encounters_inherits_parent",
+    "finalScore": null,
+    "components": null,
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 33,
-      "gamesCount": 2,
-      "versions": [
-        "x",
-        "y"
-      ],
-      "methods": [
-        "walk"
-      ],
-      "easiestMethod": "walk",
-      "isVersionExclusive": false,
+      "maxEncounterChance": null,
+      "gamesCount": 0,
+      "versions": [],
+      "methods": [],
+      "easiestMethod": null,
+      "isVersionExclusive": true,
       "evolutionDepth": 1,
       "evolutionTrigger": "level-up"
     },
@@ -2888,47 +2075,30 @@
   {
     "id": 318,
     "name": "Carvanha",
-    "rarity": "common",
+    "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 7.5,
+    "finalScore": 46.5625,
     "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 0,
+      "c1_encounterRate": 60,
+      "c3_games": 75,
       "c4_method": 40,
-      "c5_exclusivity": 0,
+      "c5_exclusivity": 50,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 17,
+      "maxEncounterChance": 40,
+      "gamesCount": 3,
       "versions": [
-        "black",
-        "black-2",
-        "diamond",
         "emerald",
-        "pearl",
-        "platinum",
         "ruby",
-        "sapphire",
-        "the-isle-of-armor-shield",
-        "the-isle-of-armor-sword",
-        "ultra-moon",
-        "ultra-sun",
-        "white",
-        "white-2",
-        "x",
-        "xd",
-        "y"
+        "sapphire"
       ],
       "methods": [
-        "bubbling-spots",
         "good-rod",
-        "snag",
-        "super-rod",
-        "super-rod-spots"
+        "super-rod"
       ],
       "easiestMethod": "good-rod",
       "isVersionExclusive": false,
@@ -2941,12 +2111,12 @@
   {
     "id": 319,
     "name": "Sharpedo",
-    "rarity": "common",
+    "rarity": "uncommon",
     "appliedRule": "composite",
-    "finalScore": 11.25,
+    "finalScore": 22.1875,
     "components": {
       "c1_encounterRate": 0,
-      "c3_games": 0,
+      "c3_games": 58.33333333333333,
       "c4_method": 40,
       "c5_exclusivity": 0,
       "c6_evolution": 30,
@@ -2956,39 +2126,17 @@
       "isLegendary": false,
       "isMythical": false,
       "maxEncounterChance": 100,
-      "gamesCount": 21,
+      "gamesCount": 5,
       "versions": [
         "alpha-sapphire",
-        "black",
-        "black-2",
-        "diamond",
         "emerald",
-        "moon",
         "omega-ruby",
-        "pearl",
         "ruby",
-        "sapphire",
-        "sun",
-        "the-crown-tundra-shield",
-        "the-crown-tundra-sword",
-        "the-isle-of-armor-shield",
-        "the-isle-of-armor-sword",
-        "ultra-moon",
-        "ultra-sun",
-        "white",
-        "white-2",
-        "x",
-        "y"
+        "sapphire"
       ],
       "methods": [
-        "bubbling-spots",
-        "chase-water",
-        "dynamax-adventure",
         "gift",
-        "sos-encounter",
-        "sos-from-bubbling-spot",
-        "super-rod",
-        "super-rod-spots"
+        "super-rod"
       ],
       "easiestMethod": "super-rod",
       "isVersionExclusive": false,
@@ -3001,56 +2149,30 @@
   {
     "id": 320,
     "name": "Wailmer",
-    "rarity": "common",
+    "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 7.5,
+    "finalScore": 46.5625,
     "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 0,
+      "c1_encounterRate": 60,
+      "c3_games": 75,
       "c4_method": 40,
-      "c5_exclusivity": 0,
+      "c5_exclusivity": 50,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 22,
+      "maxEncounterChance": 40,
+      "gamesCount": 3,
       "versions": [
-        "black",
-        "black-2",
-        "diamond",
         "emerald",
-        "moon",
-        "pearl",
-        "platinum",
         "ruby",
-        "sapphire",
-        "shield",
-        "sun",
-        "sword",
-        "the-crown-tundra-shield",
-        "the-crown-tundra-sword",
-        "the-isle-of-armor-shield",
-        "the-isle-of-armor-sword",
-        "ultra-moon",
-        "ultra-sun",
-        "white",
-        "white-2",
-        "x",
-        "y"
+        "sapphire"
       ],
       "methods": [
-        "bubbling-spots",
-        "dynamax-adventure",
         "good-rod",
-        "max-raid",
-        "overworld-water",
-        "super-rod",
-        "surf",
-        "surf-spots",
-        "wanderer-water"
+        "super-rod"
       ],
       "easiestMethod": "good-rod",
       "isVersionExclusive": false,
@@ -3063,53 +2185,31 @@
   {
     "id": 321,
     "name": "Wailord",
-    "rarity": "uncommon",
+    "rarity": "epic",
     "appliedRule": "composite",
-    "finalScore": 26.875,
+    "finalScore": 62.5,
     "components": {
-      "c1_encounterRate": 50,
-      "c3_games": 0,
+      "c1_encounterRate": 99,
+      "c3_games": 75,
       "c4_method": 40,
-      "c5_exclusivity": 0,
+      "c5_exclusivity": 50,
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 50,
-      "gamesCount": 18,
+      "maxEncounterChance": 1,
+      "gamesCount": 3,
       "versions": [
-        "black",
-        "black-2",
-        "diamond",
         "emerald",
-        "moon",
-        "pearl",
-        "platinum",
         "ruby",
-        "sapphire",
-        "shield",
-        "sun",
-        "sword",
-        "the-isle-of-armor-shield",
-        "the-isle-of-armor-sword",
-        "ultra-moon",
-        "ultra-sun",
-        "white",
-        "white-2"
+        "sapphire"
       ],
       "methods": [
-        "bubbling-spots",
-        "max-raid",
-        "sos-encounter",
-        "sos-from-bubbling-spot",
-        "super-rod",
-        "surf",
-        "surf-spots",
-        "wanderer-water"
+        "surf"
       ],
-      "easiestMethod": "super-rod",
+      "easiestMethod": "surf",
       "isVersionExclusive": false,
       "evolutionDepth": 1,
       "evolutionTrigger": "level-up"
@@ -3120,12 +2220,12 @@
   {
     "id": 322,
     "name": "Chamallot",
-    "rarity": "common",
+    "rarity": "uncommon",
     "appliedRule": "composite",
-    "finalScore": 0,
+    "finalScore": 21.875,
     "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 0,
+      "c1_encounterRate": 35,
+      "c3_games": 58.33333333333333,
       "c4_method": 0,
       "c5_exclusivity": 0,
       "c6_evolution": 0,
@@ -3134,25 +2234,17 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 12,
+      "maxEncounterChance": 65,
+      "gamesCount": 5,
       "versions": [
         "alpha-sapphire",
-        "diamond",
         "emerald",
-        "heartgold",
         "omega-ruby",
-        "pearl",
-        "platinum",
         "ruby",
-        "sapphire",
-        "soulsilver",
-        "white-2",
-        "xd"
+        "sapphire"
       ],
       "methods": [
         "horde",
-        "snag",
         "walk"
       ],
       "easiestMethod": "walk",
@@ -3166,93 +2258,63 @@
   {
     "id": 323,
     "name": "Camérupt",
-    "rarity": "common",
+    "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 10,
+    "finalScore": 53.75,
     "components": {
       "c1_encounterRate": 0,
-      "c3_games": 33.33333333333334,
-      "c4_method": 0,
-      "c5_exclusivity": 0,
+      "c3_games": 83.33333333333334,
+      "c4_method": 100,
+      "c5_exclusivity": 75,
       "c6_evolution": 30,
-      "c7_oneTimeOnly": 0
+      "c7_oneTimeOnly": 100
     },
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
       "maxEncounterChance": 100,
-      "gamesCount": 8,
+      "gamesCount": 2,
       "versions": [
         "alpha-sapphire",
-        "diamond",
-        "omega-ruby",
-        "pearl",
-        "platinum",
-        "white-2",
-        "x",
-        "y"
+        "omega-ruby"
       ],
       "methods": [
-        "dark-grass",
-        "gift",
-        "walk"
+        "gift"
       ],
-      "easiestMethod": "walk",
+      "easiestMethod": "gift",
       "isVersionExclusive": false,
       "evolutionDepth": 1,
       "evolutionTrigger": "level-up"
     },
-    "oneTimeOnly": false,
+    "oneTimeOnly": true,
     "flooredByChain": false
   },
   {
     "id": 324,
     "name": "Chartor",
-    "rarity": "common",
+    "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 0,
+    "finalScore": 45.3125,
     "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 0,
+      "c1_encounterRate": 80,
+      "c3_games": 75,
       "c4_method": 0,
-      "c5_exclusivity": 0,
+      "c5_exclusivity": 50,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 20,
+      "maxEncounterChance": 20,
+      "gamesCount": 3,
       "versions": [
-        "diamond",
         "emerald",
-        "heartgold",
-        "moon",
-        "pearl",
-        "platinum",
         "ruby",
-        "sapphire",
-        "shield",
-        "soulsilver",
-        "sun",
-        "sword",
-        "the-crown-tundra-shield",
-        "the-crown-tundra-sword",
-        "the-isle-of-armor-shield",
-        "the-isle-of-armor-sword",
-        "ultra-moon",
-        "ultra-sun",
-        "x",
-        "y"
+        "sapphire"
       ],
       "methods": [
-        "dynamax-adventure",
-        "max-raid",
-        "overworld",
-        "red-flowers",
-        "walk",
-        "wanderer"
+        "walk"
       ],
       "easiestMethod": "walk",
       "isVersionExclusive": false,
@@ -3265,12 +2327,12 @@
   {
     "id": 325,
     "name": "Spoink",
-    "rarity": "uncommon",
+    "rarity": "rare",
     "appliedRule": "composite",
-    "finalScore": 20.3125,
+    "finalScore": 31.25,
     "components": {
       "c1_encounterRate": 65,
-      "c3_games": 0,
+      "c3_games": 58.33333333333333,
       "c4_method": 0,
       "c5_exclusivity": 0,
       "c6_evolution": 0,
@@ -3280,26 +2342,17 @@
       "isLegendary": false,
       "isMythical": false,
       "maxEncounterChance": 35,
-      "gamesCount": 13,
+      "gamesCount": 5,
       "versions": [
         "alpha-sapphire",
-        "black-2",
-        "diamond",
         "emerald",
-        "heartgold",
         "omega-ruby",
-        "pearl",
-        "platinum",
         "ruby",
-        "sapphire",
-        "soulsilver",
-        "x",
-        "y"
+        "sapphire"
       ],
       "methods": [
         "horde",
-        "walk",
-        "yellow-flowers"
+        "walk"
       ],
       "easiestMethod": "walk",
       "isVersionExclusive": false,
@@ -3312,36 +2365,19 @@
   {
     "id": 326,
     "name": "Groret",
-    "rarity": "rare",
-    "appliedRule": "composite",
-    "finalScore": 35.625,
-    "components": {
-      "c1_encounterRate": 67,
-      "c3_games": 58.33333333333333,
-      "c4_method": 0,
-      "c5_exclusivity": 0,
-      "c6_evolution": 30,
-      "c7_oneTimeOnly": 0
-    },
+    "rarity": "very_rare",
+    "appliedRule": "priority:no_encounters_inherits_parent",
+    "finalScore": null,
+    "components": null,
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 33,
-      "gamesCount": 5,
-      "versions": [
-        "black-2",
-        "ultra-moon",
-        "ultra-sun",
-        "x",
-        "y"
-      ],
-      "methods": [
-        "dark-grass",
-        "only-one",
-        "walk"
-      ],
-      "easiestMethod": "walk",
-      "isVersionExclusive": false,
+      "maxEncounterChance": null,
+      "gamesCount": 0,
+      "versions": [],
+      "methods": [],
+      "easiestMethod": null,
+      "isVersionExclusive": true,
       "evolutionDepth": 1,
       "evolutionTrigger": "level-up"
     },
@@ -3353,10 +2389,10 @@
     "name": "Spinda",
     "rarity": "common",
     "appliedRule": "composite",
-    "finalScore": 1.5625,
+    "finalScore": 12.499999999999996,
     "components": {
       "c1_encounterRate": 5,
-      "c3_games": 0,
+      "c3_games": 58.33333333333333,
       "c4_method": 0,
       "c5_exclusivity": 0,
       "c6_evolution": 0,
@@ -3366,29 +2402,16 @@
       "isLegendary": false,
       "isMythical": false,
       "maxEncounterChance": 95,
-      "gamesCount": 16,
+      "gamesCount": 5,
       "versions": [
         "alpha-sapphire",
-        "diamond",
         "emerald",
-        "heartgold",
-        "moon",
         "omega-ruby",
-        "pearl",
-        "platinum",
         "ruby",
-        "sapphire",
-        "soulsilver",
-        "sun",
-        "ultra-moon",
-        "ultra-sun",
-        "x",
-        "y"
+        "sapphire"
       ],
       "methods": [
         "horde",
-        "purple-flowers",
-        "red-flowers",
         "walk"
       ],
       "easiestMethod": "walk",
@@ -3402,48 +2425,28 @@
   {
     "id": 328,
     "name": "Kraknoix",
-    "rarity": "uncommon",
+    "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 20.3125,
+    "finalScore": 45.3125,
     "components": {
-      "c1_encounterRate": 65,
-      "c3_games": 0,
+      "c1_encounterRate": 80,
+      "c3_games": 75,
       "c4_method": 0,
-      "c5_exclusivity": 0,
+      "c5_exclusivity": 50,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 35,
-      "gamesCount": 18,
+      "maxEncounterChance": 20,
+      "gamesCount": 3,
       "versions": [
-        "black-2",
-        "diamond",
         "emerald",
-        "heartgold",
-        "moon",
-        "pearl",
         "ruby",
-        "sapphire",
-        "shield",
-        "soulsilver",
-        "sun",
-        "sword",
-        "ultra-moon",
-        "ultra-sun",
-        "white-2",
-        "x",
-        "xd",
-        "y"
+        "sapphire"
       ],
       "methods": [
-        "bubbling-spots",
-        "max-raid",
-        "overworld",
-        "pokespot",
-        "rough-terrain",
         "walk"
       ],
       "easiestMethod": "walk",
@@ -3457,41 +2460,19 @@
   {
     "id": 329,
     "name": "Vibraninf",
-    "rarity": "common",
-    "appliedRule": "composite",
-    "finalScore": 8.4375,
-    "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 25,
-      "c4_method": 0,
-      "c5_exclusivity": 0,
-      "c6_evolution": 30,
-      "c7_oneTimeOnly": 0
-    },
+    "rarity": "epic",
+    "appliedRule": "priority:no_encounters_inherits_parent",
+    "finalScore": null,
+    "components": null,
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 9,
-      "versions": [
-        "black-2",
-        "colosseum",
-        "diamond",
-        "heartgold",
-        "pearl",
-        "shield",
-        "soulsilver",
-        "sword",
-        "white-2"
-      ],
-      "methods": [
-        "dark-grass",
-        "max-raid",
-        "snag",
-        "walk"
-      ],
-      "easiestMethod": "walk",
-      "isVersionExclusive": false,
+      "maxEncounterChance": null,
+      "gamesCount": 0,
+      "versions": [],
+      "methods": [],
+      "easiestMethod": null,
+      "isVersionExclusive": true,
       "evolutionDepth": 1,
       "evolutionTrigger": "level-up"
     },
@@ -3501,36 +2482,19 @@
   {
     "id": 330,
     "name": "Libégon",
-    "rarity": "rare",
-    "appliedRule": "composite",
-    "finalScore": 34.375,
-    "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 66.66666666666667,
-      "c4_method": 60,
-      "c5_exclusivity": 25,
-      "c6_evolution": 60,
-      "c7_oneTimeOnly": 0
-    },
+    "rarity": "ultra_rare",
+    "appliedRule": "priority:no_encounters_inherits_parent",
+    "finalScore": null,
+    "components": null,
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 4,
-      "versions": [
-        "shield",
-        "sword",
-        "the-crown-tundra-shield",
-        "the-crown-tundra-sword"
-      ],
-      "methods": [
-        "dynamax-adventure",
-        "max-raid",
-        "overworld",
-        "wanderer"
-      ],
-      "easiestMethod": "dynamax-adventure",
-      "isVersionExclusive": false,
+      "maxEncounterChance": null,
+      "gamesCount": 0,
+      "versions": [],
+      "methods": [],
+      "easiestMethod": null,
+      "isVersionExclusive": true,
       "evolutionDepth": 2,
       "evolutionTrigger": "level-up"
     },
@@ -3540,14 +2504,14 @@
   {
     "id": 331,
     "name": "Cacnea",
-    "rarity": "rare",
+    "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 34.375,
+    "finalScore": 48.4375,
     "components": {
       "c1_encounterRate": 90,
-      "c3_games": 33.33333333333334,
+      "c3_games": 75,
       "c4_method": 0,
-      "c5_exclusivity": 0,
+      "c5_exclusivity": 50,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
@@ -3555,16 +2519,11 @@
       "isLegendary": false,
       "isMythical": false,
       "maxEncounterChance": 10,
-      "gamesCount": 8,
+      "gamesCount": 3,
       "versions": [
-        "diamond",
         "emerald",
-        "heartgold",
-        "pearl",
-        "platinum",
         "ruby",
-        "sapphire",
-        "soulsilver"
+        "sapphire"
       ],
       "methods": [
         "walk"
@@ -3580,36 +2539,19 @@
   {
     "id": 332,
     "name": "Cacturne",
-    "rarity": "rare",
-    "appliedRule": "composite",
-    "finalScore": 32.5,
-    "components": {
-      "c1_encounterRate": 67,
-      "c3_games": 41.666666666666664,
-      "c4_method": 0,
-      "c5_exclusivity": 0,
-      "c6_evolution": 30,
-      "c7_oneTimeOnly": 0
-    },
+    "rarity": "epic",
+    "appliedRule": "priority:no_encounters_inherits_parent",
+    "finalScore": null,
+    "components": null,
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 33,
-      "gamesCount": 7,
-      "versions": [
-        "diamond",
-        "heartgold",
-        "pearl",
-        "platinum",
-        "soulsilver",
-        "x",
-        "y"
-      ],
-      "methods": [
-        "walk"
-      ],
-      "easiestMethod": "walk",
-      "isVersionExclusive": false,
+      "maxEncounterChance": null,
+      "gamesCount": 0,
+      "versions": [],
+      "methods": [],
+      "easiestMethod": null,
+      "isVersionExclusive": true,
       "evolutionDepth": 1,
       "evolutionTrigger": "level-up"
     },
@@ -3621,10 +2563,10 @@
     "name": "Tylton",
     "rarity": "common",
     "appliedRule": "composite",
-    "finalScore": 0,
+    "finalScore": 10.937499999999996,
     "components": {
       "c1_encounterRate": 0,
-      "c3_games": 0,
+      "c3_games": 58.33333333333333,
       "c4_method": 0,
       "c5_exclusivity": 0,
       "c6_evolution": 0,
@@ -3634,33 +2576,17 @@
       "isLegendary": false,
       "isMythical": false,
       "maxEncounterChance": 100,
-      "gamesCount": 17,
+      "gamesCount": 5,
       "versions": [
         "alpha-sapphire",
-        "black-2",
-        "colosseum",
-        "diamond",
         "emerald",
-        "heartgold",
         "omega-ruby",
-        "pearl",
-        "platinum",
         "ruby",
-        "sapphire",
-        "soulsilver",
-        "the-crown-tundra-shield",
-        "the-crown-tundra-sword",
-        "white-2",
-        "x",
-        "y"
+        "sapphire"
       ],
       "methods": [
-        "hidden-grotto",
         "horde",
-        "overworld",
-        "snag",
-        "walk",
-        "wanderer"
+        "walk"
       ],
       "easiestMethod": "walk",
       "isVersionExclusive": false,
@@ -3673,47 +2599,29 @@
   {
     "id": 334,
     "name": "Altaria",
-    "rarity": "common",
+    "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 3.75,
+    "finalScore": 54.0625,
     "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 0,
+      "c1_encounterRate": 96,
+      "c3_games": 75,
       "c4_method": 0,
-      "c5_exclusivity": 0,
+      "c5_exclusivity": 50,
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 14,
+      "maxEncounterChance": 4,
+      "gamesCount": 3,
       "versions": [
-        "black",
-        "black-2",
         "emerald",
         "ruby",
-        "sapphire",
-        "the-crown-tundra-shield",
-        "the-crown-tundra-sword",
-        "ultra-moon",
-        "ultra-sun",
-        "white",
-        "white-2",
-        "x",
-        "xd",
-        "y"
+        "sapphire"
       ],
       "methods": [
-        "dark-grass",
-        "dynamax-adventure",
-        "only-one",
-        "purple-flowers",
-        "red-flowers",
-        "snag",
-        "walk",
-        "wanderer"
+        "walk"
       ],
       "easiestMethod": "walk",
       "isVersionExclusive": false,
@@ -3726,47 +2634,30 @@
   {
     "id": 335,
     "name": "Mangriff",
-    "rarity": "common",
+    "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 0,
+    "finalScore": 57.8125,
     "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 0,
+      "c1_encounterRate": 90,
+      "c3_games": 91.66666666666667,
       "c4_method": 0,
-      "c5_exclusivity": 0,
+      "c5_exclusivity": 100,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 13,
+      "maxEncounterChance": 10,
+      "gamesCount": 1,
       "versions": [
-        "black",
-        "black-2",
-        "diamond",
-        "heartgold",
-        "pearl",
-        "platinum",
-        "ruby",
-        "soulsilver",
-        "white",
-        "white-2",
-        "x",
-        "xd",
-        "y"
+        "ruby"
       ],
       "methods": [
-        "dark-grass",
-        "hidden-grotto",
-        "horde",
-        "snag",
-        "walk",
-        "yellow-flowers"
+        "walk"
       ],
       "easiestMethod": "walk",
-      "isVersionExclusive": false,
+      "isVersionExclusive": true,
       "evolutionDepth": 0,
       "evolutionTrigger": null
     },
@@ -3776,43 +2667,28 @@
   {
     "id": 336,
     "name": "Séviper",
-    "rarity": "uncommon",
+    "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 19.375,
+    "finalScore": 53.125,
     "components": {
-      "c1_encounterRate": 62,
-      "c3_games": 0,
+      "c1_encounterRate": 90,
+      "c3_games": 83.33333333333334,
       "c4_method": 0,
-      "c5_exclusivity": 0,
+      "c5_exclusivity": 75,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 38,
-      "gamesCount": 13,
+      "maxEncounterChance": 10,
+      "gamesCount": 2,
       "versions": [
-        "black",
-        "black-2",
-        "diamond",
         "emerald",
-        "heartgold",
-        "pearl",
-        "platinum",
-        "sapphire",
-        "soulsilver",
-        "white",
-        "white-2",
-        "x",
-        "y"
+        "sapphire"
       ],
       "methods": [
-        "dark-grass",
-        "hidden-grotto",
-        "horde",
-        "walk",
-        "yellow-flowers"
+        "walk"
       ],
       "easiestMethod": "walk",
       "isVersionExclusive": false,
@@ -3825,49 +2701,31 @@
   {
     "id": 337,
     "name": "Séléroc",
-    "rarity": "common",
+    "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 0,
+    "finalScore": 57.8125,
     "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 0,
+      "c1_encounterRate": 90,
+      "c3_games": 91.66666666666667,
       "c4_method": 0,
-      "c5_exclusivity": 0,
+      "c5_exclusivity": 100,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 14,
+      "maxEncounterChance": 10,
+      "gamesCount": 1,
       "versions": [
-        "black",
-        "black-2",
-        "diamond",
-        "heartgold",
-        "pearl",
-        "platinum",
-        "sapphire",
-        "shield",
-        "soulsilver",
-        "white",
-        "white-2",
-        "x",
-        "xd",
-        "y"
+        "sapphire"
       ],
       "methods": [
-        "dark-grass",
-        "max-raid",
-        "overworld",
-        "overworld-dirt",
-        "snag",
         "surf",
         "walk"
       ],
       "easiestMethod": "walk",
-      "isVersionExclusive": false,
+      "isVersionExclusive": true,
       "evolutionDepth": 0,
       "evolutionTrigger": null
     },
@@ -3877,45 +2735,27 @@
   {
     "id": 338,
     "name": "Solaroc",
-    "rarity": "common",
+    "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 0,
+    "finalScore": 53.125,
     "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 0,
+      "c1_encounterRate": 90,
+      "c3_games": 83.33333333333334,
       "c4_method": 0,
-      "c5_exclusivity": 0,
+      "c5_exclusivity": 75,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 15,
+      "maxEncounterChance": 10,
+      "gamesCount": 2,
       "versions": [
-        "black",
-        "black-2",
-        "diamond",
         "emerald",
-        "heartgold",
-        "pearl",
-        "platinum",
-        "ruby",
-        "soulsilver",
-        "sword",
-        "white",
-        "white-2",
-        "x",
-        "xd",
-        "y"
+        "ruby"
       ],
       "methods": [
-        "dark-grass",
-        "max-raid",
-        "overworld",
-        "overworld-dirt",
-        "snag",
         "surf",
         "walk"
       ],
@@ -3930,59 +2770,32 @@
   {
     "id": 339,
     "name": "Barloche",
-    "rarity": "common",
+    "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 0,
+    "finalScore": 46.5625,
     "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 0,
-      "c4_method": 0,
-      "c5_exclusivity": 0,
+      "c1_encounterRate": 60,
+      "c3_games": 75,
+      "c4_method": 40,
+      "c5_exclusivity": 50,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 24,
+      "maxEncounterChance": 40,
+      "gamesCount": 3,
       "versions": [
-        "black",
-        "black-2",
-        "diamond",
         "emerald",
-        "heartgold",
-        "moon",
-        "pearl",
-        "platinum",
         "ruby",
-        "sapphire",
-        "shield",
-        "soulsilver",
-        "sun",
-        "sword",
-        "the-crown-tundra-shield",
-        "the-crown-tundra-sword",
-        "the-isle-of-armor-shield",
-        "the-isle-of-armor-sword",
-        "ultra-moon",
-        "ultra-sun",
-        "white",
-        "white-2",
-        "x",
-        "y"
+        "sapphire"
       ],
       "methods": [
-        "bubbling-spots",
         "good-rod",
-        "max-raid",
-        "npc-trade",
-        "overworld-water",
-        "super-rod",
-        "super-rod-spots",
-        "walk"
+        "super-rod"
       ],
-      "easiestMethod": "walk",
+      "easiestMethod": "good-rod",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
       "evolutionTrigger": null
@@ -3993,61 +2806,31 @@
   {
     "id": 340,
     "name": "Barbicha",
-    "rarity": "common",
+    "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 11.25,
+    "finalScore": 58.125,
     "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 0,
+      "c1_encounterRate": 85,
+      "c3_games": 75,
       "c4_method": 40,
-      "c5_exclusivity": 0,
+      "c5_exclusivity": 50,
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 24,
+      "maxEncounterChance": 15,
+      "gamesCount": 3,
       "versions": [
-        "black",
-        "black-2",
-        "diamond",
         "emerald",
-        "heartgold",
-        "moon",
-        "pearl",
-        "platinum",
         "ruby",
-        "sapphire",
-        "shield",
-        "soulsilver",
-        "sun",
-        "sword",
-        "the-crown-tundra-shield",
-        "the-crown-tundra-sword",
-        "the-isle-of-armor-shield",
-        "the-isle-of-armor-sword",
-        "ultra-moon",
-        "ultra-sun",
-        "white",
-        "white-2",
-        "x",
-        "y"
+        "sapphire"
       ],
       "methods": [
-        "bubbling-spots",
-        "dynamax-adventure",
-        "good-rod",
-        "max-raid",
-        "old-rod",
-        "sos-encounter",
-        "sos-from-bubbling-spot",
-        "super-rod",
-        "super-rod-spots",
-        "wanderer-water"
+        "super-rod"
       ],
-      "easiestMethod": "good-rod",
+      "easiestMethod": "super-rod",
       "isVersionExclusive": false,
       "evolutionDepth": 1,
       "evolutionTrigger": "level-up"
@@ -4058,54 +2841,32 @@
   {
     "id": 341,
     "name": "Écrapince",
-    "rarity": "common",
+    "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 12.5,
+    "finalScore": 46.5625,
     "components": {
-      "c1_encounterRate": 40,
-      "c3_games": 0,
-      "c4_method": 0,
-      "c5_exclusivity": 0,
+      "c1_encounterRate": 60,
+      "c3_games": 75,
+      "c4_method": 40,
+      "c5_exclusivity": 50,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 60,
-      "gamesCount": 18,
+      "maxEncounterChance": 40,
+      "gamesCount": 3,
       "versions": [
-        "black-2",
-        "diamond",
         "emerald",
-        "heartgold",
-        "pearl",
-        "platinum",
         "ruby",
-        "sapphire",
-        "shield",
-        "soulsilver",
-        "sword",
-        "the-isle-of-armor-shield",
-        "the-isle-of-armor-sword",
-        "ultra-moon",
-        "ultra-sun",
-        "white-2",
-        "x",
-        "y"
+        "sapphire"
       ],
       "methods": [
-        "bubbling-spots",
         "good-rod",
-        "max-raid",
-        "overworld",
-        "overworld-water",
-        "super-rod",
-        "surf",
-        "surf-spots",
-        "walk"
+        "super-rod"
       ],
-      "easiestMethod": "walk",
+      "easiestMethod": "good-rod",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
       "evolutionTrigger": null
@@ -4116,54 +2877,19 @@
   {
     "id": 342,
     "name": "Colhomard",
-    "rarity": "common",
-    "appliedRule": "composite",
-    "finalScore": 3.75,
-    "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 0,
-      "c4_method": 0,
-      "c5_exclusivity": 0,
-      "c6_evolution": 30,
-      "c7_oneTimeOnly": 0
-    },
+    "rarity": "epic",
+    "appliedRule": "priority:no_encounters_inherits_parent",
+    "finalScore": null,
+    "components": null,
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 15,
-      "versions": [
-        "black-2",
-        "diamond",
-        "pearl",
-        "platinum",
-        "shield",
-        "sword",
-        "the-crown-tundra-shield",
-        "the-crown-tundra-sword",
-        "the-isle-of-armor-shield",
-        "the-isle-of-armor-sword",
-        "ultra-moon",
-        "ultra-sun",
-        "white-2",
-        "x",
-        "y"
-      ],
-      "methods": [
-        "dynamax-adventure",
-        "max-raid",
-        "only-one",
-        "overworld",
-        "sos-encounter",
-        "sos-from-bubbling-spot",
-        "super-rod",
-        "surf-spots",
-        "walk",
-        "wanderer",
-        "wanderer-water"
-      ],
-      "easiestMethod": "walk",
-      "isVersionExclusive": false,
+      "maxEncounterChance": null,
+      "gamesCount": 0,
+      "versions": [],
+      "methods": [],
+      "easiestMethod": null,
+      "isVersionExclusive": true,
       "evolutionDepth": 1,
       "evolutionTrigger": "level-up"
     },
@@ -4173,43 +2899,28 @@
   {
     "id": 343,
     "name": "Balbuto",
-    "rarity": "common",
+    "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 0,
+    "finalScore": 48.4375,
     "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 0,
+      "c1_encounterRate": 90,
+      "c3_games": 75,
       "c4_method": 0,
-      "c5_exclusivity": 0,
+      "c5_exclusivity": 50,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 13,
+      "maxEncounterChance": 10,
+      "gamesCount": 3,
       "versions": [
-        "black-2",
-        "diamond",
         "emerald",
-        "heartgold",
-        "pearl",
-        "platinum",
         "ruby",
-        "sapphire",
-        "shield",
-        "sword",
-        "ultra-moon",
-        "white-2",
-        "xd"
+        "sapphire"
       ],
       "methods": [
-        "max-raid",
-        "overworld",
-        "snag",
-        "sos-encounter",
-        "sos-from-bubbling-spot",
         "walk"
       ],
       "easiestMethod": "walk",
@@ -4223,39 +2934,29 @@
   {
     "id": 344,
     "name": "Kaorine",
-    "rarity": "common",
+    "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 8.4375,
+    "finalScore": 52.1875,
     "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 25,
+      "c1_encounterRate": 90,
+      "c3_games": 75,
       "c4_method": 0,
-      "c5_exclusivity": 0,
+      "c5_exclusivity": 50,
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 9,
+      "maxEncounterChance": 10,
+      "gamesCount": 3,
       "versions": [
-        "black",
         "emerald",
         "ruby",
-        "sapphire",
-        "shield",
-        "sword",
-        "the-crown-tundra-shield",
-        "the-crown-tundra-sword",
-        "white"
+        "sapphire"
       ],
       "methods": [
-        "dynamax-adventure",
-        "max-raid",
-        "overworld",
-        "walk",
-        "wanderer"
+        "walk"
       ],
       "easiestMethod": "walk",
       "isVersionExclusive": false,
@@ -4268,80 +2969,54 @@
   {
     "id": 345,
     "name": "Lilia",
-    "rarity": "common",
+    "rarity": "epic",
     "appliedRule": "composite",
-    "finalScore": 11.25,
+    "finalScore": 45.3125,
     "components": {
       "c1_encounterRate": 0,
-      "c3_games": 0,
-      "c4_method": 60,
-      "c5_exclusivity": 0,
+      "c3_games": 75,
+      "c4_method": 100,
+      "c5_exclusivity": 50,
       "c6_evolution": 0,
-      "c7_oneTimeOnly": 0
+      "c7_oneTimeOnly": 100
     },
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
       "maxEncounterChance": 100,
-      "gamesCount": 16,
+      "gamesCount": 3,
       "versions": [
-        "black",
-        "black-2",
-        "diamond",
         "emerald",
-        "heartgold",
-        "pearl",
-        "platinum",
         "ruby",
-        "sapphire",
-        "soulsilver",
-        "the-crown-tundra-shield",
-        "the-crown-tundra-sword",
-        "ultra-moon",
-        "ultra-sun",
-        "white",
-        "white-2"
+        "sapphire"
       ],
       "methods": [
-        "bubbling-spots",
         "gift"
       ],
-      "easiestMethod": "bubbling-spots",
+      "easiestMethod": "gift",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
       "evolutionTrigger": null
     },
-    "oneTimeOnly": false,
-    "flooredByChain": false
+    "oneTimeOnly": true,
+    "flooredByChain": true
   },
   {
     "id": 346,
     "name": "Vacilys",
-    "rarity": "rare",
-    "appliedRule": "composite",
-    "finalScore": 40,
-    "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 83.33333333333334,
-      "c4_method": 60,
-      "c5_exclusivity": 75,
-      "c6_evolution": 30,
-      "c7_oneTimeOnly": 0
-    },
+    "rarity": "ultra_rare",
+    "appliedRule": "priority:no_encounters_inherits_parent",
+    "finalScore": null,
+    "components": null,
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 2,
-      "versions": [
-        "the-crown-tundra-shield",
-        "the-crown-tundra-sword"
-      ],
-      "methods": [
-        "dynamax-adventure"
-      ],
-      "easiestMethod": "dynamax-adventure",
-      "isVersionExclusive": false,
+      "maxEncounterChance": null,
+      "gamesCount": 0,
+      "versions": [],
+      "methods": [],
+      "easiestMethod": null,
+      "isVersionExclusive": true,
       "evolutionDepth": 1,
       "evolutionTrigger": "level-up"
     },
@@ -4351,82 +3026,54 @@
   {
     "id": 347,
     "name": "Anorith",
-    "rarity": "common",
+    "rarity": "epic",
     "appliedRule": "composite",
-    "finalScore": 11.25,
+    "finalScore": 45.3125,
     "components": {
       "c1_encounterRate": 0,
-      "c3_games": 0,
-      "c4_method": 60,
-      "c5_exclusivity": 0,
+      "c3_games": 75,
+      "c4_method": 100,
+      "c5_exclusivity": 50,
       "c6_evolution": 0,
-      "c7_oneTimeOnly": 0
+      "c7_oneTimeOnly": 100
     },
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
       "maxEncounterChance": 100,
-      "gamesCount": 16,
+      "gamesCount": 3,
       "versions": [
-        "black",
-        "black-2",
-        "diamond",
         "emerald",
-        "heartgold",
-        "pearl",
-        "platinum",
         "ruby",
-        "sapphire",
-        "soulsilver",
-        "the-crown-tundra-shield",
-        "the-crown-tundra-sword",
-        "ultra-moon",
-        "ultra-sun",
-        "white",
-        "white-2"
+        "sapphire"
       ],
       "methods": [
-        "gift",
-        "overworld-water",
-        "wanderer-water"
+        "gift"
       ],
-      "easiestMethod": "overworld-water",
+      "easiestMethod": "gift",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
       "evolutionTrigger": null
     },
-    "oneTimeOnly": false,
-    "flooredByChain": false
+    "oneTimeOnly": true,
+    "flooredByChain": true
   },
   {
     "id": 348,
     "name": "Armaldo",
-    "rarity": "rare",
-    "appliedRule": "composite",
-    "finalScore": 40,
-    "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 83.33333333333334,
-      "c4_method": 60,
-      "c5_exclusivity": 75,
-      "c6_evolution": 30,
-      "c7_oneTimeOnly": 0
-    },
+    "rarity": "ultra_rare",
+    "appliedRule": "priority:no_encounters_inherits_parent",
+    "finalScore": null,
+    "components": null,
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 2,
-      "versions": [
-        "the-crown-tundra-shield",
-        "the-crown-tundra-sword"
-      ],
-      "methods": [
-        "dynamax-adventure",
-        "wanderer"
-      ],
-      "easiestMethod": "dynamax-adventure",
-      "isVersionExclusive": false,
+      "maxEncounterChance": null,
+      "gamesCount": 0,
+      "versions": [],
+      "methods": [],
+      "easiestMethod": null,
+      "isVersionExclusive": true,
       "evolutionDepth": 1,
       "evolutionTrigger": "level-up"
     },
@@ -4436,14 +3083,14 @@
   {
     "id": 349,
     "name": "Barpau",
-    "rarity": "uncommon",
+    "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 23.125,
+    "finalScore": 47.1875,
     "components": {
       "c1_encounterRate": 50,
-      "c3_games": 0,
-      "c4_method": 40,
-      "c5_exclusivity": 0,
+      "c3_games": 75,
+      "c4_method": 60,
+      "c5_exclusivity": 50,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
@@ -4451,36 +3098,16 @@
       "isLegendary": false,
       "isMythical": false,
       "maxEncounterChance": 50,
-      "gamesCount": 18,
+      "gamesCount": 3,
       "versions": [
-        "black",
-        "black-2",
-        "diamond",
         "emerald",
-        "moon",
-        "pearl",
-        "platinum",
         "ruby",
-        "sapphire",
-        "shield",
-        "sun",
-        "sword",
-        "the-crown-tundra-shield",
-        "the-crown-tundra-sword",
-        "ultra-moon",
-        "ultra-sun",
-        "white",
-        "white-2"
+        "sapphire"
       ],
       "methods": [
-        "bubbling-spots",
-        "feebas-tile-fishing",
-        "max-raid",
-        "overworld-water",
-        "super-rod",
-        "super-rod-spots"
+        "feebas-tile-fishing"
       ],
-      "easiestMethod": "super-rod",
+      "easiestMethod": "feebas-tile-fishing",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
       "evolutionTrigger": null
@@ -4491,39 +3118,19 @@
   {
     "id": 350,
     "name": "Milobellus",
-    "rarity": "uncommon",
-    "appliedRule": "composite",
-    "finalScore": 21.25,
-    "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 33.33333333333334,
-      "c4_method": 60,
-      "c5_exclusivity": 0,
-      "c6_evolution": 30,
-      "c7_oneTimeOnly": 0
-    },
+    "rarity": "epic",
+    "appliedRule": "priority:no_encounters_inherits_parent",
+    "finalScore": null,
+    "components": null,
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 8,
-      "versions": [
-        "black",
-        "black-2",
-        "shield",
-        "sword",
-        "the-crown-tundra-shield",
-        "the-crown-tundra-sword",
-        "white",
-        "white-2"
-      ],
-      "methods": [
-        "max-raid",
-        "super-rod-spots",
-        "wanderer-water"
-      ],
-      "easiestMethod": "max-raid",
-      "isVersionExclusive": false,
+      "maxEncounterChance": null,
+      "gamesCount": 0,
+      "versions": [],
+      "methods": [],
+      "easiestMethod": null,
+      "isVersionExclusive": true,
       "evolutionDepth": 1,
       "evolutionTrigger": "level-up"
     },
@@ -4533,62 +3140,49 @@
   {
     "id": 351,
     "name": "Morphéo",
-    "rarity": "common",
+    "rarity": "epic",
     "appliedRule": "composite",
-    "finalScore": 0,
+    "finalScore": 35.9375,
     "components": {
       "c1_encounterRate": 0,
-      "c3_games": 0,
-      "c4_method": 0,
+      "c3_games": 58.33333333333333,
+      "c4_method": 100,
       "c5_exclusivity": 0,
       "c6_evolution": 0,
-      "c7_oneTimeOnly": 0
+      "c7_oneTimeOnly": 100
     },
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
       "maxEncounterChance": 100,
-      "gamesCount": 14,
+      "gamesCount": 5,
       "versions": [
         "alpha-sapphire",
-        "black-2",
-        "diamond",
         "emerald",
-        "moon",
         "omega-ruby",
-        "pearl",
-        "platinum",
         "ruby",
-        "sapphire",
-        "sun",
-        "ultra-moon",
-        "ultra-sun",
-        "white-2"
+        "sapphire"
       ],
       "methods": [
-        "gift",
-        "grass-spots",
-        "sos-encounter",
-        "sos-from-bubbling-spot",
-        "walk"
+        "gift"
       ],
-      "easiestMethod": "walk",
+      "easiestMethod": "gift",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
       "evolutionTrigger": null
     },
-    "oneTimeOnly": false,
-    "flooredByChain": false
+    "oneTimeOnly": true,
+    "flooredByChain": true
   },
   {
     "id": 352,
     "name": "Kecleon",
     "rarity": "common",
     "appliedRule": "composite",
-    "finalScore": 0,
+    "finalScore": 10.937499999999996,
     "components": {
       "c1_encounterRate": 0,
-      "c3_games": 0,
+      "c3_games": 58.33333333333333,
       "c4_method": 0,
       "c5_exclusivity": 0,
       "c6_evolution": 0,
@@ -4598,28 +3192,17 @@
       "isLegendary": false,
       "isMythical": false,
       "maxEncounterChance": 100,
-      "gamesCount": 13,
+      "gamesCount": 5,
       "versions": [
         "alpha-sapphire",
-        "black-2",
-        "diamond",
         "emerald",
         "omega-ruby",
-        "platinum",
         "ruby",
-        "sapphire",
-        "ultra-moon",
-        "ultra-sun",
-        "white-2",
-        "x",
-        "y"
+        "sapphire"
       ],
       "methods": [
-        "bubbling-spots",
-        "dark-grass",
         "devon-scope",
         "horde",
-        "rough-terrain",
         "walk"
       ],
       "easiestMethod": "walk",
@@ -4635,10 +3218,10 @@
     "name": "Polichombr",
     "rarity": "common",
     "appliedRule": "composite",
-    "finalScore": 1.5625000000000016,
+    "finalScore": 10.937499999999996,
     "components": {
       "c1_encounterRate": 0,
-      "c3_games": 8.333333333333343,
+      "c3_games": 58.33333333333333,
       "c4_method": 0,
       "c5_exclusivity": 0,
       "c6_evolution": 0,
@@ -4648,19 +3231,13 @@
       "isLegendary": false,
       "isMythical": false,
       "maxEncounterChance": 100,
-      "gamesCount": 11,
+      "gamesCount": 5,
       "versions": [
         "alpha-sapphire",
         "emerald",
-        "heartgold",
         "omega-ruby",
         "ruby",
-        "sapphire",
-        "soulsilver",
-        "ultra-moon",
-        "ultra-sun",
-        "x",
-        "y"
+        "sapphire"
       ],
       "methods": [
         "horde",
@@ -4677,39 +3254,27 @@
   {
     "id": 354,
     "name": "Branette",
-    "rarity": "common",
+    "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 3.75,
+    "finalScore": 56.875,
     "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 0,
+      "c1_encounterRate": 90,
+      "c3_games": 83.33333333333334,
       "c4_method": 0,
-      "c5_exclusivity": 0,
+      "c5_exclusivity": 75,
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 12,
+      "maxEncounterChance": 10,
+      "gamesCount": 2,
       "versions": [
-        "black-2",
-        "diamond",
         "emerald",
-        "heartgold",
-        "pearl",
-        "platinum",
-        "sapphire",
-        "soulsilver",
-        "ultra-moon",
-        "ultra-sun",
-        "white-2",
-        "xd"
+        "sapphire"
       ],
       "methods": [
-        "gift",
-        "snag",
         "walk"
       ],
       "easiestMethod": "walk",
@@ -4723,40 +3288,28 @@
   {
     "id": 355,
     "name": "Skelénox",
-    "rarity": "common",
+    "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 1.5625000000000016,
+    "finalScore": 45.3125,
     "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 8.333333333333343,
+      "c1_encounterRate": 80,
+      "c3_games": 75,
       "c4_method": 0,
-      "c5_exclusivity": 0,
+      "c5_exclusivity": 50,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 11,
+      "maxEncounterChance": 20,
+      "gamesCount": 3,
       "versions": [
-        "diamond",
         "emerald",
-        "heartgold",
-        "pearl",
-        "platinum",
         "ruby",
-        "sapphire",
-        "shield",
-        "soulsilver",
-        "sword",
-        "xd"
+        "sapphire"
       ],
       "methods": [
-        "max-raid",
-        "overworld",
-        "snag",
-        "surf",
         "walk"
       ],
       "easiestMethod": "walk",
@@ -4770,44 +3323,30 @@
   {
     "id": 356,
     "name": "Téraclope",
-    "rarity": "common",
+    "rarity": "epic",
     "appliedRule": "composite",
-    "finalScore": 3.75,
+    "finalScore": 61.5625,
     "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 0,
+      "c1_encounterRate": 90,
+      "c3_games": 91.66666666666667,
       "c4_method": 0,
-      "c5_exclusivity": 0,
+      "c5_exclusivity": 100,
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 12,
+      "maxEncounterChance": 10,
+      "gamesCount": 1,
       "versions": [
-        "diamond",
-        "heartgold",
-        "pearl",
-        "platinum",
-        "ruby",
-        "shield",
-        "soulsilver",
-        "sword",
-        "the-crown-tundra-shield",
-        "the-crown-tundra-sword",
-        "x",
-        "y"
+        "ruby"
       ],
       "methods": [
-        "dynamax-adventure",
-        "max-raid",
-        "walk",
-        "wanderer"
+        "walk"
       ],
       "easiestMethod": "walk",
-      "isVersionExclusive": false,
+      "isVersionExclusive": true,
       "evolutionDepth": 1,
       "evolutionTrigger": "level-up"
     },
@@ -4817,41 +3356,28 @@
   {
     "id": 357,
     "name": "Tropius",
-    "rarity": "common",
+    "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 0,
+    "finalScore": 50.3125,
     "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 0,
+      "c1_encounterRate": 96,
+      "c3_games": 75,
       "c4_method": 0,
-      "c5_exclusivity": 0,
+      "c5_exclusivity": 50,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 13,
+      "maxEncounterChance": 4,
+      "gamesCount": 3,
       "versions": [
-        "black",
-        "black-2",
-        "colosseum",
         "emerald",
-        "platinum",
         "ruby",
-        "sapphire",
-        "ultra-moon",
-        "ultra-sun",
-        "white",
-        "white-2",
-        "x",
-        "y"
+        "sapphire"
       ],
       "methods": [
-        "dark-grass",
-        "gift",
-        "snag",
         "walk"
       ],
       "easiestMethod": "walk",
@@ -4865,36 +3391,28 @@
   {
     "id": 358,
     "name": "Éoko",
-    "rarity": "rare",
+    "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 31.875,
+    "finalScore": 55,
     "components": {
-      "c1_encounterRate": 80,
-      "c3_games": 16.666666666666657,
+      "c1_encounterRate": 99,
+      "c3_games": 75,
       "c4_method": 0,
-      "c5_exclusivity": 0,
+      "c5_exclusivity": 50,
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 20,
-      "gamesCount": 10,
+      "maxEncounterChance": 1,
+      "gamesCount": 3,
       "versions": [
-        "black",
-        "diamond",
         "emerald",
-        "heartgold",
-        "pearl",
-        "platinum",
         "ruby",
-        "sapphire",
-        "soulsilver",
-        "white"
+        "sapphire"
       ],
       "methods": [
-        "dark-grass",
         "walk"
       ],
       "easiestMethod": "walk",
@@ -4908,54 +3426,29 @@
   {
     "id": 359,
     "name": "Absol",
-    "rarity": "common",
+    "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 0,
+    "finalScore": 50.3125,
     "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 0,
+      "c1_encounterRate": 96,
+      "c3_games": 75,
       "c4_method": 0,
-      "c5_exclusivity": 0,
+      "c5_exclusivity": 50,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 21,
+      "maxEncounterChance": 4,
+      "gamesCount": 3,
       "versions": [
-        "black",
-        "black-2",
-        "colosseum",
-        "diamond",
         "emerald",
-        "heartgold",
-        "moon",
-        "pearl",
-        "platinum",
         "ruby",
-        "sapphire",
-        "soulsilver",
-        "sun",
-        "the-crown-tundra-shield",
-        "the-crown-tundra-sword",
-        "ultra-moon",
-        "ultra-sun",
-        "white",
-        "white-2",
-        "x",
-        "y"
+        "sapphire"
       ],
       "methods": [
-        "dark-grass",
-        "dynamax-adventure",
-        "hidden-grotto",
-        "overworld",
-        "snag",
-        "walk",
-        "wanderer",
-        "yellow-flowers"
+        "walk"
       ],
       "easiestMethod": "walk",
       "isVersionExclusive": false,
@@ -4970,10 +3463,10 @@
     "name": "Okéoké",
     "rarity": "common",
     "appliedRule": "composite",
-    "finalScore": 7.812499999999998,
+    "finalScore": 10.937499999999996,
     "components": {
       "c1_encounterRate": 0,
-      "c3_games": 41.666666666666664,
+      "c3_games": 58.33333333333333,
       "c4_method": 0,
       "c5_exclusivity": 0,
       "c6_evolution": 0,
@@ -4983,19 +3476,16 @@
       "isLegendary": false,
       "isMythical": false,
       "maxEncounterChance": 100,
-      "gamesCount": 7,
+      "gamesCount": 5,
       "versions": [
         "alpha-sapphire",
         "emerald",
         "omega-ruby",
         "ruby",
-        "sapphire",
-        "shield",
-        "sword"
+        "sapphire"
       ],
       "methods": [
         "gift-egg",
-        "max-raid",
         "walk"
       ],
       "easiestMethod": "walk",
@@ -5009,12 +3499,12 @@
   {
     "id": 361,
     "name": "Stalgamin",
-    "rarity": "common",
+    "rarity": "rare",
     "appliedRule": "composite",
-    "finalScore": 0,
+    "finalScore": 40.625,
     "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 0,
+      "c1_encounterRate": 95,
+      "c3_games": 58.33333333333333,
       "c4_method": 0,
       "c5_exclusivity": 0,
       "c6_evolution": 0,
@@ -5023,34 +3513,17 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 19,
+      "maxEncounterChance": 5,
+      "gamesCount": 5,
       "versions": [
         "alpha-sapphire",
-        "diamond",
         "emerald",
-        "moon",
         "omega-ruby",
-        "pearl",
-        "platinum",
         "ruby",
-        "sapphire",
-        "shield",
-        "sun",
-        "sword",
-        "the-crown-tundra-shield",
-        "the-crown-tundra-sword",
-        "ultra-moon",
-        "ultra-sun",
-        "x",
-        "xd",
-        "y"
+        "sapphire"
       ],
       "methods": [
         "horde",
-        "max-raid",
-        "overworld",
-        "snag",
         "walk"
       ],
       "easiestMethod": "walk",
@@ -5064,43 +3537,19 @@
   {
     "id": 362,
     "name": "Oniglali",
-    "rarity": "common",
-    "appliedRule": "composite",
-    "finalScore": 10,
-    "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 33.33333333333334,
-      "c4_method": 0,
-      "c5_exclusivity": 0,
-      "c6_evolution": 30,
-      "c7_oneTimeOnly": 0
-    },
+    "rarity": "very_rare",
+    "appliedRule": "priority:no_encounters_inherits_parent",
+    "finalScore": null,
+    "components": null,
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 8,
-      "versions": [
-        "moon",
-        "shield",
-        "sun",
-        "sword",
-        "the-crown-tundra-shield",
-        "the-crown-tundra-sword",
-        "ultra-moon",
-        "ultra-sun"
-      ],
-      "methods": [
-        "dynamax-adventure",
-        "max-raid",
-        "only-one",
-        "overworld",
-        "sos-encounter",
-        "walk",
-        "wanderer"
-      ],
-      "easiestMethod": "walk",
-      "isVersionExclusive": false,
+      "maxEncounterChance": null,
+      "gamesCount": 0,
+      "versions": [],
+      "methods": [],
+      "easiestMethod": null,
+      "isVersionExclusive": true,
       "evolutionDepth": 1,
       "evolutionTrigger": "level-up"
     },
@@ -5110,12 +3559,12 @@
   {
     "id": 363,
     "name": "Obalie",
-    "rarity": "common",
+    "rarity": "uncommon",
     "appliedRule": "composite",
-    "finalScore": 0,
+    "finalScore": 23.4375,
     "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 0,
+      "c1_encounterRate": 40,
+      "c3_games": 58.33333333333333,
       "c4_method": 0,
       "c5_exclusivity": 0,
       "c6_evolution": 0,
@@ -5124,40 +3573,19 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 21,
+      "maxEncounterChance": 60,
+      "gamesCount": 5,
       "versions": [
         "alpha-sapphire",
-        "black",
-        "black-2",
         "emerald",
-        "heartgold",
-        "moon",
         "omega-ruby",
-        "pearl",
         "ruby",
-        "sapphire",
-        "soulsilver",
-        "sun",
-        "the-crown-tundra-shield",
-        "the-crown-tundra-sword",
-        "ultra-moon",
-        "ultra-sun",
-        "white",
-        "white-2",
-        "x",
-        "xd",
-        "y"
+        "sapphire"
       ],
       "methods": [
-        "hidden-grotto",
         "horde",
-        "island-scan",
-        "overworld",
-        "snag",
         "surf",
-        "walk",
-        "wanderer"
+        "walk"
       ],
       "easiestMethod": "walk",
       "isVersionExclusive": false,
@@ -5170,43 +3598,19 @@
   {
     "id": 364,
     "name": "Phogleur",
-    "rarity": "common",
-    "appliedRule": "composite",
-    "finalScore": 6.874999999999997,
-    "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 16.666666666666657,
-      "c4_method": 0,
-      "c5_exclusivity": 0,
-      "c6_evolution": 30,
-      "c7_oneTimeOnly": 0
-    },
+    "rarity": "rare",
+    "appliedRule": "priority:no_encounters_inherits_parent",
+    "finalScore": null,
+    "components": null,
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 10,
-      "versions": [
-        "black",
-        "black-2",
-        "heartgold",
-        "pearl",
-        "platinum",
-        "soulsilver",
-        "the-crown-tundra-shield",
-        "the-crown-tundra-sword",
-        "white",
-        "white-2"
-      ],
-      "methods": [
-        "dynamax-adventure",
-        "surf",
-        "surf-spots",
-        "walk",
-        "wanderer"
-      ],
-      "easiestMethod": "walk",
-      "isVersionExclusive": false,
+      "maxEncounterChance": null,
+      "gamesCount": 0,
+      "versions": [],
+      "methods": [],
+      "easiestMethod": null,
+      "isVersionExclusive": true,
       "evolutionDepth": 1,
       "evolutionTrigger": "level-up"
     },
@@ -5216,36 +3620,19 @@
   {
     "id": 365,
     "name": "Kaimorse",
-    "rarity": "uncommon",
-    "appliedRule": "composite",
-    "finalScore": 28.125,
-    "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 50,
-      "c4_method": 60,
-      "c5_exclusivity": 0,
-      "c6_evolution": 60,
-      "c7_oneTimeOnly": 0
-    },
+    "rarity": "very_rare",
+    "appliedRule": "priority:no_encounters_inherits_parent",
+    "finalScore": null,
+    "components": null,
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 6,
-      "versions": [
-        "black",
-        "black-2",
-        "the-crown-tundra-shield",
-        "the-crown-tundra-sword",
-        "white",
-        "white-2"
-      ],
-      "methods": [
-        "surf-spots",
-        "wanderer"
-      ],
-      "easiestMethod": "surf-spots",
-      "isVersionExclusive": false,
+      "maxEncounterChance": null,
+      "gamesCount": 0,
+      "versions": [],
+      "methods": [],
+      "easiestMethod": null,
+      "isVersionExclusive": true,
       "evolutionDepth": 2,
       "evolutionTrigger": "level-up"
     },
@@ -5255,14 +3642,14 @@
   {
     "id": 366,
     "name": "Coquiperl",
-    "rarity": "uncommon",
+    "rarity": "rare",
     "appliedRule": "composite",
-    "finalScore": 20,
+    "finalScore": 44.0625,
     "components": {
       "c1_encounterRate": 40,
-      "c3_games": 0,
-      "c4_method": 40,
-      "c5_exclusivity": 0,
+      "c3_games": 75,
+      "c4_method": 60,
+      "c5_exclusivity": 50,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
@@ -5270,32 +3657,16 @@
       "isLegendary": false,
       "isMythical": false,
       "maxEncounterChance": 60,
-      "gamesCount": 15,
+      "gamesCount": 3,
       "versions": [
-        "black",
-        "black-2",
-        "diamond",
         "emerald",
-        "heartgold",
-        "pearl",
         "ruby",
-        "sapphire",
-        "soulsilver",
-        "ultra-moon",
-        "ultra-sun",
-        "white",
-        "white-2",
-        "x",
-        "y"
+        "sapphire"
       ],
       "methods": [
-        "bubbling-spots",
-        "good-rod",
-        "seaweed",
-        "super-rod",
-        "surf"
+        "seaweed"
       ],
-      "easiestMethod": "good-rod",
+      "easiestMethod": "seaweed",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
       "evolutionTrigger": null
@@ -5306,37 +3677,19 @@
   {
     "id": 367,
     "name": "Serpang",
-    "rarity": "very_rare",
-    "appliedRule": "composite",
-    "finalScore": 51.875,
-    "components": {
-      "c1_encounterRate": 85,
-      "c3_games": 58.33333333333333,
-      "c4_method": 40,
-      "c5_exclusivity": 0,
-      "c6_evolution": 55,
-      "c7_oneTimeOnly": 0
-    },
+    "rarity": "epic",
+    "appliedRule": "priority:no_encounters_inherits_parent",
+    "finalScore": null,
+    "components": null,
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 15,
-      "gamesCount": 5,
-      "versions": [
-        "black",
-        "black-2",
-        "ultra-moon",
-        "ultra-sun",
-        "x"
-      ],
-      "methods": [
-        "sos-encounter",
-        "sos-from-bubbling-spot",
-        "super-rod",
-        "super-rod-spots"
-      ],
-      "easiestMethod": "super-rod",
-      "isVersionExclusive": false,
+      "maxEncounterChance": null,
+      "gamesCount": 0,
+      "versions": [],
+      "methods": [],
+      "easiestMethod": null,
+      "isVersionExclusive": true,
       "evolutionDepth": 1,
       "evolutionTrigger": "trade"
     },
@@ -5346,37 +3699,19 @@
   {
     "id": 368,
     "name": "Rosabyss",
-    "rarity": "very_rare",
-    "appliedRule": "composite",
-    "finalScore": 51.875,
-    "components": {
-      "c1_encounterRate": 85,
-      "c3_games": 58.33333333333333,
-      "c4_method": 40,
-      "c5_exclusivity": 0,
-      "c6_evolution": 55,
-      "c7_oneTimeOnly": 0
-    },
+    "rarity": "epic",
+    "appliedRule": "priority:no_encounters_inherits_parent",
+    "finalScore": null,
+    "components": null,
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 15,
-      "gamesCount": 5,
-      "versions": [
-        "ultra-moon",
-        "ultra-sun",
-        "white",
-        "white-2",
-        "y"
-      ],
-      "methods": [
-        "sos-encounter",
-        "sos-from-bubbling-spot",
-        "super-rod",
-        "super-rod-spots"
-      ],
-      "easiestMethod": "super-rod",
-      "isVersionExclusive": false,
+      "maxEncounterChance": null,
+      "gamesCount": 0,
+      "versions": [],
+      "methods": [],
+      "easiestMethod": null,
+      "isVersionExclusive": true,
       "evolutionDepth": 1,
       "evolutionTrigger": "trade"
     },
@@ -5386,56 +3721,31 @@
   {
     "id": 369,
     "name": "Relicanth",
-    "rarity": "common",
+    "rarity": "epic",
     "appliedRule": "composite",
-    "finalScore": 7.5,
+    "finalScore": 61.5625,
     "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 0,
-      "c4_method": 40,
-      "c5_exclusivity": 0,
+      "c1_encounterRate": 96,
+      "c3_games": 75,
+      "c4_method": 60,
+      "c5_exclusivity": 50,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 20,
+      "maxEncounterChance": 4,
+      "gamesCount": 3,
       "versions": [
-        "black",
-        "black-2",
-        "diamond",
         "emerald",
-        "heartgold",
-        "moon",
-        "pearl",
-        "platinum",
         "ruby",
-        "sapphire",
-        "soulsilver",
-        "sun",
-        "the-crown-tundra-shield",
-        "the-crown-tundra-sword",
-        "ultra-moon",
-        "ultra-sun",
-        "white",
-        "white-2",
-        "x",
-        "y"
+        "sapphire"
       ],
       "methods": [
-        "bubbling-spots",
-        "dynamax-adventure",
-        "good-rod",
-        "old-rod",
-        "overworld-water",
-        "seaweed",
-        "super-rod",
-        "super-rod-spots",
-        "wanderer-water"
+        "seaweed"
       ],
-      "easiestMethod": "good-rod",
+      "easiestMethod": "seaweed",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
       "evolutionTrigger": null
@@ -5446,49 +3756,30 @@
   {
     "id": 370,
     "name": "Lovdisc",
-    "rarity": "uncommon",
+    "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 16.875,
+    "finalScore": 46.5625,
     "components": {
-      "c1_encounterRate": 30,
-      "c3_games": 0,
+      "c1_encounterRate": 60,
+      "c3_games": 75,
       "c4_method": 40,
-      "c5_exclusivity": 0,
+      "c5_exclusivity": 50,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 70,
-      "gamesCount": 18,
+      "maxEncounterChance": 40,
+      "gamesCount": 3,
       "versions": [
-        "black",
-        "black-2",
-        "diamond",
         "emerald",
-        "heartgold",
-        "moon",
-        "pearl",
-        "platinum",
         "ruby",
-        "sapphire",
-        "soulsilver",
-        "sun",
-        "ultra-moon",
-        "ultra-sun",
-        "white",
-        "white-2",
-        "x",
-        "y"
+        "sapphire"
       ],
       "methods": [
-        "bubbling-spots",
         "good-rod",
-        "old-rod",
-        "super-rod",
-        "super-rod-spots",
-        "surf"
+        "super-rod"
       ],
       "easiestMethod": "good-rod",
       "isVersionExclusive": false,
@@ -5501,12 +3792,12 @@
   {
     "id": 371,
     "name": "Draby",
-    "rarity": "common",
+    "rarity": "rare",
     "appliedRule": "composite",
-    "finalScore": 0,
+    "finalScore": 39.0625,
     "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 0,
+      "c1_encounterRate": 90,
+      "c3_games": 58.33333333333333,
       "c4_method": 0,
       "c5_exclusivity": 0,
       "c6_evolution": 0,
@@ -5515,35 +3806,18 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 18,
+      "maxEncounterChance": 10,
+      "gamesCount": 5,
       "versions": [
         "alpha-sapphire",
-        "black-2",
         "emerald",
-        "heartgold",
-        "moon",
         "omega-ruby",
-        "pearl",
-        "platinum",
         "ruby",
-        "sapphire",
-        "soulsilver",
-        "sun",
-        "the-crown-tundra-sword",
-        "ultra-moon",
-        "ultra-sun",
-        "white-2",
-        "x",
-        "y"
+        "sapphire"
       ],
       "methods": [
-        "hidden-grotto",
         "horde",
-        "overworld",
-        "walk",
-        "wanderer",
-        "yellow-flowers"
+        "walk"
       ],
       "easiestMethod": "walk",
       "isVersionExclusive": false,
@@ -5556,38 +3830,19 @@
   {
     "id": 372,
     "name": "Drackhaus",
-    "rarity": "rare",
-    "appliedRule": "composite",
-    "finalScore": 30.9375,
-    "components": {
-      "c1_encounterRate": 67,
-      "c3_games": 33.33333333333334,
-      "c4_method": 0,
-      "c5_exclusivity": 0,
-      "c6_evolution": 30,
-      "c7_oneTimeOnly": 0
-    },
+    "rarity": "very_rare",
+    "appliedRule": "priority:no_encounters_inherits_parent",
+    "finalScore": null,
+    "components": null,
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 33,
-      "gamesCount": 8,
-      "versions": [
-        "heartgold",
-        "moon",
-        "soulsilver",
-        "sun",
-        "ultra-moon",
-        "ultra-sun",
-        "x",
-        "y"
-      ],
-      "methods": [
-        "sos-encounter",
-        "walk"
-      ],
-      "easiestMethod": "walk",
-      "isVersionExclusive": false,
+      "maxEncounterChance": null,
+      "gamesCount": 0,
+      "versions": [],
+      "methods": [],
+      "easiestMethod": null,
+      "isVersionExclusive": true,
       "evolutionDepth": 1,
       "evolutionTrigger": "level-up"
     },
@@ -5597,37 +3852,19 @@
   {
     "id": 373,
     "name": "Drattak",
-    "rarity": "uncommon",
-    "appliedRule": "composite",
-    "finalScore": 28.125,
-    "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 50,
-      "c4_method": 60,
-      "c5_exclusivity": 0,
-      "c6_evolution": 60,
-      "c7_oneTimeOnly": 0
-    },
+    "rarity": "epic",
+    "appliedRule": "priority:no_encounters_inherits_parent",
+    "finalScore": null,
+    "components": null,
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 6,
-      "versions": [
-        "moon",
-        "sun",
-        "the-crown-tundra-sword",
-        "ultra-moon",
-        "ultra-sun",
-        "xd"
-      ],
-      "methods": [
-        "snag",
-        "sos-encounter",
-        "wanderer"
-      ],
-      "easiestMethod": "snag",
-      "isVersionExclusive": false,
+      "maxEncounterChance": null,
+      "gamesCount": 0,
+      "versions": [],
+      "methods": [],
+      "easiestMethod": null,
+      "isVersionExclusive": true,
       "evolutionDepth": 2,
       "evolutionTrigger": "level-up"
     },
@@ -5637,96 +3874,56 @@
   {
     "id": 374,
     "name": "Terhal",
-    "rarity": "common",
+    "rarity": "epic",
     "appliedRule": "composite",
-    "finalScore": 0,
+    "finalScore": 35.9375,
     "components": {
       "c1_encounterRate": 0,
-      "c3_games": 0,
-      "c4_method": 0,
+      "c3_games": 58.33333333333333,
+      "c4_method": 100,
       "c5_exclusivity": 0,
       "c6_evolution": 0,
-      "c7_oneTimeOnly": 0
+      "c7_oneTimeOnly": 100
     },
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
       "maxEncounterChance": 100,
-      "gamesCount": 16,
+      "gamesCount": 5,
       "versions": [
         "alpha-sapphire",
-        "diamond",
         "emerald",
-        "heartgold",
-        "moon",
         "omega-ruby",
-        "pearl",
-        "platinum",
         "ruby",
-        "sapphire",
-        "soulsilver",
-        "sun",
-        "the-crown-tundra-shield",
-        "the-crown-tundra-sword",
-        "ultra-moon",
-        "ultra-sun"
+        "sapphire"
       ],
       "methods": [
-        "gift",
-        "overworld",
-        "walk"
+        "gift"
       ],
-      "easiestMethod": "walk",
+      "easiestMethod": "gift",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
       "evolutionTrigger": null
     },
-    "oneTimeOnly": false,
-    "flooredByChain": false
+    "oneTimeOnly": true,
+    "flooredByChain": true
   },
   {
     "id": 375,
     "name": "Métang",
-    "rarity": "common",
-    "appliedRule": "composite",
-    "finalScore": 3.75,
-    "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 0,
-      "c4_method": 0,
-      "c5_exclusivity": 0,
-      "c6_evolution": 30,
-      "c7_oneTimeOnly": 0
-    },
+    "rarity": "ultra_rare",
+    "appliedRule": "priority:no_encounters_inherits_parent",
+    "finalScore": null,
+    "components": null,
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 12,
-      "versions": [
-        "black",
-        "black-2",
-        "heartgold",
-        "moon",
-        "soulsilver",
-        "sun",
-        "the-crown-tundra-shield",
-        "the-crown-tundra-sword",
-        "white",
-        "white-2",
-        "x",
-        "y"
-      ],
-      "methods": [
-        "dark-grass",
-        "dynamax-adventure",
-        "gift",
-        "hidden-grotto",
-        "walk",
-        "wanderer"
-      ],
-      "easiestMethod": "walk",
-      "isVersionExclusive": false,
+      "maxEncounterChance": null,
+      "gamesCount": 0,
+      "versions": [],
+      "methods": [],
+      "easiestMethod": null,
+      "isVersionExclusive": true,
       "evolutionDepth": 1,
       "evolutionTrigger": "level-up"
     },
@@ -5736,38 +3933,19 @@
   {
     "id": 376,
     "name": "Métalosse",
-    "rarity": "uncommon",
-    "appliedRule": "composite",
-    "finalScore": 26.5625,
-    "components": {
-      "c1_encounterRate": 0,
-      "c3_games": 41.666666666666664,
-      "c4_method": 60,
-      "c5_exclusivity": 0,
-      "c6_evolution": 60,
-      "c7_oneTimeOnly": 0
-    },
+    "rarity": "mythic",
+    "appliedRule": "priority:no_encounters_inherits_parent",
+    "finalScore": null,
+    "components": null,
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
-      "gamesCount": 7,
-      "versions": [
-        "black",
-        "black-2",
-        "colosseum",
-        "the-crown-tundra-shield",
-        "the-crown-tundra-sword",
-        "white",
-        "white-2"
-      ],
-      "methods": [
-        "grass-spots",
-        "snag",
-        "wanderer"
-      ],
-      "easiestMethod": "grass-spots",
-      "isVersionExclusive": false,
+      "maxEncounterChance": null,
+      "gamesCount": 0,
+      "versions": [],
+      "methods": [],
+      "easiestMethod": null,
+      "isVersionExclusive": true,
       "evolutionDepth": 2,
       "evolutionTrigger": "level-up"
     },
@@ -5785,19 +3963,13 @@
       "isLegendary": true,
       "isMythical": false,
       "maxEncounterChance": 100,
-      "gamesCount": 11,
+      "gamesCount": 5,
       "versions": [
         "alpha-sapphire",
-        "black-2",
         "emerald",
         "omega-ruby",
         "ruby",
-        "sapphire",
-        "the-crown-tundra-shield",
-        "the-crown-tundra-sword",
-        "ultra-moon",
-        "ultra-sun",
-        "white-2"
+        "sapphire"
       ],
       "methods": [
         "only-one"
@@ -5821,19 +3993,13 @@
       "isLegendary": true,
       "isMythical": false,
       "maxEncounterChance": 100,
-      "gamesCount": 11,
+      "gamesCount": 5,
       "versions": [
         "alpha-sapphire",
-        "black-2",
         "emerald",
         "omega-ruby",
         "ruby",
-        "sapphire",
-        "the-crown-tundra-shield",
-        "the-crown-tundra-sword",
-        "ultra-moon",
-        "ultra-sun",
-        "white-2"
+        "sapphire"
       ],
       "methods": [
         "only-one"
@@ -5857,19 +4023,13 @@
       "isLegendary": true,
       "isMythical": false,
       "maxEncounterChance": 100,
-      "gamesCount": 11,
+      "gamesCount": 5,
       "versions": [
         "alpha-sapphire",
-        "black-2",
         "emerald",
         "omega-ruby",
         "ruby",
-        "sapphire",
-        "the-crown-tundra-shield",
-        "the-crown-tundra-sword",
-        "ultra-moon",
-        "ultra-sun",
-        "white-2"
+        "sapphire"
       ],
       "methods": [
         "only-one"
@@ -5893,26 +4053,21 @@
       "isLegendary": true,
       "isMythical": false,
       "maxEncounterChance": 100,
-      "gamesCount": 9,
+      "gamesCount": 5,
       "versions": [
         "alpha-sapphire",
         "emerald",
-        "heartgold",
         "omega-ruby",
         "ruby",
-        "sapphire",
-        "the-crown-tundra-shield",
-        "ultra-moon",
-        "white-2"
+        "sapphire"
       ],
       "methods": [
-        "dynamax-adventure",
         "gift",
         "only-one",
         "roaming-grass",
         "roaming-water"
       ],
-      "easiestMethod": "dynamax-adventure",
+      "easiestMethod": "roaming-grass",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
       "evolutionTrigger": null
@@ -5931,26 +4086,21 @@
       "isLegendary": true,
       "isMythical": false,
       "maxEncounterChance": 100,
-      "gamesCount": 9,
+      "gamesCount": 5,
       "versions": [
         "alpha-sapphire",
-        "black-2",
         "emerald",
         "omega-ruby",
         "ruby",
-        "sapphire",
-        "soulsilver",
-        "the-crown-tundra-sword",
-        "ultra-sun"
+        "sapphire"
       ],
       "methods": [
-        "dynamax-adventure",
         "gift",
         "only-one",
         "roaming-grass",
         "roaming-water"
       ],
-      "easiestMethod": "dynamax-adventure",
+      "easiestMethod": "roaming-grass",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
       "evolutionTrigger": null
@@ -5969,20 +4119,16 @@
       "isLegendary": true,
       "isMythical": false,
       "maxEncounterChance": 100,
-      "gamesCount": 6,
+      "gamesCount": 3,
       "versions": [
         "alpha-sapphire",
         "emerald",
-        "heartgold",
-        "sapphire",
-        "the-crown-tundra-shield",
-        "ultra-moon"
+        "sapphire"
       ],
       "methods": [
-        "dynamax-adventure",
         "only-one"
       ],
-      "easiestMethod": "dynamax-adventure",
+      "easiestMethod": "only-one",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
       "evolutionTrigger": null
@@ -6001,20 +4147,16 @@
       "isLegendary": true,
       "isMythical": false,
       "maxEncounterChance": 100,
-      "gamesCount": 6,
+      "gamesCount": 3,
       "versions": [
         "emerald",
         "omega-ruby",
-        "ruby",
-        "soulsilver",
-        "the-crown-tundra-sword",
-        "ultra-sun"
+        "ruby"
       ],
       "methods": [
-        "dynamax-adventure",
         "only-one"
       ],
-      "easiestMethod": "dynamax-adventure",
+      "easiestMethod": "only-one",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
       "evolutionTrigger": null
@@ -6033,25 +4175,18 @@
       "isLegendary": true,
       "isMythical": false,
       "maxEncounterChance": 100,
-      "gamesCount": 11,
+      "gamesCount": 5,
       "versions": [
         "alpha-sapphire",
         "emerald",
-        "heartgold",
         "omega-ruby",
         "ruby",
-        "sapphire",
-        "soulsilver",
-        "the-crown-tundra-shield",
-        "the-crown-tundra-sword",
-        "ultra-moon",
-        "ultra-sun"
+        "sapphire"
       ],
       "methods": [
-        "dynamax-adventure",
         "only-one"
       ],
-      "easiestMethod": "dynamax-adventure",
+      "easiestMethod": "only-one",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
       "evolutionTrigger": null
