@@ -1,12 +1,12 @@
 import { CaptureLocationSelection, Zone } from '../../types/zones';
-import logger from '../../utils/logger';
+import { getLoggerForGuild } from '../../utils/logger';
 import { loadUnlockedZones } from '../../utils/loadUnlockedZones';
 import { getGenerationByZone } from './getGenerationByZone';
 import { getMaxGeneration } from './getMaxGeneration';
 import { getZonesByGeneration } from './getZonesByGeneration';
 
-function resolveZoneId(input: string): string | undefined {
-  const allZones = Object.values(loadUnlockedZones()).flat();
+function resolveZoneId(guildId: string, input: string): string | undefined {
+  const allZones = Object.values(loadUnlockedZones(guildId)).flat();
   const byId = allZones.find((z) => z.id === input);
   if (byId) return byId.id;
   const byLabel = allZones.find((z) => z.label === input);
@@ -15,18 +15,19 @@ function resolveZoneId(input: string): string | undefined {
 
 export async function resolveCaptureLocation(
   interaction: any,
+  guildId: string,
 ): Promise<CaptureLocationSelection | null> {
-  const maxGeneration = getMaxGeneration();
+  const maxGeneration = getMaxGeneration(guildId);
 
   const generationOption = interaction.options.getString("generation");
   const zoneOption = interaction.options.getString("zone");
 
   const resolvedZoneId = zoneOption
-    ? resolveZoneId(zoneOption)
+    ? resolveZoneId(guildId, zoneOption)
     : undefined;
 
   const inferredGenerationFromZone = resolvedZoneId
-    ? getGenerationByZone(resolvedZoneId)
+    ? getGenerationByZone(guildId, resolvedZoneId)
     : undefined;
 
   const isGenerationChosenByUser = generationOption != null;
@@ -40,14 +41,14 @@ export async function resolveCaptureLocation(
     inferredGenerationFromZone ??
     `gen${Math.floor(Math.random() * maxGeneration) + 1}`;
 
-  const generationZones = getZonesByGeneration(generation);
+  const generationZones = getZonesByGeneration(guildId, generation);
 
   if (generationZones.length === 0) {
     throw new Error(`Aucune zone trouvée pour la génération ${generation}`);
   }
 
   if (resolvedZoneId && !generationZones.some((zone) => zone.id === resolvedZoneId)) {
-    logger.info(
+    getLoggerForGuild(guildId).info(
       `❌ Zone invalide: zone=${zoneOption}, generation=${generation}`,
     );
     await interaction.editReply(

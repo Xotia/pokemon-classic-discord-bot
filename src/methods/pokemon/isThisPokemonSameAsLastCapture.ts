@@ -1,10 +1,11 @@
-import { STATS_DB } from '../../config/paths';
+import { statsDb } from '../../config/paths';
 import { promises as fs } from 'fs';
-import logger from '../../utils/logger';
+import { getLoggerForGuild } from '../../utils/logger';
 
-export async function isThisPokemonSameAsLastCapture(pokemonId: number): Promise<boolean> {
+export async function isThisPokemonSameAsLastCapture(guildId: string, pokemonId: number): Promise<boolean> {
+    const logger = getLoggerForGuild(guildId);
     try {
-        const raw = await fs.readFile(STATS_DB, 'utf-8');
+        const raw = await fs.readFile(statsDb(guildId), 'utf-8');
         const data = JSON.parse(raw);
         const lastCaptured = data.lastPokemonCaptured?.pokemon;
         if (lastCaptured === undefined) {

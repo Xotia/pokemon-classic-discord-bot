@@ -1,6 +1,7 @@
 # Environment variables
 .env
 .env.*
+!.env.example
 
 # Dependencies
 node_modules/
@@ -29,10 +30,12 @@ tests/
 tsconfig.vitest.json
 
 # Scripts one-shot (migration, build data, etc.)
-src/scripts/send-lore.js
-src/scripts/sendAuroraLoreMessage.js
+src/scripts/send-lore.ts
 
-# Data - runtime (generated per server)
+# Data - runtime multi-guild (une entrée par serveur Discord)
+data/guilds/
+
+# Data - runtime legacy (pre-multi-guild, gardés pour les scripts one-shot)
 data/players.json
 data/stats.json
 data/raid.json
@@ -45,12 +48,16 @@ data/*.bak
 data/*.txt
 data/old/
 data/img/
+data/simulations/
 
 # Data - generated
 data/pokemon-list.json
 
 # Data - custom (uploaded manually per server)
 data/othermons.json
+
+# Data - registre des serveurs (guildId visibles, ne doit pas être commit)
+data/guilds.json
 
 # Data - examples
 data/players_example.json

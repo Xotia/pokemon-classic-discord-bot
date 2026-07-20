@@ -46,9 +46,10 @@ function buildRaidDefender(params: RegisterRaidDefenderParams): RaidDefender {
 }
 
 export async function registerRaidDefender(
+  guildId: string,
   params: RegisterRaidDefenderParams,
 ): Promise<RaidState> {
-  const raidState = await loadRaidState();
+  const raidState = await loadRaidState(guildId);
 
   assertRaidIsOpenForRegistration(raidState);
 
@@ -63,7 +64,7 @@ export async function registerRaidDefender(
     defenders: [...defendersWithoutUser, defender],
   };
 
-  await saveRaidState(updatedState);
+  await saveRaidState(guildId, updatedState);
 
   return updatedState;
 }

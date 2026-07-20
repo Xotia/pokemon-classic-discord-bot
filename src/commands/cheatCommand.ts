@@ -1,18 +1,22 @@
 import { createProfileIfNeeded } from "../methods/player/createProfileIfNeeded";
-import { savePlayerDataById } from "../methods/player/savePlayerDataById";
+import { updatePlayer } from "../utils/jsonPlayers";
 import { addAllStats } from "../methods/stats/addAllStats";
 import { getPokemonByName } from "../methods/pokemon/getPokemonByName";
 import { getPlayerIdByName } from "../methods/player/getPlayerIdByName";
 import { getPlayer } from "../utils/loadPlayer";
-import logger from "../utils/logger";
+import { getLoggerForGuild } from "../utils/logger";
 import { buildCapturedPokemonEmbed } from "../methods/embed/buildCapturedPokemonEmbed";
 import { isPokemonInPokedex } from "../methods/pokedex/isPokemonInPokedex";
 
 export async function cheatCommand(interaction: any) {
   const callerName = interaction.user.globalName || interaction.user.username;
 
-  createProfileIfNeeded(interaction);
-  logger.info("🏓 Exécution de /cheat pour", callerName);
+  const guildId = interaction.guildId;
+  if (!guildId) {
+    return interaction.reply("Cette commande n'est disponible que sur un serveur.");
+  }
+  createProfileIfNeeded(interaction, guildId);
+  getLoggerForGuild(guildId).info("🏓 Exécution de /cheat pour", callerName);
 
   const OWNER_ID = process.env.ADMIN_ID;
 
@@ -26,14 +30,14 @@ export async function cheatCommand(interaction: any) {
   const pokemonName = interaction.options.getString("pokemon", true);
   const isShiny = interaction.options.getBoolean("shiny", true);
 
-  const playerId = getPlayerIdByName(playerName);
+  const playerId = getPlayerIdByName(guildId, playerName);
 
   if (!playerId) {
     await interaction.editReply(`❌ Joueur introuvable : ${playerName}`);
     return;
   }
 
-  const player = getPlayer(playerId);
+  const player = getPlayer(guildId, playerId);
 
   if (!player) {
     await interaction.editReply(
@@ -42,7 +46,7 @@ export async function cheatCommand(interaction: any) {
     return;
   }
 
-  const pokemon = await getPokemonByName(pokemonName);
+  const pokemon = await getPokemonByName(guildId, pokemonName);
 
   if (!pokemon) {
     await interaction.editReply(`❌ Pokémon introuvable : ${pokemonName}`);
@@ -50,6 +54,7 @@ export async function cheatCommand(interaction: any) {
   }
 
   const isInPokedexBeforeCapture = isPokemonInPokedex(
+    guildId,
     player,
     pokemon.id,
     playerId,
@@ -67,12 +72,26 @@ export async function cheatCommand(interaction: any) {
     player.captureList[String(pokemon.id)].shiny += 1;
   }
 
-  await addAllStats(pokemon, isShiny, player);
-  await savePlayerDataById(playerId, player);
+  await addAllStats(guildId, pokemon, isShiny, player);
+
+  await updatePlayer(guildId, playerId, (fresh) => {
+    fresh.captureList ??= {};
+    fresh.captureList[String(pokemon.id)] ??= {
+      total: 0,
+      shiny: 0,
+      capturedInCurrentSeason: false,
+    };
+    fresh.captureList[String(pokemon.id)].total += 1;
+
+    if (isShiny) {
+      fresh.captureList[String(pokemon.id)].shiny += 1;
+    }
+  });
 
   const trainerName = player.name;
 
   const { embed, footer, isInPokedex } = buildCapturedPokemonEmbed({
+    guildId,
     player,
     playerId,
     pokemon,
@@ -81,7 +100,7 @@ export async function cheatCommand(interaction: any) {
     isAlreadyInPokedex: isInPokedexBeforeCapture,
   });
 
-  logger.info(
+  getLoggerForGuild(guildId).info(
     `🛠️ Cheat capture: ${player.name} a reçu ${pokemon.name} (id=${pokemon.id})${isShiny ? " shiny" : ""}${!isInPokedexBeforeCapture ? " (Nouveau dans le Pokédex)" : ""}`,
   );
 

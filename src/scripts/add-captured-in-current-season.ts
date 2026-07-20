@@ -1,5 +1,17 @@
 import fs from "fs";
-import { PLAYERS_DB } from "../config/paths";
+import { playersDb } from "../config/paths";
+
+function parseGuildId(argv: string[]): string {
+  const index = argv.indexOf("--guildId");
+  const guildId = index !== -1 ? argv[index + 1] : undefined;
+
+  if (!guildId) {
+    console.error("Usage: ts-node src/scripts/add-captured-in-current-season.ts --guildId <id>");
+    process.exit(1);
+  }
+
+  return guildId;
+}
 
 type PlayerPokemonEntry = {
   total: number;
@@ -14,9 +26,9 @@ type Player = {
 
 type PlayersDb = Record<string, Player>;
 
-function addCapturedInCurrentSeasonToPlayers() {
+function addCapturedInCurrentSeasonToPlayers(guildId: string) {
   try {
-    const raw = fs.readFileSync(PLAYERS_DB, "utf8");
+    const raw = fs.readFileSync(playersDb(guildId), "utf8");
     const players: PlayersDb = JSON.parse(raw);
 
     let updatedPlayersCount = 0;
@@ -42,7 +54,7 @@ function addCapturedInCurrentSeasonToPlayers() {
       }
     }
 
-    fs.writeFileSync(PLAYERS_DB, JSON.stringify(players, null, 2), "utf-8");
+    fs.writeFileSync(playersDb(guildId), JSON.stringify(players, null, 2), "utf-8");
 
     console.log(
       `✅ Migration terminée : ${updatedPokemonCount} Pokémon mis à jour pour ${updatedPlayersCount} joueurs.`,
@@ -53,4 +65,4 @@ function addCapturedInCurrentSeasonToPlayers() {
   }
 }
 
-addCapturedInCurrentSeasonToPlayers();
+addCapturedInCurrentSeasonToPlayers(parseGuildId(process.argv.slice(2)));

@@ -1,10 +1,11 @@
-import { STATS_DB } from '../../config/paths';
+import { statsDb } from '../../config/paths';
 import { promises as fs } from 'fs';
-import logger from '../../utils/logger';
+import { getLoggerForGuild } from '../../utils/logger';
 
-export async function addPokemonInTotalPokemonCaptures(pokemonName: string): Promise<void> {
+export async function addPokemonInTotalPokemonCaptures(guildId: string, pokemonName: string): Promise<void> {
+const logger = getLoggerForGuild(guildId);
 try {
-    const raw = await fs.readFile(STATS_DB, 'utf-8');
+    const raw = await fs.readFile(statsDb(guildId), 'utf-8');
     let stats = JSON.parse(raw);
 
     if (!stats) stats = {};
@@ -12,11 +13,11 @@ try {
 
     logger.info(`Mise à jour du nombre de captures pour ${pokemonName}: = ${stats.pokemonsTotals[pokemonName] || 0}}`);
 
-    stats.pokemonsTotals[pokemonName] = 
+    stats.pokemonsTotals[pokemonName] =
       (stats.pokemonsTotals[pokemonName] || 0) + 1;
     logger.info(`Nouveau nombre de captures pour ${pokemonName} = -> ${stats.pokemonsTotals[pokemonName]}`);
 
-    await fs.writeFile(STATS_DB, JSON.stringify(stats, null, 2), 'utf-8');
+    await fs.writeFile(statsDb(guildId), JSON.stringify(stats, null, 2), 'utf-8');
     
   } catch (error) {
     logger.info(`❌ Erreur addPokemonInTotalPokemonCaptures: ${error}`);

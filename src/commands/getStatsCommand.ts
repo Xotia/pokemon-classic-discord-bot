@@ -3,22 +3,26 @@ import {
   ChatInputCommandInteraction
 } from 'discord.js';
 
-import { promises as fs } from 'fs';
 import { loadPokemonStats } from '../utils/loadPokemonStats';
 import { getUniquePokemonCaughtByPlayer } from '../methods/player/getUniquePokemonCaughtByPlayer';
 import { readPlayers } from '../utils/jsonPlayers';
 import { Player } from '../types/Player';
-import { POKEMON_DB } from '../config/paths';
+import { getPokemonCatalog } from '../utils/pokemonCatalog';
 
 
 export async function execute(interaction: ChatInputCommandInteraction) {
   try {
     await interaction.deferReply();
 
-    const stats = await loadPokemonStats();
-    const players = await readPlayers();
-    const pokemonList = JSON.parse(await fs.readFile(POKEMON_DB, 'utf-8'));
-    const totalAvailable = Object.keys(pokemonList).length;
+    const guildId = interaction.guildId;
+    if (!guildId) {
+      await interaction.editReply("Cette commande n'est disponible que sur un serveur.");
+      return;
+    }
+
+    const stats = await loadPokemonStats(guildId);
+    const players = await readPlayers(guildId);
+    const totalAvailable = getPokemonCatalog(guildId).length;
 
     const playerRanking = Object.entries(stats.pokemonPerPlayer || {})
       .map(([playerName, pokemons = {}]) => ({
@@ -83,7 +87,7 @@ export async function execute(interaction: ChatInputCommandInteraction) {
           name: '🥇 **TOP JOUEURS**',
           value: playerRanking.length
             ? playerRanking.slice(0, 10).map((p, i) =>
-                `${i + 1} - **${p.name.padEnd(15)}** ${p.total} | ${getUniquePokemonCaughtByPlayer(p.name)} différents`
+                `${i + 1} - **${p.name.padEnd(15)}** ${p.total} | ${getUniquePokemonCaughtByPlayer(guildId, p.name)} différents`
               ).join('\n')
             : 'Aucune stat disponible',
           inline: false

@@ -1,30 +1,21 @@
-import { promises as fs } from "node:fs";
-import path from "node:path";
-import { Player, PlayersRecord } from "../../types/Player";
+import { PlayersRecord } from "../../types/Player";
 import { RaidState } from "../../types/raid/RaidState";
 import { RaidReward } from "../../types/raid/RaidReward";
 import { addXp } from "../../methods/xp/xp";
 import { registerCapturedPokemon } from "../../methods/player/registerCapturedPokemon";
+import { markPokemonAsCapturedInCurrentSeason } from "../../methods/player/markPokemonAsCapturedInCurrentSeason";
 import { addAllStats } from "../../methods/stats/addAllStats";
 import { getPokemonById } from "../../methods/pokemon/getPokemonById";
-import logger from "../../utils/logger";
-
-const PLAYERS_PATH = path.resolve("data/players.json");
-
-async function readPlayers(): Promise<PlayersRecord> {
-  const raw = await fs.readFile(PLAYERS_PATH, "utf-8");
-  return JSON.parse(raw) as PlayersRecord;
-}
-
-async function writePlayers(players: PlayersRecord): Promise<void> {
-  await fs.writeFile(PLAYERS_PATH, JSON.stringify(players, null, 2), "utf-8");
-}
+import { getLoggerForGuild } from "../../utils/logger";
+import { readPlayers, updatePlayers } from "../../utils/jsonPlayers";
 
 function pickRandomElement<T>(items: T[]): T {
   return items[Math.floor(Math.random() * items.length)];
 }
 
-export async function applyRaidRewards(state: RaidState): Promise<RaidReward> {
+export async function applyRaidRewards(state: RaidState, guildId: string): Promise<RaidReward> {
+  const logger = getLoggerForGuild(guildId);
+
   if (!state.result?.success || !state.raidPokemon) {
     logger.info("[RAID] Raid perdu, aucune récompense appliquée.");
     return { xp: 0, raidWin: false, zoneUnlocked: null, capturedByUserId: null, capturedByPlayerName: null };
@@ -33,42 +24,51 @@ export async function applyRaidRewards(state: RaidState): Promise<RaidReward> {
   const bossHp = state.raidPokemon.baseStats.hp;
   const xpReward = bossHp * 10;
 
-  const players = await readPlayers();
   const participantIds = state.defenders.map((d) => d.userId);
-
-  for (const userId of participantIds) {
-    const player = players[userId];
-    if (!player) continue;
-
-    const xpResult = addXp(player.xp ?? 0, xpReward);
-    player.xp = xpResult.xp;
-    player.level = xpResult.level;
-    player.raidWins = (player.raidWins ?? 0) + 1;
-
-    logger.info(
-      `[RAID] Récompense appliquée à ${player.name}: +${xpReward} XP, niveau ${xpResult.level}, raidWins=${player.raidWins}`,
-    );
-  }
-
   const luckyUserId = pickRandomElement(participantIds);
-  const luckyPlayer = players[luckyUserId];
-  let capturedByPlayerName: string | null = null;
 
-  if (luckyPlayer) {
-    registerCapturedPokemon(luckyPlayer, state.raidPokemon.id, false);
-    capturedByPlayerName = luckyPlayer.name;
+  // One read-only snapshot, taken outside the lock, solely to resolve the
+  // lucky player's name for addAllStats (which needs to run before we know
+  // the final persisted state, and must stay outside the file lock since it
+  // performs unrelated I/O of its own).
+  const snapshotPlayers = await readPlayers(guildId);
+  const luckyPlayerSnapshot = snapshotPlayers[luckyUserId];
 
-    const pokemonData = getPokemonById(state.raidPokemon.id);
+  if (luckyPlayerSnapshot) {
+    const pokemonData = getPokemonById(guildId, state.raidPokemon.id);
     if (pokemonData) {
-      await addAllStats(pokemonData, false, luckyPlayer);
+      await addAllStats(guildId, pokemonData, false, luckyPlayerSnapshot);
     }
 
     logger.info(
-      `[RAID] ${luckyPlayer.name} a capturé le Pokémon du raid: ${state.raidPokemon.name} (ID ${state.raidPokemon.id})`,
+      `[RAID] ${luckyPlayerSnapshot.name} a capturé le Pokémon du raid: ${state.raidPokemon.name} (ID ${state.raidPokemon.id})`,
     );
   }
 
-  await writePlayers(players);
+  let capturedByPlayerName: string | null = null;
+
+  await updatePlayers(guildId, (players: PlayersRecord) => {
+    for (const userId of participantIds) {
+      const player = players[userId];
+      if (!player) continue;
+
+      const xpResult = addXp(player.xp ?? 0, xpReward);
+      player.xp = xpResult.xp;
+      player.level = xpResult.level;
+      player.raidWins = (player.raidWins ?? 0) + 1;
+
+      logger.info(
+        `[RAID] Récompense appliquée à ${player.name}: +${xpReward} XP, niveau ${xpResult.level}, raidWins=${player.raidWins}`,
+      );
+    }
+
+    const luckyPlayer = players[luckyUserId];
+    if (luckyPlayer) {
+      registerCapturedPokemon(luckyPlayer, state.raidPokemon!.id, false);
+      markPokemonAsCapturedInCurrentSeason(luckyPlayer, state.raidPokemon!.id);
+      capturedByPlayerName = luckyPlayer.name;
+    }
+  });
 
   return {
     xp: xpReward,

@@ -1,28 +1,30 @@
 import { ChatInputCommandInteraction } from 'discord.js';
 import { displayCannotCatchMessage } from '../message/displayCannotCatchMessage';
 import { updatePlayer } from '../../utils/jsonPlayers';
-import logger from '../../utils/logger';
+import { getLoggerForGuild } from '../../utils/logger';
+import { getCooldownMs } from '../../config/guildSettings';
 
-export const CATCH_COOLDOWN_MS = parseFloat(process.env.COOLDOWN || '30') * 60 * 1000; // Minutes → ms
 export const NO_POKEMON_COOLDOWN_MS = 10 * 60 * 1000; // Cooldown réduit quand aucun Pokémon n'est trouvé
 
 export async function checkIfUserCanCatch(
   interaction: ChatInputCommandInteraction,
+  guildId: string,
 ): Promise<boolean> {
   const userId = interaction.user.id;
   const now = Date.now();
+  const cooldownMs = getCooldownMs(guildId);
 
-  const players = await import('../../utils/jsonPlayers.js').then(m => m.readPlayers());
+  const players = await import('../../utils/jsonPlayers.js').then(m => m.readPlayers(guildId));
   const lastCapture = players[userId]?.lastCapture;
 
-  if (lastCapture && now - lastCapture < CATCH_COOLDOWN_MS) {
-    const timeLeft = CATCH_COOLDOWN_MS - (now - lastCapture);
+  if (lastCapture && now - lastCapture < cooldownMs) {
+    const timeLeft = cooldownMs - (now - lastCapture);
     await displayCannotCatchMessage(interaction, timeLeft);
-    logger.info(`User ${interaction.user.tag} attempted to catch during cooldown. Time left: ${timeLeft} ms`);
+    getLoggerForGuild(guildId).info(`User ${interaction.user.tag} attempted to catch during cooldown. Time left: ${timeLeft} ms`);
     return false;
   }
 
-  await updatePlayer(userId, (player) => {
+  await updatePlayer(guildId, userId, (player) => {
     player.lastCapture = now;
   });
 

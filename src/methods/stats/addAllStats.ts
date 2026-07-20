@@ -9,22 +9,22 @@ import { addShinyCaptureForPlayer } from "./player/addShinyCaptureForPlayer";
 import { addShinyInTotalShinyCaptures } from "./addShinyInTotalShinyCaptures";
 import { addRarityInPlayerStats } from "./player/addRarityInPlayerStats";
 import { addCaptureToLastCapture } from "./addCaptureToLastCapture";
-import logger from "../../utils/logger";
+import { getLoggerForGuild } from "../../utils/logger";
 import { markPokemonAsCapturedInCurrentSeason } from "../player/markPokemonAsCapturedInCurrentSeason";
 
-export async function addAllStats(pokemonCatched: Pokemon, isShiny: boolean, player: Player): Promise<void> {
-    await addPokemonInTotalCaptures();
-    await addPokemonInPlayerTotalCaptures(player.name);
-    await addPokemonInTotalPokemonCaptures(pokemonCatched.name);
-    await addRarityInStats(pokemonCatched.rarity);
-    await addRarityInPlayerStats(player.name, pokemonCatched.rarity);
+export async function addAllStats(guildId: string, pokemonCatched: Pokemon, isShiny: boolean, player: Player): Promise<void> {
+    await addPokemonInTotalCaptures(guildId);
+    await addPokemonInPlayerTotalCaptures(guildId, player.name);
+    await addPokemonInTotalPokemonCaptures(guildId, pokemonCatched.name);
+    await addRarityInStats(guildId, pokemonCatched.rarity);
+    await addRarityInPlayerStats(guildId, player.name, pokemonCatched.rarity);
     markPokemonAsCapturedInCurrentSeason(player, pokemonCatched.id);
     if (isShiny) {
-        logger.info(`✨ ${pokemonCatched.name} est shiny ! Mise à jour des statistiques...`);
-        await addShinyInTotalShinyCaptures();
-        await addShinyCaptureForPlayer(player.name);
+        getLoggerForGuild(guildId).info(`✨ ${pokemonCatched.name} est shiny ! Mise à jour des statistiques...`);
+        await addShinyInTotalShinyCaptures(guildId);
+        await addShinyCaptureForPlayer(guildId, player.name);
     }
     // logger.info(`addAllStats player=${JSON.stringify(player)}`);
-    await addCaptureToPlayer(player, pokemonCatched.name);
-    await addCaptureToLastCapture(player.name, pokemonCatched.id);
+    await addCaptureToPlayer(guildId, player, pokemonCatched.name);
+    await addCaptureToLastCapture(guildId, player.name, pokemonCatched.id);
 }

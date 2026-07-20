@@ -16,7 +16,7 @@ function formatRaidCloseTime(isoDate: string): string {
   }).format(new Date(isoDate));
 }
 
-export async function buildRaidAnnouncementEmbed(state: RaidState) {
+export async function buildRaidAnnouncementEmbed(state: RaidState, guildId: string) {
   const raidPokemon = state.raidPokemon;
   const pokemonName = raidPokemon?.name ?? 'Pokémon inconnu';
   const zoneLabel = raidPokemon?.zone ?? state.zone ?? 'Zone inconnue';
@@ -26,21 +26,21 @@ export async function buildRaidAnnouncementEmbed(state: RaidState) {
     : 'Inconnue';
 
   const pokemonFromRaid =
-    raidPokemon?.name ? await getPokemonByName(raidPokemon.name) : null;
+    raidPokemon?.name ? await getPokemonByName(guildId, raidPokemon.name) : null;
    const spriteUrl = pokemonFromRaid
     ? getPokemonSpriteUrl(false, pokemonFromRaid)
     : '';
 
   const title = `🚨 Un ${pokemonName} enragé attaque le centre de recherche !`;
-
+  const pokemonTypes = raidPokemon?.types ?? [];
   const attackType = raidPokemon?.attackType;
   const attackTypeLabel = attackType ? getTypeLabel(attackType) : '?';
 
   const description = [
     `Le centre de recherche est en alerte.`,
     `Un **${pokemonName}** provenant de **${zoneLabel}** approche.`,
-    `Son type d'attaque : **${attackTypeLabel}**`,
-    '',
+    `Types : ${pokemonTypes.map((t) => getTypeLabel(t)).join(' / ')}`,
+    `Son type d'attaque : **${attackTypeLabel}**`,    '',
     'Pour participer : `/raid <pokemon> [typeAttaque]`',
   ].join('\n');
 

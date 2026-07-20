@@ -6,37 +6,52 @@ import { tryCatchPokemon } from "../methods/pokemon/tryCatchPokemon";
 import { handleNoPokemonFound } from "../methods/pokemon/handleNoPokemonFound";
 import { handleSuccessfulCapture } from "../methods/pokemon/handleSuccessfulCapture";
 import { createProfileIfNeeded } from "../methods/player/createProfileIfNeeded";
+import { ensureGuildDataFiles } from "../config/guilds";
 
 export async function captureCommand(interaction: any) {
   await interaction.deferReply();
-  createProfileIfNeeded(interaction);
-  
-  const location = await resolveCaptureLocation(interaction);
+
+  const guildId = interaction.guildId;
+  if (!guildId) {
+    await interaction.editReply("Cette commande n'est disponible que sur un serveur.");
+    return;
+  }
+  ensureGuildDataFiles(guildId);
+
+  createProfileIfNeeded(interaction, guildId);
+
+  const location = await resolveCaptureLocation(interaction, guildId);
   if (!location) return;
 
-  logCaptureLocationSelection(location);
+  logCaptureLocationSelection(guildId, location);
 
   const { generation, zone } = location;
 
-  const canCatch = await checkIfUserCanCatch(interaction);
+  const canCatch = await checkIfUserCanCatch(interaction, guildId);
   if (!canCatch) return;
 
-  const player = getCapturePlayer(interaction);
+  const player = getCapturePlayer(interaction, guildId);
   if (!player) return;
 
   const { pokemonCatched, rarity } = await tryCatchPokemon(
+    guildId,
     player,
     generation,
     zone,
   );
 
   if (!pokemonCatched) {
+<<<<<<< HEAD
+    await handleNoPokemonFound(interaction, guildId, rarity);
+=======
     await handleNoPokemonFound(interaction, player, rarity);
+>>>>>>> c8850500bb4ea9259c8ecf8e5ef6ec336a7462b3
     return;
   }
 
   await handleSuccessfulCapture(
     interaction,
+    guildId,
     player,
     pokemonCatched,
     rarity,

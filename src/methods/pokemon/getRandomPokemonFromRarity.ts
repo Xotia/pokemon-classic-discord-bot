@@ -1,27 +1,19 @@
-import { POKEMON_DB } from '../../config/paths';
-import { POKEMON_GEN1_DB } from '../../config/paths';
-import { POKEMON_GEN2_DB } from '../../config/paths';
+import { getPokemonCatalog } from '../../utils/pokemonCatalog';
 import { Pokemon } from '../../types/Pokemon';
-import logger from '../../utils/logger';
+import { getLoggerForGuild } from '../../utils/logger';
 
 export function getRandomPokemonFromRarity(
+  guildId: string,
   rarity: string,
   generation: string,
   zoneId?: string  // optionnel : si fourni, filtre par zone
 ): Pokemon | null {
-  let pool: Pokemon[];
+  const generationNumber = Number(generation.replace('gen', ''));
+  const catalog = getPokemonCatalog(guildId);
 
-  switch (generation) {
-    case 'gen1':
-      pool = require(POKEMON_GEN1_DB).filter((p: Pokemon) => p.rarity === rarity);
-      break;
-    case 'gen2':
-      pool = require(POKEMON_GEN2_DB).filter((p: Pokemon) => p.rarity === rarity);
-      break;
-    default:
-      pool = require(POKEMON_DB).filter((p: Pokemon) => p.rarity === rarity);
-      break;
-  }
+  let pool = Number.isFinite(generationNumber)
+    ? catalog.filter((p) => p.generation === generationNumber && p.rarity === rarity)
+    : catalog.filter((p) => p.rarity === rarity);
 
   // Filtre par zone si fournie
   if (zoneId) {
@@ -37,6 +29,6 @@ export function getRandomPokemonFromRarity(
   const randomIndex = Math.floor(Math.random() * pool.length);
   const pokemon = pool[randomIndex];
 
-  logger.info(`🎯 Capturé: ${pokemon.name} (${rarity}${zoneId ? ` | ${zoneId}` : ''})`);
+  getLoggerForGuild(guildId).info(`🎯 Capturé: ${pokemon.name} (${rarity}${zoneId ? ` | ${zoneId}` : ''})`);
   return pokemon;
 }

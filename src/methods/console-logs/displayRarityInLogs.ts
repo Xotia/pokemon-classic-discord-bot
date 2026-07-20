@@ -1,5 +1,5 @@
-import logger from "../../utils/logger";
+import { getLoggerForGuild } from "../../utils/logger";
 
-export function displayRarityInLogs(rarity: string){
-    logger.info(`Rareté du Pokémon capturé : ${rarity}`);
+export function displayRarityInLogs(guildId: string, rarity: string){
+    getLoggerForGuild(guildId).info(`Rareté du Pokémon capturé : ${rarity}`);
 }

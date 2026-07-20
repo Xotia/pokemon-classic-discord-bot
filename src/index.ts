@@ -1,6 +1,6 @@
 import "dotenv/config";
 
-import { Client, GatewayIntentBits, Events } from "discord.js";
+import { Client, GatewayIntentBits, Events, Interaction } from "discord.js";
 
 import { pingCommand } from "./commands/pingCommand";
 import { cheatCommand } from "./commands/cheatCommand";
@@ -16,10 +16,14 @@ import { startRaidScheduler } from './features/raid/raidScheduler.js';
 
 import { raidCommand } from "./commands/raidCommand";
 import { loadUnlockedZones } from "./utils/loadUnlockedZones";
-import { readPlayers, readPokemonList } from "./features/raid/prepareRaidDefenderFromPlayerPokemon";
+import { readPlayers } from "./features/raid/prepareRaidDefenderFromPlayerPokemon";
+import { getPokemonCatalog } from "./utils/pokemonCatalog";
 import { TYPE_LABELS } from "./config/typeLabels";
-import path from "node:path";
 import { getRaidInfo } from "./commands/getRaidInfo";
+import { playersDb } from "./config/paths";
+import { loadGuildRegistry, getGuildConfig, ensureGuildDataFiles } from "./config/guilds";
+import { getLoggerForGuild } from "./utils/logger";
+import { getShinyRate } from "./config/guildSettings";
 
 type Zone = { id: string; label: string };
 
@@ -33,14 +37,57 @@ const client = new Client({
 
 startRaidScheduler(client);
 
+client.on(Events.Error, (error) => {
+  logger.error({ err: error }, "❌ Erreur client Discord non gérée");
+});
+
 // Event ready
 client.once(Events.ClientReady, (c: typeof client) => {
   logger.info(`Bot connecté ! Connecté en tant que ${c.user?.tag}`);
+
+  for (const guild of loadGuildRegistry()) {
+    ensureGuildDataFiles(guild.guildId);
+    getLoggerForGuild(guild.guildId).info(`[GUILDS] Données prêtes pour ${guild.name} (${guild.guildId}).`);
+  }
 });
 
 client.login(process.env.DISCORD_TOKEN);
 
 client.on(Events.InteractionCreate, async (interaction) => {
+  try {
+    await handleInteraction(interaction);
+  } catch (error) {
+    console.error("❌ Erreur non gérée dans interactionCreate:", error);
+
+    if (interaction.guildId) {
+      getLoggerForGuild(interaction.guildId).error(
+        { err: error },
+        "❌ Erreur non gérée dans interactionCreate",
+      );
+    }
+
+    if (interaction.isRepliable()) {
+      try {
+        if (interaction.deferred && !interaction.replied) {
+          await interaction.editReply("❌ Une erreur est survenue lors du traitement de la commande.");
+        } else if (!interaction.deferred && !interaction.replied) {
+          await interaction.reply({
+            content: "❌ Une erreur est survenue lors du traitement de la commande.",
+            ephemeral: true,
+          });
+        }
+      } catch {
+        // L'interaction a probablement déjà expiré (ex: DiscordAPIError 10062) : rien à faire de plus.
+      }
+    }
+  }
+});
+
+async function handleInteraction(interaction: Interaction) {
+  if (!interaction.guildId || !getGuildConfig(interaction.guildId)) return;
+
+  const logger = getLoggerForGuild(interaction.guildId);
+
   if (interaction.isAutocomplete()) {
     if (interaction.commandName === "raid") {
       const focusedOption = interaction.options.getFocused(true);
@@ -53,7 +100,7 @@ client.on(Events.InteractionCreate, async (interaction) => {
           let availableTypes: string[];
 
           if (pokemonName) {
-            const pokemonList = await readPokemonList(path.resolve("data/pokemon-list.json"));
+            const pokemonList = getPokemonCatalog(interaction.guildId);
             const pokemon = pokemonList.find((p) => p.name.toLowerCase() === pokemonName.toLowerCase());
             availableTypes = pokemon ? pokemon.types : Object.keys(TYPE_LABELS);
           } else {
@@ -77,13 +124,17 @@ client.on(Events.InteractionCreate, async (interaction) => {
 
       if (focusedOption.name === "pokemon_name") {
         try {
+          if (!interaction.guildId) {
+            await interaction.respond([]);
+            return;
+          }
           const search = focusedOption.value.trim().toLowerCase();
           const typeOption = interaction.options.data.find(o => o.name === "type");
           const rawType = (typeOption?.value as string | undefined) ?? null;
           const selectedType = rawType
             ? Object.entries(TYPE_LABELS).find(([key, label]) => key === rawType || label === rawType)?.[0] ?? rawType
             : null;
-          const players = await readPlayers(path.resolve("data/players.json"));
+          const players = await readPlayers(playersDb(interaction.guildId));
           const player = players[interaction.user.id];
 
           if (!player?.captureList) {
@@ -95,7 +146,7 @@ client.on(Events.InteractionCreate, async (interaction) => {
             .filter(([, stats]) => stats.capturedInCurrentSeason)
             .map(([id]) => Number(id));
 
-          const pokemonList = await readPokemonList(path.resolve("data/pokemon-list.json"));
+          const pokemonList = getPokemonCatalog(interaction.guildId);
 
           const suggestions = pokemonList
             .filter((p) => seasonPokemonIds.includes(p.id))
@@ -116,9 +167,13 @@ client.on(Events.InteractionCreate, async (interaction) => {
       const focusedOption = interaction.options.getFocused(true);
 
       if (focusedOption.name === "zone") {
+        if (!interaction.guildId) {
+          await interaction.respond([]);
+          return;
+        }
         const generation = interaction.options.getString("generation");
         const search = focusedOption.value.toLowerCase();
-        const unlockedZones = loadUnlockedZones();
+        const unlockedZones = loadUnlockedZones(interaction.guildId);
 
         const pool: Zone[] =
           generation && generation in unlockedZones
@@ -199,7 +254,7 @@ client.on(Events.InteractionCreate, async (interaction) => {
   if (interaction.commandName === "get-shiny-rate") {
     return interaction.reply(
       "Le taux d'apparition des Pokémon shinys est de 1 chance sur " +
-        process.env.SHINY_RATE,
+        getShinyRate(interaction.guildId),
     );
   }
 
@@ -218,4 +273,4 @@ client.on(Events.InteractionCreate, async (interaction) => {
   if (interaction.commandName === "raid-squad") {
     return getRaidInfo(interaction);
   }
-});
+}

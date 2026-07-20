@@ -1,16 +1,17 @@
 import { Player } from "../../types/Player";
 import { getPlayer } from "../../utils/loadPlayer";
-import logger from "../../utils/logger";
+import { getLoggerForGuild } from "../../utils/logger";
 import { getPlayerIdByName } from "./getPlayerIdByName";
 
-export function getUniquePokemonCaughtByPlayer(player: string): number {
+export function getUniquePokemonCaughtByPlayer(guildId: string, player: string): number {
+    const logger = getLoggerForGuild(guildId);
     try {
-        const userId = getPlayerIdByName(player);
+        const userId = getPlayerIdByName(guildId, player);
         if (!userId) {
             logger.info(`Joueur "${player}" introuvable.`);
             return 0;
         }
-        const data = getPlayer(userId) as Player | null;
+        const data = getPlayer(guildId, userId) as Player | null;
         if (!data || Object.keys(data.captureList ?? {}).length === 0) {
             logger.info(`Le joueur ${userId} n'a encore capturé aucun Pokémon.`);
             return 0;

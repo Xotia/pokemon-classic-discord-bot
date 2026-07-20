@@ -1,8 +1,22 @@
 import fs from 'fs';
 
-import { PLAYERS_DB } from '../config/paths'
+import { playersDb } from '../config/paths'
 
-const raw = fs.readFileSync(PLAYERS_DB, 'utf-8');
+function parseGuildId(argv: string[]): string {
+    const index = argv.indexOf('--guildId');
+    const guildId = index !== -1 ? argv[index + 1] : undefined;
+
+    if (!guildId) {
+        console.error('Usage: ts-node src/scripts/migrate-players.ts --guildId <id>');
+        process.exit(1);
+    }
+
+    return guildId;
+}
+
+const guildId = parseGuildId(process.argv.slice(2));
+
+const raw = fs.readFileSync(playersDb(guildId), 'utf-8');
 const players = JSON.parse(raw);
 
 Object.entries(players).forEach(([userId, player]: [string, any]) => {
@@ -17,6 +31,6 @@ Object.entries(players).forEach(([userId, player]: [string, any]) => {
 
 });
 
-fs.writeFileSync(PLAYERS_DB, JSON.stringify(players, null, 2));
+fs.writeFileSync(playersDb(guildId), JSON.stringify(players, null, 2));
 
 console.log('Migration terminée');

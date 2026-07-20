@@ -1,21 +1,22 @@
 import fs from 'node:fs/promises';
-import { STATS_DB } from '../../../config/paths';
-import logger from '../../../utils/logger';
+import { statsDb } from '../../../config/paths';
+import { getLoggerForGuild } from '../../../utils/logger';
 
-export async function addRarityInPlayerStats(playerName: string, rarity: string): Promise<void> {
+export async function addRarityInPlayerStats(guildId: string, playerName: string, rarity: string): Promise<void> {
+    const logger = getLoggerForGuild(guildId);
     try {
-        const raw = await fs.readFile(STATS_DB, 'utf-8');
+        const raw = await fs.readFile(statsDb(guildId), 'utf-8');
         let stats = JSON.parse(raw);
 
         if (!stats) stats = {};
-        if (!stats.rarity) stats.rarity = {};
-        if (!stats.rarity[playerName]) stats.rarity[playerName] = {};
+        if (!stats.rarityByPlayer) stats.rarityByPlayer = {};
+        if (!stats.rarityByPlayer[playerName]) stats.rarityByPlayer[playerName] = {};
 
-        stats.rarity[playerName][rarity] = (stats.rarity[playerName][rarity] || 0) + 1;
+        stats.rarityByPlayer[playerName][rarity] = (stats.rarityByPlayer[playerName][rarity] || 0) + 1;
 
-        await fs.writeFile(STATS_DB, JSON.stringify(stats, null, 2), 'utf-8');
+        await fs.writeFile(statsDb(guildId), JSON.stringify(stats, null, 2), 'utf-8');
 
-        logger.info(`✨ ${playerName} → rarity: ${stats.rarity[playerName][rarity]}`);
+        logger.info(`✨ ${playerName} → rarity: ${stats.rarityByPlayer[playerName][rarity]}`);
 
     } catch (error) {
         console.error('❌ Erreur addRarityInPlayerStats:', (error as Error).message);

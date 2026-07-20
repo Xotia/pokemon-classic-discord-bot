@@ -1,9 +1,11 @@
 import { CaptureLocationSelection } from '../../types/zones';
-import logger from '../../utils/logger';
+import { getLoggerForGuild } from '../../utils/logger';
 
 export function logCaptureLocationSelection(
+  guildId: string,
   selection: CaptureLocationSelection,
 ): void {
+  const logger = getLoggerForGuild(guildId);
   const {
     generation,
     zone,

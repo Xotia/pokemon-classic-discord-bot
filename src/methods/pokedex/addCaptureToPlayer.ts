@@ -1,6 +1,6 @@
-import { STATS_DB } from "../../config/paths";
+import { statsDb } from "../../config/paths";
 import { Player } from "../../types/Player";
-import logger from "../../utils/logger";
+import { getLoggerForGuild } from "../../utils/logger";
 import { promises as fs } from "fs";
 
 interface StatsFile {
@@ -25,9 +25,9 @@ function normalizePokemonName(pokemonName: string): string {
   return normalized;
 }
 
-async function readStatsFile(): Promise<StatsFile> {
+async function readStatsFile(guildId: string): Promise<StatsFile> {
   try {
-    const statsRaw = await fs.readFile(STATS_DB, "utf-8");
+    const statsRaw = await fs.readFile(statsDb(guildId), "utf-8");
     const parsed = JSON.parse(statsRaw) as Partial<StatsFile>;
 
     return {
@@ -46,15 +46,17 @@ async function readStatsFile(): Promise<StatsFile> {
     }
 
     throw new Error(
-      `Impossible de lire ${STATS_DB}: ${error instanceof Error ? error.message : String(error)}`,
+      `Impossible de lire ${statsDb(guildId)}: ${error instanceof Error ? error.message : String(error)}`,
     );
   }
 }
 
 export async function addCaptureToPlayer(
+  guildId: string,
   player: Player | null | undefined,
   pokemonName: string,
 ): Promise<void> {
+  const logger = getLoggerForGuild(guildId);
   const playerName = getSafePlayerName(player);
   const safePokemonName = normalizePokemonName(pokemonName);
 
@@ -65,13 +67,13 @@ export async function addCaptureToPlayer(
     return;
   }
 
-  const stats = await readStatsFile();
+  const stats = await readStatsFile(guildId);
 
   stats.pokemonPerPlayer[playerName] ??= {};
   stats.pokemonPerPlayer[playerName][safePokemonName] ??= 0;
   stats.pokemonPerPlayer[playerName][safePokemonName] += 1;
 
-  await fs.writeFile(STATS_DB, JSON.stringify(stats, null, 2), "utf-8");
+  await fs.writeFile(statsDb(guildId), JSON.stringify(stats, null, 2), "utf-8");
 
   logger.info(
     `${playerName} : Pokémon ${safePokemonName} => total: ${stats.pokemonPerPlayer[playerName][safePokemonName]} captures`,

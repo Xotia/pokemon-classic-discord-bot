@@ -1,12 +1,7 @@
-import fs from "fs";
-import { POKEMON_DB } from "../../config/paths";
+import { getPokemonCatalog } from "../../utils/pokemonCatalog";
 import { Pokemon } from "../../types/Pokemon";
 
-let cache: Pokemon[] | null = null;
-
-export function getPokemonById(id: number): Pokemon | null {
-  if (!cache) {
-    cache = JSON.parse(fs.readFileSync(POKEMON_DB, "utf-8")) as Pokemon[];
-  }
-  return cache.find((p) => p.id === id) ?? null;
+export function getPokemonById(guildId: string, id: number): Pokemon | null {
+  const catalog = getPokemonCatalog(guildId);
+  return catalog.find((p) => p.id === id) ?? null;
 }
