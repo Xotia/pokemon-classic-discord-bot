@@ -9,8 +9,22 @@ export interface RarityComponents {
   c7_oneTimeOnly: number;
 }
 
+export interface RawRarityData {
+  isLegendary: boolean;
+  isMythical: boolean;
+  maxEncounterChance: number | null;
+  gamesCount: number;
+  versions: string[];
+  methods: string[];
+  easiestMethod: string | null;
+  isVersionExclusive: boolean;
+  evolutionDepth: number | null;
+  evolutionTrigger: string | null;
+}
+
 export interface RarityResult {
   id: number;
+  name: string | null;
   rarity: Rarity;
   appliedRule:
     | "priority:species_fetch_failed"
@@ -20,6 +34,7 @@ export interface RarityResult {
     | "composite";
   finalScore: number | null;
   components: RarityComponents | null;
+  rawData: RawRarityData | null;
   oneTimeOnly: boolean;
-  flooredToEpic: boolean;
+  flooredByChain: boolean;
 }

@@ -45,24 +45,33 @@ export const SCORE_THRESHOLDS: { max: number; tier: Rarity }[] = [
 ];
 
 /**
- * True if the Pokémon's encounters response contains a "gift" or
- * "gift-egg" method (starters/fossils/unique NPC gifts).
+ * True if gift/gift-egg is the ONLY method this Pokémon is ever obtained
+ * by (starters/fossils/unique NPC gifts). A Pokémon that's gifted in one
+ * edition but freely wild-catchable in others (e.g. Pikachu in Yellow)
+ * must NOT count as one-time-only — it's still common overall.
  */
 export function isOneTimeOnly(encounters: any[]): boolean {
   if (!Array.isArray(encounters)) return false;
+
+  const methods = new Set<string>();
   for (const locationEntry of encounters) {
     const versionDetails = locationEntry?.version_details ?? [];
     for (const versionDetail of versionDetails) {
       const encounterDetails = versionDetail?.encounter_details ?? [];
       for (const detail of encounterDetails) {
         const methodName = detail?.method?.name;
-        if (methodName === "gift" || methodName === "gift-egg") {
-          return true;
-        }
+        if (methodName) methods.add(methodName);
       }
     }
   }
-  return false;
+
+  const hasGift = methods.has("gift") || methods.has("gift-egg");
+  if (!hasGift) return false;
+
+  for (const method of methods) {
+    if (method !== "gift" && method !== "gift-egg") return false;
+  }
+  return true;
 }
 
 /**
@@ -221,6 +230,95 @@ export function computeOneTimeOnlyComponent(encounters: any[]): number {
   return isOneTimeOnly(encounters) ? 100 : 0;
 }
 
+/**
+ * Raw encounter/spawn rate (%) behind C1 — the max "chance" value found
+ * across all games, or null if no numeric chance was ever recorded.
+ */
+export function getMaxEncounterChance(encounters: any[]): number | null {
+  let maxChance = 0;
+  let found = false;
+
+  for (const locationEntry of encounters ?? []) {
+    const versionDetails = locationEntry?.version_details ?? [];
+    for (const versionDetail of versionDetails) {
+      const encounterDetails = versionDetail?.encounter_details ?? [];
+      for (const detail of encounterDetails) {
+        if (typeof detail?.chance === "number") {
+          found = true;
+          if (detail.chance > maxChance) maxChance = detail.chance;
+        }
+      }
+    }
+  }
+
+  return found ? maxChance : null;
+}
+
+/**
+ * Raw list of distinct game versions the Pokémon appears in, behind C3/C5.
+ */
+export function getDistinctVersionNames(encounters: any[]): string[] {
+  return Array.from(collectDistinctVersionNames(encounters)).sort();
+}
+
+/**
+ * Raw list of distinct obtaining methods found, behind C4/C7.
+ */
+export function getDistinctMethods(encounters: any[]): string[] {
+  const methods = new Set<string>();
+  for (const locationEntry of encounters ?? []) {
+    const versionDetails = locationEntry?.version_details ?? [];
+    for (const versionDetail of versionDetails) {
+      const encounterDetails = versionDetail?.encounter_details ?? [];
+      for (const detail of encounterDetails) {
+        const methodName = detail?.method?.name;
+        if (methodName) methods.add(methodName);
+      }
+    }
+  }
+  return Array.from(methods).sort();
+}
+
+/**
+ * The single easiest (lowest-difficulty) obtaining method found, behind C4.
+ */
+export function getEasiestMethod(encounters: any[]): string | null {
+  const methods = getDistinctMethods(encounters);
+  if (methods.length === 0) return null;
+
+  let min = Infinity;
+  let easiest: string | null = null;
+  for (const method of methods) {
+    const difficulty = METHOD_DIFFICULTY[method] ?? DEFAULT_METHOD_DIFFICULTY;
+    if (difficulty < min) {
+      min = difficulty;
+      easiest = method;
+    }
+  }
+  return easiest;
+}
+
+/**
+ * Raw evolution-chain position (depth + trigger) behind C6, or null if the
+ * species couldn't be located in the chain.
+ */
+export function getEvolutionInfo(
+  evolutionChain: { chain: EvolutionChainNode } | null | undefined,
+  speciesName: string,
+): { depth: number; trigger: string | null } | null {
+  const root = evolutionChain?.chain;
+  if (!root) return null;
+
+  const located = findSpeciesNode(root, speciesName);
+  if (!located) return null;
+
+  const { depth, node } = located;
+  const trigger =
+    depth > 0 ? node?.evolution_details?.[0]?.trigger?.name ?? null : null;
+
+  return { depth, trigger };
+}
+
 export function mapScoreToRarityTier(score: number): Rarity {
   for (const { max, tier } of SCORE_THRESHOLDS) {
     if (score <= max) return tier;
@@ -229,15 +327,31 @@ export function mapScoreToRarityTier(score: number): Rarity {
 }
 
 /**
- * Starters/fossils/unique gifts never fall below Epic, even if their
- * raw composite score would otherwise land them in a lower tier.
+ * Cascading, depth-based floor keyed off the evolution chain's ROOT.
+ *
+ * Starters/fossils/unique gifts (one-time-only at the chain root) never
+ * let their evolutions fall below the root's own tier — an evolution
+ * should never be easier to get than what it evolved from. The floor
+ * rises with evolution depth: the root itself floors at epic, its first
+ * evolution floors at ultra_rare, and further evolutions floor at mythic.
+ *
+ * `rootOneTimeOnly` reflects whether the CHAIN ROOT (not necessarily the
+ * Pokémon being scored) is one-time-only; `depth` is the Pokémon's own
+ * position in the evolution chain (0 = root).
  */
-export function applyEpicFloor(tier: Rarity, oneTimeOnly: boolean): Rarity {
-  if (!oneTimeOnly) return tier;
+export function applyOneTimeOnlyChainFloor(
+  tier: Rarity,
+  rootOneTimeOnly: boolean,
+  depth: number,
+): Rarity {
+  if (!rootOneTimeOnly) return tier;
 
-  const epicIndex = RARITY_ORDER.indexOf("epic");
+  const floorTier: Rarity =
+    depth <= 0 ? "epic" : depth === 1 ? "ultra_rare" : "mythic";
+
+  const floorIndex = RARITY_ORDER.indexOf(floorTier);
   const tierIndex = RARITY_ORDER.indexOf(tier);
 
-  if (tierIndex < epicIndex) return "epic";
+  if (tierIndex < floorIndex) return floorTier;
   return tier;
 }

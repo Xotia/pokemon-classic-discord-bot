@@ -16,6 +16,15 @@ const RAID_TIMEZONE = "Europe/Paris";
 
 let discordClient: Client | null = null;
 
+/**
+ * discordClient n'est normalement rempli que par startRaidScheduler() au démarrage du bot.
+ * Un script standalone qui appelle closeRaidAndResolve/openRaidRegistration directement
+ * doit d'abord passer par ici, sinon l'envoi de l'embed est silencieusement ignoré.
+ */
+export function setDiscordClient(client: Client): void {
+  discordClient = client;
+}
+
 export async function sendRaidAnnouncement(
   client: Client,
   channelId: string,
