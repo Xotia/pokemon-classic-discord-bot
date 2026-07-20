@@ -114,8 +114,12 @@ export async function computeRarity(id: number): Promise<RarityResult> {
     evolutionTrigger: evolutionInfo?.trigger ?? null,
   };
 
+  // "mythic" as a rarity tier is unrelated to PokéAPI's is_mythical flag —
+  // it's only ever reached via the one-time-only chain floor (3rd-stage
+  // starter evolutions). A truly mythical/legendary species is always
+  // "legendary" rarity, regardless of which of the two flags is set.
   if (species.is_mythical === true) {
-    const rarity = applyOneTimeOnlyChainFloor("mythic", rootOneTimeOnly, depth);
+    const rarity = applyOneTimeOnlyChainFloor("legendary", rootOneTimeOnly, depth);
     return {
       id,
       name,
@@ -125,7 +129,7 @@ export async function computeRarity(id: number): Promise<RarityResult> {
       components: null,
       rawData,
       oneTimeOnly,
-      flooredByChain: rarity !== "mythic",
+      flooredByChain: rarity !== "legendary",
     };
   }
 

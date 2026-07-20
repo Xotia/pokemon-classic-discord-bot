@@ -132,5 +132,5 @@ id,name,rarity,finalScore,appliedRule,oneTimeOnly,flooredByChain,maxEncounterCha
 382,Kyogre,legendary,,priority:is_legendary,false,false,100,6,dynamax-adventure,0
 383,Groudon,legendary,,priority:is_legendary,false,false,100,6,dynamax-adventure,0
 384,Rayquaza,legendary,,priority:is_legendary,false,false,100,11,dynamax-adventure,0
-385,Jirachi,mythic,,priority:is_mythical,false,false,100,2,colosseum-bonus-disc-us,0
-386,Deoxys,mythic,,priority:is_mythical,false,false,100,5,only-one,0
+385,Jirachi,legendary,,priority:is_mythical,false,false,100,2,colosseum-bonus-disc-us,0
+386,Deoxys,legendary,,priority:is_mythical,false,false,100,5,only-one,0

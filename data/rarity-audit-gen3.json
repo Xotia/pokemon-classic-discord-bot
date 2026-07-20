@@ -6062,7 +6062,7 @@
   {
     "id": 385,
     "name": "Jirachi",
-    "rarity": "mythic",
+    "rarity": "legendary",
     "appliedRule": "priority:is_mythical",
     "finalScore": null,
     "components": null,
@@ -6090,7 +6090,7 @@
   {
     "id": 386,
     "name": "Deoxys",
-    "rarity": "mythic",
+    "rarity": "legendary",
     "appliedRule": "priority:is_mythical",
     "finalScore": null,
     "components": null,
