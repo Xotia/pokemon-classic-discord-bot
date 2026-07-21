@@ -37,7 +37,8 @@
     },
     "oneTimeOnly": true,
     "flooredByChain": true,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 253,
@@ -62,7 +63,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 254,
@@ -87,7 +89,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 255,
@@ -127,7 +130,8 @@
     },
     "oneTimeOnly": true,
     "flooredByChain": true,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 256,
@@ -152,7 +156,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 257,
@@ -177,7 +182,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 258,
@@ -217,7 +223,8 @@
     },
     "oneTimeOnly": true,
     "flooredByChain": true,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 259,
@@ -242,7 +249,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 260,
@@ -267,7 +275,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 261,
@@ -308,7 +317,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 262,
@@ -344,7 +354,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 263,
@@ -385,7 +396,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 264,
@@ -423,7 +435,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 265,
@@ -464,7 +477,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 266,
@@ -502,7 +516,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 267,
@@ -527,7 +542,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 268,
@@ -565,7 +581,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 269,
@@ -590,7 +607,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 270,
@@ -629,7 +647,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 271,
@@ -666,7 +685,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 272,
@@ -691,7 +711,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 273,
@@ -731,7 +752,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 274,
@@ -768,7 +790,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 275,
@@ -793,7 +816,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 276,
@@ -834,7 +858,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 277,
@@ -872,7 +897,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 278,
@@ -914,7 +940,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 279,
@@ -952,7 +979,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 280,
@@ -993,7 +1021,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 281,
@@ -1018,12 +1047,13 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 282,
     "name": "Gardevoir",
-    "rarity": "ultra_rare",
+    "rarity": "mythic",
     "appliedRule": "priority:no_encounters_inherits_parent",
     "finalScore": null,
     "components": null,
@@ -1043,7 +1073,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": true
   },
   {
     "id": 283,
@@ -1081,7 +1112,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 284,
@@ -1106,7 +1138,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 285,
@@ -1147,7 +1180,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 286,
@@ -1172,7 +1206,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 287,
@@ -1210,7 +1245,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 288,
@@ -1235,7 +1271,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 289,
@@ -1260,7 +1297,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": true
+    "flooredByBaseStats": true,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 290,
@@ -1301,7 +1339,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 291,
@@ -1326,7 +1365,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 292,
@@ -1351,7 +1391,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 293,
@@ -1392,7 +1433,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 294,
@@ -1433,7 +1475,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 295,
@@ -1458,7 +1501,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 296,
@@ -1500,7 +1544,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 297,
@@ -1538,7 +1583,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 298,
@@ -1563,7 +1609,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 299,
@@ -1601,7 +1648,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 300,
@@ -1643,7 +1691,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 301,
@@ -1668,7 +1717,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 302,
@@ -1707,7 +1757,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 303,
@@ -1746,7 +1797,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 304,
@@ -1787,7 +1839,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 305,
@@ -1825,12 +1878,13 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 306,
     "name": "Galeking",
-    "rarity": "very_rare",
+    "rarity": "epic",
     "appliedRule": "priority:no_encounters_inherits_parent",
     "finalScore": null,
     "components": null,
@@ -1850,7 +1904,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": true
   },
   {
     "id": 307,
@@ -1890,7 +1945,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 308,
@@ -1927,7 +1983,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 309,
@@ -1968,7 +2025,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 310,
@@ -2006,7 +2064,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 311,
@@ -2048,7 +2107,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 312,
@@ -2089,7 +2149,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 313,
@@ -2127,7 +2188,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 314,
@@ -2165,20 +2227,21 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 315,
     "name": "Rosélia",
     "rarity": "rare",
     "appliedRule": "composite",
-    "finalScore": 32.3125,
+    "finalScore": 34.1875,
     "components": {
       "c1_encounterRate": 30,
       "c3_games": 84,
       "c4_method": 0,
       "c5_exclusivity": 25,
-      "c6_evolution": 30,
+      "c6_evolution": 45,
       "c7_oneTimeOnly": 0
     },
     "rawData": {
@@ -2205,7 +2268,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 316,
@@ -2243,7 +2307,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 317,
@@ -2268,7 +2333,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 318,
@@ -2307,7 +2373,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 319,
@@ -2348,7 +2415,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 320,
@@ -2387,12 +2455,13 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 321,
     "name": "Wailord",
-    "rarity": "epic",
+    "rarity": "ultra_rare",
     "appliedRule": "composite",
     "finalScore": 67.62499999999999,
     "components": {
@@ -2425,7 +2494,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": true
   },
   {
     "id": 322,
@@ -2466,7 +2536,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 323,
@@ -2503,7 +2574,8 @@
     },
     "oneTimeOnly": true,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 324,
@@ -2541,7 +2613,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 325,
@@ -2582,7 +2655,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 326,
@@ -2607,7 +2681,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 327,
@@ -2648,7 +2723,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 328,
@@ -2686,7 +2762,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 329,
@@ -2711,12 +2788,13 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 330,
     "name": "Libégon",
-    "rarity": "very_rare",
+    "rarity": "epic",
     "appliedRule": "priority:no_encounters_inherits_parent",
     "finalScore": null,
     "components": null,
@@ -2736,7 +2814,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": true
   },
   {
     "id": 331,
@@ -2774,7 +2853,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 332,
@@ -2799,7 +2879,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 333,
@@ -2840,7 +2921,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 334,
@@ -2878,7 +2960,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 335,
@@ -2914,7 +2997,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 336,
@@ -2951,7 +3035,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 337,
@@ -2988,7 +3073,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 338,
@@ -3026,7 +3112,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 339,
@@ -3065,7 +3152,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 340,
@@ -3103,7 +3191,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 341,
@@ -3142,7 +3231,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 342,
@@ -3167,7 +3257,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 343,
@@ -3205,12 +3296,13 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 344,
     "name": "Kaorine",
-    "rarity": "rare",
+    "rarity": "very_rare",
     "appliedRule": "composite",
     "finalScore": 42.125,
     "components": {
@@ -3243,7 +3335,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": true
   },
   {
     "id": 345,
@@ -3281,7 +3374,8 @@
     },
     "oneTimeOnly": true,
     "flooredByChain": true,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 346,
@@ -3306,7 +3400,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 347,
@@ -3344,7 +3439,8 @@
     },
     "oneTimeOnly": true,
     "flooredByChain": true,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 348,
@@ -3369,7 +3465,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 349,
@@ -3407,12 +3504,13 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 350,
     "name": "Milobellus",
-    "rarity": "very_rare",
+    "rarity": "ultra_rare",
     "appliedRule": "priority:no_encounters_inherits_parent",
     "finalScore": null,
     "components": null,
@@ -3432,7 +3530,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": true
   },
   {
     "id": 351,
@@ -3472,7 +3571,8 @@
     },
     "oneTimeOnly": true,
     "flooredByChain": true,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 352,
@@ -3514,7 +3614,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 353,
@@ -3555,7 +3656,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 354,
@@ -3592,7 +3694,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 355,
@@ -3630,7 +3733,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 356,
@@ -3666,7 +3770,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 357,
@@ -3704,20 +3809,21 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 358,
     "name": "Éoko",
-    "rarity": "very_rare",
+    "rarity": "epic",
     "appliedRule": "composite",
-    "finalScore": 59.375,
+    "finalScore": 61.25,
     "components": {
       "c1_encounterRate": 96,
       "c3_games": 88,
       "c4_method": 0,
       "c5_exclusivity": 50,
-      "c6_evolution": 30,
+      "c6_evolution": 45,
       "c7_oneTimeOnly": 0
     },
     "rawData": {
@@ -3742,7 +3848,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 359,
@@ -3780,7 +3887,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 360,
@@ -3821,7 +3929,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 361,
@@ -3862,7 +3971,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 362,
@@ -3887,7 +3997,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 363,
@@ -3929,7 +4040,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 364,
@@ -3954,12 +4066,13 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 365,
     "name": "Kaimorse",
-    "rarity": "rare",
+    "rarity": "very_rare",
     "appliedRule": "priority:no_encounters_inherits_parent",
     "finalScore": null,
     "components": null,
@@ -3979,7 +4092,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": true
   },
   {
     "id": 366,
@@ -4017,12 +4131,13 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 367,
     "name": "Serpang",
-    "rarity": "very_rare",
+    "rarity": "epic",
     "appliedRule": "priority:no_encounters_inherits_parent",
     "finalScore": null,
     "components": null,
@@ -4042,12 +4157,13 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 368,
     "name": "Rosabyss",
-    "rarity": "very_rare",
+    "rarity": "epic",
     "appliedRule": "priority:no_encounters_inherits_parent",
     "finalScore": null,
     "components": null,
@@ -4067,7 +4183,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 369,
@@ -4105,7 +4222,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 370,
@@ -4144,7 +4262,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 371,
@@ -4185,7 +4304,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 372,
@@ -4210,7 +4330,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 373,
@@ -4235,7 +4356,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": true
+    "flooredByBaseStats": true,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 374,
@@ -4275,7 +4397,8 @@
     },
     "oneTimeOnly": true,
     "flooredByChain": true,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 375,
@@ -4300,7 +4423,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 376,
@@ -4325,7 +4449,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 377,
@@ -4358,7 +4483,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 378,
@@ -4391,7 +4517,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 379,
@@ -4424,7 +4551,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 380,
@@ -4460,7 +4588,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 381,
@@ -4496,7 +4625,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 382,
@@ -4527,7 +4657,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 383,
@@ -4558,7 +4689,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 384,
@@ -4591,7 +4723,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 385,
@@ -4622,7 +4755,8 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   },
   {
     "id": 386,
@@ -4655,6 +4789,7 @@
     },
     "oneTimeOnly": false,
     "flooredByChain": false,
-    "flooredByBaseStats": false
+    "flooredByBaseStats": false,
+    "flooredByBaseStatBonus": false
   }
 ]

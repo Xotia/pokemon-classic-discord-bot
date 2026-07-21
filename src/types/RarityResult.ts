@@ -41,4 +41,5 @@ export interface RarityResult {
   oneTimeOnly: boolean;
   flooredByChain: boolean;
   flooredByBaseStats: boolean;
+  flooredByBaseStatBonus: boolean;
 }

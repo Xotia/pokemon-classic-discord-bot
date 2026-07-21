@@ -14,6 +14,8 @@ import {
   mapScoreToRarityTier,
   applyOneTimeOnlyChainFloor,
   applyBaseStatFloor,
+  applyBaseStatTierBonus,
+  EvolutionHassle,
   getMaxEncounterChance,
   getDistinctVersionNames,
   getDistinctMethods,
@@ -123,6 +125,7 @@ export async function computeRarity(
       oneTimeOnly: false,
       flooredByChain: false,
       flooredByBaseStats: false,
+      flooredByBaseStatBonus: false,
     };
   }
 
@@ -208,7 +211,8 @@ export async function computeRarity(
       rootOneTimeOnly,
       depth,
     );
-    const rarity = applyBaseStatFloor(rarityBeforeBaseStatFloor, baseStatTotal);
+    const rarityBeforeBaseStatBonus = applyBaseStatFloor(rarityBeforeBaseStatFloor, baseStatTotal);
+    const rarity = applyBaseStatTierBonus(rarityBeforeBaseStatBonus, baseStatTotal);
     return {
       id,
       name,
@@ -219,7 +223,8 @@ export async function computeRarity(
       rawData,
       oneTimeOnly,
       flooredByChain: rarityBeforeBaseStatFloor !== "legendary",
-      flooredByBaseStats: rarity !== rarityBeforeBaseStatFloor,
+      flooredByBaseStats: rarityBeforeBaseStatBonus !== rarityBeforeBaseStatFloor,
+      flooredByBaseStatBonus: rarity !== rarityBeforeBaseStatBonus,
     };
   }
 
@@ -229,7 +234,8 @@ export async function computeRarity(
       rootOneTimeOnly,
       depth,
     );
-    const rarity = applyBaseStatFloor(rarityBeforeBaseStatFloor, baseStatTotal);
+    const rarityBeforeBaseStatBonus = applyBaseStatFloor(rarityBeforeBaseStatFloor, baseStatTotal);
+    const rarity = applyBaseStatTierBonus(rarityBeforeBaseStatBonus, baseStatTotal);
     return {
       id,
       name,
@@ -240,7 +246,8 @@ export async function computeRarity(
       rawData,
       oneTimeOnly,
       flooredByChain: rarityBeforeBaseStatFloor !== "legendary",
-      flooredByBaseStats: rarity !== rarityBeforeBaseStatFloor,
+      flooredByBaseStats: rarityBeforeBaseStatBonus !== rarityBeforeBaseStatFloor,
+      flooredByBaseStatBonus: rarity !== rarityBeforeBaseStatBonus,
     };
   }
 
@@ -252,7 +259,8 @@ export async function computeRarity(
       const parentId = getParentSpeciesId(evolutionChain, species.name);
       if (parentId !== null) {
         const parentResult = await computeRarity(parentId, allowedVersions);
-        const bump = evolutionInfo?.trigger === "level-up" ? 1 : 2;
+        const hassleBumpMap: Record<EvolutionHassle, number> = { plain: 0, moderate: 1, trade: 2 };
+        const bump = 1 + hassleBumpMap[evolutionInfo?.hassle ?? "plain"];
         const mythicIndex = RARITY_ORDER.indexOf("mythic");
         const parentIndex = RARITY_ORDER.indexOf(parentResult.rarity);
         const bumpedIndex = Math.min(parentIndex + bump, mythicIndex);
@@ -266,7 +274,8 @@ export async function computeRarity(
       rootOneTimeOnly,
       depth,
     );
-    const rarity = applyBaseStatFloor(rarityBeforeBaseStatFloor, baseStatTotal);
+    const rarityBeforeBaseStatBonus = applyBaseStatFloor(rarityBeforeBaseStatFloor, baseStatTotal);
+    const rarity = applyBaseStatTierBonus(rarityBeforeBaseStatBonus, baseStatTotal);
     return {
       id,
       name,
@@ -277,7 +286,8 @@ export async function computeRarity(
       rawData,
       oneTimeOnly,
       flooredByChain: rarityBeforeBaseStatFloor !== tierBeforeFloor,
-      flooredByBaseStats: rarity !== rarityBeforeBaseStatFloor,
+      flooredByBaseStats: rarityBeforeBaseStatBonus !== rarityBeforeBaseStatFloor,
+      flooredByBaseStatBonus: rarity !== rarityBeforeBaseStatBonus,
     };
   }
 
@@ -304,7 +314,8 @@ export async function computeRarity(
     rootOneTimeOnly,
     depth,
   );
-  const rarity = applyBaseStatFloor(rarityBeforeBaseStatFloor, baseStatTotal);
+  const rarityBeforeBaseStatBonus = applyBaseStatFloor(rarityBeforeBaseStatFloor, baseStatTotal);
+  const rarity = applyBaseStatTierBonus(rarityBeforeBaseStatBonus, baseStatTotal);
 
   return {
     id,
@@ -323,6 +334,7 @@ export async function computeRarity(
     rawData,
     oneTimeOnly,
     flooredByChain: rarityBeforeBaseStatFloor !== tierBeforeFloor,
-    flooredByBaseStats: rarity !== rarityBeforeBaseStatFloor,
+    flooredByBaseStats: rarityBeforeBaseStatBonus !== rarityBeforeBaseStatFloor,
+    flooredByBaseStatBonus: rarity !== rarityBeforeBaseStatBonus,
   };
 }

@@ -10,6 +10,9 @@ import {
   mapScoreToRarityTier,
   applyOneTimeOnlyChainFloor,
   applyBaseStatFloor,
+  computeBaseStatTierBonus,
+  applyBaseStatTierBonus,
+  classifyEvolutionHassle,
   BASE_STAT_TOTAL_MYTHIC_THRESHOLD,
   getMaxEncounterChance,
   getDistinctVersionNames,
@@ -359,6 +362,89 @@ describe("computeExclusivityComponent", () => {
   });
 });
 
+// ---- classifyEvolutionHassle -----------------------------------------------
+
+describe("classifyEvolutionHassle", () => {
+  it("returns 'plain' for a bare level-up with only min_level set", () => {
+    const details = [{ trigger: { name: "level-up" }, min_level: 16 }];
+    expect(classifyEvolutionHassle(details as any)).toBe("plain");
+  });
+
+  it("returns 'moderate' for the real Feebas -> Milotic case (level-up gated on min_beauty)", () => {
+    const details = [
+      {
+        trigger: { name: "level-up" },
+        min_level: null,
+        min_happiness: null,
+        min_beauty: 170,
+        min_affection: null,
+        held_item: null,
+        known_move: null,
+        known_move_type: null,
+        location: null,
+        needs_overworld_rain: false,
+        party_species: null,
+        party_type: null,
+        relative_physical_stats: null,
+        time_of_day: "",
+        trade_species: null,
+        turn_upside_down: false,
+        near_special_rock: false,
+        min_steps: 0,
+        min_move_count: null,
+        min_damage_taken: null,
+      },
+    ];
+    expect(classifyEvolutionHassle(details as any)).toBe("moderate");
+  });
+
+  it("returns 'moderate' for a level-up gated on min_happiness", () => {
+    const details = [{ trigger: { name: "level-up" }, min_happiness: 220 }];
+    expect(classifyEvolutionHassle(details as any)).toBe("moderate");
+  });
+
+  it("returns 'moderate' for a use-item trigger", () => {
+    const details = [{ trigger: { name: "use-item" } }];
+    expect(classifyEvolutionHassle(details as any)).toBe("moderate");
+  });
+
+  it("returns 'trade' for a trade trigger with no held item", () => {
+    const details = [{ trigger: { name: "trade" } }];
+    expect(classifyEvolutionHassle(details as any)).toBe("trade");
+  });
+
+  it("returns 'trade' for a trade trigger with a held item attached", () => {
+    const details = [{ trigger: { name: "trade" }, held_item: { name: "kings-rock" } }];
+    expect(classifyEvolutionHassle(details as any)).toBe("trade");
+  });
+
+  it("returns 'moderate' for an unrecognized/other trigger name", () => {
+    const details = [{ trigger: { name: "some-weird-trigger" } }];
+    expect(classifyEvolutionHassle(details as any)).toBe("moderate");
+  });
+
+  it("returns 'plain' for an empty evolution_details array", () => {
+    expect(classifyEvolutionHassle([])).toBe("plain");
+  });
+
+  it("returns 'plain' for an undefined evolution_details", () => {
+    expect(classifyEvolutionHassle(undefined)).toBe("plain");
+  });
+
+  it("takes the EASIEST classification across multiple entries (one plain, one harder)", () => {
+    const details = [
+      { trigger: { name: "trade" } },
+      { trigger: { name: "level-up" }, min_level: 20 },
+    ];
+    expect(classifyEvolutionHassle(details as any)).toBe("plain");
+  });
+
+  it("does not treat time_of_day: '' alone as a meaningful condition (still 'plain')", () => {
+    const details = [{ trigger: { name: "level-up" }, time_of_day: "" }];
+    expect(classifyEvolutionHassle(details as any)).toBe("plain");
+  });
+});
+
 // ---- computeEvolutionComponent --------------------------------------------
 
 describe("computeEvolutionComponent", () => {
@@ -440,7 +526,7 @@ describe("computeEvolutionComponent", () => {
     expect(computeEvolutionComponent(chain as any, "machoke")).toBe(55);
   });
 
-  it("uses the default trigger bonus when the trigger name is unrecognized", () => {
+  it("uses the moderate hassle bonus when the trigger name is unrecognized", () => {
     const chain = {
       chain: {
         species: { name: "eevee" },
@@ -454,10 +540,12 @@ describe("computeEvolutionComponent", () => {
         ],
       },
     };
-    expect(computeEvolutionComponent(chain as any, "vaporeon")).toBe(55);
+    // unrecognized trigger name -> classifyEvolutionHassle "moderate" (15),
+    // not the old DEFAULT_TRIGGER_BONUS (25) fallback: 30 (depth) + 15 = 45.
+    expect(computeEvolutionComponent(chain as any, "vaporeon")).toBe(45);
   });
 
-  it("uses the default trigger bonus when trigger name is missing entirely", () => {
+  it("uses the moderate hassle bonus when trigger name is missing entirely", () => {
     const chain = {
       chain: {
         species: { name: "eevee" },
@@ -471,7 +559,9 @@ describe("computeEvolutionComponent", () => {
         ],
       },
     };
-    expect(computeEvolutionComponent(chain as any, "vaporeon")).toBe(55);
+    // missing trigger name -> classifyEvolutionHassle "moderate" (15):
+    // 30 (depth) + 15 = 45.
+    expect(computeEvolutionComponent(chain as any, "vaporeon")).toBe(45);
   });
 
   it("clamps depth contribution at depth 2 for deeper chains", () => {
@@ -764,6 +854,62 @@ describe("applyBaseStatFloor", () => {
     expect(applyBaseStatFloor("common", BASE_STAT_TOTAL_MYTHIC_THRESHOLD)).toBe(
       "mythic",
     );
+  });
+});
+
+describe("computeBaseStatTierBonus", () => {
+  it("returns 0 at 499 (just below the 500 step)", () => {
+    expect(computeBaseStatTierBonus(499)).toBe(0);
+  });
+
+  it("returns 1 at 500 (start of the first step)", () => {
+    expect(computeBaseStatTierBonus(500)).toBe(1);
+  });
+
+  it("returns 1 at 549 (top of the first step)", () => {
+    expect(computeBaseStatTierBonus(549)).toBe(1);
+  });
+
+  it("returns 2 at 550 (start of the second step)", () => {
+    expect(computeBaseStatTierBonus(550)).toBe(2);
+  });
+
+  it("returns 2 at 599 (top of the second step, just below the applyBaseStatFloor threshold)", () => {
+    expect(computeBaseStatTierBonus(599)).toBe(2);
+  });
+});
+
+describe("applyBaseStatTierBonus", () => {
+  it("leaves common untouched at 499 (bonus 0)", () => {
+    expect(applyBaseStatTierBonus("common", 499)).toBe("common");
+  });
+
+  it("raises common by one step at 500", () => {
+    expect(applyBaseStatTierBonus("common", 500)).toBe("uncommon");
+  });
+
+  it("raises common by one step at 549", () => {
+    expect(applyBaseStatTierBonus("common", 549)).toBe("uncommon");
+  });
+
+  it("raises common by two steps at 550", () => {
+    expect(applyBaseStatTierBonus("common", 550)).toBe("rare");
+  });
+
+  it("raises common by two steps at 599", () => {
+    expect(applyBaseStatTierBonus("common", 599)).toBe("rare");
+  });
+
+  it("never lowers an already-high tier (legendary stays legendary at BST 540)", () => {
+    expect(applyBaseStatTierBonus("legendary", 540)).toBe("legendary");
+  });
+
+  it("caps at 'mythic' rather than exceeding it (epic + 2 steps at BST 550 -> mythic, not beyond)", () => {
+    expect(applyBaseStatTierBonus("epic", 550)).toBe("mythic");
+  });
+
+  it("caps at 'mythic' when already at ultra_rare + 2 steps", () => {
+    expect(applyBaseStatTierBonus("ultra_rare", 550)).toBe("mythic");
   });
 });
 
@@ -1126,7 +1272,11 @@ describe("getEvolutionInfo", () => {
         evolves_to: [],
       },
     };
-    expect(getEvolutionInfo(chain as any, "bulbasaur")).toEqual({ depth: 0, trigger: null });
+    expect(getEvolutionInfo(chain as any, "bulbasaur")).toEqual({
+      depth: 0,
+      trigger: null,
+      hassle: "plain",
+    });
   });
 
   it("returns depth 1 with the explicit trigger name for a depth-1 evolution", () => {
@@ -1146,6 +1296,7 @@ describe("getEvolutionInfo", () => {
     expect(getEvolutionInfo(chain as any, "ivysaur")).toEqual({
       depth: 1,
       trigger: "level-up",
+      hassle: "plain",
     });
   });
 
@@ -1163,7 +1314,11 @@ describe("getEvolutionInfo", () => {
         ],
       },
     };
-    expect(getEvolutionInfo(chain as any, "vaporeon")).toEqual({ depth: 1, trigger: null });
+    expect(getEvolutionInfo(chain as any, "vaporeon")).toEqual({
+      depth: 1,
+      trigger: null,
+      hassle: "plain",
+    });
   });
 });
 

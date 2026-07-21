@@ -300,17 +300,32 @@ export function computeExclusivityComponent(encounters: any[]): number {
   return clamp(100 - (nativeVersionsCount - 1) * 25, 0, 100);
 }
 
-const TRIGGER_BONUS: Record<string, number> = {
-  "level-up": 0,
-  "use-item": 15,
-  trade: 25,
-};
-
-const DEFAULT_TRIGGER_BONUS = 25;
+interface EvolutionDetailEntry {
+  trigger?: { name?: string };
+  min_happiness?: unknown;
+  min_beauty?: unknown;
+  min_affection?: unknown;
+  held_item?: unknown;
+  known_move?: unknown;
+  known_move_type?: unknown;
+  location?: unknown;
+  needs_overworld_rain?: unknown;
+  party_species?: unknown;
+  party_type?: unknown;
+  relative_physical_stats?: unknown;
+  time_of_day?: unknown;
+  trade_species?: unknown;
+  turn_upside_down?: unknown;
+  near_special_rock?: unknown;
+  min_steps?: unknown;
+  min_move_count?: unknown;
+  min_damage_taken?: unknown;
+  [key: string]: any;
+}
 
 interface EvolutionChainNode {
   species: { name: string; url?: string };
-  evolution_details: { trigger?: { name?: string } }[];
+  evolution_details: EvolutionDetailEntry[];
   evolves_to: EvolutionChainNode[];
 }
 
@@ -376,6 +391,87 @@ export function getParentSpeciesId(
   return match ? Number(match[1]) : null;
 }
 
+// Fields on a PokéAPI `evolution_details` entry that, when meaningfully set
+// on a "level-up" trigger, signal a real hassle (a happiness/beauty grind, a
+// held item, a specific time of day, etc.) rather than a plain level-up.
+// `time_of_day` is included here too: PokéAPI uses `""` (not `null`) for
+// "not applicable" on this field, which the generic meaningful-value check
+// below already treats as unset.
+const LEVEL_UP_HASSLE_FIELDS = [
+  "min_happiness",
+  "min_beauty",
+  "min_affection",
+  "held_item",
+  "known_move",
+  "known_move_type",
+  "location",
+  "needs_overworld_rain",
+  "party_species",
+  "party_type",
+  "relative_physical_stats",
+  "time_of_day",
+  "trade_species",
+  "turn_upside_down",
+  "near_special_rock",
+  "min_steps",
+  "min_move_count",
+  "min_damage_taken",
+] as const;
+
+// PokéAPI's own "unset" sentinels for these fields (false, null, 0, "").
+// Anything else (a truthy string, a non-zero number, a non-null object)
+// counts as a meaningful condition.
+function isMeaningfulEvolutionConditionValue(value: unknown): boolean {
+  return value !== null && value !== undefined && value !== false && value !== 0 && value !== "";
+}
+
+/**
+ * Classifies how much of a hassle a single evolution-chain node's
+ * `evolution_details` represent: `"trade"` (hardest), `"moderate"`
+ * (use-item, or a level-up gated on a real condition like min_beauty/
+ * held_item/time_of_day), or `"plain"` (a bare level-up, or no evolution
+ * requirement at all). When multiple evolution-details entries exist,
+ * the EASIEST (minimum) classification wins, matching this file's
+ * existing "take the easiest available option" philosophy (see
+ * computeMethodComponent/getEasiestMethod).
+ */
+export type EvolutionHassle = "plain" | "moderate" | "trade";
+
+const HASSLE_ORDER: EvolutionHassle[] = ["plain", "moderate", "trade"];
+
+export function classifyEvolutionHassle(
+  evolutionDetails: { trigger?: { name?: string }; [key: string]: any }[] | undefined,
+): EvolutionHassle {
+  if (!evolutionDetails || evolutionDetails.length === 0) return "plain";
+
+  let easiest: EvolutionHassle = "trade";
+
+  for (const entry of evolutionDetails) {
+    const triggerName = entry?.trigger?.name;
+    let hassle: EvolutionHassle;
+
+    if (triggerName === "trade") {
+      hassle = "trade";
+    } else if (triggerName === "use-item") {
+      hassle = "moderate";
+    } else if (triggerName === "level-up") {
+      const hasMeaningfulCondition = LEVEL_UP_HASSLE_FIELDS.some((field) =>
+        isMeaningfulEvolutionConditionValue(entry?.[field]),
+      );
+      hassle = hasMeaningfulCondition ? "moderate" : "plain";
+    } else {
+      hassle = "moderate";
+    }
+
+    if (HASSLE_ORDER.indexOf(hassle) < HASSLE_ORDER.indexOf(easiest)) {
+      easiest = hassle;
+    }
+    if (easiest === "plain") break;
+  }
+
+  return easiest;
+}
+
 /**
  * C6 — Evolution chain position + condition (weight 0.10).
  */
@@ -392,13 +488,15 @@ export function computeEvolutionComponent(
   const { depth, node } = located;
   const depthComponent = Math.min(depth, 2) * 30;
 
+  const HASSLE_BONUS: Record<EvolutionHassle, number> = {
+    plain: 0,
+    moderate: 15,
+    trade: 25,
+  };
+
   let triggerBonus = 0;
   if (depth > 0) {
-    const triggerName = node?.evolution_details?.[0]?.trigger?.name;
-    triggerBonus =
-      triggerName !== undefined
-        ? TRIGGER_BONUS[triggerName] ?? DEFAULT_TRIGGER_BONUS
-        : DEFAULT_TRIGGER_BONUS;
+    triggerBonus = HASSLE_BONUS[classifyEvolutionHassle(node?.evolution_details)];
   }
 
   return clamp(depthComponent + triggerBonus, 0, 100);
@@ -478,7 +576,7 @@ export function getEasiestMethod(encounters: any[]): string | null {
 export function getEvolutionInfo(
   evolutionChain: { chain: EvolutionChainNode } | null | undefined,
   speciesName: string,
-): { depth: number; trigger: string | null } | null {
+): { depth: number; trigger: string | null; hassle: EvolutionHassle } | null {
   const root = evolutionChain?.chain;
   if (!root) return null;
 
@@ -488,8 +586,9 @@ export function getEvolutionInfo(
   const { depth, node } = located;
   const trigger =
     depth > 0 ? node?.evolution_details?.[0]?.trigger?.name ?? null : null;
+  const hassle = depth > 0 ? classifyEvolutionHassle(node?.evolution_details) : "plain";
 
-  return { depth, trigger };
+  return { depth, trigger, hassle };
 }
 
 export function mapScoreToRarityTier(score: number): Rarity {
@@ -550,4 +649,32 @@ export function applyBaseStatFloor(rarity: Rarity, baseStatTotal: number): Rarit
 
   if (tierIndex < floorIndex) return "mythic";
   return rarity;
+}
+
+/**
+ * Graduated (not a hard cliff) base-stat-total tier bonus for the sub-600
+ * range, below applyBaseStatFloor's absolute 600+ "mythic" floor. A Pokémon
+ * with a hefty base-stat total but no other rarity signal (e.g. Feebas ->
+ * Milotic, base-stat total 540, gated behind a laborious Beauty-stat grind
+ * rather than any encounter/method rarity) still deserves a nudge upward.
+ * 500-549 gets one extra tier step, 550-599 gets two: always additive on
+ * top of whatever the composite score/floors already produced, and always
+ * capped at "mythic" so it can never exceed what the 600+ floor would give.
+ */
+export function computeBaseStatTierBonus(baseStatTotal: number): number {
+  if (baseStatTotal >= 550) return 2;
+  if (baseStatTotal >= 500) return 1;
+  return 0;
+}
+
+export function applyBaseStatTierBonus(rarity: Rarity, baseStatTotal: number): Rarity {
+  const bonus = computeBaseStatTierBonus(baseStatTotal);
+  if (bonus === 0) return rarity;
+  const mythicIndex = RARITY_ORDER.indexOf("mythic");
+  const currentIndex = RARITY_ORDER.indexOf(rarity);
+  // Never lower an already-high tier (legendary/unknown rank above mythic):
+  // the cap at mythicIndex must not pull currentIndex DOWN when it's already
+  // past it, only prevent the bonus from pushing it further up than mythic.
+  const newIndex = Math.max(currentIndex, Math.min(currentIndex + bonus, mythicIndex));
+  return RARITY_ORDER[newIndex];
 }
