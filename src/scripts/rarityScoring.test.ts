@@ -160,6 +160,47 @@ describe("computeEncounterRateComponent", () => {
     expect(computeEncounterRateComponent(encounters)).toBe(0);
   });
 
+  it("Kecleon devon-scope regression: returns 100 (nothing found) when only fixed-encounter (devon-scope) entries are present", () => {
+    const encounters = [
+      {
+        location_area: { name: "route-120-area" },
+        version_details: [
+          {
+            version: { name: "ruby" },
+            encounter_details: [
+              { method: { name: "devon-scope" }, chance: 100 },
+              { method: { name: "devon-scope" }, chance: 100 },
+              { method: { name: "devon-scope" }, chance: 100 },
+              { method: { name: "devon-scope" }, chance: 100 },
+              { method: { name: "devon-scope" }, chance: 100 },
+              { method: { name: "devon-scope" }, chance: 100 },
+            ],
+          },
+        ],
+      },
+    ];
+    expect(computeEncounterRateComponent(encounters)).toBe(100);
+  });
+
+  it("Kecleon mixed case: bases the score on the genuine wild method's chance, ignoring a much higher devon-scope chance", () => {
+    const encounters = [
+      // Genuine wild grass encounter: 1% chance => component should be 99.
+      locationEncounterEntry("route-119-area", "ruby", "walk", 1),
+      // Guaranteed devon-scope trigger elsewhere: must not lower the score
+      // down toward 0 as if the species were common.
+      {
+        location_area: { name: "route-120-area" },
+        version_details: [
+          {
+            version: { name: "ruby" },
+            encounter_details: [{ method: { name: "devon-scope" }, chance: 100 }],
+          },
+        ],
+      },
+    ];
+    expect(computeEncounterRateComponent(encounters)).toBe(99);
+  });
+
   it("Route 103 Poochyena regression: sums chances within the same location+version+method group instead of taking the max slot", () => {
     // PokéAPI splits one spawn table into several level-range slots that
     // all share the same location_area/version/method — these must be
@@ -187,63 +228,35 @@ describe("computeEncounterRateComponent", () => {
 // ---- computeGamesComponent ----------------------------------------------
 
 describe("computeGamesComponent", () => {
-  it("returns 100 when the Pokémon appears in no games", () => {
-    expect(computeGamesComponent([])).toBe(100);
+  it("returns 100 when pairsCount is 0 (nothing available = rarest)", () => {
+    expect(computeGamesComponent(0)).toBe(100);
   });
 
-  it("returns 0 when the Pokémon appears in REFERENCE_MAX_AVAILABILITY distinct (location, version) pairs", () => {
-    // Every entry here has no location_area, but a distinct version each,
-    // so each one is still a distinct location|version pair (undefined|game-i).
-    const encounters = Array.from(
-      { length: REFERENCE_MAX_AVAILABILITY },
-      (_, i) => encounterEntry(`game-${i}`, "walk", 10),
-    );
-    expect(computeGamesComponent(encounters)).toBe(0);
+  it("returns 0 when pairsCount equals REFERENCE_MAX_AVAILABILITY", () => {
+    expect(computeGamesComponent(REFERENCE_MAX_AVAILABILITY)).toBe(0);
   });
 
-  it("returns a proportional value for a partial count of distinct pairs", () => {
+  it("returns 0, clamped, when pairsCount exceeds REFERENCE_MAX_AVAILABILITY", () => {
+    expect(computeGamesComponent(REFERENCE_MAX_AVAILABILITY * 2)).toBe(0);
+  });
+
+  it("returns a proportional value for a partial pairsCount", () => {
     // REFERENCE_MAX_AVAILABILITY (25) is odd, so use an exact count (10)
     // instead of "half" to keep the expected value unambiguous.
     const count = 10;
-    const encounters = Array.from({ length: count }, (_, i) =>
-      encounterEntry(`game-${i}`, "walk", 10),
-    );
-    expect(computeGamesComponent(encounters)).toBeCloseTo(
+    expect(computeGamesComponent(count)).toBeCloseTo(
       100 - (count / REFERENCE_MAX_AVAILABILITY) * 100,
     );
   });
 
-  it("counts a single location repeated with different methods within the same version as only 1 pair", () => {
-    // Same (undefined location_area, "red" version) key for both entries,
-    // regardless of the different method used => 1 distinct pair, not 2.
-    const encounters = [
-      encounterEntry("red", "walk", 10),
-      encounterEntry("red", "surf", 5),
-    ];
-    // Only 1 distinct (location, version) pair => 100 - (1/25)*100
-    expect(computeGamesComponent(encounters)).toBeCloseTo(
+  it("returns a proportional value for pairsCount = 1", () => {
+    expect(computeGamesComponent(1)).toBeCloseTo(
       100 - (1 / REFERENCE_MAX_AVAILABILITY) * 100,
     );
   });
 
-  it("Poochyena-breadth regression: counts each distinct location within a SINGLE version as its own pair, not collapsed to 1", () => {
-    // Poochyena-like case: found at 5 different routes, all within the
-    // same "emerald" version. The OLD logic (distinct versions only) would
-    // have counted this as 1 (a single version name, "emerald"), hiding
-    // how widespread the Pokémon actually is within that one game. The
-    // NEW logic counts 5 distinct (location, version) pairs instead.
-    const encounters = [
-      locationEncounterEntry("route-101", "emerald", "walk", 10),
-      locationEncounterEntry("route-102", "emerald", "walk", 10),
-      locationEncounterEntry("route-103", "emerald", "walk", 10),
-      locationEncounterEntry("route-104", "emerald", "walk", 10),
-      locationEncounterEntry("route-105", "emerald", "walk", 10),
-    ];
-
-    // OLD (buggy) behavior would have been:
-    //   computeGamesComponent === 100 - (1 / REFERENCE_MAX_AVAILABILITY) * 100
-    // NEW (correct) behavior:
-    expect(computeGamesComponent(encounters)).toBeCloseTo(
+  it("returns a proportional value for pairsCount = 5", () => {
+    expect(computeGamesComponent(5)).toBeCloseTo(
       100 - (5 / REFERENCE_MAX_AVAILABILITY) * 100,
     );
   });
@@ -673,7 +686,38 @@ describe("getMaxEncounterChance", () => {
     expect(getMaxEncounterChance(encounters)).toBe(60);
   });
 
-  it("Kecleon devon-scope regression: caps a grouped sum at 100 when PokéAPI lists the same guaranteed encounter multiple times under one location+version+method", () => {
+  it("caps a grouped sum at 100 when PokéAPI lists the same non-excluded encounter multiple times under one location+version+method", () => {
+    // Regression fixture uses "walk" (a genuine wild method, NOT in
+    // FIXED_ENCOUNTER_METHODS) so the cap logic stays covered independent
+    // of the devon-scope/gift exclusion feature below.
+    const encounters = [
+      {
+        location_area: { name: "route-120-area" },
+        version_details: [
+          {
+            version: { name: "ruby" },
+            encounter_details: [
+              { method: { name: "walk" }, chance: 100 },
+              { method: { name: "walk" }, chance: 100 },
+              { method: { name: "walk" }, chance: 100 },
+              { method: { name: "walk" }, chance: 100 },
+              { method: { name: "walk" }, chance: 100 },
+              { method: { name: "walk" }, chance: 100 },
+            ],
+          },
+        ],
+      },
+    ];
+    // Uncapped, the grouped sum would be 600 (6 x 100). A single group can
+    // never legitimately exceed 100%, so the result must be capped there.
+    expect(getMaxEncounterChance(encounters)).toBe(100);
+  });
+
+  it("Kecleon devon-scope regression: excludes fixed-encounter-only entries entirely, returning null rather than a capped 100", () => {
+    // devon-scope is a scripted/guaranteed trigger, not a genuine wild
+    // spawn roll — entries using it must be skipped entirely, not summed
+    // and capped. With ONLY devon-scope entries present, nothing
+    // qualifying is found at all.
     const encounters = [
       {
         location_area: { name: "route-120-area" },
@@ -692,9 +736,26 @@ describe("getMaxEncounterChance", () => {
         ],
       },
     ];
-    // Uncapped, the grouped sum would be 600 (6 x 100). A single group can
-    // never legitimately exceed 100%, so the result must be capped there.
-    expect(getMaxEncounterChance(encounters)).toBe(100);
+    expect(getMaxEncounterChance(encounters)).toBeNull();
+  });
+
+  it("Kecleon mixed case: ignores a devon-scope entry's 100% chance and returns only the genuine wild method's chance", () => {
+    const encounters = [
+      // Genuine wild grass encounter: 1% chance.
+      locationEncounterEntry("route-119-area", "ruby", "walk", 1),
+      // Guaranteed devon-scope trigger at a different spot: must be
+      // ignored entirely, not treated as the "real" max chance.
+      {
+        location_area: { name: "route-120-area" },
+        version_details: [
+          {
+            version: { name: "ruby" },
+            encounter_details: [{ method: { name: "devon-scope" }, chance: 100 }],
+          },
+        ],
+      },
+    ];
+    expect(getMaxEncounterChance(encounters)).toBe(1);
   });
 
   it("picks the MAX across distinct groups without summing entries that belong to different location/version/method groups", () => {

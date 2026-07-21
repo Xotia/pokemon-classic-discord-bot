@@ -1,6 +1,7 @@
 import { fetchSpecies } from "./fetchSpecies";
 import { fetchEncounters } from "./fetchEncounters";
 import { fetchEvolutionChain } from "./fetchEvolutionChain";
+import { fetchLocationArea } from "./fetchLocationArea";
 import {
   isOneTimeOnly,
   computeEncounterRateComponent,
@@ -13,7 +14,6 @@ import {
   applyOneTimeOnlyChainFloor,
   getMaxEncounterChance,
   getDistinctVersionNames,
-  getDistinctLocationVersionPairs,
   getDistinctMethods,
   getEasiestMethod,
   getEvolutionInfo,
@@ -52,6 +52,56 @@ function extractIdFromUrl(url: string | undefined): number | null {
   return match ? Number(match[1]) : null;
 }
 
+// Resolves raw location-area sub-area names (e.g. "shoal-cave-high-tide")
+// to the parent real-world landmark name (e.g. "shoal-cave") for the C3
+// "breadth of availability" component only — see rarityScoring.ts's C1
+// grouping, which deliberately keeps using raw sub-area names instead.
+// Persists for the lifetime of the process so a landmark fetched once is
+// reused across every Pokémon sharing that location during a full audit run.
+const locationLandmarkCache = new Map<string, string | undefined>();
+
+async function resolveLandmarkName(
+  locationArea: { name?: string; url?: string } | undefined,
+): Promise<string | undefined> {
+  const url = locationArea?.url;
+  const fallback = locationArea?.name;
+  if (!url) return fallback;
+
+  if (locationLandmarkCache.has(url)) {
+    return locationLandmarkCache.get(url);
+  }
+
+  try {
+    const detail = await fetchLocationArea(url);
+    const landmarkName = detail?.location?.name ?? fallback;
+    locationLandmarkCache.set(url, landmarkName);
+    // Be polite to the API: only delay after a genuine (non-cached) fetch.
+    await new Promise((r) => setTimeout(r, 100));
+    return landmarkName;
+  } catch {
+    locationLandmarkCache.set(url, fallback);
+    return fallback;
+  }
+}
+
+// Counts distinct (landmark, version) pairs behind C3, resolving each raw
+// PokéAPI location-area to its parent landmark first (see resolveLandmarkName
+// above). Iterates sequentially (not Promise.all) so the cache/delay
+// behavior stays predictable and doesn't fire a burst of simultaneous
+// requests at PokéAPI.
+async function countDistinctLandmarkVersionPairs(encounters: any[]): Promise<number> {
+  const pairs = new Set<string>();
+  for (const locationEntry of encounters ?? []) {
+    const landmarkName = await resolveLandmarkName(locationEntry?.location_area);
+    const versionDetails = locationEntry?.version_details ?? [];
+    for (const versionDetail of versionDetails) {
+      const versionName = versionDetail?.version?.name;
+      if (versionName) pairs.add(`${landmarkName}|${versionName}`);
+    }
+  }
+  return pairs.size;
+}
+
 export async function computeRarity(
   id: number,
   allowedVersions: Set<string> = GEN3_VERSIONS,
@@ -82,6 +132,7 @@ export async function computeRarity(
   const scopedEncounters = filterEncountersToVersions(encounters, allowedVersions);
   const evolutionChain = await fetchEvolutionChain(species.evolution_chain.url);
 
+  const landmarkPairsCount = await countDistinctLandmarkVersionPairs(scopedEncounters);
   const versions = getDistinctVersionNames(scopedEncounters);
   const evolutionInfo = getEvolutionInfo(evolutionChain, species.name);
   const oneTimeOnly = isOneTimeOnly(scopedEncounters);
@@ -118,7 +169,7 @@ export async function computeRarity(
     isMythical: species.is_mythical === true,
     maxEncounterChance: getMaxEncounterChance(scopedEncounters),
     gamesCount: versions.length,
-    locationsCount: getDistinctLocationVersionPairs(scopedEncounters).length,
+    locationsCount: landmarkPairsCount,
     versions,
     methods: getDistinctMethods(scopedEncounters),
     easiestMethod: getEasiestMethod(scopedEncounters),
@@ -193,7 +244,7 @@ export async function computeRarity(
   }
 
   const c1_encounterRate = computeEncounterRateComponent(scopedEncounters);
-  const c3_games = computeGamesComponent(scopedEncounters);
+  const c3_games = computeGamesComponent(landmarkPairsCount);
   const c4_method = computeMethodComponent(scopedEncounters);
   const c5_exclusivity = computeExclusivityComponent(scopedEncounters);
   const c6_evolution = computeEvolutionComponent(evolutionChain, species.name);

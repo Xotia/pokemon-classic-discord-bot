@@ -73,7 +73,22 @@ export const METHOD_DIFFICULTY: Record<string, number> = {
   "gift-egg": 100,
   "only-one": 100,
   trade: 100,
+  "devon-scope": 100,
 };
+
+// Methods representing a scripted/guaranteed encounter (a fixed decor
+// object you interact with, an NPC gift, a one-of-a-kind spot) rather than
+// a genuine wild spawn roll. A 100% chance on one of these doesn't mean the
+// species is common — it means the trigger is guaranteed once found. These
+// must be excluded from the encounter-RATE calculation (C1), even though
+// they still appear in the raw `methods` list and still count toward
+// C4/C7 via the functions that specifically look for them.
+const FIXED_ENCOUNTER_METHODS = new Set([
+  "gift",
+  "gift-egg",
+  "only-one",
+  "devon-scope",
+]);
 
 export const DEFAULT_METHOD_DIFFICULTY = 60;
 
@@ -121,8 +136,11 @@ export function isOneTimeOnly(encounters: any[]): boolean {
  * (the three-part key that identifies a single spawn table) and sums the
  * numeric `chance` values within each group, since PokéAPI splits one
  * spawn table into multiple level-tier slots that share all three fields.
+ * Entries using a FIXED_ENCOUNTER_METHODS method (scripted/guaranteed
+ * triggers, not genuine wild spawns) are skipped entirely — they don't
+ * represent how common the species is to stumble upon in the wild.
  * Returns the MAXIMUM of these per-group sums across all groups, or null
- * if no numeric `chance` was found anywhere.
+ * if no qualifying numeric `chance` was found anywhere.
  */
 function computeMaxGroupedEncounterChance(encounters: any[]): number | null {
   const groupSums = new Map<string, number>();
@@ -135,9 +153,10 @@ function computeMaxGroupedEncounterChance(encounters: any[]): number | null {
       const versionName = versionDetail?.version?.name;
       const encounterDetails = versionDetail?.encounter_details ?? [];
       for (const detail of encounterDetails) {
+        const methodName = detail?.method?.name;
+        if (FIXED_ENCOUNTER_METHODS.has(methodName)) continue;
         if (typeof detail?.chance === "number") {
           found = true;
-          const methodName = detail?.method?.name;
           const groupKey = `${locationName}|${versionName}|${methodName}`;
           groupSums.set(groupKey, (groupSums.get(groupKey) ?? 0) + detail.chance);
         }
@@ -201,15 +220,14 @@ function collectDistinctLocationVersionPairs(encounters: any[]): Set<string> {
 
 /**
  * C3 — Number of games (weight 0.15).
- * The more distinct (location, version) pairs a Pokémon appears in — i.e.
- * the more routes it's found at, across the more games — the more common
- * it is. Counting location+version pairs (rather than just distinct
- * versions) captures both how many games it's in AND how spread out it is
- * within each game.
+ * The more distinct (landmark, version) pairs a Pokémon appears in — i.e.
+ * the more real-world landmarks it's found at, across the more games — the
+ * more common it is. `pairsCount` is computed by the caller (asynchronously,
+ * since it requires resolving each raw sub-area to its parent landmark via
+ * PokéAPI) — this function is the pure formula applied to that count.
  */
-export function computeGamesComponent(encounters: any[]): number {
-  const availabilityCount = collectDistinctLocationVersionPairs(encounters).size;
-  return clamp(100 - (availabilityCount / REFERENCE_MAX_AVAILABILITY) * 100, 0, 100);
+export function computeGamesComponent(pairsCount: number): number {
+  return clamp(100 - (pairsCount / REFERENCE_MAX_AVAILABILITY) * 100, 0, 100);
 }
 
 /**
