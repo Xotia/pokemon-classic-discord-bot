@@ -293,11 +293,22 @@ export function computeMethodComponent(encounters: any[]): number {
 /**
  * C5 — Version-exclusivity (weight 0.05).
  * Reuses the distinct-version count from C3.
+ *
+ * Only 1-2 distinct versions represents genuine version-pair-level
+ * exclusivity. 3+ versions is the NORMAL baseline presence pattern for an
+ * ordinary Hoenn-native Pokémon in this pipeline's 7-version Gen 3 scope
+ * (most such species are simply absent from the Kanto remakes FireRed/
+ * LeafGreen and from the ORAS remakes in our tracked encounter data, which
+ * lands them at exactly 3 native versions — ruby/sapphire/emerald — with
+ * no genuine rarity/exclusivity signal at all). Scoring that baseline case
+ * with any nonzero value inflated several Pokémon's composite scores above
+ * their correct tier (e.g. Linéon, Grainipiot), so 3+ versions scores 0.
  */
 export function computeExclusivityComponent(encounters: any[]): number {
   const nativeVersionsCount = collectDistinctVersionNames(encounters).size;
   if (nativeVersionsCount <= 1) return 100;
-  return clamp(100 - (nativeVersionsCount - 1) * 25, 0, 100);
+  if (nativeVersionsCount === 2) return 50;
+  return 0;
 }
 
 interface EvolutionDetailEntry {
@@ -677,4 +688,50 @@ export function applyBaseStatTierBonus(rarity: Rarity, baseStatTotal: number): R
   // past it, only prevent the bonus from pushing it further up than mythic.
   const newIndex = Math.max(currentIndex, Math.min(currentIndex + bonus, mythicIndex));
   return RARITY_ORDER[newIndex];
+}
+
+// Continuous, sub-500 nudge to the raw COMPOSITE score based on base-stat
+// total — separate from applyBaseStatTierBonus (which handles the 500+
+// range with discrete tier jumps for paths that have no numeric score at
+// all). This only matters for Pokémon that DO go through ordinary
+// composite scoring: a Pokémon at BST 490 (e.g. Altaria) gets nearly the
+// full nudge, letting it cross a nearby tier threshold naturally instead
+// of falling just short purely because 490 < 500.
+const BASE_STAT_SCORE_BONUS_RANGE_START = 400;
+const BASE_STAT_SCORE_BONUS_RANGE_END = 500;
+const MAX_BASE_STAT_SCORE_BONUS = 10;
+
+export function computeBaseStatScoreBonus(baseStatTotal: number): number {
+  if (baseStatTotal < BASE_STAT_SCORE_BONUS_RANGE_START) return 0;
+  if (baseStatTotal >= BASE_STAT_SCORE_BONUS_RANGE_END) return 0;
+  const progress =
+    (baseStatTotal - BASE_STAT_SCORE_BONUS_RANGE_START) /
+    (BASE_STAT_SCORE_BONUS_RANGE_END - BASE_STAT_SCORE_BONUS_RANGE_START);
+  return progress * MAX_BASE_STAT_SCORE_BONUS;
+}
+
+// PokéAPI has no "is this a fossil" field — this is a deliberately small,
+// hardcoded set of Gen 3's fossil root species (lowercase, matching
+// PokéAPI's species.name convention). Extend this list if/when other
+// generations' fossils are added to this pipeline.
+export const FOSSIL_ROOT_SPECIES_NAMES = new Set(["lileep", "anorith"]);
+
+/**
+ * Fossil chains get a floor ONE TIER HIGHER than the ordinary one-time-only
+ * chain floor at every depth (a fossil revival is a more deliberate, rarer
+ * acquisition than an ordinary starter gift): depth 0 -> at least
+ * ultra_rare, depth 1+ -> at least mythic. Only ever raises, never lowers
+ * — same contract as the other floor functions in this file.
+ */
+export function applyFossilChainFloor(
+  rarity: Rarity,
+  isFossilChain: boolean,
+  depth: number,
+): Rarity {
+  if (!isFossilChain) return rarity;
+  const floorTier: Rarity = depth <= 0 ? "ultra_rare" : "mythic";
+  const floorIndex = RARITY_ORDER.indexOf(floorTier);
+  const rarityIndex = RARITY_ORDER.indexOf(rarity);
+  if (rarityIndex < floorIndex) return floorTier;
+  return rarity;
 }

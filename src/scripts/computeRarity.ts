@@ -15,6 +15,9 @@ import {
   applyOneTimeOnlyChainFloor,
   applyBaseStatFloor,
   applyBaseStatTierBonus,
+  computeBaseStatScoreBonus,
+  FOSSIL_ROOT_SPECIES_NAMES,
+  applyFossilChainFloor,
   EvolutionHassle,
   getMaxEncounterChance,
   getDistinctVersionNames,
@@ -126,6 +129,7 @@ export async function computeRarity(
       flooredByChain: false,
       flooredByBaseStats: false,
       flooredByBaseStatBonus: false,
+      flooredByFossilChain: false,
     };
   }
 
@@ -159,6 +163,7 @@ export async function computeRarity(
   const evolutionInfo = getEvolutionInfo(evolutionChain, species.name);
   const oneTimeOnly = isOneTimeOnly(scopedEncounters);
   const depth = evolutionInfo?.depth ?? 0;
+  const isFossilChain = FOSSIL_ROOT_SPECIES_NAMES.has(evolutionChain?.chain?.species?.name);
 
   // The floor is keyed off the evolution chain's ROOT one-time-only
   // status, not this Pokémon's own: an evolution of a gifted starter
@@ -212,7 +217,8 @@ export async function computeRarity(
       depth,
     );
     const rarityBeforeBaseStatBonus = applyBaseStatFloor(rarityBeforeBaseStatFloor, baseStatTotal);
-    const rarity = applyBaseStatTierBonus(rarityBeforeBaseStatBonus, baseStatTotal);
+    const rarityBeforeFossilFloor = applyBaseStatTierBonus(rarityBeforeBaseStatBonus, baseStatTotal);
+    const rarity = applyFossilChainFloor(rarityBeforeFossilFloor, isFossilChain, depth);
     return {
       id,
       name,
@@ -224,7 +230,8 @@ export async function computeRarity(
       oneTimeOnly,
       flooredByChain: rarityBeforeBaseStatFloor !== "legendary",
       flooredByBaseStats: rarityBeforeBaseStatBonus !== rarityBeforeBaseStatFloor,
-      flooredByBaseStatBonus: rarity !== rarityBeforeBaseStatBonus,
+      flooredByBaseStatBonus: rarityBeforeFossilFloor !== rarityBeforeBaseStatBonus,
+      flooredByFossilChain: rarity !== rarityBeforeFossilFloor,
     };
   }
 
@@ -235,7 +242,8 @@ export async function computeRarity(
       depth,
     );
     const rarityBeforeBaseStatBonus = applyBaseStatFloor(rarityBeforeBaseStatFloor, baseStatTotal);
-    const rarity = applyBaseStatTierBonus(rarityBeforeBaseStatBonus, baseStatTotal);
+    const rarityBeforeFossilFloor = applyBaseStatTierBonus(rarityBeforeBaseStatBonus, baseStatTotal);
+    const rarity = applyFossilChainFloor(rarityBeforeFossilFloor, isFossilChain, depth);
     return {
       id,
       name,
@@ -247,7 +255,8 @@ export async function computeRarity(
       oneTimeOnly,
       flooredByChain: rarityBeforeBaseStatFloor !== "legendary",
       flooredByBaseStats: rarityBeforeBaseStatBonus !== rarityBeforeBaseStatFloor,
-      flooredByBaseStatBonus: rarity !== rarityBeforeBaseStatBonus,
+      flooredByBaseStatBonus: rarityBeforeFossilFloor !== rarityBeforeBaseStatBonus,
+      flooredByFossilChain: rarity !== rarityBeforeFossilFloor,
     };
   }
 
@@ -275,7 +284,8 @@ export async function computeRarity(
       depth,
     );
     const rarityBeforeBaseStatBonus = applyBaseStatFloor(rarityBeforeBaseStatFloor, baseStatTotal);
-    const rarity = applyBaseStatTierBonus(rarityBeforeBaseStatBonus, baseStatTotal);
+    const rarityBeforeFossilFloor = applyBaseStatTierBonus(rarityBeforeBaseStatBonus, baseStatTotal);
+    const rarity = applyFossilChainFloor(rarityBeforeFossilFloor, isFossilChain, depth);
     return {
       id,
       name,
@@ -287,7 +297,8 @@ export async function computeRarity(
       oneTimeOnly,
       flooredByChain: rarityBeforeBaseStatFloor !== tierBeforeFloor,
       flooredByBaseStats: rarityBeforeBaseStatBonus !== rarityBeforeBaseStatFloor,
-      flooredByBaseStatBonus: rarity !== rarityBeforeBaseStatBonus,
+      flooredByBaseStatBonus: rarityBeforeFossilFloor !== rarityBeforeBaseStatBonus,
+      flooredByFossilChain: rarity !== rarityBeforeFossilFloor,
     };
   }
 
@@ -308,21 +319,25 @@ export async function computeRarity(
 
   const finalScore = Math.min(100, Math.max(0, rawScore / COMPOSITE_WEIGHT_SUM));
 
-  const tierBeforeFloor = mapScoreToRarityTier(finalScore);
+  const baseStatScoreBonus = computeBaseStatScoreBonus(baseStatTotal);
+  const finalScoreWithBonus = Math.min(100, Math.max(0, finalScore + baseStatScoreBonus));
+
+  const tierBeforeFloor = mapScoreToRarityTier(finalScoreWithBonus);
   const rarityBeforeBaseStatFloor = applyOneTimeOnlyChainFloor(
     tierBeforeFloor,
     rootOneTimeOnly,
     depth,
   );
   const rarityBeforeBaseStatBonus = applyBaseStatFloor(rarityBeforeBaseStatFloor, baseStatTotal);
-  const rarity = applyBaseStatTierBonus(rarityBeforeBaseStatBonus, baseStatTotal);
+  const rarityBeforeFossilFloor = applyBaseStatTierBonus(rarityBeforeBaseStatBonus, baseStatTotal);
+  const rarity = applyFossilChainFloor(rarityBeforeFossilFloor, isFossilChain, depth);
 
   return {
     id,
     name,
     rarity,
     appliedRule: "composite",
-    finalScore,
+    finalScore: finalScoreWithBonus,
     components: {
       c1_encounterRate,
       c3_games,
@@ -335,6 +350,7 @@ export async function computeRarity(
     oneTimeOnly,
     flooredByChain: rarityBeforeBaseStatFloor !== tierBeforeFloor,
     flooredByBaseStats: rarityBeforeBaseStatBonus !== rarityBeforeBaseStatFloor,
-    flooredByBaseStatBonus: rarity !== rarityBeforeBaseStatBonus,
+    flooredByBaseStatBonus: rarityBeforeFossilFloor !== rarityBeforeBaseStatBonus,
+    flooredByFossilChain: rarity !== rarityBeforeFossilFloor,
   };
 }

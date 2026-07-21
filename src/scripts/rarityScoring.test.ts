@@ -12,6 +12,9 @@ import {
   applyBaseStatFloor,
   computeBaseStatTierBonus,
   applyBaseStatTierBonus,
+  computeBaseStatScoreBonus,
+  applyFossilChainFloor,
+  FOSSIL_ROOT_SPECIES_NAMES,
   classifyEvolutionHassle,
   BASE_STAT_TOTAL_MYTHIC_THRESHOLD,
   getMaxEncounterChance,
@@ -346,12 +349,31 @@ describe("computeExclusivityComponent", () => {
     expect(computeExclusivityComponent(encounters)).toBe(100);
   });
 
-  it("returns 75 when available in exactly 2 games", () => {
+  it("returns 50 when available in exactly 2 games", () => {
     const encounters = [
       encounterEntry("red", "walk", 10),
       encounterEntry("blue", "walk", 10),
     ];
-    expect(computeExclusivityComponent(encounters)).toBe(75);
+    expect(computeExclusivityComponent(encounters)).toBe(50);
+  });
+
+  it("returns 0 when available in exactly 3 games (the normal Hoenn-native baseline, not real exclusivity)", () => {
+    const encounters = [
+      encounterEntry("ruby", "walk", 10),
+      encounterEntry("sapphire", "walk", 10),
+      encounterEntry("emerald", "walk", 10),
+    ];
+    expect(computeExclusivityComponent(encounters)).toBe(0);
+  });
+
+  it("returns 0 when available in exactly 4 games", () => {
+    const encounters = [
+      encounterEntry("ruby", "walk", 10),
+      encounterEntry("sapphire", "walk", 10),
+      encounterEntry("emerald", "walk", 10),
+      encounterEntry("firered", "walk", 10),
+    ];
+    expect(computeExclusivityComponent(encounters)).toBe(0);
   });
 
   it("clamps to 0 when available in 5 or more games", () => {
@@ -768,6 +790,88 @@ describe("applyOneTimeOnlyChainFloor", () => {
   });
 });
 
+// ---- applyFossilChainFloor -----------------------------------------------
+
+describe("applyFossilChainFloor", () => {
+  describe("isFossilChain = false", () => {
+    it("leaves common untouched at depth 0", () => {
+      expect(applyFossilChainFloor("common", false, 0)).toBe("common");
+    });
+
+    it("leaves common untouched at depth 1", () => {
+      expect(applyFossilChainFloor("common", false, 1)).toBe("common");
+    });
+
+    it("leaves legendary untouched at depth 0", () => {
+      expect(applyFossilChainFloor("legendary", false, 0)).toBe("legendary");
+    });
+
+    it("leaves legendary untouched at depth 1", () => {
+      expect(applyFossilChainFloor("legendary", false, 1)).toBe("legendary");
+    });
+  });
+
+  describe("isFossilChain = true, depth 0 (ultra_rare floor)", () => {
+    it("raises common up to ultra_rare", () => {
+      expect(applyFossilChainFloor("common", true, 0)).toBe("ultra_rare");
+    });
+
+    it("raises rare up to ultra_rare", () => {
+      expect(applyFossilChainFloor("rare", true, 0)).toBe("ultra_rare");
+    });
+
+    it("raises epic up to ultra_rare", () => {
+      expect(applyFossilChainFloor("epic", true, 0)).toBe("ultra_rare");
+    });
+
+    it("leaves ultra_rare untouched (already at the floor)", () => {
+      expect(applyFossilChainFloor("ultra_rare", true, 0)).toBe("ultra_rare");
+    });
+
+    it("leaves mythic untouched (already above the floor)", () => {
+      expect(applyFossilChainFloor("mythic", true, 0)).toBe("mythic");
+    });
+
+    it("leaves legendary untouched (already above the floor)", () => {
+      expect(applyFossilChainFloor("legendary", true, 0)).toBe("legendary");
+    });
+  });
+
+  describe("isFossilChain = true, depth 1+ (mythic floor)", () => {
+    it("raises rare up to mythic", () => {
+      expect(applyFossilChainFloor("rare", true, 1)).toBe("mythic");
+    });
+
+    it("raises ultra_rare up to mythic", () => {
+      expect(applyFossilChainFloor("ultra_rare", true, 1)).toBe("mythic");
+    });
+
+    it("leaves mythic untouched (already at the floor)", () => {
+      expect(applyFossilChainFloor("mythic", true, 1)).toBe("mythic");
+    });
+
+    it("never lowers legendary: it stays legendary rather than being pulled down to mythic", () => {
+      expect(applyFossilChainFloor("legendary", true, 1)).toBe("legendary");
+    });
+
+    it("still applies the mythic floor at a deeper depth (2)", () => {
+      expect(applyFossilChainFloor("rare", true, 2)).toBe("mythic");
+      expect(applyFossilChainFloor("legendary", true, 2)).toBe("legendary");
+    });
+  });
+});
+
+describe("FOSSIL_ROOT_SPECIES_NAMES", () => {
+  it("contains the Gen 3 fossil root species (lileep and anorith)", () => {
+    expect(FOSSIL_ROOT_SPECIES_NAMES.has("lileep")).toBe(true);
+    expect(FOSSIL_ROOT_SPECIES_NAMES.has("anorith")).toBe(true);
+  });
+
+  it("does not contain an unrelated species", () => {
+    expect(FOSSIL_ROOT_SPECIES_NAMES.has("bulbasaur")).toBe(false);
+  });
+});
+
 describe("applyBaseStatFloor", () => {
   describe("baseStatTotal below the threshold", () => {
     it("leaves common untouched at 599", () => {
@@ -910,6 +1014,34 @@ describe("applyBaseStatTierBonus", () => {
 
   it("caps at 'mythic' when already at ultra_rare + 2 steps", () => {
     expect(applyBaseStatTierBonus("ultra_rare", 550)).toBe("mythic");
+  });
+});
+
+// ---- computeBaseStatScoreBonus -------------------------------------------
+
+describe("computeBaseStatScoreBonus", () => {
+  it("returns 0 well below the range (300)", () => {
+    expect(computeBaseStatScoreBonus(300)).toBe(0);
+  });
+
+  it("returns 0 just below the range (399)", () => {
+    expect(computeBaseStatScoreBonus(399)).toBe(0);
+  });
+
+  it("returns 5 at the real Altaria base-stat total (450, midpoint of the ramp)", () => {
+    expect(computeBaseStatScoreBonus(450)).toBe(5);
+  });
+
+  it("returns 9 at 490 (a realistic BST just below the 500 cutoff)", () => {
+    expect(computeBaseStatScoreBonus(490)).toBe(9);
+  });
+
+  it("returns 0 at the top of the range (500), where applyBaseStatTierBonus takes over instead", () => {
+    expect(computeBaseStatScoreBonus(500)).toBe(0);
+  });
+
+  it("returns 0 above the range (600)", () => {
+    expect(computeBaseStatScoreBonus(600)).toBe(0);
   });
 });
 

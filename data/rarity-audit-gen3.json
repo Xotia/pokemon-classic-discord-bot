@@ -38,7 +38,8 @@
     "oneTimeOnly": true,
     "flooredByChain": true,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 253,
@@ -64,7 +65,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 254,
@@ -90,7 +92,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 255,
@@ -131,7 +134,8 @@
     "oneTimeOnly": true,
     "flooredByChain": true,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 256,
@@ -157,7 +161,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 257,
@@ -183,7 +188,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 258,
@@ -224,7 +230,8 @@
     "oneTimeOnly": true,
     "flooredByChain": true,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 259,
@@ -250,7 +257,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 260,
@@ -276,7 +284,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 261,
@@ -318,14 +327,15 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 262,
     "name": "Grahyèna",
     "rarity": "rare",
     "appliedRule": "composite",
-    "finalScore": 41.5,
+    "finalScore": 43.5,
     "components": {
       "c1_encounterRate": 40,
       "c3_games": 88,
@@ -355,7 +365,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 263,
@@ -397,19 +408,20 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 264,
     "name": "Linéon",
     "rarity": "rare",
     "appliedRule": "composite",
-    "finalScore": 31.625,
+    "finalScore": 30.5,
     "components": {
       "c1_encounterRate": 40,
       "c3_games": 52,
       "c4_method": 0,
-      "c5_exclusivity": 50,
+      "c5_exclusivity": 0,
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
@@ -436,7 +448,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 265,
@@ -478,19 +491,20 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 266,
     "name": "Armulys",
     "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 53.375,
+    "finalScore": 50.25,
     "components": {
       "c1_encounterRate": 80,
       "c3_games": 88,
       "c4_method": 0,
-      "c5_exclusivity": 50,
+      "c5_exclusivity": 0,
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
@@ -517,7 +531,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 267,
@@ -543,19 +558,20 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 268,
     "name": "Blindalys",
     "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 53.375,
+    "finalScore": 50.25,
     "components": {
       "c1_encounterRate": 80,
       "c3_games": 88,
       "c4_method": 0,
-      "c5_exclusivity": 50,
+      "c5_exclusivity": 0,
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
@@ -582,7 +598,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 269,
@@ -608,19 +625,20 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 270,
     "name": "Nénupiot",
     "rarity": "uncommon",
     "appliedRule": "composite",
-    "finalScore": 28.624999999999996,
+    "finalScore": 25.499999999999996,
     "components": {
       "c1_encounterRate": 30,
       "c3_games": 76,
       "c4_method": 0,
-      "c5_exclusivity": 50,
+      "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
@@ -648,19 +666,20 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 271,
     "name": "Lombre",
     "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 48.18749999999999,
+    "finalScore": 46.62499999999999,
     "components": {
       "c1_encounterRate": 60,
       "c3_games": 92,
       "c4_method": 0,
-      "c5_exclusivity": 75,
+      "c5_exclusivity": 50,
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
@@ -686,7 +705,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 272,
@@ -712,19 +732,20 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 273,
     "name": "Grainipiot",
-    "rarity": "uncommon",
+    "rarity": "common",
     "appliedRule": "composite",
-    "finalScore": 15.874999999999998,
+    "finalScore": 12.749999999999998,
     "components": {
       "c1_encounterRate": 0,
       "c3_games": 68,
       "c4_method": 0,
-      "c5_exclusivity": 50,
+      "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
@@ -753,19 +774,20 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 274,
     "name": "Pifeuil",
     "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 55.68749999999999,
+    "finalScore": 54.12499999999999,
     "components": {
       "c1_encounterRate": 80,
       "c3_games": 92,
       "c4_method": 0,
-      "c5_exclusivity": 75,
+      "c5_exclusivity": 50,
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
@@ -791,7 +813,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 275,
@@ -817,7 +840,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 276,
@@ -859,19 +883,20 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 277,
     "name": "Hélédelle",
     "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 53.375,
+    "finalScore": 55.75,
     "components": {
       "c1_encounterRate": 80,
       "c3_games": 88,
       "c4_method": 0,
-      "c5_exclusivity": 50,
+      "c5_exclusivity": 0,
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
@@ -898,7 +923,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 278,
@@ -941,19 +967,20 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 279,
     "name": "Bekipan",
     "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 48.125,
+    "finalScore": 49,
     "components": {
       "c1_encounterRate": 90,
       "c3_games": 0,
       "c4_method": 40,
-      "c5_exclusivity": 50,
+      "c5_exclusivity": 0,
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
@@ -980,7 +1007,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 280,
@@ -1022,7 +1050,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 281,
@@ -1048,7 +1077,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 282,
@@ -1074,19 +1104,20 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": true
+    "flooredByBaseStatBonus": true,
+    "flooredByFossilChain": false
   },
   {
     "id": 283,
     "name": "Arakdo",
     "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 52.68749999999999,
+    "finalScore": 51.12499999999999,
     "components": {
       "c1_encounterRate": 98,
       "c3_games": 60,
       "c4_method": 0,
-      "c5_exclusivity": 75,
+      "c5_exclusivity": 50,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
@@ -1113,7 +1144,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 284,
@@ -1139,7 +1171,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 285,
@@ -1181,7 +1214,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 286,
@@ -1207,19 +1241,20 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 287,
     "name": "Parecool",
     "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 53.375,
+    "finalScore": 50.25,
     "components": {
       "c1_encounterRate": 90,
       "c3_games": 88,
       "c4_method": 0,
-      "c5_exclusivity": 50,
+      "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
@@ -1246,7 +1281,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 288,
@@ -1272,7 +1308,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 289,
@@ -1298,7 +1335,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": true,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 290,
@@ -1340,7 +1378,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 291,
@@ -1366,7 +1405,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 292,
@@ -1392,7 +1432,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 293,
@@ -1434,7 +1475,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 294,
@@ -1476,7 +1518,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 295,
@@ -1502,7 +1545,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 296,
@@ -1545,19 +1589,20 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 297,
     "name": "Hariyama",
     "rarity": "rare",
     "appliedRule": "composite",
-    "finalScore": 34.625,
+    "finalScore": 38.9,
     "components": {
       "c1_encounterRate": 30,
       "c3_games": 88,
       "c4_method": 0,
-      "c5_exclusivity": 50,
+      "c5_exclusivity": 0,
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
@@ -1584,7 +1629,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 298,
@@ -1610,19 +1656,20 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 299,
     "name": "Tarinor",
     "rarity": "rare",
     "appliedRule": "composite",
-    "finalScore": 42.125,
+    "finalScore": 39,
     "components": {
       "c1_encounterRate": 40,
       "c3_games": 88,
       "c4_method": 40,
-      "c5_exclusivity": 50,
+      "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
@@ -1649,7 +1696,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 300,
@@ -1692,7 +1740,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 301,
@@ -1718,19 +1767,20 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 302,
     "name": "Ténéfix",
     "rarity": "uncommon",
     "appliedRule": "composite",
-    "finalScore": 26.375,
+    "finalScore": 23.25,
     "components": {
       "c1_encounterRate": 30,
       "c3_games": 64,
       "c4_method": 0,
-      "c5_exclusivity": 50,
+      "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
@@ -1758,19 +1808,20 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 303,
     "name": "Mysdibule",
     "rarity": "uncommon",
     "appliedRule": "composite",
-    "finalScore": 28.624999999999996,
+    "finalScore": 25.499999999999996,
     "components": {
       "c1_encounterRate": 30,
       "c3_games": 76,
       "c4_method": 0,
-      "c5_exclusivity": 50,
+      "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
@@ -1798,7 +1849,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 304,
@@ -1840,19 +1892,20 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 305,
     "name": "Galegon",
     "rarity": "rare",
     "appliedRule": "composite",
-    "finalScore": 42.125,
+    "finalScore": 42,
     "components": {
       "c1_encounterRate": 50,
       "c3_games": 88,
       "c4_method": 0,
-      "c5_exclusivity": 50,
+      "c5_exclusivity": 0,
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
@@ -1879,7 +1932,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 306,
@@ -1905,19 +1959,20 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": true
+    "flooredByBaseStatBonus": true,
+    "flooredByFossilChain": false
   },
   {
     "id": 307,
     "name": "Méditikka",
     "rarity": "uncommon",
     "appliedRule": "composite",
-    "finalScore": 27.062499999999996,
+    "finalScore": 25.499999999999996,
     "components": {
       "c1_encounterRate": 30,
       "c3_games": 76,
       "c4_method": 0,
-      "c5_exclusivity": 25,
+      "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
@@ -1946,19 +2001,20 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 308,
     "name": "Charmina",
     "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 51.93749999999999,
+    "finalScore": 51.37499999999999,
     "components": {
       "c1_encounterRate": 70,
       "c3_games": 92,
       "c4_method": 0,
-      "c5_exclusivity": 75,
+      "c5_exclusivity": 50,
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
@@ -1984,7 +2040,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 309,
@@ -2026,19 +2083,20 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 310,
     "name": "Élecsprint",
     "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 53.375,
+    "finalScore": 57.75,
     "components": {
       "c1_encounterRate": 80,
       "c3_games": 88,
       "c4_method": 0,
-      "c5_exclusivity": 50,
+      "c5_exclusivity": 0,
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
@@ -2065,14 +2123,15 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 311,
     "name": "Posipi",
     "rarity": "common",
     "appliedRule": "composite",
-    "finalScore": 14.25,
+    "finalScore": 14.75,
     "components": {
       "c1_encounterRate": 0,
       "c3_games": 76,
@@ -2108,14 +2167,15 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 312,
     "name": "Négapi",
     "rarity": "uncommon",
     "appliedRule": "composite",
-    "finalScore": 22.5,
+    "finalScore": 23,
     "components": {
       "c1_encounterRate": 20,
       "c3_games": 80,
@@ -2150,19 +2210,20 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 313,
     "name": "Muciole",
     "rarity": "rare",
     "appliedRule": "composite",
-    "finalScore": 43.62499999999999,
+    "finalScore": 43.49999999999999,
     "components": {
       "c1_encounterRate": 64,
       "c3_games": 88,
       "c4_method": 0,
-      "c5_exclusivity": 50,
+      "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
@@ -2189,19 +2250,20 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 314,
     "name": "Lumivole",
     "rarity": "rare",
     "appliedRule": "composite",
-    "finalScore": 43.62499999999999,
+    "finalScore": 43.49999999999999,
     "components": {
       "c1_encounterRate": 64,
       "c3_games": 88,
       "c4_method": 0,
-      "c5_exclusivity": 50,
+      "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
@@ -2228,19 +2290,20 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 315,
     "name": "Rosélia",
     "rarity": "rare",
     "appliedRule": "composite",
-    "finalScore": 34.1875,
+    "finalScore": 32.625,
     "components": {
       "c1_encounterRate": 30,
       "c3_games": 84,
       "c4_method": 0,
-      "c5_exclusivity": 25,
+      "c5_exclusivity": 0,
       "c6_evolution": 45,
       "c7_oneTimeOnly": 0
     },
@@ -2269,19 +2332,20 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 316,
     "name": "Gloupti",
-    "rarity": "very_rare",
+    "rarity": "rare",
     "appliedRule": "composite",
-    "finalScore": 45.875,
+    "finalScore": 42.75,
     "components": {
       "c1_encounterRate": 70,
       "c3_games": 88,
       "c4_method": 0,
-      "c5_exclusivity": 50,
+      "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
@@ -2308,12 +2372,13 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 317,
     "name": "Avaltout",
-    "rarity": "epic",
+    "rarity": "very_rare",
     "appliedRule": "priority:no_encounters_inherits_parent",
     "finalScore": null,
     "components": null,
@@ -2334,19 +2399,20 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 318,
     "name": "Carvanha",
     "rarity": "uncommon",
     "appliedRule": "composite",
-    "finalScore": 24.874999999999996,
+    "finalScore": 21.749999999999996,
     "components": {
       "c1_encounterRate": 0,
       "c3_games": 76,
       "c4_method": 40,
-      "c5_exclusivity": 50,
+      "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
@@ -2374,14 +2440,15 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 319,
     "name": "Sharpedo",
     "rarity": "uncommon",
     "appliedRule": "composite",
-    "finalScore": 18.75,
+    "finalScore": 24.75,
     "components": {
       "c1_encounterRate": 20,
       "c3_games": 0,
@@ -2416,19 +2483,20 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 320,
     "name": "Wailmer",
     "rarity": "common",
     "appliedRule": "composite",
-    "finalScore": 10.625,
+    "finalScore": 7.5,
     "components": {
       "c1_encounterRate": 0,
       "c3_games": 0,
       "c4_method": 40,
-      "c5_exclusivity": 50,
+      "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
@@ -2456,19 +2524,20 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 321,
     "name": "Wailord",
     "rarity": "ultra_rare",
     "appliedRule": "composite",
-    "finalScore": 67.62499999999999,
+    "finalScore": 64.49999999999999,
     "components": {
       "c1_encounterRate": 98,
       "c3_games": 88,
       "c4_method": 40,
-      "c5_exclusivity": 50,
+      "c5_exclusivity": 0,
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
@@ -2495,7 +2564,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": true
+    "flooredByBaseStatBonus": true,
+    "flooredByFossilChain": false
   },
   {
     "id": 322,
@@ -2537,19 +2607,20 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 323,
     "name": "Camérupt",
     "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 50.68749999999999,
+    "finalScore": 55.12499999999999,
     "components": {
       "c1_encounterRate": 0,
       "c3_games": 92,
       "c4_method": 100,
-      "c5_exclusivity": 75,
+      "c5_exclusivity": 50,
       "c6_evolution": 30,
       "c7_oneTimeOnly": 100
     },
@@ -2575,19 +2646,20 @@
     "oneTimeOnly": true,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 324,
     "name": "Chartor",
     "rarity": "rare",
     "appliedRule": "composite",
-    "finalScore": 33.875,
+    "finalScore": 37.75,
     "components": {
       "c1_encounterRate": 40,
       "c3_games": 84,
       "c4_method": 0,
-      "c5_exclusivity": 50,
+      "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
@@ -2614,7 +2686,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 325,
@@ -2656,7 +2729,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 326,
@@ -2682,7 +2756,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 327,
@@ -2724,19 +2799,20 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 328,
     "name": "Kraknoix",
     "rarity": "uncommon",
     "appliedRule": "composite",
-    "finalScore": 18.875,
+    "finalScore": 15.749999999999998,
     "components": {
       "c1_encounterRate": 0,
       "c3_games": 84,
       "c4_method": 0,
-      "c5_exclusivity": 50,
+      "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
@@ -2763,7 +2839,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 329,
@@ -2789,7 +2866,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 330,
@@ -2815,19 +2893,20 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": true
+    "flooredByBaseStatBonus": true,
+    "flooredByFossilChain": false
   },
   {
     "id": 331,
     "name": "Cacnea",
     "rarity": "rare",
     "appliedRule": "composite",
-    "finalScore": 42.125,
+    "finalScore": 39,
     "components": {
       "c1_encounterRate": 60,
       "c3_games": 88,
       "c4_method": 0,
-      "c5_exclusivity": 50,
+      "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
@@ -2854,7 +2933,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 332,
@@ -2880,7 +2960,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 333,
@@ -2922,19 +3003,20 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 334,
     "name": "Altaria",
-    "rarity": "very_rare",
+    "rarity": "epic",
     "appliedRule": "composite",
-    "finalScore": 56.37499999999999,
+    "finalScore": 62.24999999999999,
     "components": {
       "c1_encounterRate": 88,
       "c3_games": 88,
       "c4_method": 0,
-      "c5_exclusivity": 50,
+      "c5_exclusivity": 0,
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
@@ -2961,14 +3043,15 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 335,
     "name": "Mangriff",
     "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 47.5,
+    "finalScore": 53.3,
     "components": {
       "c1_encounterRate": 62,
       "c3_games": 96,
@@ -2998,19 +3081,20 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 336,
     "name": "Séviper",
     "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 45.18749999999999,
+    "finalScore": 49.42499999999999,
     "components": {
       "c1_encounterRate": 62,
       "c3_games": 92,
       "c4_method": 0,
-      "c5_exclusivity": 75,
+      "c5_exclusivity": 50,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
@@ -3036,14 +3120,15 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 337,
     "name": "Séléroc",
     "rarity": "rare",
     "appliedRule": "composite",
-    "finalScore": 35.49999999999999,
+    "finalScore": 41.49999999999999,
     "components": {
       "c1_encounterRate": 30,
       "c3_games": 96,
@@ -3074,19 +3159,20 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 338,
     "name": "Solaroc",
     "rarity": "rare",
     "appliedRule": "composite",
-    "finalScore": 33.18749999999999,
+    "finalScore": 37.625,
     "components": {
       "c1_encounterRate": 30,
       "c3_games": 92,
       "c4_method": 0,
-      "c5_exclusivity": 75,
+      "c5_exclusivity": 50,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
@@ -3113,19 +3199,20 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 339,
     "name": "Barloche",
-    "rarity": "uncommon",
+    "rarity": "common",
     "appliedRule": "composite",
-    "finalScore": 18.125,
+    "finalScore": 15,
     "components": {
       "c1_encounterRate": 0,
       "c3_games": 40,
       "c4_method": 40,
-      "c5_exclusivity": 50,
+      "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
@@ -3153,19 +3240,20 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 340,
     "name": "Barbicha",
     "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 51.12499999999999,
+    "finalScore": 54.8,
     "components": {
       "c1_encounterRate": 60,
       "c3_games": 76,
       "c4_method": 40,
-      "c5_exclusivity": 50,
+      "c5_exclusivity": 0,
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
@@ -3192,19 +3280,20 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 341,
     "name": "Écrapince",
     "rarity": "uncommon",
     "appliedRule": "composite",
-    "finalScore": 22.625,
+    "finalScore": 19.5,
     "components": {
       "c1_encounterRate": 0,
       "c3_games": 64,
       "c4_method": 40,
-      "c5_exclusivity": 50,
+      "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
@@ -3232,7 +3321,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 342,
@@ -3258,19 +3348,20 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 343,
     "name": "Balbuto",
     "rarity": "rare",
     "appliedRule": "composite",
-    "finalScore": 39.12499999999999,
+    "finalScore": 35.99999999999999,
     "components": {
       "c1_encounterRate": 52,
       "c3_games": 88,
       "c4_method": 0,
-      "c5_exclusivity": 50,
+      "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
@@ -3297,19 +3388,20 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 344,
     "name": "Kaorine",
     "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 42.125,
+    "finalScore": 39,
     "components": {
       "c1_encounterRate": 50,
       "c3_games": 88,
       "c4_method": 0,
-      "c5_exclusivity": 50,
+      "c5_exclusivity": 0,
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
@@ -3336,19 +3428,20 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": true
+    "flooredByBaseStatBonus": true,
+    "flooredByFossilChain": false
   },
   {
     "id": 345,
     "name": "Lilia",
-    "rarity": "epic",
+    "rarity": "ultra_rare",
     "appliedRule": "composite",
-    "finalScore": 44.625,
+    "finalScore": 41.5,
     "components": {
       "c1_encounterRate": 0,
       "c3_games": 88,
       "c4_method": 100,
-      "c5_exclusivity": 50,
+      "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 100
     },
@@ -3375,12 +3468,13 @@
     "oneTimeOnly": true,
     "flooredByChain": true,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": true
   },
   {
     "id": 346,
     "name": "Vacilys",
-    "rarity": "ultra_rare",
+    "rarity": "mythic",
     "appliedRule": "priority:no_encounters_inherits_parent",
     "finalScore": null,
     "components": null,
@@ -3401,19 +3495,20 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 347,
     "name": "Anorith",
-    "rarity": "epic",
+    "rarity": "ultra_rare",
     "appliedRule": "composite",
-    "finalScore": 44.625,
+    "finalScore": 41.5,
     "components": {
       "c1_encounterRate": 0,
       "c3_games": 88,
       "c4_method": 100,
-      "c5_exclusivity": 50,
+      "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 100
     },
@@ -3440,12 +3535,13 @@
     "oneTimeOnly": true,
     "flooredByChain": true,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": true
   },
   {
     "id": 348,
     "name": "Armaldo",
-    "rarity": "ultra_rare",
+    "rarity": "mythic",
     "appliedRule": "priority:no_encounters_inherits_parent",
     "finalScore": null,
     "components": null,
@@ -3466,19 +3562,20 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 349,
     "name": "Barpau",
-    "rarity": "rare",
+    "rarity": "uncommon",
     "appliedRule": "composite",
-    "finalScore": 30.874999999999996,
+    "finalScore": 27.749999999999996,
     "components": {
       "c1_encounterRate": 0,
       "c3_games": 88,
       "c4_method": 60,
-      "c5_exclusivity": 50,
+      "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
@@ -3505,12 +3602,13 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 350,
     "name": "Milobellus",
-    "rarity": "ultra_rare",
+    "rarity": "epic",
     "appliedRule": "priority:no_encounters_inherits_parent",
     "finalScore": null,
     "components": null,
@@ -3531,14 +3629,15 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": true
+    "flooredByBaseStatBonus": true,
+    "flooredByFossilChain": false
   },
   {
     "id": 351,
     "name": "Morphéo",
     "rarity": "epic",
     "appliedRule": "composite",
-    "finalScore": 40,
+    "finalScore": 42,
     "components": {
       "c1_encounterRate": 0,
       "c3_games": 80,
@@ -3572,14 +3671,15 @@
     "oneTimeOnly": true,
     "flooredByChain": true,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 352,
     "name": "Kecleon",
     "rarity": "rare",
     "appliedRule": "composite",
-    "finalScore": 33.75,
+    "finalScore": 37.75,
     "components": {
       "c1_encounterRate": 90,
       "c3_games": 0,
@@ -3615,7 +3715,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 353,
@@ -3657,19 +3758,20 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 354,
     "name": "Branette",
     "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 51.93749999999999,
+    "finalScore": 55.87499999999999,
     "components": {
       "c1_encounterRate": 70,
       "c3_games": 92,
       "c4_method": 0,
-      "c5_exclusivity": 75,
+      "c5_exclusivity": 50,
       "c6_evolution": 30,
       "c7_oneTimeOnly": 0
     },
@@ -3695,19 +3797,20 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 355,
     "name": "Skelénox",
-    "rarity": "uncommon",
+    "rarity": "common",
     "appliedRule": "composite",
-    "finalScore": 18.125,
+    "finalScore": 15,
     "components": {
       "c1_encounterRate": 0,
       "c3_games": 80,
       "c4_method": 0,
-      "c5_exclusivity": 50,
+      "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
@@ -3734,14 +3837,15 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 356,
     "name": "Téraclope",
     "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 54.24999999999999,
+    "finalScore": 59.74999999999999,
     "components": {
       "c1_encounterRate": 70,
       "c3_games": 96,
@@ -3771,19 +3875,20 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 357,
     "name": "Tropius",
     "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 50.37499999999999,
+    "finalScore": 53.24999999999999,
     "components": {
       "c1_encounterRate": 82,
       "c3_games": 88,
       "c4_method": 0,
-      "c5_exclusivity": 50,
+      "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
@@ -3810,19 +3915,20 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 358,
     "name": "Éoko",
     "rarity": "epic",
     "appliedRule": "composite",
-    "finalScore": 61.25,
+    "finalScore": 63.625,
     "components": {
       "c1_encounterRate": 96,
       "c3_games": 88,
       "c4_method": 0,
-      "c5_exclusivity": 50,
+      "c5_exclusivity": 0,
       "c6_evolution": 45,
       "c7_oneTimeOnly": 0
     },
@@ -3849,19 +3955,20 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 359,
     "name": "Absol",
     "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 51.12499999999999,
+    "finalScore": 54.49999999999999,
     "components": {
       "c1_encounterRate": 84,
       "c3_games": 88,
       "c4_method": 0,
-      "c5_exclusivity": 50,
+      "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
@@ -3888,7 +3995,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 360,
@@ -3930,7 +4038,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 361,
@@ -3972,7 +4081,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 362,
@@ -3998,7 +4108,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 363,
@@ -4041,7 +4152,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 364,
@@ -4067,7 +4179,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 365,
@@ -4093,19 +4206,20 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": true
+    "flooredByBaseStatBonus": true,
+    "flooredByFossilChain": false
   },
   {
     "id": 366,
     "name": "Coquiperl",
     "rarity": "uncommon",
     "appliedRule": "composite",
-    "finalScore": 28.624999999999996,
+    "finalScore": 25.499999999999996,
     "components": {
       "c1_encounterRate": 0,
       "c3_games": 76,
       "c4_method": 60,
-      "c5_exclusivity": 50,
+      "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
@@ -4132,7 +4246,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 367,
@@ -4158,7 +4273,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 368,
@@ -4184,19 +4300,20 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 369,
     "name": "Relicanth",
     "rarity": "epic",
     "appliedRule": "composite",
-    "finalScore": 62.37499999999999,
+    "finalScore": 67.75,
     "components": {
       "c1_encounterRate": 90,
       "c3_games": 76,
       "c4_method": 60,
-      "c5_exclusivity": 50,
+      "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
@@ -4223,19 +4340,20 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 370,
     "name": "Lovdisc",
-    "rarity": "rare",
+    "rarity": "uncommon",
     "appliedRule": "composite",
-    "finalScore": 32.37499999999999,
+    "finalScore": 29.249999999999996,
     "components": {
       "c1_encounterRate": 20,
       "c3_games": 76,
       "c4_method": 40,
-      "c5_exclusivity": 50,
+      "c5_exclusivity": 0,
       "c6_evolution": 0,
       "c7_oneTimeOnly": 0
     },
@@ -4263,7 +4381,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 371,
@@ -4305,7 +4424,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 372,
@@ -4331,7 +4451,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 373,
@@ -4357,7 +4478,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": true,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 374,
@@ -4398,7 +4520,8 @@
     "oneTimeOnly": true,
     "flooredByChain": true,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 375,
@@ -4424,7 +4547,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 376,
@@ -4450,7 +4574,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 377,
@@ -4484,7 +4609,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 378,
@@ -4518,7 +4644,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 379,
@@ -4552,7 +4679,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 380,
@@ -4589,7 +4717,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 381,
@@ -4626,7 +4755,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 382,
@@ -4658,7 +4788,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 383,
@@ -4690,7 +4821,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 384,
@@ -4724,7 +4856,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 385,
@@ -4756,7 +4889,8 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   },
   {
     "id": 386,
@@ -4790,6 +4924,7 @@
     "oneTimeOnly": false,
     "flooredByChain": false,
     "flooredByBaseStats": false,
-    "flooredByBaseStatBonus": false
+    "flooredByBaseStatBonus": false,
+    "flooredByFossilChain": false
   }
 ]
