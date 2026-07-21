@@ -2,6 +2,7 @@ import { fetchSpecies } from "./fetchSpecies";
 import { fetchEncounters } from "./fetchEncounters";
 import { fetchEvolutionChain } from "./fetchEvolutionChain";
 import { fetchLocationArea } from "./fetchLocationArea";
+import { fetchPokemon } from "./fetchPokemon";
 import {
   isOneTimeOnly,
   computeEncounterRateComponent,
@@ -12,6 +13,7 @@ import {
   computeOneTimeOnlyComponent,
   mapScoreToRarityTier,
   applyOneTimeOnlyChainFloor,
+  applyBaseStatFloor,
   getMaxEncounterChance,
   getDistinctVersionNames,
   getDistinctMethods,
@@ -120,10 +122,27 @@ export async function computeRarity(
       rawData: null,
       oneTimeOnly: false,
       flooredByChain: false,
+      flooredByBaseStats: false,
     };
   }
 
   const name = getFrenchName(species);
+
+  // Base-stat total (behind the mythic floor for 600+ BST Pokémon, e.g.
+  // Gen 3 pseudo-legendaries) is fetched from the plain /pokemon endpoint,
+  // which the species endpoint doesn't expose. Defaults to 0 (never
+  // triggers the floor) if the fetch fails, rather than crashing the
+  // whole computation.
+  let baseStatTotal = 0;
+  try {
+    const pokemon = await fetchPokemon(id);
+    baseStatTotal = (pokemon?.stats ?? []).reduce(
+      (sum: number, entry: any) => sum + (entry?.base_stat ?? 0),
+      0,
+    );
+  } catch {
+    baseStatTotal = 0;
+  }
 
   // Fetched unconditionally (even for legendaries/mythicals/absent cases)
   // so the raw PokéAPI-derived facts can always be inspected for audit,
@@ -176,6 +195,7 @@ export async function computeRarity(
     isVersionExclusive: versions.length <= 1,
     evolutionDepth: evolutionInfo?.depth ?? null,
     evolutionTrigger: evolutionInfo?.trigger ?? null,
+    baseStatTotal,
   };
 
   // "mythic" as a rarity tier is unrelated to PokéAPI's is_mythical flag —
@@ -183,7 +203,12 @@ export async function computeRarity(
   // starter evolutions). A truly mythical/legendary species is always
   // "legendary" rarity, regardless of which of the two flags is set.
   if (species.is_mythical === true) {
-    const rarity = applyOneTimeOnlyChainFloor("legendary", rootOneTimeOnly, depth);
+    const rarityBeforeBaseStatFloor = applyOneTimeOnlyChainFloor(
+      "legendary",
+      rootOneTimeOnly,
+      depth,
+    );
+    const rarity = applyBaseStatFloor(rarityBeforeBaseStatFloor, baseStatTotal);
     return {
       id,
       name,
@@ -193,12 +218,18 @@ export async function computeRarity(
       components: null,
       rawData,
       oneTimeOnly,
-      flooredByChain: rarity !== "legendary",
+      flooredByChain: rarityBeforeBaseStatFloor !== "legendary",
+      flooredByBaseStats: rarity !== rarityBeforeBaseStatFloor,
     };
   }
 
   if (species.is_legendary === true) {
-    const rarity = applyOneTimeOnlyChainFloor("legendary", rootOneTimeOnly, depth);
+    const rarityBeforeBaseStatFloor = applyOneTimeOnlyChainFloor(
+      "legendary",
+      rootOneTimeOnly,
+      depth,
+    );
+    const rarity = applyBaseStatFloor(rarityBeforeBaseStatFloor, baseStatTotal);
     return {
       id,
       name,
@@ -208,7 +239,8 @@ export async function computeRarity(
       components: null,
       rawData,
       oneTimeOnly,
-      flooredByChain: rarity !== "legendary",
+      flooredByChain: rarityBeforeBaseStatFloor !== "legendary",
+      flooredByBaseStats: rarity !== rarityBeforeBaseStatFloor,
     };
   }
 
@@ -229,7 +261,12 @@ export async function computeRarity(
       }
     }
 
-    const rarity = applyOneTimeOnlyChainFloor(tierBeforeFloor, rootOneTimeOnly, depth);
+    const rarityBeforeBaseStatFloor = applyOneTimeOnlyChainFloor(
+      tierBeforeFloor,
+      rootOneTimeOnly,
+      depth,
+    );
+    const rarity = applyBaseStatFloor(rarityBeforeBaseStatFloor, baseStatTotal);
     return {
       id,
       name,
@@ -239,7 +276,8 @@ export async function computeRarity(
       components: null,
       rawData,
       oneTimeOnly,
-      flooredByChain: rarity !== tierBeforeFloor,
+      flooredByChain: rarityBeforeBaseStatFloor !== tierBeforeFloor,
+      flooredByBaseStats: rarity !== rarityBeforeBaseStatFloor,
     };
   }
 
@@ -261,7 +299,12 @@ export async function computeRarity(
   const finalScore = Math.min(100, Math.max(0, rawScore / COMPOSITE_WEIGHT_SUM));
 
   const tierBeforeFloor = mapScoreToRarityTier(finalScore);
-  const rarity = applyOneTimeOnlyChainFloor(tierBeforeFloor, rootOneTimeOnly, depth);
+  const rarityBeforeBaseStatFloor = applyOneTimeOnlyChainFloor(
+    tierBeforeFloor,
+    rootOneTimeOnly,
+    depth,
+  );
+  const rarity = applyBaseStatFloor(rarityBeforeBaseStatFloor, baseStatTotal);
 
   return {
     id,
@@ -279,6 +322,7 @@ export async function computeRarity(
     },
     rawData,
     oneTimeOnly,
-    flooredByChain: rarity !== tierBeforeFloor,
+    flooredByChain: rarityBeforeBaseStatFloor !== tierBeforeFloor,
+    flooredByBaseStats: rarity !== rarityBeforeBaseStatFloor,
   };
 }

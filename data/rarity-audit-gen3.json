@@ -32,10 +32,12 @@
       "easiestMethod": "gift",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 310
     },
     "oneTimeOnly": true,
-    "flooredByChain": true
+    "flooredByChain": true,
+    "flooredByBaseStats": false
   },
   {
     "id": 253,
@@ -55,10 +57,12 @@
       "easiestMethod": null,
       "isVersionExclusive": true,
       "evolutionDepth": 1,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 405
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 254,
@@ -78,10 +82,12 @@
       "easiestMethod": null,
       "isVersionExclusive": true,
       "evolutionDepth": 2,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 530
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 255,
@@ -116,10 +122,12 @@
       "easiestMethod": "gift",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 310
     },
     "oneTimeOnly": true,
-    "flooredByChain": true
+    "flooredByChain": true,
+    "flooredByBaseStats": false
   },
   {
     "id": 256,
@@ -139,10 +147,12 @@
       "easiestMethod": null,
       "isVersionExclusive": true,
       "evolutionDepth": 1,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 405
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 257,
@@ -162,10 +172,12 @@
       "easiestMethod": null,
       "isVersionExclusive": true,
       "evolutionDepth": 2,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 530
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 258,
@@ -200,10 +212,12 @@
       "easiestMethod": "gift",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 310
     },
     "oneTimeOnly": true,
-    "flooredByChain": true
+    "flooredByChain": true,
+    "flooredByBaseStats": false
   },
   {
     "id": 259,
@@ -223,10 +237,12 @@
       "easiestMethod": null,
       "isVersionExclusive": true,
       "evolutionDepth": 1,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 405
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 260,
@@ -246,10 +262,12 @@
       "easiestMethod": null,
       "isVersionExclusive": true,
       "evolutionDepth": 2,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 535
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 261,
@@ -285,10 +303,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 220
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 262,
@@ -319,10 +339,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": true,
       "evolutionDepth": 1,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 420
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 263,
@@ -358,10 +380,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 240
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 264,
@@ -394,10 +418,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 1,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 420
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 265,
@@ -433,10 +459,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 195
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 266,
@@ -469,10 +497,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 1,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 205
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 267,
@@ -492,10 +522,12 @@
       "easiestMethod": null,
       "isVersionExclusive": true,
       "evolutionDepth": 2,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 395
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 268,
@@ -528,10 +560,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 1,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 205
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 269,
@@ -551,10 +585,12 @@
       "easiestMethod": null,
       "isVersionExclusive": true,
       "evolutionDepth": 2,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 385
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 270,
@@ -588,10 +624,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 220
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 271,
@@ -623,10 +661,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 1,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 340
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 272,
@@ -646,10 +686,12 @@
       "easiestMethod": null,
       "isVersionExclusive": true,
       "evolutionDepth": 2,
-      "evolutionTrigger": "use-item"
+      "evolutionTrigger": "use-item",
+      "baseStatTotal": 480
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 273,
@@ -684,10 +726,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 220
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 274,
@@ -719,10 +763,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 1,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 340
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 275,
@@ -742,10 +788,12 @@
       "easiestMethod": null,
       "isVersionExclusive": true,
       "evolutionDepth": 2,
-      "evolutionTrigger": "use-item"
+      "evolutionTrigger": "use-item",
+      "baseStatTotal": 480
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 276,
@@ -781,10 +829,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 270
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 277,
@@ -817,10 +867,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 1,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 455
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 278,
@@ -857,10 +909,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 270
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 279,
@@ -893,10 +947,12 @@
       "easiestMethod": "surf",
       "isVersionExclusive": false,
       "evolutionDepth": 1,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 440
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 280,
@@ -932,10 +988,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 198
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 281,
@@ -955,10 +1013,12 @@
       "easiestMethod": null,
       "isVersionExclusive": true,
       "evolutionDepth": 1,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 278
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 282,
@@ -978,10 +1038,12 @@
       "easiestMethod": null,
       "isVersionExclusive": true,
       "evolutionDepth": 2,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 518
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 283,
@@ -1014,10 +1076,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 269
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 284,
@@ -1037,10 +1101,12 @@
       "easiestMethod": null,
       "isVersionExclusive": true,
       "evolutionDepth": 1,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 454
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 285,
@@ -1076,10 +1142,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 295
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 286,
@@ -1099,10 +1167,12 @@
       "easiestMethod": null,
       "isVersionExclusive": true,
       "evolutionDepth": 1,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 460
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 287,
@@ -1135,10 +1205,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 280
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 288,
@@ -1158,15 +1230,17 @@
       "easiestMethod": null,
       "isVersionExclusive": true,
       "evolutionDepth": 1,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 440
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 289,
     "name": "Monaflèmit",
-    "rarity": "ultra_rare",
+    "rarity": "mythic",
     "appliedRule": "priority:no_encounters_inherits_parent",
     "finalScore": null,
     "components": null,
@@ -1181,10 +1255,12 @@
       "easiestMethod": null,
       "isVersionExclusive": true,
       "evolutionDepth": 2,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 670
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": true
   },
   {
     "id": 290,
@@ -1220,10 +1296,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 266
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 291,
@@ -1243,10 +1321,12 @@
       "easiestMethod": null,
       "isVersionExclusive": true,
       "evolutionDepth": 1,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 456
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 292,
@@ -1266,10 +1346,12 @@
       "easiestMethod": null,
       "isVersionExclusive": true,
       "evolutionDepth": 1,
-      "evolutionTrigger": "shed"
+      "evolutionTrigger": "shed",
+      "baseStatTotal": 236
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 293,
@@ -1305,10 +1387,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 240
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 294,
@@ -1344,10 +1428,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 1,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 360
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 295,
@@ -1367,10 +1453,12 @@
       "easiestMethod": null,
       "isVersionExclusive": true,
       "evolutionDepth": 2,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 490
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 296,
@@ -1407,10 +1495,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 237
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 297,
@@ -1443,10 +1533,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 1,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 474
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 298,
@@ -1466,10 +1558,12 @@
       "easiestMethod": null,
       "isVersionExclusive": true,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 190
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 299,
@@ -1502,10 +1596,12 @@
       "easiestMethod": "rock-smash",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 375
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 300,
@@ -1542,10 +1638,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 260
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 301,
@@ -1565,10 +1663,12 @@
       "easiestMethod": null,
       "isVersionExclusive": true,
       "evolutionDepth": 1,
-      "evolutionTrigger": "use-item"
+      "evolutionTrigger": "use-item",
+      "baseStatTotal": 400
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 302,
@@ -1602,10 +1702,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 380
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 303,
@@ -1639,10 +1741,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 380
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 304,
@@ -1678,10 +1782,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 330
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 305,
@@ -1714,10 +1820,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 1,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 430
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 306,
@@ -1737,10 +1845,12 @@
       "easiestMethod": null,
       "isVersionExclusive": true,
       "evolutionDepth": 2,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 530
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 307,
@@ -1775,10 +1885,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 280
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 308,
@@ -1810,10 +1922,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 1,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 410
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 309,
@@ -1849,10 +1963,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 295
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 310,
@@ -1885,10 +2001,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 1,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 475
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 311,
@@ -1925,10 +2043,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 405
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 312,
@@ -1964,10 +2084,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 405
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 313,
@@ -2000,10 +2122,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 430
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 314,
@@ -2036,10 +2160,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 430
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 315,
@@ -2074,10 +2200,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 1,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 400
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 316,
@@ -2110,10 +2238,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 302
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 317,
@@ -2133,10 +2263,12 @@
       "easiestMethod": null,
       "isVersionExclusive": true,
       "evolutionDepth": 1,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 467
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 318,
@@ -2170,10 +2302,12 @@
       "easiestMethod": "good-rod",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 305
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 319,
@@ -2209,10 +2343,12 @@
       "easiestMethod": "super-rod",
       "isVersionExclusive": false,
       "evolutionDepth": 1,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 460
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 320,
@@ -2246,10 +2382,12 @@
       "easiestMethod": "good-rod",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 400
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 321,
@@ -2282,10 +2420,12 @@
       "easiestMethod": "surf",
       "isVersionExclusive": false,
       "evolutionDepth": 1,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 500
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 322,
@@ -2321,10 +2461,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 305
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 323,
@@ -2356,10 +2498,12 @@
       "easiestMethod": "gift",
       "isVersionExclusive": false,
       "evolutionDepth": 1,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 460
     },
     "oneTimeOnly": true,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 324,
@@ -2392,10 +2536,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 470
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 325,
@@ -2431,10 +2577,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 330
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 326,
@@ -2454,10 +2602,12 @@
       "easiestMethod": null,
       "isVersionExclusive": true,
       "evolutionDepth": 1,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 470
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 327,
@@ -2493,10 +2643,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 360
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 328,
@@ -2529,10 +2681,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 290
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 329,
@@ -2552,10 +2706,12 @@
       "easiestMethod": null,
       "isVersionExclusive": true,
       "evolutionDepth": 1,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 340
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 330,
@@ -2575,10 +2731,12 @@
       "easiestMethod": null,
       "isVersionExclusive": true,
       "evolutionDepth": 2,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 520
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 331,
@@ -2611,10 +2769,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 335
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 332,
@@ -2634,10 +2794,12 @@
       "easiestMethod": null,
       "isVersionExclusive": true,
       "evolutionDepth": 1,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 475
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 333,
@@ -2673,10 +2835,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 310
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 334,
@@ -2709,10 +2873,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 1,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 490
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 335,
@@ -2743,10 +2909,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": true,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 458
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 336,
@@ -2778,10 +2946,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 458
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 337,
@@ -2813,10 +2983,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": true,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 460
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 338,
@@ -2849,10 +3021,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 460
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 339,
@@ -2886,10 +3060,12 @@
       "easiestMethod": "good-rod",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 288
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 340,
@@ -2922,10 +3098,12 @@
       "easiestMethod": "super-rod",
       "isVersionExclusive": false,
       "evolutionDepth": 1,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 468
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 341,
@@ -2959,10 +3137,12 @@
       "easiestMethod": "good-rod",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 308
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 342,
@@ -2982,10 +3162,12 @@
       "easiestMethod": null,
       "isVersionExclusive": true,
       "evolutionDepth": 1,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 468
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 343,
@@ -3018,10 +3200,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 300
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 344,
@@ -3054,10 +3238,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 1,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 500
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 345,
@@ -3090,10 +3276,12 @@
       "easiestMethod": "gift",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 355
     },
     "oneTimeOnly": true,
-    "flooredByChain": true
+    "flooredByChain": true,
+    "flooredByBaseStats": false
   },
   {
     "id": 346,
@@ -3113,10 +3301,12 @@
       "easiestMethod": null,
       "isVersionExclusive": true,
       "evolutionDepth": 1,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 495
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 347,
@@ -3149,10 +3339,12 @@
       "easiestMethod": "gift",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 355
     },
     "oneTimeOnly": true,
-    "flooredByChain": true
+    "flooredByChain": true,
+    "flooredByBaseStats": false
   },
   {
     "id": 348,
@@ -3172,10 +3364,12 @@
       "easiestMethod": null,
       "isVersionExclusive": true,
       "evolutionDepth": 1,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 495
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 349,
@@ -3208,10 +3402,12 @@
       "easiestMethod": "feebas-tile-fishing",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 200
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 350,
@@ -3231,10 +3427,12 @@
       "easiestMethod": null,
       "isVersionExclusive": true,
       "evolutionDepth": 1,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 540
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 351,
@@ -3269,10 +3467,12 @@
       "easiestMethod": "gift",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 420
     },
     "oneTimeOnly": true,
-    "flooredByChain": true
+    "flooredByChain": true,
+    "flooredByBaseStats": false
   },
   {
     "id": 352,
@@ -3309,10 +3509,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 440
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 353,
@@ -3348,10 +3550,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 295
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 354,
@@ -3383,10 +3587,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 1,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 455
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 355,
@@ -3419,10 +3625,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 295
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 356,
@@ -3453,10 +3661,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": true,
       "evolutionDepth": 1,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 455
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 357,
@@ -3489,10 +3699,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 460
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 358,
@@ -3525,10 +3737,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 1,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 455
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 359,
@@ -3561,10 +3775,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 465
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 360,
@@ -3600,10 +3816,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 260
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 361,
@@ -3639,10 +3857,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 300
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 362,
@@ -3662,10 +3882,12 @@
       "easiestMethod": null,
       "isVersionExclusive": true,
       "evolutionDepth": 1,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 480
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 363,
@@ -3702,10 +3924,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 290
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 364,
@@ -3725,10 +3949,12 @@
       "easiestMethod": null,
       "isVersionExclusive": true,
       "evolutionDepth": 1,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 410
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 365,
@@ -3748,10 +3974,12 @@
       "easiestMethod": null,
       "isVersionExclusive": true,
       "evolutionDepth": 2,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 530
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 366,
@@ -3784,10 +4012,12 @@
       "easiestMethod": "seaweed",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 345
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 367,
@@ -3807,10 +4037,12 @@
       "easiestMethod": null,
       "isVersionExclusive": true,
       "evolutionDepth": 1,
-      "evolutionTrigger": "trade"
+      "evolutionTrigger": "trade",
+      "baseStatTotal": 485
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 368,
@@ -3830,10 +4062,12 @@
       "easiestMethod": null,
       "isVersionExclusive": true,
       "evolutionDepth": 1,
-      "evolutionTrigger": "trade"
+      "evolutionTrigger": "trade",
+      "baseStatTotal": 485
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 369,
@@ -3866,10 +4100,12 @@
       "easiestMethod": "seaweed",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 485
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 370,
@@ -3903,10 +4139,12 @@
       "easiestMethod": "good-rod",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 330
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 371,
@@ -3942,10 +4180,12 @@
       "easiestMethod": "walk",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 300
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 372,
@@ -3965,15 +4205,17 @@
       "easiestMethod": null,
       "isVersionExclusive": true,
       "evolutionDepth": 1,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 420
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 373,
     "name": "Drattak",
-    "rarity": "epic",
+    "rarity": "mythic",
     "appliedRule": "priority:no_encounters_inherits_parent",
     "finalScore": null,
     "components": null,
@@ -3988,10 +4230,12 @@
       "easiestMethod": null,
       "isVersionExclusive": true,
       "evolutionDepth": 2,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 600
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": true
   },
   {
     "id": 374,
@@ -4026,10 +4270,12 @@
       "easiestMethod": "gift",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 300
     },
     "oneTimeOnly": true,
-    "flooredByChain": true
+    "flooredByChain": true,
+    "flooredByBaseStats": false
   },
   {
     "id": 375,
@@ -4049,10 +4295,12 @@
       "easiestMethod": null,
       "isVersionExclusive": true,
       "evolutionDepth": 1,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 420
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 376,
@@ -4072,10 +4320,12 @@
       "easiestMethod": null,
       "isVersionExclusive": true,
       "evolutionDepth": 2,
-      "evolutionTrigger": "level-up"
+      "evolutionTrigger": "level-up",
+      "baseStatTotal": 600
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 377,
@@ -4103,10 +4353,12 @@
       "easiestMethod": "only-one",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 580
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 378,
@@ -4134,10 +4386,12 @@
       "easiestMethod": "only-one",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 580
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 379,
@@ -4165,10 +4419,12 @@
       "easiestMethod": "only-one",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 580
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 380,
@@ -4199,10 +4455,12 @@
       "easiestMethod": "roaming-grass",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 600
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 381,
@@ -4233,10 +4491,12 @@
       "easiestMethod": "roaming-grass",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 600
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 382,
@@ -4262,10 +4522,12 @@
       "easiestMethod": "only-one",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 670
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 383,
@@ -4291,10 +4553,12 @@
       "easiestMethod": "only-one",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 670
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 384,
@@ -4322,10 +4586,12 @@
       "easiestMethod": "only-one",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 680
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 385,
@@ -4351,10 +4617,12 @@
       "easiestMethod": "colosseum-bonus-disc-us",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 600
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   },
   {
     "id": 386,
@@ -4382,9 +4650,11 @@
       "easiestMethod": "only-one",
       "isVersionExclusive": false,
       "evolutionDepth": 0,
-      "evolutionTrigger": null
+      "evolutionTrigger": null,
+      "baseStatTotal": 600
     },
     "oneTimeOnly": false,
-    "flooredByChain": false
+    "flooredByChain": false,
+    "flooredByBaseStats": false
   }
 ]

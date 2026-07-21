@@ -9,6 +9,8 @@ import {
   computeOneTimeOnlyComponent,
   mapScoreToRarityTier,
   applyOneTimeOnlyChainFloor,
+  applyBaseStatFloor,
+  BASE_STAT_TOTAL_MYTHIC_THRESHOLD,
   getMaxEncounterChance,
   getDistinctVersionNames,
   getDistinctLocationVersionPairs,
@@ -673,6 +675,95 @@ describe("applyOneTimeOnlyChainFloor", () => {
         "legendary",
       );
     });
+  });
+});
+
+describe("applyBaseStatFloor", () => {
+  describe("baseStatTotal below the threshold", () => {
+    it("leaves common untouched at 599", () => {
+      expect(applyBaseStatFloor("common", 599)).toBe("common");
+    });
+
+    it("leaves epic untouched at 599", () => {
+      expect(applyBaseStatFloor("epic", 599)).toBe("epic");
+    });
+
+    it("leaves common untouched at 300", () => {
+      expect(applyBaseStatFloor("common", 300)).toBe("common");
+    });
+
+    it("leaves epic untouched at 300", () => {
+      expect(applyBaseStatFloor("epic", 300)).toBe("epic");
+    });
+  });
+
+  describe("baseStatTotal exactly at the threshold (600)", () => {
+    it("raises common up to mythic", () => {
+      expect(applyBaseStatFloor("common", 600)).toBe("mythic");
+    });
+
+    it("raises rare up to mythic", () => {
+      expect(applyBaseStatFloor("rare", 600)).toBe("mythic");
+    });
+
+    it("raises epic up to mythic", () => {
+      expect(applyBaseStatFloor("epic", 600)).toBe("mythic");
+    });
+
+    it("raises ultra_rare up to mythic", () => {
+      expect(applyBaseStatFloor("ultra_rare", 600)).toBe("mythic");
+    });
+  });
+
+  describe("baseStatTotal above the threshold (720, a realistic max-BST case)", () => {
+    it("raises common up to mythic", () => {
+      expect(applyBaseStatFloor("common", 720)).toBe("mythic");
+    });
+
+    it("raises ultra_rare up to mythic", () => {
+      expect(applyBaseStatFloor("ultra_rare", 720)).toBe("mythic");
+    });
+  });
+
+  describe("rarity already at or above mythic", () => {
+    it("leaves mythic untouched (already at the floor, no double-processing)", () => {
+      expect(applyBaseStatFloor("mythic", 600)).toBe("mythic");
+    });
+
+    it("leaves mythic untouched at a BST well above the threshold", () => {
+      expect(applyBaseStatFloor("mythic", 720)).toBe("mythic");
+    });
+
+    it("leaves legendary untouched, does NOT downgrade to mythic", () => {
+      expect(applyBaseStatFloor("legendary", 600)).toBe("legendary");
+    });
+
+    it("leaves legendary untouched at a BST well above the threshold", () => {
+      expect(applyBaseStatFloor("legendary", 720)).toBe("legendary");
+    });
+  });
+
+  describe("rarity 'unknown' (sits last in RARITY_ORDER, after 'legendary')", () => {
+    // RARITY_ORDER ranks "unknown" above "mythic" (and even above
+    // "legendary"), so per the real index comparison in
+    // applyBaseStatFloor, "unknown" is NOT raised — it's already
+    // considered to outrank the mythic floor.
+    it("leaves unknown untouched at the threshold", () => {
+      expect(applyBaseStatFloor("unknown", 600)).toBe("unknown");
+    });
+
+    it("leaves unknown untouched above the threshold", () => {
+      expect(applyBaseStatFloor("unknown", 720)).toBe("unknown");
+    });
+  });
+
+  it("uses BASE_STAT_TOTAL_MYTHIC_THRESHOLD as the exact cutoff (599 vs 600)", () => {
+    expect(applyBaseStatFloor("common", BASE_STAT_TOTAL_MYTHIC_THRESHOLD - 1)).toBe(
+      "common",
+    );
+    expect(applyBaseStatFloor("common", BASE_STAT_TOTAL_MYTHIC_THRESHOLD)).toBe(
+      "mythic",
+    );
   });
 });
 

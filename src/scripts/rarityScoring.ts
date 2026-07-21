@@ -528,3 +528,26 @@ export function applyOneTimeOnlyChainFloor(
   if (tierIndex < floorIndex) return floorTier;
   return tier;
 }
+
+// Gen 3 pseudo-legendaries (Salamence/Drattak, Metagross/Métalosse, etc.)
+// sit exactly at a base-stat total of 600, one tier below true legendaries
+// despite being obtained the same way as any other wild/evolved Pokémon.
+export const BASE_STAT_TOTAL_MYTHIC_THRESHOLD = 600;
+
+/**
+ * Floor keyed off base-stat total: any Pokémon at or above
+ * BASE_STAT_TOTAL_MYTHIC_THRESHOLD never ranks below "mythic", regardless
+ * of what the composite score or the one-time-only chain floor produced.
+ * True legendary/mythical species already sit at "legendary" (above
+ * "mythic" in RARITY_ORDER), so this only ever raises a tier, never
+ * lowers one — same contract as applyOneTimeOnlyChainFloor.
+ */
+export function applyBaseStatFloor(rarity: Rarity, baseStatTotal: number): Rarity {
+  if (baseStatTotal < BASE_STAT_TOTAL_MYTHIC_THRESHOLD) return rarity;
+
+  const floorIndex = RARITY_ORDER.indexOf("mythic");
+  const tierIndex = RARITY_ORDER.indexOf(rarity);
+
+  if (tierIndex < floorIndex) return "mythic";
+  return rarity;
+}

@@ -21,6 +21,7 @@ export interface RawRarityData {
   isVersionExclusive: boolean;
   evolutionDepth: number | null;
   evolutionTrigger: string | null;
+  baseStatTotal: number;
 }
 
 export interface RarityResult {
@@ -39,4 +40,5 @@ export interface RarityResult {
   rawData: RawRarityData | null;
   oneTimeOnly: boolean;
   flooredByChain: boolean;
+  flooredByBaseStats: boolean;
 }
