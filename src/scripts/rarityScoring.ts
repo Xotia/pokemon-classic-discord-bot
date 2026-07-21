@@ -58,6 +58,14 @@ export function filterEncountersToVersions(
 // adjust this if the reference count for full availability changes.
 export const REFERENCE_MAX_AVAILABILITY = 25;
 
+// The max single-location encounter chance (%) that counts as "fully
+// common" for C1. A single species rarely holds more than ~50% of a
+// location's whole encounter table (it's shared with other species) — a
+// species at 50%+ anywhere is already about as common as it gets in
+// practice, so there's no reason to keep scaling all the way to a
+// (largely unreachable) 100% before floors out at C1=0.
+export const REFERENCE_MAX_CHANCE = 50;
+
 export const METHOD_DIFFICULTY: Record<string, number> = {
   walk: 0,
   grass: 0,
@@ -137,12 +145,35 @@ export function isOneTimeOnly(encounters: any[]): boolean {
  * numeric `chance` values within each group, since PokéAPI splits one
  * spawn table into multiple level-tier slots that share all three fields.
  * Entries using a FIXED_ENCOUNTER_METHODS method (scripted/guaranteed
- * triggers, not genuine wild spawns) are skipped entirely — they don't
- * represent how common the species is to stumble upon in the wild.
+ * triggers, not genuine wild spawns) are skipped — but ONLY when a
+ * genuine wild alternative exists elsewhere in the data (e.g. Kecleon:
+ * devon-scope is ignored because walk/horde entries are also present).
+ * If fixed/scripted methods are the ONLY data available at all (e.g. a
+ * starter's sole "gift" entry), there's nothing else to go on, so they
+ * are used as-is instead of falling back to the "nothing found" worst
+ * case — that fallback is for genuine data gaps, not for a Pokémon whose
+ * only obtainment method happens to be scripted.
  * Returns the MAXIMUM of these per-group sums across all groups, or null
  * if no qualifying numeric `chance` was found anywhere.
  */
 function computeMaxGroupedEncounterChance(encounters: any[]): number | null {
+  let hasGenuineWildEntry = false;
+  for (const locationEntry of encounters ?? []) {
+    for (const versionDetail of locationEntry?.version_details ?? []) {
+      for (const detail of versionDetail?.encounter_details ?? []) {
+        if (
+          typeof detail?.chance === "number" &&
+          !FIXED_ENCOUNTER_METHODS.has(detail?.method?.name)
+        ) {
+          hasGenuineWildEntry = true;
+          break;
+        }
+      }
+      if (hasGenuineWildEntry) break;
+    }
+    if (hasGenuineWildEntry) break;
+  }
+
   const groupSums = new Map<string, number>();
   let found = false;
 
@@ -154,7 +185,7 @@ function computeMaxGroupedEncounterChance(encounters: any[]): number | null {
       const encounterDetails = versionDetail?.encounter_details ?? [];
       for (const detail of encounterDetails) {
         const methodName = detail?.method?.name;
-        if (FIXED_ENCOUNTER_METHODS.has(methodName)) continue;
+        if (hasGenuineWildEntry && FIXED_ENCOUNTER_METHODS.has(methodName)) continue;
         if (typeof detail?.chance === "number") {
           found = true;
           const groupKey = `${locationName}|${versionName}|${methodName}`;
@@ -180,8 +211,9 @@ function computeMaxGroupedEncounterChance(encounters: any[]): number | null {
 }
 
 /**
- * C1 — Encounter rate (weight 0.25).
- * Rarer Pokémon have a lower max encounter chance across all games.
+ * C1 — Encounter rate (weight 0.30).
+ * Rarer Pokémon have a lower max encounter chance across all games,
+ * scaled against REFERENCE_MAX_CHANCE rather than a flat 100%.
  */
 export function computeEncounterRateComponent(encounters: any[]): number {
   const maxChance = computeMaxGroupedEncounterChance(encounters);
@@ -190,7 +222,7 @@ export function computeEncounterRateComponent(encounters: any[]): number {
   // no roaming chance): treat as the rarest case rather than crash.
   if (maxChance === null) return 100;
 
-  return clamp(100 - maxChance, 0, 100);
+  return clamp(100 - (maxChance / REFERENCE_MAX_CHANCE) * 100, 0, 100);
 }
 
 function collectDistinctVersionNames(encounters: any[]): Set<string> {
@@ -259,7 +291,7 @@ export function computeMethodComponent(encounters: any[]): number {
 }
 
 /**
- * C5 — Version-exclusivity (weight 0.10).
+ * C5 — Version-exclusivity (weight 0.05).
  * Reuses the distinct-version count from C3.
  */
 export function computeExclusivityComponent(encounters: any[]): number {

@@ -147,12 +147,14 @@ describe("computeEncounterRateComponent", () => {
     expect(computeEncounterRateComponent(undefined as any)).toBe(100);
   });
 
-  it("returns 100 minus the highest chance found across all entries", () => {
+  it("scales the highest chance found across all entries against REFERENCE_MAX_CHANCE, clamping at 0 once it's reached", () => {
     const encounters = [
       encounterEntry("red", "walk", 20),
       encounterEntry("blue", "walk", 60),
     ];
-    expect(computeEncounterRateComponent(encounters)).toBe(40);
+    // max chance = 60, which is already above REFERENCE_MAX_CHANCE (50):
+    // clamp(100 - (60/50)*100, 0, 100) = clamp(-20, 0, 100) = 0.
+    expect(computeEncounterRateComponent(encounters)).toBe(0);
   });
 
   it("clamps to 0 when the max chance is 100", () => {
@@ -160,7 +162,10 @@ describe("computeEncounterRateComponent", () => {
     expect(computeEncounterRateComponent(encounters)).toBe(0);
   });
 
-  it("Kecleon devon-scope regression: returns 100 (nothing found) when only fixed-encounter (devon-scope) entries are present", () => {
+  it("devon-scope-only regression: uses the fixed-method chance as-is (not the 'nothing found' fallback) when no genuine wild entry exists anywhere", () => {
+    // No genuine (non-fixed) wild entry exists anywhere in this fixture, so
+    // devon-scope is NOT excluded — there's nothing else to fall back on.
+    // Grouped sum = 6 x 100 = 600, capped at 100 => clamp(100 - (100/50)*100, 0, 100) = 0.
     const encounters = [
       {
         location_area: { name: "route-120-area" },
@@ -179,12 +184,23 @@ describe("computeEncounterRateComponent", () => {
         ],
       },
     ];
-    expect(computeEncounterRateComponent(encounters)).toBe(100);
+    expect(computeEncounterRateComponent(encounters)).toBe(0);
+  });
+
+  it("starter-like gift-only case: uses the gift chance as-is, not the 'nothing found' fallback that previously inflated starters to ultra_rare", () => {
+    // A starter's sole "gift" encounter with an explicit 100% chance and no
+    // other data at all: must be scored on its own 100% chance (=> C1 = 0),
+    // not treated as "nothing found" (=> C1 = 100), which was the bug that
+    // pushed gift-only starters from epic to ultra_rare.
+    const encounters = [encounterEntry("red", "gift", 100)];
+    // clamp(100 - (100/50)*100, 0, 100) = 0.
+    expect(computeEncounterRateComponent(encounters)).toBe(0);
   });
 
   it("Kecleon mixed case: bases the score on the genuine wild method's chance, ignoring a much higher devon-scope chance", () => {
     const encounters = [
-      // Genuine wild grass encounter: 1% chance => component should be 99.
+      // Genuine wild grass encounter: 1% chance => component should be 98
+      // (scaled against REFERENCE_MAX_CHANCE, not a flat 100).
       locationEncounterEntry("route-119-area", "ruby", "walk", 1),
       // Guaranteed devon-scope trigger elsewhere: must not lower the score
       // down toward 0 as if the species were common.
@@ -198,7 +214,8 @@ describe("computeEncounterRateComponent", () => {
         ],
       },
     ];
-    expect(computeEncounterRateComponent(encounters)).toBe(99);
+    // chance = 1: clamp(100 - (1/50)*100, 0, 100) = 98.
+    expect(computeEncounterRateComponent(encounters)).toBe(98);
   });
 
   it("Route 103 Poochyena regression: sums chances within the same location+version+method group instead of taking the max slot", () => {
@@ -221,7 +238,27 @@ describe("computeEncounterRateComponent", () => {
         ],
       },
     ];
-    expect(computeEncounterRateComponent(encounters)).toBe(40);
+    // grouped sum = 60, which is above REFERENCE_MAX_CHANCE (50):
+    // clamp(100 - (60/50)*100, 0, 100) = clamp(-20, 0, 100) = 0.
+    expect(computeEncounterRateComponent(encounters)).toBe(0);
+  });
+
+  it("returns exactly 0 when the max chance equals REFERENCE_MAX_CHANCE (50)", () => {
+    const encounters = [encounterEntry("red", "walk", 50)];
+    // clamp(100 - (50/50)*100, 0, 100) = clamp(0, 0, 100) = 0.
+    expect(computeEncounterRateComponent(encounters)).toBe(0);
+  });
+
+  it("stays clamped at 0 (not negative) when the max chance is well above REFERENCE_MAX_CHANCE", () => {
+    const encounters = [encounterEntry("red", "walk", 60)];
+    // clamp(100 - (60/50)*100, 0, 100) = clamp(-20, 0, 100) = 0.
+    expect(computeEncounterRateComponent(encounters)).toBe(0);
+  });
+
+  it("scales proportionally against REFERENCE_MAX_CHANCE for a chance well below it", () => {
+    const encounters = [encounterEntry("red", "walk", 10)];
+    // clamp(100 - (10/50)*100, 0, 100) = clamp(80, 0, 100) = 80.
+    expect(computeEncounterRateComponent(encounters)).toBe(80);
   });
 });
 
@@ -713,11 +750,12 @@ describe("getMaxEncounterChance", () => {
     expect(getMaxEncounterChance(encounters)).toBe(100);
   });
 
-  it("Kecleon devon-scope regression: excludes fixed-encounter-only entries entirely, returning null rather than a capped 100", () => {
-    // devon-scope is a scripted/guaranteed trigger, not a genuine wild
-    // spawn roll — entries using it must be skipped entirely, not summed
-    // and capped. With ONLY devon-scope entries present, nothing
-    // qualifying is found at all.
+  it("devon-scope-only regression: uses fixed-encounter entries as-is (grouped and capped at 100) when no genuine wild entry exists anywhere", () => {
+    // devon-scope is a scripted/guaranteed trigger, not a genuine wild spawn
+    // roll, so it's normally excluded in favor of a genuine wild entry — but
+    // here NO genuine wild entry exists anywhere in the data, so there's
+    // nothing else to go on: the devon-scope entries are used as-is, grouped
+    // by location+version+method (sum = 6 x 100 = 600) and capped at 100.
     const encounters = [
       {
         location_area: { name: "route-120-area" },
@@ -736,7 +774,12 @@ describe("getMaxEncounterChance", () => {
         ],
       },
     ];
-    expect(getMaxEncounterChance(encounters)).toBeNull();
+    expect(getMaxEncounterChance(encounters)).toBe(100);
+  });
+
+  it("starter-like gift-only case: returns the gift chance as-is (100), no exclusion, no fallback to null", () => {
+    const encounters = [encounterEntry("red", "gift", 100)];
+    expect(getMaxEncounterChance(encounters)).toBe(100);
   });
 
   it("Kecleon mixed case: ignores a devon-scope entry's 100% chance and returns only the genuine wild method's chance", () => {

@@ -24,10 +24,10 @@ import {
 import { RarityResult, RawRarityData } from "../types/RarityResult";
 import { Rarity, RARITY_ORDER } from "../config/rarity";
 
-const WEIGHT_ENCOUNTER_RATE = 0.25;
+const WEIGHT_ENCOUNTER_RATE = 0.3;
 const WEIGHT_GAMES = 0.15;
 const WEIGHT_METHOD = 0.15;
-const WEIGHT_EXCLUSIVITY = 0.1;
+const WEIGHT_EXCLUSIVITY = 0.05;
 const WEIGHT_EVOLUTION = 0.1;
 const WEIGHT_ONE_TIME_ONLY = 0.05;
 
