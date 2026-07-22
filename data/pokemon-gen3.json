@@ -1,0 +1,5799 @@
+[
+  {
+    "id": 252,
+    "name": "Arcko",
+    "rarity": "epic",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/treecko.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/treecko.gif",
+    "originalName": "treecko",
+    "types": [
+      "grass"
+    ],
+    "effectiveness": {
+      "defense": {
+        "electric": 0.5,
+        "grass": 0.5,
+        "ground": 0.5,
+        "water": 0.5,
+        "bug": 2,
+        "fire": 2,
+        "flying": 2,
+        "ice": 2,
+        "poison": 2
+      },
+      "attack": {
+        "bug": 0.5,
+        "dragon": 0.5,
+        "fire": 0.5,
+        "flying": 0.5,
+        "grass": 0.5,
+        "poison": 0.5,
+        "steel": 0.5,
+        "ground": 2,
+        "rock": 2,
+        "water": 2
+      }
+    },
+    "stats": {
+      "hp": 40,
+      "attack": 45,
+      "defense": 35,
+      "specialAttack": 65,
+      "specialDefense": 55,
+      "speed": 70
+    },
+    "generation": 3
+  },
+  {
+    "id": 253,
+    "name": "Massko",
+    "rarity": "ultra_rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/grovyle.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/grovyle.gif",
+    "originalName": "grovyle",
+    "types": [
+      "grass"
+    ],
+    "effectiveness": {
+      "defense": {
+        "electric": 0.5,
+        "grass": 0.5,
+        "ground": 0.5,
+        "water": 0.5,
+        "bug": 2,
+        "fire": 2,
+        "flying": 2,
+        "ice": 2,
+        "poison": 2
+      },
+      "attack": {
+        "bug": 0.5,
+        "dragon": 0.5,
+        "fire": 0.5,
+        "flying": 0.5,
+        "grass": 0.5,
+        "poison": 0.5,
+        "steel": 0.5,
+        "ground": 2,
+        "rock": 2,
+        "water": 2
+      }
+    },
+    "stats": {
+      "hp": 50,
+      "attack": 65,
+      "defense": 45,
+      "specialAttack": 85,
+      "specialDefense": 65,
+      "speed": 95
+    },
+    "generation": 3
+  },
+  {
+    "id": 254,
+    "name": "Jungko",
+    "rarity": "mythic",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/sceptile.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/sceptile.gif",
+    "originalName": "sceptile",
+    "types": [
+      "grass"
+    ],
+    "effectiveness": {
+      "defense": {
+        "electric": 0.5,
+        "grass": 0.5,
+        "ground": 0.5,
+        "water": 0.5,
+        "bug": 2,
+        "fire": 2,
+        "flying": 2,
+        "ice": 2,
+        "poison": 2
+      },
+      "attack": {
+        "bug": 0.5,
+        "dragon": 0.5,
+        "fire": 0.5,
+        "flying": 0.5,
+        "grass": 0.5,
+        "poison": 0.5,
+        "steel": 0.5,
+        "ground": 2,
+        "rock": 2,
+        "water": 2
+      }
+    },
+    "stats": {
+      "hp": 70,
+      "attack": 85,
+      "defense": 65,
+      "specialAttack": 105,
+      "specialDefense": 85,
+      "speed": 120
+    },
+    "generation": 3
+  },
+  {
+    "id": 255,
+    "name": "Poussifeu",
+    "rarity": "epic",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/torchic.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/torchic.gif",
+    "originalName": "torchic",
+    "types": [
+      "fire"
+    ],
+    "effectiveness": {
+      "defense": {
+        "bug": 1,
+        "fairy": 0.5,
+        "fire": 1,
+        "grass": 0.5,
+        "ice": 1,
+        "steel": 0.5,
+        "flying": 2,
+        "poison": 2
+      },
+      "attack": {
+        "dragon": 0.5,
+        "fire": 0.5,
+        "rock": 0.5,
+        "water": 0.5,
+        "bug": 2,
+        "grass": 2,
+        "ice": 2,
+        "steel": 2
+      }
+    },
+    "stats": {
+      "hp": 45,
+      "attack": 60,
+      "defense": 40,
+      "specialAttack": 70,
+      "specialDefense": 50,
+      "speed": 45
+    },
+    "generation": 3
+  },
+  {
+    "id": 256,
+    "name": "Galifeu",
+    "rarity": "ultra_rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/combusken.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/combusken.gif",
+    "originalName": "combusken",
+    "types": [
+      "fire",
+      "fighting"
+    ],
+    "effectiveness": {
+      "defense": {
+        "bug": 0.5,
+        "fairy": 1,
+        "fire": 1,
+        "grass": 0.5,
+        "ice": 1,
+        "steel": 0.5,
+        "flying": 4,
+        "poison": 2,
+        "dark": 0.5,
+        "rock": 0.5,
+        "psychic": 2
+      },
+      "attack": {
+        "dragon": 0.5,
+        "fire": 0.5,
+        "rock": 1,
+        "water": 0.5,
+        "bug": 1,
+        "grass": 2,
+        "ice": 4,
+        "steel": 4,
+        "ghost": 0,
+        "fairy": 0.5,
+        "flying": 0.5,
+        "poison": 0.5,
+        "psychic": 0.5,
+        "dark": 2,
+        "normal": 2
+      }
+    },
+    "stats": {
+      "hp": 60,
+      "attack": 85,
+      "defense": 60,
+      "specialAttack": 85,
+      "specialDefense": 60,
+      "speed": 55
+    },
+    "generation": 3
+  },
+  {
+    "id": 257,
+    "name": "Braségali",
+    "rarity": "mythic",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/blaziken.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/blaziken.gif",
+    "originalName": "blaziken",
+    "types": [
+      "fire",
+      "fighting"
+    ],
+    "effectiveness": {
+      "defense": {
+        "bug": 0.5,
+        "fairy": 1,
+        "fire": 1,
+        "grass": 0.5,
+        "ice": 1,
+        "steel": 0.5,
+        "flying": 4,
+        "poison": 2,
+        "dark": 0.5,
+        "rock": 0.5,
+        "psychic": 2
+      },
+      "attack": {
+        "dragon": 0.5,
+        "fire": 0.5,
+        "rock": 1,
+        "water": 0.5,
+        "bug": 1,
+        "grass": 2,
+        "ice": 4,
+        "steel": 4,
+        "ghost": 0,
+        "fairy": 0.5,
+        "flying": 0.5,
+        "poison": 0.5,
+        "psychic": 0.5,
+        "dark": 2,
+        "normal": 2
+      }
+    },
+    "stats": {
+      "hp": 80,
+      "attack": 120,
+      "defense": 70,
+      "specialAttack": 110,
+      "specialDefense": 70,
+      "speed": 80
+    },
+    "generation": 3
+  },
+  {
+    "id": 258,
+    "name": "Gobou",
+    "rarity": "epic",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/mudkip.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/mudkip.gif",
+    "originalName": "mudkip",
+    "types": [
+      "water"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fire": 0.5,
+        "ice": 0.5,
+        "steel": 0.5,
+        "water": 0.5,
+        "electric": 2,
+        "grass": 2
+      },
+      "attack": {
+        "dragon": 0.5,
+        "grass": 0.5,
+        "steel": 0.5,
+        "fire": 2,
+        "ground": 2,
+        "rock": 2
+      }
+    },
+    "stats": {
+      "hp": 50,
+      "attack": 70,
+      "defense": 50,
+      "specialAttack": 50,
+      "specialDefense": 50,
+      "speed": 40
+    },
+    "generation": 3
+  },
+  {
+    "id": 259,
+    "name": "Flobio",
+    "rarity": "ultra_rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/marshtomp.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/marshtomp.gif",
+    "originalName": "marshtomp",
+    "types": [
+      "water",
+      "ground"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fire": 0.5,
+        "ice": 1,
+        "steel": 0.5,
+        "water": 1,
+        "electric": 0,
+        "grass": 4,
+        "poison": 0.5,
+        "rock": 0.5
+      },
+      "attack": {
+        "dragon": 0.5,
+        "grass": 0.25,
+        "steel": 1,
+        "fire": 4,
+        "ground": 2,
+        "rock": 4,
+        "flying": 0,
+        "bug": 0.5,
+        "electric": 2,
+        "poison": 2
+      }
+    },
+    "stats": {
+      "hp": 70,
+      "attack": 85,
+      "defense": 70,
+      "specialAttack": 60,
+      "specialDefense": 70,
+      "speed": 50
+    },
+    "generation": 3
+  },
+  {
+    "id": 260,
+    "name": "Laggron",
+    "rarity": "mythic",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/swampert.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/swampert.gif",
+    "originalName": "swampert",
+    "types": [
+      "water",
+      "ground"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fire": 0.5,
+        "ice": 1,
+        "steel": 0.5,
+        "water": 1,
+        "electric": 0,
+        "grass": 4,
+        "poison": 0.5,
+        "rock": 0.5
+      },
+      "attack": {
+        "dragon": 0.5,
+        "grass": 0.25,
+        "steel": 1,
+        "fire": 4,
+        "ground": 2,
+        "rock": 4,
+        "flying": 0,
+        "bug": 0.5,
+        "electric": 2,
+        "poison": 2
+      }
+    },
+    "stats": {
+      "hp": 100,
+      "attack": 110,
+      "defense": 90,
+      "specialAttack": 85,
+      "specialDefense": 90,
+      "speed": 60
+    },
+    "generation": 3
+  },
+  {
+    "id": 261,
+    "name": "Medhyèna",
+    "rarity": "common",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/poochyena.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/poochyena.gif",
+    "originalName": "poochyena",
+    "types": [
+      "dark"
+    ],
+    "effectiveness": {
+      "defense": {
+        "psychic": 0,
+        "dark": 0.5,
+        "ghost": 0.5,
+        "bug": 2,
+        "fighting": 2,
+        "fairy": 2
+      },
+      "attack": {
+        "dark": 0.5,
+        "fighting": 0.5,
+        "fairy": 0.5,
+        "ghost": 2,
+        "psychic": 2
+      }
+    },
+    "stats": {
+      "hp": 35,
+      "attack": 55,
+      "defense": 35,
+      "specialAttack": 30,
+      "specialDefense": 30,
+      "speed": 35
+    },
+    "generation": 3
+  },
+  {
+    "id": 262,
+    "name": "Grahyèna",
+    "rarity": "rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/mightyena.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/mightyena.gif",
+    "originalName": "mightyena",
+    "types": [
+      "dark"
+    ],
+    "effectiveness": {
+      "defense": {
+        "psychic": 0,
+        "dark": 0.5,
+        "ghost": 0.5,
+        "bug": 2,
+        "fighting": 2,
+        "fairy": 2
+      },
+      "attack": {
+        "dark": 0.5,
+        "fighting": 0.5,
+        "fairy": 0.5,
+        "ghost": 2,
+        "psychic": 2
+      }
+    },
+    "stats": {
+      "hp": 70,
+      "attack": 90,
+      "defense": 70,
+      "specialAttack": 60,
+      "specialDefense": 60,
+      "speed": 70
+    },
+    "generation": 3
+  },
+  {
+    "id": 263,
+    "name": "Zigzaton",
+    "rarity": "common",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/zigzagoon.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/zigzagoon.gif",
+    "originalName": "zigzagoon",
+    "types": [
+      "normal"
+    ],
+    "effectiveness": {
+      "defense": {
+        "ghost": 0,
+        "fighting": 2
+      },
+      "attack": {
+        "ghost": 0,
+        "rock": 0.5,
+        "steel": 0.5
+      }
+    },
+    "stats": {
+      "hp": 38,
+      "attack": 30,
+      "defense": 41,
+      "specialAttack": 30,
+      "specialDefense": 41,
+      "speed": 60
+    },
+    "generation": 3
+  },
+  {
+    "id": 264,
+    "name": "Linéon",
+    "rarity": "rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/linoone.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/linoone.gif",
+    "originalName": "linoone",
+    "types": [
+      "normal"
+    ],
+    "effectiveness": {
+      "defense": {
+        "ghost": 0,
+        "fighting": 2
+      },
+      "attack": {
+        "ghost": 0,
+        "rock": 0.5,
+        "steel": 0.5
+      }
+    },
+    "stats": {
+      "hp": 78,
+      "attack": 70,
+      "defense": 61,
+      "specialAttack": 50,
+      "specialDefense": 61,
+      "speed": 100
+    },
+    "generation": 3
+  },
+  {
+    "id": 265,
+    "name": "Chenipotte",
+    "rarity": "common",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/wurmple.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/wurmple.gif",
+    "originalName": "wurmple",
+    "types": [
+      "bug"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fighting": 0.5,
+        "grass": 0.5,
+        "ground": 0.5,
+        "fire": 2,
+        "flying": 2,
+        "rock": 2
+      },
+      "attack": {
+        "fighting": 0.5,
+        "fire": 0.5,
+        "flying": 0.5,
+        "ghost": 0.5,
+        "poison": 0.5,
+        "steel": 0.5,
+        "fairy": 0.5,
+        "psychic": 2,
+        "grass": 2,
+        "dark": 2
+      }
+    },
+    "stats": {
+      "hp": 45,
+      "attack": 45,
+      "defense": 35,
+      "specialAttack": 20,
+      "specialDefense": 30,
+      "speed": 20
+    },
+    "generation": 3
+  },
+  {
+    "id": 266,
+    "name": "Armulys",
+    "rarity": "very_rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/silcoon.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/silcoon.gif",
+    "originalName": "silcoon",
+    "types": [
+      "bug"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fighting": 0.5,
+        "grass": 0.5,
+        "ground": 0.5,
+        "fire": 2,
+        "flying": 2,
+        "rock": 2
+      },
+      "attack": {
+        "fighting": 0.5,
+        "fire": 0.5,
+        "flying": 0.5,
+        "ghost": 0.5,
+        "poison": 0.5,
+        "steel": 0.5,
+        "fairy": 0.5,
+        "psychic": 2,
+        "grass": 2,
+        "dark": 2
+      }
+    },
+    "stats": {
+      "hp": 50,
+      "attack": 35,
+      "defense": 55,
+      "specialAttack": 25,
+      "specialDefense": 25,
+      "speed": 15
+    },
+    "generation": 3
+  },
+  {
+    "id": 267,
+    "name": "Charmillon",
+    "rarity": "epic",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/beautifly.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/beautifly.gif",
+    "originalName": "beautifly",
+    "types": [
+      "bug",
+      "flying"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fighting": 0.25,
+        "grass": 0.25,
+        "ground": 0,
+        "fire": 2,
+        "flying": 2,
+        "rock": 4,
+        "bug": 0.5,
+        "electric": 2,
+        "ice": 2
+      },
+      "attack": {
+        "fighting": 1,
+        "fire": 0.5,
+        "flying": 0.5,
+        "ghost": 0.5,
+        "poison": 0.5,
+        "steel": 0.25,
+        "fairy": 0.5,
+        "psychic": 2,
+        "grass": 4,
+        "dark": 2,
+        "electric": 0.5,
+        "rock": 0.5,
+        "bug": 2
+      }
+    },
+    "stats": {
+      "hp": 60,
+      "attack": 70,
+      "defense": 50,
+      "specialAttack": 100,
+      "specialDefense": 50,
+      "speed": 65
+    },
+    "generation": 3
+  },
+  {
+    "id": 268,
+    "name": "Blindalys",
+    "rarity": "very_rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/cascoon.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/cascoon.gif",
+    "originalName": "cascoon",
+    "types": [
+      "bug"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fighting": 0.5,
+        "grass": 0.5,
+        "ground": 0.5,
+        "fire": 2,
+        "flying": 2,
+        "rock": 2
+      },
+      "attack": {
+        "fighting": 0.5,
+        "fire": 0.5,
+        "flying": 0.5,
+        "ghost": 0.5,
+        "poison": 0.5,
+        "steel": 0.5,
+        "fairy": 0.5,
+        "psychic": 2,
+        "grass": 2,
+        "dark": 2
+      }
+    },
+    "stats": {
+      "hp": 50,
+      "attack": 35,
+      "defense": 55,
+      "specialAttack": 25,
+      "specialDefense": 25,
+      "speed": 15
+    },
+    "generation": 3
+  },
+  {
+    "id": 269,
+    "name": "Papinox",
+    "rarity": "epic",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/dustox.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/dustox.gif",
+    "originalName": "dustox",
+    "types": [
+      "bug",
+      "poison"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fighting": 0.25,
+        "grass": 0.25,
+        "ground": 1,
+        "fire": 2,
+        "flying": 2,
+        "rock": 2,
+        "bug": 0.5,
+        "fairy": 0.5,
+        "poison": 0.5,
+        "psychic": 2
+      },
+      "attack": {
+        "fighting": 0.5,
+        "fire": 0.5,
+        "flying": 0.5,
+        "ghost": 0.25,
+        "poison": 0.25,
+        "steel": 0,
+        "fairy": 1,
+        "psychic": 2,
+        "grass": 4,
+        "dark": 2,
+        "ground": 0.5,
+        "rock": 0.5
+      }
+    },
+    "stats": {
+      "hp": 60,
+      "attack": 50,
+      "defense": 70,
+      "specialAttack": 50,
+      "specialDefense": 90,
+      "speed": 65
+    },
+    "generation": 3
+  },
+  {
+    "id": 270,
+    "name": "Nénupiot",
+    "rarity": "uncommon",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/lotad.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/lotad.gif",
+    "originalName": "lotad",
+    "types": [
+      "water",
+      "grass"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fire": 1,
+        "ice": 1,
+        "steel": 0.5,
+        "water": 0.25,
+        "electric": 1,
+        "grass": 1,
+        "ground": 0.5,
+        "bug": 2,
+        "flying": 2,
+        "poison": 2
+      },
+      "attack": {
+        "dragon": 0.25,
+        "grass": 0.25,
+        "steel": 0.25,
+        "fire": 1,
+        "ground": 4,
+        "rock": 4,
+        "bug": 0.5,
+        "flying": 0.5,
+        "poison": 0.5,
+        "water": 2
+      }
+    },
+    "stats": {
+      "hp": 40,
+      "attack": 30,
+      "defense": 30,
+      "specialAttack": 40,
+      "specialDefense": 50,
+      "speed": 30
+    },
+    "generation": 3
+  },
+  {
+    "id": 271,
+    "name": "Lombre",
+    "rarity": "very_rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/lombre.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/lombre.gif",
+    "originalName": "lombre",
+    "types": [
+      "water",
+      "grass"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fire": 1,
+        "ice": 1,
+        "steel": 0.5,
+        "water": 0.25,
+        "electric": 1,
+        "grass": 1,
+        "ground": 0.5,
+        "bug": 2,
+        "flying": 2,
+        "poison": 2
+      },
+      "attack": {
+        "dragon": 0.25,
+        "grass": 0.25,
+        "steel": 0.25,
+        "fire": 1,
+        "ground": 4,
+        "rock": 4,
+        "bug": 0.5,
+        "flying": 0.5,
+        "poison": 0.5,
+        "water": 2
+      }
+    },
+    "stats": {
+      "hp": 60,
+      "attack": 50,
+      "defense": 50,
+      "specialAttack": 60,
+      "specialDefense": 70,
+      "speed": 50
+    },
+    "generation": 3
+  },
+  {
+    "id": 272,
+    "name": "Ludicolo",
+    "rarity": "ultra_rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/ludicolo.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/ludicolo.gif",
+    "originalName": "ludicolo",
+    "types": [
+      "water",
+      "grass"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fire": 1,
+        "ice": 1,
+        "steel": 0.5,
+        "water": 0.25,
+        "electric": 1,
+        "grass": 1,
+        "ground": 0.5,
+        "bug": 2,
+        "flying": 2,
+        "poison": 2
+      },
+      "attack": {
+        "dragon": 0.25,
+        "grass": 0.25,
+        "steel": 0.25,
+        "fire": 1,
+        "ground": 4,
+        "rock": 4,
+        "bug": 0.5,
+        "flying": 0.5,
+        "poison": 0.5,
+        "water": 2
+      }
+    },
+    "stats": {
+      "hp": 80,
+      "attack": 70,
+      "defense": 70,
+      "specialAttack": 90,
+      "specialDefense": 100,
+      "speed": 70
+    },
+    "generation": 3
+  },
+  {
+    "id": 273,
+    "name": "Grainipiot",
+    "rarity": "common",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/seedot.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/seedot.gif",
+    "originalName": "seedot",
+    "types": [
+      "grass"
+    ],
+    "effectiveness": {
+      "defense": {
+        "electric": 0.5,
+        "grass": 0.5,
+        "ground": 0.5,
+        "water": 0.5,
+        "bug": 2,
+        "fire": 2,
+        "flying": 2,
+        "ice": 2,
+        "poison": 2
+      },
+      "attack": {
+        "bug": 0.5,
+        "dragon": 0.5,
+        "fire": 0.5,
+        "flying": 0.5,
+        "grass": 0.5,
+        "poison": 0.5,
+        "steel": 0.5,
+        "ground": 2,
+        "rock": 2,
+        "water": 2
+      }
+    },
+    "stats": {
+      "hp": 40,
+      "attack": 40,
+      "defense": 50,
+      "specialAttack": 30,
+      "specialDefense": 30,
+      "speed": 30
+    },
+    "generation": 3
+  },
+  {
+    "id": 274,
+    "name": "Pifeuil",
+    "rarity": "very_rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/nuzleaf.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/nuzleaf.gif",
+    "originalName": "nuzleaf",
+    "types": [
+      "grass",
+      "dark"
+    ],
+    "effectiveness": {
+      "defense": {
+        "electric": 0.5,
+        "grass": 0.5,
+        "ground": 0.5,
+        "water": 0.5,
+        "bug": 4,
+        "fire": 2,
+        "flying": 2,
+        "ice": 2,
+        "poison": 2,
+        "psychic": 0,
+        "dark": 0.5,
+        "ghost": 0.5,
+        "fighting": 2,
+        "fairy": 2
+      },
+      "attack": {
+        "bug": 0.5,
+        "dragon": 0.5,
+        "fire": 0.5,
+        "flying": 0.5,
+        "grass": 0.5,
+        "poison": 0.5,
+        "steel": 0.5,
+        "ground": 2,
+        "rock": 2,
+        "water": 2,
+        "dark": 0.5,
+        "fighting": 0.5,
+        "fairy": 0.5,
+        "ghost": 2,
+        "psychic": 2
+      }
+    },
+    "stats": {
+      "hp": 70,
+      "attack": 70,
+      "defense": 40,
+      "specialAttack": 60,
+      "specialDefense": 40,
+      "speed": 60
+    },
+    "generation": 3
+  },
+  {
+    "id": 275,
+    "name": "Tengalice",
+    "rarity": "ultra_rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/shiftry.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/shiftry.gif",
+    "originalName": "shiftry",
+    "types": [
+      "grass",
+      "dark"
+    ],
+    "effectiveness": {
+      "defense": {
+        "electric": 0.5,
+        "grass": 0.5,
+        "ground": 0.5,
+        "water": 0.5,
+        "bug": 4,
+        "fire": 2,
+        "flying": 2,
+        "ice": 2,
+        "poison": 2,
+        "psychic": 0,
+        "dark": 0.5,
+        "ghost": 0.5,
+        "fighting": 2,
+        "fairy": 2
+      },
+      "attack": {
+        "bug": 0.5,
+        "dragon": 0.5,
+        "fire": 0.5,
+        "flying": 0.5,
+        "grass": 0.5,
+        "poison": 0.5,
+        "steel": 0.5,
+        "ground": 2,
+        "rock": 2,
+        "water": 2,
+        "dark": 0.5,
+        "fighting": 0.5,
+        "fairy": 0.5,
+        "ghost": 2,
+        "psychic": 2
+      }
+    },
+    "stats": {
+      "hp": 90,
+      "attack": 100,
+      "defense": 60,
+      "specialAttack": 90,
+      "specialDefense": 60,
+      "speed": 80
+    },
+    "generation": 3
+  },
+  {
+    "id": 276,
+    "name": "Nirondelle",
+    "rarity": "uncommon",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/taillow.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/taillow.gif",
+    "originalName": "taillow",
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "effectiveness": {
+      "defense": {
+        "ghost": 0,
+        "fighting": 1,
+        "ground": 0,
+        "bug": 0.5,
+        "grass": 0.5,
+        "electric": 2,
+        "ice": 2,
+        "rock": 2
+      },
+      "attack": {
+        "ghost": 0,
+        "rock": 0.25,
+        "steel": 0.25,
+        "electric": 0.5,
+        "bug": 2,
+        "fighting": 2,
+        "grass": 2
+      }
+    },
+    "stats": {
+      "hp": 40,
+      "attack": 55,
+      "defense": 30,
+      "specialAttack": 30,
+      "specialDefense": 30,
+      "speed": 85
+    },
+    "generation": 3
+  },
+  {
+    "id": 277,
+    "name": "Hélédelle",
+    "rarity": "very_rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/swellow.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/swellow.gif",
+    "originalName": "swellow",
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "effectiveness": {
+      "defense": {
+        "ghost": 0,
+        "fighting": 1,
+        "ground": 0,
+        "bug": 0.5,
+        "grass": 0.5,
+        "electric": 2,
+        "ice": 2,
+        "rock": 2
+      },
+      "attack": {
+        "ghost": 0,
+        "rock": 0.25,
+        "steel": 0.25,
+        "electric": 0.5,
+        "bug": 2,
+        "fighting": 2,
+        "grass": 2
+      }
+    },
+    "stats": {
+      "hp": 60,
+      "attack": 85,
+      "defense": 60,
+      "specialAttack": 75,
+      "specialDefense": 50,
+      "speed": 125
+    },
+    "generation": 3
+  },
+  {
+    "id": 278,
+    "name": "Goélise",
+    "rarity": "common",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/wingull.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/wingull.gif",
+    "originalName": "wingull",
+    "types": [
+      "water",
+      "flying"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fire": 0.5,
+        "ice": 1,
+        "steel": 0.5,
+        "water": 0.5,
+        "electric": 4,
+        "grass": 1,
+        "ground": 0,
+        "bug": 0.5,
+        "fighting": 0.5,
+        "rock": 2
+      },
+      "attack": {
+        "dragon": 0.5,
+        "grass": 1,
+        "steel": 0.25,
+        "fire": 2,
+        "ground": 2,
+        "rock": 1,
+        "electric": 0.5,
+        "bug": 2,
+        "fighting": 2
+      }
+    },
+    "stats": {
+      "hp": 40,
+      "attack": 30,
+      "defense": 30,
+      "specialAttack": 55,
+      "specialDefense": 30,
+      "speed": 85
+    },
+    "generation": 3
+  },
+  {
+    "id": 279,
+    "name": "Bekipan",
+    "rarity": "very_rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/pelipper.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/pelipper.gif",
+    "originalName": "pelipper",
+    "types": [
+      "water",
+      "flying"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fire": 0.5,
+        "ice": 1,
+        "steel": 0.5,
+        "water": 0.5,
+        "electric": 4,
+        "grass": 1,
+        "ground": 0,
+        "bug": 0.5,
+        "fighting": 0.5,
+        "rock": 2
+      },
+      "attack": {
+        "dragon": 0.5,
+        "grass": 1,
+        "steel": 0.25,
+        "fire": 2,
+        "ground": 2,
+        "rock": 1,
+        "electric": 0.5,
+        "bug": 2,
+        "fighting": 2
+      }
+    },
+    "stats": {
+      "hp": 60,
+      "attack": 50,
+      "defense": 100,
+      "specialAttack": 95,
+      "specialDefense": 70,
+      "speed": 65
+    },
+    "generation": 3
+  },
+  {
+    "id": 280,
+    "name": "Tarsal",
+    "rarity": "very_rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/ralts.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/ralts.gif",
+    "originalName": "ralts",
+    "types": [
+      "psychic",
+      "fairy"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fighting": 0.25,
+        "psychic": 0.5,
+        "bug": 1,
+        "dark": 1,
+        "ghost": 2,
+        "dragon": 0,
+        "poison": 2,
+        "steel": 2
+      },
+      "attack": {
+        "dark": 0,
+        "psychic": 0.5,
+        "steel": 0.25,
+        "fighting": 4,
+        "poison": 1,
+        "fire": 0.5,
+        "dragon": 2
+      }
+    },
+    "stats": {
+      "hp": 28,
+      "attack": 25,
+      "defense": 25,
+      "specialAttack": 45,
+      "specialDefense": 35,
+      "speed": 40
+    },
+    "generation": 3
+  },
+  {
+    "id": 281,
+    "name": "Kirlia",
+    "rarity": "epic",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/kirlia.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/kirlia.gif",
+    "originalName": "kirlia",
+    "types": [
+      "psychic",
+      "fairy"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fighting": 0.25,
+        "psychic": 0.5,
+        "bug": 1,
+        "dark": 1,
+        "ghost": 2,
+        "dragon": 0,
+        "poison": 2,
+        "steel": 2
+      },
+      "attack": {
+        "dark": 0,
+        "psychic": 0.5,
+        "steel": 0.25,
+        "fighting": 4,
+        "poison": 1,
+        "fire": 0.5,
+        "dragon": 2
+      }
+    },
+    "stats": {
+      "hp": 38,
+      "attack": 35,
+      "defense": 35,
+      "specialAttack": 65,
+      "specialDefense": 55,
+      "speed": 50
+    },
+    "generation": 3
+  },
+  {
+    "id": 282,
+    "name": "Gardevoir",
+    "rarity": "mythic",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/gardevoir.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/gardevoir.gif",
+    "originalName": "gardevoir",
+    "types": [
+      "psychic",
+      "fairy"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fighting": 0.25,
+        "psychic": 0.5,
+        "bug": 1,
+        "dark": 1,
+        "ghost": 2,
+        "dragon": 0,
+        "poison": 2,
+        "steel": 2
+      },
+      "attack": {
+        "dark": 0,
+        "psychic": 0.5,
+        "steel": 0.25,
+        "fighting": 4,
+        "poison": 1,
+        "fire": 0.5,
+        "dragon": 2
+      }
+    },
+    "stats": {
+      "hp": 68,
+      "attack": 65,
+      "defense": 65,
+      "specialAttack": 125,
+      "specialDefense": 115,
+      "speed": 80
+    },
+    "generation": 3
+  },
+  {
+    "id": 283,
+    "name": "Arakdo",
+    "rarity": "very_rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/surskit.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/surskit.gif",
+    "originalName": "surskit",
+    "types": [
+      "bug",
+      "water"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fighting": 0.5,
+        "grass": 1,
+        "ground": 0.5,
+        "fire": 1,
+        "flying": 2,
+        "rock": 2,
+        "ice": 0.5,
+        "steel": 0.5,
+        "water": 0.5,
+        "electric": 2
+      },
+      "attack": {
+        "fighting": 0.5,
+        "fire": 1,
+        "flying": 0.5,
+        "ghost": 0.5,
+        "poison": 0.5,
+        "steel": 0.25,
+        "fairy": 0.5,
+        "psychic": 2,
+        "grass": 1,
+        "dark": 2,
+        "dragon": 0.5,
+        "ground": 2,
+        "rock": 2
+      }
+    },
+    "stats": {
+      "hp": 40,
+      "attack": 30,
+      "defense": 32,
+      "specialAttack": 50,
+      "specialDefense": 52,
+      "speed": 65
+    },
+    "generation": 3
+  },
+  {
+    "id": 284,
+    "name": "Maskadra",
+    "rarity": "epic",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/masquerain.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/masquerain.gif",
+    "originalName": "masquerain",
+    "types": [
+      "bug",
+      "flying"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fighting": 0.25,
+        "grass": 0.25,
+        "ground": 0,
+        "fire": 2,
+        "flying": 2,
+        "rock": 4,
+        "bug": 0.5,
+        "electric": 2,
+        "ice": 2
+      },
+      "attack": {
+        "fighting": 1,
+        "fire": 0.5,
+        "flying": 0.5,
+        "ghost": 0.5,
+        "poison": 0.5,
+        "steel": 0.25,
+        "fairy": 0.5,
+        "psychic": 2,
+        "grass": 4,
+        "dark": 2,
+        "electric": 0.5,
+        "rock": 0.5,
+        "bug": 2
+      }
+    },
+    "stats": {
+      "hp": 70,
+      "attack": 60,
+      "defense": 62,
+      "specialAttack": 100,
+      "specialDefense": 82,
+      "speed": 80
+    },
+    "generation": 3
+  },
+  {
+    "id": 285,
+    "name": "Balignon",
+    "rarity": "rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/shroomish.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/shroomish.gif",
+    "originalName": "shroomish",
+    "types": [
+      "grass"
+    ],
+    "effectiveness": {
+      "defense": {
+        "electric": 0.5,
+        "grass": 0.5,
+        "ground": 0.5,
+        "water": 0.5,
+        "bug": 2,
+        "fire": 2,
+        "flying": 2,
+        "ice": 2,
+        "poison": 2
+      },
+      "attack": {
+        "bug": 0.5,
+        "dragon": 0.5,
+        "fire": 0.5,
+        "flying": 0.5,
+        "grass": 0.5,
+        "poison": 0.5,
+        "steel": 0.5,
+        "ground": 2,
+        "rock": 2,
+        "water": 2
+      }
+    },
+    "stats": {
+      "hp": 60,
+      "attack": 40,
+      "defense": 60,
+      "specialAttack": 40,
+      "specialDefense": 60,
+      "speed": 35
+    },
+    "generation": 3
+  },
+  {
+    "id": 286,
+    "name": "Chapignon",
+    "rarity": "very_rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/breloom.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/breloom.gif",
+    "originalName": "breloom",
+    "types": [
+      "grass",
+      "fighting"
+    ],
+    "effectiveness": {
+      "defense": {
+        "electric": 0.5,
+        "grass": 0.5,
+        "ground": 0.5,
+        "water": 0.5,
+        "bug": 1,
+        "fire": 2,
+        "flying": 4,
+        "ice": 2,
+        "poison": 2,
+        "dark": 0.5,
+        "rock": 0.5,
+        "fairy": 2,
+        "psychic": 2
+      },
+      "attack": {
+        "bug": 0.25,
+        "dragon": 0.5,
+        "fire": 0.5,
+        "flying": 0.25,
+        "grass": 0.5,
+        "poison": 0.25,
+        "steel": 1,
+        "ground": 2,
+        "rock": 4,
+        "water": 2,
+        "ghost": 0,
+        "fairy": 0.5,
+        "psychic": 0.5,
+        "dark": 2,
+        "ice": 2,
+        "normal": 2
+      }
+    },
+    "stats": {
+      "hp": 60,
+      "attack": 130,
+      "defense": 80,
+      "specialAttack": 60,
+      "specialDefense": 60,
+      "speed": 70
+    },
+    "generation": 3
+  },
+  {
+    "id": 287,
+    "name": "Parecool",
+    "rarity": "very_rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/slakoth.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/slakoth.gif",
+    "originalName": "slakoth",
+    "types": [
+      "normal"
+    ],
+    "effectiveness": {
+      "defense": {
+        "ghost": 0,
+        "fighting": 2
+      },
+      "attack": {
+        "ghost": 0,
+        "rock": 0.5,
+        "steel": 0.5
+      }
+    },
+    "stats": {
+      "hp": 60,
+      "attack": 60,
+      "defense": 60,
+      "specialAttack": 35,
+      "specialDefense": 35,
+      "speed": 30
+    },
+    "generation": 3
+  },
+  {
+    "id": 288,
+    "name": "Vigoroth",
+    "rarity": "epic",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/vigoroth.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/vigoroth.gif",
+    "originalName": "vigoroth",
+    "types": [
+      "normal"
+    ],
+    "effectiveness": {
+      "defense": {
+        "ghost": 0,
+        "fighting": 2
+      },
+      "attack": {
+        "ghost": 0,
+        "rock": 0.5,
+        "steel": 0.5
+      }
+    },
+    "stats": {
+      "hp": 80,
+      "attack": 80,
+      "defense": 80,
+      "specialAttack": 55,
+      "specialDefense": 55,
+      "speed": 90
+    },
+    "generation": 3
+  },
+  {
+    "id": 289,
+    "name": "Monaflèmit",
+    "rarity": "mythic",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/slaking.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/slaking.gif",
+    "originalName": "slaking",
+    "types": [
+      "normal"
+    ],
+    "effectiveness": {
+      "defense": {
+        "ghost": 0,
+        "fighting": 2
+      },
+      "attack": {
+        "ghost": 0,
+        "rock": 0.5,
+        "steel": 0.5
+      }
+    },
+    "stats": {
+      "hp": 150,
+      "attack": 160,
+      "defense": 100,
+      "specialAttack": 95,
+      "specialDefense": 65,
+      "speed": 100
+    },
+    "generation": 3
+  },
+  {
+    "id": 290,
+    "name": "Ningale",
+    "rarity": "uncommon",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/nincada.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/nincada.gif",
+    "originalName": "nincada",
+    "types": [
+      "bug",
+      "ground"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fighting": 0.5,
+        "grass": 1,
+        "ground": 0.5,
+        "fire": 2,
+        "flying": 2,
+        "rock": 1,
+        "electric": 0,
+        "poison": 0.5,
+        "ice": 2,
+        "water": 2
+      },
+      "attack": {
+        "fighting": 0.5,
+        "fire": 1,
+        "flying": 0,
+        "ghost": 0.5,
+        "poison": 1,
+        "steel": 1,
+        "fairy": 0.5,
+        "psychic": 2,
+        "grass": 1,
+        "dark": 2,
+        "bug": 0.5,
+        "electric": 2,
+        "rock": 2
+      }
+    },
+    "stats": {
+      "hp": 31,
+      "attack": 45,
+      "defense": 90,
+      "specialAttack": 30,
+      "specialDefense": 30,
+      "speed": 40
+    },
+    "generation": 3
+  },
+  {
+    "id": 291,
+    "name": "Ninjask",
+    "rarity": "rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/ninjask.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/ninjask.gif",
+    "originalName": "ninjask",
+    "types": [
+      "bug",
+      "flying"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fighting": 0.25,
+        "grass": 0.25,
+        "ground": 0,
+        "fire": 2,
+        "flying": 2,
+        "rock": 4,
+        "bug": 0.5,
+        "electric": 2,
+        "ice": 2
+      },
+      "attack": {
+        "fighting": 1,
+        "fire": 0.5,
+        "flying": 0.5,
+        "ghost": 0.5,
+        "poison": 0.5,
+        "steel": 0.25,
+        "fairy": 0.5,
+        "psychic": 2,
+        "grass": 4,
+        "dark": 2,
+        "electric": 0.5,
+        "rock": 0.5,
+        "bug": 2
+      }
+    },
+    "stats": {
+      "hp": 61,
+      "attack": 90,
+      "defense": 45,
+      "specialAttack": 50,
+      "specialDefense": 50,
+      "speed": 160
+    },
+    "generation": 3
+  },
+  {
+    "id": 292,
+    "name": "Munja",
+    "rarity": "very_rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/shedinja.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/shedinja.gif",
+    "originalName": "shedinja",
+    "types": [
+      "bug",
+      "ghost"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fighting": 0,
+        "grass": 0.5,
+        "ground": 0.5,
+        "fire": 2,
+        "flying": 2,
+        "rock": 2,
+        "normal": 0,
+        "bug": 0.5,
+        "poison": 0.5,
+        "ghost": 2,
+        "dark": 2
+      },
+      "attack": {
+        "fighting": 0.5,
+        "fire": 0.5,
+        "flying": 0.5,
+        "ghost": 1,
+        "poison": 0.5,
+        "steel": 0.5,
+        "fairy": 0.5,
+        "psychic": 4,
+        "grass": 2,
+        "dark": 1,
+        "normal": 0
+      }
+    },
+    "stats": {
+      "hp": 1,
+      "attack": 90,
+      "defense": 45,
+      "specialAttack": 30,
+      "specialDefense": 30,
+      "speed": 40
+    },
+    "generation": 3
+  },
+  {
+    "id": 293,
+    "name": "Chuchmur",
+    "rarity": "common",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/whismur.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/whismur.gif",
+    "originalName": "whismur",
+    "types": [
+      "normal"
+    ],
+    "effectiveness": {
+      "defense": {
+        "ghost": 0,
+        "fighting": 2
+      },
+      "attack": {
+        "ghost": 0,
+        "rock": 0.5,
+        "steel": 0.5
+      }
+    },
+    "stats": {
+      "hp": 64,
+      "attack": 51,
+      "defense": 23,
+      "specialAttack": 51,
+      "specialDefense": 23,
+      "speed": 28
+    },
+    "generation": 3
+  },
+  {
+    "id": 294,
+    "name": "Ramboum",
+    "rarity": "rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/loudred.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/loudred.gif",
+    "originalName": "loudred",
+    "types": [
+      "normal"
+    ],
+    "effectiveness": {
+      "defense": {
+        "ghost": 0,
+        "fighting": 2
+      },
+      "attack": {
+        "ghost": 0,
+        "rock": 0.5,
+        "steel": 0.5
+      }
+    },
+    "stats": {
+      "hp": 84,
+      "attack": 71,
+      "defense": 43,
+      "specialAttack": 71,
+      "specialDefense": 43,
+      "speed": 48
+    },
+    "generation": 3
+  },
+  {
+    "id": 295,
+    "name": "Brouhabam",
+    "rarity": "very_rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/exploud.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/exploud.gif",
+    "originalName": "exploud",
+    "types": [
+      "normal"
+    ],
+    "effectiveness": {
+      "defense": {
+        "ghost": 0,
+        "fighting": 2
+      },
+      "attack": {
+        "ghost": 0,
+        "rock": 0.5,
+        "steel": 0.5
+      }
+    },
+    "stats": {
+      "hp": 104,
+      "attack": 91,
+      "defense": 63,
+      "specialAttack": 91,
+      "specialDefense": 73,
+      "speed": 68
+    },
+    "generation": 3
+  },
+  {
+    "id": 296,
+    "name": "Makuhita",
+    "rarity": "common",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/makuhita.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/makuhita.gif",
+    "originalName": "makuhita",
+    "types": [
+      "fighting"
+    ],
+    "effectiveness": {
+      "defense": {
+        "bug": 0.5,
+        "dark": 0.5,
+        "rock": 0.5,
+        "fairy": 2,
+        "flying": 2,
+        "psychic": 2
+      },
+      "attack": {
+        "ghost": 0,
+        "bug": 0.5,
+        "fairy": 0.5,
+        "flying": 0.5,
+        "poison": 0.5,
+        "psychic": 0.5,
+        "dark": 2,
+        "ice": 2,
+        "normal": 2,
+        "rock": 2,
+        "steel": 2
+      }
+    },
+    "stats": {
+      "hp": 72,
+      "attack": 60,
+      "defense": 30,
+      "specialAttack": 20,
+      "specialDefense": 30,
+      "speed": 25
+    },
+    "generation": 3
+  },
+  {
+    "id": 297,
+    "name": "Hariyama",
+    "rarity": "rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/hariyama.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/hariyama.gif",
+    "originalName": "hariyama",
+    "types": [
+      "fighting"
+    ],
+    "effectiveness": {
+      "defense": {
+        "bug": 0.5,
+        "dark": 0.5,
+        "rock": 0.5,
+        "fairy": 2,
+        "flying": 2,
+        "psychic": 2
+      },
+      "attack": {
+        "ghost": 0,
+        "bug": 0.5,
+        "fairy": 0.5,
+        "flying": 0.5,
+        "poison": 0.5,
+        "psychic": 0.5,
+        "dark": 2,
+        "ice": 2,
+        "normal": 2,
+        "rock": 2,
+        "steel": 2
+      }
+    },
+    "stats": {
+      "hp": 144,
+      "attack": 120,
+      "defense": 60,
+      "specialAttack": 40,
+      "specialDefense": 60,
+      "speed": 50
+    },
+    "generation": 3
+  },
+  {
+    "id": 298,
+    "name": "Azurill",
+    "rarity": "ultra_rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/azurill.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/azurill.gif",
+    "originalName": "azurill",
+    "types": [
+      "normal",
+      "fairy"
+    ],
+    "effectiveness": {
+      "defense": {
+        "ghost": 0,
+        "fighting": 1,
+        "dragon": 0,
+        "bug": 0.5,
+        "dark": 0.5,
+        "poison": 2,
+        "steel": 2
+      },
+      "attack": {
+        "ghost": 0,
+        "rock": 0.5,
+        "steel": 0.25,
+        "fire": 0.5,
+        "poison": 0.5,
+        "dark": 2,
+        "dragon": 2,
+        "fighting": 2
+      }
+    },
+    "stats": {
+      "hp": 50,
+      "attack": 20,
+      "defense": 40,
+      "specialAttack": 20,
+      "specialDefense": 40,
+      "speed": 20
+    },
+    "generation": 3
+  },
+  {
+    "id": 299,
+    "name": "Tarinor",
+    "rarity": "rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/nosepass.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/nosepass.gif",
+    "originalName": "nosepass",
+    "types": [
+      "rock"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fire": 0.5,
+        "flying": 0.5,
+        "normal": 0.5,
+        "poison": 0.5,
+        "fighting": 2,
+        "grass": 2,
+        "ground": 2,
+        "steel": 2,
+        "water": 2
+      },
+      "attack": {
+        "fighting": 0.5,
+        "ground": 0.5,
+        "steel": 0.5,
+        "bug": 2,
+        "fire": 2,
+        "flying": 2,
+        "ice": 2
+      }
+    },
+    "stats": {
+      "hp": 30,
+      "attack": 45,
+      "defense": 135,
+      "specialAttack": 45,
+      "specialDefense": 90,
+      "speed": 30
+    },
+    "generation": 3
+  },
+  {
+    "id": 300,
+    "name": "Skitty",
+    "rarity": "common",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/skitty.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/skitty.gif",
+    "originalName": "skitty",
+    "types": [
+      "normal"
+    ],
+    "effectiveness": {
+      "defense": {
+        "ghost": 0,
+        "fighting": 2
+      },
+      "attack": {
+        "ghost": 0,
+        "rock": 0.5,
+        "steel": 0.5
+      }
+    },
+    "stats": {
+      "hp": 50,
+      "attack": 45,
+      "defense": 45,
+      "specialAttack": 35,
+      "specialDefense": 35,
+      "speed": 50
+    },
+    "generation": 3
+  },
+  {
+    "id": 301,
+    "name": "Delcatty",
+    "rarity": "rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/delcatty.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/delcatty.gif",
+    "originalName": "delcatty",
+    "types": [
+      "normal"
+    ],
+    "effectiveness": {
+      "defense": {
+        "ghost": 0,
+        "fighting": 2
+      },
+      "attack": {
+        "ghost": 0,
+        "rock": 0.5,
+        "steel": 0.5
+      }
+    },
+    "stats": {
+      "hp": 70,
+      "attack": 65,
+      "defense": 65,
+      "specialAttack": 55,
+      "specialDefense": 55,
+      "speed": 90
+    },
+    "generation": 3
+  },
+  {
+    "id": 302,
+    "name": "Ténéfix",
+    "rarity": "uncommon",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/sableye.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/sableye.gif",
+    "originalName": "sableye",
+    "types": [
+      "dark",
+      "ghost"
+    ],
+    "effectiveness": {
+      "defense": {
+        "psychic": 0,
+        "dark": 1,
+        "ghost": 1,
+        "bug": 1,
+        "fighting": 0,
+        "fairy": 2,
+        "normal": 0,
+        "poison": 0.5
+      },
+      "attack": {
+        "dark": 0.25,
+        "fighting": 0.5,
+        "fairy": 0.5,
+        "ghost": 4,
+        "psychic": 4,
+        "normal": 0
+      }
+    },
+    "stats": {
+      "hp": 50,
+      "attack": 75,
+      "defense": 75,
+      "specialAttack": 65,
+      "specialDefense": 65,
+      "speed": 50
+    },
+    "generation": 3
+  },
+  {
+    "id": 303,
+    "name": "Mysdibule",
+    "rarity": "uncommon",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/mawile.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/mawile.gif",
+    "originalName": "mawile",
+    "types": [
+      "steel",
+      "fairy"
+    ],
+    "effectiveness": {
+      "defense": {
+        "poison": 0,
+        "bug": 0.25,
+        "dragon": 0,
+        "fairy": 0.5,
+        "flying": 0.5,
+        "grass": 0.5,
+        "ice": 0.5,
+        "normal": 0.5,
+        "psychic": 0.5,
+        "rock": 0.5,
+        "steel": 1,
+        "fighting": 1,
+        "fire": 2,
+        "ground": 2,
+        "dark": 0.5
+      },
+      "attack": {
+        "electric": 0.5,
+        "fire": 0.25,
+        "steel": 0.25,
+        "water": 0.5,
+        "fairy": 2,
+        "ice": 2,
+        "rock": 2,
+        "poison": 0.5,
+        "dark": 2,
+        "dragon": 2,
+        "fighting": 2
+      }
+    },
+    "stats": {
+      "hp": 50,
+      "attack": 85,
+      "defense": 85,
+      "specialAttack": 55,
+      "specialDefense": 55,
+      "speed": 50
+    },
+    "generation": 3
+  },
+  {
+    "id": 304,
+    "name": "Galekid",
+    "rarity": "uncommon",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/aron.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/aron.gif",
+    "originalName": "aron",
+    "types": [
+      "steel",
+      "rock"
+    ],
+    "effectiveness": {
+      "defense": {
+        "poison": 0,
+        "bug": 0.5,
+        "dragon": 0.5,
+        "fairy": 0.5,
+        "flying": 0.25,
+        "grass": 1,
+        "ice": 0.5,
+        "normal": 0.25,
+        "psychic": 0.5,
+        "rock": 0.5,
+        "steel": 1,
+        "fighting": 4,
+        "fire": 1,
+        "ground": 4,
+        "water": 2
+      },
+      "attack": {
+        "electric": 0.5,
+        "fire": 1,
+        "steel": 0.25,
+        "water": 0.5,
+        "fairy": 2,
+        "ice": 4,
+        "rock": 2,
+        "fighting": 0.5,
+        "ground": 0.5,
+        "bug": 2,
+        "flying": 2
+      }
+    },
+    "stats": {
+      "hp": 50,
+      "attack": 70,
+      "defense": 100,
+      "specialAttack": 40,
+      "specialDefense": 40,
+      "speed": 30
+    },
+    "generation": 3
+  },
+  {
+    "id": 305,
+    "name": "Galegon",
+    "rarity": "rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/lairon.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/lairon.gif",
+    "originalName": "lairon",
+    "types": [
+      "steel",
+      "rock"
+    ],
+    "effectiveness": {
+      "defense": {
+        "poison": 0,
+        "bug": 0.5,
+        "dragon": 0.5,
+        "fairy": 0.5,
+        "flying": 0.25,
+        "grass": 1,
+        "ice": 0.5,
+        "normal": 0.25,
+        "psychic": 0.5,
+        "rock": 0.5,
+        "steel": 1,
+        "fighting": 4,
+        "fire": 1,
+        "ground": 4,
+        "water": 2
+      },
+      "attack": {
+        "electric": 0.5,
+        "fire": 1,
+        "steel": 0.25,
+        "water": 0.5,
+        "fairy": 2,
+        "ice": 4,
+        "rock": 2,
+        "fighting": 0.5,
+        "ground": 0.5,
+        "bug": 2,
+        "flying": 2
+      }
+    },
+    "stats": {
+      "hp": 60,
+      "attack": 90,
+      "defense": 140,
+      "specialAttack": 50,
+      "specialDefense": 50,
+      "speed": 40
+    },
+    "generation": 3
+  },
+  {
+    "id": 306,
+    "name": "Galeking",
+    "rarity": "epic",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/aggron.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/aggron.gif",
+    "originalName": "aggron",
+    "types": [
+      "steel",
+      "rock"
+    ],
+    "effectiveness": {
+      "defense": {
+        "poison": 0,
+        "bug": 0.5,
+        "dragon": 0.5,
+        "fairy": 0.5,
+        "flying": 0.25,
+        "grass": 1,
+        "ice": 0.5,
+        "normal": 0.25,
+        "psychic": 0.5,
+        "rock": 0.5,
+        "steel": 1,
+        "fighting": 4,
+        "fire": 1,
+        "ground": 4,
+        "water": 2
+      },
+      "attack": {
+        "electric": 0.5,
+        "fire": 1,
+        "steel": 0.25,
+        "water": 0.5,
+        "fairy": 2,
+        "ice": 4,
+        "rock": 2,
+        "fighting": 0.5,
+        "ground": 0.5,
+        "bug": 2,
+        "flying": 2
+      }
+    },
+    "stats": {
+      "hp": 70,
+      "attack": 110,
+      "defense": 180,
+      "specialAttack": 60,
+      "specialDefense": 60,
+      "speed": 50
+    },
+    "generation": 3
+  },
+  {
+    "id": 307,
+    "name": "Méditikka",
+    "rarity": "uncommon",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/meditite.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/meditite.gif",
+    "originalName": "meditite",
+    "types": [
+      "fighting",
+      "psychic"
+    ],
+    "effectiveness": {
+      "defense": {
+        "bug": 1,
+        "dark": 1,
+        "rock": 0.5,
+        "fairy": 2,
+        "flying": 2,
+        "psychic": 1,
+        "fighting": 0.5,
+        "ghost": 2
+      },
+      "attack": {
+        "ghost": 0,
+        "bug": 0.5,
+        "fairy": 0.5,
+        "flying": 0.5,
+        "poison": 1,
+        "psychic": 0.25,
+        "dark": 0,
+        "ice": 2,
+        "normal": 2,
+        "rock": 2,
+        "steel": 1,
+        "fighting": 2
+      }
+    },
+    "stats": {
+      "hp": 30,
+      "attack": 40,
+      "defense": 55,
+      "specialAttack": 40,
+      "specialDefense": 55,
+      "speed": 60
+    },
+    "generation": 3
+  },
+  {
+    "id": 308,
+    "name": "Charmina",
+    "rarity": "very_rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/medicham.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/medicham.gif",
+    "originalName": "medicham",
+    "types": [
+      "fighting",
+      "psychic"
+    ],
+    "effectiveness": {
+      "defense": {
+        "bug": 1,
+        "dark": 1,
+        "rock": 0.5,
+        "fairy": 2,
+        "flying": 2,
+        "psychic": 1,
+        "fighting": 0.5,
+        "ghost": 2
+      },
+      "attack": {
+        "ghost": 0,
+        "bug": 0.5,
+        "fairy": 0.5,
+        "flying": 0.5,
+        "poison": 1,
+        "psychic": 0.25,
+        "dark": 0,
+        "ice": 2,
+        "normal": 2,
+        "rock": 2,
+        "steel": 1,
+        "fighting": 2
+      }
+    },
+    "stats": {
+      "hp": 60,
+      "attack": 60,
+      "defense": 75,
+      "specialAttack": 60,
+      "specialDefense": 75,
+      "speed": 80
+    },
+    "generation": 3
+  },
+  {
+    "id": 309,
+    "name": "Dynavolt",
+    "rarity": "common",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/electrike.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/electrike.gif",
+    "originalName": "electrike",
+    "types": [
+      "electric"
+    ],
+    "effectiveness": {
+      "defense": {
+        "electric": 0.5,
+        "flying": 0.5,
+        "steel": 0.5,
+        "ground": 2
+      },
+      "attack": {
+        "ground": 0,
+        "dragon": 0.5,
+        "electric": 0.5,
+        "grass": 0.5,
+        "flying": 2,
+        "water": 2
+      }
+    },
+    "stats": {
+      "hp": 40,
+      "attack": 45,
+      "defense": 40,
+      "specialAttack": 65,
+      "specialDefense": 40,
+      "speed": 65
+    },
+    "generation": 3
+  },
+  {
+    "id": 310,
+    "name": "Élecsprint",
+    "rarity": "very_rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/manectric.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/manectric.gif",
+    "originalName": "manectric",
+    "types": [
+      "electric"
+    ],
+    "effectiveness": {
+      "defense": {
+        "electric": 0.5,
+        "flying": 0.5,
+        "steel": 0.5,
+        "ground": 2
+      },
+      "attack": {
+        "ground": 0,
+        "dragon": 0.5,
+        "electric": 0.5,
+        "grass": 0.5,
+        "flying": 2,
+        "water": 2
+      }
+    },
+    "stats": {
+      "hp": 70,
+      "attack": 75,
+      "defense": 60,
+      "specialAttack": 105,
+      "specialDefense": 60,
+      "speed": 105
+    },
+    "generation": 3
+  },
+  {
+    "id": 311,
+    "name": "Posipi",
+    "rarity": "common",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/plusle.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/plusle.gif",
+    "originalName": "plusle",
+    "types": [
+      "electric"
+    ],
+    "effectiveness": {
+      "defense": {
+        "electric": 0.5,
+        "flying": 0.5,
+        "steel": 0.5,
+        "ground": 2
+      },
+      "attack": {
+        "ground": 0,
+        "dragon": 0.5,
+        "electric": 0.5,
+        "grass": 0.5,
+        "flying": 2,
+        "water": 2
+      }
+    },
+    "stats": {
+      "hp": 60,
+      "attack": 50,
+      "defense": 40,
+      "specialAttack": 85,
+      "specialDefense": 75,
+      "speed": 95
+    },
+    "generation": 3
+  },
+  {
+    "id": 312,
+    "name": "Négapi",
+    "rarity": "uncommon",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/minun.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/minun.gif",
+    "originalName": "minun",
+    "types": [
+      "electric"
+    ],
+    "effectiveness": {
+      "defense": {
+        "electric": 0.5,
+        "flying": 0.5,
+        "steel": 0.5,
+        "ground": 2
+      },
+      "attack": {
+        "ground": 0,
+        "dragon": 0.5,
+        "electric": 0.5,
+        "grass": 0.5,
+        "flying": 2,
+        "water": 2
+      }
+    },
+    "stats": {
+      "hp": 60,
+      "attack": 40,
+      "defense": 50,
+      "specialAttack": 75,
+      "specialDefense": 85,
+      "speed": 95
+    },
+    "generation": 3
+  },
+  {
+    "id": 313,
+    "name": "Muciole",
+    "rarity": "rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/volbeat.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/volbeat.gif",
+    "originalName": "volbeat",
+    "types": [
+      "bug"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fighting": 0.5,
+        "grass": 0.5,
+        "ground": 0.5,
+        "fire": 2,
+        "flying": 2,
+        "rock": 2
+      },
+      "attack": {
+        "fighting": 0.5,
+        "fire": 0.5,
+        "flying": 0.5,
+        "ghost": 0.5,
+        "poison": 0.5,
+        "steel": 0.5,
+        "fairy": 0.5,
+        "psychic": 2,
+        "grass": 2,
+        "dark": 2
+      }
+    },
+    "stats": {
+      "hp": 65,
+      "attack": 73,
+      "defense": 75,
+      "specialAttack": 47,
+      "specialDefense": 85,
+      "speed": 85
+    },
+    "generation": 3
+  },
+  {
+    "id": 314,
+    "name": "Lumivole",
+    "rarity": "rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/illumise.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/illumise.gif",
+    "originalName": "illumise",
+    "types": [
+      "bug"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fighting": 0.5,
+        "grass": 0.5,
+        "ground": 0.5,
+        "fire": 2,
+        "flying": 2,
+        "rock": 2
+      },
+      "attack": {
+        "fighting": 0.5,
+        "fire": 0.5,
+        "flying": 0.5,
+        "ghost": 0.5,
+        "poison": 0.5,
+        "steel": 0.5,
+        "fairy": 0.5,
+        "psychic": 2,
+        "grass": 2,
+        "dark": 2
+      }
+    },
+    "stats": {
+      "hp": 65,
+      "attack": 47,
+      "defense": 75,
+      "specialAttack": 73,
+      "specialDefense": 85,
+      "speed": 85
+    },
+    "generation": 3
+  },
+  {
+    "id": 315,
+    "name": "Rosélia",
+    "rarity": "rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/roselia.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/roselia.gif",
+    "originalName": "roselia",
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "effectiveness": {
+      "defense": {
+        "electric": 0.5,
+        "grass": 0.25,
+        "ground": 1,
+        "water": 0.5,
+        "bug": 1,
+        "fire": 2,
+        "flying": 2,
+        "ice": 2,
+        "poison": 1,
+        "fairy": 0.5,
+        "fighting": 0.5,
+        "psychic": 2
+      },
+      "attack": {
+        "bug": 0.5,
+        "dragon": 0.5,
+        "fire": 0.5,
+        "flying": 0.5,
+        "grass": 1,
+        "poison": 0.25,
+        "steel": 0,
+        "ground": 1,
+        "rock": 1,
+        "water": 2,
+        "ghost": 0.5,
+        "fairy": 2
+      }
+    },
+    "stats": {
+      "hp": 50,
+      "attack": 60,
+      "defense": 45,
+      "specialAttack": 100,
+      "specialDefense": 80,
+      "speed": 65
+    },
+    "generation": 3
+  },
+  {
+    "id": 316,
+    "name": "Gloupti",
+    "rarity": "rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/gulpin.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/gulpin.gif",
+    "originalName": "gulpin",
+    "types": [
+      "poison"
+    ],
+    "effectiveness": {
+      "defense": {
+        "bug": 0.5,
+        "fairy": 0.5,
+        "fighting": 0.5,
+        "grass": 0.5,
+        "poison": 0.5,
+        "ground": 2,
+        "psychic": 2
+      },
+      "attack": {
+        "steel": 0,
+        "ghost": 0.5,
+        "ground": 0.5,
+        "poison": 0.5,
+        "rock": 0.5,
+        "grass": 2,
+        "fairy": 2
+      }
+    },
+    "stats": {
+      "hp": 70,
+      "attack": 43,
+      "defense": 53,
+      "specialAttack": 43,
+      "specialDefense": 53,
+      "speed": 40
+    },
+    "generation": 3
+  },
+  {
+    "id": 317,
+    "name": "Avaltout",
+    "rarity": "very_rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/swalot.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/swalot.gif",
+    "originalName": "swalot",
+    "types": [
+      "poison"
+    ],
+    "effectiveness": {
+      "defense": {
+        "bug": 0.5,
+        "fairy": 0.5,
+        "fighting": 0.5,
+        "grass": 0.5,
+        "poison": 0.5,
+        "ground": 2,
+        "psychic": 2
+      },
+      "attack": {
+        "steel": 0,
+        "ghost": 0.5,
+        "ground": 0.5,
+        "poison": 0.5,
+        "rock": 0.5,
+        "grass": 2,
+        "fairy": 2
+      }
+    },
+    "stats": {
+      "hp": 100,
+      "attack": 73,
+      "defense": 83,
+      "specialAttack": 73,
+      "specialDefense": 83,
+      "speed": 55
+    },
+    "generation": 3
+  },
+  {
+    "id": 318,
+    "name": "Carvanha",
+    "rarity": "uncommon",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/carvanha.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/carvanha.gif",
+    "originalName": "carvanha",
+    "types": [
+      "water",
+      "dark"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fire": 0.5,
+        "ice": 0.5,
+        "steel": 0.5,
+        "water": 0.5,
+        "electric": 2,
+        "grass": 2,
+        "psychic": 0,
+        "dark": 0.5,
+        "ghost": 0.5,
+        "bug": 2,
+        "fighting": 2,
+        "fairy": 2
+      },
+      "attack": {
+        "dragon": 0.5,
+        "grass": 0.5,
+        "steel": 0.5,
+        "fire": 2,
+        "ground": 2,
+        "rock": 2,
+        "dark": 0.5,
+        "fighting": 0.5,
+        "fairy": 0.5,
+        "ghost": 2,
+        "psychic": 2
+      }
+    },
+    "stats": {
+      "hp": 45,
+      "attack": 90,
+      "defense": 20,
+      "specialAttack": 65,
+      "specialDefense": 20,
+      "speed": 65
+    },
+    "generation": 3
+  },
+  {
+    "id": 319,
+    "name": "Sharpedo",
+    "rarity": "uncommon",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/sharpedo.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/sharpedo.gif",
+    "originalName": "sharpedo",
+    "types": [
+      "water",
+      "dark"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fire": 0.5,
+        "ice": 0.5,
+        "steel": 0.5,
+        "water": 0.5,
+        "electric": 2,
+        "grass": 2,
+        "psychic": 0,
+        "dark": 0.5,
+        "ghost": 0.5,
+        "bug": 2,
+        "fighting": 2,
+        "fairy": 2
+      },
+      "attack": {
+        "dragon": 0.5,
+        "grass": 0.5,
+        "steel": 0.5,
+        "fire": 2,
+        "ground": 2,
+        "rock": 2,
+        "dark": 0.5,
+        "fighting": 0.5,
+        "fairy": 0.5,
+        "ghost": 2,
+        "psychic": 2
+      }
+    },
+    "stats": {
+      "hp": 70,
+      "attack": 120,
+      "defense": 40,
+      "specialAttack": 95,
+      "specialDefense": 40,
+      "speed": 95
+    },
+    "generation": 3
+  },
+  {
+    "id": 320,
+    "name": "Wailmer",
+    "rarity": "common",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/wailmer.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/wailmer.gif",
+    "originalName": "wailmer",
+    "types": [
+      "water"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fire": 0.5,
+        "ice": 0.5,
+        "steel": 0.5,
+        "water": 0.5,
+        "electric": 2,
+        "grass": 2
+      },
+      "attack": {
+        "dragon": 0.5,
+        "grass": 0.5,
+        "steel": 0.5,
+        "fire": 2,
+        "ground": 2,
+        "rock": 2
+      }
+    },
+    "stats": {
+      "hp": 130,
+      "attack": 70,
+      "defense": 35,
+      "specialAttack": 70,
+      "specialDefense": 35,
+      "speed": 60
+    },
+    "generation": 3
+  },
+  {
+    "id": 321,
+    "name": "Wailord",
+    "rarity": "ultra_rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/wailord.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/wailord.gif",
+    "originalName": "wailord",
+    "types": [
+      "water"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fire": 0.5,
+        "ice": 0.5,
+        "steel": 0.5,
+        "water": 0.5,
+        "electric": 2,
+        "grass": 2
+      },
+      "attack": {
+        "dragon": 0.5,
+        "grass": 0.5,
+        "steel": 0.5,
+        "fire": 2,
+        "ground": 2,
+        "rock": 2
+      }
+    },
+    "stats": {
+      "hp": 170,
+      "attack": 90,
+      "defense": 45,
+      "specialAttack": 90,
+      "specialDefense": 45,
+      "speed": 60
+    },
+    "generation": 3
+  },
+  {
+    "id": 322,
+    "name": "Chamallot",
+    "rarity": "common",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/numel.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/numel.gif",
+    "originalName": "numel",
+    "types": [
+      "fire",
+      "ground"
+    ],
+    "effectiveness": {
+      "defense": {
+        "bug": 1,
+        "fairy": 0.5,
+        "fire": 1,
+        "grass": 1,
+        "ice": 2,
+        "steel": 0.5,
+        "flying": 2,
+        "poison": 1,
+        "electric": 0,
+        "rock": 0.5,
+        "water": 2
+      },
+      "attack": {
+        "dragon": 0.5,
+        "fire": 1,
+        "rock": 1,
+        "water": 0.5,
+        "bug": 1,
+        "grass": 1,
+        "ice": 2,
+        "steel": 4,
+        "flying": 0,
+        "electric": 2,
+        "poison": 2
+      }
+    },
+    "stats": {
+      "hp": 60,
+      "attack": 60,
+      "defense": 40,
+      "specialAttack": 65,
+      "specialDefense": 45,
+      "speed": 35
+    },
+    "generation": 3
+  },
+  {
+    "id": 323,
+    "name": "Camérupt",
+    "rarity": "very_rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/camerupt.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/camerupt.gif",
+    "originalName": "camerupt",
+    "types": [
+      "fire",
+      "ground"
+    ],
+    "effectiveness": {
+      "defense": {
+        "bug": 1,
+        "fairy": 0.5,
+        "fire": 1,
+        "grass": 1,
+        "ice": 2,
+        "steel": 0.5,
+        "flying": 2,
+        "poison": 1,
+        "electric": 0,
+        "rock": 0.5,
+        "water": 2
+      },
+      "attack": {
+        "dragon": 0.5,
+        "fire": 1,
+        "rock": 1,
+        "water": 0.5,
+        "bug": 1,
+        "grass": 1,
+        "ice": 2,
+        "steel": 4,
+        "flying": 0,
+        "electric": 2,
+        "poison": 2
+      }
+    },
+    "stats": {
+      "hp": 70,
+      "attack": 100,
+      "defense": 70,
+      "specialAttack": 105,
+      "specialDefense": 75,
+      "speed": 40
+    },
+    "generation": 3
+  },
+  {
+    "id": 324,
+    "name": "Chartor",
+    "rarity": "rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/torkoal.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/torkoal.gif",
+    "originalName": "torkoal",
+    "types": [
+      "fire"
+    ],
+    "effectiveness": {
+      "defense": {
+        "bug": 1,
+        "fairy": 0.5,
+        "fire": 1,
+        "grass": 0.5,
+        "ice": 1,
+        "steel": 0.5,
+        "flying": 2,
+        "poison": 2
+      },
+      "attack": {
+        "dragon": 0.5,
+        "fire": 0.5,
+        "rock": 0.5,
+        "water": 0.5,
+        "bug": 2,
+        "grass": 2,
+        "ice": 2,
+        "steel": 2
+      }
+    },
+    "stats": {
+      "hp": 70,
+      "attack": 85,
+      "defense": 140,
+      "specialAttack": 85,
+      "specialDefense": 70,
+      "speed": 20
+    },
+    "generation": 3
+  },
+  {
+    "id": 325,
+    "name": "Spoink",
+    "rarity": "uncommon",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/spoink.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/spoink.gif",
+    "originalName": "spoink",
+    "types": [
+      "psychic"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fighting": 0.5,
+        "psychic": 0.5,
+        "bug": 2,
+        "dark": 2,
+        "ghost": 2
+      },
+      "attack": {
+        "dark": 0,
+        "psychic": 0.5,
+        "steel": 0.5,
+        "fighting": 2,
+        "poison": 2
+      }
+    },
+    "stats": {
+      "hp": 60,
+      "attack": 25,
+      "defense": 35,
+      "specialAttack": 70,
+      "specialDefense": 80,
+      "speed": 60
+    },
+    "generation": 3
+  },
+  {
+    "id": 326,
+    "name": "Groret",
+    "rarity": "rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/grumpig.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/grumpig.gif",
+    "originalName": "grumpig",
+    "types": [
+      "psychic"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fighting": 0.5,
+        "psychic": 0.5,
+        "bug": 2,
+        "dark": 2,
+        "ghost": 2
+      },
+      "attack": {
+        "dark": 0,
+        "psychic": 0.5,
+        "steel": 0.5,
+        "fighting": 2,
+        "poison": 2
+      }
+    },
+    "stats": {
+      "hp": 80,
+      "attack": 45,
+      "defense": 65,
+      "specialAttack": 90,
+      "specialDefense": 110,
+      "speed": 80
+    },
+    "generation": 3
+  },
+  {
+    "id": 327,
+    "name": "Spinda",
+    "rarity": "common",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/spinda.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/spinda.gif",
+    "originalName": "spinda",
+    "types": [
+      "normal"
+    ],
+    "effectiveness": {
+      "defense": {
+        "ghost": 0,
+        "fighting": 2
+      },
+      "attack": {
+        "ghost": 0,
+        "rock": 0.5,
+        "steel": 0.5
+      }
+    },
+    "stats": {
+      "hp": 60,
+      "attack": 60,
+      "defense": 60,
+      "specialAttack": 60,
+      "specialDefense": 60,
+      "speed": 60
+    },
+    "generation": 3
+  },
+  {
+    "id": 328,
+    "name": "Kraknoix",
+    "rarity": "uncommon",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/trapinch.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/trapinch.gif",
+    "originalName": "trapinch",
+    "types": [
+      "ground"
+    ],
+    "effectiveness": {
+      "defense": {
+        "electric": 0,
+        "poison": 0.5,
+        "rock": 0.5,
+        "grass": 2,
+        "ice": 2,
+        "water": 2
+      },
+      "attack": {
+        "flying": 0,
+        "bug": 0.5,
+        "grass": 0.5,
+        "electric": 2,
+        "fire": 2,
+        "poison": 2,
+        "rock": 2,
+        "steel": 2
+      }
+    },
+    "stats": {
+      "hp": 45,
+      "attack": 100,
+      "defense": 45,
+      "specialAttack": 45,
+      "specialDefense": 45,
+      "speed": 10
+    },
+    "generation": 3
+  },
+  {
+    "id": 329,
+    "name": "Vibraninf",
+    "rarity": "rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/vibrava.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/vibrava.gif",
+    "originalName": "vibrava",
+    "types": [
+      "ground",
+      "dragon"
+    ],
+    "effectiveness": {
+      "defense": {
+        "electric": 0,
+        "poison": 0.5,
+        "rock": 0.5,
+        "grass": 1,
+        "ice": 4,
+        "water": 1,
+        "fire": 0.5,
+        "dragon": 2,
+        "fairy": 2
+      },
+      "attack": {
+        "flying": 0,
+        "bug": 0.5,
+        "grass": 0.5,
+        "electric": 2,
+        "fire": 2,
+        "poison": 2,
+        "rock": 2,
+        "steel": 1,
+        "fairy": 0,
+        "dragon": 2
+      }
+    },
+    "stats": {
+      "hp": 50,
+      "attack": 70,
+      "defense": 50,
+      "specialAttack": 50,
+      "specialDefense": 50,
+      "speed": 70
+    },
+    "generation": 3
+  },
+  {
+    "id": 330,
+    "name": "Libégon",
+    "rarity": "epic",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/flygon.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/flygon.gif",
+    "originalName": "flygon",
+    "types": [
+      "ground",
+      "dragon"
+    ],
+    "effectiveness": {
+      "defense": {
+        "electric": 0,
+        "poison": 0.5,
+        "rock": 0.5,
+        "grass": 1,
+        "ice": 4,
+        "water": 1,
+        "fire": 0.5,
+        "dragon": 2,
+        "fairy": 2
+      },
+      "attack": {
+        "flying": 0,
+        "bug": 0.5,
+        "grass": 0.5,
+        "electric": 2,
+        "fire": 2,
+        "poison": 2,
+        "rock": 2,
+        "steel": 1,
+        "fairy": 0,
+        "dragon": 2
+      }
+    },
+    "stats": {
+      "hp": 80,
+      "attack": 100,
+      "defense": 80,
+      "specialAttack": 80,
+      "specialDefense": 80,
+      "speed": 100
+    },
+    "generation": 3
+  },
+  {
+    "id": 331,
+    "name": "Cacnea",
+    "rarity": "rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/cacnea.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/cacnea.gif",
+    "originalName": "cacnea",
+    "types": [
+      "grass"
+    ],
+    "effectiveness": {
+      "defense": {
+        "electric": 0.5,
+        "grass": 0.5,
+        "ground": 0.5,
+        "water": 0.5,
+        "bug": 2,
+        "fire": 2,
+        "flying": 2,
+        "ice": 2,
+        "poison": 2
+      },
+      "attack": {
+        "bug": 0.5,
+        "dragon": 0.5,
+        "fire": 0.5,
+        "flying": 0.5,
+        "grass": 0.5,
+        "poison": 0.5,
+        "steel": 0.5,
+        "ground": 2,
+        "rock": 2,
+        "water": 2
+      }
+    },
+    "stats": {
+      "hp": 50,
+      "attack": 85,
+      "defense": 40,
+      "specialAttack": 85,
+      "specialDefense": 40,
+      "speed": 35
+    },
+    "generation": 3
+  },
+  {
+    "id": 332,
+    "name": "Cacturne",
+    "rarity": "very_rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/cacturne.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/cacturne.gif",
+    "originalName": "cacturne",
+    "types": [
+      "grass",
+      "dark"
+    ],
+    "effectiveness": {
+      "defense": {
+        "electric": 0.5,
+        "grass": 0.5,
+        "ground": 0.5,
+        "water": 0.5,
+        "bug": 4,
+        "fire": 2,
+        "flying": 2,
+        "ice": 2,
+        "poison": 2,
+        "psychic": 0,
+        "dark": 0.5,
+        "ghost": 0.5,
+        "fighting": 2,
+        "fairy": 2
+      },
+      "attack": {
+        "bug": 0.5,
+        "dragon": 0.5,
+        "fire": 0.5,
+        "flying": 0.5,
+        "grass": 0.5,
+        "poison": 0.5,
+        "steel": 0.5,
+        "ground": 2,
+        "rock": 2,
+        "water": 2,
+        "dark": 0.5,
+        "fighting": 0.5,
+        "fairy": 0.5,
+        "ghost": 2,
+        "psychic": 2
+      }
+    },
+    "stats": {
+      "hp": 70,
+      "attack": 115,
+      "defense": 60,
+      "specialAttack": 115,
+      "specialDefense": 60,
+      "speed": 55
+    },
+    "generation": 3
+  },
+  {
+    "id": 333,
+    "name": "Tylton",
+    "rarity": "common",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/swablu.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/swablu.gif",
+    "originalName": "swablu",
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "effectiveness": {
+      "defense": {
+        "ghost": 0,
+        "fighting": 1,
+        "ground": 0,
+        "bug": 0.5,
+        "grass": 0.5,
+        "electric": 2,
+        "ice": 2,
+        "rock": 2
+      },
+      "attack": {
+        "ghost": 0,
+        "rock": 0.25,
+        "steel": 0.25,
+        "electric": 0.5,
+        "bug": 2,
+        "fighting": 2,
+        "grass": 2
+      }
+    },
+    "stats": {
+      "hp": 45,
+      "attack": 40,
+      "defense": 60,
+      "specialAttack": 40,
+      "specialDefense": 75,
+      "speed": 50
+    },
+    "generation": 3
+  },
+  {
+    "id": 334,
+    "name": "Altaria",
+    "rarity": "epic",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/altaria.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/altaria.gif",
+    "originalName": "altaria",
+    "types": [
+      "dragon",
+      "flying"
+    ],
+    "effectiveness": {
+      "defense": {
+        "electric": 1,
+        "fire": 0.5,
+        "grass": 0.25,
+        "water": 0.5,
+        "dragon": 2,
+        "ice": 4,
+        "fairy": 2,
+        "ground": 0,
+        "bug": 0.5,
+        "fighting": 0.5,
+        "rock": 2
+      },
+      "attack": {
+        "fairy": 0,
+        "steel": 0.25,
+        "dragon": 2,
+        "electric": 0.5,
+        "rock": 0.5,
+        "bug": 2,
+        "fighting": 2,
+        "grass": 2
+      }
+    },
+    "stats": {
+      "hp": 75,
+      "attack": 70,
+      "defense": 90,
+      "specialAttack": 70,
+      "specialDefense": 105,
+      "speed": 80
+    },
+    "generation": 3
+  },
+  {
+    "id": 335,
+    "name": "Mangriff",
+    "rarity": "very_rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/zangoose.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/zangoose.gif",
+    "originalName": "zangoose",
+    "types": [
+      "normal"
+    ],
+    "effectiveness": {
+      "defense": {
+        "ghost": 0,
+        "fighting": 2
+      },
+      "attack": {
+        "ghost": 0,
+        "rock": 0.5,
+        "steel": 0.5
+      }
+    },
+    "stats": {
+      "hp": 73,
+      "attack": 115,
+      "defense": 60,
+      "specialAttack": 60,
+      "specialDefense": 60,
+      "speed": 90
+    },
+    "generation": 3
+  },
+  {
+    "id": 336,
+    "name": "Séviper",
+    "rarity": "very_rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/seviper.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/seviper.gif",
+    "originalName": "seviper",
+    "types": [
+      "poison"
+    ],
+    "effectiveness": {
+      "defense": {
+        "bug": 0.5,
+        "fairy": 0.5,
+        "fighting": 0.5,
+        "grass": 0.5,
+        "poison": 0.5,
+        "ground": 2,
+        "psychic": 2
+      },
+      "attack": {
+        "steel": 0,
+        "ghost": 0.5,
+        "ground": 0.5,
+        "poison": 0.5,
+        "rock": 0.5,
+        "grass": 2,
+        "fairy": 2
+      }
+    },
+    "stats": {
+      "hp": 73,
+      "attack": 100,
+      "defense": 60,
+      "specialAttack": 100,
+      "specialDefense": 60,
+      "speed": 65
+    },
+    "generation": 3
+  },
+  {
+    "id": 337,
+    "name": "Séléroc",
+    "rarity": "rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/lunatone.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/lunatone.gif",
+    "originalName": "lunatone",
+    "types": [
+      "rock",
+      "psychic"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fire": 0.5,
+        "flying": 0.5,
+        "normal": 0.5,
+        "poison": 0.5,
+        "fighting": 1,
+        "grass": 2,
+        "ground": 2,
+        "steel": 2,
+        "water": 2,
+        "psychic": 0.5,
+        "bug": 2,
+        "dark": 2,
+        "ghost": 2
+      },
+      "attack": {
+        "fighting": 1,
+        "ground": 0.5,
+        "steel": 0.25,
+        "bug": 2,
+        "fire": 2,
+        "flying": 2,
+        "ice": 2,
+        "dark": 0,
+        "psychic": 0.5,
+        "poison": 2
+      }
+    },
+    "stats": {
+      "hp": 90,
+      "attack": 55,
+      "defense": 65,
+      "specialAttack": 95,
+      "specialDefense": 85,
+      "speed": 70
+    },
+    "generation": 3
+  },
+  {
+    "id": 338,
+    "name": "Solaroc",
+    "rarity": "rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/solrock.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/solrock.gif",
+    "originalName": "solrock",
+    "types": [
+      "rock",
+      "psychic"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fire": 0.5,
+        "flying": 0.5,
+        "normal": 0.5,
+        "poison": 0.5,
+        "fighting": 1,
+        "grass": 2,
+        "ground": 2,
+        "steel": 2,
+        "water": 2,
+        "psychic": 0.5,
+        "bug": 2,
+        "dark": 2,
+        "ghost": 2
+      },
+      "attack": {
+        "fighting": 1,
+        "ground": 0.5,
+        "steel": 0.25,
+        "bug": 2,
+        "fire": 2,
+        "flying": 2,
+        "ice": 2,
+        "dark": 0,
+        "psychic": 0.5,
+        "poison": 2
+      }
+    },
+    "stats": {
+      "hp": 90,
+      "attack": 95,
+      "defense": 85,
+      "specialAttack": 55,
+      "specialDefense": 65,
+      "speed": 70
+    },
+    "generation": 3
+  },
+  {
+    "id": 339,
+    "name": "Barloche",
+    "rarity": "common",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/barboach.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/barboach.gif",
+    "originalName": "barboach",
+    "types": [
+      "water",
+      "ground"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fire": 0.5,
+        "ice": 1,
+        "steel": 0.5,
+        "water": 1,
+        "electric": 0,
+        "grass": 4,
+        "poison": 0.5,
+        "rock": 0.5
+      },
+      "attack": {
+        "dragon": 0.5,
+        "grass": 0.25,
+        "steel": 1,
+        "fire": 4,
+        "ground": 2,
+        "rock": 4,
+        "flying": 0,
+        "bug": 0.5,
+        "electric": 2,
+        "poison": 2
+      }
+    },
+    "stats": {
+      "hp": 50,
+      "attack": 48,
+      "defense": 43,
+      "specialAttack": 46,
+      "specialDefense": 41,
+      "speed": 60
+    },
+    "generation": 3
+  },
+  {
+    "id": 340,
+    "name": "Barbicha",
+    "rarity": "very_rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/whiscash.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/whiscash.gif",
+    "originalName": "whiscash",
+    "types": [
+      "water",
+      "ground"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fire": 0.5,
+        "ice": 1,
+        "steel": 0.5,
+        "water": 1,
+        "electric": 0,
+        "grass": 4,
+        "poison": 0.5,
+        "rock": 0.5
+      },
+      "attack": {
+        "dragon": 0.5,
+        "grass": 0.25,
+        "steel": 1,
+        "fire": 4,
+        "ground": 2,
+        "rock": 4,
+        "flying": 0,
+        "bug": 0.5,
+        "electric": 2,
+        "poison": 2
+      }
+    },
+    "stats": {
+      "hp": 110,
+      "attack": 78,
+      "defense": 73,
+      "specialAttack": 76,
+      "specialDefense": 71,
+      "speed": 60
+    },
+    "generation": 3
+  },
+  {
+    "id": 341,
+    "name": "Écrapince",
+    "rarity": "uncommon",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/corphish.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/corphish.gif",
+    "originalName": "corphish",
+    "types": [
+      "water"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fire": 0.5,
+        "ice": 0.5,
+        "steel": 0.5,
+        "water": 0.5,
+        "electric": 2,
+        "grass": 2
+      },
+      "attack": {
+        "dragon": 0.5,
+        "grass": 0.5,
+        "steel": 0.5,
+        "fire": 2,
+        "ground": 2,
+        "rock": 2
+      }
+    },
+    "stats": {
+      "hp": 43,
+      "attack": 80,
+      "defense": 65,
+      "specialAttack": 50,
+      "specialDefense": 35,
+      "speed": 35
+    },
+    "generation": 3
+  },
+  {
+    "id": 342,
+    "name": "Colhomard",
+    "rarity": "rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/crawdaunt.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/crawdaunt.gif",
+    "originalName": "crawdaunt",
+    "types": [
+      "water",
+      "dark"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fire": 0.5,
+        "ice": 0.5,
+        "steel": 0.5,
+        "water": 0.5,
+        "electric": 2,
+        "grass": 2,
+        "psychic": 0,
+        "dark": 0.5,
+        "ghost": 0.5,
+        "bug": 2,
+        "fighting": 2,
+        "fairy": 2
+      },
+      "attack": {
+        "dragon": 0.5,
+        "grass": 0.5,
+        "steel": 0.5,
+        "fire": 2,
+        "ground": 2,
+        "rock": 2,
+        "dark": 0.5,
+        "fighting": 0.5,
+        "fairy": 0.5,
+        "ghost": 2,
+        "psychic": 2
+      }
+    },
+    "stats": {
+      "hp": 63,
+      "attack": 120,
+      "defense": 85,
+      "specialAttack": 90,
+      "specialDefense": 55,
+      "speed": 55
+    },
+    "generation": 3
+  },
+  {
+    "id": 343,
+    "name": "Balbuto",
+    "rarity": "rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/baltoy.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/baltoy.gif",
+    "originalName": "baltoy",
+    "types": [
+      "ground",
+      "psychic"
+    ],
+    "effectiveness": {
+      "defense": {
+        "electric": 0,
+        "poison": 0.5,
+        "rock": 0.5,
+        "grass": 2,
+        "ice": 2,
+        "water": 2,
+        "fighting": 0.5,
+        "psychic": 0.5,
+        "bug": 2,
+        "dark": 2,
+        "ghost": 2
+      },
+      "attack": {
+        "flying": 0,
+        "bug": 0.5,
+        "grass": 0.5,
+        "electric": 2,
+        "fire": 2,
+        "poison": 4,
+        "rock": 2,
+        "steel": 1,
+        "dark": 0,
+        "psychic": 0.5,
+        "fighting": 2
+      }
+    },
+    "stats": {
+      "hp": 40,
+      "attack": 40,
+      "defense": 55,
+      "specialAttack": 40,
+      "specialDefense": 70,
+      "speed": 55
+    },
+    "generation": 3
+  },
+  {
+    "id": 344,
+    "name": "Kaorine",
+    "rarity": "very_rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/claydol.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/claydol.gif",
+    "originalName": "claydol",
+    "types": [
+      "ground",
+      "psychic"
+    ],
+    "effectiveness": {
+      "defense": {
+        "electric": 0,
+        "poison": 0.5,
+        "rock": 0.5,
+        "grass": 2,
+        "ice": 2,
+        "water": 2,
+        "fighting": 0.5,
+        "psychic": 0.5,
+        "bug": 2,
+        "dark": 2,
+        "ghost": 2
+      },
+      "attack": {
+        "flying": 0,
+        "bug": 0.5,
+        "grass": 0.5,
+        "electric": 2,
+        "fire": 2,
+        "poison": 4,
+        "rock": 2,
+        "steel": 1,
+        "dark": 0,
+        "psychic": 0.5,
+        "fighting": 2
+      }
+    },
+    "stats": {
+      "hp": 60,
+      "attack": 70,
+      "defense": 105,
+      "specialAttack": 70,
+      "specialDefense": 120,
+      "speed": 75
+    },
+    "generation": 3
+  },
+  {
+    "id": 345,
+    "name": "Lilia",
+    "rarity": "ultra_rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/lileep.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/lileep.gif",
+    "originalName": "lileep",
+    "types": [
+      "rock",
+      "grass"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fire": 1,
+        "flying": 1,
+        "normal": 0.5,
+        "poison": 1,
+        "fighting": 2,
+        "grass": 1,
+        "ground": 1,
+        "steel": 2,
+        "water": 1,
+        "electric": 0.5,
+        "bug": 2,
+        "ice": 2
+      },
+      "attack": {
+        "fighting": 0.5,
+        "ground": 1,
+        "steel": 0.25,
+        "bug": 1,
+        "fire": 1,
+        "flying": 1,
+        "ice": 2,
+        "dragon": 0.5,
+        "grass": 0.5,
+        "poison": 0.5,
+        "rock": 2,
+        "water": 2
+      }
+    },
+    "stats": {
+      "hp": 66,
+      "attack": 41,
+      "defense": 77,
+      "specialAttack": 61,
+      "specialDefense": 87,
+      "speed": 23
+    },
+    "generation": 3
+  },
+  {
+    "id": 346,
+    "name": "Vacilys",
+    "rarity": "mythic",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/cradily.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/cradily.gif",
+    "originalName": "cradily",
+    "types": [
+      "rock",
+      "grass"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fire": 1,
+        "flying": 1,
+        "normal": 0.5,
+        "poison": 1,
+        "fighting": 2,
+        "grass": 1,
+        "ground": 1,
+        "steel": 2,
+        "water": 1,
+        "electric": 0.5,
+        "bug": 2,
+        "ice": 2
+      },
+      "attack": {
+        "fighting": 0.5,
+        "ground": 1,
+        "steel": 0.25,
+        "bug": 1,
+        "fire": 1,
+        "flying": 1,
+        "ice": 2,
+        "dragon": 0.5,
+        "grass": 0.5,
+        "poison": 0.5,
+        "rock": 2,
+        "water": 2
+      }
+    },
+    "stats": {
+      "hp": 86,
+      "attack": 81,
+      "defense": 97,
+      "specialAttack": 81,
+      "specialDefense": 107,
+      "speed": 43
+    },
+    "generation": 3
+  },
+  {
+    "id": 347,
+    "name": "Anorith",
+    "rarity": "ultra_rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/anorith.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/anorith.gif",
+    "originalName": "anorith",
+    "types": [
+      "rock",
+      "bug"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fire": 1,
+        "flying": 1,
+        "normal": 0.5,
+        "poison": 0.5,
+        "fighting": 1,
+        "grass": 1,
+        "ground": 1,
+        "steel": 2,
+        "water": 2,
+        "rock": 2
+      },
+      "attack": {
+        "fighting": 0.25,
+        "ground": 0.5,
+        "steel": 0.25,
+        "bug": 2,
+        "fire": 1,
+        "flying": 1,
+        "ice": 2,
+        "ghost": 0.5,
+        "poison": 0.5,
+        "fairy": 0.5,
+        "psychic": 2,
+        "grass": 2,
+        "dark": 2
+      }
+    },
+    "stats": {
+      "hp": 45,
+      "attack": 95,
+      "defense": 50,
+      "specialAttack": 40,
+      "specialDefense": 50,
+      "speed": 75
+    },
+    "generation": 3
+  },
+  {
+    "id": 348,
+    "name": "Armaldo",
+    "rarity": "mythic",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/armaldo.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/armaldo.gif",
+    "originalName": "armaldo",
+    "types": [
+      "rock",
+      "bug"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fire": 1,
+        "flying": 1,
+        "normal": 0.5,
+        "poison": 0.5,
+        "fighting": 1,
+        "grass": 1,
+        "ground": 1,
+        "steel": 2,
+        "water": 2,
+        "rock": 2
+      },
+      "attack": {
+        "fighting": 0.25,
+        "ground": 0.5,
+        "steel": 0.25,
+        "bug": 2,
+        "fire": 1,
+        "flying": 1,
+        "ice": 2,
+        "ghost": 0.5,
+        "poison": 0.5,
+        "fairy": 0.5,
+        "psychic": 2,
+        "grass": 2,
+        "dark": 2
+      }
+    },
+    "stats": {
+      "hp": 75,
+      "attack": 125,
+      "defense": 100,
+      "specialAttack": 70,
+      "specialDefense": 80,
+      "speed": 45
+    },
+    "generation": 3
+  },
+  {
+    "id": 349,
+    "name": "Barpau",
+    "rarity": "uncommon",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/feebas.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/feebas.gif",
+    "originalName": "feebas",
+    "types": [
+      "water"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fire": 0.5,
+        "ice": 0.5,
+        "steel": 0.5,
+        "water": 0.5,
+        "electric": 2,
+        "grass": 2
+      },
+      "attack": {
+        "dragon": 0.5,
+        "grass": 0.5,
+        "steel": 0.5,
+        "fire": 2,
+        "ground": 2,
+        "rock": 2
+      }
+    },
+    "stats": {
+      "hp": 20,
+      "attack": 15,
+      "defense": 20,
+      "specialAttack": 10,
+      "specialDefense": 55,
+      "speed": 80
+    },
+    "generation": 3
+  },
+  {
+    "id": 350,
+    "name": "Milobellus",
+    "rarity": "epic",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/milotic.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/milotic.gif",
+    "originalName": "milotic",
+    "types": [
+      "water"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fire": 0.5,
+        "ice": 0.5,
+        "steel": 0.5,
+        "water": 0.5,
+        "electric": 2,
+        "grass": 2
+      },
+      "attack": {
+        "dragon": 0.5,
+        "grass": 0.5,
+        "steel": 0.5,
+        "fire": 2,
+        "ground": 2,
+        "rock": 2
+      }
+    },
+    "stats": {
+      "hp": 95,
+      "attack": 60,
+      "defense": 79,
+      "specialAttack": 100,
+      "specialDefense": 125,
+      "speed": 81
+    },
+    "generation": 3
+  },
+  {
+    "id": 351,
+    "name": "Morphéo",
+    "rarity": "epic",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/castform.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/castform.gif",
+    "originalName": "castform",
+    "types": [
+      "normal"
+    ],
+    "effectiveness": {
+      "defense": {
+        "ghost": 0,
+        "fighting": 2
+      },
+      "attack": {
+        "ghost": 0,
+        "rock": 0.5,
+        "steel": 0.5
+      }
+    },
+    "stats": {
+      "hp": 70,
+      "attack": 70,
+      "defense": 70,
+      "specialAttack": 70,
+      "specialDefense": 70,
+      "speed": 70
+    },
+    "generation": 3
+  },
+  {
+    "id": 352,
+    "name": "Kecleon",
+    "rarity": "rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/kecleon.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/kecleon.gif",
+    "originalName": "kecleon",
+    "types": [
+      "normal"
+    ],
+    "effectiveness": {
+      "defense": {
+        "ghost": 0,
+        "fighting": 2
+      },
+      "attack": {
+        "ghost": 0,
+        "rock": 0.5,
+        "steel": 0.5
+      }
+    },
+    "stats": {
+      "hp": 60,
+      "attack": 90,
+      "defense": 70,
+      "specialAttack": 60,
+      "specialDefense": 120,
+      "speed": 40
+    },
+    "generation": 3
+  },
+  {
+    "id": 353,
+    "name": "Polichombr",
+    "rarity": "common",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/shuppet.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/shuppet.gif",
+    "originalName": "shuppet",
+    "types": [
+      "ghost"
+    ],
+    "effectiveness": {
+      "defense": {
+        "normal": 0,
+        "fighting": 0,
+        "bug": 0.5,
+        "poison": 0.5,
+        "ghost": 2,
+        "dark": 2
+      },
+      "attack": {
+        "normal": 0,
+        "dark": 0.5,
+        "ghost": 2,
+        "psychic": 2
+      }
+    },
+    "stats": {
+      "hp": 44,
+      "attack": 75,
+      "defense": 35,
+      "specialAttack": 63,
+      "specialDefense": 33,
+      "speed": 45
+    },
+    "generation": 3
+  },
+  {
+    "id": 354,
+    "name": "Branette",
+    "rarity": "very_rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/banette.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/banette.gif",
+    "originalName": "banette",
+    "types": [
+      "ghost"
+    ],
+    "effectiveness": {
+      "defense": {
+        "normal": 0,
+        "fighting": 0,
+        "bug": 0.5,
+        "poison": 0.5,
+        "ghost": 2,
+        "dark": 2
+      },
+      "attack": {
+        "normal": 0,
+        "dark": 0.5,
+        "ghost": 2,
+        "psychic": 2
+      }
+    },
+    "stats": {
+      "hp": 64,
+      "attack": 115,
+      "defense": 65,
+      "specialAttack": 83,
+      "specialDefense": 63,
+      "speed": 65
+    },
+    "generation": 3
+  },
+  {
+    "id": 355,
+    "name": "Skelénox",
+    "rarity": "common",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/duskull.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/duskull.gif",
+    "originalName": "duskull",
+    "types": [
+      "ghost"
+    ],
+    "effectiveness": {
+      "defense": {
+        "normal": 0,
+        "fighting": 0,
+        "bug": 0.5,
+        "poison": 0.5,
+        "ghost": 2,
+        "dark": 2
+      },
+      "attack": {
+        "normal": 0,
+        "dark": 0.5,
+        "ghost": 2,
+        "psychic": 2
+      }
+    },
+    "stats": {
+      "hp": 20,
+      "attack": 40,
+      "defense": 90,
+      "specialAttack": 30,
+      "specialDefense": 90,
+      "speed": 25
+    },
+    "generation": 3
+  },
+  {
+    "id": 356,
+    "name": "Téraclope",
+    "rarity": "very_rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/dusclops.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/dusclops.gif",
+    "originalName": "dusclops",
+    "types": [
+      "ghost"
+    ],
+    "effectiveness": {
+      "defense": {
+        "normal": 0,
+        "fighting": 0,
+        "bug": 0.5,
+        "poison": 0.5,
+        "ghost": 2,
+        "dark": 2
+      },
+      "attack": {
+        "normal": 0,
+        "dark": 0.5,
+        "ghost": 2,
+        "psychic": 2
+      }
+    },
+    "stats": {
+      "hp": 40,
+      "attack": 70,
+      "defense": 130,
+      "specialAttack": 60,
+      "specialDefense": 130,
+      "speed": 25
+    },
+    "generation": 3
+  },
+  {
+    "id": 357,
+    "name": "Tropius",
+    "rarity": "very_rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/tropius.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/tropius.gif",
+    "originalName": "tropius",
+    "types": [
+      "grass",
+      "flying"
+    ],
+    "effectiveness": {
+      "defense": {
+        "electric": 1,
+        "grass": 0.25,
+        "ground": 0,
+        "water": 0.5,
+        "bug": 1,
+        "fire": 2,
+        "flying": 2,
+        "ice": 4,
+        "poison": 2,
+        "fighting": 0.5,
+        "rock": 2
+      },
+      "attack": {
+        "bug": 1,
+        "dragon": 0.5,
+        "fire": 0.5,
+        "flying": 0.5,
+        "grass": 1,
+        "poison": 0.5,
+        "steel": 0.25,
+        "ground": 2,
+        "rock": 1,
+        "water": 2,
+        "electric": 0.5,
+        "fighting": 2
+      }
+    },
+    "stats": {
+      "hp": 99,
+      "attack": 68,
+      "defense": 83,
+      "specialAttack": 72,
+      "specialDefense": 87,
+      "speed": 51
+    },
+    "generation": 3
+  },
+  {
+    "id": 358,
+    "name": "Éoko",
+    "rarity": "epic",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/chimecho.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/chimecho.gif",
+    "originalName": "chimecho",
+    "types": [
+      "psychic"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fighting": 0.5,
+        "psychic": 0.5,
+        "bug": 2,
+        "dark": 2,
+        "ghost": 2
+      },
+      "attack": {
+        "dark": 0,
+        "psychic": 0.5,
+        "steel": 0.5,
+        "fighting": 2,
+        "poison": 2
+      }
+    },
+    "stats": {
+      "hp": 75,
+      "attack": 50,
+      "defense": 80,
+      "specialAttack": 95,
+      "specialDefense": 90,
+      "speed": 65
+    },
+    "generation": 3
+  },
+  {
+    "id": 359,
+    "name": "Absol",
+    "rarity": "very_rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/absol.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/absol.gif",
+    "originalName": "absol",
+    "types": [
+      "dark"
+    ],
+    "effectiveness": {
+      "defense": {
+        "psychic": 0,
+        "dark": 0.5,
+        "ghost": 0.5,
+        "bug": 2,
+        "fighting": 2,
+        "fairy": 2
+      },
+      "attack": {
+        "dark": 0.5,
+        "fighting": 0.5,
+        "fairy": 0.5,
+        "ghost": 2,
+        "psychic": 2
+      }
+    },
+    "stats": {
+      "hp": 65,
+      "attack": 130,
+      "defense": 60,
+      "specialAttack": 75,
+      "specialDefense": 60,
+      "speed": 75
+    },
+    "generation": 3
+  },
+  {
+    "id": 360,
+    "name": "Okéoké",
+    "rarity": "common",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/wynaut.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/wynaut.gif",
+    "originalName": "wynaut",
+    "types": [
+      "psychic"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fighting": 0.5,
+        "psychic": 0.5,
+        "bug": 2,
+        "dark": 2,
+        "ghost": 2
+      },
+      "attack": {
+        "dark": 0,
+        "psychic": 0.5,
+        "steel": 0.5,
+        "fighting": 2,
+        "poison": 2
+      }
+    },
+    "stats": {
+      "hp": 95,
+      "attack": 23,
+      "defense": 48,
+      "specialAttack": 23,
+      "specialDefense": 48,
+      "speed": 23
+    },
+    "generation": 3
+  },
+  {
+    "id": 361,
+    "name": "Stalgamin",
+    "rarity": "rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/snorunt.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/snorunt.gif",
+    "originalName": "snorunt",
+    "types": [
+      "ice"
+    ],
+    "effectiveness": {
+      "defense": {
+        "ice": 0.5,
+        "fighting": 2,
+        "fire": 2,
+        "rock": 2,
+        "steel": 2
+      },
+      "attack": {
+        "fire": 0.5,
+        "ice": 0.5,
+        "steel": 0.5,
+        "water": 0.5,
+        "dragon": 2,
+        "flying": 2,
+        "grass": 2,
+        "ground": 2
+      }
+    },
+    "stats": {
+      "hp": 50,
+      "attack": 50,
+      "defense": 50,
+      "specialAttack": 50,
+      "specialDefense": 50,
+      "speed": 50
+    },
+    "generation": 3
+  },
+  {
+    "id": 362,
+    "name": "Oniglali",
+    "rarity": "very_rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/glalie.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/glalie.gif",
+    "originalName": "glalie",
+    "types": [
+      "ice"
+    ],
+    "effectiveness": {
+      "defense": {
+        "ice": 0.5,
+        "fighting": 2,
+        "fire": 2,
+        "rock": 2,
+        "steel": 2
+      },
+      "attack": {
+        "fire": 0.5,
+        "ice": 0.5,
+        "steel": 0.5,
+        "water": 0.5,
+        "dragon": 2,
+        "flying": 2,
+        "grass": 2,
+        "ground": 2
+      }
+    },
+    "stats": {
+      "hp": 80,
+      "attack": 80,
+      "defense": 80,
+      "specialAttack": 80,
+      "specialDefense": 80,
+      "speed": 80
+    },
+    "generation": 3
+  },
+  {
+    "id": 363,
+    "name": "Obalie",
+    "rarity": "common",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/spheal.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/spheal.gif",
+    "originalName": "spheal",
+    "types": [
+      "ice",
+      "water"
+    ],
+    "effectiveness": {
+      "defense": {
+        "ice": 0.25,
+        "fighting": 2,
+        "fire": 1,
+        "rock": 2,
+        "steel": 1,
+        "water": 0.5,
+        "electric": 2,
+        "grass": 2
+      },
+      "attack": {
+        "fire": 1,
+        "ice": 0.5,
+        "steel": 0.25,
+        "water": 0.5,
+        "dragon": 1,
+        "flying": 2,
+        "grass": 1,
+        "ground": 4,
+        "rock": 2
+      }
+    },
+    "stats": {
+      "hp": 70,
+      "attack": 40,
+      "defense": 50,
+      "specialAttack": 55,
+      "specialDefense": 50,
+      "speed": 25
+    },
+    "generation": 3
+  },
+  {
+    "id": 364,
+    "name": "Phogleur",
+    "rarity": "uncommon",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/sealeo.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/sealeo.gif",
+    "originalName": "sealeo",
+    "types": [
+      "ice",
+      "water"
+    ],
+    "effectiveness": {
+      "defense": {
+        "ice": 0.25,
+        "fighting": 2,
+        "fire": 1,
+        "rock": 2,
+        "steel": 1,
+        "water": 0.5,
+        "electric": 2,
+        "grass": 2
+      },
+      "attack": {
+        "fire": 1,
+        "ice": 0.5,
+        "steel": 0.25,
+        "water": 0.5,
+        "dragon": 1,
+        "flying": 2,
+        "grass": 1,
+        "ground": 4,
+        "rock": 2
+      }
+    },
+    "stats": {
+      "hp": 90,
+      "attack": 60,
+      "defense": 70,
+      "specialAttack": 75,
+      "specialDefense": 70,
+      "speed": 45
+    },
+    "generation": 3
+  },
+  {
+    "id": 365,
+    "name": "Kaimorse",
+    "rarity": "very_rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/walrein.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/walrein.gif",
+    "originalName": "walrein",
+    "types": [
+      "ice",
+      "water"
+    ],
+    "effectiveness": {
+      "defense": {
+        "ice": 0.25,
+        "fighting": 2,
+        "fire": 1,
+        "rock": 2,
+        "steel": 1,
+        "water": 0.5,
+        "electric": 2,
+        "grass": 2
+      },
+      "attack": {
+        "fire": 1,
+        "ice": 0.5,
+        "steel": 0.25,
+        "water": 0.5,
+        "dragon": 1,
+        "flying": 2,
+        "grass": 1,
+        "ground": 4,
+        "rock": 2
+      }
+    },
+    "stats": {
+      "hp": 110,
+      "attack": 80,
+      "defense": 90,
+      "specialAttack": 95,
+      "specialDefense": 90,
+      "speed": 65
+    },
+    "generation": 3
+  },
+  {
+    "id": 366,
+    "name": "Coquiperl",
+    "rarity": "uncommon",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/clamperl.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/clamperl.gif",
+    "originalName": "clamperl",
+    "types": [
+      "water"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fire": 0.5,
+        "ice": 0.5,
+        "steel": 0.5,
+        "water": 0.5,
+        "electric": 2,
+        "grass": 2
+      },
+      "attack": {
+        "dragon": 0.5,
+        "grass": 0.5,
+        "steel": 0.5,
+        "fire": 2,
+        "ground": 2,
+        "rock": 2
+      }
+    },
+    "stats": {
+      "hp": 35,
+      "attack": 64,
+      "defense": 85,
+      "specialAttack": 74,
+      "specialDefense": 55,
+      "speed": 32
+    },
+    "generation": 3
+  },
+  {
+    "id": 367,
+    "name": "Serpang",
+    "rarity": "epic",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/huntail.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/huntail.gif",
+    "originalName": "huntail",
+    "types": [
+      "water"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fire": 0.5,
+        "ice": 0.5,
+        "steel": 0.5,
+        "water": 0.5,
+        "electric": 2,
+        "grass": 2
+      },
+      "attack": {
+        "dragon": 0.5,
+        "grass": 0.5,
+        "steel": 0.5,
+        "fire": 2,
+        "ground": 2,
+        "rock": 2
+      }
+    },
+    "stats": {
+      "hp": 55,
+      "attack": 104,
+      "defense": 105,
+      "specialAttack": 94,
+      "specialDefense": 75,
+      "speed": 52
+    },
+    "generation": 3
+  },
+  {
+    "id": 368,
+    "name": "Rosabyss",
+    "rarity": "epic",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/gorebyss.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/gorebyss.gif",
+    "originalName": "gorebyss",
+    "types": [
+      "water"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fire": 0.5,
+        "ice": 0.5,
+        "steel": 0.5,
+        "water": 0.5,
+        "electric": 2,
+        "grass": 2
+      },
+      "attack": {
+        "dragon": 0.5,
+        "grass": 0.5,
+        "steel": 0.5,
+        "fire": 2,
+        "ground": 2,
+        "rock": 2
+      }
+    },
+    "stats": {
+      "hp": 55,
+      "attack": 84,
+      "defense": 105,
+      "specialAttack": 114,
+      "specialDefense": 75,
+      "speed": 52
+    },
+    "generation": 3
+  },
+  {
+    "id": 369,
+    "name": "Relicanth",
+    "rarity": "epic",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/relicanth.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/relicanth.gif",
+    "originalName": "relicanth",
+    "types": [
+      "water",
+      "rock"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fire": 0.25,
+        "ice": 0.5,
+        "steel": 1,
+        "water": 1,
+        "electric": 2,
+        "grass": 4,
+        "flying": 0.5,
+        "normal": 0.5,
+        "poison": 0.5,
+        "fighting": 2,
+        "ground": 2
+      },
+      "attack": {
+        "dragon": 0.5,
+        "grass": 0.5,
+        "steel": 0.25,
+        "fire": 4,
+        "ground": 1,
+        "rock": 2,
+        "fighting": 0.5,
+        "bug": 2,
+        "flying": 2,
+        "ice": 2
+      }
+    },
+    "stats": {
+      "hp": 100,
+      "attack": 90,
+      "defense": 130,
+      "specialAttack": 45,
+      "specialDefense": 65,
+      "speed": 55
+    },
+    "generation": 3
+  },
+  {
+    "id": 370,
+    "name": "Lovdisc",
+    "rarity": "uncommon",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/luvdisc.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/luvdisc.gif",
+    "originalName": "luvdisc",
+    "types": [
+      "water"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fire": 0.5,
+        "ice": 0.5,
+        "steel": 0.5,
+        "water": 0.5,
+        "electric": 2,
+        "grass": 2
+      },
+      "attack": {
+        "dragon": 0.5,
+        "grass": 0.5,
+        "steel": 0.5,
+        "fire": 2,
+        "ground": 2,
+        "rock": 2
+      }
+    },
+    "stats": {
+      "hp": 43,
+      "attack": 30,
+      "defense": 55,
+      "specialAttack": 40,
+      "specialDefense": 65,
+      "speed": 97
+    },
+    "generation": 3
+  },
+  {
+    "id": 371,
+    "name": "Draby",
+    "rarity": "rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/bagon.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/bagon.gif",
+    "originalName": "bagon",
+    "types": [
+      "dragon"
+    ],
+    "effectiveness": {
+      "defense": {
+        "electric": 0.5,
+        "fire": 0.5,
+        "grass": 0.5,
+        "water": 0.5,
+        "dragon": 2,
+        "ice": 2,
+        "fairy": 2
+      },
+      "attack": {
+        "fairy": 0,
+        "steel": 0.5,
+        "dragon": 2
+      }
+    },
+    "stats": {
+      "hp": 45,
+      "attack": 75,
+      "defense": 60,
+      "specialAttack": 40,
+      "specialDefense": 30,
+      "speed": 50
+    },
+    "generation": 3
+  },
+  {
+    "id": 372,
+    "name": "Drackhaus",
+    "rarity": "very_rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/shelgon.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/shelgon.gif",
+    "originalName": "shelgon",
+    "types": [
+      "dragon"
+    ],
+    "effectiveness": {
+      "defense": {
+        "electric": 0.5,
+        "fire": 0.5,
+        "grass": 0.5,
+        "water": 0.5,
+        "dragon": 2,
+        "ice": 2,
+        "fairy": 2
+      },
+      "attack": {
+        "fairy": 0,
+        "steel": 0.5,
+        "dragon": 2
+      }
+    },
+    "stats": {
+      "hp": 65,
+      "attack": 95,
+      "defense": 100,
+      "specialAttack": 60,
+      "specialDefense": 50,
+      "speed": 50
+    },
+    "generation": 3
+  },
+  {
+    "id": 373,
+    "name": "Drattak",
+    "rarity": "mythic",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/salamence.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/salamence.gif",
+    "originalName": "salamence",
+    "types": [
+      "dragon",
+      "flying"
+    ],
+    "effectiveness": {
+      "defense": {
+        "electric": 1,
+        "fire": 0.5,
+        "grass": 0.25,
+        "water": 0.5,
+        "dragon": 2,
+        "ice": 4,
+        "fairy": 2,
+        "ground": 0,
+        "bug": 0.5,
+        "fighting": 0.5,
+        "rock": 2
+      },
+      "attack": {
+        "fairy": 0,
+        "steel": 0.25,
+        "dragon": 2,
+        "electric": 0.5,
+        "rock": 0.5,
+        "bug": 2,
+        "fighting": 2,
+        "grass": 2
+      }
+    },
+    "stats": {
+      "hp": 95,
+      "attack": 135,
+      "defense": 80,
+      "specialAttack": 110,
+      "specialDefense": 80,
+      "speed": 100
+    },
+    "generation": 3
+  },
+  {
+    "id": 374,
+    "name": "Terhal",
+    "rarity": "epic",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/beldum.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/beldum.gif",
+    "originalName": "beldum",
+    "types": [
+      "steel",
+      "psychic"
+    ],
+    "effectiveness": {
+      "defense": {
+        "poison": 0,
+        "bug": 1,
+        "dragon": 0.5,
+        "fairy": 0.5,
+        "flying": 0.5,
+        "grass": 0.5,
+        "ice": 0.5,
+        "normal": 0.5,
+        "psychic": 0.25,
+        "rock": 0.5,
+        "steel": 0.5,
+        "fighting": 1,
+        "fire": 2,
+        "ground": 2,
+        "dark": 2,
+        "ghost": 2
+      },
+      "attack": {
+        "electric": 0.5,
+        "fire": 0.5,
+        "steel": 0.25,
+        "water": 0.5,
+        "fairy": 2,
+        "ice": 2,
+        "rock": 2,
+        "dark": 0,
+        "psychic": 0.5,
+        "fighting": 2,
+        "poison": 2
+      }
+    },
+    "stats": {
+      "hp": 40,
+      "attack": 55,
+      "defense": 80,
+      "specialAttack": 35,
+      "specialDefense": 60,
+      "speed": 30
+    },
+    "generation": 3
+  },
+  {
+    "id": 375,
+    "name": "Métang",
+    "rarity": "ultra_rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/metang.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/metang.gif",
+    "originalName": "metang",
+    "types": [
+      "steel",
+      "psychic"
+    ],
+    "effectiveness": {
+      "defense": {
+        "poison": 0,
+        "bug": 1,
+        "dragon": 0.5,
+        "fairy": 0.5,
+        "flying": 0.5,
+        "grass": 0.5,
+        "ice": 0.5,
+        "normal": 0.5,
+        "psychic": 0.25,
+        "rock": 0.5,
+        "steel": 0.5,
+        "fighting": 1,
+        "fire": 2,
+        "ground": 2,
+        "dark": 2,
+        "ghost": 2
+      },
+      "attack": {
+        "electric": 0.5,
+        "fire": 0.5,
+        "steel": 0.25,
+        "water": 0.5,
+        "fairy": 2,
+        "ice": 2,
+        "rock": 2,
+        "dark": 0,
+        "psychic": 0.5,
+        "fighting": 2,
+        "poison": 2
+      }
+    },
+    "stats": {
+      "hp": 60,
+      "attack": 75,
+      "defense": 100,
+      "specialAttack": 55,
+      "specialDefense": 80,
+      "speed": 50
+    },
+    "generation": 3
+  },
+  {
+    "id": 376,
+    "name": "Métalosse",
+    "rarity": "mythic",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/metagross.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/metagross.gif",
+    "originalName": "metagross",
+    "types": [
+      "steel",
+      "psychic"
+    ],
+    "effectiveness": {
+      "defense": {
+        "poison": 0,
+        "bug": 1,
+        "dragon": 0.5,
+        "fairy": 0.5,
+        "flying": 0.5,
+        "grass": 0.5,
+        "ice": 0.5,
+        "normal": 0.5,
+        "psychic": 0.25,
+        "rock": 0.5,
+        "steel": 0.5,
+        "fighting": 1,
+        "fire": 2,
+        "ground": 2,
+        "dark": 2,
+        "ghost": 2
+      },
+      "attack": {
+        "electric": 0.5,
+        "fire": 0.5,
+        "steel": 0.25,
+        "water": 0.5,
+        "fairy": 2,
+        "ice": 2,
+        "rock": 2,
+        "dark": 0,
+        "psychic": 0.5,
+        "fighting": 2,
+        "poison": 2
+      }
+    },
+    "stats": {
+      "hp": 80,
+      "attack": 135,
+      "defense": 130,
+      "specialAttack": 95,
+      "specialDefense": 90,
+      "speed": 70
+    },
+    "generation": 3
+  },
+  {
+    "id": 377,
+    "name": "Regirock",
+    "rarity": "legendary",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/regirock.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/regirock.gif",
+    "originalName": "regirock",
+    "types": [
+      "rock"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fire": 0.5,
+        "flying": 0.5,
+        "normal": 0.5,
+        "poison": 0.5,
+        "fighting": 2,
+        "grass": 2,
+        "ground": 2,
+        "steel": 2,
+        "water": 2
+      },
+      "attack": {
+        "fighting": 0.5,
+        "ground": 0.5,
+        "steel": 0.5,
+        "bug": 2,
+        "fire": 2,
+        "flying": 2,
+        "ice": 2
+      }
+    },
+    "stats": {
+      "hp": 80,
+      "attack": 100,
+      "defense": 200,
+      "specialAttack": 50,
+      "specialDefense": 100,
+      "speed": 50
+    },
+    "generation": 3
+  },
+  {
+    "id": 378,
+    "name": "Regice",
+    "rarity": "legendary",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/regice.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/regice.gif",
+    "originalName": "regice",
+    "types": [
+      "ice"
+    ],
+    "effectiveness": {
+      "defense": {
+        "ice": 0.5,
+        "fighting": 2,
+        "fire": 2,
+        "rock": 2,
+        "steel": 2
+      },
+      "attack": {
+        "fire": 0.5,
+        "ice": 0.5,
+        "steel": 0.5,
+        "water": 0.5,
+        "dragon": 2,
+        "flying": 2,
+        "grass": 2,
+        "ground": 2
+      }
+    },
+    "stats": {
+      "hp": 80,
+      "attack": 50,
+      "defense": 100,
+      "specialAttack": 100,
+      "specialDefense": 200,
+      "speed": 50
+    },
+    "generation": 3
+  },
+  {
+    "id": 379,
+    "name": "Registeel",
+    "rarity": "legendary",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/registeel.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/registeel.gif",
+    "originalName": "registeel",
+    "types": [
+      "steel"
+    ],
+    "effectiveness": {
+      "defense": {
+        "poison": 0,
+        "bug": 0.5,
+        "dragon": 0.5,
+        "fairy": 0.5,
+        "flying": 0.5,
+        "grass": 0.5,
+        "ice": 0.5,
+        "normal": 0.5,
+        "psychic": 0.5,
+        "rock": 0.5,
+        "steel": 0.5,
+        "fighting": 2,
+        "fire": 2,
+        "ground": 2
+      },
+      "attack": {
+        "electric": 0.5,
+        "fire": 0.5,
+        "steel": 0.5,
+        "water": 0.5,
+        "fairy": 2,
+        "ice": 2,
+        "rock": 2
+      }
+    },
+    "stats": {
+      "hp": 80,
+      "attack": 75,
+      "defense": 150,
+      "specialAttack": 75,
+      "specialDefense": 150,
+      "speed": 50
+    },
+    "generation": 3
+  },
+  {
+    "id": 380,
+    "name": "Latias",
+    "rarity": "legendary",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/latias.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/latias.gif",
+    "originalName": "latias",
+    "types": [
+      "dragon",
+      "psychic"
+    ],
+    "effectiveness": {
+      "defense": {
+        "electric": 0.5,
+        "fire": 0.5,
+        "grass": 0.5,
+        "water": 0.5,
+        "dragon": 2,
+        "ice": 2,
+        "fairy": 2,
+        "fighting": 0.5,
+        "psychic": 0.5,
+        "bug": 2,
+        "dark": 2,
+        "ghost": 2
+      },
+      "attack": {
+        "fairy": 0,
+        "steel": 0.25,
+        "dragon": 2,
+        "dark": 0,
+        "psychic": 0.5,
+        "fighting": 2,
+        "poison": 2
+      }
+    },
+    "stats": {
+      "hp": 80,
+      "attack": 80,
+      "defense": 90,
+      "specialAttack": 110,
+      "specialDefense": 130,
+      "speed": 110
+    },
+    "generation": 3
+  },
+  {
+    "id": 381,
+    "name": "Latios",
+    "rarity": "legendary",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/latios.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/latios.gif",
+    "originalName": "latios",
+    "types": [
+      "dragon",
+      "psychic"
+    ],
+    "effectiveness": {
+      "defense": {
+        "electric": 0.5,
+        "fire": 0.5,
+        "grass": 0.5,
+        "water": 0.5,
+        "dragon": 2,
+        "ice": 2,
+        "fairy": 2,
+        "fighting": 0.5,
+        "psychic": 0.5,
+        "bug": 2,
+        "dark": 2,
+        "ghost": 2
+      },
+      "attack": {
+        "fairy": 0,
+        "steel": 0.25,
+        "dragon": 2,
+        "dark": 0,
+        "psychic": 0.5,
+        "fighting": 2,
+        "poison": 2
+      }
+    },
+    "stats": {
+      "hp": 80,
+      "attack": 90,
+      "defense": 80,
+      "specialAttack": 130,
+      "specialDefense": 110,
+      "speed": 110
+    },
+    "generation": 3
+  },
+  {
+    "id": 382,
+    "name": "Kyogre",
+    "rarity": "legendary",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/kyogre.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/kyogre.gif",
+    "originalName": "kyogre",
+    "types": [
+      "water"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fire": 0.5,
+        "ice": 0.5,
+        "steel": 0.5,
+        "water": 0.5,
+        "electric": 2,
+        "grass": 2
+      },
+      "attack": {
+        "dragon": 0.5,
+        "grass": 0.5,
+        "steel": 0.5,
+        "fire": 2,
+        "ground": 2,
+        "rock": 2
+      }
+    },
+    "stats": {
+      "hp": 100,
+      "attack": 100,
+      "defense": 90,
+      "specialAttack": 150,
+      "specialDefense": 140,
+      "speed": 90
+    },
+    "generation": 3
+  },
+  {
+    "id": 383,
+    "name": "Groudon",
+    "rarity": "legendary",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/groudon.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/groudon.gif",
+    "originalName": "groudon",
+    "types": [
+      "ground"
+    ],
+    "effectiveness": {
+      "defense": {
+        "electric": 0,
+        "poison": 0.5,
+        "rock": 0.5,
+        "grass": 2,
+        "ice": 2,
+        "water": 2
+      },
+      "attack": {
+        "flying": 0,
+        "bug": 0.5,
+        "grass": 0.5,
+        "electric": 2,
+        "fire": 2,
+        "poison": 2,
+        "rock": 2,
+        "steel": 2
+      }
+    },
+    "stats": {
+      "hp": 100,
+      "attack": 150,
+      "defense": 140,
+      "specialAttack": 100,
+      "specialDefense": 90,
+      "speed": 90
+    },
+    "generation": 3
+  },
+  {
+    "id": 384,
+    "name": "Rayquaza",
+    "rarity": "legendary",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/rayquaza.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/rayquaza.gif",
+    "originalName": "rayquaza",
+    "types": [
+      "dragon",
+      "flying"
+    ],
+    "effectiveness": {
+      "defense": {
+        "electric": 1,
+        "fire": 0.5,
+        "grass": 0.25,
+        "water": 0.5,
+        "dragon": 2,
+        "ice": 4,
+        "fairy": 2,
+        "ground": 0,
+        "bug": 0.5,
+        "fighting": 0.5,
+        "rock": 2
+      },
+      "attack": {
+        "fairy": 0,
+        "steel": 0.25,
+        "dragon": 2,
+        "electric": 0.5,
+        "rock": 0.5,
+        "bug": 2,
+        "fighting": 2,
+        "grass": 2
+      }
+    },
+    "stats": {
+      "hp": 105,
+      "attack": 150,
+      "defense": 90,
+      "specialAttack": 150,
+      "specialDefense": 90,
+      "speed": 95
+    },
+    "generation": 3
+  },
+  {
+    "id": 385,
+    "name": "Jirachi",
+    "rarity": "legendary",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/jirachi.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/jirachi.gif",
+    "originalName": "jirachi",
+    "types": [
+      "steel",
+      "psychic"
+    ],
+    "effectiveness": {
+      "defense": {
+        "poison": 0,
+        "bug": 1,
+        "dragon": 0.5,
+        "fairy": 0.5,
+        "flying": 0.5,
+        "grass": 0.5,
+        "ice": 0.5,
+        "normal": 0.5,
+        "psychic": 0.25,
+        "rock": 0.5,
+        "steel": 0.5,
+        "fighting": 1,
+        "fire": 2,
+        "ground": 2,
+        "dark": 2,
+        "ghost": 2
+      },
+      "attack": {
+        "electric": 0.5,
+        "fire": 0.5,
+        "steel": 0.25,
+        "water": 0.5,
+        "fairy": 2,
+        "ice": 2,
+        "rock": 2,
+        "dark": 0,
+        "psychic": 0.5,
+        "fighting": 2,
+        "poison": 2
+      }
+    },
+    "stats": {
+      "hp": 100,
+      "attack": 100,
+      "defense": 100,
+      "specialAttack": 100,
+      "specialDefense": 100,
+      "speed": 100
+    },
+    "generation": 3
+  },
+  {
+    "id": 386,
+    "name": "Deoxys",
+    "rarity": "legendary",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/deoxys-normal.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/deoxys-normal.gif",
+    "originalName": "deoxys-normal",
+    "types": [
+      "psychic"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fighting": 0.5,
+        "psychic": 0.5,
+        "bug": 2,
+        "dark": 2,
+        "ghost": 2
+      },
+      "attack": {
+        "dark": 0,
+        "psychic": 0.5,
+        "steel": 0.5,
+        "fighting": 2,
+        "poison": 2
+      }
+    },
+    "stats": {
+      "hp": 50,
+      "attack": 150,
+      "defense": 50,
+      "specialAttack": 150,
+      "specialDefense": 50,
+      "speed": 150
+    },
+    "generation": 3
+  }
+]

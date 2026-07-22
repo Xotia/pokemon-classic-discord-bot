@@ -1,10 +1,9 @@
 import { makeSpriteUrl } from "./makeSpriteUrl";
-import { getRarity } from "./getRarity";
 import { getPokemonTypes } from "./getPokemonTypes";
-import getMultipliers from "./getMultipliers";
+import getMultipliers from "../utils/getMultipliers";
 import { getPokemonStats } from "./getPokemonStats";
 
-export function buildPokemonJson(pokemon: any, species: any, id: number) {
+export function buildPokemonJson(pokemon: any, species: any, id: number, rarity: string) {
   const frenchNameEntry = species.names.find(
     (n: any) => n.language && n.language.name === "fr",
   );
@@ -12,7 +11,6 @@ export function buildPokemonJson(pokemon: any, species: any, id: number) {
 
   const showdownName = pokemon.name;
   const { image, shinyImage } = makeSpriteUrl(showdownName);
-  const rarity = getRarity(id);
   const types = getPokemonTypes(pokemon.types);
   const effectiveness = getMultipliers(types);
   const stats = getPokemonStats(pokemon.stats);

@@ -14,7 +14,8 @@
     "simulate:capture": "npx ts-node src/scripts/simulateCapture.ts",
     "test:rarity": "npx ts-node src/scripts/testRarity.ts",
     "compare:rarity": "npx ts-node src/scripts/compareRarityWithManual.ts",
-    "force-end-raid": "npx ts-node src/scripts/forceEndRaid.ts"
+    "force-end-raid": "npx ts-node src/scripts/forceEndRaid.ts",
+    "generate-gen3": "npx ts-node src/scripts/createGen3Json.ts"
   },
   "keywords": [],
   "author": "",
