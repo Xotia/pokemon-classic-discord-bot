@@ -25,6 +25,9 @@ export async function buildPokedexPageEmbed(
   const trainerName =
     player.name || interaction.user.globalName || interaction.user.username;
   const playerLevel = typeof player.level === "number" ? player.level : 1;
+  const playerXp = typeof player.xp === "number" ? player.xp : 0;
+  const playerResearchData =
+    typeof player.researchData === "number" ? player.researchData : 0;
 
   const uniqueCount = captureIds.length;
   const remainingCount = totalPokemonNumber - uniqueCount;
@@ -37,6 +40,8 @@ export async function buildPokedexPageEmbed(
     `⭐ **Niveau :** ${playerLevel}`,
     `📖 **Pokédex :** ${uniqueCount}/${totalPokemonNumber}`,
     `🎯 **Saison :** ${seasonCount} capturés`,
+    `✨ **XP :** ${playerXp}`,
+    `🔬 **Données de recherche :** ${playerResearchData}`,
   ].join("\n");
 
   const footer = `Page ${page + 1}/${totalPages} • ${remainingCount} restants`;
