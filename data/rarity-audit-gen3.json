@@ -738,11 +738,11 @@
   {
     "id": 273,
     "name": "Grainipiot",
-    "rarity": "common",
+    "rarity": "uncommon",
     "appliedRule": "composite",
-    "finalScore": 12.749999999999998,
+    "finalScore": 23.999999999999996,
     "components": {
-      "c1_encounterRate": 0,
+      "c1_encounterRate": 30,
       "c3_games": 68,
       "c4_method": 0,
       "c5_exclusivity": 0,
@@ -752,7 +752,7 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
+      "maxEncounterChance": 35,
       "gamesCount": 3,
       "locationsCount": 8,
       "versions": [
@@ -1565,7 +1565,7 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
+      "maxEncounterChance": 50,
       "gamesCount": 5,
       "locationsCount": 10,
       "versions": [
@@ -1702,11 +1702,11 @@
   {
     "id": 300,
     "name": "Skitty",
-    "rarity": "common",
+    "rarity": "very_rare",
     "appliedRule": "composite",
-    "finalScore": 13.499999999999998,
+    "finalScore": 47.24999999999999,
     "components": {
-      "c1_encounterRate": 0,
+      "c1_encounterRate": 90,
       "c3_games": 72,
       "c4_method": 0,
       "c5_exclusivity": 0,
@@ -1716,7 +1716,7 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
+      "maxEncounterChance": 5,
       "gamesCount": 5,
       "locationsCount": 7,
       "versions": [
@@ -1746,7 +1746,7 @@
   {
     "id": 301,
     "name": "Delcatty",
-    "rarity": "rare",
+    "rarity": "ultra_rare",
     "appliedRule": "priority:no_encounters_inherits_parent",
     "finalScore": null,
     "components": null,
@@ -2129,11 +2129,11 @@
   {
     "id": 311,
     "name": "Posipi",
-    "rarity": "common",
+    "rarity": "uncommon",
     "appliedRule": "composite",
-    "finalScore": 14.75,
+    "finalScore": 22.249999999999996,
     "components": {
-      "c1_encounterRate": 0,
+      "c1_encounterRate": 20,
       "c3_games": 76,
       "c4_method": 0,
       "c5_exclusivity": 0,
@@ -2143,7 +2143,7 @@
     "rawData": {
       "isLegendary": false,
       "isMythical": false,
-      "maxEncounterChance": 100,
+      "maxEncounterChance": 40,
       "gamesCount": 5,
       "locationsCount": 6,
       "versions": [

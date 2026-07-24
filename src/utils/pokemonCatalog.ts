@@ -1,5 +1,5 @@
 import fs from 'node:fs';
-import { POKEMON_GEN1_DB, POKEMON_GEN2_DB, othermonsDb } from '../config/paths';
+import { POKEMON_GEN1_DB, POKEMON_GEN2_DB, POKEMON_GEN3_DB, othermonsDb } from '../config/paths';
 import { Pokemon } from '../types/Pokemon';
 
 const catalogCache = new Map<string, Pokemon[]>();
@@ -10,7 +10,7 @@ function loadPokemonFile(filePath: string): Pokemon[] {
 }
 
 /**
- * Catalogue Pokémon d'un serveur : gen1 + gen2 (partagés) + le roster
+ * Catalogue Pokémon d'un serveur : gen1 + gen2 + gen3 (partagés) + le roster
  * custom propre à ce serveur (data/guilds/<guildId>/othermons.json).
  */
 export function getPokemonCatalog(guildId: string): Pokemon[] {
@@ -20,6 +20,7 @@ export function getPokemonCatalog(guildId: string): Pokemon[] {
   const catalog = [
     ...loadPokemonFile(POKEMON_GEN1_DB),
     ...loadPokemonFile(POKEMON_GEN2_DB),
+    ...loadPokemonFile(POKEMON_GEN3_DB),
     ...loadPokemonFile(othermonsDb(guildId)),
   ];
 

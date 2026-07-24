@@ -8,5 +8,6 @@
     { "id": "country-road", "label": "Route champêtre" },
     { "id": "floral-hill", "label": "Colline Florale" },
     { "id": "sour-pond", "label": "Étang aigri" }
-  ]
+  ],
+  "gen3": []
 }

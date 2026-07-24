@@ -42,7 +42,11 @@
       "specialDefense": 55,
       "speed": 70
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "jungle",
+      "beginner-trail"
+    ]
   },
   {
     "id": 253,
@@ -87,7 +91,11 @@
       "specialDefense": 65,
       "speed": 95
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "jungle",
+      "paradise-island"
+    ]
   },
   {
     "id": 254,
@@ -132,7 +140,10 @@
       "specialDefense": 85,
       "speed": 120
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "jungle"
+    ]
   },
   {
     "id": 255,
@@ -174,7 +185,11 @@
       "specialDefense": 50,
       "speed": 45
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "sunny-cove",
+      "beginner-trail"
+    ]
   },
   {
     "id": 256,
@@ -227,7 +242,11 @@
       "specialDefense": 60,
       "speed": 55
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "sunny-cove",
+      "paradise-island"
+    ]
   },
   {
     "id": 257,
@@ -280,7 +299,10 @@
       "specialDefense": 70,
       "speed": 80
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "sunny-cove"
+    ]
   },
   {
     "id": 258,
@@ -318,7 +340,11 @@
       "specialDefense": 50,
       "speed": 40
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "iridescent-marsh",
+      "beginner-trail"
+    ]
   },
   {
     "id": 259,
@@ -363,7 +389,11 @@
       "specialDefense": 70,
       "speed": 50
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "iridescent-marsh",
+      "paradise-island"
+    ]
   },
   {
     "id": 260,
@@ -408,7 +438,10 @@
       "specialDefense": 90,
       "speed": 60
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "iridescent-marsh"
+    ]
   },
   {
     "id": 261,
@@ -445,7 +478,11 @@
       "specialDefense": 30,
       "speed": 35
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "grim-cemetery",
+      "beginner-trail"
+    ]
   },
   {
     "id": 262,
@@ -482,7 +519,11 @@
       "specialDefense": 60,
       "speed": 70
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "grim-cemetery",
+      "paradise-island"
+    ]
   },
   {
     "id": 263,
@@ -513,7 +554,11 @@
       "specialDefense": 41,
       "speed": 60
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "beginner-trail",
+      "enchanted-meadow"
+    ]
   },
   {
     "id": 264,
@@ -544,7 +589,11 @@
       "specialDefense": 61,
       "speed": 100
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "beginner-trail",
+      "paradise-island"
+    ]
   },
   {
     "id": 265,
@@ -586,7 +635,10 @@
       "specialDefense": 30,
       "speed": 20
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "iridescent-marsh"
+    ]
   },
   {
     "id": 266,
@@ -628,7 +680,10 @@
       "specialDefense": 25,
       "speed": 15
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "iridescent-marsh"
+    ]
   },
   {
     "id": 267,
@@ -677,7 +732,10 @@
       "specialDefense": 50,
       "speed": 65
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "iridescent-marsh"
+    ]
   },
   {
     "id": 268,
@@ -719,7 +777,10 @@
       "specialDefense": 25,
       "speed": 15
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "iridescent-marsh"
+    ]
   },
   {
     "id": 269,
@@ -768,7 +829,10 @@
       "specialDefense": 90,
       "speed": 65
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "iridescent-marsh"
+    ]
   },
   {
     "id": 270,
@@ -815,7 +879,10 @@
       "specialDefense": 50,
       "speed": 30
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "iridescent-marsh"
+    ]
   },
   {
     "id": 271,
@@ -862,7 +929,10 @@
       "specialDefense": 70,
       "speed": 50
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "iridescent-marsh"
+    ]
   },
   {
     "id": 272,
@@ -909,7 +979,11 @@
       "specialDefense": 100,
       "speed": 70
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "iridescent-marsh",
+      "paradise-island"
+    ]
   },
   {
     "id": 273,
@@ -954,7 +1028,10 @@
       "specialDefense": 30,
       "speed": 30
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "jungle"
+    ]
   },
   {
     "id": 274,
@@ -1010,7 +1087,10 @@
       "specialDefense": 40,
       "speed": 60
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "jungle"
+    ]
   },
   {
     "id": 275,
@@ -1066,7 +1146,11 @@
       "specialDefense": 60,
       "speed": 80
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "jungle",
+      "paradise-island"
+    ]
   },
   {
     "id": 276,
@@ -1108,7 +1192,11 @@
       "specialDefense": 30,
       "speed": 85
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "sunny-cove",
+      "beginner-trail"
+    ]
   },
   {
     "id": 277,
@@ -1150,7 +1238,12 @@
       "specialDefense": 50,
       "speed": 125
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "beginner-trail",
+      "celestial-tower",
+      "paradise-island"
+    ]
   },
   {
     "id": 278,
@@ -1196,7 +1289,11 @@
       "specialDefense": 30,
       "speed": 85
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "sunny-cove",
+      "paradise-island"
+    ]
   },
   {
     "id": 279,
@@ -1242,7 +1339,12 @@
       "specialDefense": 70,
       "speed": 65
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "sunny-cove",
+      "celestial-tower",
+      "paradise-island"
+    ]
   },
   {
     "id": 280,
@@ -1284,7 +1386,11 @@
       "specialDefense": 35,
       "speed": 40
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "beginner-trail",
+      "enchanted-meadow"
+    ]
   },
   {
     "id": 281,
@@ -1326,7 +1432,11 @@
       "specialDefense": 55,
       "speed": 50
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "enchanted-meadow",
+      "paradise-island"
+    ]
   },
   {
     "id": 282,
@@ -1368,7 +1478,11 @@
       "specialDefense": 115,
       "speed": 80
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "enchanted-meadow",
+      "celestial-tower"
+    ]
   },
   {
     "id": 283,
@@ -1418,7 +1532,10 @@
       "specialDefense": 52,
       "speed": 65
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "iridescent-marsh"
+    ]
   },
   {
     "id": 284,
@@ -1467,7 +1584,11 @@
       "specialDefense": 82,
       "speed": 80
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "iridescent-marsh",
+      "paradise-island"
+    ]
   },
   {
     "id": 285,
@@ -1512,12 +1633,16 @@
       "specialDefense": 60,
       "speed": 35
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "iridescent-marsh",
+      "jungle"
+    ]
   },
   {
     "id": 286,
     "name": "Chapignon",
-    "rarity": "very_rare",
+    "rarity": "epic",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/breloom.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/breloom.gif",
     "originalName": "breloom",
@@ -1568,7 +1693,11 @@
       "specialDefense": 60,
       "speed": 70
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "iridescent-marsh",
+      "jungle"
+    ]
   },
   {
     "id": 287,
@@ -1599,7 +1728,11 @@
       "specialDefense": 35,
       "speed": 30
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "jungle",
+      "beginner-trail"
+    ]
   },
   {
     "id": 288,
@@ -1630,12 +1763,15 @@
       "specialDefense": 55,
       "speed": 90
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "jungle"
+    ]
   },
   {
     "id": 289,
     "name": "Monaflèmit",
-    "rarity": "mythic",
+    "rarity": "ultra_rare",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/slaking.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/slaking.gif",
     "originalName": "slaking",
@@ -1661,7 +1797,11 @@
       "specialDefense": 65,
       "speed": 100
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "jungle",
+      "paradise-island"
+    ]
   },
   {
     "id": 290,
@@ -1711,7 +1851,11 @@
       "specialDefense": 30,
       "speed": 40
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "iridescent-marsh",
+      "grim-cemetery"
+    ]
   },
   {
     "id": 291,
@@ -1760,7 +1904,11 @@
       "specialDefense": 50,
       "speed": 160
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "iridescent-marsh",
+      "grim-cemetery"
+    ]
   },
   {
     "id": 292,
@@ -1809,7 +1957,11 @@
       "specialDefense": 30,
       "speed": 40
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "iridescent-marsh",
+      "grim-cemetery"
+    ]
   },
   {
     "id": 293,
@@ -1840,7 +1992,11 @@
       "specialDefense": 23,
       "speed": 28
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "beginner-trail",
+      "enchanted-meadow"
+    ]
   },
   {
     "id": 294,
@@ -1871,12 +2027,16 @@
       "specialDefense": 43,
       "speed": 48
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "beginner-trail",
+      "paradise-island"
+    ]
   },
   {
     "id": 295,
     "name": "Brouhabam",
-    "rarity": "very_rare",
+    "rarity": "epic",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/exploud.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/exploud.gif",
     "originalName": "exploud",
@@ -1902,7 +2062,11 @@
       "specialDefense": 73,
       "speed": 68
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "jungle",
+      "paradise-island"
+    ]
   },
   {
     "id": 296,
@@ -1945,12 +2109,16 @@
       "specialDefense": 30,
       "speed": 25
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "sunny-cove",
+      "paradise-island"
+    ]
   },
   {
     "id": 297,
     "name": "Hariyama",
-    "rarity": "rare",
+    "rarity": "very_rare",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/hariyama.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/hariyama.gif",
     "originalName": "hariyama",
@@ -1988,7 +2156,11 @@
       "specialDefense": 60,
       "speed": 50
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "sunny-cove",
+      "paradise-island"
+    ]
   },
   {
     "id": 298,
@@ -2030,7 +2202,11 @@
       "specialDefense": 40,
       "speed": 20
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "enchanted-meadow",
+      "underwater-cave"
+    ]
   },
   {
     "id": 299,
@@ -2072,7 +2248,11 @@
       "specialDefense": 90,
       "speed": 30
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "grim-cemetery",
+      "magma-cave"
+    ]
   },
   {
     "id": 300,
@@ -2103,7 +2283,10 @@
       "specialDefense": 35,
       "speed": 50
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "enchanted-meadow"
+    ]
   },
   {
     "id": 301,
@@ -2134,7 +2317,10 @@
       "specialDefense": 55,
       "speed": 90
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "enchanted-meadow"
+    ]
   },
   {
     "id": 302,
@@ -2175,7 +2361,10 @@
       "specialDefense": 65,
       "speed": 50
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "grim-cemetery"
+    ]
   },
   {
     "id": 303,
@@ -2228,7 +2417,11 @@
       "specialDefense": 55,
       "speed": 50
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "grim-cemetery",
+      "enchanted-meadow"
+    ]
   },
   {
     "id": 304,
@@ -2281,7 +2474,10 @@
       "specialDefense": 40,
       "speed": 30
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "sunny-cove"
+    ]
   },
   {
     "id": 305,
@@ -2334,7 +2530,11 @@
       "specialDefense": 50,
       "speed": 40
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "arid-dunes",
+      "paradise-island"
+    ]
   },
   {
     "id": 306,
@@ -2387,7 +2587,10 @@
       "specialDefense": 60,
       "speed": 50
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "magma-cave"
+    ]
   },
   {
     "id": 307,
@@ -2434,7 +2637,11 @@
       "specialDefense": 55,
       "speed": 60
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "sunny-cove",
+      "magma-cave"
+    ]
   },
   {
     "id": 308,
@@ -2481,7 +2688,11 @@
       "specialDefense": 75,
       "speed": 80
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "sunny-cove",
+      "paradise-island"
+    ]
   },
   {
     "id": 309,
@@ -2517,7 +2728,11 @@
       "specialDefense": 40,
       "speed": 65
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "beginner-trail",
+      "enchanted-meadow"
+    ]
   },
   {
     "id": 310,
@@ -2553,12 +2768,16 @@
       "specialDefense": 60,
       "speed": 105
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "enchanted-meadow",
+      "paradise-island"
+    ]
   },
   {
     "id": 311,
     "name": "Posipi",
-    "rarity": "common",
+    "rarity": "uncommon",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/plusle.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/plusle.gif",
     "originalName": "plusle",
@@ -2589,7 +2808,11 @@
       "specialDefense": 75,
       "speed": 95
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "beginner-trail",
+      "enchanted-meadow"
+    ]
   },
   {
     "id": 312,
@@ -2625,7 +2848,11 @@
       "specialDefense": 85,
       "speed": 95
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "beginner-trail",
+      "enchanted-meadow"
+    ]
   },
   {
     "id": 313,
@@ -2667,7 +2894,11 @@
       "specialDefense": 85,
       "speed": 85
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "iridescent-marsh",
+      "enchanted-meadow"
+    ]
   },
   {
     "id": 314,
@@ -2709,7 +2940,11 @@
       "specialDefense": 85,
       "speed": 85
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "iridescent-marsh",
+      "enchanted-meadow"
+    ]
   },
   {
     "id": 315,
@@ -2760,7 +2995,10 @@
       "specialDefense": 80,
       "speed": 65
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "enchanted-meadow"
+    ]
   },
   {
     "id": 316,
@@ -2800,7 +3038,11 @@
       "specialDefense": 53,
       "speed": 40
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "iridescent-marsh",
+      "magma-cave"
+    ]
   },
   {
     "id": 317,
@@ -2840,7 +3082,11 @@
       "specialDefense": 83,
       "speed": 55
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "iridescent-marsh",
+      "paradise-island"
+    ]
   },
   {
     "id": 318,
@@ -2890,7 +3136,11 @@
       "specialDefense": 20,
       "speed": 65
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "sunny-cove",
+      "underwater-cave"
+    ]
   },
   {
     "id": 319,
@@ -2940,7 +3190,11 @@
       "specialDefense": 40,
       "speed": 95
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "sunny-cove",
+      "underwater-cave"
+    ]
   },
   {
     "id": 320,
@@ -2978,7 +3232,11 @@
       "specialDefense": 35,
       "speed": 60
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "sunny-cove",
+      "underwater-cave"
+    ]
   },
   {
     "id": 321,
@@ -3016,7 +3274,10 @@
       "specialDefense": 45,
       "speed": 60
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "underwater-cave"
+    ]
   },
   {
     "id": 322,
@@ -3065,7 +3326,10 @@
       "specialDefense": 45,
       "speed": 35
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "magma-cave"
+    ]
   },
   {
     "id": 323,
@@ -3114,7 +3378,10 @@
       "specialDefense": 75,
       "speed": 40
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "magma-cave"
+    ]
   },
   {
     "id": 324,
@@ -3156,7 +3423,10 @@
       "specialDefense": 70,
       "speed": 20
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "magma-cave"
+    ]
   },
   {
     "id": 325,
@@ -3192,7 +3462,11 @@
       "specialDefense": 80,
       "speed": 60
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "beginner-trail",
+      "enchanted-meadow"
+    ]
   },
   {
     "id": 326,
@@ -3228,7 +3502,11 @@
       "specialDefense": 110,
       "speed": 80
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "beginner-trail",
+      "enchanted-meadow"
+    ]
   },
   {
     "id": 327,
@@ -3259,7 +3537,12 @@
       "specialDefense": 60,
       "speed": 60
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "beginner-trail",
+      "enchanted-meadow",
+      "magma-cave"
+    ]
   },
   {
     "id": 328,
@@ -3299,7 +3582,10 @@
       "specialDefense": 45,
       "speed": 10
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "arid-dunes"
+    ]
   },
   {
     "id": 329,
@@ -3345,12 +3631,15 @@
       "specialDefense": 50,
       "speed": 70
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "arid-dunes"
+    ]
   },
   {
     "id": 330,
     "name": "Libégon",
-    "rarity": "epic",
+    "rarity": "ultra_rare",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/flygon.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/flygon.gif",
     "originalName": "flygon",
@@ -3391,7 +3680,11 @@
       "specialDefense": 80,
       "speed": 100
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "arid-dunes",
+      "celestial-tower"
+    ]
   },
   {
     "id": 331,
@@ -3436,7 +3729,11 @@
       "specialDefense": 40,
       "speed": 35
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "arid-dunes",
+      "jungle"
+    ]
   },
   {
     "id": 332,
@@ -3492,7 +3789,11 @@
       "specialDefense": 60,
       "speed": 55
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "arid-dunes",
+      "jungle"
+    ]
   },
   {
     "id": 333,
@@ -3534,7 +3835,11 @@
       "specialDefense": 75,
       "speed": 50
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "celestial-tower",
+      "paradise-island"
+    ]
   },
   {
     "id": 334,
@@ -3580,7 +3885,11 @@
       "specialDefense": 105,
       "speed": 80
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "celestial-tower",
+      "paradise-island"
+    ]
   },
   {
     "id": 335,
@@ -3611,7 +3920,10 @@
       "specialDefense": 60,
       "speed": 90
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "enchanted-meadow"
+    ]
   },
   {
     "id": 336,
@@ -3651,7 +3963,11 @@
       "specialDefense": 60,
       "speed": 65
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "iridescent-marsh",
+      "enchanted-meadow"
+    ]
   },
   {
     "id": 337,
@@ -3701,7 +4017,13 @@
       "specialDefense": 85,
       "speed": 70
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "grim-cemetery",
+      "magma-cave",
+      "celestial-tower",
+      "paradise-island"
+    ]
   },
   {
     "id": 338,
@@ -3751,7 +4073,13 @@
       "specialDefense": 65,
       "speed": 70
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "grim-cemetery",
+      "magma-cave",
+      "celestial-tower",
+      "paradise-island"
+    ]
   },
   {
     "id": 339,
@@ -3796,12 +4124,16 @@
       "specialDefense": 41,
       "speed": 60
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "sunny-cove",
+      "underwater-cave"
+    ]
   },
   {
     "id": 340,
     "name": "Barbicha",
-    "rarity": "very_rare",
+    "rarity": "epic",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/whiscash.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/whiscash.gif",
     "originalName": "whiscash",
@@ -3841,7 +4173,10 @@
       "specialDefense": 71,
       "speed": 60
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "underwater-cave"
+    ]
   },
   {
     "id": 341,
@@ -3879,7 +4214,10 @@
       "specialDefense": 35,
       "speed": 35
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "sunny-cove"
+    ]
   },
   {
     "id": 342,
@@ -3929,7 +4267,10 @@
       "specialDefense": 55,
       "speed": 55
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "underwater-cave"
+    ]
   },
   {
     "id": 343,
@@ -3978,12 +4319,16 @@
       "specialDefense": 70,
       "speed": 55
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "arid-dunes",
+      "magma-cave"
+    ]
   },
   {
     "id": 344,
     "name": "Kaorine",
-    "rarity": "very_rare",
+    "rarity": "epic",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/claydol.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/claydol.gif",
     "originalName": "claydol",
@@ -4027,7 +4372,11 @@
       "specialDefense": 120,
       "speed": 75
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "arid-dunes",
+      "celestial-tower"
+    ]
   },
   {
     "id": 345,
@@ -4078,7 +4427,11 @@
       "specialDefense": 87,
       "speed": 23
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "arid-dunes",
+      "enchanted-meadow"
+    ]
   },
   {
     "id": 346,
@@ -4129,7 +4482,11 @@
       "specialDefense": 107,
       "speed": 43
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "arid-dunes",
+      "paradise-island"
+    ]
   },
   {
     "id": 347,
@@ -4179,7 +4536,11 @@
       "specialDefense": 50,
       "speed": 75
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "arid-dunes",
+      "enchanted-meadow"
+    ]
   },
   {
     "id": 348,
@@ -4229,7 +4590,11 @@
       "specialDefense": 80,
       "speed": 45
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "arid-dunes",
+      "paradise-island"
+    ]
   },
   {
     "id": 349,
@@ -4267,7 +4632,11 @@
       "specialDefense": 55,
       "speed": 80
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "beginner-trail",
+      "underwater-cave"
+    ]
   },
   {
     "id": 350,
@@ -4305,7 +4674,10 @@
       "specialDefense": 125,
       "speed": 81
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "underwater-cave"
+    ]
   },
   {
     "id": 351,
@@ -4336,7 +4708,12 @@
       "specialDefense": 70,
       "speed": 70
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "enchanted-meadow",
+      "celestial-tower",
+      "paradise-island"
+    ]
   },
   {
     "id": 352,
@@ -4367,7 +4744,10 @@
       "specialDefense": 120,
       "speed": 40
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "enchanted-meadow"
+    ]
   },
   {
     "id": 353,
@@ -4403,7 +4783,11 @@
       "specialDefense": 33,
       "speed": 45
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "grim-cemetery",
+      "magma-cave"
+    ]
   },
   {
     "id": 354,
@@ -4439,7 +4823,10 @@
       "specialDefense": 63,
       "speed": 65
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "grim-cemetery"
+    ]
   },
   {
     "id": 355,
@@ -4475,7 +4862,11 @@
       "specialDefense": 90,
       "speed": 25
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "grim-cemetery",
+      "magma-cave"
+    ]
   },
   {
     "id": 356,
@@ -4511,7 +4902,10 @@
       "specialDefense": 130,
       "speed": 25
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "grim-cemetery"
+    ]
   },
   {
     "id": 357,
@@ -4561,7 +4955,10 @@
       "specialDefense": 87,
       "speed": 51
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "jungle"
+    ]
   },
   {
     "id": 358,
@@ -4597,12 +4994,16 @@
       "specialDefense": 90,
       "speed": 65
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "enchanted-meadow",
+      "celestial-tower"
+    ]
   },
   {
     "id": 359,
     "name": "Absol",
-    "rarity": "very_rare",
+    "rarity": "epic",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/absol.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/absol.gif",
     "originalName": "absol",
@@ -4634,7 +5035,13 @@
       "specialDefense": 60,
       "speed": 75
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "grim-cemetery",
+      "enchanted-meadow",
+      "celestial-tower",
+      "paradise-island"
+    ]
   },
   {
     "id": 360,
@@ -4670,7 +5077,11 @@
       "specialDefense": 48,
       "speed": 23
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "enchanted-meadow",
+      "celestial-tower"
+    ]
   },
   {
     "id": 361,
@@ -4709,7 +5120,10 @@
       "specialDefense": 50,
       "speed": 50
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "underwater-cave"
+    ]
   },
   {
     "id": 362,
@@ -4748,12 +5162,15 @@
       "specialDefense": 80,
       "speed": 80
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "underwater-cave"
+    ]
   },
   {
     "id": 363,
     "name": "Obalie",
-    "rarity": "common",
+    "rarity": "uncommon",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/spheal.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/spheal.gif",
     "originalName": "spheal",
@@ -4792,12 +5209,15 @@
       "specialDefense": 50,
       "speed": 25
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "underwater-cave"
+    ]
   },
   {
     "id": 364,
     "name": "Phogleur",
-    "rarity": "uncommon",
+    "rarity": "rare",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/sealeo.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/sealeo.gif",
     "originalName": "sealeo",
@@ -4836,12 +5256,15 @@
       "specialDefense": 70,
       "speed": 45
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "underwater-cave"
+    ]
   },
   {
     "id": 365,
     "name": "Kaimorse",
-    "rarity": "very_rare",
+    "rarity": "epic",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/walrein.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/walrein.gif",
     "originalName": "walrein",
@@ -4880,7 +5303,10 @@
       "specialDefense": 90,
       "speed": 65
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "underwater-cave"
+    ]
   },
   {
     "id": 366,
@@ -4918,7 +5344,11 @@
       "specialDefense": 55,
       "speed": 32
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "sunny-cove",
+      "underwater-cave"
+    ]
   },
   {
     "id": 367,
@@ -4956,7 +5386,10 @@
       "specialDefense": 75,
       "speed": 52
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "underwater-cave"
+    ]
   },
   {
     "id": 368,
@@ -4994,7 +5427,10 @@
       "specialDefense": 75,
       "speed": 52
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "underwater-cave"
+    ]
   },
   {
     "id": 369,
@@ -5042,7 +5478,10 @@
       "specialDefense": 65,
       "speed": 55
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "underwater-cave"
+    ]
   },
   {
     "id": 370,
@@ -5080,7 +5519,10 @@
       "specialDefense": 65,
       "speed": 97
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "underwater-cave"
+    ]
   },
   {
     "id": 371,
@@ -5116,7 +5558,10 @@
       "specialDefense": 30,
       "speed": 50
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "paradise-island"
+    ]
   },
   {
     "id": 372,
@@ -5152,7 +5597,10 @@
       "specialDefense": 50,
       "speed": 50
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "paradise-island"
+    ]
   },
   {
     "id": 373,
@@ -5198,7 +5646,11 @@
       "specialDefense": 80,
       "speed": 100
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "celestial-tower",
+      "paradise-island"
+    ]
   },
   {
     "id": 374,
@@ -5252,7 +5704,10 @@
       "specialDefense": 60,
       "speed": 30
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "celestial-tower"
+    ]
   },
   {
     "id": 375,
@@ -5306,7 +5761,10 @@
       "specialDefense": 80,
       "speed": 50
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "celestial-tower"
+    ]
   },
   {
     "id": 376,
@@ -5360,7 +5818,10 @@
       "specialDefense": 90,
       "speed": 70
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "celestial-tower"
+    ]
   },
   {
     "id": 377,
@@ -5402,7 +5863,10 @@
       "specialDefense": 100,
       "speed": 50
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "sunny-cove"
+    ]
   },
   {
     "id": 378,
@@ -5441,7 +5905,10 @@
       "specialDefense": 200,
       "speed": 50
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "underwater-cave"
+    ]
   },
   {
     "id": 379,
@@ -5488,7 +5955,11 @@
       "specialDefense": 150,
       "speed": 50
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "arid-dunes",
+      "grim-cemetery"
+    ]
   },
   {
     "id": 380,
@@ -5534,7 +6005,20 @@
       "specialDefense": 130,
       "speed": 110
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "iridescent-marsh",
+      "arid-dunes",
+      "jungle",
+      "sunny-cove",
+      "grim-cemetery",
+      "beginner-trail",
+      "enchanted-meadow",
+      "underwater-cave",
+      "magma-cave",
+      "celestial-tower",
+      "meteorite-crater"
+    ]
   },
   {
     "id": 381,
@@ -5580,7 +6064,20 @@
       "specialDefense": 110,
       "speed": 110
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "iridescent-marsh",
+      "arid-dunes",
+      "jungle",
+      "sunny-cove",
+      "grim-cemetery",
+      "beginner-trail",
+      "enchanted-meadow",
+      "underwater-cave",
+      "magma-cave",
+      "celestial-tower",
+      "meteorite-crater"
+    ]
   },
   {
     "id": 382,
@@ -5618,7 +6115,10 @@
       "specialDefense": 140,
       "speed": 90
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "underwater-cave"
+    ]
   },
   {
     "id": 383,
@@ -5658,7 +6158,10 @@
       "specialDefense": 90,
       "speed": 90
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "magma-cave"
+    ]
   },
   {
     "id": 384,
@@ -5704,7 +6207,10 @@
       "specialDefense": 90,
       "speed": 95
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "celestial-tower"
+    ]
   },
   {
     "id": 385,
@@ -5758,7 +6264,10 @@
       "specialDefense": 100,
       "speed": 100
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "meteorite-crater"
+    ]
   },
   {
     "id": 386,
@@ -5794,6 +6303,9 @@
       "specialDefense": 50,
       "speed": 150
     },
-    "generation": 3
+    "generation": 3,
+    "zones": [
+      "meteorite-crater"
+    ]
   }
 ]

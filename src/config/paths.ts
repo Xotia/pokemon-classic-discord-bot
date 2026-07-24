@@ -4,6 +4,7 @@ export const DATA_DIR = path.resolve(__dirname, '..', '..', 'data');
 export const POKEMON_DB = path.join(DATA_DIR, 'pokemon-list.json');
 export const POKEMON_GEN1_DB = path.join(DATA_DIR, 'pokemon-gen1.json');
 export const POKEMON_GEN2_DB = path.join(DATA_DIR, 'pokemon-gen2.json');
+export const POKEMON_GEN3_DB = path.join(DATA_DIR, 'pokemon-gen3.json');
 
 export const GUILDS_ROOT = path.join(DATA_DIR, 'guilds');
 export const GUILDS_REGISTRY = path.join(DATA_DIR, 'guilds.json');

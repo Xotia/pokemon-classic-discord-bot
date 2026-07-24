@@ -1170,6 +1170,25 @@ describe("getMaxEncounterChance", () => {
     expect(getMaxEncounterChance(encounters)).toBe(1);
   });
 
+  it("Plusle/Posipi regression: ignores an npc-trade entry's 100% chance and returns only the genuine wild method's chance", () => {
+    const encounters = [
+      // Genuine wild encounter: 40% chance.
+      locationEncounterEntry("route-110-area", "sapphire", "walk", 40),
+      // Guaranteed NPC trade at a different location: must be ignored
+      // entirely, same treatment as gift/devon-scope.
+      {
+        location_area: { name: "fortree-city-area" },
+        version_details: [
+          {
+            version: { name: "emerald" },
+            encounter_details: [{ method: { name: "npc-trade" }, chance: 100 }],
+          },
+        ],
+      },
+    ];
+    expect(getMaxEncounterChance(encounters)).toBe(40);
+  });
+
   it("picks the MAX across distinct groups without summing entries that belong to different location/version/method groups", () => {
     const encounters = [
       {

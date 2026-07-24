@@ -82,20 +82,23 @@ export const METHOD_DIFFICULTY: Record<string, number> = {
   "only-one": 100,
   trade: 100,
   "devon-scope": 100,
+  "npc-trade": 100,
 };
 
 // Methods representing a scripted/guaranteed encounter (a fixed decor
-// object you interact with, an NPC gift, a one-of-a-kind spot) rather than
-// a genuine wild spawn roll. A 100% chance on one of these doesn't mean the
-// species is common — it means the trigger is guaranteed once found. These
-// must be excluded from the encounter-RATE calculation (C1), even though
-// they still appear in the raw `methods` list and still count toward
-// C4/C7 via the functions that specifically look for them.
+// object you interact with, an NPC gift, a one-of-a-kind spot, an NPC
+// trade) rather than a genuine wild spawn roll. A 100% chance on one of
+// these doesn't mean the species is common — it means the trigger is
+// guaranteed once found. These must be excluded from the encounter-RATE
+// calculation (C1), even though they still appear in the raw `methods`
+// list and still count toward C4/C7 via the functions that specifically
+// look for them.
 const FIXED_ENCOUNTER_METHODS = new Set([
   "gift",
   "gift-egg",
   "only-one",
   "devon-scope",
+  "npc-trade",
 ]);
 
 export const DEFAULT_METHOD_DIFFICULTY = 60;
