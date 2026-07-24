@@ -6,6 +6,7 @@
   "scripts": {
     "generate-pokemon-list": "node scripts/generate-pokemon-list.js",
     "build": "npm run generate-pokemon-list && tsc",
+    "test": "vitest run",
     "start": "node dist/index.js",
     "dev": "npx ts-node src/index.ts",
     "deploy": "npx ts-node src/deploy-commands.ts",

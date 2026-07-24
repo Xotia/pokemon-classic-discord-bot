@@ -35,6 +35,7 @@ npm run start
 |---|---|
 | `npm run dev` | Lance le bot avec `ts-node` (developpement) |
 | `npm run generate-pokemon-list` | Genere `pokemon-list.json` a partir des fichiers source |
+| `npm test` | Lance la suite de tests (vitest) |
 | `npm run build` | Genere la liste Pokemon + compile le TypeScript dans `dist/` |
 | `npm run deploy` | Enregistre les commandes slash globalement aupres de Discord (propagation ~1h) |
 | `npm run deploy:dev` | Enregistre les commandes slash en guild-scoped sur les serveurs de `data/guilds.json` (propagation instantanee, pratique en dev/test) |
@@ -49,6 +50,7 @@ npm run deploy:dev
 
 ### Workflow production / mise a jour
 ```bash
+npm test
 npm run build
 npm run deploy
 npm run start
