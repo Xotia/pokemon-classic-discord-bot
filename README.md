@@ -142,7 +142,7 @@ Un serveur sans surcharge utilise telles quelles les valeurs du `.env`
 
 ### Scripts d'annonce ponctuelle
 
-`src/scripts/send-lore.ts`, `send-lore-new-adventure.ts`,
+`src/scripts/announcements/send-lore.ts`, `send-lore-new-adventure.ts`,
 `send-maintenance.ts`, `send-back-online.ts`, `send-quick-maintenance.ts`,
 `send-quick-back-online.ts` ne lisent plus un salon fixe depuis le `.env`.
 Sans argument, ils diffusent sur tous les serveurs du registre
@@ -152,7 +152,7 @@ n'est lié au raid lui-même. Passer `--channelId <id>` cible un seul
 salon a la place (utile pour tester) :
 
 ```bash
-npx ts-node src/scripts/send-maintenance.ts --channelId <id-du-salon>
+npx ts-node src/scripts/announcements/send-maintenance.ts --channelId <id-du-salon>
 ```
 
 ---
@@ -180,7 +180,14 @@ src/
     zones/         Zones de capture (resolution, generation, deblocage)
   types/           Types TypeScript (Player, Pokemon, Raid, Zones, GuildRegistryEntry)
   utils/           Utilitaires runtime (logger par serveur, chargement fichiers)
-  scripts/         Scripts one-shot (migration, annonces) - exclu du build
+  scripts/         Scripts one-shot (migration, annonces), organisés par domaine - exclu du build
+    fetch/           Helpers d'appel a PokeAPI
+    rarity/          Calcul, audit et application de la rarete
+    zones/           Injection de zones et simulation de capture/raid
+    gen-json/        Generation du JSON Pokemon par generation
+    player-maintenance/  Operations de maintenance sur les donnees joueurs
+    raid-tools/      Outils de QA/operation sur les raids
+    announcements/   Scripts d'annonce Discord ponctuelle
   deploy-commands.ts       Deploiement global des commandes slash
   deploy-commands-dev.ts   Deploiement guild-scoped (dev/test, instantane)
   commandDefinitions.ts    Definitions des commandes slash (source commune aux deux scripts de deploiement)
