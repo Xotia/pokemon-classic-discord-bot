@@ -408,22 +408,29 @@ reste en place).
       (`add-captured-in-current-season.ts`, `migrate-players.ts`,
       `sync-players-from-stats.ts`, `update-stats-from-players.ts`) — cf.
       C5 ci-dessous.
-- [ ] C5 (ajouté le 2026-07-24, suite à la découverte C4). Auditer TOUS
-      les fichiers du repo qui touchent encore aux chemins de données
-      legacy pré-multi-guild (`data/players.json`, `data/stats.json`,
+- [x] C5 (terminé le 2026-07-24, branche `audit/legacy-multiguild-paths`
+      depuis `release/3.5.0`). Audit complet par grep de tout `src/` pour
+      les chemins legacy racine (`data/players.json`, `data/stats.json`,
       `data/raid.json`, `data/zones_unlocked.json`,
-      `data/zones_to_unlock.json` — à la racine de `data/`, pas dans
-      `data/guilds/{guildId}/`) ou qui n'ont pas encore la convention
-      `--guildId` des scripts de maintenance déjà conformes. Point de
-      départ connu : `addXpAndLevelToPlayers.ts` (confirmé non
-      conforme). Vérifier au minimum tout `src/scripts/` restant, et
-      confirmer qu'aucun chemin de code de PROD (hors scripts one-shot)
-      ne lit/écrit encore ces chemins legacy à la racine — seuls des
-      scripts one-shot explicitement documentés comme tels devraient
-      encore les toucher (cf. le commentaire `.gitignore` "gardés pour
-      les scripts one-shot"). Ne pas corriger sans lister d'abord tous
-      les fichiers concernés et les faire valider par l'utilisateur,
-      même esprit que le checkpoint C1.
+      `data/zones_to_unlock.json`) et la convention `--guildId`. Portée
+      finale plus restreinte que redouté — **2 fichiers concernés**,
+      aucun autre (confirmé : rien en dehors de `src/scripts/` ne touche
+      ces chemins racine, tout le code de prod passe déjà par
+      `data/guilds/{guildId}/`) :
+      - `addXpAndLevelToPlayers.ts` (déjà repéré en C4) — **converti**
+        vers `playersDb(guildId)` + `--guildId`, même pattern que ses 4
+        frères déjà conformes (`migrate-players.ts` etc.).
+      - `injectZones.ts` (prédécesseur d'`injectZonesGen3.ts`) —
+        **supprimé**, pas converti. En creusant : cassé (son CSV source
+        `data/zone_par_pokemon_2.csv` n'existe plus sur le disque,
+        confirmé) et obsolète (écrivait vers
+        `data/pokemon-gen2-with-zones.json`, qui n'existe pas non plus —
+        les zones gen2 sont déjà dans `pokemon-gen2.json` depuis
+        longtemps, sa mission est déjà remplie). Même catégorie que les
+        scripts retirés en C1. `tsconfig.json` nettoyé de l'entrée
+        `exclude` correspondante. Aucune référence ailleurs (npm
+        scripts, code) vérifiée avant suppression.
+      `tsc` clean, 1171/1171 tests passent.
 
 ### Slice D — Nouvelle ressource "données de recherche" + 3 commandes
 - [ ] D1. Design de la ressource (nouveau champ sur `Player`
