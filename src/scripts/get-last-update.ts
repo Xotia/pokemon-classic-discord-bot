@@ -86,10 +86,6 @@ async function main(): Promise<void> {
   console.log("\n✅ Bot démarré. Envoi du message de retour en ligne...");
   run("npx ts-node src/scripts/announcements/send-back-online.ts");
 
-  // 8. Patchnote
-  console.log("\n📋 Envoi du patchnote...");
-  run("npx ts-node src/scripts/announcements/send-patchnote.ts");
-
   console.log("\n🎉 Mise à jour terminée !");
 }
 
