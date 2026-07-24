@@ -74,7 +74,7 @@ COOLDOWN=30
 PITY_THRESHOLD=10
 POKEMON_PER_PAGE=20
 BUTTON_TIMEOUT=120000
-GENERATION_NUMBER=2
+GENERATION_NUMBER=3
 
 # Raid - horaires/reglages par defaut (idem, surchargeables par serveur)
 RAID_SCHEDULER_MODE=debug

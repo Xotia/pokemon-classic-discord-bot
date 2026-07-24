@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import { getLoggerForGuild } from "../../utils/logger";
 import { RaidState } from "../../types/raid/RaidState";
 import { zonesUnlockedDb, zonesToUnlockDb } from "../../config/paths";
-import { getRaidNextZoneChance, getRaidStartHour, getRaidEndHour } from "../../config/guildSettings";
+import { getRaidNextZoneChance, getRaidStartHour, getRaidEndHour, getGenerationNumber } from "../../config/guildSettings";
 import { getPokemonCatalog } from "../../utils/pokemonCatalog";
 
 type ZoneEntry = {
@@ -36,7 +36,7 @@ type PokemonEntry = {
   zones?: string[];
 };
 
-type GenerationKey = "gen1" | "gen2";
+type GenerationKey = "gen1" | "gen2" | "gen3";
 
 type ZonesDb = Record<GenerationKey, ZoneEntry[]>;
 type UnlockZonesDb = Record<GenerationKey, ZoneEntry[]>;
@@ -217,7 +217,7 @@ export async function generateRaidState(guildId: string): Promise<RaidState> {
   const unlockDb = await readJsonFile<UnlockZonesDb>(zonesToUnlockDb(guildId));
   const availableZonesDb = await readJsonFile<ZonesDb>(zonesUnlockedDb(guildId));
 
-  const generationNumber = randomInt(1, 2);
+  const generationNumber = randomInt(1, getGenerationNumber(guildId));
   const generationKey = toGenerationKey(generationNumber);
 
   const zone = pickRaidZone(generationKey, unlockDb, availableZonesDb, guildId);
