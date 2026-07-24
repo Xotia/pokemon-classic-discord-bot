@@ -25,21 +25,33 @@ reste en place).
 ## Décisions déjà actées (ne pas rouvrir sans raison)
 
 - **Suivi** : PROGRAM.md dans le repo, pas seulement le plan Claude local.
-- **Branching** : finir d'abord `fix/rarity-one-time-only-scope` (PR vers
-  `main`), puis créer `release/3.5.0` depuis `main`. Chaque item ci-dessous
-  part sur sa propre branche courte, mergée dans `release/3.5.0`. Tag
-  `v3.5.0` posé seulement à la toute fin (Slice H).
-- **Rareté "légendaire itinérant"** : détection **automatique** par seuil
-  de présence en zones (pas de liste codée en dur), appliquée à toutes les
-  générations dès que les zones sont injectées pour cette génération.
-  Positionnée **au-dessus de `legendary`** dans `RARITY_ORDER`
-  (`src/config/rarity.ts`), avec un taux d'apparition **plus faible** que
-  `legendary` (compense le fait que ces Pokémon traînent dans presque
-  toutes les zones). Nom de code proposé : `legendary_wandering` (libellé
-  FR à définir, ex. "Légendaire itinérant"). Le seuil exact (% de zones de
-  la génération) reste à calibrer lors de la Slice A — données de
-  référence : en Gen 3, Latios/Latias apparaissent dans 11 zones sur 12
-  (`data/gen3_zones.csv`), le prochain plus haut score est à 4/12.
+- **Branching (révisé le 2026-07-24)** : `fix/rarity-one-time-only-scope`
+  a fini par contenir plus que son scope d'origine (A1 + A3 + G1) et n'est
+  **pas** mergée dans `main` en l'état (décision explicite de
+  l'utilisateur). Process retenu : créer `release/3.5.0` depuis `main`
+  maintenant, y merger le travail déjà fait sur
+  `fix/rarity-one-time-only-scope`, puis enchaîner toutes les slices
+  suivantes sur des branches courtes parties de `release/3.5.0` et
+  remergées dedans. `main` reste ainsi disponible pour un hotfix prod
+  pendant les (probablement plusieurs) semaines de développement de la
+  3.5.0 — cohérent avec le rythme de release très fréquent observé dans
+  `CHANGELOG.md` (plusieurs patches le même jour par le passé). Tag
+  `v3.5.0` posé uniquement au merge final `release/3.5.0` → `main`
+  (Slice H).
+- **Rareté "légendaire itinérant" (révisé le 2026-07-24)** : **liste
+  manuelle**, pas de détection automatique par seuil — l'utilisateur
+  indique lui-même quels Pokémon légendaires sont "itinérants". Pas de
+  script de calcul à écrire pour la détection ; juste un mécanisme simple
+  pour forcer la rareté d'un id donné (ex. un champ/override explicite
+  plutôt qu'une règle dérivée des zones). Reste acté : positionnée
+  **au-dessus de `legendary`** dans `RARITY_ORDER` (`src/config/rarity.ts`),
+  avec un taux d'apparition **plus faible** que `legendary`. Nom de code
+  proposé : `legendary_wandering` (libellé FR à définir, ex. "Légendaire
+  itinérant"). Donnée de référence pour la liste manuelle à venir : en
+  Gen 3, Latios/Latias apparaissent dans 11 zones sur 12
+  (`data/gen3_zones.csv`), le prochain plus haut score est à 4/12 — utile
+  comme indice mais la décision finale revient à l'utilisateur, pas à un
+  seuil.
 
 ## Slices
 
@@ -48,8 +60,11 @@ reste en place).
       `"npc-trade"` aux méthodes de rencontre fixe/scriptée (exclues du
       calcul C1, comme les dons/échanges garantis) + tests associés. Diff
       vérifié, build (`tsc --noEmit`) clean, tests `rarityScoring.test.ts`
-      192/192 verts. **Reste à faire : commit + PR vers `main`** (en attente
-      de confirmation explicite de commit, cf. règles du projet).
+      192/192 verts. Commit fait le 2026-07-24 (`e3b4ea8`, confirmé
+      explicitement par l'utilisateur — le changement "npc-trade" avait été
+      vérifié en détail : régression réelle sur Posipi/Plusle, échange NPC
+      garanti à Feuvenelle en Émeraude). **Reste à faire : ouvrir la PR vers
+      `main` et la merger.**
 - [x] A3 (fait en avance, par une session Claude Code parallèle terminée le
       2026-07-24 ~12h15-12h20) — `injectZones.ts` généralisé en
       `src/scripts/injectZonesGen3.ts` (lit `data/gen3_zones.csv` +
@@ -68,15 +83,16 @@ reste en place).
       auditer capture/raid/pokedex pour confirmer qu'aucun autre point du
       code n'est encore gen1/gen2-only (cf. Slice G ci-dessous, à finir
       après A2).
-- [ ] A2. Décision d'architecture : où brancher la détection "légendaire
-      itinérant" dans le pipeline (`computeRarity.ts` ne connaît pas les
-      zones aujourd'hui ; `injectZones.ts` les injecte dans un second temps,
-      seulement câblé pour gen2). Deux options à trancher avec `risk-lead` →
-      `architect` : (a) post-traitement après `computeRarity` +
-      `injectZones` qui relève `legendary`→`legendary_wandering` si seuil
-      atteint, ou (b) faire remonter les zones dans `computeRarity` lui-même.
-      Recommandation de départ : (a), moins invasif, réutilise le pattern
-      existant de `injectZones.ts`.
+- [ ] A2 (révisé le 2026-07-24 : liste manuelle, pas de détection
+      automatique — cf. Décisions). Ajouter `legendary_wandering` dans
+      `RARITY_ORDER` / `rarityList` / `rarityBoostedList`
+      (`src/config/rarity.ts`), au-dessus de `legendary`, taux plus faible.
+      Ajouter un mécanisme simple pour marquer manuellement un id comme
+      "itinérant" (override explicite écrit à la main par l'utilisateur
+      dans le pipeline de génération JSON, pas un script de calcul) —
+      appliqué après `computeRarity`, dans le même esprit que
+      l'injection de zones. Pas de passage par `risk-lead`/`architect`
+      nécessaire vu la simplification : `implementer` direct suffit.
       Ajouter la valeur dans `RARITY_ORDER` / `rarityList` /
       `rarityBoostedList` (`src/config/rarity.ts`).
 - [ ] A4. Généraliser `createGenJson.ts` (utilise encore l'ancien
@@ -120,6 +136,25 @@ reste en place).
         mal écrit — à vérifier lequel des deux est faux avant de corriger).
 
 ### Slice C — Rangement du repo (checkpoint de confirmation requis)
+- [ ] C0. Gitignore des fichiers `data/` dont le serveur n'a pas besoin en
+      prod (le bot ne les lit jamais au runtime, ce sont des
+      entrées/sorties d'outils dev) : `data/gen3_zones.csv` (source CSV de
+      `injectZonesGen3.ts`), `data/gen3.csv` (orphelin, aucune référence
+      dans `src/` — probablement une ancienne source manuelle pré-PokeAPI,
+      à confirmer avant suppression totale), `data/rarity-audit-gen3.json`
+      + `data/rarity-audit-gen3-readable.csv` (sortie de
+      `runRarityAudit.ts`), `data/rarity-comparison-gen3.csv` (sortie de
+      `compareRarityWithManual.ts`), `data/raid_debug.json` (déjà repéré
+      comme fichier de debug à exclure dans `REFACTOR_MULTI_GUILD.md:513`,
+      jamais fait), `data/rollRarityJson.json` (déjà dans `.gitignore`
+      mais encore tracké — `git rm --cached` nécessaire ; sa suppression
+      était déjà annoncée dans `CHANGELOG.md` 3.2.1 sans avoir été
+      réellement appliquée). Nécessite `git rm --cached` pour les fichiers
+      déjà trackés (untrack sans supprimer le fichier local). Point
+      d'attention : ça retire aussi ces fichiers du diff visible en review
+      de PR (ex. `rarity-comparison-gen3.csv` servait de preuve de
+      cohérence pour A4) — accepté comme compromis, le critère demandé est
+      "ce dont le serveur n'a pas besoin", pas la review.
 - [ ] C1. Lister précisément les scripts "perso dev-only" à retirer de git
       (candidats forts identifiés : `src/scripts/editJson.ts` (chemins
       Windows en dur), tout `src/scripts/old/` (JS legacy pré-TS),
