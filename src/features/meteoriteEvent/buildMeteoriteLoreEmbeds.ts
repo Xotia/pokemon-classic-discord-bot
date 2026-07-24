@@ -56,7 +56,7 @@ export function buildMeteoriteStartEmbed(): EmbedBuilder {
       {
         name: "📍 Zone temporairement ouverte",
         value:
-          "**Cratère de la Météorite** — accès autorisé jusqu'à 23h59 ce soir.\nLa zone sera scellée dès que le rayonnement passera sous le seuil de sécurité.",
+          "**Cratère de la Météorite** — la zone sera scellée dès que le rayonnement passera sous le seuil de sécurité.",
       },
       {
         name: "⚡ Conditions de terrain",

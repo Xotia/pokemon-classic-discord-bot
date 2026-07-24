@@ -44,7 +44,7 @@
     },
     "generation": 3,
     "zones": [
-      "jungle",
+      "lush-jungle",
       "beginner-trail"
     ]
   },
@@ -93,7 +93,7 @@
     },
     "generation": 3,
     "zones": [
-      "jungle",
+      "lush-jungle",
       "paradise-island"
     ]
   },
@@ -142,7 +142,7 @@
     },
     "generation": 3,
     "zones": [
-      "jungle"
+      "lush-jungle"
     ]
   },
   {
@@ -1035,7 +1035,7 @@
     },
     "generation": 3,
     "zones": [
-      "jungle"
+      "lush-jungle"
     ]
   },
   {
@@ -1094,7 +1094,7 @@
     },
     "generation": 3,
     "zones": [
-      "jungle"
+      "lush-jungle"
     ]
   },
   {
@@ -1153,7 +1153,7 @@
     },
     "generation": 3,
     "zones": [
-      "jungle",
+      "lush-jungle",
       "paradise-island"
     ]
   },
@@ -1644,7 +1644,7 @@
     "generation": 3,
     "zones": [
       "iridescent-marsh",
-      "jungle"
+      "lush-jungle"
     ]
   },
   {
@@ -1704,7 +1704,7 @@
     "generation": 3,
     "zones": [
       "iridescent-marsh",
-      "jungle"
+      "lush-jungle"
     ]
   },
   {
@@ -1738,7 +1738,7 @@
     },
     "generation": 3,
     "zones": [
-      "jungle",
+      "lush-jungle",
       "beginner-trail"
     ]
   },
@@ -1773,7 +1773,7 @@
     },
     "generation": 3,
     "zones": [
-      "jungle"
+      "lush-jungle"
     ]
   },
   {
@@ -1807,7 +1807,7 @@
     },
     "generation": 3,
     "zones": [
-      "jungle",
+      "lush-jungle",
       "paradise-island"
     ]
   },
@@ -2072,7 +2072,7 @@
     },
     "generation": 3,
     "zones": [
-      "jungle",
+      "lush-jungle",
       "paradise-island"
     ]
   },
@@ -3741,7 +3741,7 @@
     "generation": 3,
     "zones": [
       "arid-dunes",
-      "jungle"
+      "lush-jungle"
     ]
   },
   {
@@ -3801,7 +3801,7 @@
     "generation": 3,
     "zones": [
       "arid-dunes",
-      "jungle"
+      "lush-jungle"
     ]
   },
   {
@@ -4968,7 +4968,7 @@
     },
     "generation": 3,
     "zones": [
-      "jungle"
+      "lush-jungle"
     ]
   },
   {
@@ -6021,7 +6021,7 @@
     "zones": [
       "iridescent-marsh",
       "arid-dunes",
-      "jungle",
+      "lush-jungle",
       "sunny-cove",
       "grim-cemetery",
       "beginner-trail",
@@ -6080,7 +6080,7 @@
     "zones": [
       "iridescent-marsh",
       "arid-dunes",
-      "jungle",
+      "lush-jungle",
       "sunny-cove",
       "grim-cemetery",
       "beginner-trail",
