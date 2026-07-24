@@ -323,6 +323,23 @@ reste en place).
       A3 (tout passe par `getPokemonCatalog()`), seulement par 2 outils
       dev (`check-pokemon-images.js`, supprimé ; `test-raid-pokemon.ts`,
       gardé).
+- [x] C1 bis (terminé le 2026-07-24, branche `chore/remove-migration-script`
+      depuis `release/3.5.0` — découvert en dehors de `src/scripts/`,
+      dans le dossier racine `scripts/` distinct, JS brut non compilé,
+      exécuté directement via `node` avant même que `tsc` tourne — d'où
+      sa séparation légitime de `src/scripts/`, ce n'est PAS un problème
+      de rangement). `scripts/migrate-to-guild-dirs.js` retiré : migration
+      ponctuelle du passage mono-serveur → multi-guild, déjà exécutée en
+      prod (confirmé explicitement par l'utilisateur, malgré des cases
+      encore non cochées dans `REFACTOR_MULTI_GUILD.md` — doc jamais mis
+      à jour après coup). Aucune référence ailleurs (`package.json`,
+      code) vérifiée par grep avant suppression. `REFACTOR_MULTI_GUILD.md`
+      annoté d'une note historique sur la section concernée plutôt que
+      réécrit en détail. En même temps : fix de la découverte annexe de
+      C1 — `scripts/generate-pokemon-list.js` liste maintenant
+      `pokemon-gen3.json` dans ses `defaultFiles` (vérifié en régénérant
+      `data/pokemon-list.json` en local : 393 Pokémon dont 135 de gen3,
+      contre 258 avant). `tsc` clean, 1171/1171 tests passent.
 - [x] C2 (terminé le 2026-07-24, branche `chore/reorganize-scripts`
       depuis `release/3.5.0`). 40 fichiers déplacés de `src/scripts/`
       (plat) vers 7 sous-dossiers par domaine : `announcements/` (+
