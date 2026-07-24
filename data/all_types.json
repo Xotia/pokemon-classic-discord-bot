@@ -202,11 +202,9 @@
                 "steel"
             ],
             "double": [
-                "bug",
-                "fire",
-                "flying",
-                "ice",
-                "poison"
+                "ground",
+                "rock",
+                "water"
             ],
             "zero": []
         }
@@ -524,7 +522,7 @@
             "half": [
                 "dragon",
                 "grass",
-                "steel"
+                "water"
             ],
             "zero": []
         },

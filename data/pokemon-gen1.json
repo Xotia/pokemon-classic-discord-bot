@@ -178,14 +178,15 @@
     ],
     "effectiveness": {
       "defense": {
-        "bug": 1,
+        "bug": 0.5,
         "fairy": 0.5,
-        "fire": 1,
+        "fire": 0.5,
         "grass": 0.5,
-        "ice": 1,
+        "ice": 0.5,
         "steel": 0.5,
-        "flying": 2,
-        "poison": 2
+        "ground": 2,
+        "rock": 2,
+        "water": 2
       },
       "attack": {
         "dragon": 0.5,
@@ -225,14 +226,15 @@
     ],
     "effectiveness": {
       "defense": {
-        "bug": 1,
+        "bug": 0.5,
         "fairy": 0.5,
-        "fire": 1,
+        "fire": 0.5,
         "grass": 0.5,
-        "ice": 1,
+        "ice": 0.5,
         "steel": 0.5,
-        "flying": 2,
-        "poison": 2
+        "ground": 2,
+        "rock": 2,
+        "water": 2
       },
       "attack": {
         "dragon": 0.5,
@@ -273,18 +275,17 @@
     ],
     "effectiveness": {
       "defense": {
-        "bug": 0.5,
+        "bug": 0.25,
         "fairy": 0.5,
-        "fire": 1,
+        "fire": 0.5,
         "grass": 0.25,
-        "ice": 2,
+        "ice": 1,
         "steel": 0.5,
-        "flying": 2,
-        "poison": 2,
         "ground": 0,
+        "rock": 4,
+        "water": 2,
         "fighting": 0.5,
-        "electric": 2,
-        "rock": 2
+        "electric": 2
       },
       "attack": {
         "dragon": 0.5,
@@ -335,7 +336,7 @@
       "attack": {
         "dragon": 0.5,
         "grass": 0.5,
-        "steel": 0.5,
+        "water": 0.5,
         "fire": 2,
         "ground": 2,
         "rock": 2
@@ -378,7 +379,7 @@
       "attack": {
         "dragon": 0.5,
         "grass": 0.5,
-        "steel": 0.5,
+        "water": 0.5,
         "fire": 2,
         "ground": 2,
         "rock": 2
@@ -421,7 +422,7 @@
       "attack": {
         "dragon": 0.5,
         "grass": 0.5,
-        "steel": 0.5,
+        "water": 0.5,
         "fire": 2,
         "ground": 2,
         "rock": 2
@@ -1686,14 +1687,15 @@
     ],
     "effectiveness": {
       "defense": {
-        "bug": 1,
+        "bug": 0.5,
         "fairy": 0.5,
-        "fire": 1,
+        "fire": 0.5,
         "grass": 0.5,
-        "ice": 1,
+        "ice": 0.5,
         "steel": 0.5,
-        "flying": 2,
-        "poison": 2
+        "ground": 2,
+        "rock": 2,
+        "water": 2
       },
       "attack": {
         "dragon": 0.5,
@@ -1735,14 +1737,15 @@
     ],
     "effectiveness": {
       "defense": {
-        "bug": 1,
+        "bug": 0.5,
         "fairy": 0.5,
-        "fire": 1,
+        "fire": 0.5,
         "grass": 0.5,
-        "ice": 1,
+        "ice": 0.5,
         "steel": 0.5,
-        "flying": 2,
-        "poison": 2
+        "ground": 2,
+        "rock": 2,
+        "water": 2
       },
       "attack": {
         "dragon": 0.5,
@@ -2541,7 +2544,7 @@
       "attack": {
         "dragon": 0.5,
         "grass": 0.5,
-        "steel": 0.5,
+        "water": 0.5,
         "fire": 2,
         "ground": 2,
         "rock": 2
@@ -2583,7 +2586,7 @@
       "attack": {
         "dragon": 0.5,
         "grass": 0.5,
-        "steel": 0.5,
+        "water": 0.5,
         "fire": 2,
         "ground": 2,
         "rock": 2
@@ -2716,14 +2719,15 @@
     ],
     "effectiveness": {
       "defense": {
-        "bug": 1,
+        "bug": 0.5,
         "fairy": 0.5,
-        "fire": 1,
+        "fire": 0.5,
         "grass": 0.5,
-        "ice": 1,
+        "ice": 0.5,
         "steel": 0.5,
-        "flying": 2,
-        "poison": 2
+        "ground": 2,
+        "rock": 2,
+        "water": 2
       },
       "attack": {
         "dragon": 0.5,
@@ -2766,14 +2770,15 @@
     ],
     "effectiveness": {
       "defense": {
-        "bug": 1,
+        "bug": 0.5,
         "fairy": 0.5,
-        "fire": 1,
+        "fire": 0.5,
         "grass": 0.5,
-        "ice": 1,
+        "ice": 0.5,
         "steel": 0.5,
-        "flying": 2,
-        "poison": 2
+        "ground": 2,
+        "rock": 2,
+        "water": 2
       },
       "attack": {
         "dragon": 0.5,
@@ -2823,7 +2828,7 @@
       "attack": {
         "dragon": 0.5,
         "grass": 0.5,
-        "steel": 0.5,
+        "water": 0.5,
         "fire": 2,
         "ground": 2,
         "rock": 2
@@ -2864,7 +2869,7 @@
       "attack": {
         "dragon": 0.5,
         "grass": 0.5,
-        "steel": 0.5,
+        "water": 0.5,
         "fire": 2,
         "ground": 2,
         "rock": 2
@@ -2913,7 +2918,7 @@
       "attack": {
         "dragon": 0.5,
         "grass": 0.5,
-        "steel": 1,
+        "water": 0.5,
         "fire": 2,
         "ground": 2,
         "rock": 4,
@@ -2925,7 +2930,8 @@
         "psychic": 0.5,
         "dark": 2,
         "ice": 2,
-        "normal": 2
+        "normal": 2,
+        "steel": 2
       }
     },
     "stats": {
@@ -3412,10 +3418,11 @@
       "attack": {
         "dragon": 0.5,
         "grass": 1,
-        "steel": 0,
+        "water": 0.5,
         "fire": 2,
         "ground": 1,
         "rock": 1,
+        "steel": 0,
         "ghost": 0.5,
         "poison": 0.5,
         "fairy": 2
@@ -3464,10 +3471,11 @@
       "attack": {
         "dragon": 0.5,
         "grass": 1,
-        "steel": 0,
+        "water": 0.5,
         "fire": 2,
         "ground": 1,
         "rock": 1,
+        "steel": 0,
         "ghost": 0.5,
         "poison": 0.5,
         "fairy": 2
@@ -3666,14 +3674,15 @@
     ],
     "effectiveness": {
       "defense": {
-        "bug": 1,
+        "bug": 0.5,
         "fairy": 0.5,
-        "fire": 1,
+        "fire": 0.5,
         "grass": 0.5,
-        "ice": 1,
+        "ice": 0.5,
         "steel": 0.5,
-        "flying": 2,
-        "poison": 2
+        "ground": 2,
+        "rock": 2,
+        "water": 2
       },
       "attack": {
         "dragon": 0.5,
@@ -3713,14 +3722,15 @@
     ],
     "effectiveness": {
       "defense": {
-        "bug": 1,
+        "bug": 0.5,
         "fairy": 0.5,
-        "fire": 1,
+        "fire": 0.5,
         "grass": 0.5,
-        "ice": 1,
+        "ice": 0.5,
         "steel": 0.5,
-        "flying": 2,
-        "poison": 2
+        "ground": 2,
+        "rock": 2,
+        "water": 2
       },
       "attack": {
         "dragon": 0.5,
@@ -3776,12 +3786,13 @@
       "attack": {
         "dragon": 0.5,
         "grass": 0.5,
-        "steel": 0.25,
+        "water": 0.5,
         "fire": 2,
         "ground": 2,
         "rock": 2,
         "dark": 0,
         "psychic": 0.5,
+        "steel": 0.5,
         "fighting": 2,
         "poison": 2
       }
@@ -3828,12 +3839,13 @@
       "attack": {
         "dragon": 0.5,
         "grass": 0.5,
-        "steel": 0.25,
+        "water": 0.5,
         "fire": 2,
         "ground": 2,
         "rock": 2,
         "dark": 0,
         "psychic": 0.5,
+        "steel": 0.5,
         "fighting": 2,
         "poison": 2
       }
@@ -4128,7 +4140,7 @@
       "attack": {
         "dragon": 0.5,
         "grass": 0.5,
-        "steel": 0.5,
+        "water": 0.5,
         "fire": 2,
         "ground": 2,
         "rock": 2
@@ -4174,12 +4186,12 @@
       "attack": {
         "dragon": 1,
         "grass": 1,
-        "steel": 0.25,
+        "water": 0.25,
         "fire": 1,
         "ground": 4,
         "rock": 2,
         "ice": 0.5,
-        "water": 0.5,
+        "steel": 0.5,
         "flying": 2
       }
     },
@@ -4305,7 +4317,7 @@
       "attack": {
         "dragon": 0.5,
         "grass": 0.5,
-        "steel": 0.5,
+        "water": 0.5,
         "fire": 2,
         "ground": 2,
         "rock": 2
@@ -4351,12 +4363,12 @@
       "attack": {
         "dragon": 1,
         "grass": 1,
-        "steel": 0.25,
+        "water": 0.25,
         "fire": 1,
         "ground": 4,
         "rock": 2,
         "ice": 0.5,
-        "water": 0.5,
+        "steel": 0.5,
         "flying": 2
       }
     },
@@ -4693,7 +4705,7 @@
       "attack": {
         "dragon": 0.5,
         "grass": 0.5,
-        "steel": 0.5,
+        "water": 0.5,
         "fire": 2,
         "ground": 2,
         "rock": 2
@@ -4736,7 +4748,7 @@
       "attack": {
         "dragon": 0.5,
         "grass": 0.5,
-        "steel": 0.5,
+        "water": 0.5,
         "fire": 2,
         "ground": 2,
         "rock": 2
@@ -5532,7 +5544,7 @@
       "attack": {
         "dragon": 0.5,
         "grass": 0.5,
-        "steel": 0.5,
+        "water": 0.5,
         "fire": 2,
         "ground": 2,
         "rock": 2
@@ -5574,7 +5586,7 @@
       "attack": {
         "dragon": 0.5,
         "grass": 0.5,
-        "steel": 0.5,
+        "water": 0.5,
         "fire": 2,
         "ground": 2,
         "rock": 2
@@ -5617,7 +5629,7 @@
       "attack": {
         "dragon": 0.5,
         "grass": 0.5,
-        "steel": 0.5,
+        "water": 0.5,
         "fire": 2,
         "ground": 2,
         "rock": 2
@@ -5661,7 +5673,7 @@
       "attack": {
         "dragon": 0.5,
         "grass": 0.5,
-        "steel": 0.5,
+        "water": 0.5,
         "fire": 2,
         "ground": 2,
         "rock": 2
@@ -5704,7 +5716,7 @@
       "attack": {
         "dragon": 0.5,
         "grass": 0.5,
-        "steel": 0.5,
+        "water": 0.5,
         "fire": 2,
         "ground": 2,
         "rock": 2
@@ -5754,12 +5766,13 @@
       "attack": {
         "dragon": 0.5,
         "grass": 0.5,
-        "steel": 0.25,
+        "water": 0.5,
         "fire": 2,
         "ground": 2,
         "rock": 2,
         "dark": 0,
         "psychic": 0.5,
+        "steel": 0.5,
         "fighting": 2,
         "poison": 2
       }
@@ -5990,14 +6003,15 @@
     ],
     "effectiveness": {
       "defense": {
-        "bug": 1,
+        "bug": 0.5,
         "fairy": 0.5,
-        "fire": 1,
+        "fire": 0.5,
         "grass": 0.5,
-        "ice": 1,
+        "ice": 0.5,
         "steel": 0.5,
-        "flying": 2,
-        "poison": 2
+        "ground": 2,
+        "rock": 2,
+        "water": 2
       },
       "attack": {
         "dragon": 0.5,
@@ -6135,7 +6149,7 @@
       "attack": {
         "dragon": 0.5,
         "grass": 0.5,
-        "steel": 0.5,
+        "water": 0.5,
         "fire": 2,
         "ground": 2,
         "rock": 2
@@ -6184,11 +6198,12 @@
       "attack": {
         "dragon": 0.5,
         "grass": 1,
-        "steel": 0.25,
+        "water": 0.5,
         "fire": 2,
         "ground": 2,
         "rock": 1,
         "electric": 0.5,
+        "steel": 0.5,
         "bug": 2,
         "fighting": 2
       }
@@ -6233,12 +6248,12 @@
       "attack": {
         "dragon": 1,
         "grass": 1,
-        "steel": 0.25,
+        "water": 0.25,
         "fire": 1,
         "ground": 4,
         "rock": 2,
         "ice": 0.5,
-        "water": 0.5,
+        "steel": 0.5,
         "flying": 2
       }
     },
@@ -6356,7 +6371,7 @@
       "attack": {
         "dragon": 0.5,
         "grass": 0.5,
-        "steel": 0.5,
+        "water": 0.5,
         "fire": 2,
         "ground": 2,
         "rock": 2
@@ -6432,14 +6447,15 @@
     ],
     "effectiveness": {
       "defense": {
-        "bug": 1,
+        "bug": 0.5,
         "fairy": 0.5,
-        "fire": 1,
+        "fire": 0.5,
         "grass": 0.5,
-        "ice": 1,
+        "ice": 0.5,
         "steel": 0.5,
-        "flying": 2,
-        "poison": 2
+        "ground": 2,
+        "rock": 2,
+        "water": 2
       },
       "attack": {
         "dragon": 0.5,
@@ -6531,13 +6547,14 @@
       "attack": {
         "fighting": 0.5,
         "ground": 1,
-        "steel": 0.25,
+        "steel": 0.5,
         "bug": 2,
         "fire": 4,
         "flying": 2,
         "ice": 2,
         "dragon": 0.5,
         "grass": 0.5,
+        "water": 0.5,
         "rock": 2
       }
     },
@@ -6585,13 +6602,14 @@
       "attack": {
         "fighting": 0.5,
         "ground": 1,
-        "steel": 0.25,
+        "steel": 0.5,
         "bug": 2,
         "fire": 4,
         "flying": 2,
         "ice": 2,
         "dragon": 0.5,
         "grass": 0.5,
+        "water": 0.5,
         "rock": 2
       }
     },
@@ -6639,13 +6657,14 @@
       "attack": {
         "fighting": 0.5,
         "ground": 1,
-        "steel": 0.25,
+        "steel": 0.5,
         "bug": 2,
         "fire": 4,
         "flying": 2,
         "ice": 2,
         "dragon": 0.5,
         "grass": 0.5,
+        "water": 0.5,
         "rock": 2
       }
     },
@@ -6693,13 +6712,14 @@
       "attack": {
         "fighting": 0.5,
         "ground": 1,
-        "steel": 0.25,
+        "steel": 0.5,
         "bug": 2,
         "fire": 4,
         "flying": 2,
         "ice": 2,
         "dragon": 0.5,
         "grass": 0.5,
+        "water": 0.5,
         "rock": 2
       }
     },
@@ -6926,18 +6946,17 @@
     ],
     "effectiveness": {
       "defense": {
-        "bug": 0.5,
+        "bug": 0.25,
         "fairy": 0.5,
-        "fire": 1,
+        "fire": 0.5,
         "grass": 0.25,
-        "ice": 2,
+        "ice": 1,
         "steel": 0.5,
-        "flying": 2,
-        "poison": 2,
         "ground": 0,
+        "rock": 4,
+        "water": 2,
         "fighting": 0.5,
-        "electric": 2,
-        "rock": 2
+        "electric": 2
       },
       "attack": {
         "dragon": 0.5,

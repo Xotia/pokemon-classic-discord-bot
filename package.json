@@ -21,7 +21,8 @@
     "apply-wandering-legendaries": "npx ts-node src/scripts/applyWanderingLegendaries.ts",
     "audit-gen1-gen2": "npx ts-node src/scripts/runRarityAuditGen1Gen2.ts",
     "compare-gen1-gen2": "npx ts-node src/scripts/compareRarityGen1Gen2WithProd.ts",
-    "apply-gen1-gen2-rarity-changes": "npx ts-node src/scripts/applyGen1Gen2RarityChanges.ts"
+    "apply-gen1-gen2-rarity-changes": "npx ts-node src/scripts/applyGen1Gen2RarityChanges.ts",
+    "regenerate-effectiveness": "npx ts-node src/scripts/regenerateEffectiveness.ts"
   },
   "keywords": [],
   "author": "",
