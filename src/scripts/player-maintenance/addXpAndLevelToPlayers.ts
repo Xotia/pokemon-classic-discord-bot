@@ -1,8 +1,21 @@
 import fs from "fs";
-import path from "path";
+import { playersDb } from "../../config/paths";
 import { PlayersRecord } from "../../types/Player";
 
-const filePath = path.join(__dirname, "../../../data/players.json");
+function parseGuildId(argv: string[]): string {
+  const index = argv.indexOf("--guildId");
+  const guildId = index !== -1 ? argv[index + 1] : undefined;
+
+  if (!guildId) {
+    console.error("Usage: ts-node src/scripts/player-maintenance/addXpAndLevelToPlayers.ts --guildId <id>");
+    process.exit(1);
+  }
+
+  return guildId;
+}
+
+const guildId = parseGuildId(process.argv.slice(2));
+const filePath = playersDb(guildId);
 
 try {
   const rawData = fs.readFileSync(filePath, "utf-8");
@@ -15,7 +28,7 @@ try {
 
   fs.writeFileSync(filePath, JSON.stringify(players, null, 2), "utf-8");
 
-  console.log("Le fichier players.json a été mis à jour.");
+  console.log(`players.json mis à jour pour guildId=${guildId}.`);
 } catch (error) {
   console.error("Erreur :", error);
 }
