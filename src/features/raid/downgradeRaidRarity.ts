@@ -2,6 +2,7 @@ import { Rarity } from "../../config/rarity";
 
 const boostedRarityOrder: Rarity[] = [
   'unknown',
+  'legendary_wandering',
   'legendary',
   'mythic',
   'ultra_rare',
