@@ -27,7 +27,7 @@ export async function captureCommand(interaction: any) {
 
   const { generation, zone } = location;
 
-  const canCatch = await checkIfUserCanCatch(interaction, guildId);
+  const canCatch = await checkIfUserCanCatch(interaction, guildId, location.zone);
   if (!canCatch) return;
 
   const player = getCapturePlayer(interaction, guildId);

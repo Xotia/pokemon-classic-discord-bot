@@ -185,7 +185,7 @@ function getPokemonsForZone(
   );
 }
 
-function multiplyStats(stats: PokemonStats, multiplier: number): PokemonStats {
+export function multiplyStats(stats: PokemonStats, multiplier: number): PokemonStats {
   return {
     hp: stats.hp * multiplier,
     attack: stats.attack * multiplier,

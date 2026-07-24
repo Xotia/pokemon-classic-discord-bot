@@ -519,7 +519,8 @@
     },
     "zones": [
       "country-road",
-      "dark-woods"
+      "dark-woods",
+      "meteorite-crater"
     ],
     "generation": 2
   },
@@ -566,7 +567,8 @@
     "zones": [
       "country-road",
       "dark-woods",
-      "rocky-trail"
+      "rocky-trail",
+      "meteorite-crater"
     ],
     "generation": 2
   },
@@ -2124,7 +2126,8 @@
     },
     "zones": [
       "megacity",
-      "archaeological-ruins"
+      "archaeological-ruins",
+      "meteorite-crater"
     ],
     "generation": 2
   },

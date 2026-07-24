@@ -4,6 +4,13 @@ import { loadUnlockedZones } from '../../utils/loadUnlockedZones';
 import { getGenerationByZone } from './getGenerationByZone';
 import { getMaxGeneration } from './getMaxGeneration';
 import { getZonesByGeneration } from './getZonesByGeneration';
+import {
+  isMeteoriteEventActive,
+  matchesMeteoriteZone,
+  METEORITE_ZONE_ID,
+  METEORITE_ZONE_LABEL,
+  METEORITE_GENERATION_TOKEN,
+} from '../../features/meteoriteEvent/meteoriteEventConfig';
 
 function resolveZoneId(guildId: string, input: string): string | undefined {
   const allZones = Object.values(loadUnlockedZones(guildId)).flat();
@@ -21,6 +28,28 @@ export async function resolveCaptureLocation(
 
   const generationOption = interaction.options.getString("generation");
   const zoneOption = interaction.options.getString("zone");
+
+  if (zoneOption && matchesMeteoriteZone(zoneOption)) {
+    if (!isMeteoriteEventActive()) {
+      await interaction.editReply("❌ Cette zone n'est plus accessible.");
+      return null;
+    }
+    if (generationOption != null) {
+      await interaction.editReply(
+        "❌ La zone météorite n'appartient à aucune génération : retire le filtre de génération pour y accéder.",
+      );
+      return null;
+    }
+    return {
+      generation: METEORITE_GENERATION_TOKEN,
+      zone: METEORITE_ZONE_ID,
+      selectedZone: { id: METEORITE_ZONE_ID, label: METEORITE_ZONE_LABEL },
+      isGenerationChosenByUser: false,
+      isGenerationInferredFromZone: false,
+      isGenerationRandom: false,
+      isZoneRandom: false,
+    };
+  }
 
   const resolvedZoneId = zoneOption
     ? resolveZoneId(guildId, zoneOption)

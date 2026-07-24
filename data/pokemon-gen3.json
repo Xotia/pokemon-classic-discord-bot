@@ -6315,9 +6315,114 @@
       "specialDefense": 50,
       "speed": 150
     },
-    "generation": 3,
-    "zones": [
-      "meteorite-crater"
-    ]
+    "generation": 3
+  },
+  {
+    "id": 4103,
+    "name": "Deoxys (Forme Attaque)",
+    "rarity": "legendary",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/deoxys-attack.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/deoxys-attack.gif",
+    "originalName": "deoxys-attack",
+    "types": [
+      "psychic"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fighting": 0.5,
+        "psychic": 0.5,
+        "bug": 2,
+        "dark": 2,
+        "ghost": 2
+      },
+      "attack": {
+        "dark": 0,
+        "psychic": 0.5,
+        "steel": 0.5,
+        "fighting": 2,
+        "poison": 2
+      }
+    },
+    "stats": {
+      "hp": 50,
+      "attack": 180,
+      "defense": 20,
+      "specialAttack": 180,
+      "specialDefense": 20,
+      "speed": 150
+    },
+    "generation": 3
+  },
+  {
+    "id": 4104,
+    "name": "Deoxys (Forme Défense)",
+    "rarity": "legendary",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/deoxys-defense.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/deoxys-defense.gif",
+    "originalName": "deoxys-defense",
+    "types": [
+      "psychic"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fighting": 0.5,
+        "psychic": 0.5,
+        "bug": 2,
+        "dark": 2,
+        "ghost": 2
+      },
+      "attack": {
+        "dark": 0,
+        "psychic": 0.5,
+        "steel": 0.5,
+        "fighting": 2,
+        "poison": 2
+      }
+    },
+    "stats": {
+      "hp": 50,
+      "attack": 70,
+      "defense": 160,
+      "specialAttack": 70,
+      "specialDefense": 160,
+      "speed": 90
+    },
+    "generation": 3
+  },
+  {
+    "id": 4105,
+    "name": "Deoxys (Forme Vitesse)",
+    "rarity": "legendary",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/deoxys-speed.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/deoxys-speed.gif",
+    "originalName": "deoxys-speed",
+    "types": [
+      "psychic"
+    ],
+    "effectiveness": {
+      "defense": {
+        "fighting": 0.5,
+        "psychic": 0.5,
+        "bug": 2,
+        "dark": 2,
+        "ghost": 2
+      },
+      "attack": {
+        "dark": 0,
+        "psychic": 0.5,
+        "steel": 0.5,
+        "fighting": 2,
+        "poison": 2
+      }
+    },
+    "stats": {
+      "hp": 50,
+      "attack": 95,
+      "defense": 90,
+      "specialAttack": 95,
+      "specialDefense": 90,
+      "speed": 180
+    },
+    "generation": 3
   }
 ]

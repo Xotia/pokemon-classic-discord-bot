@@ -637,11 +637,63 @@ reste en place).
       build/deploy → npm start dans screen → hardcopy check (10 s) →
       send-back-online → send-patchnote.
 
-### Slice F — Événement lunaire
-- [ ] F1. **Spec à clarifier avec l'utilisateur avant tout design** : nature
-      exacte de l'événement (spawns spéciaux liés à la phase de lune réelle,
-      fréquence, effet sur les taux/zones, durée, notification aux joueurs).
-      Rien d'assez concret encore pour lancer une conception.
+### Slice F — Événement "Météorite" — Nuit des Étoiles
+- [x] F1 (terminé le 2026-07-24, affiné le 2026-07-24 — horaires et embeds —
+      branche `release/3.5.0` directement). Événement ponctuel
+      **vendredi 15 août 2026** (Nuit des Étoiles AFA), 24h, Europe/Paris.
+      Alerte J-7 envoyée le **8 août à 20h Paris** (UTC 18:00).
+      **Nouveaux fichiers** : `src/features/meteoriteEvent/` (5 fichiers) :
+      `meteoriteEventConfig.ts` (constantes, fenêtre, `isMeteoriteEventActive`,
+      `matchesMeteoriteZone`, 4 créneaux de raid Deoxys en objets `Date` UTC),
+      `meteoriteEventState.service.ts` (état idempotent par guilde :
+      `zoneOpenedAnnounced`/`zoneClosedAnnounced`/`checkpointsFired`),
+      `generateMeteoriteRaidState.ts` (`generation: null` pour court-circuiter
+      `unlockRaidZone` dans `closeRaidAndResolve`),
+      `buildMeteoriteLoreEmbeds.ts` (embeds lore AURORA / Professeure Lyra Voss),
+      `meteoriteEventScheduler.ts` (cron `*/1 * * * *` par guilde).
+      **Fichiers modifiés** : `paths.ts` (+`meteoriteEventStateDb`),
+      `raidGenerator.service.ts` (`multiplyStats` exportée),
+      `raidScheduler.ts` (factory optionnelle dans `openRaidRegistration`,
+      guard `isMeteoriteEventActive` sur le callback d'ouverture uniquement),
+      `resolveCaptureLocation.ts` (bypass météorite en tout premier, avant
+      `resolveZoneId` — rejet explicite si zone inactive ou si génération filtrée),
+      `checkIfUserCanCatch.ts` (param `zone?`, cooldown ÷2 dans la zone si
+      actif), `captureCommand.ts` et `handleTargetedCapture.ts` (passent
+      `location.zone` à `checkIfUserCanCatch`), `handleSuccessfulCapture.ts`
+      (XP ×2 dans la zone météorite — couvre XP et `researchData` via même
+      variable `gainedXp`), `applyRaidRewards.ts` (XP ×2 si
+      `state.generation === null` — détecte précisément les raids météorite),
+      `buildDescriptionForRandomCaptureEmbed.ts` (repli sur `findZoneById` pour
+      le label dans l'embed de capture), `index.ts` (autocomplete zone injecte
+      `meteorite-crater` uniquement dans la branche "aucune génération filtrée",
+      démarre `startMeteoriteEventScheduler` après `startRaidScheduler`).
+      **Créneaux Deoxys (heure Paris CEST = UTC+2)** :
+      - Raid 1 — Normale (386) : 10h00–12h00 (08:00–10:00 UTC)
+      - Raid 2 — Attaque (4103) : 13h30–15h30 (11:30–13:30 UTC)
+      - Raid 3 — Défense (4104) : 18h00–**20h00** (16:00–18:00 UTC)
+      - Raid 4 — Vitesse (4105) : 21h00–23h00 (19:00–21:00 UTC)
+      Zone ouverte de 8h00 à 23h59:59 Paris (`EVENT_END = 21:59:59 UTC`).
+      **Données** : `data/zones_all.json` nouvelle clé `"event"` +
+      `meteorite-crater` ; `pokemon-gen1.json` : zones `meteorite-crater`
+      ajoutées aux Nidoran (29-34), Mélofée/Mélodelfe (35-36), Jigglypuff/
+      Wigglytuff (39-40) + ajout Jirachi (385, `rarity: "legendary"`,
+      `zones: ["meteorite-crater"]`) ; `pokemon-gen2.json` : zones météorite
+      pour Hoothoot (163), Noctowl (164), Noctali/Umbreon (197) ;
+      `pokemon-gen3.json` : Deoxys normale (386, raid-only, pas de `zones`) +
+      3 formes alternatives **ids custom 4103–4105** (Attaque/Défense/Vitesse,
+      raid-only — ajoutés dans gen3.json, pas dans othermons.json qui reste
+      per-guild gitignored). Tests `pokemonGen3Data.test.ts` mis à jour :
+      `regularList` (252–386) vs `eventList` (>386) avec `RAID_ONLY_IDS`.
+      `tsc` clean, 1202/1202 tests passent.
+      **Embed de fermeture** : les corporations liées à AstroX quadrillent la
+      zone et monopolisent les données — ton politique assumé, cohérent avec le
+      lore AURORA. AURORA garde les données des dresseurs.
+      **Point opérationnel** : activer `METEORITE_EVENT_DEBUG=1` dans `.env`
+      pour tester le flux complet avant le 15 août sans changer l'horloge système.
+      **Rappel déploiement** : le `data/guilds/{id}/meteorite_event.json` sera
+      créé automatiquement au premier tick du cron (valeurs par défaut toutes
+      `false`). Vérifier que `mainChannelId` est renseigné dans `data/guilds.json`
+      (ajouté par E0) pour que les embeds de lore partent dans le bon salon.
 
 ### Slice G — Génération 3 (déjà bien avancée)
 - [x] G1 (clos le 2026-07-24, audit read-only via quality-lead →
@@ -703,11 +755,9 @@ reste en place).
 
 ## Prochaine étape immédiate
 
-Slices A, B, C et G sont closes. Restent D (nouvelle ressource "données de
-recherche" + 3 commandes), E (scripts d'automatisation), F (événement
-lunaire, spec à clarifier avec l'utilisateur avant tout design) et H
-(release finale). Aucune dépendance dure entre D/E/F entre elles — l'ordre
-est au choix de l'utilisateur. F nécessite une clarification de spec avant
-de pouvoir démarrer ; D1 nécessite une décision d'économie de jeu (à
-trancher via le flow design-then-build si le calibrage a des implications
-de balance/anti-abus).
+Slices A, B, C, D, E, F et G sont closes. Reste uniquement **Slice H**
+(release finale) : H0 (tests E2E optionnels), H1 (CHANGELOG.md 3.5.0),
+H2 (merge `release/3.5.0` → `main`, tag `v3.5.0`), H3 (dogfooder E1).
+Avant le déploiement H2 : mettre à jour manuellement `data/guilds.json`
+en prod avec `mainChannelId`/`devChannelId`/`loreChannelId` (ajout E0).
+Rappel événement F1 : tester avec `METEORITE_EVENT_DEBUG=1` avant le 15 août.

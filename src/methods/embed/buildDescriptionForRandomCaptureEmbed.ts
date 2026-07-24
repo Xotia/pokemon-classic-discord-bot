@@ -1,10 +1,15 @@
 import { BuildDescriptionParams } from "../../types/Params";
 import { loadUnlockedZones } from "../../utils/loadUnlockedZones";
 import { getTypeLabel } from "../../config/typeLabels";
+import { findZoneById } from "../zones/findZoneById";
 
 function getZoneLabel(guildId: string, zoneId: string): string {
   const allZones = Object.values(loadUnlockedZones(guildId)).flat();
-  return allZones.find((z) => z.id === zoneId)?.label ?? zoneId;
+  const found = allZones.find((z) => z.id === zoneId);
+  if (found) return found.label;
+  const foundInAll = findZoneById(zoneId);
+  if (foundInAll) return foundInAll.label;
+  return zoneId;
 }
 
 export function buildDescriptionForPokemonCaptureEmbed({

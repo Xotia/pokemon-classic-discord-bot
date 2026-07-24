@@ -16,6 +16,8 @@ import { getRarityCommand } from "./commands/getRarityCommand";
 import { getPokemonInfoCommand } from "./commands/getPokemonInfoCommand";
 
 import { startRaidScheduler } from './features/raid/raidScheduler';
+import { startMeteoriteEventScheduler } from './features/meteoriteEvent/meteoriteEventScheduler';
+import { isMeteoriteEventActive, METEORITE_ZONE_ID, METEORITE_ZONE_LABEL } from './features/meteoriteEvent/meteoriteEventConfig';
 
 import { raidCommand } from "./commands/raidCommand";
 import { loadUnlockedZones } from "./utils/loadUnlockedZones";
@@ -39,6 +41,7 @@ const client = new Client({
 });
 
 startRaidScheduler(client);
+startMeteoriteEventScheduler(client);
 
 client.on(Events.Error, (error) => {
   logger.error({ err: error }, "❌ Erreur client Discord non gérée");
@@ -211,10 +214,14 @@ async function handleInteraction(interaction: Interaction) {
         const search = focusedOption.value.toLowerCase();
         const unlockedZones = loadUnlockedZones(interaction.guildId);
 
-        const pool: Zone[] =
-          generation && generation in unlockedZones
-            ? unlockedZones[generation as keyof typeof unlockedZones]
-            : Object.values(unlockedZones).flat();
+        const isGenerationFiltered = generation && generation in unlockedZones;
+        const pool: Zone[] = isGenerationFiltered
+          ? unlockedZones[generation as keyof typeof unlockedZones]
+          : Object.values(unlockedZones).flat();
+
+        if (!isGenerationFiltered && isMeteoriteEventActive()) {
+          pool.push({ id: METEORITE_ZONE_ID, label: METEORITE_ZONE_LABEL });
+        }
 
         const suggestions = pool
           .filter(

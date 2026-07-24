@@ -38,3 +38,7 @@ export function raidStateDb(guildId: string): string {
 export function othermonsDb(guildId: string): string {
   return path.join(guildDir(guildId), 'othermons.json');
 }
+
+export function meteoriteEventStateDb(guildId: string): string {
+  return path.join(guildDir(guildId), 'meteorite_event.json');
+}

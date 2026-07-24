@@ -52,7 +52,7 @@ export async function handleTargetedCapture(
     return;
   }
 
-  const canCatch = await checkIfUserCanCatch(interaction, guildId);
+  const canCatch = await checkIfUserCanCatch(interaction, guildId, zone);
   if (!canCatch) return;
 
   const isShiny = isThePokemonGonnaBeShiny(guildId);
