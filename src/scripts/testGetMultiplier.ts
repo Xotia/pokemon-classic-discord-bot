@@ -1,4 +1,4 @@
-import getMultipliers from "./getMultipliers.js";
+import getMultipliers from "./getMultipliers";
 
 const result = getMultipliers(["fire"]);
 console.log(result);

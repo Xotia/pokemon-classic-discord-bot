@@ -1,10 +1,10 @@
 import type { EmbedField } from 'discord.js';
-import type { RaidState } from '../../types/raid/RaidState.js';
-import { getPokemonSpriteUrl } from '../../methods/pokemon/getPokemonSpriteUrl.js';
-import { buildEmbed } from '../../methods/embed/buildEmbed.js';
-import { getPokemonByName } from '../../methods/pokemon/getPokemonByName.js';
+import type { RaidState } from '../../types/raid/RaidState';
+import { getPokemonSpriteUrl } from '../../methods/pokemon/getPokemonSpriteUrl';
+import { buildEmbed } from '../../methods/embed/buildEmbed';
+import { getPokemonByName } from '../../methods/pokemon/getPokemonByName';
 
-import { getTypeLabel } from '../../config/typeLabels.js';
+import { getTypeLabel } from '../../config/typeLabels';
 
 const RAID_ALERT_COLOR = 0xff3b30;
 

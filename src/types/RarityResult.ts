@@ -14,12 +14,14 @@ export interface RawRarityData {
   isMythical: boolean;
   maxEncounterChance: number | null;
   gamesCount: number;
+  locationsCount: number;
   versions: string[];
   methods: string[];
   easiestMethod: string | null;
   isVersionExclusive: boolean;
   evolutionDepth: number | null;
   evolutionTrigger: string | null;
+  baseStatTotal: number;
 }
 
 export interface RarityResult {
@@ -31,10 +33,14 @@ export interface RarityResult {
     | "priority:is_mythical"
     | "priority:is_legendary"
     | "priority:no_encounters_absent"
+    | "priority:no_encounters_inherits_parent"
     | "composite";
   finalScore: number | null;
   components: RarityComponents | null;
   rawData: RawRarityData | null;
   oneTimeOnly: boolean;
   flooredByChain: boolean;
+  flooredByBaseStats: boolean;
+  flooredByBaseStatBonus: boolean;
+  flooredByFossilChain: boolean;
 }

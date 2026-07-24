@@ -1,5 +1,5 @@
-import { getPokemonTypes } from "./getPokemonTypes.js";
-import getMultipliers from "./getMultipliers.js";
+import { getPokemonTypes } from "./getPokemonTypes";
+import getMultipliers from "./getMultipliers";
 
 const POKEMON_API = 'https://pokeapi.co/api/v2/pokemon';
 

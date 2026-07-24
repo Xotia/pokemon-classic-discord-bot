@@ -24,5 +24,19 @@
     { "id": "cape-of-good-hope-lighthouse", "label": "Phare de bon espérance" },
     { "id": "icy-track", "label": "Piste givrée" },
     { "id": "archaeological-ruins", "label": "Ruines archéologiques" }
+  ],
+  "gen3": [
+    { "id": "iridescent-marsh", "label": "Marais iridescent" },
+    { "id": "arid-dunes", "label": "Dunes arides" },
+    { "id": "jungle", "label": "Jungle" },
+    { "id": "sunny-cove", "label": "Crique ensoleillée" },
+    { "id": "grim-cemetery", "label": "Cimetière sinistre" },
+    { "id": "beginner-trail", "label": "Randonnée d'initiation" },
+    { "id": "enchanted-meadow", "label": "Prairie enchantée" },
+    { "id": "underwater-cave", "label": "Grotte sous-marine" },
+    { "id": "magma-cave", "label": "Grotte Magmatique" },
+    { "id": "celestial-tower", "label": "Tour Céleste" },
+    { "id": "meteorite-crater", "label": "Cratère de la météorite" },
+    { "id": "paradise-island", "label": "Île paradisiaque" }
   ]
 }

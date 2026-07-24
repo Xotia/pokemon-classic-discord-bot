@@ -1,10 +1,10 @@
 import { readFile } from "node:fs/promises";
 
-import { getLoggerForGuild } from "../../utils/logger.js";
-import { RaidState } from "../../types/raid/RaidState.js";
-import { zonesUnlockedDb, zonesToUnlockDb } from "../../config/paths.js";
-import { getRaidNextZoneChance, getRaidStartHour, getRaidEndHour } from "../../config/guildSettings.js";
-import { getPokemonCatalog } from "../../utils/pokemonCatalog.js";
+import { getLoggerForGuild } from "../../utils/logger";
+import { RaidState } from "../../types/raid/RaidState";
+import { zonesUnlockedDb, zonesToUnlockDb } from "../../config/paths";
+import { getRaidNextZoneChance, getRaidStartHour, getRaidEndHour } from "../../config/guildSettings";
+import { getPokemonCatalog } from "../../utils/pokemonCatalog";
 
 type ZoneEntry = {
   id: string;
