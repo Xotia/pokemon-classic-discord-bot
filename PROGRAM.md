@@ -485,13 +485,38 @@ reste en place).
       (aucun test nouveau écrit, pas dans le périmètre de cette tâche).
       **Gap non traité** : aucun test unitaire/E2E pour
       `getPokemonInfoCommand` — à transmettre à `quality-lead`.
-- [ ] D3. Commande "liste des Pokémon capturés dans une zone donnée" —
-      croiser `player.captureList` (via `src/utils/jsonPlayers.ts`) avec le
-      champ `zones` de chaque Pokémon, pagination façon `pokedexCommand.ts`.
-- [ ] D4. Commande "capturer un Pokémon dans une zone + rareté précisées"
-      consommant les données de recherche — réutiliser la logique gacha de
-      `captureCommand.ts` / `src/methods/gatcha/`, valider que la
-      combinaison zone+rareté demandée existe avant de débiter la ressource.
+- [x] D3. Abandonnée (2026-07-24, décision utilisateur) — redondante avec
+      `/capture` qui permet déjà de choisir une zone. Le besoin réel était
+      D4 (capture ciblée zone+rareté).
+- [~] D4. Capture ciblée zone+rareté consommant `researchData` — design en
+      cours (2026-07-24).
+      **Table de coût actée** (proposée par `risk-lead`→`architect` —
+      modèle : proportionnalité inverse au poids de tirage `rarityList`,
+      ancré sur `legendary` — puis arrondie par l'utilisateur) : common
+      3300 / uncommon 4000 / rare 5000 / very_rare 8500 / epic 14500 /
+      ultra_rare 25000 / mythic 100000 / **legendary 300000** (arrondi,
+      était 337500 = xpTotalForLevel(75)) / **legendary_wandering 300000**
+      (même montant que legendary, voulu) / `unknown` exclue (pas une
+      cible valide pour cette commande).
+      **Faucet continu tranché (2026-07-24, décision utilisateur)** :
+      résout le gap "aucune source de gain continue" identifié par
+      l'audit d'équilibrage — à chaque gain d'xp d'un joueur, il gagne
+      désormais **le même montant en `researchData`** (1:1, symétrique à
+      xp). **Fait (2026-07-24)** : delta (pas le total) ajouté à
+      `researchData` avec fallback défensif `?? 0` sur les 3 sites
+      confirmés exhaustifs ci-dessous. `tsc` clean, 1171/1171 tests.
+      **Précision utile pour le risque de sécurité signalé par l'audit** :
+      le repo a déjà un mécanisme de verrou (`withFileLock`, utilisé par
+      `updatePlayer`/`updatePlayers` dans `src/utils/jsonPlayers.ts`) qui
+      sérialise les écritures joueur par lecture fraîche sous verrou —
+      exactement le pattern anti-duplication que l'audit recommandait
+      d'ajouter. Le futur débit de `researchData` pour la capture ciblée
+      doit **réutiliser ce mécanisme existant**, pas en réinventer un.
+      Sites d'octroi d'xp confirmés exhaustifs par grep+lecture directe (3
+      points, `/cheat` n'accorde pas d'xp — vérifié) :
+      `handleSuccessfulCapture.ts` (capture normale/shiny, y compris le
+      rechargement "fresh" sous `updatePlayer`) et `applyRaidRewards.ts`
+      (récompense raid, sous `updatePlayers`).
 
 ### Slice E — Scripts d'automatisation (opérationnel)
 - [ ] E1. Script de publication automatique du patchnote sur le Discord de

@@ -29,6 +29,7 @@ export async function handleSuccessfulCapture(
 
   player.xp = xpResult.xp;
   player.level = xpResult.level;
+  player.researchData = (typeof player.researchData === "number" ? player.researchData : 0) + gainedXp;
 
   const { embed, footer, isInPokedex } = buildCapturedPokemonEmbed({
     guildId,
@@ -59,6 +60,7 @@ export async function handleSuccessfulCapture(
     const xpGain = addXp(typeof fresh.xp === "number" ? fresh.xp : 0, gainedXp);
     fresh.xp = xpGain.xp;
     fresh.level = xpGain.level;
+    fresh.researchData = (typeof fresh.researchData === "number" ? fresh.researchData : 0) + gainedXp;
     fresh.pityCounter = player.pityCounter;
     registerCapturedPokemon(fresh, pokemonCatched.id, isShiny);
   });

@@ -55,6 +55,7 @@ export async function applyRaidRewards(state: RaidState, guildId: string): Promi
       const xpResult = addXp(player.xp ?? 0, xpReward);
       player.xp = xpResult.xp;
       player.level = xpResult.level;
+      player.researchData = (typeof player.researchData === "number" ? player.researchData : 0) + xpReward;
       player.raidWins = (player.raidWins ?? 0) + 1;
 
       logger.info(
