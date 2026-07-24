@@ -4,7 +4,7 @@ import {
     SlashCommandBuilder,
 } from 'discord.js';
 
-const rarityEmojiMap: Record<string, string> = {
+export const rarityEmojiMap: Record<string, string> = {
   common: '⚪',
   uncommon: '🟢',
   rare: '🔵',

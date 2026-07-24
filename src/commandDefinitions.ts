@@ -103,4 +103,15 @@ export const commands = [
     .setName("raid-squad")
     .setDescription("Affiche les infos du raid et la composition actuel de l'équipe de défense.")
     .toJSON(),
+  new SlashCommandBuilder()
+    .setName("get-pokemon-info")
+    .setDescription("Affiche les informations détaillées d'un Pokémon.")
+    .addStringOption((option) =>
+      option
+        .setName("pokemon")
+        .setDescription("Nom du Pokémon")
+        .setRequired(true)
+        .setAutocomplete(true),
+    )
+    .toJSON(),
 ];

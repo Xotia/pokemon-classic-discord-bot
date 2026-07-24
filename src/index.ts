@@ -12,6 +12,7 @@ import { captureCommand } from "./commands/captureCommand";
 import { helpCommand } from "./commands/helpCommand";
 import { getPity } from "./commands/getPityCommand";
 import { getRarityCommand } from "./commands/getRarityCommand";
+import { getPokemonInfoCommand } from "./commands/getPokemonInfoCommand";
 
 import { startRaidScheduler } from './features/raid/raidScheduler';
 
@@ -172,6 +173,31 @@ async function handleInteraction(interaction: Interaction) {
       return;
     }
 
+    if (interaction.commandName === "get-pokemon-info") {
+      const focusedOption = interaction.options.getFocused(true);
+
+      if (focusedOption.name === "pokemon") {
+        try {
+          if (!interaction.guildId) {
+            await interaction.respond([]);
+            return;
+          }
+          const search = focusedOption.value.trim().toLowerCase();
+          const pokemonList = getPokemonCatalog(interaction.guildId);
+
+          const suggestions = pokemonList
+            .filter((p) => p.name.toLowerCase().includes(search))
+            .slice(0, 25)
+            .map((p) => ({ name: p.name, value: p.name }));
+
+          await interaction.respond(suggestions);
+        } catch {
+          await interaction.respond([]);
+        }
+      }
+      return;
+    }
+
     if (interaction.commandName === "capture") {
       const focusedOption = interaction.options.getFocused(true);
 
@@ -285,5 +311,9 @@ async function handleInteraction(interaction: Interaction) {
 
   if (interaction.commandName === "raid-force-end") {
     return forceEndRaidCommand(interaction);
+  }
+
+  if (interaction.commandName === "get-pokemon-info") {
+    return await getPokemonInfoCommand(interaction);
   }
 }

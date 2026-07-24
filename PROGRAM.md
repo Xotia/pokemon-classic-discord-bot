@@ -468,10 +468,23 @@ reste en place).
       nouvelle non plus. À transmettre à `quality-lead` si une couverture
       est souhaitée avant la release (candidat naturel pour H0, la slice
       E2E).
-- [ ] D2. Commande "statistiques d'un Pokémon" — nouveau fichier
-      `src/commands/<nom>Command.ts` sur le modèle de
-      `captureCommand.ts`/`pokedexCommand.ts`, lecture depuis
-      `data/pokemon-list.json`.
+- [x] D2. Commande "statistiques d'un Pokémon" — fait (2026-07-24).
+      `/get-pokemon-info` avec option `pokemon` (autocomplete, recherche sur
+      tout le catalogue via `getPokemonCatalog`, pas restreinte aux
+      captures du joueur). Nouveau fichier
+      `src/commands/getPokemonInfoCommand.ts`, lookup via
+      `getPokemonByName`. Affiche id, nom FR, nom EN (capitalisé), rareté
+      (emoji + label FR + couleur d'embed), types, faiblesses et
+      résistances **en défense uniquement** (`effectiveness.defense`,
+      `effectiveness.attack` non utilisé), statistiques. Zones de spawn
+      explicitement exclues. Refactor annexe : `rarityEmojiMap` exportée
+      depuis `getRarityCommand.ts` pour réutilisation. Ajout du champ
+      `originalName: string` à l'interface `Pokemon`
+      (`src/types/Pokemon.ts`), déjà présent dans les données JSON du
+      catalogue mais absent du typage. `tsc` clean, 1171/1171 tests
+      (aucun test nouveau écrit, pas dans le périmètre de cette tâche).
+      **Gap non traité** : aucun test unitaire/E2E pour
+      `getPokemonInfoCommand` — à transmettre à `quality-lead`.
 - [ ] D3. Commande "liste des Pokémon capturés dans une zone donnée" —
       croiser `player.captureList` (via `src/utils/jsonPlayers.ts`) avec le
       champ `zones` de chaque Pokémon, pagination façon `pokedexCommand.ts`.
