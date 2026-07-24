@@ -30,4 +30,4 @@ const embed = new EmbedBuilder()
   })
   .setTimestamp();
 
-broadcastEmbed(embed, "src/scripts/announcements/send-maintenance.ts", { channelField: "general" });
+broadcastEmbed(embed, "src/scripts/announcements/send-maintenance.ts", { channelField: "main" });

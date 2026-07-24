@@ -1,6 +1,7 @@
 import { Client, EmbedBuilder, GatewayIntentBits } from "discord.js";
 import dotenv from "dotenv";
 import { loadGuildRegistry } from "../../../config/guilds";
+import { GuildRegistryEntry } from "../../../types/GuildRegistryEntry";
 
 dotenv.config();
 
@@ -14,15 +15,38 @@ type BroadcastOptions = {
   content?: string;
   /**
    * Salon ciblé par défaut pour chaque serveur du registre.
-   * "general" retombe sur raidAnnounceChannelId si generalChannelId n'est pas défini.
-   * Par défaut : "general" — seuls les scripts liés au raid lui-même
+   * - "raid" : raidAnnounceChannelId (aucun repli).
+   * - "main" : mainChannelId (aucun repli).
+   * - "dev" : devChannelId, retombe sur mainChannelId si absent.
+   * - "lore" : loreChannelId, retombe sur mainChannelId si absent.
+   * Par défaut : "main" — seuls les scripts liés au raid lui-même
    * doivent explicitement passer "raid".
    */
-  channelField?: "raid" | "general";
+  channelField?: "raid" | "main" | "dev" | "lore";
 };
 
 /**
- * Envoie un embed sur le salon (raid ou général) de tous les serveurs du registre.
+ * Résout l'identifiant du salon cible pour un serveur donné selon le champ demandé.
+ * Fonction pure, sans effet de bord, testable indépendamment de Discord.
+ */
+export function resolveTargetChannelId(
+  guild: GuildRegistryEntry,
+  channelField: BroadcastOptions["channelField"] = "main",
+): string {
+  switch (channelField) {
+    case "raid":
+      return guild.raidAnnounceChannelId;
+    case "main":
+      return guild.mainChannelId;
+    case "dev":
+      return guild.devChannelId ?? guild.mainChannelId;
+    case "lore":
+      return guild.loreChannelId ?? guild.mainChannelId;
+  }
+}
+
+/**
+ * Envoie un embed sur le salon ciblé (raid, jeu principal, dev ou lore) de tous les serveurs du registre.
  * Passer --channelId <id> pour cibler un seul salon (test) à la place.
  */
 export function broadcastEmbed(
@@ -32,7 +56,7 @@ export function broadcastEmbed(
 ): void {
   const TOKEN = process.env.DISCORD_TOKEN;
   const CHANNEL_ID = parseChannelId(process.argv.slice(2));
-  const { content, channelField = "general" } = options;
+  const { content, channelField = "main" } = options;
 
   if (!TOKEN) {
     console.error(`Usage: npx ts-node ${scriptRelativePath} [--channelId <id>]`);
@@ -62,10 +86,7 @@ export function broadcastEmbed(
         await sendTo(CHANNEL_ID, "salon ciblé");
       } else {
         for (const guild of loadGuildRegistry()) {
-          const targetChannelId =
-            channelField === "general"
-              ? (guild.generalChannelId ?? guild.raidAnnounceChannelId)
-              : guild.raidAnnounceChannelId;
+          const targetChannelId = resolveTargetChannelId(guild, channelField);
           await sendTo(targetChannelId, guild.name);
         }
       }

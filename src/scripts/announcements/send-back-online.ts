@@ -26,4 +26,4 @@ const embed = new EmbedBuilder()
   })
   .setTimestamp();
 
-broadcastEmbed(embed, "src/scripts/announcements/send-back-online.ts", { channelField: "general" });
+broadcastEmbed(embed, "src/scripts/announcements/send-back-online.ts", { channelField: "main" });

@@ -433,7 +433,7 @@ reste en place).
       `tsc` clean, 1171/1171 tests passent.
 
 ### Slice D — Nouvelle ressource "données de recherche" + 3 commandes
-- [~] D1. Design de la ressource (nouveau champ sur `Player`
+- [x] D1. Design de la ressource (nouveau champ sur `Player`
       `src/types/Player.ts`, module `src/methods/research/` en miroir de
       `src/methods/xp/xp.ts`, table de coût par palier de rareté pour la
       capture ciblée, sources de gain).
@@ -452,10 +452,8 @@ reste en place).
       corrigé en ajoutant `researchData: 0` à l'objet initial, cohérent
       avec la décision (xp d'un nouveau joueur = 0 de toute façon). `tsc`
       clean, 1171/1171 tests. Script npm ajouté : `init-research-data`.
-      **Reste à trancher** : module `src/methods/research/` (lecture/
-      écriture de la ressource en jeu), table de coût par palier de
-      rareté (D4) et sources de gain continues après la migration
-      initiale — pas encore abordé.
+      Tout ce qui restait à trancher (module `src/methods/research/`,
+      table de coût, faucet continu) est fait — voir D4.
 - [x] D1bis (terminé le 2026-07-24). Deux lignes ajoutées au bloc
       `summary` de `src/methods/embed/buildPokedexPageEmbed.ts` :
       `✨ **XP :** ${playerXp}` et `🔬 **Données de recherche :**
@@ -488,8 +486,8 @@ reste en place).
 - [x] D3. Abandonnée (2026-07-24, décision utilisateur) — redondante avec
       `/capture` qui permet déjà de choisir une zone. Le besoin réel était
       D4 (capture ciblée zone+rareté).
-- [~] D4. Capture ciblée zone+rareté consommant `researchData` — design en
-      cours (2026-07-24).
+- [x] D4. Capture ciblée zone+rareté consommant `researchData` — terminé
+      (2026-07-24).
       **Table de coût actée** (proposée par `risk-lead`→`architect` —
       modèle : proportionnalité inverse au poids de tirage `rarityList`,
       ancré sur `legendary` — puis arrondie par l'utilisateur) : common
@@ -584,10 +582,53 @@ reste en place).
         cooldown dans le même verrou que le débit).
 
 ### Slice E — Scripts d'automatisation (opérationnel)
+- [x] E0. Schéma de config serveur à 4 salons explicites (décidé et fait
+      le 2026-07-24). Remplace le système actuel à 2 champs
+      (`raidAnnounceChannelId` obligatoire + `generalChannelId` optionnel
+      en repli) par 4 rôles de salon explicites par serveur : jeu principal,
+      raid, dev (changelog/patchnote), lore (événements).
+      **Décisions actées avec l'utilisateur** :
+      - `raidAnnounceChannelId` **inchangé** (pas de renommage, déjà
+        consommé par `raidScheduler.ts`/`forceEndRaid.ts`/etc., toujours
+        obligatoire).
+      - `generalChannelId` **retiré** du schéma (`GuildRegistryEntry`,
+        `broadcast.ts`).
+      - `mainChannelId` **obligatoire** (nouveau — remplace le rôle
+        "obligatoire" que jouait implicitement `raidAnnounceChannelId` en
+        repli pour `generalChannelId`).
+      - `devChannelId` et `loreChannelId` **optionnels**, repli sur
+        `mainChannelId` si absents (migration progressive possible serveur
+        par serveur).
+      - `broadcastEmbed` : `channelField` passe de `"raid" | "general"` à
+        `"raid" | "main" | "dev" | "lore"`, défaut `"main"`.
+      - Les 5 scripts qui appellent `broadcastEmbed({ channelField:
+        "general" })` explicitement (`send-maintenance.ts`,
+        `send-back-online.ts`, `send-quick-maintenance.ts`,
+        `send-quick-back-online.ts`, `send-lore-new-adventure.ts`) migrent
+        vers `"main"` pour les 4 premiers, `"lore"` pour le dernier.
+      - `data/guilds.json` **est gitignored** (donnée réelle de prod, pas
+        dans le dépôt) — seul le fixture local `guildId: "simulation"` est
+        modifiable ici ; le vrai fichier de prod devra être mis à jour
+        manuellement par l'utilisateur au déploiement (hors de portée de
+        cette session).
+      - **Fait** : `GuildRegistryEntry`/`guilds.ts`/`broadcast.ts` mis à
+        jour (nouvelle fonction pure exportée `resolveTargetChannelId`),
+        5 scripts d'annonce migrés, fixture locale `data/guilds.json`
+        (gitignored) mise à jour. Tests écrits : `tests/
+        loadGuildRegistry.test.ts` (5 cas) + `tests/
+        resolveTargetChannelId.test.ts` (7 cas), net-shaking fait (bugs
+        injectés puis révertis pour confirmer que les tests détectent
+        bien les régressions). `tsc` clean, 1183/1183 tests (+12).
+        **Rappel** : le vrai `data/guilds.json` de prod (gitignored,
+        hors dépôt) devra être mis à jour manuellement avec
+        `mainChannelId` (et `devChannelId`/`loreChannelId` si souhaité)
+        au déploiement de la 3.5.0, sans quoi le bot refusera de démarrer
+        pour ce serveur (validation désormais stricte sur `mainChannelId`).
 - [ ] E1. Script de publication automatique du patchnote sur le Discord de
       chaque serveur (source : dernière entrée de `CHANGELOG.md` ou
       `PATCHNOTE.md`), réutiliser `src/scripts/lib/broadcast.ts` avec
-      `channelField: "general"`.
+      `channelField: "dev"` (mis à jour : E0 introduit un salon dev dédié,
+      remplace le `"general"` prévu initialement).
 - [ ] E2. Script de mise à jour automatique du serveur — **à investiguer
       avant de designer** : comment le bot tourne actuellement en prod
       (process manager ? service Windows/Linux ? docker ?) n'a pas encore

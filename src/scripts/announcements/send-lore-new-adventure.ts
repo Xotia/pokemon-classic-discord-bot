@@ -48,4 +48,4 @@ const embed = new EmbedBuilder()
   })
   .setTimestamp();
 
-broadcastEmbed(embed, "src/scripts/announcements/send-lore-new-adventure.ts", { channelField: "general" });
+broadcastEmbed(embed, "src/scripts/announcements/send-lore-new-adventure.ts", { channelField: "lore" });
