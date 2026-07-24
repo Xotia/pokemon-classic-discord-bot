@@ -245,39 +245,32 @@ reste en place).
       perso non versionné (`.gitignore`), absent de cette machine — hors
       de portée, rien à vérifier dessus. `tsc` clean, mêmes 5 échecs
       préexistants (B4).
-- [ ] B4. Tests préexistants cassés sur `HEAD` (repérés le 2026-07-24,
-      hors périmètre initial mais à corriger avec le reste des
-      corrections) :
-      - `tests/pitySystem.test.ts` + `tests/tryCatchPokemon.test.ts` :
-        `vi.mock("../src/utils/logger")` n'expose pas `getLoggerForGuild`
-        → `TypeError` dès que `pitySystem.ts`/`tryCatchPokemon.ts`
-        l'appelle. Ajouter le mock manquant.
-      - `tests/pitySystem.test.ts` — `resetPityCounterIfNeeded` ne remet
-        pas `player.pityCounter` à 0 pour la rareté `very_rare` (bug
-        réel dans `src/methods/pity/pitySystem.ts`, pas juste un test
-        mal écrit — à vérifier lequel des deux est faux avant de corriger).
-        Piste sérieuse trouvée en marge de A2 : `resetPityCounterIfNeeded`
-        attend `(guildId, player, rarity)` mais le test l'appelle
-        `(player, rarity)` — probablement juste un décalage d'arguments
-        côté test, pas un vrai bug de prod. À confirmer en le corrigeant.
-- [ ] B5 (ajouté le 2026-07-24, décision utilisateur : à faire en Slice
-      B/C, pas maintenant). `tests/` est listé dans `.gitignore:29` alors
-      que `tsconfig.json:24` exclut déjà `tests` de la compilation — deux
-      mécanismes différents (git tracking vs build prod), confondus par
-      erreur : le `.gitignore` ne protège rien côté prod (déjà fait par
-      `tsconfig`), il retire juste les tests du dépôt. Conséquence :
-      aucun test n'est jamais commité, donc jamais revu en PR — c'est
-      probablement comme ça que B4 a pu vivre sans être remarqué.
-      - Retirer `tests/` de `.gitignore` et committer les fichiers de
-        test existants (`tests/pitySystem.test.ts`,
-        `tests/tryCatchPokemon.test.ts`, etc.).
-      - Ajouter un script npm `"test": "vitest run"` (n'existe pas
-        actuellement, seul `npx vitest run` marche en ad-hoc).
-      - Envisager de faire tourner les tests avant `npm run build` dans
-        le "Workflow production / mise a jour" documenté dans
-        `README.md` (pas de CI/`.github/workflows` dans ce repo à ce
-        jour, donc c'est actuellement la seule porte de sécurité
-        possible avant un déploiement).
+- [x] B4 (terminé le 2026-07-24, branche `fix/pity-test-mocks` depuis
+      `release/3.5.0`). Confirmé : 2 causes racines, toutes deux dans les
+      fichiers de test, aucun bug de prod. (1) `vi.mock("../src/utils/logger")`
+      dans `tests/pitySystem.test.ts` et `tests/tryCatchPokemon.test.ts`
+      ne stubait que l'export `default`, pas l'export nommé
+      `getLoggerForGuild` → `TypeError` dès que le code testé l'appelle ;
+      mock complété. (2) Signatures d'appel obsolètes : les tests
+      appelaient `pitySystem(player)`, `resetPityCounterIfNeeded(player,
+      rarity)`, `tryCatchPokemon(player, generation, zone)` sans le
+      `guildId` que la prod exige en premier paramètre depuis le refactor
+      multi-serveur — jamais mis à jour depuis. Tests corrigés pour
+      passer un `guildId` de test. `tsc` clean, **1171/1171 tests passent
+      désormais** (contre 1166/1171 avant, 5 échecs préexistants résolus).
+- [x] B5 (terminé le 2026-07-24, même branche que B4 —
+      `fix/pity-test-mocks` — puisque B4 ne pouvait pas être committé
+      sans B5 : le fix vit dans des fichiers que git ignorait). `tests/`
+      et `tsconfig.vitest.json` retirés du `.gitignore` (le `tsconfig.json`
+      principal excluait déjà `tests` de la compilation prod — deux
+      mécanismes différents confondus par erreur, le gitignore ne
+      protégeait rien côté prod, il retirait juste les tests du dépôt).
+      Les 10 fichiers de `tests/` + `tsconfig.vitest.json` sont maintenant
+      trackés. Script npm `"test": "vitest run"` ajouté. `README.md` mis
+      à jour : `npm test` documenté dans le tableau des commandes, et
+      ajouté en première étape du "Workflow production / mise a jour"
+      (pas de CI dans ce repo à ce jour, donc c'est la seule porte de
+      sécurité avant un déploiement).
 
 ### Slice C — Rangement du repo (checkpoint de confirmation requis)
 - [ ] C0. Gitignore des fichiers `data/` dont le serveur n'a pas besoin en

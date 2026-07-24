@@ -25,10 +25,6 @@ Thumbs.db
 # Backups
 backups/
 
-# Tests
-tests/
-tsconfig.vitest.json
-
 # Scripts one-shot (migration, build data, etc.)
 src/scripts/send-lore.ts
 
