@@ -323,11 +323,26 @@ reste en place).
       A3 (tout passe par `getPokemonCatalog()`), seulement par 2 outils
       dev (`check-pokemon-images.js`, supprimé ; `test-raid-pokemon.ts`,
       gardé).
-- [ ] C2. Réorganiser le reste de `src/scripts/` en sous-dossiers par
-      domaine (ex. `rarity/`, `zones/`, `gen-json/`, `player-maintenance/`,
-      `raid-tools/`, `announcements/`, `fetch/`), en miroir de la convention
-      déjà utilisée dans `src/methods/`. Mettre à jour les imports relatifs
-      et toute référence dans `package.json` (scripts npm).
+- [x] C2 (terminé le 2026-07-24, branche `chore/reorganize-scripts`
+      depuis `release/3.5.0`). 40 fichiers déplacés de `src/scripts/`
+      (plat) vers 7 sous-dossiers par domaine : `announcements/` (+
+      `lib/broadcast.ts`), `fetch/`, `gen-json/`, `player-maintenance/`,
+      `raid-tools/`, `rarity/`, `zones/` — miroir de la convention déjà
+      utilisée dans `src/methods/`. Tous les imports relatifs internes
+      (entre scripts déplacés, vers `config/`/`types/`/`methods/`/`utils/`/
+      `features/`, vers `data/*.json` via `__dirname`) retracés et corrigés
+      pour la nouvelle profondeur. `package.json` (12 scripts npm),
+      `tsconfig.json` (`exclude`, 6 chemins), `README.md` ("Scripts
+      d'annonce ponctuelle" + "Structure du projet") mis à jour. Vérifié
+      indépendamment : `tsc --noEmit` clean, 1171/1171 tests passent,
+      aucune référence résiduelle aux anciens chemins plats trouvée par
+      grep dans le code (seuls `PROGRAM.md`/`REFACTOR_MULTI_GUILD.md`
+      mentionnent encore d'anciens chemins, dans du texte historique —
+      pas corrigé, hors scope).
+      Découverte annexe pré-existante, non corrigée (hors scope, exclue
+      du build TS donc jamais détectée avant) : `raid-tools/test-raid-
+      pokemon.ts` importe `from "./logger"`, un fichier qui n'a jamais
+      existé à cet emplacement.
 - [ ] C3. Retirer `GENERATION_NUMBER` : `.env`, `.env.example`, section
       "Variables d'environnement" de `README.md`,
       `src/types/GuildRegistryEntry.ts:15` (`generationNumber?`),
