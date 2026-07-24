@@ -273,7 +273,7 @@ reste en place).
       sécurité avant un déploiement).
 
 ### Slice C — Rangement du repo (checkpoint de confirmation requis)
-- [ ] C0. Gitignore des fichiers `data/` dont le serveur n'a pas besoin en
+- [x] C0 (terminé, fait au fil de A1/A4). Gitignore des fichiers `data/` dont le serveur n'a pas besoin en
       prod (le bot ne les lit jamais au runtime, ce sont des
       entrées/sorties d'outils dev) : `data/gen3_zones.csv` (source CSV de
       `injectZonesGen3.ts`), `data/gen3.csv` (orphelin, aucune référence
@@ -292,16 +292,37 @@ reste en place).
       de PR (ex. `rarity-comparison-gen3.csv` servait de preuve de
       cohérence pour A4) — accepté comme compromis, le critère demandé est
       "ce dont le serveur n'a pas besoin", pas la review.
-- [ ] C1. Lister précisément les scripts "perso dev-only" à retirer de git
-      (candidats forts identifiés : `src/scripts/editJson.ts` (chemins
-      Windows en dur), tout `src/scripts/old/` (JS legacy pré-TS),
-      `debug-lines.ts`, `filter-captures.ts`, `testGetMultiplier.ts`).
-      Cas à trancher avec l'utilisateur avant suppression : `testRarity.ts`,
-      `compareRarityWithManual.ts`, `runRarityAudit.ts` (outils de QA
-      rareté potentiellement réutiles pour valider gen1/2 en Slice A —
-      probablement à garder), scripts d'annonce ponctuelle (perso ou
-      opérationnels ? probablement à garder, ce sont des outils prod).
-      **Ne pas supprimer sans validation explicite de la liste finale.**
+- [x] C1 (terminé le 2026-07-24, branche `chore/remove-personal-dev-scripts`
+      depuis `release/3.5.0`). Liste finale validée explicitement par
+      l'utilisateur, 14 fichiers supprimés : `src/scripts/old/` (3
+      fichiers JS/TS legacy pré-TS), `editJson.ts` (chemins Windows en
+      dur, référençait un fichier inexistant), `debug-lines.ts` +
+      `filter-captures.ts` + `stats-pokemon.ts` (pipeline perso d'analyse
+      de logs texte exportés à la main, sans rapport avec le bot — le
+      vrai système de stats vit dans `src/methods/stats/`),
+      `testGetMultiplier.ts` (smoke-test d'une ligne), `add-pity-to-
+      players.ts` (chemin relatif cassé, migration obsolète, ne suivait
+      pas la convention `--guildId`), `add-generation-to-pokemon.ts`
+      (obsolète — le champ `generation` est ajouté automatiquement en
+      amont par `buildPokemonJson.ts` pour chaque génération),
+      `getPlayerAvatar.ts` (code mort, zéro import ailleurs dans le
+      repo — vérifié), `src/utils/check-pokemon-images.js` +
+      `createGenJson.js` + `editGenJson.js` (JS legacy mal rangé hors de
+      `scripts/old/`, doublons morts). Vérifié avant suppression : aucun
+      import de ces fichiers nulle part dans `src/`, aucune référence
+      dans `package.json`. `tsconfig.json` nettoyé (retrait des entrées
+      `exclude` pointant vers des fichiers supprimés). Gardés (outillage
+      légitime, pas "perso uniquement") : toute la chaîne rareté/zones/
+      effectiveness, les scripts de maintenance joueurs `--guildId`, les
+      scripts d'annonce, `forceEndRaid.ts`, les outils QA/simulation.
+      `tsc` clean, 1171/1171 tests passent.
+      Découverte annexe, non bloquante, non traitée : `scripts/generate-
+      pokemon-list.js` (utilisé par `npm run build`) ne liste que
+      gen1/gen2 par défaut, pas gen3 — sans impact prod car
+      `pokemon-list.json` n'est plus consommé par le bot en prod depuis
+      A3 (tout passe par `getPokemonCatalog()`), seulement par 2 outils
+      dev (`check-pokemon-images.js`, supprimé ; `test-raid-pokemon.ts`,
+      gardé).
 - [ ] C2. Réorganiser le reste de `src/scripts/` en sous-dossiers par
       domaine (ex. `rarity/`, `zones/`, `gen-json/`, `player-maintenance/`,
       `raid-tools/`, `announcements/`, `fetch/`), en miroir de la convention
