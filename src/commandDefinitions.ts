@@ -56,6 +56,7 @@ export const commands = [
         .addChoices(
           { name: "Kanto (Generation 1)", value: "gen1" },
           { name: "Johto (Generation 2)", value: "gen2" },
+          { name: "Hoenn (Generation 3)", value: "gen3" },
         ),
     )
     .addStringOption((option) =>

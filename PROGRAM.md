@@ -360,17 +360,38 @@ reste en place).
       du build TS donc jamais détectée avant) : `raid-tools/test-raid-
       pokemon.ts` importe `from "./logger"`, un fichier qui n'a jamais
       existé à cet emplacement.
-- [ ] C3. Retirer `GENERATION_NUMBER` : `.env`, `.env.example`, section
-      "Variables d'environnement" de `README.md`,
-      `src/types/GuildRegistryEntry.ts:15` (`generationNumber?`),
-      `src/config/guildSettings.ts:43-47`, et les 2 sites consommateurs
-      (`src/features/raid/raidGenerator.service.ts:90-91,220-221,246`,
-      `src/scripts/simulateCapture.ts:133,139`). Vérifier au préalable
-      qu'aucun flux ne dépend encore de cette valeur par défaut (le
-      `/capture [generation]` en prend déjà un en paramètre explicite par
-      commande d'après le README) — passer par `implementer`, mais si un
-      doute d'architecture apparaît (flux encore dépendant), remonter à
-      `risk-lead`.
+- [x] C3 (terminé le 2026-07-24, branche
+      `chore/remove-generation-number-env` depuis `release/3.5.0`).
+      **Pivot complet par rapport au plan initial** — la demande de
+      départ ("retirer `GENERATION_NUMBER`, ça ne sert à rien") s'est
+      révélée fausse à la vérification : la variable est activement
+      utilisée par `src/config/guildSettings.ts:42-51`
+      (`getGenerationNumber`) → `src/methods/zones/getMaxGeneration.ts`
+      → `src/methods/zones/resolveCaptureLocation.ts:42`, qui plafonne le
+      tirage aléatoire de génération sur `/capture` (sans génération ni
+      zone précisée) à `1..GENERATION_NUMBER`. Avec `GENERATION_NUMBER=2`,
+      gen3 était donc silencieusement exclu du tirage aléatoire.
+      En creusant, **2 autres trous gen3 indépendants trouvés** dans le
+      même flux : le dropdown `generation` de `/capture`
+      (`src/commandDefinitions.ts`) ne listait que Kanto/Johto (pas de
+      choix Hoenn), et `src/features/raid/raidGenerator.service.ts:220`
+      avait `randomInt(1, 2)` codé en dur pour la génération de raid,
+      totalement indépendant de `GENERATION_NUMBER`.
+      **Décision finale (utilisateur)** : garder `GENERATION_NUMBER`
+      (bumpé `2` → `3` dans `.env`, `.env.example`, `README.md`) plutôt
+      que le retirer, et corriger les 3 trous ensemble :
+      - `commandDefinitions.ts` : ajout de `{ name: "Hoenn (Generation 3)",
+        value: "gen3" }` au dropdown `/capture`.
+      - `raidGenerator.service.ts` : `type GenerationKey` élargi à
+        `"gen1" | "gen2" | "gen3"` ; `randomInt(1, 2)` remplacé par
+        `randomInt(1, getGenerationNumber(guildId))` (import ajouté
+        depuis `guildSettings.ts`, cohérent avec le pattern déjà utilisé
+        par `resolveCaptureLocation.ts` — respecte les surcharges
+        `generationNumber` par serveur au lieu de lire `process.env`
+        directement, contrairement à la suggestion initiale de
+        l'utilisateur, corrigée en cours de route).
+      `tsc` clean, 1171/1171 tests passent (aucun test ne dépendait du
+      plafond gen1-2 codé en dur).
 - [ ] C4. `src/scripts/addXpAndLevelToPlayers.ts:4-9` définit un type
       `Player` local dupliqué et plus permissif que le vrai
       `src/types/Player.ts`. Supprimer le type local, importer
