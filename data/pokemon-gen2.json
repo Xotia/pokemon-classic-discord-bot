@@ -442,7 +442,7 @@
   {
     "id": 162,
     "name": "Fouinar",
-    "rarity": "uncommon",
+    "rarity": "rare",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/furret.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/furret.gif",
     "originalName": "furret",
@@ -477,7 +477,7 @@
   {
     "id": 163,
     "name": "Hoothoot",
-    "rarity": "uncommon",
+    "rarity": "common",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/hoothoot.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/hoothoot.gif",
     "originalName": "hoothoot",
@@ -523,7 +523,7 @@
   {
     "id": 164,
     "name": "Noarfang",
-    "rarity": "rare",
+    "rarity": "uncommon",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/noctowl.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/noctowl.gif",
     "originalName": "noctowl",
@@ -623,7 +623,7 @@
   {
     "id": 166,
     "name": "Coxyclaque",
-    "rarity": "uncommon",
+    "rarity": "very_rare",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/ledian.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/ledian.gif",
     "originalName": "ledian",
@@ -676,7 +676,7 @@
   {
     "id": 167,
     "name": "Mimigal",
-    "rarity": "uncommon",
+    "rarity": "common",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/spinarak.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/spinarak.gif",
     "originalName": "spinarak",
@@ -729,7 +729,7 @@
   {
     "id": 168,
     "name": "Migalos",
-    "rarity": "rare",
+    "rarity": "very_rare",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/ariados.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/ariados.gif",
     "originalName": "ariados",
@@ -879,7 +879,7 @@
   {
     "id": 171,
     "name": "Lanturn",
-    "rarity": "rare",
+    "rarity": "very_rare",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/lanturn.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/lanturn.gif",
     "originalName": "lanturn",
@@ -926,7 +926,7 @@
   {
     "id": 172,
     "name": "Pichu",
-    "rarity": "very_rare",
+    "rarity": "epic",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/pichu.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/pichu.gif",
     "originalName": "pichu",
@@ -1143,7 +1143,7 @@
   {
     "id": 177,
     "name": "Natu",
-    "rarity": "uncommon",
+    "rarity": "common",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/natu.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/natu.gif",
     "originalName": "natu",
@@ -1281,7 +1281,7 @@
   {
     "id": 180,
     "name": "Lainergie",
-    "rarity": "rare",
+    "rarity": "uncommon",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/flaaffy.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/flaaffy.gif",
     "originalName": "flaaffy",
@@ -1361,7 +1361,7 @@
   {
     "id": 182,
     "name": "Joliflor",
-    "rarity": "uncommon",
+    "rarity": "very_rare",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/bellossom.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/bellossom.gif",
     "originalName": "bellossom",
@@ -1409,7 +1409,7 @@
   {
     "id": 183,
     "name": "Marill",
-    "rarity": "common",
+    "rarity": "uncommon",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/marill.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/marill.gif",
     "originalName": "marill",
@@ -1652,7 +1652,7 @@
   {
     "id": 188,
     "name": "Floravol",
-    "rarity": "uncommon",
+    "rarity": "rare",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/skiploom.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/skiploom.gif",
     "originalName": "skiploom",
@@ -1706,7 +1706,7 @@
   {
     "id": 189,
     "name": "Cotovol",
-    "rarity": "rare",
+    "rarity": "epic",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/jumpluff.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/jumpluff.gif",
     "originalName": "jumpluff",
@@ -1760,7 +1760,7 @@
   {
     "id": 190,
     "name": "Capumain",
-    "rarity": "uncommon",
+    "rarity": "common",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/aipom.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/aipom.gif",
     "originalName": "aipom",
@@ -1796,7 +1796,7 @@
   {
     "id": 191,
     "name": "Tournegrin",
-    "rarity": "common",
+    "rarity": "uncommon",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/sunkern.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/sunkern.gif",
     "originalName": "sunkern",
@@ -1845,7 +1845,7 @@
   {
     "id": 192,
     "name": "Héliatronc",
-    "rarity": "uncommon",
+    "rarity": "very_rare",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/sunflora.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/sunflora.gif",
     "originalName": "sunflora",
@@ -1894,7 +1894,7 @@
   {
     "id": 193,
     "name": "Yanma",
-    "rarity": "uncommon",
+    "rarity": "common",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/yanma.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/yanma.gif",
     "originalName": "yanma",
@@ -1995,7 +1995,7 @@
   {
     "id": 195,
     "name": "Maraiste",
-    "rarity": "rare",
+    "rarity": "uncommon",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/quagsire.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/quagsire.gif",
     "originalName": "quagsire",
@@ -2231,7 +2231,7 @@
   {
     "id": 200,
     "name": "Feuforêve",
-    "rarity": "rare",
+    "rarity": "uncommon",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/misdreavus.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/misdreavus.gif",
     "originalName": "misdreavus",
@@ -2270,7 +2270,7 @@
   {
     "id": 201,
     "name": "Zarbi",
-    "rarity": "unknown",
+    "rarity": "common",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/unown.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/unown.gif",
     "originalName": "unown",
@@ -2676,7 +2676,7 @@
   {
     "id": 210,
     "name": "Granbull",
-    "rarity": "rare",
+    "rarity": "epic",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/granbull.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/granbull.gif",
     "originalName": "granbull",
@@ -2718,7 +2718,7 @@
   {
     "id": 211,
     "name": "Qwilfish",
-    "rarity": "common",
+    "rarity": "uncommon",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/qwilfish.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/qwilfish.gif",
     "originalName": "qwilfish",
@@ -2770,7 +2770,7 @@
   {
     "id": 212,
     "name": "Cizayox",
-    "rarity": "epic",
+    "rarity": "mythic",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/scizor.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/scizor.gif",
     "originalName": "scizor",
@@ -2829,7 +2829,7 @@
   {
     "id": 213,
     "name": "Caratroc",
-    "rarity": "uncommon",
+    "rarity": "very_rare",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/shuckle.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/shuckle.gif",
     "originalName": "shuckle",
@@ -2939,7 +2939,7 @@
   {
     "id": 215,
     "name": "Farfuret",
-    "rarity": "uncommon",
+    "rarity": "rare",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/sneasel.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/sneasel.gif",
     "originalName": "sneasel",
@@ -2993,7 +2993,7 @@
   {
     "id": 216,
     "name": "Teddiursa",
-    "rarity": "uncommon",
+    "rarity": "very_rare",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/teddiursa.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/teddiursa.gif",
     "originalName": "teddiursa",
@@ -3318,7 +3318,7 @@
   {
     "id": 223,
     "name": "Rémoraid",
-    "rarity": "common",
+    "rarity": "uncommon",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/remoraid.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/remoraid.gif",
     "originalName": "remoraid",
@@ -3451,7 +3451,7 @@
   {
     "id": 226,
     "name": "Démanta",
-    "rarity": "rare",
+    "rarity": "epic",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/mantine.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/mantine.gif",
     "originalName": "mantine",
@@ -3556,7 +3556,7 @@
   {
     "id": 228,
     "name": "Malosse",
-    "rarity": "uncommon",
+    "rarity": "rare",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/houndour.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/houndour.gif",
     "originalName": "houndour",
@@ -3612,7 +3612,7 @@
   {
     "id": 229,
     "name": "Démolosse",
-    "rarity": "rare",
+    "rarity": "very_rare",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/houndoom.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/houndoom.gif",
     "originalName": "houndoom",
@@ -3713,7 +3713,7 @@
   {
     "id": 231,
     "name": "Phanpy",
-    "rarity": "common",
+    "rarity": "rare",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/phanpy.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/phanpy.gif",
     "originalName": "phanpy",
@@ -3801,7 +3801,7 @@
   {
     "id": 233,
     "name": "Porygon2",
-    "rarity": "epic",
+    "rarity": "mythic",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/porygon2.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/porygon2.gif",
     "originalName": "porygon2",
@@ -3835,7 +3835,7 @@
   {
     "id": 234,
     "name": "Cerfrousse",
-    "rarity": "common",
+    "rarity": "uncommon",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/stantler.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/stantler.gif",
     "originalName": "stantler",
@@ -3869,7 +3869,7 @@
   {
     "id": 235,
     "name": "Queulorior",
-    "rarity": "rare",
+    "rarity": "uncommon",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/smeargle.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/smeargle.gif",
     "originalName": "smeargle",
@@ -3904,7 +3904,7 @@
   {
     "id": 236,
     "name": "Debugant",
-    "rarity": "rare",
+    "rarity": "epic",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/tyrogue.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/tyrogue.gif",
     "originalName": "tyrogue",
@@ -3951,7 +3951,7 @@
   {
     "id": 237,
     "name": "Kapoera",
-    "rarity": "very_rare",
+    "rarity": "ultra_rare",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/hitmontop.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/hitmontop.gif",
     "originalName": "hitmontop",
@@ -3998,7 +3998,7 @@
   {
     "id": 238,
     "name": "Lippouti",
-    "rarity": "rare",
+    "rarity": "epic",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/smoochum.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/smoochum.gif",
     "originalName": "smoochum",
@@ -4049,7 +4049,7 @@
   {
     "id": 239,
     "name": "Élekid",
-    "rarity": "rare",
+    "rarity": "epic",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/elekid.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/elekid.gif",
     "originalName": "elekid",
@@ -4089,7 +4089,7 @@
   {
     "id": 240,
     "name": "Magby",
-    "rarity": "rare",
+    "rarity": "epic",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/magby.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/magby.gif",
     "originalName": "magby",
@@ -4135,7 +4135,7 @@
   {
     "id": 241,
     "name": "Écrémeuh",
-    "rarity": "common",
+    "rarity": "rare",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/miltank.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/miltank.gif",
     "originalName": "miltank",
@@ -4455,7 +4455,7 @@
   {
     "id": 248,
     "name": "Tyranocif",
-    "rarity": "epic",
+    "rarity": "mythic",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/tyranitar.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/tyranitar.gif",
     "originalName": "tyranitar",
