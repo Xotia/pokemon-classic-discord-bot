@@ -630,12 +630,12 @@ reste en place).
       `channelField: "dev"` (mis à jour : E0 introduit un salon dev dédié,
       remplace le `"general"` prévu initialement).
       → `src/scripts/announcements/send-patchnote.ts`, npm run `send-patchnote`.
-- [ ] E2. Script de mise à jour automatique du serveur — **à investiguer
-      avant de designer** : comment le bot tourne actuellement en prod
-      (process manager ? service Windows/Linux ? docker ?) n'a pas encore
-      été identifié dans cette session. Premier pas : clarifier ça avec
-      l'utilisateur ou auditer le serveur de prod avant d'écrire le script
-      (git pull / npm install / build / restart doit s'adapter au run réel).
+- [x] E2. Script de mise à jour automatique du serveur.
+      → `src/scripts/get-last-update.ts`, npm run `get-last-update`.
+      Bot tourne via `screen` + `npm start` (node brut). Variable `BOT_SCREEN_SESSION`
+      dans le .env. Flow : send-maintenance → Ctrl+C screen → git pull →
+      build/deploy → npm start dans screen → hardcopy check (10 s) →
+      send-back-online → send-patchnote.
 
 ### Slice F — Événement lunaire
 - [ ] F1. **Spec à clarifier avec l'utilisateur avant tout design** : nature
