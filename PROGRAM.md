@@ -110,15 +110,68 @@ reste en place).
       tests unitaires qui y vivent (dont `pitySystem.test.ts`,
       `tryCatchPokemon.test.ts` visés par B4) ne sont donc jamais commités.
       Probablement une règle gitignore trop large/accidentelle plutôt
-      qu'un choix voulu — à confirmer avec l'utilisateur avant d'y toucher.
-      Ajouter la valeur dans `RARITY_ORDER` / `rarityList` /
-      `rarityBoostedList` (`src/config/rarity.ts`).
-- [ ] A4. Généraliser `createGenJson.ts` (utilise encore l'ancien
-      `getRarity.ts`) ou réutiliser `createGen3Json.ts` comme modèle pour
-      régénérer `data/pokemon-gen1.json` et `data/pokemon-gen2.json` avec
-      `computeRarity` + la nouvelle règle "itinérant". Comparer avant/après
-      avec `compareRarityWithManual.ts` (déjà le bon outil pour ça) avant de
-      valider le diff.
+      qu'un choix voulu — à confirmer avec l'utilisateur avant d'y toucher
+      (ajouté comme B5 ci-dessous, décision utilisateur : pas maintenant).
+- [x] A4 (terminé le 2026-07-24, branche `feat/regenerate-gen1-gen2-rarity`
+      depuis `release/3.5.0`).
+      - `GEN1_VERSIONS`/`GEN2_VERSIONS` ajoutés dans `rarityScoring.ts`
+        (extrapolation raisonnée du pattern `GEN3_VERSIONS` existant :
+        trilogie d'origine + remakes directs de la même génération —
+        red/blue/yellow/firered/leafgreen et
+        gold/silver/crystal/heartgold/soulsilver. Choix nouveau, pas
+        copié d'un pattern existant, à valider via le CSV).
+      - `src/scripts/runRarityAuditGen1Gen2.ts` (nouveau) : audite les 251
+        ids gen1+gen2 via `computeRarity`, écrit
+        `data/rarity-audit-gen1-gen2.json`. Exécuté pour de vrai (pas
+        juste smoke-testé) : `npm run audit-gen1-gen2`.
+      - `src/scripts/compareRarityGen1Gen2WithProd.ts` (nouveau) : compare
+        directement contre `data/pokemon-gen1.json`/`gen2.json` actuels
+        (pas de CSV manuel externe comme pour gen3), exclut les 4 ids à
+        override manuel (151/243/244/245, déjà `legendary_wandering` —
+        comparer contre l'output brut de `computeRarity` serait toujours
+        un faux diff pour eux). Écrit
+        `data/rarity-comparison-gen1-gen2.csv`. Exécuté : `npm run
+        compare-gen1-gen2`.
+      - **Résultat** : 247 comparés, 89 identiques, **158 différents**
+        (~64%) — recalibrage important, pas juste des ajustements
+        mineurs. Plus gros écarts : Zarbi (unknown→common, -9 — `unknown`
+        était une valeur de repli dans l'ancien système, pas une vraie
+        évaluation, donc ce chiffre trompe sur l'ampleur réelle),
+        Métamorph (ultra_rare→common, -5), Flagadoss/Leveinard/
+        Kangourex/Ronflex/Simularbre/Scarhino (-3 chacun). Beaucoup de
+        ±1/±2 sur des évolutions dont le score hérite désormais du
+        parent (`priority:no_encounters_inherits_parent`), cohérent avec
+        le moteur, pas une anomalie.
+      - CSV envoyé à l'utilisateur pour relecture manuelle avant toute
+        application (décision explicite : ni tout appliquer, ni
+        appliquer seulement les petits écarts — relecture complète
+        d'abord).
+      - `data/rarity-audit-gen1-gen2.json` et
+        `data/rarity-comparison-gen1-gen2.csv` ajoutés au `.gitignore`
+        (mêmes règles que leurs équivalents gen3 en C0).
+      - Relecture manuelle complète des 158 lignes par l'utilisateur,
+        décisions consignées dans `data/gen1_2_rarity_change.csv` (id,
+        name, computed = décision finale — parfois la suggestion du
+        moteur, parfois l'ancienne valeur gardée, parfois une troisième
+        valeur choisie à la main).
+      - `src/scripts/applyGen1Gen2RarityChanges.ts` (nouveau, idempotent,
+        `npm run apply-gen1-gen2-rarity-changes`) : applique ces 158
+        décisions à `pokemon-gen1.json`/`gen2.json`, et génère en même
+        temps le changelog joueurs `data/rarity-changelog-gen1-gen2.csv`
+        (id, name, oldRarity/oldRarityLabel, newRarity/newRarityLabel —
+        FR via `rarityList`), trié par id, **seulement les lignes où la
+        rareté a réellement changé** (les décisions "je garde l'ancienne"
+        n'y apparaissent pas).
+      - **Résultat final** : sur les 158 décisions, **119 changements
+        réels** appliqués (77 en gen1, 42 en gen2), 39 no-ops (retour
+        volontaire à la valeur actuelle). Vérifié indépendamment (diff
+        champ par champ ancien/nouveau JSON vs contenu du changelog) :
+        correspondance exacte, aucun autre champ touché, aucune ligne en
+        trop ou manquante. `tsc` clean, mêmes 5 échecs de tests
+        préexistants (B4), aucune régression.
+      - **Reste à faire** : merger `feat/regenerate-gen1-gen2-rarity` dans
+        `release/3.5.0`, et décider si `data/rarity-changelog-gen1-gen2.csv`
+        sert de base au patchnote joueurs de la release 3.5.0 (Slice E1/H1).
 
 ### Slice B — Corrections de bugs (indépendantes entre elles)
 - [ ] B1. `data/all_types.json:195-212` — le tableau `fire.defense.double`

@@ -25,6 +25,28 @@ export const GEN3_VERSIONS = new Set([
   "alpha-sapphire",
 ]);
 
+// Gen 1 game versions (Red/Blue/Yellow + the direct Gen-3-era remakes
+// FireRed/LeafGreen): used to scope encounter data down to games actually
+// relevant to the Kanto dex, instead of PokéAPI's all-generations aggregate.
+export const GEN1_VERSIONS = new Set([
+  "red",
+  "blue",
+  "yellow",
+  "firered",
+  "leafgreen",
+]);
+
+// Gen 2 game versions (Gold/Silver/Crystal + the direct Gen-4-era remakes
+// HeartGold/SoulSilver): used to scope encounter data down to games actually
+// relevant to the Johto dex, instead of PokéAPI's all-generations aggregate.
+export const GEN2_VERSIONS = new Set([
+  "gold",
+  "silver",
+  "crystal",
+  "heartgold",
+  "soulsilver",
+]);
+
 /**
  * Filters raw PokéAPI encounter entries down to only the given game
  * versions. Location-area entries whose `version_details` are entirely

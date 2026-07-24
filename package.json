@@ -18,7 +18,10 @@
     "generate-gen3": "npx ts-node src/scripts/createGen3Json.ts",
     "inject-zones-gen3": "npx ts-node src/scripts/injectZonesGen3.ts",
     "simulate-gen3-zones": "npx ts-node src/scripts/simulateGen3Zones.ts",
-    "apply-wandering-legendaries": "npx ts-node src/scripts/applyWanderingLegendaries.ts"
+    "apply-wandering-legendaries": "npx ts-node src/scripts/applyWanderingLegendaries.ts",
+    "audit-gen1-gen2": "npx ts-node src/scripts/runRarityAuditGen1Gen2.ts",
+    "compare-gen1-gen2": "npx ts-node src/scripts/compareRarityGen1Gen2WithProd.ts",
+    "apply-gen1-gen2-rarity-changes": "npx ts-node src/scripts/applyGen1Gen2RarityChanges.ts"
   },
   "keywords": [],
   "author": "",
