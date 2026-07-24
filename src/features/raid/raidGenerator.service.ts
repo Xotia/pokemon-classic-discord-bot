@@ -221,10 +221,13 @@ export async function generateRaidState(guildId: string): Promise<RaidState> {
   const generationKey = toGenerationKey(generationNumber);
 
   const zone = pickRaidZone(generationKey, unlockDb, availableZonesDb, guildId);
-  const pokemonsInZone = getPokemonsForZone(zone.id, pokemonDb);
+  const allPokemonsInZone = getPokemonsForZone(zone.id, pokemonDb);
+  const pokemonsInZone = allPokemonsInZone.filter(
+    (p) => p.rarity !== 'legendary' && p.rarity !== 'legendary_wandering',
+  );
 
   if (pokemonsInZone.length === 0) {
-    throw new Error(`Aucun Pokémon trouvé pour la zone ${zone.id}.`);
+    throw new Error(`Aucun Pokémon non-légendaire trouvé pour la zone ${zone.id}.`);
   }
 
   const selectedPokemon = pickRandom(pokemonsInZone);

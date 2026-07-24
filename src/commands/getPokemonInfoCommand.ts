@@ -46,6 +46,7 @@ export async function getPokemonInfoCommand(interaction: ChatInputCommandInterac
   const embed = new EmbedBuilder()
     .setTitle(`#${pokemon.id} ${pokemon.name}`)
     .setColor(rarityData?.color ?? DEFAULT_EMBED_COLOR)
+    .setThumbnail(pokemon.image)
     .addFields(
       {
         name: "Nom anglais",

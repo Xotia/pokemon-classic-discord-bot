@@ -1,3 +1,15 @@
+# Mise à jour 3.5.1 — Correctif raids
+
+---
+
+## Les légendaires ne s'attaquent plus aux raids
+
+Les Pokémon **Légendaires** et **Légendaires itinérants** ne peuvent plus apparaître comme Pokémon enragé lors d'un raid. Ils restaient capturables et rencontrables dans les zones, mais leur présence comme boss de raid n'était pas intentionnelle.
+
+---
+
+---
+
 # Mise à jour 3.5.0 — Hoenn, Données de Recherche & surprises à venir
 
 ---

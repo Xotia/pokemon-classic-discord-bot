@@ -72,7 +72,7 @@ export const commands = [
   new SlashCommandBuilder()
     .setName("capture-cible")
     .setDescription(
-      "Capture garantie d'un Pokémon d'une rareté précise dans une zone donnée, contre des données de recherche.",
+      "Capture garantie d'un Pokémon d'une rareté précise dans une zone, contre des données de recherche.",
     )
     .addStringOption((option) =>
       option

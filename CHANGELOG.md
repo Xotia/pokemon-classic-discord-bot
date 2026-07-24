@@ -3,6 +3,19 @@
 Tous les changements notables du **Pokémon Classic Discord Bot** sont documentés ici.  
 Format basé sur [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+# [3.5.1] - 2026-07-24
+
+## Corrections
+
+### Raids — exclusion des légendaires du pool de boss
+- Les Pokémon de rareté `legendary` et `legendary_wandering` sont désormais exclus du tirage du Pokémon enragé lors de la génération d'un raid.
+- Avant ce correctif, un légendaire présent dans la zone pouvait être sélectionné comme boss de raid.
+
+## Modifications
+- Numéro de version : 3.5.0 → 3.5.1.
+
+---
+
 # [3.5.0] - 2026-07-24
 
 ## Ajouts

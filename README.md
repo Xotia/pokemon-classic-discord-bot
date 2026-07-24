@@ -7,6 +7,8 @@ Bot Discord de type gacha Pokemon en TypeScript. Les joueurs capturent des Pokem
 | Commande | Description |
 |---|---|
 | `/capture [generation] [zone]` | Capture un Pokemon aleatoire dans une zone |
+| `/capture-cible <zone> <rarete>` | Cible une zone et une rarete precises en echange de donnees de recherche |
+| `/get-pokemon-info <pokemon>` | Affiche rarete, types, faiblesses en defense et stats d'un Pokemon |
 | `/raid <pokemon> [type]` | Inscrit un Pokemon pour defendre le centre de recherche lors du raid |
 | `/pokedex` | Affiche ton Pokedex pagine avec progression et saison |
 | `/leaderboard` | Classement des joueurs, top shiny, top level, top raids et top Pokemon |
@@ -31,16 +33,48 @@ npm run start
 
 ## Commandes NPM
 
+### Core
+
 | Commande | Usage |
 |---|---|
 | `npm run dev` | Lance le bot avec `ts-node` (developpement) |
 | `npm run generate-pokemon-list` | Genere `pokemon-list.json` a partir des fichiers source |
 | `npm test` | Lance la suite de tests (vitest) |
 | `npm run build` | Genere la liste Pokemon + compile le TypeScript dans `dist/` |
+| `npm run start` | Lance le bot compile (production) |
 | `npm run deploy` | Enregistre les commandes slash globalement aupres de Discord (propagation ~1h) |
 | `npm run deploy:dev` | Enregistre les commandes slash en guild-scoped sur les serveurs de `data/guilds.json` (propagation instantanee, pratique en dev/test) |
 | `npm run deploy:dev:clear` | Supprime les commandes guild-scoped (a faire une fois que le deploiement global a propage, pour eviter les doublons dans le picker Discord) |
-| `npm run start` | Lance le bot compile (production) |
+| `npm run get-last-update` | Affiche la date de la derniere mise a jour deployee |
+| `npm run send-patchnote` | Envoie la derniere entree de `PATCHNOTE.md` en embed sur les salons dev de chaque serveur |
+
+### Simulation et QA
+
+| Commande | Usage |
+|---|---|
+| `npm run simulate:capture` | Simule des captures dans les zones (distribution rarete/zone) |
+| `npm run test:rarity` | Teste la distribution de rarete sur un grand echantillon |
+| `npm run compare:rarity` | Compare la rarete calculee avec les valeurs manuelles de reference |
+| `npm run force-end-raid` | Force la fin du raid en cours (utile en debug ou incident prod) |
+
+### Generation de donnees
+
+| Commande | Usage |
+|---|---|
+| `npm run generate-gen3` | Genere `pokemon-gen3.json` depuis PokeAPI |
+| `npm run inject-zones-gen3` | Injecte les zones Gen 3 dans les fichiers de donnees |
+| `npm run simulate-gen3-zones` | Simule la distribution de captures dans les zones Gen 3 |
+| `npm run regenerate-effectiveness` | Recalcule les multiplicateurs d'efficacite de types pour tous les Pokemon |
+| `npm run init-research-data` | Initialise les donnees de recherche manquantes pour les joueurs existants |
+
+### Audit et application de rarete
+
+| Commande | Usage |
+|---|---|
+| `npm run audit-gen1-gen2` | Audit la rarete de tous les Pokemon Gen 1 et Gen 2 |
+| `npm run compare-gen1-gen2` | Compare la rarete Gen 1/Gen 2 avec les valeurs en production |
+| `npm run apply-gen1-gen2-rarity-changes` | Applique les changements de rarete issus de l'audit Gen 1/Gen 2 |
+| `npm run apply-wandering-legendaries` | Applique la configuration des legendaires errants |
 
 ### Workflow developpement
 ```bash
@@ -87,15 +121,24 @@ RAID_END_HOUR=00 20 * * *
 ```
 
 Le bot est multi-serveurs : chaque serveur Discord est declare dans
-`data/guilds.json` (`guildId`, `name`, `raidAnnounceChannelId`), maintenu a
-la main. Ce fichier n'est **pas commit** (il contient des `guildId` reels,
-voir `.gitignore`) : partir de `data/guilds.json.example`, le copier en
-`data/guilds.json` et le remplir avec vos propres serveurs. Les fichiers de
-donnees (`players.json`, `stats.json`, zones, `raid.json`) sont crees
-automatiquement par serveur dans `data/guilds/{guildId}/` au demarrage du
-bot, et les logs applicatifs dans `logs/guilds/{guildId}/bot.log` (les
-evenements sans contexte serveur, comme le demarrage du bot, restent dans
-`logs/bot.log`).
+`data/guilds.json`, maintenu a la main. Ce fichier n'est **pas commit**
+(il contient des `guildId` reels, voir `.gitignore`) : partir de
+`data/guilds.json.example`, le copier en `data/guilds.json` et le remplir
+avec vos propres serveurs. Les fichiers de donnees (`players.json`,
+`stats.json`, zones, `raid.json`) sont crees automatiquement par serveur
+dans `data/guilds/{guildId}/` au demarrage du bot, et les logs applicatifs
+dans `logs/guilds/{guildId}/bot.log` (les evenements sans contexte serveur,
+comme le demarrage du bot, restent dans `logs/bot.log`).
+
+Champs requis par entree dans `guilds.json` :
+- `guildId` — ID du serveur Discord
+- `name` — nom lisible (logs)
+- `raidAnnounceChannelId` — salon d'annonce de raid
+- `mainChannelId` — salon principal (jeu, maintenance, fallback)
+
+Champs optionnels :
+- `devChannelId` — salon changelog/patchnotes (repli sur `mainChannelId`)
+- `loreChannelId` — salon evenements/lore (repli sur `mainChannelId`)
 
 ### Reglages par serveur
 
@@ -114,14 +157,17 @@ Un serveur sans surcharge utilise telles quelles les valeurs du `.env`
       "guildId": "111111111111111111",
       "name": "Serveur A",
       "raidAnnounceChannelId": "222222222222222222",
-      "generalChannelId": "555555555555555555",
+      "mainChannelId": "555555555555555555",
+      "devChannelId": "666666666666666666",
+      "loreChannelId": "777777777777777777",
       "cooldownMinutes": 5,
       "shinyRate": 50
     },
     {
       "guildId": "333333333333333333",
       "name": "Serveur B",
-      "raidAnnounceChannelId": "444444444444444444"
+      "raidAnnounceChannelId": "444444444444444444",
+      "mainChannelId": "888888888888888888"
     }
   ]
 }
@@ -131,9 +177,8 @@ Un serveur sans surcharge utilise telles quelles les valeurs du `.env`
 
 1. Inviter le bot avec les scopes `bot` **et** `applications.commands` (sans
    ce dernier, les commandes slash echouent avec `Missing Access`).
-2. Recuperer le `guildId` du serveur, l'ID du salon d'annonce de raid
-   (`raidAnnounceChannelId`) et, si le serveur a un salon Pokemon general
-   distinct, son ID (`generalChannelId`).
+2. Recuperer le `guildId`, `raidAnnounceChannelId` et `mainChannelId` du
+   serveur. `devChannelId` et `loreChannelId` sont optionnels.
 3. Ajouter une entree dans `data/guilds.json`.
 4. Redemarrer le bot — `ensureGuildDataFiles` cree et seed automatiquement
    `data/guilds/{guildId}/` au demarrage (`ClientReady`).
@@ -142,18 +187,24 @@ Un serveur sans surcharge utilise telles quelles les valeurs du `.env`
 
 ### Scripts d'annonce ponctuelle
 
-`src/scripts/announcements/send-lore.ts`, `send-lore-new-adventure.ts`,
-`send-maintenance.ts`, `send-back-online.ts`, `send-quick-maintenance.ts`,
-`send-quick-back-online.ts` ne lisent plus un salon fixe depuis le `.env`.
-Sans argument, ils diffusent sur tous les serveurs du registre
-(`data/guilds.json`), tous vers le `generalChannelId` de chaque serveur
-(repli sur `raidAnnounceChannelId` si absent) — aucun de ces messages
-n'est lié au raid lui-même. Passer `--channelId <id>` cible un seul
-salon a la place (utile pour tester) :
+Les scripts d'annonce diffusent sur tous les serveurs du registre
+(`data/guilds.json`) sans argument. Le salon cible depend du type de message :
+
+| Script | Salon cible |
+|---|---|
+| `send-maintenance.ts` / `send-back-online.ts` / `send-quick-*` | `mainChannelId` |
+| `send-lore-new-adventure.ts` | `loreChannelId` (repli sur `mainChannelId`) |
+| `send-patchnote.ts` | `devChannelId` (repli sur `mainChannelId`) |
+
+Passer `--channelId <id>` cible un seul salon a la place (utile pour tester) :
 
 ```bash
 npx ts-node src/scripts/announcements/send-maintenance.ts --channelId <id-du-salon>
+npx ts-node src/scripts/announcements/send-patchnote.ts
 ```
+
+`send-patchnote.ts` lit automatiquement la derniere entree de `PATCHNOTE.md`
+et l'envoie en embed dans le salon dev de chaque serveur.
 
 ---
 
@@ -164,6 +215,7 @@ src/
   commands/        Commandes slash Discord
   config/          Configuration (paths, guilds, guildSettings, rarete, types)
   features/raid/   Systeme de raid (generation, inscription, resolution, recompenses)
+  features/meteoriteEvent/  Infrastructure d'evenement ponctuel (scheduler, config, embeds lore)
   methods/
     console-logs/  Logs de capture en console
     cooldown/      Gestion du cooldown entre captures
@@ -176,6 +228,7 @@ src/
     pokemon/       Pokemon (recherche, capture, shiny, XP)
     rarity/        Rarete (roll, downgrade, couleur)
     stats/         Statistiques globales et par joueur
+    research/      Donnees de recherche (capture ciblee, erreur solde insuffisant)
     xp/            Systeme XP et niveaux
     zones/         Zones de capture (resolution, generation, deblocage)
   types/           Types TypeScript (Player, Pokemon, Raid, Zones, GuildRegistryEntry)
@@ -202,6 +255,7 @@ data/
   pokemon-list.json       Base de donnees complete (genere au build)
   pokemon-gen1.json       Pokemon generation 1
   pokemon-gen2.json       Pokemon generation 2
+  pokemon-gen3.json       Pokemon generation 3 (Hoenn)
   othermons.json          Pokemon custom (optionnel, non versionne)
   zones_unlocked.default.json   Template de seed pour un nouveau serveur (versionne)
   zones_to_unlock.default.json  Template de seed pour un nouveau serveur (versionne)

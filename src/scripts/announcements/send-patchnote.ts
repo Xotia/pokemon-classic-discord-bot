@@ -3,21 +3,35 @@ import * as path from "path";
 import { EmbedBuilder } from "discord.js";
 import { broadcastEmbed } from "./lib/broadcast";
 
-const PATCHNOTE_PATH = path.resolve(__dirname, "../../../../PATCHNOTE.md");
-// Matches: # Mise à jour 3.4.2 — Some title
-const VERSION_HEADER_RE = /^# Mise à jour (\d+\.\d+\.\d+) — (.+)/m;
+const PATCHNOTE_PATH = path.resolve(__dirname, "../../../PATCHNOTE.md");
+const VERSION_HEADER_RE = /^# Mise à jour (\d+\.\d+\.\d+) — (.+)/gm;
 const MAX_DESCRIPTION_LENGTH = 4000;
 
-const patchnote = fs.readFileSync(PATCHNOTE_PATH, "utf-8");
+const targetVersion = process.argv[2] ?? null;
 
-const headerMatch = patchnote.match(VERSION_HEADER_RE);
-if (!headerMatch) {
+const patchnote = fs.readFileSync(PATCHNOTE_PATH, "utf-8").replace(/\r\n/g, "\n");
+
+// Collect all version entry positions
+const entries: { version: string; index: number }[] = [];
+let m: RegExpExecArray | null;
+while ((m = VERSION_HEADER_RE.exec(patchnote)) !== null) {
+  entries.push({ version: m[1], index: m.index });
+}
+
+if (entries.length === 0) {
   throw new Error("Aucune entrée trouvée dans PATCHNOTE.md");
 }
 
-const version = headerMatch[1];
-const headerIndex = patchnote.indexOf(headerMatch[0]);
-const afterHeader = patchnote.slice(headerIndex + headerMatch[0].length);
+const entry = targetVersion
+  ? entries.find((e) => e.version === targetVersion)
+  : entries[0];
+
+if (!entry) {
+  throw new Error(`Version ${targetVersion} introuvable dans PATCHNOTE.md`);
+}
+
+const headerEnd = patchnote.indexOf("\n", entry.index) + 1;
+const afterHeader = patchnote.slice(headerEnd);
 
 // Entries are separated by a double `---` (--- blank line ---)
 const separatorMatch = afterHeader.match(/\n---\n\n---/);
@@ -32,6 +46,8 @@ if (description.length > MAX_DESCRIPTION_LENGTH) {
     description.slice(0, MAX_DESCRIPTION_LENGTH).trimEnd() +
     "\n*(suite sur le dépôt)*";
 }
+
+const { version } = entry;
 
 const embed = new EmbedBuilder()
   .setColor(0x5865f2)
