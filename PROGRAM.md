@@ -169,16 +169,32 @@ reste en place).
         correspondance exacte, aucun autre champ touché, aucune ligne en
         trop ou manquante. `tsc` clean, mêmes 5 échecs de tests
         préexistants (B4), aucune régression.
-      - **Reste à faire** : merger `feat/regenerate-gen1-gen2-rarity` dans
-        `release/3.5.0`, et décider si `data/rarity-changelog-gen1-gen2.csv`
-        sert de base au patchnote joueurs de la release 3.5.0 (Slice E1/H1).
+      - Mergé dans `release/3.5.0` (`ef78362`). **Reste à faire** : décider
+        si `data/rarity-changelog-gen1-gen2.csv` sert de base au patchnote
+        joueurs de la release 3.5.0 (Slice E1/H1).
 
 ### Slice B — Corrections de bugs (indépendantes entre elles)
-- [ ] B1. `data/all_types.json:195-212` — le tableau `fire.defense.double`
-      est faux (`bug, fire, flying, ice, poison`). Corriger en
-      `water, ground, rock` (le `half`/`zero` actuels sont déjà corrects,
-      ne pas y toucher sans vérif équivalente pour d'autres types tant que
-      ça n'est pas demandé).
+- [x] B1 (terminé le 2026-07-24, branche `fix/type-chart-fire-defense`
+      depuis `release/3.5.0` — élargi en cours de route, cf. ci-dessous).
+      Fix initial demandé : `data/all_types.json` `fire.defense.double`
+      faux (`bug, fire, flying, ice, poison` au lieu de `water, ground,
+      rock`). Un correctif partiel avait déjà été tenté en parallèle
+      (patché seulement dans les JSON générés, pas dans la source) —
+      détecté et remplacé. Suite à la demande explicite de l'utilisateur
+      de vérifier s'il restait d'autres erreurs, audit complet des 18
+      types (attack + defense) contre le tableau canonique Gen 6+ :
+      **un second bug distinct trouvé**, `water.attack.half` contenait
+      `steel` au lieu de `water` (confirmé concrètement sur Magikarp,
+      qui affichait `attack.steel: 0.5` au lieu de `attack.water: 0.5`).
+      Les 2 bugs corrigés dans `data/all_types.json` (vérifié
+      indépendamment : 0 écart restant sur les 18 types, attack et
+      defense, contre le référentiel canonique). Champ `effectiveness`
+      régénéré proprement pour tous les Pokémon des 3 générations via
+      `src/scripts/regenerateEffectiveness.ts` (nouveau,
+      `npm run regenerate-effectiveness`) : 106 Pokémon affectés (44 en
+      gen1, 28 en gen2, 34 en gen3), vérifié indépendamment qu'aucun
+      Pokémon sans type Feu/Eau n'a été touché et qu'aucun autre champ
+      n'a bougé. `tsc` clean, mêmes 5 échecs de tests préexistants (B4).
 - [ ] B2. Corriger le libellé de zone "Phare de bon espérance" →
       "Phare de Bonne-Espérance" dans `data/zones_to_unlock.default.json:24`
       et `data/zones_all.json:30`. Vérifier si les fichiers déployés en prod
