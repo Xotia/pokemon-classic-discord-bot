@@ -35,6 +35,7 @@ npm run start
 |---|---|
 | `npm run dev` | Lance le bot avec `ts-node` (developpement) |
 | `npm run generate-pokemon-list` | Genere `pokemon-list.json` a partir des fichiers source |
+| `npm test` | Lance la suite de tests (vitest) |
 | `npm run build` | Genere la liste Pokemon + compile le TypeScript dans `dist/` |
 | `npm run deploy` | Enregistre les commandes slash globalement aupres de Discord (propagation ~1h) |
 | `npm run deploy:dev` | Enregistre les commandes slash en guild-scoped sur les serveurs de `data/guilds.json` (propagation instantanee, pratique en dev/test) |
@@ -49,6 +50,7 @@ npm run deploy:dev
 
 ### Workflow production / mise a jour
 ```bash
+npm test
 npm run build
 npm run deploy
 npm run start
@@ -72,7 +74,7 @@ COOLDOWN=30
 PITY_THRESHOLD=10
 POKEMON_PER_PAGE=20
 BUTTON_TIMEOUT=120000
-GENERATION_NUMBER=2
+GENERATION_NUMBER=3
 
 # Raid - horaires/reglages par defaut (idem, surchargeables par serveur)
 RAID_SCHEDULER_MODE=debug
@@ -140,17 +142,17 @@ Un serveur sans surcharge utilise telles quelles les valeurs du `.env`
 
 ### Scripts d'annonce ponctuelle
 
-`src/scripts/send-lore.ts`, `send-lore-new-adventure.ts`,
+`src/scripts/announcements/send-lore.ts`, `send-lore-new-adventure.ts`,
 `send-maintenance.ts`, `send-back-online.ts`, `send-quick-maintenance.ts`,
 `send-quick-back-online.ts` ne lisent plus un salon fixe depuis le `.env`.
 Sans argument, ils diffusent sur tous les serveurs du registre
-(`data/guilds.json`) : les scripts de lore ciblent le `generalChannelId` de
-chaque serveur (repli sur `raidAnnounceChannelId` si absent), les autres
-ciblent `raidAnnounceChannelId`. Passer `--channelId <id>` cible un seul
+(`data/guilds.json`), tous vers le `generalChannelId` de chaque serveur
+(repli sur `raidAnnounceChannelId` si absent) — aucun de ces messages
+n'est lié au raid lui-même. Passer `--channelId <id>` cible un seul
 salon a la place (utile pour tester) :
 
 ```bash
-npx ts-node src/scripts/send-maintenance.ts --channelId <id-du-salon>
+npx ts-node src/scripts/announcements/send-maintenance.ts --channelId <id-du-salon>
 ```
 
 ---
@@ -178,7 +180,14 @@ src/
     zones/         Zones de capture (resolution, generation, deblocage)
   types/           Types TypeScript (Player, Pokemon, Raid, Zones, GuildRegistryEntry)
   utils/           Utilitaires runtime (logger par serveur, chargement fichiers)
-  scripts/         Scripts one-shot (migration, annonces) - exclu du build
+  scripts/         Scripts one-shot (migration, annonces), organisés par domaine - exclu du build
+    fetch/           Helpers d'appel a PokeAPI
+    rarity/          Calcul, audit et application de la rarete
+    zones/           Injection de zones et simulation de capture/raid
+    gen-json/        Generation du JSON Pokemon par generation
+    player-maintenance/  Operations de maintenance sur les donnees joueurs
+    raid-tools/      Outils de QA/operation sur les raids
+    announcements/   Scripts d'annonce Discord ponctuelle
   deploy-commands.ts       Deploiement global des commandes slash
   deploy-commands-dev.ts   Deploiement guild-scoped (dev/test, instantane)
   commandDefinitions.ts    Definitions des commandes slash (source commune aux deux scripts de deploiement)

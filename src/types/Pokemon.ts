@@ -3,6 +3,7 @@ import { Rarity } from "../config/rarity";
 export interface Pokemon {
   id: number;
   name: string;
+  originalName: string;
   rarity: Rarity;
   image: string;
   shinyImage: string;

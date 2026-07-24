@@ -6,7 +6,9 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/chikorita.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/chikorita.gif",
     "originalName": "chikorita",
-    "types": ["grass"],
+    "types": [
+      "grass"
+    ],
     "effectiveness": {
       "defense": {
         "electric": 0.5,
@@ -40,7 +42,9 @@
       "specialDefense": 65,
       "speed": 45
     },
-    "zones": ["floral-hill"],
+    "zones": [
+      "floral-hill"
+    ],
     "generation": 2
   },
   {
@@ -50,7 +54,9 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/bayleef.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/bayleef.gif",
     "originalName": "bayleef",
-    "types": ["grass"],
+    "types": [
+      "grass"
+    ],
     "effectiveness": {
       "defense": {
         "electric": 0.5,
@@ -84,7 +90,9 @@
       "specialDefense": 80,
       "speed": 60
     },
-    "zones": ["floral-hill"],
+    "zones": [
+      "floral-hill"
+    ],
     "generation": 2
   },
   {
@@ -94,7 +102,9 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/meganium.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/meganium.gif",
     "originalName": "meganium",
-    "types": ["grass"],
+    "types": [
+      "grass"
+    ],
     "effectiveness": {
       "defense": {
         "electric": 0.5,
@@ -128,7 +138,9 @@
       "specialDefense": 100,
       "speed": 80
     },
-    "zones": ["floral-hill"],
+    "zones": [
+      "floral-hill"
+    ],
     "generation": 2
   },
   {
@@ -138,17 +150,20 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/cyndaquil.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/cyndaquil.gif",
     "originalName": "cyndaquil",
-    "types": ["fire"],
+    "types": [
+      "fire"
+    ],
     "effectiveness": {
       "defense": {
-        "bug": 1,
+        "bug": 0.5,
         "fairy": 0.5,
-        "fire": 1,
+        "fire": 0.5,
         "grass": 0.5,
-        "ice": 1,
+        "ice": 0.5,
         "steel": 0.5,
-        "flying": 2,
-        "poison": 2
+        "ground": 2,
+        "rock": 2,
+        "water": 2
       },
       "attack": {
         "dragon": 0.5,
@@ -169,7 +184,9 @@
       "specialDefense": 50,
       "speed": 65
     },
-    "zones": ["incandescent-tower"],
+    "zones": [
+      "incandescent-tower"
+    ],
     "generation": 2
   },
   {
@@ -179,17 +196,20 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/quilava.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/quilava.gif",
     "originalName": "quilava",
-    "types": ["fire"],
+    "types": [
+      "fire"
+    ],
     "effectiveness": {
       "defense": {
-        "bug": 1,
+        "bug": 0.5,
         "fairy": 0.5,
-        "fire": 1,
+        "fire": 0.5,
         "grass": 0.5,
-        "ice": 1,
+        "ice": 0.5,
         "steel": 0.5,
-        "flying": 2,
-        "poison": 2
+        "ground": 2,
+        "rock": 2,
+        "water": 2
       },
       "attack": {
         "dragon": 0.5,
@@ -210,7 +230,9 @@
       "specialDefense": 65,
       "speed": 80
     },
-    "zones": ["incandescent-tower"],
+    "zones": [
+      "incandescent-tower"
+    ],
     "generation": 2
   },
   {
@@ -220,17 +242,20 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/typhlosion.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/typhlosion.gif",
     "originalName": "typhlosion",
-    "types": ["fire"],
+    "types": [
+      "fire"
+    ],
     "effectiveness": {
       "defense": {
-        "bug": 1,
+        "bug": 0.5,
         "fairy": 0.5,
-        "fire": 1,
+        "fire": 0.5,
         "grass": 0.5,
-        "ice": 1,
+        "ice": 0.5,
         "steel": 0.5,
-        "flying": 2,
-        "poison": 2
+        "ground": 2,
+        "rock": 2,
+        "water": 2
       },
       "attack": {
         "dragon": 0.5,
@@ -251,7 +276,9 @@
       "specialDefense": 85,
       "speed": 100
     },
-    "zones": ["incandescent-tower"],
+    "zones": [
+      "incandescent-tower"
+    ],
     "generation": 2
   },
   {
@@ -261,7 +288,9 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/totodile.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/totodile.gif",
     "originalName": "totodile",
-    "types": ["water"],
+    "types": [
+      "water"
+    ],
     "effectiveness": {
       "defense": {
         "fire": 0.5,
@@ -274,7 +303,7 @@
       "attack": {
         "dragon": 0.5,
         "grass": 0.5,
-        "steel": 0.5,
+        "water": 0.5,
         "fire": 2,
         "ground": 2,
         "rock": 2
@@ -288,7 +317,10 @@
       "specialDefense": 48,
       "speed": 43
     },
-    "zones": ["sour-pond", "roaring-sea"],
+    "zones": [
+      "sour-pond",
+      "roaring-sea"
+    ],
     "generation": 2
   },
   {
@@ -298,7 +330,9 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/croconaw.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/croconaw.gif",
     "originalName": "croconaw",
-    "types": ["water"],
+    "types": [
+      "water"
+    ],
     "effectiveness": {
       "defense": {
         "fire": 0.5,
@@ -311,7 +345,7 @@
       "attack": {
         "dragon": 0.5,
         "grass": 0.5,
-        "steel": 0.5,
+        "water": 0.5,
         "fire": 2,
         "ground": 2,
         "rock": 2
@@ -325,7 +359,10 @@
       "specialDefense": 63,
       "speed": 58
     },
-    "zones": ["sour-pond", "roaring-sea"],
+    "zones": [
+      "sour-pond",
+      "roaring-sea"
+    ],
     "generation": 2
   },
   {
@@ -335,7 +372,9 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/feraligatr.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/feraligatr.gif",
     "originalName": "feraligatr",
-    "types": ["water"],
+    "types": [
+      "water"
+    ],
     "effectiveness": {
       "defense": {
         "fire": 0.5,
@@ -348,7 +387,7 @@
       "attack": {
         "dragon": 0.5,
         "grass": 0.5,
-        "steel": 0.5,
+        "water": 0.5,
         "fire": 2,
         "ground": 2,
         "rock": 2
@@ -362,7 +401,10 @@
       "specialDefense": 83,
       "speed": 78
     },
-    "zones": ["sour-pond", "roaring-sea"],
+    "zones": [
+      "sour-pond",
+      "roaring-sea"
+    ],
     "generation": 2
   },
   {
@@ -372,7 +414,9 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/sentret.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/sentret.gif",
     "originalName": "sentret",
-    "types": ["normal"],
+    "types": [
+      "normal"
+    ],
     "effectiveness": {
       "defense": {
         "ghost": 0,
@@ -392,17 +436,22 @@
       "specialDefense": 45,
       "speed": 20
     },
-    "zones": ["country-road", "rocky-trail"],
+    "zones": [
+      "country-road",
+      "rocky-trail"
+    ],
     "generation": 2
   },
   {
     "id": 162,
     "name": "Fouinar",
-    "rarity": "uncommon",
+    "rarity": "rare",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/furret.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/furret.gif",
     "originalName": "furret",
-    "types": ["normal"],
+    "types": [
+      "normal"
+    ],
     "effectiveness": {
       "defense": {
         "ghost": 0,
@@ -422,17 +471,23 @@
       "specialDefense": 55,
       "speed": 90
     },
-    "zones": ["country-road", "rocky-trail"],
+    "zones": [
+      "country-road",
+      "rocky-trail"
+    ],
     "generation": 2
   },
   {
     "id": 163,
     "name": "Hoothoot",
-    "rarity": "uncommon",
+    "rarity": "common",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/hoothoot.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/hoothoot.gif",
     "originalName": "hoothoot",
-    "types": ["normal", "flying"],
+    "types": [
+      "normal",
+      "flying"
+    ],
     "effectiveness": {
       "defense": {
         "ghost": 0,
@@ -462,17 +517,24 @@
       "specialDefense": 56,
       "speed": 50
     },
-    "zones": ["country-road", "dark-woods"],
+    "zones": [
+      "country-road",
+      "dark-woods",
+      "meteorite-crater"
+    ],
     "generation": 2
   },
   {
     "id": 164,
     "name": "Noarfang",
-    "rarity": "rare",
+    "rarity": "uncommon",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/noctowl.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/noctowl.gif",
     "originalName": "noctowl",
-    "types": ["normal", "flying"],
+    "types": [
+      "normal",
+      "flying"
+    ],
     "effectiveness": {
       "defense": {
         "ghost": 0,
@@ -502,7 +564,12 @@
       "specialDefense": 96,
       "speed": 70
     },
-    "zones": ["country-road", "dark-woods", "rocky-trail"],
+    "zones": [
+      "country-road",
+      "dark-woods",
+      "rocky-trail",
+      "meteorite-crater"
+    ],
     "generation": 2
   },
   {
@@ -512,7 +579,10 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/ledyba.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/ledyba.gif",
     "originalName": "ledyba",
-    "types": ["bug", "flying"],
+    "types": [
+      "bug",
+      "flying"
+    ],
     "effectiveness": {
       "defense": {
         "fighting": 0.25,
@@ -549,17 +619,23 @@
       "specialDefense": 80,
       "speed": 55
     },
-    "zones": ["floral-hill", "country-road"],
+    "zones": [
+      "floral-hill",
+      "country-road"
+    ],
     "generation": 2
   },
   {
     "id": 166,
     "name": "Coxyclaque",
-    "rarity": "uncommon",
+    "rarity": "very_rare",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/ledian.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/ledian.gif",
     "originalName": "ledian",
-    "types": ["bug", "flying"],
+    "types": [
+      "bug",
+      "flying"
+    ],
     "effectiveness": {
       "defense": {
         "fighting": 0.25,
@@ -596,17 +672,23 @@
       "specialDefense": 110,
       "speed": 85
     },
-    "zones": ["floral-hill", "dark-woods"],
+    "zones": [
+      "floral-hill",
+      "dark-woods"
+    ],
     "generation": 2
   },
   {
     "id": 167,
     "name": "Mimigal",
-    "rarity": "uncommon",
+    "rarity": "common",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/spinarak.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/spinarak.gif",
     "originalName": "spinarak",
-    "types": ["bug", "poison"],
+    "types": [
+      "bug",
+      "poison"
+    ],
     "effectiveness": {
       "defense": {
         "fighting": 0.25,
@@ -643,17 +725,23 @@
       "specialDefense": 40,
       "speed": 30
     },
-    "zones": ["country-road", "dark-woods"],
+    "zones": [
+      "country-road",
+      "dark-woods"
+    ],
     "generation": 2
   },
   {
     "id": 168,
     "name": "Migalos",
-    "rarity": "rare",
+    "rarity": "very_rare",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/ariados.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/ariados.gif",
     "originalName": "ariados",
-    "types": ["bug", "poison"],
+    "types": [
+      "bug",
+      "poison"
+    ],
     "effectiveness": {
       "defense": {
         "fighting": 0.25,
@@ -690,7 +778,9 @@
       "specialDefense": 70,
       "speed": 40
     },
-    "zones": ["dark-woods"],
+    "zones": [
+      "dark-woods"
+    ],
     "generation": 2
   },
   {
@@ -700,7 +790,10 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/crobat.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/crobat.gif",
     "originalName": "crobat",
-    "types": ["poison", "flying"],
+    "types": [
+      "poison",
+      "flying"
+    ],
     "effectiveness": {
       "defense": {
         "bug": 0.25,
@@ -735,7 +828,10 @@
       "specialDefense": 80,
       "speed": 130
     },
-    "zones": ["gloomy-cavern", "rocky-trail"],
+    "zones": [
+      "gloomy-cavern",
+      "rocky-trail"
+    ],
     "generation": 2
   },
   {
@@ -745,7 +841,10 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/chinchou.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/chinchou.gif",
     "originalName": "chinchou",
-    "types": ["water", "electric"],
+    "types": [
+      "water",
+      "electric"
+    ],
     "effectiveness": {
       "defense": {
         "fire": 0.5,
@@ -760,13 +859,12 @@
       "attack": {
         "dragon": 0.25,
         "grass": 0.25,
-        "steel": 0.5,
+        "water": 1,
         "fire": 2,
         "ground": 0,
         "rock": 2,
         "electric": 0.5,
-        "flying": 2,
-        "water": 2
+        "flying": 2
       }
     },
     "stats": {
@@ -777,17 +875,22 @@
       "specialDefense": 56,
       "speed": 67
     },
-    "zones": ["roaring-sea"],
+    "zones": [
+      "roaring-sea"
+    ],
     "generation": 2
   },
   {
     "id": 171,
     "name": "Lanturn",
-    "rarity": "rare",
+    "rarity": "very_rare",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/lanturn.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/lanturn.gif",
     "originalName": "lanturn",
-    "types": ["water", "electric"],
+    "types": [
+      "water",
+      "electric"
+    ],
     "effectiveness": {
       "defense": {
         "fire": 0.5,
@@ -802,13 +905,12 @@
       "attack": {
         "dragon": 0.25,
         "grass": 0.25,
-        "steel": 0.5,
+        "water": 1,
         "fire": 2,
         "ground": 0,
         "rock": 2,
         "electric": 0.5,
-        "flying": 2,
-        "water": 2
+        "flying": 2
       }
     },
     "stats": {
@@ -819,17 +921,21 @@
       "specialDefense": 76,
       "speed": 67
     },
-    "zones": ["roaring-sea"],
+    "zones": [
+      "roaring-sea"
+    ],
     "generation": 2
   },
   {
     "id": 172,
     "name": "Pichu",
-    "rarity": "very_rare",
+    "rarity": "epic",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/pichu.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/pichu.gif",
     "originalName": "pichu",
-    "types": ["electric"],
+    "types": [
+      "electric"
+    ],
     "effectiveness": {
       "defense": {
         "electric": 0.5,
@@ -854,7 +960,9 @@
       "specialDefense": 35,
       "speed": 60
     },
-    "zones": ["megacity"],
+    "zones": [
+      "megacity"
+    ],
     "generation": 2
   },
   {
@@ -864,7 +972,9 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/cleffa.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/cleffa.gif",
     "originalName": "cleffa",
-    "types": ["fairy"],
+    "types": [
+      "fairy"
+    ],
     "effectiveness": {
       "defense": {
         "dragon": 0,
@@ -891,7 +1001,9 @@
       "specialDefense": 55,
       "speed": 15
     },
-    "zones": ["megacity"],
+    "zones": [
+      "megacity"
+    ],
     "generation": 2
   },
   {
@@ -901,7 +1013,10 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/igglybuff.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/igglybuff.gif",
     "originalName": "igglybuff",
-    "types": ["normal", "fairy"],
+    "types": [
+      "normal",
+      "fairy"
+    ],
     "effectiveness": {
       "defense": {
         "ghost": 0,
@@ -931,7 +1046,9 @@
       "specialDefense": 20,
       "speed": 15
     },
-    "zones": ["megacity"],
+    "zones": [
+      "megacity"
+    ],
     "generation": 2
   },
   {
@@ -941,7 +1058,9 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/togepi.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/togepi.gif",
     "originalName": "togepi",
-    "types": ["fairy"],
+    "types": [
+      "fairy"
+    ],
     "effectiveness": {
       "defense": {
         "dragon": 0,
@@ -968,7 +1087,9 @@
       "specialDefense": 65,
       "speed": 20
     },
-    "zones": ["megacity"],
+    "zones": [
+      "megacity"
+    ],
     "generation": 2
   },
   {
@@ -978,7 +1099,10 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/togetic.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/togetic.gif",
     "originalName": "togetic",
-    "types": ["fairy", "flying"],
+    "types": [
+      "fairy",
+      "flying"
+    ],
     "effectiveness": {
       "defense": {
         "dragon": 0,
@@ -1014,17 +1138,22 @@
       "specialDefense": 105,
       "speed": 40
     },
-    "zones": ["megacity"],
+    "zones": [
+      "megacity"
+    ],
     "generation": 2
   },
   {
     "id": 177,
     "name": "Natu",
-    "rarity": "uncommon",
+    "rarity": "common",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/natu.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/natu.gif",
     "originalName": "natu",
-    "types": ["psychic", "flying"],
+    "types": [
+      "psychic",
+      "flying"
+    ],
     "effectiveness": {
       "defense": {
         "fighting": 0.25,
@@ -1058,7 +1187,9 @@
       "specialDefense": 45,
       "speed": 70
     },
-    "zones": ["archaeological-ruins"],
+    "zones": [
+      "archaeological-ruins"
+    ],
     "generation": 2
   },
   {
@@ -1068,7 +1199,10 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/xatu.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/xatu.gif",
     "originalName": "xatu",
-    "types": ["psychic", "flying"],
+    "types": [
+      "psychic",
+      "flying"
+    ],
     "effectiveness": {
       "defense": {
         "fighting": 0.25,
@@ -1102,7 +1236,9 @@
       "specialDefense": 70,
       "speed": 95
     },
-    "zones": ["archaeological-ruins"],
+    "zones": [
+      "archaeological-ruins"
+    ],
     "generation": 2
   },
   {
@@ -1112,7 +1248,9 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/mareep.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/mareep.gif",
     "originalName": "mareep",
-    "types": ["electric"],
+    "types": [
+      "electric"
+    ],
     "effectiveness": {
       "defense": {
         "electric": 0.5,
@@ -1137,17 +1275,22 @@
       "specialDefense": 45,
       "speed": 35
     },
-    "zones": ["country-road", "rocky-trail"],
+    "zones": [
+      "country-road",
+      "rocky-trail"
+    ],
     "generation": 2
   },
   {
     "id": 180,
     "name": "Lainergie",
-    "rarity": "rare",
+    "rarity": "uncommon",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/flaaffy.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/flaaffy.gif",
     "originalName": "flaaffy",
-    "types": ["electric"],
+    "types": [
+      "electric"
+    ],
     "effectiveness": {
       "defense": {
         "electric": 0.5,
@@ -1172,7 +1315,11 @@
       "specialDefense": 60,
       "speed": 45
     },
-    "zones": ["country-road", "cape-of-good-hope-lighthouse", "rocky-trail"],
+    "zones": [
+      "country-road",
+      "cape-of-good-hope-lighthouse",
+      "rocky-trail"
+    ],
     "generation": 2
   },
   {
@@ -1182,7 +1329,9 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/ampharos.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/ampharos.gif",
     "originalName": "ampharos",
-    "types": ["electric"],
+    "types": [
+      "electric"
+    ],
     "effectiveness": {
       "defense": {
         "electric": 0.5,
@@ -1207,17 +1356,21 @@
       "specialDefense": 90,
       "speed": 55
     },
-    "zones": ["cape-of-good-hope-lighthouse"],
+    "zones": [
+      "cape-of-good-hope-lighthouse"
+    ],
     "generation": 2
   },
   {
     "id": 182,
     "name": "Joliflor",
-    "rarity": "uncommon",
+    "rarity": "very_rare",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/bellossom.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/bellossom.gif",
     "originalName": "bellossom",
-    "types": ["grass"],
+    "types": [
+      "grass"
+    ],
     "effectiveness": {
       "defense": {
         "electric": 0.5,
@@ -1251,17 +1404,22 @@
       "specialDefense": 100,
       "speed": 50
     },
-    "zones": ["floral-hill"],
+    "zones": [
+      "floral-hill"
+    ],
     "generation": 2
   },
   {
     "id": 183,
     "name": "Marill",
-    "rarity": "common",
+    "rarity": "uncommon",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/marill.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/marill.gif",
     "originalName": "marill",
-    "types": ["water", "fairy"],
+    "types": [
+      "water",
+      "fairy"
+    ],
     "effectiveness": {
       "defense": {
         "fire": 0.5,
@@ -1279,11 +1437,12 @@
       "attack": {
         "dragon": 1,
         "grass": 0.5,
-        "steel": 0.25,
+        "water": 0.5,
         "fire": 1,
         "ground": 2,
         "rock": 2,
         "poison": 0.5,
+        "steel": 0.5,
         "dark": 2,
         "fighting": 2
       }
@@ -1296,7 +1455,9 @@
       "specialDefense": 50,
       "speed": 40
     },
-    "zones": ["sour-pond"],
+    "zones": [
+      "sour-pond"
+    ],
     "generation": 2
   },
   {
@@ -1306,7 +1467,10 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/azumarill.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/azumarill.gif",
     "originalName": "azumarill",
-    "types": ["water", "fairy"],
+    "types": [
+      "water",
+      "fairy"
+    ],
     "effectiveness": {
       "defense": {
         "fire": 0.5,
@@ -1324,11 +1488,12 @@
       "attack": {
         "dragon": 1,
         "grass": 0.5,
-        "steel": 0.25,
+        "water": 0.5,
         "fire": 1,
         "ground": 2,
         "rock": 2,
         "poison": 0.5,
+        "steel": 0.5,
         "dark": 2,
         "fighting": 2
       }
@@ -1341,7 +1506,10 @@
       "specialDefense": 80,
       "speed": 50
     },
-    "zones": ["sour-pond", "roaring-sea"],
+    "zones": [
+      "sour-pond",
+      "roaring-sea"
+    ],
     "generation": 2
   },
   {
@@ -1351,7 +1519,9 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/sudowoodo.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/sudowoodo.gif",
     "originalName": "sudowoodo",
-    "types": ["rock"],
+    "types": [
+      "rock"
+    ],
     "effectiveness": {
       "defense": {
         "fire": 0.5,
@@ -1382,7 +1552,10 @@
       "specialDefense": 65,
       "speed": 30
     },
-    "zones": ["country-road", "dark-woods"],
+    "zones": [
+      "country-road",
+      "dark-woods"
+    ],
     "generation": 2
   },
   {
@@ -1392,7 +1565,9 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/politoed.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/politoed.gif",
     "originalName": "politoed",
-    "types": ["water"],
+    "types": [
+      "water"
+    ],
     "effectiveness": {
       "defense": {
         "fire": 0.5,
@@ -1405,7 +1580,7 @@
       "attack": {
         "dragon": 0.5,
         "grass": 0.5,
-        "steel": 0.5,
+        "water": 0.5,
         "fire": 2,
         "ground": 2,
         "rock": 2
@@ -1419,7 +1594,10 @@
       "specialDefense": 100,
       "speed": 70
     },
-    "zones": ["sour-pond", "roaring-sea"],
+    "zones": [
+      "sour-pond",
+      "roaring-sea"
+    ],
     "generation": 2
   },
   {
@@ -1429,7 +1607,10 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/hoppip.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/hoppip.gif",
     "originalName": "hoppip",
-    "types": ["grass", "flying"],
+    "types": [
+      "grass",
+      "flying"
+    ],
     "effectiveness": {
       "defense": {
         "electric": 1,
@@ -1467,17 +1648,23 @@
       "specialDefense": 55,
       "speed": 50
     },
-    "zones": ["floral-hill", "country-road"],
+    "zones": [
+      "floral-hill",
+      "country-road"
+    ],
     "generation": 2
   },
   {
     "id": 188,
     "name": "Floravol",
-    "rarity": "uncommon",
+    "rarity": "rare",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/skiploom.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/skiploom.gif",
     "originalName": "skiploom",
-    "types": ["grass", "flying"],
+    "types": [
+      "grass",
+      "flying"
+    ],
     "effectiveness": {
       "defense": {
         "electric": 1,
@@ -1515,17 +1702,23 @@
       "specialDefense": 65,
       "speed": 80
     },
-    "zones": ["floral-hill", "country-road"],
+    "zones": [
+      "floral-hill",
+      "country-road"
+    ],
     "generation": 2
   },
   {
     "id": 189,
     "name": "Cotovol",
-    "rarity": "rare",
+    "rarity": "epic",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/jumpluff.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/jumpluff.gif",
     "originalName": "jumpluff",
-    "types": ["grass", "flying"],
+    "types": [
+      "grass",
+      "flying"
+    ],
     "effectiveness": {
       "defense": {
         "electric": 1,
@@ -1563,17 +1756,22 @@
       "specialDefense": 95,
       "speed": 110
     },
-    "zones": ["floral-hill", "dark-woods"],
+    "zones": [
+      "floral-hill",
+      "dark-woods"
+    ],
     "generation": 2
   },
   {
     "id": 190,
     "name": "Capumain",
-    "rarity": "uncommon",
+    "rarity": "common",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/aipom.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/aipom.gif",
     "originalName": "aipom",
-    "types": ["normal"],
+    "types": [
+      "normal"
+    ],
     "effectiveness": {
       "defense": {
         "ghost": 0,
@@ -1593,17 +1791,23 @@
       "specialDefense": 55,
       "speed": 85
     },
-    "zones": ["country-road", "dark-woods", "rocky-trail"],
+    "zones": [
+      "country-road",
+      "dark-woods",
+      "rocky-trail"
+    ],
     "generation": 2
   },
   {
     "id": 191,
     "name": "Tournegrin",
-    "rarity": "common",
+    "rarity": "uncommon",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/sunkern.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/sunkern.gif",
     "originalName": "sunkern",
-    "types": ["grass"],
+    "types": [
+      "grass"
+    ],
     "effectiveness": {
       "defense": {
         "electric": 0.5,
@@ -1637,17 +1841,22 @@
       "specialDefense": 30,
       "speed": 30
     },
-    "zones": ["floral-hill", "country-road"],
+    "zones": [
+      "floral-hill",
+      "country-road"
+    ],
     "generation": 2
   },
   {
     "id": 192,
     "name": "Héliatronc",
-    "rarity": "uncommon",
+    "rarity": "very_rare",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/sunflora.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/sunflora.gif",
     "originalName": "sunflora",
-    "types": ["grass"],
+    "types": [
+      "grass"
+    ],
     "effectiveness": {
       "defense": {
         "electric": 0.5,
@@ -1681,17 +1890,23 @@
       "specialDefense": 85,
       "speed": 30
     },
-    "zones": ["floral-hill", "country-road"],
+    "zones": [
+      "floral-hill",
+      "country-road"
+    ],
     "generation": 2
   },
   {
     "id": 193,
     "name": "Yanma",
-    "rarity": "uncommon",
+    "rarity": "common",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/yanma.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/yanma.gif",
     "originalName": "yanma",
-    "types": ["bug", "flying"],
+    "types": [
+      "bug",
+      "flying"
+    ],
     "effectiveness": {
       "defense": {
         "fighting": 0.25,
@@ -1728,7 +1943,10 @@
       "specialDefense": 45,
       "speed": 95
     },
-    "zones": ["country-road", "rocky-trail"],
+    "zones": [
+      "country-road",
+      "rocky-trail"
+    ],
     "generation": 2
   },
   {
@@ -1738,7 +1956,10 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/wooper.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/wooper.gif",
     "originalName": "wooper",
-    "types": ["water", "ground"],
+    "types": [
+      "water",
+      "ground"
+    ],
     "effectiveness": {
       "defense": {
         "fire": 0.5,
@@ -1753,14 +1974,15 @@
       "attack": {
         "dragon": 0.5,
         "grass": 0.25,
-        "steel": 1,
+        "water": 0.5,
         "fire": 4,
         "ground": 2,
         "rock": 4,
         "flying": 0,
         "bug": 0.5,
         "electric": 2,
-        "poison": 2
+        "poison": 2,
+        "steel": 2
       }
     },
     "stats": {
@@ -1771,17 +1993,22 @@
       "specialDefense": 25,
       "speed": 15
     },
-    "zones": ["sour-pond"],
+    "zones": [
+      "sour-pond"
+    ],
     "generation": 2
   },
   {
     "id": 195,
     "name": "Maraiste",
-    "rarity": "rare",
+    "rarity": "uncommon",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/quagsire.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/quagsire.gif",
     "originalName": "quagsire",
-    "types": ["water", "ground"],
+    "types": [
+      "water",
+      "ground"
+    ],
     "effectiveness": {
       "defense": {
         "fire": 0.5,
@@ -1796,14 +2023,15 @@
       "attack": {
         "dragon": 0.5,
         "grass": 0.25,
-        "steel": 1,
+        "water": 0.5,
         "fire": 4,
         "ground": 2,
         "rock": 4,
         "flying": 0,
         "bug": 0.5,
         "electric": 2,
-        "poison": 2
+        "poison": 2,
+        "steel": 2
       }
     },
     "stats": {
@@ -1814,7 +2042,11 @@
       "specialDefense": 65,
       "speed": 35
     },
-    "zones": ["sour-pond", "roaring-sea", "rocky-trail"],
+    "zones": [
+      "sour-pond",
+      "roaring-sea",
+      "rocky-trail"
+    ],
     "generation": 2
   },
   {
@@ -1824,7 +2056,9 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/espeon.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/espeon.gif",
     "originalName": "espeon",
-    "types": ["psychic"],
+    "types": [
+      "psychic"
+    ],
     "effectiveness": {
       "defense": {
         "fighting": 0.5,
@@ -1849,7 +2083,10 @@
       "specialDefense": 95,
       "speed": 110
     },
-    "zones": ["megacity", "archaeological-ruins"],
+    "zones": [
+      "megacity",
+      "archaeological-ruins"
+    ],
     "generation": 2
   },
   {
@@ -1859,7 +2096,9 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/umbreon.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/umbreon.gif",
     "originalName": "umbreon",
-    "types": ["dark"],
+    "types": [
+      "dark"
+    ],
     "effectiveness": {
       "defense": {
         "psychic": 0,
@@ -1885,7 +2124,11 @@
       "specialDefense": 130,
       "speed": 65
     },
-    "zones": ["megacity", "archaeological-ruins"],
+    "zones": [
+      "megacity",
+      "archaeological-ruins",
+      "meteorite-crater"
+    ],
     "generation": 2
   },
   {
@@ -1895,7 +2138,10 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/murkrow.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/murkrow.gif",
     "originalName": "murkrow",
-    "types": ["dark", "flying"],
+    "types": [
+      "dark",
+      "flying"
+    ],
     "effectiveness": {
       "defense": {
         "psychic": 0,
@@ -1931,7 +2177,11 @@
       "specialDefense": 42,
       "speed": 91
     },
-    "zones": ["dark-woods", "gloomy-cavern", "rocky-trail"],
+    "zones": [
+      "dark-woods",
+      "gloomy-cavern",
+      "rocky-trail"
+    ],
     "generation": 2
   },
   {
@@ -1941,7 +2191,10 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/slowking.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/slowking.gif",
     "originalName": "slowking",
-    "types": ["water", "psychic"],
+    "types": [
+      "water",
+      "psychic"
+    ],
     "effectiveness": {
       "defense": {
         "fire": 0.5,
@@ -1959,12 +2212,13 @@
       "attack": {
         "dragon": 0.5,
         "grass": 0.5,
-        "steel": 0.25,
+        "water": 0.5,
         "fire": 2,
         "ground": 2,
         "rock": 2,
         "dark": 0,
         "psychic": 0.5,
+        "steel": 0.5,
         "fighting": 2,
         "poison": 2
       }
@@ -1977,17 +2231,22 @@
       "specialDefense": 110,
       "speed": 30
     },
-    "zones": ["sour-pond", "roaring-sea"],
+    "zones": [
+      "sour-pond",
+      "roaring-sea"
+    ],
     "generation": 2
   },
   {
     "id": 200,
     "name": "Feuforêve",
-    "rarity": "rare",
+    "rarity": "uncommon",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/misdreavus.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/misdreavus.gif",
     "originalName": "misdreavus",
-    "types": ["ghost"],
+    "types": [
+      "ghost"
+    ],
     "effectiveness": {
       "defense": {
         "normal": 0,
@@ -2012,17 +2271,21 @@
       "specialDefense": 85,
       "speed": 85
     },
-    "zones": ["archaeological-ruins"],
+    "zones": [
+      "archaeological-ruins"
+    ],
     "generation": 2
   },
   {
     "id": 201,
     "name": "Zarbi",
-    "rarity": "unknown",
+    "rarity": "common",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/unown.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/unown.gif",
     "originalName": "unown",
-    "types": ["psychic"],
+    "types": [
+      "psychic"
+    ],
     "effectiveness": {
       "defense": {
         "fighting": 0.5,
@@ -2047,7 +2310,9 @@
       "specialDefense": 48,
       "speed": 48
     },
-    "zones": ["archaeological-ruins"],
+    "zones": [
+      "archaeological-ruins"
+    ],
     "generation": 2
   },
   {
@@ -2057,7 +2322,9 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/wobbuffet.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/wobbuffet.gif",
     "originalName": "wobbuffet",
-    "types": ["psychic"],
+    "types": [
+      "psychic"
+    ],
     "effectiveness": {
       "defense": {
         "fighting": 0.5,
@@ -2082,7 +2349,9 @@
       "specialDefense": 58,
       "speed": 33
     },
-    "zones": ["archaeological-ruins"],
+    "zones": [
+      "archaeological-ruins"
+    ],
     "generation": 2
   },
   {
@@ -2092,7 +2361,10 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/girafarig.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/girafarig.gif",
     "originalName": "girafarig",
-    "types": ["normal", "psychic"],
+    "types": [
+      "normal",
+      "psychic"
+    ],
     "effectiveness": {
       "defense": {
         "ghost": 0,
@@ -2119,7 +2391,9 @@
       "specialDefense": 65,
       "speed": 85
     },
-    "zones": ["country-road"],
+    "zones": [
+      "country-road"
+    ],
     "generation": 2
   },
   {
@@ -2129,7 +2403,9 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/pineco.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/pineco.gif",
     "originalName": "pineco",
-    "types": ["bug"],
+    "types": [
+      "bug"
+    ],
     "effectiveness": {
       "defense": {
         "fighting": 0.5,
@@ -2160,7 +2436,9 @@
       "specialDefense": 35,
       "speed": 15
     },
-    "zones": ["dark-woods"],
+    "zones": [
+      "dark-woods"
+    ],
     "generation": 2
   },
   {
@@ -2170,7 +2448,10 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/forretress.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/forretress.gif",
     "originalName": "forretress",
-    "types": ["bug", "steel"],
+    "types": [
+      "bug",
+      "steel"
+    ],
     "effectiveness": {
       "defense": {
         "fighting": 1,
@@ -2213,7 +2494,9 @@
       "specialDefense": 60,
       "speed": 40
     },
-    "zones": ["dark-woods"],
+    "zones": [
+      "dark-woods"
+    ],
     "generation": 2
   },
   {
@@ -2223,7 +2506,9 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/dunsparce.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/dunsparce.gif",
     "originalName": "dunsparce",
-    "types": ["normal"],
+    "types": [
+      "normal"
+    ],
     "effectiveness": {
       "defense": {
         "ghost": 0,
@@ -2243,7 +2528,9 @@
       "specialDefense": 65,
       "speed": 45
     },
-    "zones": ["gloomy-cavern"],
+    "zones": [
+      "gloomy-cavern"
+    ],
     "generation": 2
   },
   {
@@ -2253,7 +2540,10 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/gligar.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/gligar.gif",
     "originalName": "gligar",
-    "types": ["ground", "flying"],
+    "types": [
+      "ground",
+      "flying"
+    ],
     "effectiveness": {
       "defense": {
         "electric": 0,
@@ -2286,7 +2576,10 @@
       "specialDefense": 65,
       "speed": 85
     },
-    "zones": ["gloomy-cavern", "rocky-trail"],
+    "zones": [
+      "gloomy-cavern",
+      "rocky-trail"
+    ],
     "generation": 2
   },
   {
@@ -2296,7 +2589,10 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/steelix.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/steelix.gif",
     "originalName": "steelix",
-    "types": ["steel", "ground"],
+    "types": [
+      "steel",
+      "ground"
+    ],
     "effectiveness": {
       "defense": {
         "poison": 0,
@@ -2338,7 +2634,10 @@
       "specialDefense": 65,
       "speed": 30
     },
-    "zones": ["gloomy-cavern", "rocky-trail"],
+    "zones": [
+      "gloomy-cavern",
+      "rocky-trail"
+    ],
     "generation": 2
   },
   {
@@ -2348,7 +2647,9 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/snubbull.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/snubbull.gif",
     "originalName": "snubbull",
-    "types": ["fairy"],
+    "types": [
+      "fairy"
+    ],
     "effectiveness": {
       "defense": {
         "dragon": 0,
@@ -2375,17 +2676,22 @@
       "specialDefense": 40,
       "speed": 30
     },
-    "zones": ["country-road", "megacity"],
+    "zones": [
+      "country-road",
+      "megacity"
+    ],
     "generation": 2
   },
   {
     "id": 210,
     "name": "Granbull",
-    "rarity": "rare",
+    "rarity": "epic",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/granbull.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/granbull.gif",
     "originalName": "granbull",
-    "types": ["fairy"],
+    "types": [
+      "fairy"
+    ],
     "effectiveness": {
       "defense": {
         "dragon": 0,
@@ -2412,17 +2718,23 @@
       "specialDefense": 60,
       "speed": 45
     },
-    "zones": ["megacity", "rocky-trail"],
+    "zones": [
+      "megacity",
+      "rocky-trail"
+    ],
     "generation": 2
   },
   {
     "id": 211,
     "name": "Qwilfish",
-    "rarity": "common",
+    "rarity": "uncommon",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/qwilfish.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/qwilfish.gif",
     "originalName": "qwilfish",
-    "types": ["water", "poison"],
+    "types": [
+      "water",
+      "poison"
+    ],
     "effectiveness": {
       "defense": {
         "fire": 0.5,
@@ -2441,10 +2753,11 @@
       "attack": {
         "dragon": 0.5,
         "grass": 1,
-        "steel": 0,
+        "water": 0.5,
         "fire": 2,
         "ground": 1,
         "rock": 1,
+        "steel": 0,
         "ghost": 0.5,
         "poison": 0.5,
         "fairy": 2
@@ -2458,17 +2771,23 @@
       "specialDefense": 55,
       "speed": 85
     },
-    "zones": ["sour-pond", "roaring-sea"],
+    "zones": [
+      "sour-pond",
+      "roaring-sea"
+    ],
     "generation": 2
   },
   {
     "id": 212,
     "name": "Cizayox",
-    "rarity": "epic",
+    "rarity": "mythic",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/scizor.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/scizor.gif",
     "originalName": "scizor",
-    "types": ["bug", "steel"],
+    "types": [
+      "bug",
+      "steel"
+    ],
     "effectiveness": {
       "defense": {
         "fighting": 1,
@@ -2511,17 +2830,23 @@
       "specialDefense": 80,
       "speed": 65
     },
-    "zones": ["floral-hill", "dark-woods"],
+    "zones": [
+      "floral-hill",
+      "dark-woods"
+    ],
     "generation": 2
   },
   {
     "id": 213,
     "name": "Caratroc",
-    "rarity": "uncommon",
+    "rarity": "very_rare",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/shuckle.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/shuckle.gif",
     "originalName": "shuckle",
-    "types": ["bug", "rock"],
+    "types": [
+      "bug",
+      "rock"
+    ],
     "effectiveness": {
       "defense": {
         "fighting": 1,
@@ -2559,7 +2884,11 @@
       "specialDefense": 230,
       "speed": 5
     },
-    "zones": ["roaring-sea", "cape-of-good-hope-lighthouse", "rocky-trail"],
+    "zones": [
+      "roaring-sea",
+      "cape-of-good-hope-lighthouse",
+      "rocky-trail"
+    ],
     "generation": 2
   },
   {
@@ -2569,7 +2898,10 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/heracross.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/heracross.gif",
     "originalName": "heracross",
-    "types": ["bug", "fighting"],
+    "types": [
+      "bug",
+      "fighting"
+    ],
     "effectiveness": {
       "defense": {
         "fighting": 0.5,
@@ -2608,17 +2940,23 @@
       "specialDefense": 95,
       "speed": 85
     },
-    "zones": ["floral-hill", "dark-woods"],
+    "zones": [
+      "floral-hill",
+      "dark-woods"
+    ],
     "generation": 2
   },
   {
     "id": 215,
     "name": "Farfuret",
-    "rarity": "uncommon",
+    "rarity": "rare",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/sneasel.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/sneasel.gif",
     "originalName": "sneasel",
-    "types": ["dark", "ice"],
+    "types": [
+      "dark",
+      "ice"
+    ],
     "effectiveness": {
       "defense": {
         "psychic": 0,
@@ -2656,17 +2994,22 @@
       "specialDefense": 75,
       "speed": 115
     },
-    "zones": ["gloomy-cavern", "icy-track"],
+    "zones": [
+      "gloomy-cavern",
+      "icy-track"
+    ],
     "generation": 2
   },
   {
     "id": 216,
     "name": "Teddiursa",
-    "rarity": "uncommon",
+    "rarity": "very_rare",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/teddiursa.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/teddiursa.gif",
     "originalName": "teddiursa",
-    "types": ["normal"],
+    "types": [
+      "normal"
+    ],
     "effectiveness": {
       "defense": {
         "ghost": 0,
@@ -2686,7 +3029,11 @@
       "specialDefense": 50,
       "speed": 40
     },
-    "zones": ["gloomy-cavern", "rocky-trail", "icy-track"],
+    "zones": [
+      "gloomy-cavern",
+      "rocky-trail",
+      "icy-track"
+    ],
     "generation": 2
   },
   {
@@ -2696,7 +3043,9 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/ursaring.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/ursaring.gif",
     "originalName": "ursaring",
-    "types": ["normal"],
+    "types": [
+      "normal"
+    ],
     "effectiveness": {
       "defense": {
         "ghost": 0,
@@ -2716,7 +3065,11 @@
       "specialDefense": 75,
       "speed": 55
     },
-    "zones": ["gloomy-cavern", "rocky-trail", "icy-track"],
+    "zones": [
+      "gloomy-cavern",
+      "rocky-trail",
+      "icy-track"
+    ],
     "generation": 2
   },
   {
@@ -2726,17 +3079,20 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/slugma.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/slugma.gif",
     "originalName": "slugma",
-    "types": ["fire"],
+    "types": [
+      "fire"
+    ],
     "effectiveness": {
       "defense": {
-        "bug": 1,
+        "bug": 0.5,
         "fairy": 0.5,
-        "fire": 1,
+        "fire": 0.5,
         "grass": 0.5,
-        "ice": 1,
+        "ice": 0.5,
         "steel": 0.5,
-        "flying": 2,
-        "poison": 2
+        "ground": 2,
+        "rock": 2,
+        "water": 2
       },
       "attack": {
         "dragon": 0.5,
@@ -2757,7 +3113,10 @@
       "specialDefense": 40,
       "speed": 20
     },
-    "zones": ["incandescent-tower", "gloomy-cavern"],
+    "zones": [
+      "incandescent-tower",
+      "gloomy-cavern"
+    ],
     "generation": 2
   },
   {
@@ -2767,21 +3126,25 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/magcargo.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/magcargo.gif",
     "originalName": "magcargo",
-    "types": ["fire", "rock"],
+    "types": [
+      "fire",
+      "rock"
+    ],
     "effectiveness": {
       "defense": {
-        "bug": 1,
+        "bug": 0.5,
         "fairy": 0.5,
-        "fire": 0.5,
+        "fire": 0.25,
         "grass": 1,
-        "ice": 1,
+        "ice": 0.5,
         "steel": 1,
-        "flying": 1,
-        "poison": 1,
+        "ground": 4,
+        "rock": 2,
+        "water": 4,
+        "flying": 0.5,
         "normal": 0.5,
-        "fighting": 2,
-        "ground": 2,
-        "water": 2
+        "poison": 0.5,
+        "fighting": 2
       },
       "attack": {
         "dragon": 0.5,
@@ -2805,7 +3168,10 @@
       "specialDefense": 80,
       "speed": 30
     },
-    "zones": ["incandescent-tower", "gloomy-cavern"],
+    "zones": [
+      "incandescent-tower",
+      "gloomy-cavern"
+    ],
     "generation": 2
   },
   {
@@ -2815,7 +3181,10 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/swinub.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/swinub.gif",
     "originalName": "swinub",
-    "types": ["ice", "ground"],
+    "types": [
+      "ice",
+      "ground"
+    ],
     "effectiveness": {
       "defense": {
         "ice": 1,
@@ -2851,7 +3220,9 @@
       "specialDefense": 30,
       "speed": 50
     },
-    "zones": ["icy-track"],
+    "zones": [
+      "icy-track"
+    ],
     "generation": 2
   },
   {
@@ -2861,7 +3232,10 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/piloswine.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/piloswine.gif",
     "originalName": "piloswine",
-    "types": ["ice", "ground"],
+    "types": [
+      "ice",
+      "ground"
+    ],
     "effectiveness": {
       "defense": {
         "ice": 1,
@@ -2897,7 +3271,9 @@
       "specialDefense": 60,
       "speed": 50
     },
-    "zones": ["icy-track"],
+    "zones": [
+      "icy-track"
+    ],
     "generation": 2
   },
   {
@@ -2907,7 +3283,10 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/corsola.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/corsola.gif",
     "originalName": "corsola",
-    "types": ["water", "rock"],
+    "types": [
+      "water",
+      "rock"
+    ],
     "effectiveness": {
       "defense": {
         "fire": 0.25,
@@ -2925,11 +3304,12 @@
       "attack": {
         "dragon": 0.5,
         "grass": 0.5,
-        "steel": 0.25,
+        "water": 0.5,
         "fire": 4,
         "ground": 1,
         "rock": 2,
         "fighting": 0.5,
+        "steel": 0.5,
         "bug": 2,
         "flying": 2,
         "ice": 2
@@ -2943,17 +3323,21 @@
       "specialDefense": 95,
       "speed": 35
     },
-    "zones": ["roaring-sea"],
+    "zones": [
+      "roaring-sea"
+    ],
     "generation": 2
   },
   {
     "id": 223,
     "name": "Rémoraid",
-    "rarity": "common",
+    "rarity": "uncommon",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/remoraid.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/remoraid.gif",
     "originalName": "remoraid",
-    "types": ["water"],
+    "types": [
+      "water"
+    ],
     "effectiveness": {
       "defense": {
         "fire": 0.5,
@@ -2966,7 +3350,7 @@
       "attack": {
         "dragon": 0.5,
         "grass": 0.5,
-        "steel": 0.5,
+        "water": 0.5,
         "fire": 2,
         "ground": 2,
         "rock": 2
@@ -2980,7 +3364,9 @@
       "specialDefense": 35,
       "speed": 65
     },
-    "zones": ["roaring-sea"],
+    "zones": [
+      "roaring-sea"
+    ],
     "generation": 2
   },
   {
@@ -2990,7 +3376,9 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/octillery.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/octillery.gif",
     "originalName": "octillery",
-    "types": ["water"],
+    "types": [
+      "water"
+    ],
     "effectiveness": {
       "defense": {
         "fire": 0.5,
@@ -3003,7 +3391,7 @@
       "attack": {
         "dragon": 0.5,
         "grass": 0.5,
-        "steel": 0.5,
+        "water": 0.5,
         "fire": 2,
         "ground": 2,
         "rock": 2
@@ -3017,7 +3405,9 @@
       "specialDefense": 75,
       "speed": 45
     },
-    "zones": ["roaring-sea"],
+    "zones": [
+      "roaring-sea"
+    ],
     "generation": 2
   },
   {
@@ -3027,7 +3417,10 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/delibird.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/delibird.gif",
     "originalName": "delibird",
-    "types": ["ice", "flying"],
+    "types": [
+      "ice",
+      "flying"
+    ],
     "effectiveness": {
       "defense": {
         "ice": 1,
@@ -3063,17 +3456,22 @@
       "specialDefense": 45,
       "speed": 75
     },
-    "zones": ["icy-track"],
+    "zones": [
+      "icy-track"
+    ],
     "generation": 2
   },
   {
     "id": 226,
     "name": "Démanta",
-    "rarity": "rare",
+    "rarity": "epic",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/mantine.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/mantine.gif",
     "originalName": "mantine",
-    "types": ["water", "flying"],
+    "types": [
+      "water",
+      "flying"
+    ],
     "effectiveness": {
       "defense": {
         "fire": 0.5,
@@ -3090,11 +3488,12 @@
       "attack": {
         "dragon": 0.5,
         "grass": 1,
-        "steel": 0.25,
+        "water": 0.5,
         "fire": 2,
         "ground": 2,
         "rock": 1,
         "electric": 0.5,
+        "steel": 0.5,
         "bug": 2,
         "fighting": 2
       }
@@ -3107,7 +3506,9 @@
       "specialDefense": 140,
       "speed": 70
     },
-    "zones": ["roaring-sea"],
+    "zones": [
+      "roaring-sea"
+    ],
     "generation": 2
   },
   {
@@ -3117,7 +3518,10 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/skarmory.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/skarmory.gif",
     "originalName": "skarmory",
-    "types": ["steel", "flying"],
+    "types": [
+      "steel",
+      "flying"
+    ],
     "effectiveness": {
       "defense": {
         "poison": 0,
@@ -3157,31 +3561,38 @@
       "specialDefense": 70,
       "speed": 70
     },
-    "zones": ["cape-of-good-hope-lighthouse", "rocky-trail"],
+    "zones": [
+      "cape-of-good-hope-lighthouse",
+      "rocky-trail"
+    ],
     "generation": 2
   },
   {
     "id": 228,
     "name": "Malosse",
-    "rarity": "uncommon",
+    "rarity": "rare",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/houndour.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/houndour.gif",
     "originalName": "houndour",
-    "types": ["dark", "fire"],
+    "types": [
+      "dark",
+      "fire"
+    ],
     "effectiveness": {
       "defense": {
         "psychic": 0,
         "dark": 0.5,
         "ghost": 0.5,
-        "bug": 2,
+        "bug": 1,
         "fighting": 2,
         "fairy": 1,
-        "fire": 1,
+        "fire": 0.5,
         "grass": 0.5,
-        "ice": 1,
+        "ice": 0.5,
         "steel": 0.5,
-        "flying": 2,
-        "poison": 2
+        "ground": 2,
+        "rock": 2,
+        "water": 2
       },
       "attack": {
         "dark": 0.5,
@@ -3207,31 +3618,38 @@
       "specialDefense": 50,
       "speed": 65
     },
-    "zones": ["incandescent-tower", "megacity"],
+    "zones": [
+      "incandescent-tower",
+      "megacity"
+    ],
     "generation": 2
   },
   {
     "id": 229,
     "name": "Démolosse",
-    "rarity": "rare",
+    "rarity": "very_rare",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/houndoom.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/houndoom.gif",
     "originalName": "houndoom",
-    "types": ["dark", "fire"],
+    "types": [
+      "dark",
+      "fire"
+    ],
     "effectiveness": {
       "defense": {
         "psychic": 0,
         "dark": 0.5,
         "ghost": 0.5,
-        "bug": 2,
+        "bug": 1,
         "fighting": 2,
         "fairy": 1,
-        "fire": 1,
+        "fire": 0.5,
         "grass": 0.5,
-        "ice": 1,
+        "ice": 0.5,
         "steel": 0.5,
-        "flying": 2,
-        "poison": 2
+        "ground": 2,
+        "rock": 2,
+        "water": 2
       },
       "attack": {
         "dark": 0.5,
@@ -3257,7 +3675,10 @@
       "specialDefense": 80,
       "speed": 95
     },
-    "zones": ["incandescent-tower", "megacity"],
+    "zones": [
+      "incandescent-tower",
+      "megacity"
+    ],
     "generation": 2
   },
   {
@@ -3267,7 +3688,10 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/kingdra.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/kingdra.gif",
     "originalName": "kingdra",
-    "types": ["water", "dragon"],
+    "types": [
+      "water",
+      "dragon"
+    ],
     "effectiveness": {
       "defense": {
         "fire": 0.25,
@@ -3282,11 +3706,12 @@
       "attack": {
         "dragon": 1,
         "grass": 0.5,
-        "steel": 0.25,
+        "water": 0.5,
         "fire": 2,
         "ground": 2,
         "rock": 2,
-        "fairy": 0
+        "fairy": 0,
+        "steel": 0.5
       }
     },
     "stats": {
@@ -3297,17 +3722,21 @@
       "specialDefense": 95,
       "speed": 85
     },
-    "zones": ["roaring-sea"],
+    "zones": [
+      "roaring-sea"
+    ],
     "generation": 2
   },
   {
     "id": 231,
     "name": "Phanpy",
-    "rarity": "common",
+    "rarity": "rare",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/phanpy.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/phanpy.gif",
     "originalName": "phanpy",
-    "types": ["ground"],
+    "types": [
+      "ground"
+    ],
     "effectiveness": {
       "defense": {
         "electric": 0,
@@ -3336,7 +3765,10 @@
       "specialDefense": 40,
       "speed": 40
     },
-    "zones": ["country-road", "cape-of-good-hope-lighthouse"],
+    "zones": [
+      "country-road",
+      "cape-of-good-hope-lighthouse"
+    ],
     "generation": 2
   },
   {
@@ -3346,7 +3778,9 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/donphan.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/donphan.gif",
     "originalName": "donphan",
-    "types": ["ground"],
+    "types": [
+      "ground"
+    ],
     "effectiveness": {
       "defense": {
         "electric": 0,
@@ -3375,17 +3809,22 @@
       "specialDefense": 60,
       "speed": 50
     },
-    "zones": ["country-road", "cape-of-good-hope-lighthouse"],
+    "zones": [
+      "country-road",
+      "cape-of-good-hope-lighthouse"
+    ],
     "generation": 2
   },
   {
     "id": 233,
     "name": "Porygon2",
-    "rarity": "epic",
+    "rarity": "mythic",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/porygon2.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/porygon2.gif",
     "originalName": "porygon2",
-    "types": ["normal"],
+    "types": [
+      "normal"
+    ],
     "effectiveness": {
       "defense": {
         "ghost": 0,
@@ -3405,17 +3844,21 @@
       "specialDefense": 95,
       "speed": 60
     },
-    "zones": ["megacity"],
+    "zones": [
+      "megacity"
+    ],
     "generation": 2
   },
   {
     "id": 234,
     "name": "Cerfrousse",
-    "rarity": "common",
+    "rarity": "uncommon",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/stantler.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/stantler.gif",
     "originalName": "stantler",
-    "types": ["normal"],
+    "types": [
+      "normal"
+    ],
     "effectiveness": {
       "defense": {
         "ghost": 0,
@@ -3435,17 +3878,21 @@
       "specialDefense": 65,
       "speed": 85
     },
-    "zones": ["country-road"],
+    "zones": [
+      "country-road"
+    ],
     "generation": 2
   },
   {
     "id": 235,
     "name": "Queulorior",
-    "rarity": "rare",
+    "rarity": "uncommon",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/smeargle.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/smeargle.gif",
     "originalName": "smeargle",
-    "types": ["normal"],
+    "types": [
+      "normal"
+    ],
     "effectiveness": {
       "defense": {
         "ghost": 0,
@@ -3465,17 +3912,22 @@
       "specialDefense": 45,
       "speed": 75
     },
-    "zones": ["country-road", "megacity"],
+    "zones": [
+      "country-road",
+      "megacity"
+    ],
     "generation": 2
   },
   {
     "id": 236,
     "name": "Debugant",
-    "rarity": "rare",
+    "rarity": "epic",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/tyrogue.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/tyrogue.gif",
     "originalName": "tyrogue",
-    "types": ["fighting"],
+    "types": [
+      "fighting"
+    ],
     "effectiveness": {
       "defense": {
         "bug": 0.5,
@@ -3507,17 +3959,22 @@
       "specialDefense": 35,
       "speed": 35
     },
-    "zones": ["megacity", "rocky-trail"],
+    "zones": [
+      "megacity",
+      "rocky-trail"
+    ],
     "generation": 2
   },
   {
     "id": 237,
     "name": "Kapoera",
-    "rarity": "very_rare",
+    "rarity": "ultra_rare",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/hitmontop.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/hitmontop.gif",
     "originalName": "hitmontop",
-    "types": ["fighting"],
+    "types": [
+      "fighting"
+    ],
     "effectiveness": {
       "defense": {
         "bug": 0.5,
@@ -3549,17 +4006,23 @@
       "specialDefense": 110,
       "speed": 70
     },
-    "zones": ["roaring-sea", "rocky-trail"],
+    "zones": [
+      "roaring-sea",
+      "rocky-trail"
+    ],
     "generation": 2
   },
   {
     "id": 238,
     "name": "Lippouti",
-    "rarity": "rare",
+    "rarity": "epic",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/smoochum.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/smoochum.gif",
     "originalName": "smoochum",
-    "types": ["ice", "psychic"],
+    "types": [
+      "ice",
+      "psychic"
+    ],
     "effectiveness": {
       "defense": {
         "ice": 0.5,
@@ -3595,17 +4058,21 @@
       "specialDefense": 65,
       "speed": 65
     },
-    "zones": ["icy-track"],
+    "zones": [
+      "icy-track"
+    ],
     "generation": 2
   },
   {
     "id": 239,
     "name": "Élekid",
-    "rarity": "rare",
+    "rarity": "epic",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/elekid.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/elekid.gif",
     "originalName": "elekid",
-    "types": ["electric"],
+    "types": [
+      "electric"
+    ],
     "effectiveness": {
       "defense": {
         "electric": 0.5,
@@ -3630,27 +4097,33 @@
       "specialDefense": 55,
       "speed": 95
     },
-    "zones": ["megacity", "cape-of-good-hope-lighthouse"],
+    "zones": [
+      "megacity",
+      "cape-of-good-hope-lighthouse"
+    ],
     "generation": 2
   },
   {
     "id": 240,
     "name": "Magby",
-    "rarity": "rare",
+    "rarity": "epic",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/magby.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/magby.gif",
     "originalName": "magby",
-    "types": ["fire"],
+    "types": [
+      "fire"
+    ],
     "effectiveness": {
       "defense": {
-        "bug": 1,
+        "bug": 0.5,
         "fairy": 0.5,
-        "fire": 1,
+        "fire": 0.5,
         "grass": 0.5,
-        "ice": 1,
+        "ice": 0.5,
         "steel": 0.5,
-        "flying": 2,
-        "poison": 2
+        "ground": 2,
+        "rock": 2,
+        "water": 2
       },
       "attack": {
         "dragon": 0.5,
@@ -3671,17 +4144,22 @@
       "specialDefense": 55,
       "speed": 83
     },
-    "zones": ["incandescent-tower", "megacity"],
+    "zones": [
+      "incandescent-tower",
+      "megacity"
+    ],
     "generation": 2
   },
   {
     "id": 241,
     "name": "Écrémeuh",
-    "rarity": "common",
+    "rarity": "rare",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/miltank.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/miltank.gif",
     "originalName": "miltank",
-    "types": ["normal"],
+    "types": [
+      "normal"
+    ],
     "effectiveness": {
       "defense": {
         "ghost": 0,
@@ -3701,7 +4179,9 @@
       "specialDefense": 70,
       "speed": 100
     },
-    "zones": ["floral-hill"],
+    "zones": [
+      "floral-hill"
+    ],
     "generation": 2
   },
   {
@@ -3711,7 +4191,9 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/blissey.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/blissey.gif",
     "originalName": "blissey",
-    "types": ["normal"],
+    "types": [
+      "normal"
+    ],
     "effectiveness": {
       "defense": {
         "ghost": 0,
@@ -3731,17 +4213,22 @@
       "specialDefense": 135,
       "speed": 55
     },
-    "zones": ["megacity", "cape-of-good-hope-lighthouse"],
+    "zones": [
+      "megacity",
+      "cape-of-good-hope-lighthouse"
+    ],
     "generation": 2
   },
   {
     "id": 243,
     "name": "Raikou",
-    "rarity": "legendary",
+    "rarity": "legendary_wandering",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/raikou.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/raikou.gif",
     "originalName": "raikou",
-    "types": ["electric"],
+    "types": [
+      "electric"
+    ],
     "effectiveness": {
       "defense": {
         "electric": 0.5,
@@ -3781,21 +4268,24 @@
   {
     "id": 244,
     "name": "Entei",
-    "rarity": "legendary",
+    "rarity": "legendary_wandering",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/entei.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/entei.gif",
     "originalName": "entei",
-    "types": ["fire"],
+    "types": [
+      "fire"
+    ],
     "effectiveness": {
       "defense": {
-        "bug": 1,
+        "bug": 0.5,
         "fairy": 0.5,
-        "fire": 1,
+        "fire": 0.5,
         "grass": 0.5,
-        "ice": 1,
+        "ice": 0.5,
         "steel": 0.5,
-        "flying": 2,
-        "poison": 2
+        "ground": 2,
+        "rock": 2,
+        "water": 2
       },
       "attack": {
         "dragon": 0.5,
@@ -3830,11 +4320,13 @@
   {
     "id": 245,
     "name": "Suicune",
-    "rarity": "legendary",
+    "rarity": "legendary_wandering",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/suicune.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/suicune.gif",
     "originalName": "suicune",
-    "types": ["water"],
+    "types": [
+      "water"
+    ],
     "effectiveness": {
       "defense": {
         "fire": 0.5,
@@ -3847,7 +4339,7 @@
       "attack": {
         "dragon": 0.5,
         "grass": 0.5,
-        "steel": 0.5,
+        "water": 0.5,
         "fire": 2,
         "ground": 2,
         "rock": 2
@@ -3878,7 +4370,10 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/larvitar.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/larvitar.gif",
     "originalName": "larvitar",
-    "types": ["rock", "ground"],
+    "types": [
+      "rock",
+      "ground"
+    ],
     "effectiveness": {
       "defense": {
         "fire": 0.5,
@@ -3916,7 +4411,10 @@
       "specialDefense": 50,
       "speed": 41
     },
-    "zones": ["gloomy-cavern", "rocky-trail"],
+    "zones": [
+      "gloomy-cavern",
+      "rocky-trail"
+    ],
     "generation": 2
   },
   {
@@ -3926,7 +4424,10 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/pupitar.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/pupitar.gif",
     "originalName": "pupitar",
-    "types": ["rock", "ground"],
+    "types": [
+      "rock",
+      "ground"
+    ],
     "effectiveness": {
       "defense": {
         "fire": 0.5,
@@ -3964,17 +4465,23 @@
       "specialDefense": 70,
       "speed": 51
     },
-    "zones": ["gloomy-cavern", "rocky-trail"],
+    "zones": [
+      "gloomy-cavern",
+      "rocky-trail"
+    ],
     "generation": 2
   },
   {
     "id": 248,
     "name": "Tyranocif",
-    "rarity": "epic",
+    "rarity": "mythic",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/tyranitar.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/tyranitar.gif",
     "originalName": "tyranitar",
-    "types": ["rock", "dark"],
+    "types": [
+      "rock",
+      "dark"
+    ],
     "effectiveness": {
       "defense": {
         "fire": 0.5,
@@ -4014,7 +4521,10 @@
       "specialDefense": 100,
       "speed": 61
     },
-    "zones": ["gloomy-cavern", "rocky-trail"],
+    "zones": [
+      "gloomy-cavern",
+      "rocky-trail"
+    ],
     "generation": 2
   },
   {
@@ -4024,7 +4534,10 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/lugia.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/lugia.gif",
     "originalName": "lugia",
-    "types": ["psychic", "flying"],
+    "types": [
+      "psychic",
+      "flying"
+    ],
     "effectiveness": {
       "defense": {
         "fighting": 0.25,
@@ -4058,7 +4571,9 @@
       "specialDefense": 154,
       "speed": 110
     },
-    "zones": ["roaring-sea"],
+    "zones": [
+      "roaring-sea"
+    ],
     "generation": 2
   },
   {
@@ -4068,21 +4583,23 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/hooh.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/hooh.gif",
     "originalName": "ho-oh",
-    "types": ["fire", "flying"],
+    "types": [
+      "fire",
+      "flying"
+    ],
     "effectiveness": {
       "defense": {
-        "bug": 0.5,
+        "bug": 0.25,
         "fairy": 0.5,
-        "fire": 1,
+        "fire": 0.5,
         "grass": 0.25,
-        "ice": 2,
+        "ice": 1,
         "steel": 0.5,
-        "flying": 2,
-        "poison": 2,
         "ground": 0,
+        "rock": 4,
+        "water": 2,
         "fighting": 0.5,
-        "electric": 2,
-        "rock": 2
+        "electric": 2
       },
       "attack": {
         "dragon": 0.5,
@@ -4105,7 +4622,9 @@
       "specialDefense": 154,
       "speed": 90
     },
-    "zones": ["incandescent-tower"],
+    "zones": [
+      "incandescent-tower"
+    ],
     "generation": 2
   },
   {
@@ -4115,7 +4634,10 @@
     "image": "https://play.pokemonshowdown.com/sprites/xyani/celebi.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/celebi.gif",
     "originalName": "celebi",
-    "types": ["psychic", "grass"],
+    "types": [
+      "psychic",
+      "grass"
+    ],
     "effectiveness": {
       "defense": {
         "fighting": 0.5,
@@ -4156,7 +4678,9 @@
       "specialDefense": 100,
       "speed": 100
     },
-    "zones": ["dark-woods"],
+    "zones": [
+      "dark-woods"
+    ],
     "generation": 2
   }
 ]

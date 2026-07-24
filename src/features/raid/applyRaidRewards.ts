@@ -8,6 +8,10 @@ import { addAllStats } from "../../methods/stats/addAllStats";
 import { getPokemonById } from "../../methods/pokemon/getPokemonById";
 import { getLoggerForGuild } from "../../utils/logger";
 import { readPlayers, updatePlayers } from "../../utils/jsonPlayers";
+import {
+  isMeteoriteEventActive,
+  METEORITE_XP_MULTIPLIER,
+} from "../../features/meteoriteEvent/meteoriteEventConfig";
 
 function pickRandomElement<T>(items: T[]): T {
   return items[Math.floor(Math.random() * items.length)];
@@ -22,7 +26,10 @@ export async function applyRaidRewards(state: RaidState, guildId: string): Promi
   }
 
   const bossHp = state.raidPokemon.baseStats.hp;
-  const xpReward = bossHp * 10;
+  let xpReward = bossHp * 10;
+  if (state.generation === null && isMeteoriteEventActive()) {
+    xpReward *= METEORITE_XP_MULTIPLIER;
+  }
 
   const participantIds = state.defenders.map((d) => d.userId);
   const luckyUserId = pickRandomElement(participantIds);
@@ -55,6 +62,7 @@ export async function applyRaidRewards(state: RaidState, guildId: string): Promi
       const xpResult = addXp(player.xp ?? 0, xpReward);
       player.xp = xpResult.xp;
       player.level = xpResult.level;
+      player.researchData = (typeof player.researchData === "number" ? player.researchData : 0) + xpReward;
       player.raidWins = (player.raidWins ?? 0) + 1;
 
       logger.info(

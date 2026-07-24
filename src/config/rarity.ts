@@ -7,6 +7,7 @@ export type Rarity =
   | 'ultra_rare'
   | 'mythic'
   | 'legendary'
+  | 'legendary_wandering'
   | 'unknown';
 
 export interface RarityData {
@@ -25,6 +26,7 @@ export const rarityList: RarityData[] = [
   { rarity: 'ultra_rare', weight: 4000, color: 0xFF9800, french: 'Ultra-Rare' },
   { rarity: 'mythic', weight: 1000, color: 0xE91E63, french: 'Mythique' },
   { rarity: 'legendary', weight: 300, color: 0xFFD700, french: 'Légendaire' },
+  { rarity: 'legendary_wandering', weight: 120, color: 0x8A2BE2, french: 'Légendaire itinérant' },
   { rarity: 'unknown', weight: 100, color: 0xCCCCCC, french: 'Inconnu' },
 ];
 
@@ -35,6 +37,7 @@ export const rarityBoostedList: RarityData[] = [
   { rarity: 'ultra_rare', weight: 15000, color: 0xFF9800, french: 'Ultra-Rare' },
   { rarity: 'mythic', weight: 10000, color: 0xE91E63, french: 'Mythique' },
   { rarity: 'legendary', weight: 5000, color: 0xFFD700, french: 'Légendaire' },
+  { rarity: 'legendary_wandering', weight: 2000, color: 0x8A2BE2, french: 'Légendaire itinérant' },
   { rarity: 'unknown', weight: 1000, color: 0xCCCCCC, french: 'Inconnu' },
 ];
 
@@ -47,5 +50,6 @@ export const RARITY_ORDER = [
   "ultra_rare",
   "mythic",
   "legendary",
+  "legendary_wandering",
   "unknown",
 ] as const satisfies readonly Rarity[];

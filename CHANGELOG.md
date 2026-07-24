@@ -3,6 +3,89 @@
 Tous les changements notables du **Pokémon Classic Discord Bot** sont documentés ici.  
 Format basé sur [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+# [3.5.0] - 2026-07-24
+
+## Ajouts
+
+### Génération 3 — Hoenn
+- 135 Pokémon Hoenn (Gen 3) capturables via `/capture` et `/raid`, avec leurs zones de spawn dédiées.
+- Nouveau choix `Hoenn (Génération 3)` dans le dropdown `/capture`.
+- Variable d'environnement `GENERATION_NUMBER` passée de `2` à `3` — Gen 3 incluse dans le tirage aléatoire de capture.
+
+### Nouveau palier de rareté : Légendaire itinérant
+- Palier `legendary_wandering` ajouté au-dessus de `legendary`, avec un taux d'apparition encore plus faible.
+- 6 Pokémon classés dans ce palier : **Mew, Raikou, Entei, Suicune, Latias, Latios**.
+- Emoji dédié 🧭 dans `/get-rarity`.
+
+### Recalibrage des raretés Gen 1 & Gen 2
+- Audit complet des 251 Pokémon Gen 1 et Gen 2 via le moteur de rareté.
+- **119 raretés corrigées** (77 en Gen 1, 42 en Gen 2) suite à relecture manuelle.
+
+### Ressource "Données de recherche"
+- Nouveau champ `researchData` sur chaque profil joueur, initialisé à la valeur XP actuelle à la migration.
+- À chaque gain d'XP (capture normale ou raid), le même montant est octroyé en données de recherche.
+- Solde visible dans `/pokedex`.
+
+### Commande `/capture-cible`
+- Nouvelle commande permettant de cibler une **zone** et une **rareté** précises en échange de données de recherche.
+- Coûts : common 3 300 / uncommon 4 000 / rare 5 000 / very_rare 8 500 / epic 14 500 / ultra_rare 25 000 / mythic 100 000 / legendary et legendary_wandering 300 000.
+- Le solde est vérifié et débité de façon atomique — aucune dépense si le cooldown n'est pas disponible ou si aucun Pokémon n'est disponible à la rareté demandée.
+
+### Commande `/get-pokemon-info`
+- Affiche les informations d'un Pokémon depuis le catalogue complet : id, nom FR/EN, rareté, types, faiblesses et résistances en défense, statistiques.
+- Autocomplete sur les 393 Pokémon (Gen 1, 2 et 3).
+
+### Événement Météorite — Nuit des Étoiles (15 août 2026)
+- Événement ponctuel **24 h** le 15 août, avec zone dédiée `météorite-crater` ouverte de 8h00 à 23h59 (heure de Paris).
+- 4 raids Deoxys dans la journée : Forme Normale (10h–12h), Attaque (13h30–15h30), Défense (18h–20h), Vitesse (21h–23h).
+- Cooldown de capture **÷ 2** dans la zone météorite.
+- XP **× 2** pour les captures dans la zone et pour les raids météorite.
+- Embeds de lore AURORA / Professeure Lyra Voss à l'ouverture et à la fermeture de la zone.
+- Variable `METEORITE_EVENT_DEBUG=1` pour tester le flux complet avant l'événement.
+
+### Configuration serveur à 4 salons
+- Schéma `guilds.json` revu : `mainChannelId` (obligatoire), `raidAnnounceChannelId` (inchangé), `devChannelId` (optionnel — patchnotes), `loreChannelId` (optionnel — événements).
+- `devChannelId` et `loreChannelId` se replient sur `mainChannelId` si absents.
+- ⚠️ **Migration requise** : ajouter `mainChannelId` dans `data/guilds.json` avant le déploiement.
+
+### Scripts d'automatisation
+- `npm run send-patchnote` — publie la dernière entrée de `CHANGELOG.md` dans le salon dev de chaque serveur.
+- `npm run get-last-update` — met à jour le bot automatiquement (maintenance → `git pull` → build → redémarrage via `screen`).
+
+## Corrections
+
+### Tableau des types
+- `fire.defense.double` contenait `bug, fire, flying, ice, poison` au lieu de `water, ground, rock`.
+- `water.attack.half` contenait `steel` au lieu de `water`.
+- **106 Pokémon** (44 Gen 1, 28 Gen 2, 34 Gen 3) dont le champ `effectiveness` était incorrect ont été recalculés.
+
+### Moteur de rareté
+- Les échanges NPC garantis (ex. Posipi/Plusle à Feuvenelle en Émeraude) sont désormais exclus du calcul de score de rareté (`npc-trade` traité comme méthode fixe/scriptée).
+
+### Scripts de maintenance
+- `send-maintenance`, `send-back-online`, `send-quick-maintenance` et `send-quick-back-online` envoyaient par défaut dans le salon raid au lieu du salon principal.
+
+### Libellés de zones
+- "Phare de bon espérance" corrigé en "Phare de Bonne-Espérance".
+- 8 autres libellés corrigés pour respecter la convention française (seul le premier mot capitalisé).
+
+### Tests unitaires
+- 5 tests échouaient à cause de mocks `logger` incomplets et de signatures d'appel obsolètes (paramètre `guildId` manquant). Tous verts désormais (1224 tests).
+
+## Modifications
+
+- `src/scripts/` réorganisé en 7 sous-dossiers par domaine : `announcements/`, `fetch/`, `gen-json/`, `player-maintenance/`, `raid-tools/`, `rarity/`, `zones/`. Les scripts npm et le README sont mis à jour en conséquence.
+- `npm test` (`vitest run`) ajouté et documenté dans le README comme première étape du workflow de déploiement.
+- Numéro de version : 3.4.2 → 3.5.0.
+
+## Suppressions
+
+- `generalChannelId` retiré du schéma de configuration serveur (remplacé par `mainChannelId`).
+- 14 scripts de développement personnels obsolètes supprimés de `src/scripts/`.
+- Script de migration `scripts/migrate-to-guild-dirs.js` supprimé (migration mono-serveur → multi-guild déjà effectuée en prod).
+
+---
+
 # [3.4.2] - 2026-07-01
 
 ## Corrections

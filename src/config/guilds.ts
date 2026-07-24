@@ -27,9 +27,9 @@ export function loadGuildRegistry(): GuildRegistryEntry[] {
   const parsed = JSON.parse(raw) as { guilds: GuildRegistryEntry[] };
 
   parsed.guilds.forEach((entry) => {
-    if (!entry.guildId || !entry.raidAnnounceChannelId) {
+    if (!entry.guildId || !entry.raidAnnounceChannelId || !entry.mainChannelId) {
       throw new Error(
-        `Entrée invalide dans ${GUILDS_REGISTRY} : guildId et raidAnnounceChannelId sont requis (guildId=${entry.guildId})`,
+        `Entrée invalide dans ${GUILDS_REGISTRY} : guildId, raidAnnounceChannelId et mainChannelId sont requis (guildId=${entry.guildId})`,
       );
     }
   });

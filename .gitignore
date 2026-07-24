@@ -25,10 +25,6 @@ Thumbs.db
 # Backups
 backups/
 
-# Tests
-tests/
-tsconfig.vitest.json
-
 # Scripts one-shot (migration, build data, etc.)
 src/scripts/send-lore.ts
 
@@ -49,6 +45,16 @@ data/*.txt
 data/old/
 data/img/
 data/simulations/
+data/raid_debug.json
+
+# Data - outils dev (entree/sortie de scripts, pas lus par le bot au runtime)
+data/gen3.csv
+data/gen3_zones.csv
+data/rarity-audit-gen3.json
+data/rarity-audit-gen3-readable.csv
+data/rarity-comparison-gen3.csv
+data/rarity-audit-gen1-gen2.json
+data/rarity-comparison-gen1-gen2.csv
 
 # Data - generated
 data/pokemon-list.json

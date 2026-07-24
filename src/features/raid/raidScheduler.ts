@@ -11,6 +11,7 @@ import { buildRaidResultEmbed } from "./buildRaidResultEmbed";
 import { loadGuildRegistry } from "../../config/guilds";
 import logger, { getLoggerForGuild } from "../../utils/logger";
 import { getRaidSchedulerMode, getRaidStartHour, getRaidEndHour } from "../../config/guildSettings";
+import { isMeteoriteEventActive } from "../../features/meteoriteEvent/meteoriteEventConfig";
 
 const RAID_TIMEZONE = "Europe/Paris";
 
@@ -57,7 +58,11 @@ export async function sendRaidAnnouncement(
   await channel.send({ embeds: [embed] });
 }
 
-export async function openRaidRegistration(guildId: string, announceChannelId: string): Promise<void> {
+export async function openRaidRegistration(
+  guildId: string,
+  announceChannelId: string,
+  factory?: (guildId: string) => Promise<RaidState>,
+): Promise<void> {
   const logger = getLoggerForGuild(guildId);
   const currentState = await loadRaidState(guildId);
 
@@ -67,7 +72,7 @@ export async function openRaidRegistration(guildId: string, announceChannelId: s
   }
 
   logger.info(`[RAID] (${guildId}) Génération d'un nouveau raid...`);
-  const newState = await generateRaidState(guildId);
+  const newState = factory ? await factory(guildId) : await generateRaidState(guildId);
   await saveRaidState(guildId, newState);
 
   logger.info({
@@ -185,6 +190,7 @@ export function startRaidScheduler(client: Client): void {
     cron.schedule(
       openExpression,
       () => {
+        if (isMeteoriteEventActive()) return;
         void openRaidRegistration(guild.guildId, guild.raidAnnounceChannelId);
       },
       { timezone: RAID_TIMEZONE },

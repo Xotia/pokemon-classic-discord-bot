@@ -1,12 +1,13 @@
 {
   "gen1": [
-    { "id": "pastoral-route", "label": "Route Bucolique" },
+    { "id": "pastoral-route", "label": "Route bucolique" },
     { "id": "calm-river", "label": "Rivière apaisante" },
-    { "id": "steep-path", "label": "Chemin Escarpé" }
+    { "id": "steep-path", "label": "Chemin escarpé" }
   ],
   "gen2": [
     { "id": "country-road", "label": "Route champêtre" },
-    { "id": "floral-hill", "label": "Colline Florale" },
+    { "id": "floral-hill", "label": "Colline florale" },
     { "id": "sour-pond", "label": "Étang aigri" }
-  ]
+  ],
+  "gen3": []
 }

@@ -21,5 +21,5 @@
     }
   },
   "include": ["src/**/*.ts"],
-  "exclude": ["tests", "node_modules", "src/scripts/old", "src/scripts/buildPokemonJson.ts", "src/scripts/testGetMultiplier.ts", "src/scripts/test-raid-pokemon.ts", "src/scripts/createGenJson.ts", "src/scripts/injectZones.ts", "src/scripts/runRarityAudit.ts"]
+  "exclude": ["tests", "node_modules", "src/scripts/gen-json/buildPokemonJson.ts", "src/scripts/raid-tools/test-raid-pokemon.ts", "src/scripts/gen-json/createGenJson.ts", "src/scripts/gen-json/createGen3Json.ts", "src/scripts/rarity/runRarityAudit.ts"]
 }

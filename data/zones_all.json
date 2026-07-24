@@ -1,13 +1,13 @@
 {
   "gen1": [
-    { "id": "pastoral-route", "label": "Route Bucolique" },
+    { "id": "pastoral-route", "label": "Route bucolique" },
     { "id": "calm-river", "label": "Rivière apaisante" },
-    { "id": "steep-path", "label": "Chemin Escarpé" },
-    { "id": "verdant-plain", "label": "Plaine Verdoyante" },
+    { "id": "steep-path", "label": "Chemin escarpé" },
+    { "id": "verdant-plain", "label": "Plaine verdoyante" },
     { "id": "rough-beach", "label": "Plage agitée" },
     { "id": "abandoned-industrial-city", "label": "Ville industrielle abandonnée" },
     { "id": "towering-mountain", "label": "Montagne culminante" },
-    { "id": "ice-cave", "label": "Grotte de Glace" },
+    { "id": "ice-cave", "label": "Grotte de glace" },
     { "id": "isolated-valley", "label": "Vallée isolée" },
     { "id": "rumbling-volcano", "label": "Volcan grondant" },
     { "id": "primeval-forest", "label": "Forêt primaire" },
@@ -19,16 +19,33 @@
   ],
   "gen2": [
     { "id": "country-road", "label": "Route champêtre" },
-    { "id": "floral-hill", "label": "Colline Florale" },
+    { "id": "floral-hill", "label": "Colline florale" },
     { "id": "sour-pond", "label": "Étang aigri" },
     { "id": "incandescent-tower", "label": "Tour incandescente" },
     { "id": "dark-woods", "label": "Bois sombre" },
     { "id": "gloomy-cavern", "label": "Caverne lugubre" },
-    { "id": "rocky-trail", "label": "Sentier Rupestre" },
+    { "id": "rocky-trail", "label": "Sentier rupestre" },
     { "id": "megacity", "label": "Mégalopole" },
     { "id": "roaring-sea", "label": "Mer grondante" },
-    { "id": "cape-of-good-hope-lighthouse", "label": "Phare de bon espérance" },
+    { "id": "cape-of-good-hope-lighthouse", "label": "Phare de Bonne-Espérance" },
     { "id": "icy-track", "label": "Piste givrée" },
     { "id": "archaeological-ruins", "label": "Ruines archéologiques" }
+  ],
+  "gen3": [
+    { "id": "iridescent-marsh", "label": "Marais iridescent" },
+    { "id": "arid-dunes", "label": "Dunes arides" },
+    { "id": "jungle", "label": "Jungle" },
+    { "id": "sunny-cove", "label": "Crique ensoleillée" },
+    { "id": "grim-cemetery", "label": "Cimetière sinistre" },
+    { "id": "beginner-trail", "label": "Randonnée d'initiation" },
+    { "id": "enchanted-meadow", "label": "Prairie enchantée" },
+    { "id": "underwater-cave", "label": "Grotte sous-marine" },
+    { "id": "magma-cave", "label": "Grotte magmatique" },
+    { "id": "celestial-tower", "label": "Tour céleste" },
+    { "id": "meteorite-crater", "label": "Cratère de la météorite" },
+    { "id": "paradise-island", "label": "Île paradisiaque" }
+  ],
+  "event": [
+    { "id": "meteorite-crater", "label": "Cratère de la Météorite" }
   ]
 }

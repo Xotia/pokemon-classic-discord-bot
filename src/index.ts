@@ -9,11 +9,15 @@ import { pokedexCommand } from "./commands/pokedexCommand";
 import logger from "./utils/logger";
 import { execute } from "./commands/getStatsCommand";
 import { captureCommand } from "./commands/captureCommand";
+import { captureCibleCommand } from "./commands/captureCibleCommand";
 import { helpCommand } from "./commands/helpCommand";
 import { getPity } from "./commands/getPityCommand";
 import { getRarityCommand } from "./commands/getRarityCommand";
+import { getPokemonInfoCommand } from "./commands/getPokemonInfoCommand";
 
-import { startRaidScheduler } from './features/raid/raidScheduler.js';
+import { startRaidScheduler } from './features/raid/raidScheduler';
+import { startMeteoriteEventScheduler } from './features/meteoriteEvent/meteoriteEventScheduler';
+import { isMeteoriteEventActive, METEORITE_ZONE_ID, METEORITE_ZONE_LABEL } from './features/meteoriteEvent/meteoriteEventConfig';
 
 import { raidCommand } from "./commands/raidCommand";
 import { loadUnlockedZones } from "./utils/loadUnlockedZones";
@@ -37,6 +41,7 @@ const client = new Client({
 });
 
 startRaidScheduler(client);
+startMeteoriteEventScheduler(client);
 
 client.on(Events.Error, (error) => {
   logger.error({ err: error }, "❌ Erreur client Discord non gérée");
@@ -172,7 +177,32 @@ async function handleInteraction(interaction: Interaction) {
       return;
     }
 
-    if (interaction.commandName === "capture") {
+    if (interaction.commandName === "get-pokemon-info") {
+      const focusedOption = interaction.options.getFocused(true);
+
+      if (focusedOption.name === "pokemon") {
+        try {
+          if (!interaction.guildId) {
+            await interaction.respond([]);
+            return;
+          }
+          const search = focusedOption.value.trim().toLowerCase();
+          const pokemonList = getPokemonCatalog(interaction.guildId);
+
+          const suggestions = pokemonList
+            .filter((p) => p.name.toLowerCase().includes(search))
+            .slice(0, 25)
+            .map((p) => ({ name: p.name, value: p.name }));
+
+          await interaction.respond(suggestions);
+        } catch {
+          await interaction.respond([]);
+        }
+      }
+      return;
+    }
+
+    if (interaction.commandName === "capture" || interaction.commandName === "capture-cible") {
       const focusedOption = interaction.options.getFocused(true);
 
       if (focusedOption.name === "zone") {
@@ -184,10 +214,14 @@ async function handleInteraction(interaction: Interaction) {
         const search = focusedOption.value.toLowerCase();
         const unlockedZones = loadUnlockedZones(interaction.guildId);
 
-        const pool: Zone[] =
-          generation && generation in unlockedZones
-            ? unlockedZones[generation as keyof typeof unlockedZones]
-            : Object.values(unlockedZones).flat();
+        const isGenerationFiltered = generation && generation in unlockedZones;
+        const pool: Zone[] = isGenerationFiltered
+          ? unlockedZones[generation as keyof typeof unlockedZones]
+          : Object.values(unlockedZones).flat();
+
+        if (!isGenerationFiltered && isMeteoriteEventActive()) {
+          pool.push({ id: METEORITE_ZONE_ID, label: METEORITE_ZONE_LABEL });
+        }
 
         const suggestions = pool
           .filter(
@@ -271,6 +305,10 @@ async function handleInteraction(interaction: Interaction) {
     return await captureCommand(interaction);
   }
 
+  if (interaction.commandName === "capture-cible") {
+    return await captureCibleCommand(interaction);
+  }
+
   if (interaction.commandName === "raid") {
     return await raidCommand(interaction);
   }
@@ -285,5 +323,9 @@ async function handleInteraction(interaction: Interaction) {
 
   if (interaction.commandName === "raid-force-end") {
     return forceEndRaidCommand(interaction);
+  }
+
+  if (interaction.commandName === "get-pokemon-info") {
+    return await getPokemonInfoCommand(interaction);
   }
 }

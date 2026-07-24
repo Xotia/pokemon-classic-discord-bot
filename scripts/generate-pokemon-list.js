@@ -10,7 +10,7 @@ if (fs.existsSync(output)) {
   process.exit(0);
 }
 
-const defaultFiles = ["pokemon-gen1.json", "pokemon-gen2.json"];
+const defaultFiles = ["pokemon-gen1.json", "pokemon-gen2.json", "pokemon-gen3.json"];
 const extraFiles = process.env.EXTRA_POKEMON_FILES
   ? process.env.EXTRA_POKEMON_FILES.split(",").map((f) => f.trim()).filter(Boolean)
   : [];
