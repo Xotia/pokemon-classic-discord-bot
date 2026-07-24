@@ -5964,7 +5964,7 @@
   {
     "id": 380,
     "name": "Latias",
-    "rarity": "legendary",
+    "rarity": "legendary_wandering",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/latias.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/latias.gif",
     "originalName": "latias",
@@ -6023,7 +6023,7 @@
   {
     "id": 381,
     "name": "Latios",
-    "rarity": "legendary",
+    "rarity": "legendary_wandering",
     "image": "https://play.pokemonshowdown.com/sprites/xyani/latios.gif",
     "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/latios.gif",
     "originalName": "latios",

@@ -17,7 +17,8 @@
     "force-end-raid": "npx ts-node src/scripts/forceEndRaid.ts",
     "generate-gen3": "npx ts-node src/scripts/createGen3Json.ts",
     "inject-zones-gen3": "npx ts-node src/scripts/injectZonesGen3.ts",
-    "simulate-gen3-zones": "npx ts-node src/scripts/simulateGen3Zones.ts"
+    "simulate-gen3-zones": "npx ts-node src/scripts/simulateGen3Zones.ts",
+    "apply-wandering-legendaries": "npx ts-node src/scripts/applyWanderingLegendaries.ts"
   },
   "keywords": [],
   "author": "",

@@ -83,16 +83,34 @@ reste en place).
       auditer capture/raid/pokedex pour confirmer qu'aucun autre point du
       code n'est encore gen1/gen2-only (cf. Slice G ci-dessous, à finir
       après A2).
-- [ ] A2 (révisé le 2026-07-24 : liste manuelle, pas de détection
-      automatique — cf. Décisions). Ajouter `legendary_wandering` dans
-      `RARITY_ORDER` / `rarityList` / `rarityBoostedList`
-      (`src/config/rarity.ts`), au-dessus de `legendary`, taux plus faible.
-      Ajouter un mécanisme simple pour marquer manuellement un id comme
-      "itinérant" (override explicite écrit à la main par l'utilisateur
-      dans le pipeline de génération JSON, pas un script de calcul) —
-      appliqué après `computeRarity`, dans le même esprit que
-      l'injection de zones. Pas de passage par `risk-lead`/`architect`
-      nécessaire vu la simplification : `implementer` direct suffit.
+- [x] A2 (fait le 2026-07-24, branche `feat/legendary-wandering-rarity`
+      depuis `release/3.5.0`) — `legendary_wandering` ("Légendaire
+      itinérant") ajouté dans `src/config/rarity.ts`
+      (`Rarity`/`RARITY_ORDER`/`rarityList` poids 120/`rarityBoostedList`
+      poids 2000, couleur `0x8A2BE2`), positionné juste au-dessus de
+      `legendary`. Propagé dans les 3 autres endroits qui dupliquent la
+      logique de rareté (repérés un par un, pas génériques) :
+      `src/methods/rarity/downgradeRarity.ts`,
+      `src/features/raid/downgradeRaidRarity.ts` (liste
+      `boostedRarityOrder` séparée de `RARITY_ORDER`),
+      `src/methods/pity/resetPityCounterIfNeeded.ts`, et l'emoji dans
+      `src/commands/getRarityCommand.ts` (🧭). Liste manuelle appliquée via
+      le nouveau script idempotent `src/scripts/applyWanderingLegendaries.ts`
+      (`npm run apply-wandering-legendaries`), exécuté sur les 3 fichiers
+      JSON : Mew (151), Raikou (243), Entei (244), Suicune (245), Latias
+      (380), Latios (381) sont maintenant `"legendary_wandering"`. Diff
+      sémantique vérifié indépendamment (comparaison champ par champ
+      ancien/nouveau JSON) : seuls ces 6 champs `rarity` ont changé, le
+      reste du diff volumineux sur gen1/gen2.json est un reformatage
+      JSON pur (première réécriture via `JSON.stringify(..., null, 2)`,
+      jamais passés par un script de post-traitement avant). `tsc`
+      clean, mêmes 5 échecs de tests préexistants (B4), aucune régression.
+      **Découverte au passage (à trancher séparément, pas bloquant)** : tout
+      le dossier `tests/` est dans `.gitignore` (`.gitignore:29`) — les
+      tests unitaires qui y vivent (dont `pitySystem.test.ts`,
+      `tryCatchPokemon.test.ts` visés par B4) ne sont donc jamais commités.
+      Probablement une règle gitignore trop large/accidentelle plutôt
+      qu'un choix voulu — à confirmer avec l'utilisateur avant d'y toucher.
       Ajouter la valeur dans `RARITY_ORDER` / `rarityList` /
       `rarityBoostedList` (`src/config/rarity.ts`).
 - [ ] A4. Généraliser `createGenJson.ts` (utilise encore l'ancien
@@ -134,6 +152,28 @@ reste en place).
         pas `player.pityCounter` à 0 pour la rareté `very_rare` (bug
         réel dans `src/methods/pity/pitySystem.ts`, pas juste un test
         mal écrit — à vérifier lequel des deux est faux avant de corriger).
+        Piste sérieuse trouvée en marge de A2 : `resetPityCounterIfNeeded`
+        attend `(guildId, player, rarity)` mais le test l'appelle
+        `(player, rarity)` — probablement juste un décalage d'arguments
+        côté test, pas un vrai bug de prod. À confirmer en le corrigeant.
+- [ ] B5 (ajouté le 2026-07-24, décision utilisateur : à faire en Slice
+      B/C, pas maintenant). `tests/` est listé dans `.gitignore:29` alors
+      que `tsconfig.json:24` exclut déjà `tests` de la compilation — deux
+      mécanismes différents (git tracking vs build prod), confondus par
+      erreur : le `.gitignore` ne protège rien côté prod (déjà fait par
+      `tsconfig`), il retire juste les tests du dépôt. Conséquence :
+      aucun test n'est jamais commité, donc jamais revu en PR — c'est
+      probablement comme ça que B4 a pu vivre sans être remarqué.
+      - Retirer `tests/` de `.gitignore` et committer les fichiers de
+        test existants (`tests/pitySystem.test.ts`,
+        `tests/tryCatchPokemon.test.ts`, etc.).
+      - Ajouter un script npm `"test": "vitest run"` (n'existe pas
+        actuellement, seul `npx vitest run` marche en ad-hoc).
+      - Envisager de faire tourner les tests avant `npm run build` dans
+        le "Workflow production / mise a jour" documenté dans
+        `README.md` (pas de CI/`.github/workflows` dans ce repo à ce
+        jour, donc c'est actuellement la seule porte de sécurité
+        possible avant un déploiement).
 
 ### Slice C — Rangement du repo (checkpoint de confirmation requis)
 - [ ] C0. Gitignore des fichiers `data/` dont le serveur n'a pas besoin en

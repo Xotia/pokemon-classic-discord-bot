@@ -2,7 +2,8 @@ import { RARITY_ORDER, Rarity }  from "./../../config/rarity";
 
 export function downgradeRarity(rarity: Rarity): Rarity | null {
   switch (rarity) {
-    case 'unknown': return 'legendary';
+    case 'unknown': return 'legendary_wandering';
+    case 'legendary_wandering': return 'legendary';
     case 'legendary': return 'mythic';
     case 'mythic': return 'ultra_rare';
     case 'ultra_rare': return 'epic';

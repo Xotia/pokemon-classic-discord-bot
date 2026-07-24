@@ -13,6 +13,7 @@ const rarityEmojiMap: Record<string, string> = {
   ultra_rare: '🟠',
   mythic: '🌸',
   legendary: '🟡',
+  legendary_wandering: '🧭',
   unknown: '⚫',
 };
 
