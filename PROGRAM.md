@@ -392,12 +392,38 @@ reste en place).
         l'utilisateur, corrigée en cours de route).
       `tsc` clean, 1171/1171 tests passent (aucun test ne dépendait du
       plafond gen1-2 codé en dur).
-- [ ] C4. `src/scripts/addXpAndLevelToPlayers.ts:4-9` définit un type
-      `Player` local dupliqué et plus permissif que le vrai
-      `src/types/Player.ts`. Supprimer le type local, importer
-      `Player`/`PlayersRecord` depuis `src/types/Player.ts`, adapter le
-      script aux champs réels (`name` et non `username`, `xp`/`level`
-      non-optionnels).
+- [x] C4 (terminé le 2026-07-24, branche `chore/extract-player-type-c4`
+      depuis `release/3.5.0`). Type `Player` local supprimé de
+      `src/scripts/player-maintenance/addXpAndLevelToPlayers.ts`, importe
+      désormais `PlayersRecord` depuis `src/types/Player.ts`. `tsc`
+      clean, 1171/1171 tests. Règle générale codifiée en TEAM CONVENTIONS
+      dans `~/.claude/skills/golden-rules-languages/rules/typescript.md`
+      (fichier global, hors de ce dépôt) : un type de domaine partagé ne
+      se redéclare jamais localement, il vit une seule fois dans
+      `src/types/` et s'importe partout ailleurs.
+      Découverte au passage, pas encore traitée : ce script cible encore
+      `data/players.json` (ancien fichier legacy pré-multi-guild) au lieu
+      de `data/guilds/{guildId}/players.json`, et ne suit pas la
+      convention `--guildId` des autres scripts de maintenance joueurs
+      (`add-captured-in-current-season.ts`, `migrate-players.ts`,
+      `sync-players-from-stats.ts`, `update-stats-from-players.ts`) — cf.
+      C5 ci-dessous.
+- [ ] C5 (ajouté le 2026-07-24, suite à la découverte C4). Auditer TOUS
+      les fichiers du repo qui touchent encore aux chemins de données
+      legacy pré-multi-guild (`data/players.json`, `data/stats.json`,
+      `data/raid.json`, `data/zones_unlocked.json`,
+      `data/zones_to_unlock.json` — à la racine de `data/`, pas dans
+      `data/guilds/{guildId}/`) ou qui n'ont pas encore la convention
+      `--guildId` des scripts de maintenance déjà conformes. Point de
+      départ connu : `addXpAndLevelToPlayers.ts` (confirmé non
+      conforme). Vérifier au minimum tout `src/scripts/` restant, et
+      confirmer qu'aucun chemin de code de PROD (hors scripts one-shot)
+      ne lit/écrit encore ces chemins legacy à la racine — seuls des
+      scripts one-shot explicitement documentés comme tels devraient
+      encore les toucher (cf. le commentaire `.gitignore` "gardés pour
+      les scripts one-shot"). Ne pas corriger sans lister d'abord tous
+      les fichiers concernés et les faire valider par l'utilisateur,
+      même esprit que le checkpoint C1.
 
 ### Slice D — Nouvelle ressource "données de recherche" + 3 commandes
 - [ ] D1. Design de la ressource (nouveau champ sur `Player`
@@ -439,12 +465,13 @@ reste en place).
       Rien d'assez concret encore pour lancer une conception.
 
 ### Slice G — Génération 3 (déjà bien avancée)
-- [ ] G1. Dépend de A3 (injection des zones gen3) — une fois fait, auditer
-      le reste du flux gen3 (raid, pokedex, capture, commandes existantes)
-      pour confirmer qu'il n'y a pas de code encore gen1/gen2-only qui
-      bloquerait gen3 en usage réel (le README documente déjà
-      `/capture [generation]`, donc le multi-gen est probablement déjà
-      câblé — à vérifier, pas à supposer).
+- [~] G1 (partiellement clos par C3, 2026-07-24) — capture et raids
+      confirmés gen3-complets suite à l'audit fait en C3 (dropdown
+      `/capture`, tirage aléatoire, génération de raid — tous corrigés).
+      **Reste à vérifier, non fait** : `/pokedex`, `/leaderboard`,
+      `/get-rarity`, `/get-shiny-rate` et les autres commandes existantes
+      — pas d'audit spécifique mené dessus, ne pas supposer qu'elles sont
+      gen3-complètes sans vérifier.
 
 ### Slice H — Release
 - [ ] H1. `CHANGELOG.md` : rédiger l'entrée `[3.5.0]` consolidée
