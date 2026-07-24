@@ -195,13 +195,34 @@ reste en place).
       gen1, 28 en gen2, 34 en gen3), vérifié indépendamment qu'aucun
       Pokémon sans type Feu/Eau n'a été touché et qu'aucun autre champ
       n'a bougé. `tsc` clean, mêmes 5 échecs de tests préexistants (B4).
-- [ ] B2. Corriger le libellé de zone "Phare de bon espérance" →
-      "Phare de Bonne-Espérance" dans `data/zones_to_unlock.default.json:24`
-      et `data/zones_all.json:30`. Vérifier si les fichiers déployés en prod
-      (`data/guilds/{guildId}/zones_*.json`, non versionnés) doivent être
-      corrigés manuellement côté serveur après déploiement (l'id
-      `cape-of-good-hope-lighthouse` ne change pas, seul le libellé change,
-      donc impact limité à l'affichage).
+- [x] B2 (terminé le 2026-07-24, branche `fix/zone-names-formatting`
+      depuis `release/3.5.0`, élargi à la demande de l'utilisateur pour
+      uniformiser TOUS les libellés de zone, pas seulement le fix
+      initial). "Phare de bon espérance" → "Phare de Bonne-Espérance"
+      corrigé dans les 3 fichiers (`zones_all.json`,
+      `zones_to_unlock.default.json` — `zones_unlocked.default.json` ne
+      contient pas cette zone). En passant en revue les ~37 libellés des
+      3 fichiers, 8 autres incohérences de casse trouvées (des noms où
+      les deux mots étaient capitalisés au lieu de suivre la convention
+      française standard — seul le premier mot capitalisé) : "Route
+      Bucolique"→"bucolique", "Chemin Escarpé"→"escarpé", "Plaine
+      Verdoyante"→"verdoyante", "Grotte de Glace"→"de glace", "Colline
+      Florale"→"florale", "Sentier Rupestre"→"rupestre", "Grotte
+      Magmatique"→"magmatique", "Tour Céleste"→"céleste". Toutes
+      appliquées de façon cohérente dans les 3 fichiers (`zones_all.json`
+      = source, `zones_to_unlock.default.json`/`zones_unlocked.default.json`
+      = sous-ensembles qui doivent matcher exactement). Vérifié par
+      script : 0 divergence de libellé entre les 3 fichiers pour un même
+      id, aucune des anciennes formes ne subsiste, aucun autre fichier du
+      repo ne hardcode ces libellés. `tsc` clean, mêmes 5 échecs
+      préexistants (B4).
+      Point non résolu (pas bloquant, à surveiller) : les fichiers déployés
+      en prod par serveur (`data/guilds/{guildId}/zones_*.json`, non
+      versionnés, seedés une fois au démarrage depuis les `.default.json`)
+      ne se mettent pas à jour rétroactivement — impact limité à
+      l'affichage (l'id ne change pas), mais les libellés resteront
+      anciens sur les serveurs déjà seedés tant qu'ils ne sont pas
+      re-seedés manuellement.
 - [ ] B3. Bug "messages auto envoyés dans le channel de raid" —
       `src/scripts/lib/broadcast.ts:34` défaut `channelField = "raid"`.
       `send-maintenance.ts`, `send-back-online.ts`,
