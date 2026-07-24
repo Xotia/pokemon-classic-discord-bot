@@ -18,6 +18,7 @@ export function editFooter({
 
   if (typeof gainedXp === "number") {
     footerParts.push(`+${gainedXp} XP`);
+    footerParts.push(`+${gainedXp} données de recherche`);
   }
 
   if (leveledUp && typeof newLevel === "number") {
