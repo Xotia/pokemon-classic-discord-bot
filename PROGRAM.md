@@ -720,20 +720,22 @@ reste en place).
       contrainte de procédure de déploiement.
 
 ### Slice H — Release
-- [ ] H0. Tests E2E automatisés (décidé le 2026-07-24, à faire avant le
-      merge final, pas maintenant). Pas un vrai E2E réseau (bot connecté à
-      Discord — trop fragile/dangereux à automatiser : token réel, rate
-      limits, pas d'assertions fiables côté UI Discord). Approche retenue :
-      simuler des objets `Interaction` discord.js et appeler directement les
-      handlers de commandes (`captureCommand`, `raidCommand`, etc.) contre
-      un dossier de guilde de test avec de vraies données JSON — couvre le
-      parcours complet (capture avec/sans rareté forcée → xp → pokedex →
-      stats, raid complet, pity) sans dépendre du réseau Discord. À faire
-      designer/écrire par `e2e-test-writer` (via `quality-lead`) : liste de
-      parcours d'abord, puis implémentation. Doit passer avant H2.
-- [ ] H1. `CHANGELOG.md` : rédiger l'entrée `[3.5.0]` consolidée
-      (Ajouts / Corrections / Modifications / Suppressions) à partir de
-      toutes les slices ci-dessus.
+- [x] H0 (terminé le 2026-07-24). `tests/e2e/commandFlows.test.ts` — 22 tests
+      (17 initiaux + 5 ajoutés pour `captureCommand`), 1224/1224 verts.
+      Parcours couverts : `createProfileIfNeeded` (idempotence), capture
+      normale (`handleSuccessfulCapture` — xp/researchData/captureList),
+      capture ciblée (`handleTargetedCapture` — débit atomique, solde
+      insuffisant, guards), `captureCommand` orchestration complète (happy
+      path, zone null, cooldown refusé, aucun pokémon, guildId absent),
+      pity (`getPity`), pokédex (`pokedexCommand`). Raid sciemment exclu :
+      machine à états complexe déjà couverte par `resolveRaid.test.ts`,
+      `raidRewards.test.ts`, `raidCaptureRace.test.ts`.
+- [x] H1 (terminé le 2026-07-24). Entrée `[3.5.0]` rédigée dans
+      `CHANGELOG.md` : Ajouts (Gen 3, legendary_wandering, recalibrage
+      raretés, researchData, /capture-cible, /get-pokemon-info, événement
+      météorite, config 4 salons, scripts d'automatisation), Corrections
+      (tableau des types, moteur de rareté, scripts maintenance, libellés
+      zones, tests), Modifications, Suppressions.
 - [ ] H2. Vérifier `package.json` (déjà `3.5.0`), merger `release/3.5.0` →
       `main`, tag `v3.5.0` (uniquement sur confirmation explicite —
       commit/push restent soumis aux règles habituelles : jamais de push
@@ -755,9 +757,8 @@ reste en place).
 
 ## Prochaine étape immédiate
 
-Slices A, B, C, D, E, F et G sont closes. Reste uniquement **Slice H**
-(release finale) : H0 (tests E2E optionnels), H1 (CHANGELOG.md 3.5.0),
-H2 (merge `release/3.5.0` → `main`, tag `v3.5.0`), H3 (dogfooder E1).
+H0 et H1 clos. Reste **H2** (merge
+`release/3.5.0` → `main`, tag `v3.5.0`), **H3** (dogfooder E1).
 Avant le déploiement H2 : mettre à jour manuellement `data/guilds.json`
 en prod avec `mainChannelId`/`devChannelId`/`loreChannelId` (ajout E0).
 Rappel événement F1 : tester avec `METEORITE_EVENT_DEBUG=1` avant le 15 août.
