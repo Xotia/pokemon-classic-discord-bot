@@ -1,20 +1,12 @@
 import fs from "fs";
 import path from "path";
-
-type Player = {
-  username: string;
-  xp?: number;
-  level?: number;
-  [key: string]: unknown;
-};
-
-type PlayersMap = Record<string, Player>;
+import { PlayersRecord } from "../../types/Player";
 
 const filePath = path.join(__dirname, "../../../data/players.json");
 
 try {
   const rawData = fs.readFileSync(filePath, "utf-8");
-  const players: PlayersMap = JSON.parse(rawData);
+  const players: PlayersRecord = JSON.parse(rawData);
 
   for (const playerId of Object.keys(players)) {
     players[playerId].xp = players[playerId].xp ?? 0;
