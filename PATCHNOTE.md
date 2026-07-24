@@ -1,3 +1,62 @@
+# Mise à jour 3.5.0 — Hoenn, Données de Recherche & surprises à venir
+
+---
+
+## Génération 3 — Hoenn disponible
+
+135 nouveaux Pokémon de la région Hoenn (Poussifeu, Gobou, Arcko et leurs évolutions) sont désormais capturables via `/capture` et en raid. Un nouveau choix **Hoenn (Génération 3)** est disponible dans le menu déroulant de `/capture`. (Fonctionnera pas temps qu'on a pas débloqué de zone de la génération 3).
+
+---
+
+## Nouveau palier de rareté : Légendaire itinérant 🧭
+
+Un nouveau palier apparaît au-dessus de Légendaire, encore plus difficile à croiser. Six Pokémon entrent dans cette catégorie : **Mew, Raikou, Entei, Suicune, Latias** et **Latios**.
+
+---
+
+## Recalibrage des raretés Gen 1 & Gen 2
+
+119 raretés ont été corrigées sur les 251 Pokémon des deux premières générations, suite à un audit complet du moteur de calcul. Certains Pokémon sont devenus plus rares, d'autres plus accessibles — consultez le changelog détaillé si vous voulez le détail.
+
+---
+
+## Données de recherche 🔬
+
+Chaque profil joueur dispose maintenant d'une nouvelle ressource : les **données de recherche**. Elle s'accumule au même rythme que l'XP — chaque capture ou victoire en raid rapporte les deux en même temps. Le solde est visible dans `/pokedex`.
+
+---
+
+## Nouvelle commande : `/capture-cible`
+
+Dépensez vos données de recherche pour cibler une **zone** et une **rareté** précises au lieu de laisser le hasard décider. Le coût varie selon la rareté visée (de 3 300 pour Commun jusqu'à 300 000 pour Légendaire). Le solde est vérifié avant de consommer le cooldown.
+
+---
+
+## Nouvelle commande : `/get-pokemon-info`
+
+Consultez la fiche complète d'un Pokémon — rareté, types, faiblesses et résistances en défense, statistiques — sans avoir besoin de l'avoir capturé.
+
+---
+
+## Quelque chose se prépare…
+
+Les capteurs du Centre AURORA ont détecté une activité inhabituelle. Les techniciens restent discrets, mais les relevés ne mentent pas. Restez attentifs aux annonces à venir.
+
+---
+
+## Corrections
+
+- Les faiblesses et résistances de type Feu et Eau étaient incorrectes — 106 Pokémon concernés ont été recalculés.
+- Les libellés de zones mal orthographiés ou mal capitalisés ont été corrigés (ex. "Phare de Bonne-Espérance").
+
+---
+
+Bonne chasse, dresseurs.
+
+---
+
+---
+
 # Mise à jour 3.4.2 — Correction de la fin d'inscription aux raids
 
 ---

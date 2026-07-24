@@ -35,13 +35,9 @@ Format basé sur [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Affiche les informations d'un Pokémon depuis le catalogue complet : id, nom FR/EN, rareté, types, faiblesses et résistances en défense, statistiques.
 - Autocomplete sur les 393 Pokémon (Gen 1, 2 et 3).
 
-### Événement Météorite — Nuit des Étoiles (15 août 2026)
-- Événement ponctuel **24 h** le 15 août, avec zone dédiée `météorite-crater` ouverte de 8h00 à 23h59 (heure de Paris).
-- 4 raids Deoxys dans la journée : Forme Normale (10h–12h), Attaque (13h30–15h30), Défense (18h–20h), Vitesse (21h–23h).
-- Cooldown de capture **÷ 2** dans la zone météorite.
-- XP **× 2** pour les captures dans la zone et pour les raids météorite.
-- Embeds de lore AURORA / Professeure Lyra Voss à l'ouverture et à la fermeture de la zone.
-- Variable `METEORITE_EVENT_DEBUG=1` pour tester le flux complet avant l'événement.
+### Événement à venir (non annoncé)
+- Infrastructure d'événement ponctuel intégrée : zone dédiée, bonus XP et cooldown, raids spéciaux, embeds de lore, scheduler par guilde.
+- Détails non divulgués intentionnellement.
 
 ### Configuration serveur à 4 salons
 - Schéma `guilds.json` revu : `mainChannelId` (obligatoire), `raidAnnounceChannelId` (inchangé), `devChannelId` (optionnel — patchnotes), `loreChannelId` (optionnel — événements).
