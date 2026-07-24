@@ -71,4 +71,10 @@ data/pokemon-list_example.json
 
 # Data - specs/plans
 data/spec/
+data/*.md
+
+# Docs - plans et suivi dev (pas lus au runtime)
+PROGRAM.md
+REFACTOR_MULTI_GUILD.md
+FEATURES.md
 backup
