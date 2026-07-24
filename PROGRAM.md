@@ -517,6 +517,71 @@ reste en place).
       `handleSuccessfulCapture.ts` (capture normale/shiny, y compris le
       rechargement "fresh" sous `updatePlayer`) et `applyRaidRewards.ts`
       (récompense raid, sous `updatePlayers`).
+      **Spec de la commande `/capture-cible` actée (2026-07-24, via
+      `risk-lead`→`architect`)**, en cours d'implémentation :
+      - Cooldown partagé avec `/capture` (décision utilisateur), mais
+        **ordre strict** : validation rareté valide → zone débloquée
+        (`getGenerationByZone`) → pré-sélection du Pokémon AVANT tout débit
+        (`getPokemonByRarity`, pool vide = rejet sans dépense) → pré-check
+        de solde non-autoritatif → `checkIfUserCanCatch` (consomme le
+        cooldown) → débit atomique. Objectif : ne jamais consommer le
+        cooldown ni débiter sur une précondition invalide.
+      - Débit atomique dans un seul `updateFn` synchrone passé à
+        `updatePlayer` (réutilise `withFileLock` existant, pas de nouveau
+        verrou) : vérifie `researchData >= coût` (sinon lève
+        `InsufficientResearchDataError`, ce qui annule l'écriture — vérifié
+        que `updatePlayer` n'écrit qu'après un `updateFn` qui ne lève pas),
+        débite, applique le faucet (même montant que `gainedXp`),
+        `registerCapturedPokemon`. **`pityCounter` n'est jamais lu ni
+        écrit** (économie séparée, décision actée).
+      - `isShiny` calculé une seule fois hors verrou, réutilisé partout
+        (pas de retirage dans le verrou).
+      - Nouveaux fichiers prévus : `src/config/researchCost.ts` (table de
+        coût + `TargetableRarity`/`isTargetableRarity`, source unique,
+        exclut `unknown` par construction), `src/methods/research/
+        InsufficientResearchDataError.ts`, `src/methods/research/
+        handleTargetedCapture.ts`, `src/commands/captureCibleCommand.ts`.
+        Commande `/capture-cible`, options `zone` (autocomplete, réutilise
+        le bloc existant) + `rarity` (choix fermés, 9 raretés valides,
+        labels FR).
+      - Embed : réutiliser `buildCapturedPokemonEmbed` (pas de builder
+        dédié sauf si techniquement impossible) enrichi de 2 champs (coût
+        payé, solde restant — valeur autoritative post-débit, pas la
+        pré-lecture).
+      - **Risque résiduel signalé, accepté tel quel** : fenêtre TOCTOU
+        entre la consommation du cooldown et le débit (verrous distincts)
+        — un cas quasi nul où le cooldown serait consommé sans capture
+        effective si une dépense concurrente survient dans cet intervalle
+        précis. Inhérent au choix "réutiliser `checkIfUserCanCatch`" tel
+        quel ; fermer cette fenêtre reviendrait à réimplémenter le
+        cooldown, jugé disproportionné pour ce cas.
+      - **Implémenté (2026-07-24)** : `src/config/researchCost.ts`,
+        `src/methods/research/InsufficientResearchDataError.ts`,
+        `src/methods/research/handleTargetedCapture.ts`,
+        `src/commands/captureCibleCommand.ts`, wiring dans
+        `commandDefinitions.ts`/`index.ts`. `tsc` clean, 1171/1171 tests.
+        Déviation mineure assumée : construction de l'embed AVANT
+        `addAllStats` (et non l'inverse comme suggéré dans la prose de la
+        spec), pour préserver la détection correcte "nouveau dans le
+        Pokédex" — aligné sur le comportement réel de
+        `handleSuccessfulCapture.ts`, pas sur la lettre de la spec.
+      - **Revue de sécurité faite sur le diff réel (2026-07-24,
+        `security-crypto-reviewer`)** : débit atomique confirmé sûr contre
+        la duplication (vérification solde + débit + octroi dans le même
+        callback synchrone sous verrou, aucune écriture stale possible
+        ensuite). Contrôle d'accès et validation d'entrée (rareté/zone)
+        confirmés clean. **Un point non bloquant remonté** : le cooldown
+        partagé (`checkIfUserCanCatch.ts`) a lui-même une race TOCTOU
+        pré-existante (lecture de `lastCapture` hors verrou, écriture dans
+        un verrou séparé) qui permettrait en théorie à des requêtes
+        concurrentes de contourner le cooldown en rafale — MAIS sans
+        risque de duplication de `researchData` (chaque capture reste
+        payée intégralement et vérifiée individuellement), donc pas une
+        perte de ressource, juste un cooldown potentiellement moins
+        strict que prévu sous concurrence. Pré-existant (affecte aussi
+        `/capture` normal), pas introduit par cette feature. Décision à
+        prendre séparément si à corriger (plier la consommation du
+        cooldown dans le même verrou que le débit).
 
 ### Slice E — Scripts d'automatisation (opérationnel)
 - [ ] E1. Script de publication automatique du patchnote sur le Discord de

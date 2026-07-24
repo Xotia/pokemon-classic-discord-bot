@@ -9,6 +9,7 @@ import { pokedexCommand } from "./commands/pokedexCommand";
 import logger from "./utils/logger";
 import { execute } from "./commands/getStatsCommand";
 import { captureCommand } from "./commands/captureCommand";
+import { captureCibleCommand } from "./commands/captureCibleCommand";
 import { helpCommand } from "./commands/helpCommand";
 import { getPity } from "./commands/getPityCommand";
 import { getRarityCommand } from "./commands/getRarityCommand";
@@ -198,7 +199,7 @@ async function handleInteraction(interaction: Interaction) {
       return;
     }
 
-    if (interaction.commandName === "capture") {
+    if (interaction.commandName === "capture" || interaction.commandName === "capture-cible") {
       const focusedOption = interaction.options.getFocused(true);
 
       if (focusedOption.name === "zone") {
@@ -295,6 +296,10 @@ async function handleInteraction(interaction: Interaction) {
 
   if (interaction.commandName === "capture") {
     return await captureCommand(interaction);
+  }
+
+  if (interaction.commandName === "capture-cible") {
+    return await captureCibleCommand(interaction);
   }
 
   if (interaction.commandName === "raid") {

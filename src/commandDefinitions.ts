@@ -1,4 +1,6 @@
 import { SlashCommandBuilder } from "discord.js";
+import { rarityList } from "./config/rarity";
+import { TARGETABLE_RARITIES } from "./config/researchCost";
 
 export const commands = [
   new SlashCommandBuilder()
@@ -65,6 +67,31 @@ export const commands = [
         .setDescription("Choisis la zone de capture")
         .setRequired(false)
         .setAutocomplete(true),
+    )
+    .toJSON(),
+  new SlashCommandBuilder()
+    .setName("capture-cible")
+    .setDescription(
+      "Capture garantie d'un Pokémon d'une rareté précise dans une zone donnée, contre des données de recherche.",
+    )
+    .addStringOption((option) =>
+      option
+        .setName("zone")
+        .setDescription("Choisis la zone de capture")
+        .setRequired(true)
+        .setAutocomplete(true),
+    )
+    .addStringOption((option) =>
+      option
+        .setName("rarity")
+        .setDescription("Choisis la rareté du Pokémon à capturer")
+        .setRequired(true)
+        .addChoices(
+          ...TARGETABLE_RARITIES.map((rarity) => ({
+            name: rarityList.find((r) => r.rarity === rarity)!.french,
+            value: rarity,
+          })),
+        ),
     )
     .toJSON(),
   new SlashCommandBuilder()
