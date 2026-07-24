@@ -433,14 +433,41 @@ reste en place).
       `tsc` clean, 1171/1171 tests passent.
 
 ### Slice D — Nouvelle ressource "données de recherche" + 3 commandes
-- [ ] D1. Design de la ressource (nouveau champ sur `Player`
+- [~] D1. Design de la ressource (nouveau champ sur `Player`
       `src/types/Player.ts`, module `src/methods/research/` en miroir de
       `src/methods/xp/xp.ts`, table de coût par palier de rareté pour la
-      capture ciblée, sources de gain). **Décision d'économie de jeu** à
-      faire trancher (au moins les chiffres) — passer par le flow
-      design-then-build (`risk-lead` → `architect` si le calibrage a des
-      implications de balance/anti-abus, sinon direct `implementer` si les
-      règles sont déjà claires côté utilisateur).
+      capture ciblée, sources de gain).
+      **Décision d'économie de jeu actée le 2026-07-24** (utilisateur) :
+      valeur initiale de la ressource = xp actuel du joueur au moment de la
+      migration (pas de calcul dérivé, pas de recalibrage).
+      Fait (2026-07-24) : champ `researchData: number` (non optionnel,
+      comme `xp`) ajouté à `Player` (`src/types/Player.ts`). Script
+      d'initialisation créé : `src/scripts/player-maintenance/init-research-data.ts`
+      (`npm run init-research-data`), même pattern `--guildId`
+      idempotent que les autres scripts du dossier (kebab-case, pas
+      calqué sur `addXpAndLevelToPlayers.ts` sur ce point) —
+      `researchData = researchData ?? xp ?? 0`. Rendre le champ
+      obligatoire a cassé la création de nouveau profil
+      (`src/methods/player/createProfileIfNeeded.ts`, `TS2741`) :
+      corrigé en ajoutant `researchData: 0` à l'objet initial, cohérent
+      avec la décision (xp d'un nouveau joueur = 0 de toute façon). `tsc`
+      clean, 1171/1171 tests. Script npm ajouté : `init-research-data`.
+      **Reste à trancher** : module `src/methods/research/` (lecture/
+      écriture de la ressource en jeu), table de coût par palier de
+      rareté (D4) et sources de gain continues après la migration
+      initiale — pas encore abordé.
+- [x] D1bis (terminé le 2026-07-24). Deux lignes ajoutées au bloc
+      `summary` de `src/methods/embed/buildPokedexPageEmbed.ts` :
+      `✨ **XP :** ${playerXp}` et `🔬 **Données de recherche :**
+      ${playerResearchData}`, avec fallback défensif `0` si `undefined`
+      (même pattern que `playerLevel` juste au-dessus). `tsc` clean,
+      1171/1171 tests.
+      **Gap non traité** : aucun test n'existe pour
+      `buildPokedexPageEmbed` (vérifié par grep, aucun `*.test.ts` ne la
+      référence) — pas de régression possible mais pas de couverture
+      nouvelle non plus. À transmettre à `quality-lead` si une couverture
+      est souhaitée avant la release (candidat naturel pour H0, la slice
+      E2E).
 - [ ] D2. Commande "statistiques d'un Pokémon" — nouveau fichier
       `src/commands/<nom>Command.ts` sur le modèle de
       `captureCommand.ts`/`pokedexCommand.ts`, lecture depuis
@@ -472,15 +499,41 @@ reste en place).
       Rien d'assez concret encore pour lancer une conception.
 
 ### Slice G — Génération 3 (déjà bien avancée)
-- [~] G1 (partiellement clos par C3, 2026-07-24) — capture et raids
-      confirmés gen3-complets suite à l'audit fait en C3 (dropdown
-      `/capture`, tirage aléatoire, génération de raid — tous corrigés).
-      **Reste à vérifier, non fait** : `/pokedex`, `/leaderboard`,
-      `/get-rarity`, `/get-shiny-rate` et les autres commandes existantes
-      — pas d'audit spécifique mené dessus, ne pas supposer qu'elles sont
-      gen3-complètes sans vérifier.
+- [x] G1 (clos le 2026-07-24, audit read-only via quality-lead →
+      codebase-audit, aucune modification de code nécessaire). Capture et
+      raids confirmés gen3-complets par C3 (dropdown `/capture`, tirage
+      aléatoire, génération de raid). Deuxième passe d'audit sur les 9
+      commandes restantes (`/pokedex`, `/leaderboard`, `/get-rarity`,
+      `/get-shiny-rate`, `/cheat`, `/pity`, `/raid`, `/raid-squad`,
+      `/raid-force-end`) : **toutes gen3-complètes**, aucun plafond/liste de
+      génération codé en dur trouvé, tout passe par `getPokemonCatalog()`
+      (`src/utils/pokemonCatalog.ts:20-25`, gen1+gen2+gen3) ou par des
+      chemins indépendants de la génération (pity, raid state, taux de
+      shiny). Vérifié en particulier : `getTotalPokemonNumber.ts` dérive le
+      dénominateur du Pokédex du catalogue réel (pas une constante 251/258),
+      et `randomInt()` dans `raidGenerator.service.ts` est bien inclusif aux
+      deux bornes (gen3 réellement atteignable via `getGenerationNumber`,
+      pas d'off-by-one caché).
+      **Point opérationnel non-bloquant relevé (à garder pour Slice H
+      déploiement)** : `pokemonCatalog.ts` mémoïse le catalogue par
+      `guildId` dans un `Map` au niveau module, jamais invalidé — si
+      `data/pokemon-gen3.json` est déployé pendant que le process tourne, un
+      redémarrage du bot est nécessaire pour que gen3 apparaisse côté
+      guildes déjà en cache. Pas un bug (le code lit bien gen3), une
+      contrainte de procédure de déploiement.
 
 ### Slice H — Release
+- [ ] H0. Tests E2E automatisés (décidé le 2026-07-24, à faire avant le
+      merge final, pas maintenant). Pas un vrai E2E réseau (bot connecté à
+      Discord — trop fragile/dangereux à automatiser : token réel, rate
+      limits, pas d'assertions fiables côté UI Discord). Approche retenue :
+      simuler des objets `Interaction` discord.js et appeler directement les
+      handlers de commandes (`captureCommand`, `raidCommand`, etc.) contre
+      un dossier de guilde de test avec de vraies données JSON — couvre le
+      parcours complet (capture avec/sans rareté forcée → xp → pokedex →
+      stats, raid complet, pity) sans dépendre du réseau Discord. À faire
+      designer/écrire par `e2e-test-writer` (via `quality-lead`) : liste de
+      parcours d'abord, puis implémentation. Doit passer avant H2.
 - [ ] H1. `CHANGELOG.md` : rédiger l'entrée `[3.5.0]` consolidée
       (Ajouts / Corrections / Modifications / Suppressions) à partir de
       toutes les slices ci-dessus.
@@ -505,6 +558,11 @@ reste en place).
 
 ## Prochaine étape immédiate
 
-Démarrer par **A1** : finir et committer le travail en cours sur
-`fix/rarity-one-time-only-scope`, faire tourner les tests, puis PR vers
-`main`. C'est un prérequis bloquant pour A2-A4 et pour G1.
+Slices A, B, C et G sont closes. Restent D (nouvelle ressource "données de
+recherche" + 3 commandes), E (scripts d'automatisation), F (événement
+lunaire, spec à clarifier avec l'utilisateur avant tout design) et H
+(release finale). Aucune dépendance dure entre D/E/F entre elles — l'ordre
+est au choix de l'utilisateur. F nécessite une clarification de spec avant
+de pouvoir démarrer ; D1 nécessite une décision d'économie de jeu (à
+trancher via le flow design-then-build si le calibrage a des implications
+de balance/anti-abus).

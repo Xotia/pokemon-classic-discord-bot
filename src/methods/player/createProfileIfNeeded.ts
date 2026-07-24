@@ -26,6 +26,7 @@ export function createProfileIfNeeded(interaction: any, guildId: string) {
       pityCounter: 0,
       xp: 0,
       level: 1,
+      researchData: 0,
     };
     fs.writeFileSync(playersDb(guildId), JSON.stringify(playerData, null, 2), "utf-8");
   } else {
