@@ -624,11 +624,12 @@ reste en place).
         `mainChannelId` (et `devChannelId`/`loreChannelId` si souhaité)
         au déploiement de la 3.5.0, sans quoi le bot refusera de démarrer
         pour ce serveur (validation désormais stricte sur `mainChannelId`).
-- [ ] E1. Script de publication automatique du patchnote sur le Discord de
+- [x] E1. Script de publication automatique du patchnote sur le Discord de
       chaque serveur (source : dernière entrée de `CHANGELOG.md` ou
       `PATCHNOTE.md`), réutiliser `src/scripts/lib/broadcast.ts` avec
       `channelField: "dev"` (mis à jour : E0 introduit un salon dev dédié,
       remplace le `"general"` prévu initialement).
+      → `src/scripts/announcements/send-patchnote.ts`, npm run `send-patchnote`.
 - [ ] E2. Script de mise à jour automatique du serveur — **à investiguer
       avant de designer** : comment le bot tourne actuellement en prod
       (process manager ? service Windows/Linux ? docker ?) n'a pas encore

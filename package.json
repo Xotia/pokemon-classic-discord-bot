@@ -24,7 +24,8 @@
     "compare-gen1-gen2": "npx ts-node src/scripts/rarity/compareRarityGen1Gen2WithProd.ts",
     "apply-gen1-gen2-rarity-changes": "npx ts-node src/scripts/rarity/applyGen1Gen2RarityChanges.ts",
     "regenerate-effectiveness": "npx ts-node src/scripts/gen-json/regenerateEffectiveness.ts",
-    "init-research-data": "npx ts-node src/scripts/player-maintenance/init-research-data.ts"
+    "init-research-data": "npx ts-node src/scripts/player-maintenance/init-research-data.ts",
+    "send-patchnote": "ts-node src/scripts/announcements/send-patchnote.ts"
   },
   "keywords": [],
   "author": "",
