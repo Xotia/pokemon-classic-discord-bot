@@ -477,6 +477,13 @@ vérification ci-dessous.
 
 ## Plan de migration des données existantes (production)
 
+> ✅ **Migration effectuée** (confirmé par l'utilisateur le 2026-07-24) —
+> le serveur de prod tourne déjà en multi-guild (`data/guilds/{id}/`).
+> Cette section est conservée à titre historique ; les cases non cochées
+> ci-dessous reflètent juste un suivi jamais mis à jour après coup, pas
+> un travail restant. `scripts/migrate-to-guild-dirs.js` a été retiré du
+> dépôt en conséquence (son rôle est terminé).
+
 1. [ ] **Arrêter les deux process** (les deux `screen` sur le VPS) avant de
    toucher à un seul fichier — évite qu'une écriture arrive au mauvais
    endroit pendant la migration.
