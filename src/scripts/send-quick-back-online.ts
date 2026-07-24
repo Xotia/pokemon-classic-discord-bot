@@ -8,4 +8,4 @@ const embed = new EmbedBuilder()
   .setFooter({ text: "— Centre AURORA" })
   .setTimestamp();
 
-broadcastEmbed(embed, "src/scripts/send-quick-back-online.ts");
+broadcastEmbed(embed, "src/scripts/send-quick-back-online.ts", { channelField: "general" });

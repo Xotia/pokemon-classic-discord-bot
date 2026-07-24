@@ -223,14 +223,28 @@ reste en place).
       l'affichage (l'id ne change pas), mais les libellés resteront
       anciens sur les serveurs déjà seedés tant qu'ils ne sont pas
       re-seedés manuellement.
-- [ ] B3. Bug "messages auto envoyés dans le channel de raid" —
-      `src/scripts/lib/broadcast.ts:34` défaut `channelField = "raid"`.
+- [x] B3 (terminé le 2026-07-24, branche `fix/broadcast-scripts-channel`
+      depuis `release/3.5.0`). Root cause : `broadcastEmbed()`
+      (`src/scripts/lib/broadcast.ts`) défaut `channelField = "raid"` —
       `send-maintenance.ts`, `send-back-online.ts`,
-      `send-quick-maintenance.ts`, `send-quick-back-online.ts` n'appellent
-      pas `broadcastEmbed` avec `channelField: "general"` (contrairement à
-      `send-lore-new-adventure.ts`) → corriger les 4 appels. Mettre à jour
-      la doc `README.md` section "Scripts d'annonce ponctuelle" qui décrit
-      actuellement ce comportement comme voulu.
+      `send-quick-maintenance.ts`, `send-quick-back-online.ts` appelaient
+      `broadcastEmbed` sans préciser l'option, donc tombaient sur "raid"
+      (contrairement à `send-lore-new-adventure.ts`, seul appelant
+      explicite). Aucun de ces messages n'est lié au raid — fix en deux
+      temps : (1) défaut de `broadcastEmbed` inversé, `"general"` au lieu
+      de `"raid"` (root-cause : empêche la même erreur pour un futur
+      script qui oublierait de préciser l'option), (2) les 4 appels
+      corrigés explicitement quand même, par cohérence avec le style déjà
+      utilisé par `send-lore-new-adventure.ts`. Vérifié qu'aucun autre
+      script/commande du repo n'a le même bug (`raidAnnounceChannelId`
+      n'est utilisé ailleurs que pour des flux réellement liés au raid :
+      `forceEndRaidCommand.ts`, `raidScheduler.ts`, `forceEndRaid.ts` —
+      corrects, pas touchés). Doc `README.md` ("Scripts d'annonce
+      ponctuelle") corrigée, décrivait ce comportement comme voulu.
+      `src/scripts/send-lore.ts` (mentionné dans le README) est un script
+      perso non versionné (`.gitignore`), absent de cette machine — hors
+      de portée, rien à vérifier dessus. `tsc` clean, mêmes 5 échecs
+      préexistants (B4).
 - [ ] B4. Tests préexistants cassés sur `HEAD` (repérés le 2026-07-24,
       hors périmètre initial mais à corriger avec le reste des
       corrections) :

@@ -15,7 +15,8 @@ type BroadcastOptions = {
   /**
    * Salon ciblé par défaut pour chaque serveur du registre.
    * "general" retombe sur raidAnnounceChannelId si generalChannelId n'est pas défini.
-   * Par défaut : "raid".
+   * Par défaut : "general" — seuls les scripts liés au raid lui-même
+   * doivent explicitement passer "raid".
    */
   channelField?: "raid" | "general";
 };
@@ -31,7 +32,7 @@ export function broadcastEmbed(
 ): void {
   const TOKEN = process.env.DISCORD_TOKEN;
   const CHANNEL_ID = parseChannelId(process.argv.slice(2));
-  const { content, channelField = "raid" } = options;
+  const { content, channelField = "general" } = options;
 
   if (!TOKEN) {
     console.error(`Usage: npx ts-node ${scriptRelativePath} [--channelId <id>]`);

@@ -144,9 +144,9 @@ Un serveur sans surcharge utilise telles quelles les valeurs du `.env`
 `send-maintenance.ts`, `send-back-online.ts`, `send-quick-maintenance.ts`,
 `send-quick-back-online.ts` ne lisent plus un salon fixe depuis le `.env`.
 Sans argument, ils diffusent sur tous les serveurs du registre
-(`data/guilds.json`) : les scripts de lore ciblent le `generalChannelId` de
-chaque serveur (repli sur `raidAnnounceChannelId` si absent), les autres
-ciblent `raidAnnounceChannelId`. Passer `--channelId <id>` cible un seul
+(`data/guilds.json`), tous vers le `generalChannelId` de chaque serveur
+(repli sur `raidAnnounceChannelId` si absent) — aucun de ces messages
+n'est lié au raid lui-même. Passer `--channelId <id>` cible un seul
 salon a la place (utile pour tester) :
 
 ```bash
