@@ -58,6 +58,7 @@ export function buildRaidResultEmbed(state: RaidState): EmbedBuilder {
     parts.push("");
     parts.push("**Récompenses :**");
     parts.push(`🏆 +${state.reward.xp} XP pour chaque participant`);
+    parts.push(`🔬 +${state.reward.xp} données de recherche pour chaque participant`);
     if (state.reward.zoneUnlocked) {
       parts.push(`🗺️ Nouvelle zone débloquée : **${state.reward.zoneUnlocked}**`);
     }
