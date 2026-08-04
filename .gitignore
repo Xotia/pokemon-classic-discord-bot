@@ -78,3 +78,5 @@ PROGRAM.md
 REFACTOR_MULTI_GUILD.md
 FEATURES.md
 backup
+# Raid simulator (outil local, non déployé)
+tools/

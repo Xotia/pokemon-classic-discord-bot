@@ -3,13 +3,37 @@
 Tous les changements notables du **Pokémon Classic Discord Bot** sont documentés ici.  
 Format basé sur [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-# [3.5.1] - 2026-07-24
+# [3.5.1] - 2026-07-25
+
+## Ajouts
+
+### Données de recherche — affichage des gains
+- Le footer de chaque capture affiche désormais le gain en données de recherche (`+N données de recherche`), en plus du gain XP.
+- L'embed de résultat de raid affiche le gain en données de recherche dans les récompenses (`🔬 +N données de recherche pour chaque participant`).
 
 ## Corrections
 
 ### Raids — exclusion des légendaires du pool de boss
 - Les Pokémon de rareté `legendary` et `legendary_wandering` sont désormais exclus du tirage du Pokémon enragé lors de la génération d'un raid.
 - Avant ce correctif, un légendaire présent dans la zone pouvait être sélectionné comme boss de raid.
+
+### Catalogue Pokémon
+- **Jirachi** (id 385, Gen 3) retiré de `pokemon-gen1.json` où il était présent par erreur.
+
+### Zone Gen 3 — renommage
+- Zone `jungle` renommée en `lush-jungle` (label : **Jungle luxuriante**) dans `zones_all.json`, `zones_to_unlock.default.json` et `pokemon-gen3.json`.
+
+## Modifications
+
+### Script `init-research-data`
+- Ajout du flag `--all` : traite toutes les guildes en une seule commande.
+- Usage : `ts-node src/scripts/player-maintenance/init-research-data.ts --all`.
+
+### Script `get-last-update`
+- Retrait de l'envoi automatique du patchnote depuis le script de mise à jour serveur — à envoyer manuellement via `npm run send-patchnote`.
+
+## Suppressions
+- `FEATURES.md`, `PROGRAM.md` et `REFACTOR_MULTI_GUILD.md` retirés du repo et ajoutés au `.gitignore` (documents de développement internes).
 
 ## Modifications
 - Numéro de version : 3.5.0 → 3.5.1.

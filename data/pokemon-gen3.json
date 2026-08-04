@@ -2259,7 +2259,8 @@
     "generation": 3,
     "zones": [
       "grim-cemetery",
-      "magma-cave"
+      "magma-cave",
+      "meteorite-crater"
     ]
   },
   {
@@ -2293,7 +2294,8 @@
     },
     "generation": 3,
     "zones": [
-      "enchanted-meadow"
+      "enchanted-meadow",
+      "meteorite-crater"
     ]
   },
   {
@@ -2327,7 +2329,8 @@
     },
     "generation": 3,
     "zones": [
-      "enchanted-meadow"
+      "enchanted-meadow",
+      "meteorite-crater"
     ]
   },
   {

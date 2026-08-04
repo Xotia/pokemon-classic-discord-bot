@@ -3926,7 +3926,8 @@
       "speed": 45
     },
     "zones": [
-      "abandoned-industrial-city"
+      "abandoned-industrial-city",
+      "meteorite-crater"
     ],
     "generation": 1
   },
@@ -3982,7 +3983,8 @@
       "speed": 70
     },
     "zones": [
-      "abandoned-industrial-city"
+      "abandoned-industrial-city",
+      "meteorite-crater"
     ],
     "generation": 1
   },

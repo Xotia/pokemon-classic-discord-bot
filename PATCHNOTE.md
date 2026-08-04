@@ -1,10 +1,25 @@
-# Mise à jour 3.5.1 — Correctif raids
+# Mise à jour 3.5.1 — Correctifs & données de recherche
 
 ---
 
 ## Les légendaires ne s'attaquent plus aux raids
 
 Les Pokémon **Légendaires** et **Légendaires itinérants** ne peuvent plus apparaître comme Pokémon enragé lors d'un raid. Ils restaient capturables et rencontrables dans les zones, mais leur présence comme boss de raid n'était pas intentionnelle.
+
+---
+
+## Données de recherche visibles partout
+
+Les gains en **données de recherche** sont maintenant affichés explicitement :
+
+- À chaque capture, le footer indique `+N données de recherche` en plus du gain XP.
+- En cas de victoire en raid, les récompenses listent également le gain en données de recherche pour chaque participant.
+
+---
+
+## Zone Gen 3 — Jungle luxuriante
+
+La zone **Jungle** de la Gen 3 a été renommée en **Jungle luxuriante**. Les Pokémon qui y habitaient ne sont pas affectés.
 
 ---
 

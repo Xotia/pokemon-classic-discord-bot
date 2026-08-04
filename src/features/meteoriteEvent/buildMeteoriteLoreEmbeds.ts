@@ -6,26 +6,31 @@ const WARNING_COLOR = 0xff6600;
 export function buildMeteoriteWarningEmbed(): EmbedBuilder {
   return new EmbedBuilder()
     .setColor(WARNING_COLOR)
-    .setTitle("⚠️ AURORA — BULLETIN D'ALERTE ORBITAL #47")
+    .setTitle("📡 AURORA — NOTE INTERNE — DIFFUSION RESTREINTE")
     .setDescription(
       [
-        "**Dresseurs,**",
+        "```",
+        "CONNEXION ÉTABLIE........... [INSTABLE]",
+        "CHIFFREMENT : PARTIEL",
+        "PERTE DE PAQUETS : 34%",
+        "```",
         "",
-        "Nos équipes de veille astronomique ont été alertées par l'Agence Spatiale Internationale d'un incident survenu cette nuit en orbite basse.",
+        "**Dresseurs accrédités,**",
         "",
-        "**Une météorite de taille intermédiaire a percuté un essaim de 17 satellites AstroX** en transit au-dessus de l'hémisphère nord. La collision a généré un important champ de débris. La flotte de satellites AstroX — propriété de l'entreprise privée *AstroX Dynamics* — a subi des dommages estimés à plusieurs dizaines d'unités.",
+        "Ce message n'est pas un bulletin officiel.",
         "",
-        "Ce qui nous préoccupe davantage : **les systèmes de suivi du Centre AURORA ont identifié un fragment de taille significative sur une trajectoire de rentrée atmosphérique**. Les calculs préliminaires indiquent une zone d'impact potentielle à proximité de notre secteur de recherche.",
+        "Quelque chose ne va pas. Depuis quelques heures, nos instruments enregistrent des valeurs que nous ne savons pas interpréter. Les boussoles dans le secteur nord ont perdu leur nord. Certains appareils se sont éteints seuls. D'autres affichent en boucle la même mesure — sans interruption, sans variation.",
         "",
-        "***Impact estimé : dans 7 jours.***",
+        "Nos communications sont dégradées. Nous ne savons pas encore si c'est lié.",
         "",
-        "*La Professeure Voss tient à préciser que les risques directs pour la population sont jugés faibles à ce stade. Nos instruments continueront à affiner la trajectoire dans les prochaines heures. Des instructions supplémentaires seront communiquées en temps voulu.*",
+        "Les Pokémon des zones périphériques ne se comportent plus normalement. **Ils regardent tous dans la même direction.**",
+        "",
+        "*Je n'ai pas encore d'explication. Restez à l'écoute.*",
       ].join("\n"),
     )
     .addFields({
-      name: "📡 Suivi en cours",
-      value:
-        "Fragment désigné **AURORA-M1** — masse estimée : 800 à 1200 kg — composition : indéterminée.\nProchain bulletin dans 24h.",
+      name: "​",
+      value: "```\nTRANSMISSION INTERROMPUE\n```",
     })
     .setFooter({
       text: "— Professeure LYRA VOSS, Directrice scientifique, Centre AURORA\nTransmission chiffrée — diffusion restreinte aux dresseurs accrédités",
