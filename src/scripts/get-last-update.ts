@@ -25,12 +25,76 @@ function run(cmd: string): void {
   execSync(cmd, { stdio: "inherit" });
 }
 
+function bash(cmd: string): string {
+  return execSync(cmd, { shell: "/bin/bash", encoding: "utf-8" });
+}
+
+/** Identifiant complet (`pid.nom`) de la session réutilisée pour toute la mise à jour. */
+let sessionId: string | null = null;
+
+/** Sessions existantes portant exactement le nom BOT_SCREEN_SESSION, sous la forme `pid.nom`. */
+function listSessions(): string[] {
+  const output = bash("screen -ls || true");
+  return output
+    .split("\n")
+    .map((line) => line.trim())
+    .filter((line) => /^\d+\.\S+\s+\(/.test(line))
+    .map((line) => line.split(/\s+/)[0])
+    .filter((id) => id.slice(id.indexOf(".") + 1) === SCREEN_SESSION);
+}
+
+/**
+ * Garantit qu'une seule session porte le nom du bot, et la réutilise.
+ * Les sessions mortes sont nettoyées, les homonymes en trop sont fermés,
+ * et une session shell n'est créée que s'il n'en reste aucune.
+ */
+function ensureScreenSession(): void {
+  bash("screen -wipe > /dev/null 2>&1 || true");
+
+  let sessions = listSessions();
+
+  if (sessions.length > 1) {
+    const [kept, ...duplicates] = sessions;
+    console.warn(
+      `\n⚠️  ${sessions.length} screens nommés "${SCREEN_SESSION}" détectés — fermeture des ${duplicates.length} doublons.`,
+    );
+    for (const duplicate of duplicates) {
+      bash(`screen -S "${duplicate}" -X quit || true`);
+    }
+    sessions = [kept];
+  }
+
+  if (sessions.length === 0) {
+    console.log(`\n🖥️  Aucun screen "${SCREEN_SESSION}" — création.`);
+    // Session shell (et non session-commande) : un Ctrl+C arrête le bot sans tuer le screen,
+    // ce qui permet de réutiliser la même session à chaque mise à jour.
+    bash(`screen -dmS "${SCREEN_SESSION}"`);
+    sessions = listSessions();
+    if (sessions.length === 0) {
+      throw new Error(`Impossible de créer le screen "${SCREEN_SESSION}".`);
+    }
+    sessionId = sessions[0];
+    screenRun(`cd ${JSON.stringify(process.cwd())}`);
+    return;
+  }
+
+  sessionId = sessions[0];
+  console.log(`\n🖥️  Réutilisation du screen ${sessionId}.`);
+}
+
+function screenExec(args: string): void {
+  if (!sessionId) {
+    throw new Error("Session screen non initialisée.");
+  }
+  execSync(`screen -S "${sessionId}" -X ${args}`, { shell: "/bin/bash" });
+}
+
 function screenCtrlC(): void {
-  execSync(`screen -S "${SCREEN_SESSION}" -X stuff $'\\003'`, { shell: "/bin/bash" });
+  screenExec(`stuff $'\\003'`);
 }
 
 function screenRun(cmd: string): void {
-  execSync(`screen -S "${SCREEN_SESSION}" -X stuff $'${cmd}\\n'`, { shell: "/bin/bash" });
+  screenExec(`stuff $'${cmd}\\n'`);
 }
 
 function sleep(ms: number): Promise<void> {
@@ -42,7 +106,8 @@ async function main(): Promise<void> {
   console.log("📢 Envoi du message de maintenance...");
   run("npx ts-node src/scripts/announcements/send-maintenance.ts");
 
-  // 2. Arrêt du bot (Ctrl+C dans le screen)
+  // 2. Arrêt du bot (Ctrl+C dans le screen réutilisé)
+  ensureScreenSession();
   console.log("\n🛑 Arrêt du bot...");
   screenCtrlC();
   await sleep(2_000);
@@ -58,6 +123,9 @@ async function main(): Promise<void> {
   run("npm run deploy:dev:clear");
 
   // 5. Démarrage du bot dans le screen
+  // Re-vérification : si la session a été lancée en session-commande par le passé,
+  // le Ctrl+C de l'étape 2 l'a tuée — on la recrée plutôt que d'échouer.
+  ensureScreenSession();
   console.log("\n🚀 Démarrage du bot...");
   screenRun("npm start");
 
@@ -66,9 +134,7 @@ async function main(): Promise<void> {
   await sleep(START_WAIT_MS);
 
   try {
-    execSync(`screen -S "${SCREEN_SESSION}" -X hardcopy "${HARDCOPY_PATH}"`, {
-      shell: "/bin/bash",
-    });
+    screenExec(`hardcopy "${HARDCOPY_PATH}"`);
     const output = fs.readFileSync(HARDCOPY_PATH, "utf-8");
     const hasError = ERROR_PATTERNS.some((pattern) => output.includes(pattern));
 

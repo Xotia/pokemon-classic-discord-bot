@@ -12,6 +12,12 @@ Format basé sur [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Nouveau helper `getAvailableGenerations` : croise le plafond `GENERATION_NUMBER` avec les zones réellement débloquées de la guilde. Une génération entre dans le pool dès le déblocage de sa première zone, sans redéploiement.
 - Choisir explicitement une génération sans zone débloquée renvoie désormais un message clair au lieu d'une erreur technique.
 
+### Mise à jour serveur — accumulation de screens
+- `npm run get-last-update` réutilise désormais toujours la même session `screen` au lieu d'en laisser s'empiler de nouvelles à chaque mise à jour.
+- La session est ciblée par son identifiant complet (`pid.nom`) : avec plusieurs sessions homonymes, le ciblage par nom seul devenait ambigu et les commandes n'atteignaient plus le bot.
+- Les sessions mortes sont purgées (`screen -wipe`) et les doublons portant le même nom sont fermés au début de chaque mise à jour.
+- La session est créée en shell et non en session-commande : le Ctrl+C d'arrêt du bot ne tue plus le screen, qui survit d'une mise à jour à l'autre.
+
 ## Modifications
 - Numéro de version : 3.5.1 → 3.5.2.
 
