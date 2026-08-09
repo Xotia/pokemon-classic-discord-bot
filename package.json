@@ -1,6 +1,6 @@
 {
   "name": "pokemon-classic-discord-bot",
-  "version": "3.5.1",
+  "version": "3.5.2",
   "description": "",
   "main": "index.ts",
   "scripts": {
@@ -16,6 +16,7 @@
     "test:rarity": "npx ts-node src/scripts/rarity/testRarity.ts",
     "compare:rarity": "npx ts-node src/scripts/rarity/compareRarityWithManual.ts",
     "force-end-raid": "npx ts-node src/scripts/raid-tools/forceEndRaid.ts",
+    "simulate:raid-zones": "npx ts-node src/scripts/raid-tools/simulateRaidZones.ts",
     "generate-gen3": "npx ts-node src/scripts/gen-json/createGen3Json.ts",
     "inject-zones-gen3": "npx ts-node src/scripts/zones/injectZonesGen3.ts",
     "simulate-gen3-zones": "npx ts-node src/scripts/zones/simulateGen3Zones.ts",

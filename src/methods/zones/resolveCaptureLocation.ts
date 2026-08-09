@@ -1,8 +1,8 @@
 import { CaptureLocationSelection, Zone } from '../../types/zones';
 import { getLoggerForGuild } from '../../utils/logger';
 import { loadUnlockedZones } from '../../utils/loadUnlockedZones';
+import { getAvailableGenerations } from './getAvailableGenerations';
 import { getGenerationByZone } from './getGenerationByZone';
-import { getMaxGeneration } from './getMaxGeneration';
 import { getZonesByGeneration } from './getZonesByGeneration';
 import {
   isMeteoriteEventActive,
@@ -24,7 +24,7 @@ export async function resolveCaptureLocation(
   interaction: any,
   guildId: string,
 ): Promise<CaptureLocationSelection | null> {
-  const maxGeneration = getMaxGeneration(guildId);
+  const availableGenerations = getAvailableGenerations(guildId);
 
   const generationOption = interaction.options.getString("generation");
   const zoneOption = interaction.options.getString("zone");
@@ -65,15 +65,33 @@ export async function resolveCaptureLocation(
   const isGenerationRandom =
     generationOption == null && inferredGenerationFromZone == null;
 
+  if (isGenerationRandom && availableGenerations.length === 0) {
+    getLoggerForGuild(guildId).error(
+      "❌ Capture impossible : aucune zone débloquée, toutes générations confondues.",
+    );
+    await interaction.editReply(
+      "❌ Aucune zone n'est débloquée pour le moment, la capture est impossible.",
+    );
+    return null;
+  }
+
   const generation =
     generationOption ??
     inferredGenerationFromZone ??
-    `gen${Math.floor(Math.random() * maxGeneration) + 1}`;
+    availableGenerations[
+      Math.floor(Math.random() * availableGenerations.length)
+    ];
 
   const generationZones = getZonesByGeneration(guildId, generation);
 
   if (generationZones.length === 0) {
-    throw new Error(`Aucune zone trouvée pour la génération ${generation}`);
+    getLoggerForGuild(guildId).info(
+      `❌ Génération sans zone débloquée: generation=${generation}`,
+    );
+    await interaction.editReply(
+      `❌ Aucune zone de la génération ${generation.replace("gen", "")} n'est encore débloquée.`,
+    );
+    return null;
   }
 
   if (resolvedZoneId && !generationZones.some((zone) => zone.id === resolvedZoneId)) {

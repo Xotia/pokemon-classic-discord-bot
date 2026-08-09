@@ -3,6 +3,20 @@
 Tous les changements notables du **Pokémon Classic Discord Bot** sont documentés ici.  
 Format basé sur [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+# [3.5.2] - 2026-08-09
+
+## Corrections
+
+### Capture aléatoire — générations sans zone débloquée
+- `/capture` sans argument ne tire plus une génération dont aucune zone n'est débloquée. Depuis le passage de `GENERATION_NUMBER` à `3`, le tirage pouvait sortir `gen3` alors qu'aucune zone de Hoenn n'était accessible, ce qui provoquait une erreur côté joueur.
+- Nouveau helper `getAvailableGenerations` : croise le plafond `GENERATION_NUMBER` avec les zones réellement débloquées de la guilde. Une génération entre dans le pool dès le déblocage de sa première zone, sans redéploiement.
+- Choisir explicitement une génération sans zone débloquée renvoie désormais un message clair au lieu d'une erreur technique.
+
+## Modifications
+- Numéro de version : 3.5.1 → 3.5.2.
+
+---
+
 # [3.5.1] - 2026-07-25
 
 ## Ajouts

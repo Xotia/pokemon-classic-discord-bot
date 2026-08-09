@@ -1,3 +1,19 @@
+# Mise à jour 3.5.2 — Correctif capture
+
+---
+
+## Plus d'erreur sur `/capture` sans argument
+
+Depuis l'ouverture de la Gen 3, un `/capture` lancé sans préciser de génération pouvait tomber sur **Hoenn** alors qu'aucune zone de cette région n'est encore débloquée — et renvoyait une erreur au lieu d'un Pokémon.
+
+Le tirage aléatoire ne pioche désormais que parmi les générations dont au moins une zone est débloquée. Hoenn rejoindra automatiquement le tirage dès le déblocage de sa première zone.
+
+Si vous choisissez explicitement une génération dont aucune zone n'est ouverte, un message clair vous l'indique.
+
+---
+
+---
+
 # Mise à jour 3.5.1 — Correctifs & données de recherche
 
 ---

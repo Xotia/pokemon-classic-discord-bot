@@ -55,6 +55,8 @@ data/rarity-audit-gen3-readable.csv
 data/rarity-comparison-gen3.csv
 data/rarity-audit-gen1-gen2.json
 data/rarity-comparison-gen1-gen2.csv
+data/gen1_2_rarity_change.csv
+data/rarity-changelog-gen1-gen2.csv
 
 # Data - generated
 data/pokemon-list.json
