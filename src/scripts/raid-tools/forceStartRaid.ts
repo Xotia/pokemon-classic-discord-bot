@@ -2,6 +2,7 @@ import { Client, GatewayIntentBits } from "discord.js";
 import dotenv from "dotenv";
 import { openRaidRegistration, setDiscordClient } from "../../features/raid/raidScheduler";
 import { loadRaidState } from "../../features/raid/raidState.service";
+import { generateRaidState } from "../../features/raid/raidGenerator.service";
 import { getGuildConfig, loadGuildRegistry, ensureGuildDataFiles } from "../../config/guilds";
 import type { GuildRegistryEntry } from "../../types/GuildRegistryEntry";
 
@@ -12,7 +13,20 @@ function parseGuildId(argv: string[]): string | null {
   return index !== -1 ? argv[index + 1] : null;
 }
 
-async function processGuild(guild: GuildRegistryEntry): Promise<boolean> {
+function parseGeneration(argv: string[]): number | null {
+  const index = argv.indexOf("--generation");
+  if (index === -1) return null;
+
+  const parsed = Number(argv[index + 1]);
+  if (!Number.isInteger(parsed) || parsed < 1) {
+    console.error(`--generation attend un entier >= 1 (reçu: "${argv[index + 1]}").`);
+    process.exit(1);
+  }
+
+  return parsed;
+}
+
+async function processGuild(guild: GuildRegistryEntry, generation: number | null): Promise<boolean> {
   ensureGuildDataFiles(guild.guildId);
 
   const state = await loadRaidState(guild.guildId);
@@ -25,7 +39,12 @@ async function processGuild(guild: GuildRegistryEntry): Promise<boolean> {
   }
 
   try {
-    await openRaidRegistration(guild.guildId, guild.raidAnnounceChannelId);
+    const factory =
+      generation !== null
+        ? (guildId: string) => generateRaidState(guildId, generation)
+        : undefined;
+
+    await openRaidRegistration(guild.guildId, guild.raidAnnounceChannelId, factory);
     const opened = await loadRaidState(guild.guildId);
     console.log(
       `[${guild.name}] Raid ${opened.raidId} ouvert : gen${opened.generation}, zone "${opened.zone}", ` +
@@ -42,9 +61,12 @@ async function processGuild(guild: GuildRegistryEntry): Promise<boolean> {
 async function main(): Promise<void> {
   const TOKEN = process.env.DISCORD_TOKEN;
   const guildIdArg = parseGuildId(process.argv.slice(2));
+  const generationArg = parseGeneration(process.argv.slice(2));
 
   if (!TOKEN) {
-    console.error("Usage: npx ts-node src/scripts/raid-tools/forceStartRaid.ts [--guildId <id>]");
+    console.error(
+      "Usage: npx ts-node src/scripts/raid-tools/forceStartRaid.ts [--guildId <id>] [--generation <n>]",
+    );
     console.error("DISCORD_TOKEN requis dans le .env.");
     process.exit(1);
   }
@@ -68,7 +90,7 @@ async function main(): Promise<void> {
 
     let hasFailure = false;
     for (const guild of targetGuilds) {
-      const ok = await processGuild(guild);
+      const ok = await processGuild(guild, generationArg);
       if (!ok) hasFailure = true;
     }
 

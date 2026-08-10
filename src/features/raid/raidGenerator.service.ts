@@ -212,12 +212,30 @@ function extractResistances(
   );
 }
 
-export async function generateRaidState(guildId: string): Promise<RaidState> {
+/**
+ * forcedGeneration n'est utilisé que par les outils d'exploitation
+ * (scripts/raid-tools) pour rejouer un raid sur une génération précise.
+ * Le scheduler l'omet et garde le tirage aléatoire.
+ */
+export async function generateRaidState(
+  guildId: string,
+  forcedGeneration?: number,
+): Promise<RaidState> {
   const pokemonDb = getPokemonCatalog(guildId) as unknown as PokemonEntry[];
   const unlockDb = await readJsonFile<UnlockZonesDb>(zonesToUnlockDb(guildId));
   const availableZonesDb = await readJsonFile<ZonesDb>(zonesUnlockedDb(guildId));
 
-  const generationNumber = randomInt(1, getGenerationNumber(guildId));
+  const maxGeneration = getGenerationNumber(guildId);
+
+  if (forcedGeneration !== undefined) {
+    if (!Number.isInteger(forcedGeneration) || forcedGeneration < 1 || forcedGeneration > maxGeneration) {
+      throw new Error(
+        `Génération forcée invalide : ${forcedGeneration} (attendu un entier entre 1 et ${maxGeneration} pour guildId=${guildId}).`,
+      );
+    }
+  }
+
+  const generationNumber = forcedGeneration ?? randomInt(1, maxGeneration);
   const generationKey = toGenerationKey(generationNumber);
 
   const zone = pickRaidZone(generationKey, unlockDb, availableZonesDb, guildId);
