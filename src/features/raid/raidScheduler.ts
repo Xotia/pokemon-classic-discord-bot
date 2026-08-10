@@ -191,7 +191,15 @@ export function startRaidScheduler(client: Client): void {
       openExpression,
       () => {
         if (isMeteoriteEventActive()) return;
-        void openRaidRegistration(guild.guildId, guild.raidAnnounceChannelId);
+        void openRaidRegistration(guild.guildId, guild.raidAnnounceChannelId).catch((error) => {
+          getLoggerForGuild(guild.guildId).error({
+            event: "raid_open_failed",
+            guildId: guild.guildId,
+            announceChannelId: guild.raidAnnounceChannelId,
+            error: error instanceof Error ? error.message : String(error),
+            stack: error instanceof Error ? error.stack : undefined,
+          });
+        });
       },
       { timezone: RAID_TIMEZONE },
     );
@@ -199,7 +207,15 @@ export function startRaidScheduler(client: Client): void {
     cron.schedule(
       resolveExpression,
       () => {
-        void closeRaidAndResolve(guild.guildId, guild.raidAnnounceChannelId);
+        void closeRaidAndResolve(guild.guildId, guild.raidAnnounceChannelId).catch((error) => {
+          getLoggerForGuild(guild.guildId).error({
+            event: "raid_close_failed",
+            guildId: guild.guildId,
+            announceChannelId: guild.raidAnnounceChannelId,
+            error: error instanceof Error ? error.message : String(error),
+            stack: error instanceof Error ? error.stack : undefined,
+          });
+        });
       },
       { timezone: RAID_TIMEZONE },
     );

@@ -15,6 +15,7 @@
     "simulate:capture": "npx ts-node src/scripts/zones/simulateCapture.ts",
     "test:rarity": "npx ts-node src/scripts/rarity/testRarity.ts",
     "compare:rarity": "npx ts-node src/scripts/rarity/compareRarityWithManual.ts",
+    "force-start-raid": "npx ts-node src/scripts/raid-tools/forceStartRaid.ts",
     "force-end-raid": "npx ts-node src/scripts/raid-tools/forceEndRaid.ts",
     "simulate:raid-zones": "npx ts-node src/scripts/raid-tools/simulateRaidZones.ts",
     "generate-gen3": "npx ts-node src/scripts/gen-json/createGen3Json.ts",

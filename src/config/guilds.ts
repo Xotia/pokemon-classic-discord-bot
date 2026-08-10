@@ -42,6 +42,34 @@ export function getGuildConfig(guildId: string): GuildRegistryEntry | undefined 
   return loadGuildRegistry().find((entry) => entry.guildId === guildId);
 }
 
+type ZoneEntry = { id: string; label: string };
+type ZonesByGeneration = Record<string, ZoneEntry[]>;
+
+/**
+ * Les fichiers de zones d'un serveur ne sont copiés depuis les defaults qu'à la
+ * création. Un serveur créé avant l'ajout d'une génération garde donc des
+ * fichiers sans la clé correspondante, et le tirage de raid sur cette
+ * génération échoue ("Aucune zone disponible ou à débloquer pour genN").
+ * On complète les générations absentes depuis les defaults, sans jamais
+ * modifier celles déjà présentes (progression du serveur).
+ */
+function backfillMissingGenerations(guildFile: string, defaultFile: string): void {
+  const guildZones = JSON.parse(fs.readFileSync(guildFile, 'utf-8')) as ZonesByGeneration;
+  const defaultZones = JSON.parse(fs.readFileSync(defaultFile, 'utf-8')) as ZonesByGeneration;
+
+  const missing = Object.keys(defaultZones).filter(
+    (generationKey) => !Array.isArray(guildZones[generationKey]),
+  );
+
+  if (missing.length === 0) return;
+
+  for (const generationKey of missing) {
+    guildZones[generationKey] = defaultZones[generationKey];
+  }
+
+  fs.writeFileSync(guildFile, JSON.stringify(guildZones, null, 2));
+}
+
 export function ensureGuildDataFiles(guildId: string): void {
   fs.mkdirSync(guildDir(guildId), { recursive: true });
 
@@ -55,10 +83,14 @@ export function ensureGuildDataFiles(guildId: string): void {
 
   if (!fs.existsSync(zonesUnlockedDb(guildId))) {
     fs.copyFileSync(ZONES_UNLOCKED_DEFAULT, zonesUnlockedDb(guildId));
+  } else {
+    backfillMissingGenerations(zonesUnlockedDb(guildId), ZONES_UNLOCKED_DEFAULT);
   }
 
   if (!fs.existsSync(zonesToUnlockDb(guildId))) {
     fs.copyFileSync(ZONES_TO_UNLOCK_DEFAULT, zonesToUnlockDb(guildId));
+  } else {
+    backfillMissingGenerations(zonesToUnlockDb(guildId), ZONES_TO_UNLOCK_DEFAULT);
   }
 
   if (!fs.existsSync(othermonsDb(guildId))) {
