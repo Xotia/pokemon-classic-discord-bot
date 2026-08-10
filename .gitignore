@@ -83,3 +83,4 @@ FEATURES.md
 backup
 # Raid simulator (outil local, non déployé)
 tools/
+src/scripts/raid-tools/simulateRaidZones.ts
