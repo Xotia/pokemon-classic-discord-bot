@@ -6288,8 +6288,8 @@
     "id": 386,
     "name": "Deoxys",
     "rarity": "legendary",
-    "image": "https://play.pokemonshowdown.com/sprites/xyani/deoxys-normal.gif",
-    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/deoxys-normal.gif",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/deoxys.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/deoxys.gif",
     "originalName": "deoxys-normal",
     "types": [
       "psychic"

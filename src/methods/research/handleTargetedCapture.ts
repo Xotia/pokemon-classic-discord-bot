@@ -13,6 +13,13 @@ import { getResearchCost, TargetableRarity } from "../../config/researchCost";
 import { InsufficientResearchDataError } from "./InsufficientResearchDataError";
 import { getLoggerForGuild } from "../../utils/logger";
 import { Player } from "../../types/Player";
+import {
+  isMeteoriteEventActive,
+  matchesMeteoriteZone,
+  METEORITE_ZONE_ID,
+  METEORITE_GENERATION_TOKEN,
+  METEORITE_XP_MULTIPLIER,
+} from "../../features/meteoriteEvent/meteoriteEventConfig";
 
 export async function handleTargetedCapture(
   interaction: any,
@@ -20,16 +27,27 @@ export async function handleTargetedCapture(
   zone: string,
   rarity: TargetableRarity,
 ): Promise<void> {
-  const generation = getGenerationByZone(guildId, zone);
+  // La zone météorite n'appartient à aucune génération et n'est pas dans les
+  // zones débloquées : elle est résolue à part, uniquement pendant l'évènement.
+  const isMeteoriteTarget = matchesMeteoriteZone(zone);
+  if (isMeteoriteTarget && !isMeteoriteEventActive()) {
+    await interaction.editReply("❌ Cette zone n'est plus accessible.");
+    return;
+  }
+
+  const targetZone = isMeteoriteTarget ? METEORITE_ZONE_ID : zone;
+  const generation = isMeteoriteTarget
+    ? METEORITE_GENERATION_TOKEN
+    : getGenerationByZone(guildId, targetZone);
   if (!generation) {
     await interaction.editReply("Cette zone n'est pas débloquée ou n'existe pas.");
     return;
   }
 
-  const { pokemonCatched } = await getPokemonByRarity(guildId, generation, zone, rarity);
+  const { pokemonCatched } = await getPokemonByRarity(guildId, generation, targetZone, rarity);
   if (!pokemonCatched) {
     await interaction.editReply(
-      `Aucun Pokémon de rareté « ${rarity} » n'est disponible dans la zone « ${zone} ».`,
+      `Aucun Pokémon de rareté « ${rarity} » n'est disponible dans la zone « ${targetZone} ».`,
     );
     return;
   }
@@ -52,12 +70,15 @@ export async function handleTargetedCapture(
     return;
   }
 
-  const canCatch = await checkIfUserCanCatch(interaction, guildId, zone);
+  const canCatch = await checkIfUserCanCatch(interaction, guildId, targetZone);
   if (!canCatch) return;
 
   const isShiny = isThePokemonGonnaBeShiny(guildId);
   const baseXp = getCapturedPokemonHp(guildId, pokemonCatched.id);
-  const gainedXp = isShiny ? baseXp * 10 : baseXp;
+  let gainedXp = isShiny ? baseXp * 10 : baseXp;
+  if (targetZone === METEORITE_ZONE_ID && isMeteoriteEventActive()) {
+    gainedXp *= METEORITE_XP_MULTIPLIER;
+  }
 
   let remainingBalance = 0;
   let newLevel = playerSnapshot.level ?? 1;
@@ -128,7 +149,7 @@ export async function handleTargetedCapture(
     gainedXp,
     leveledUp,
     newLevel,
-    zone,
+    zone: targetZone,
   });
 
   if (embed instanceof EmbedBuilder) {
@@ -146,6 +167,6 @@ export async function handleTargetedCapture(
   await interaction.editReply({ embeds: [embed] });
 
   getLoggerForGuild(guildId).info(
-    `🎯 Capture ciblée : ${pokemonCatched.name} (Rareté = ${rarity}) (Zone = ${zone})${isShiny ? " (Shiny)" : ""}${!isInPokedex ? " (Nouveau dans le Pokédex)" : ""} | Coût = ${cost} | XP gagnée = ${gainedXp} | Niveau = ${newLevel}`,
+    `🎯 Capture ciblée : ${pokemonCatched.name} (Rareté = ${rarity}) (Zone = ${targetZone})${isShiny ? " (Shiny)" : ""}${!isInPokedex ? " (Nouveau dans le Pokédex)" : ""} | Coût = ${cost} | XP gagnée = ${gainedXp} | Niveau = ${newLevel}`,
   );
 }

@@ -11,7 +11,10 @@ import { buildRaidResultEmbed } from "./buildRaidResultEmbed";
 import { loadGuildRegistry } from "../../config/guilds";
 import logger, { getLoggerForGuild } from "../../utils/logger";
 import { getRaidSchedulerMode, getRaidStartHour, getRaidEndHour } from "../../config/guildSettings";
-import { isMeteoriteEventActive } from "../../features/meteoriteEvent/meteoriteEventConfig";
+import {
+  isMeteoriteEventActive,
+  matchesMeteoriteZone,
+} from "../../features/meteoriteEvent/meteoriteEventConfig";
 
 const RAID_TIMEZONE = "Europe/Paris";
 
@@ -207,7 +210,21 @@ export function startRaidScheduler(client: Client): void {
     cron.schedule(
       resolveExpression,
       () => {
-        void closeRaidAndResolve(guild.guildId, guild.raidAnnounceChannelId).catch((error) => {
+        void (async () => {
+          // Les raids météorite ont leurs propres fenêtres de clôture, pilotées
+          // par meteoriteEventScheduler. Le cron générique ne doit pas les
+          // résoudre en avance (en mode debug il tourne toutes les 3 minutes,
+          // et en production raidEndHour peut tomber au milieu d'un créneau).
+          const currentState = await loadRaidState(guild.guildId);
+          if (currentState.zone && matchesMeteoriteZone(currentState.zone)) {
+            getLoggerForGuild(guild.guildId).info(
+              `[RAID] (${guild.guildId}) Raid météorite en cours, clôture générique ignorée.`,
+            );
+            return;
+          }
+
+          await closeRaidAndResolve(guild.guildId, guild.raidAnnounceChannelId);
+        })().catch((error) => {
           getLoggerForGuild(guild.guildId).error({
             event: "raid_close_failed",
             guildId: guild.guildId,
