@@ -76,6 +76,7 @@ data/spec/
 data/*.md
 
 # Docs - plans et suivi dev (pas lus au runtime)
+GUIDE_MESSAGE_MARKDOWN.md
 PROGRAM.md
 REFACTOR_MULTI_GUILD.md
 FEATURES.md

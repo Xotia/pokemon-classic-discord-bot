@@ -27,6 +27,7 @@
     "apply-gen1-gen2-rarity-changes": "npx ts-node src/scripts/rarity/applyGen1Gen2RarityChanges.ts",
     "regenerate-effectiveness": "npx ts-node src/scripts/gen-json/regenerateEffectiveness.ts",
     "init-research-data": "npx ts-node src/scripts/player-maintenance/init-research-data.ts",
+    "send-message": "ts-node src/scripts/announcements/send-message.ts",
     "send-patchnote": "ts-node src/scripts/announcements/send-patchnote.ts",
     "send-meteorite-warning": "ts-node src/scripts/announcements/send-meteorite-warning.ts",
     "get-last-update": "ts-node src/scripts/get-last-update.ts",
