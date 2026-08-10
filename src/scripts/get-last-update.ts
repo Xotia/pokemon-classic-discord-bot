@@ -104,7 +104,7 @@ function sleep(ms: number): Promise<void> {
 async function main(): Promise<void> {
   // 1. Message de maintenance
   console.log("📢 Envoi du message de maintenance...");
-  run("npx ts-node src/scripts/announcements/send-maintenance.ts");
+  run("npx ts-node src/scripts/announcements/send-quick-maintenance.ts");
 
   // 2. Arrêt du bot (Ctrl+C dans le screen réutilisé)
   ensureScreenSession();
@@ -150,7 +150,7 @@ async function main(): Promise<void> {
 
   // 7. Message de retour en ligne
   console.log("\n✅ Bot démarré. Envoi du message de retour en ligne...");
-  run("npx ts-node src/scripts/announcements/send-back-online.ts");
+  run("npx ts-node src/scripts/announcements/send-quick-back-online.ts");
 
   console.log("\n🎉 Mise à jour terminée !");
 }
