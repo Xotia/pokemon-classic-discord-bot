@@ -84,3 +84,4 @@ backup
 # Raid simulator (outil local, non déployé)
 tools/
 src/scripts/raid-tools/simulateRaidZones.ts
+src/scripts/raid-tools/simulateRaidModels.ts

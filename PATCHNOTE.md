@@ -1,3 +1,37 @@
+# Mise à jour 3.5.3 — Les raids se jouent enfin comme un combat
+
+---
+
+## Vos attaques visent maintenant ses défenses
+
+Jusqu'ici, un raid comparait chaque statistique à son équivalent chez le Pokémon enragé : votre Attaque contre son Attaque, votre Défense contre sa Défense. Autrement dit, face à un boss en béton armé, il fallait vous-mêmes vous fabriquer une armure en béton armé pour espérer le battre.
+
+Ce n'est plus le cas. Désormais :
+
+- Votre **Attaque** et votre **Attaque Spé.** affrontent sa **Défense** et sa **Défense Spé.** — vous devez percer sa garde.
+- Votre **Défense** et votre **Défense Spé.** affrontent son **Attaque** et son **Attaque Spé.** — vous devez encaisser ses coups.
+- La **Vitesse** reste face à la Vitesse, c'est la seule course directe.
+
+---
+
+## Ce que ça change pour vos équipes
+
+La difficulté globale des raids ne bouge pas : il ne faut ni plus ni moins de participants qu'avant. En revanche, **le profil du Pokémon enragé compte enfin**.
+
+Un boss qui frappe fort mais encaisse mal devient dur à supporter et facile à percer : montez la Défense de l'équipe et son Attaque suffira. À l'inverse, un mur défensif se prend au contraire par la puissance offensive. Choisir qui inscrire au raid en regardant les stats du boss devient une vraie décision.
+
+Et comme avant, le type d'attaque que vous choisissez reste décisif : il pèse directement sur votre capacité à percer sa défense.
+
+---
+
+## Séléroc rôde dans le Cratère de météorite
+
+**Séléroc** peut désormais être rencontré dans le **Cratère de météorite**, en plus de ses zones habituelles.
+
+---
+
+---
+
 # Mise à jour 3.5.2 — Correctif capture
 
 ---

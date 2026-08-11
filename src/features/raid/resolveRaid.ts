@@ -1,5 +1,5 @@
 import { RaidState } from "../../types/raid/RaidState";
-import { computeBruteRaidResult } from "./computeBruteRaidResult";
+import { computeBruteRaidResult, RAID_STAT_MATCHUPS } from "./computeBruteRaidResult";
 
 export function resolveRaid(state: RaidState): RaidState {
   if (!state.raidPokemon) {
@@ -23,13 +23,15 @@ export function resolveRaid(state: RaidState): RaidState {
           specialDefense: 0,
           speed: 0,
         },
+        // Équipe vide : chaque écart vaut 0 moins la stat du boss AFFRONTÉE sur
+        // cet axe, pas sa stat homonyme.
         statDiffs: {
           hp: -state.raidPokemon.finalStats.hp,
-          attack: -state.raidPokemon.finalStats.attack,
-          specialAttack: -state.raidPokemon.finalStats.specialAttack,
-          defense: -state.raidPokemon.finalStats.defense,
-          specialDefense: -state.raidPokemon.finalStats.specialDefense,
-          speed: -state.raidPokemon.finalStats.speed,
+          attack: -state.raidPokemon.finalStats[RAID_STAT_MATCHUPS.attack],
+          specialAttack: -state.raidPokemon.finalStats[RAID_STAT_MATCHUPS.specialAttack],
+          defense: -state.raidPokemon.finalStats[RAID_STAT_MATCHUPS.defense],
+          specialDefense: -state.raidPokemon.finalStats[RAID_STAT_MATCHUPS.specialDefense],
+          speed: -state.raidPokemon.finalStats[RAID_STAT_MATCHUPS.speed],
         },
       },
     };

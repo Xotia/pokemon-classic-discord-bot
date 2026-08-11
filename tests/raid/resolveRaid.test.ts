@@ -139,6 +139,38 @@ it("resolveRaid retourne une défaite complète si aucun défenseur n'est inscri
   });
 });
 
+it("resolveRaid croise les stats du boss dans les écarts quand personne ne s'inscrit", () => {
+  const base = makeState();
+  const state: RaidState = {
+    ...base,
+    raidPokemon: {
+      ...base.raidPokemon!,
+      finalStats: {
+        hp: 100,
+        attack: 150,
+        specialAttack: 140,
+        defense: 80,
+        specialDefense: 90,
+        speed: 70,
+      },
+    },
+  };
+
+  const resolved = resolveRaid(state);
+
+  // Équipe à 0 : l'écart d'un axe vaut l'opposé de la stat du boss AFFRONTÉE
+  // sur cet axe. Ce chemin doit rester cohérent avec computeBruteRaidResult.
+  expect(resolved.result?.statDiffs).toEqual({
+    hp: -100,
+    attack: -80, // notre attaque vs sa défense
+    specialAttack: -90, // notre atq. spé vs sa déf. spé
+    defense: -150, // notre défense vs son attaque
+    specialDefense: -140, // notre déf. spé vs son atq. spé
+    speed: -70,
+  });
+  expect(resolved.result?.success).toBe(false);
+});
+
 it("resolveRaid lève une erreur si raidPokemon est absent", () => {
   const state = makeState({
     raidPokemon: null,

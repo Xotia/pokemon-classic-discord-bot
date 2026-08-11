@@ -3,6 +3,24 @@
 Tous les changements notables du **Pokémon Classic Discord Bot** sont documentés ici.  
 Format basé sur [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+# [3.5.3] - 2026-08-11
+
+## Modifications
+
+### Raids — les stats de l'équipe affrontent les stats opposées du boss
+- La résolution d'un raid ne compare plus chaque statistique à son homonyme chez le boss. L'Attaque et l'Attaque Spé. de l'équipe affrontent désormais la Défense et la Défense Spé. du boss, sa Défense et sa Défense Spé. affrontent l'Attaque et l'Attaque Spé. du boss. La Vitesse reste le seul axe symétrique.
+- L'ancienne comparaison en miroir demandait à l'équipe d'opposer une armure à l'armure du boss, ce qui n'avait pas de sens en combat. Les multiplicateurs de type étaient déjà calculés dans le sens croisé (l'attaque de l'équipe pondérée par son efficacité contre le boss, sa défense divisée par l'efficacité de l'attaque du boss) : seul le verdict final était resté en miroir.
+- Simulation comparative sur les 173 boss réellement tirables × difficultés 2 à 5 : la difficulté globale ne bouge pas (écart moyen de -0,02 défenseur requis, 504 couples sur 692 inchangés). Le changement redistribue la difficulté selon le profil du boss au lieu de la déplacer. Un boss très offensif et peu défensif devient dur à encaisser mais facile à percer, là où il était puni deux fois auparavant.
+- `resolveRaid` construit les écarts du cas « aucun défenseur » à partir du même appariement, les deux chemins de résolution ne peuvent plus diverger.
+
+### Catalogue Pokémon
+- Séléroc (#337) apparaît désormais aussi dans le Cratère de météorite, en plus de ses zones existantes.
+
+### Divers
+- Numéro de version : 3.5.2 → 3.5.3.
+
+---
+
 # [3.5.2] - 2026-08-09
 
 ## Corrections

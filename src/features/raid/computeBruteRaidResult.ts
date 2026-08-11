@@ -10,6 +10,23 @@ const RAID_STAT_KEYS: Array<keyof RaidStats> = [
   "speed",
 ];
 
+/**
+ * Chaque stat de l'équipe affronte la stat OPPOSÉE du boss : on encaisse ses
+ * attaques avec nos défenses et on perce ses défenses avec nos attaques.
+ * La vitesse reste face à la vitesse, seul axe symétrique.
+ *
+ * Exporté pour que resolveRaid construise le même appariement sur le chemin
+ * "aucun défenseur".
+ */
+export const RAID_STAT_MATCHUPS: Record<keyof RaidStats, keyof RaidStats> = {
+  hp: "hp",
+  attack: "defense",
+  specialAttack: "specialDefense",
+  defense: "attack",
+  specialDefense: "specialAttack",
+  speed: "speed",
+};
+
 function createEmptyRaidStats(): RaidStats {
   return {
     hp: 0,
@@ -68,12 +85,12 @@ export function computeBruteRaidResult(state: RaidState): RaidResult {
   }, createEmptyRaidStats());
 
   const statDiffs = RAID_STAT_KEYS.reduce<RaidStats>((diffs, stat) => {
-    diffs[stat] = teamStats[stat] - bossStats[stat];
+    diffs[stat] = teamStats[stat] - bossStats[RAID_STAT_MATCHUPS[stat]];
     return diffs;
   }, createEmptyRaidStats());
 
   const missingStats = RAID_STAT_KEYS.filter(
-    (stat) => teamStats[stat] <= bossStats[stat],
+    (stat) => teamStats[stat] <= bossStats[RAID_STAT_MATCHUPS[stat]],
   );
 
   return {
