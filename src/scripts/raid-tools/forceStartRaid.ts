@@ -41,7 +41,7 @@ async function processGuild(guild: GuildRegistryEntry, generation: number | null
   try {
     const factory =
       generation !== null
-        ? (guildId: string) => generateRaidState(guildId, generation)
+        ? (guildId: string) => generateRaidState(guildId, { generation })
         : undefined;
 
     await openRaidRegistration(guild.guildId, guild.raidAnnounceChannelId, factory);

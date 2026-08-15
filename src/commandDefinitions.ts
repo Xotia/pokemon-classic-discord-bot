@@ -34,6 +34,27 @@ export const commands = [
     .setDescription("[Admin] Force la clôture et la résolution immédiate du raid en cours.")
     .toJSON(),
   new SlashCommandBuilder()
+    .setName("raid-force-start")
+    .setDescription("[Admin] Lance immédiatement un raid, avec génération et type de zone au choix.")
+    .addIntegerOption((option) =>
+      option
+        .setName("generation")
+        .setDescription("Génération du raid (aléatoire si omis)")
+        .setRequired(false)
+        .addChoices(
+          { name: "Kanto (Generation 1)", value: 1 },
+          { name: "Johto (Generation 2)", value: 2 },
+          { name: "Hoenn (Generation 3)", value: 3 },
+        ),
+    )
+    .addBooleanOption((option) =>
+      option
+        .setName("nouvelle-zone")
+        .setDescription("true = prochaine zone à débloquer, false = zone déjà débloquée (tirage normal si omis)")
+        .setRequired(false),
+    )
+    .toJSON(),
+  new SlashCommandBuilder()
     .setName("pokedex")
     .setDescription("Voir ton nombre de Pokémon capturés avec /capture.")
     .toJSON(),

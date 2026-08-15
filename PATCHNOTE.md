@@ -1,3 +1,25 @@
+# Mise à jour 3.6.0 — Les raids d'exploration repartent de l'avant
+
+---
+
+## Johto ne bloque plus la découverte de nouvelles zones
+
+Toutes les zones de **Johto** sont débloquées depuis un moment. Le problème : quand le raid du jour tirait Johto, il n'avait plus rien à ouvrir — et l'occasion d'explorer une nouvelle zone était perdue pour la journée, sans que personne ne le voie.
+
+Le tirage a été revu. Le raid décide maintenant **d'abord** s'il part à la découverte d'une nouvelle zone, **ensuite** dans quelle région. Une région déjà entièrement explorée ne peut donc plus consommer une expédition à sa place.
+
+Concrètement : les raids de déblocage retrouvent leur fréquence normale, et Kanto comme Hoenn avancent au rythme prévu. Le jour où ces deux régions seront terminées à leur tour, le mécanisme tiendra tout seul.
+
+---
+
+## Rien ne change pour vous
+
+Aucune action de votre côté, aucun changement dans la façon de s'inscrire ou de combattre. Les raids sur les zones déjà connues continuent exactement comme avant.
+
+---
+
+---
+
 # Mise à jour 3.5.3 — Les raids se jouent enfin comme un combat
 
 ---

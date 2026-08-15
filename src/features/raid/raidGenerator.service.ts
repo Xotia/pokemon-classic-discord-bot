@@ -41,6 +41,25 @@ type GenerationKey = "gen1" | "gen2" | "gen3";
 type ZonesDb = Record<GenerationKey, ZoneEntry[]>;
 type UnlockZonesDb = Record<GenerationKey, ZoneEntry[]>;
 
+/**
+ * Ce qu'une génération peut proposer à un instant T : les zones déjà
+ * débloquées (raid classique) et la prochaine zone à débloquer (raid
+ * "nouvelle zone"), `null` quand la génération est épuisée.
+ */
+type GenerationAvailability = {
+  generationNumber: number;
+  generationKey: GenerationKey;
+  unlockedZones: ZoneEntry[];
+  nextZone: ZoneEntry | null;
+};
+
+export type RaidGenerationOptions = {
+  /** Force la génération du raid (1..GENERATION_NUMBER). Sinon tirage aléatoire. */
+  generation?: number;
+  /** Force le type de zone : true = prochaine zone à débloquer, false = zone déjà débloquée. Sinon tirage sur RAID_NEXT_ZONE_CHANCE. */
+  newZone?: boolean;
+};
+
 async function readJsonFile<T>(filePath: string): Promise<T> {
   const raw = await readFile(filePath, "utf-8");
   return JSON.parse(raw) as T;
@@ -96,83 +115,149 @@ function shouldUseNextZone(guildId: string): boolean {
   return roll <= getRaidNextZoneChance(guildId);
 }
 
-function pickRandomAvailableZone(
-  generationKey: GenerationKey,
+/**
+ * Photographie l'état de chaque génération sous le plafond configuré.
+ * C'est cette photo qui pilote le tirage : une génération épuisée (plus
+ * aucune zone à débloquer) sort d'elle-même du pool "nouvelle zone", sans
+ * relance ni cas particulier par génération.
+ */
+function collectGenerationAvailability(
+  maxGeneration: number,
+  unlockDb: UnlockZonesDb,
   availableZonesDb: ZonesDb,
-): ZoneEntry {
-  const currentZones = availableZonesDb[generationKey] ?? [];
+): GenerationAvailability[] {
+  const availability: GenerationAvailability[] = [];
 
-  if (currentZones.length === 0) {
+  for (let generationNumber = 1; generationNumber <= maxGeneration; generationNumber++) {
+    const generationKey = toGenerationKey(generationNumber);
+    const unlockedZones = availableZonesDb[generationKey] ?? [];
+    const unlockedIds = new Set(unlockedZones.map((zone) => zone.id));
+    const nextZone =
+      (unlockDb[generationKey] ?? []).find((zone) => !unlockedIds.has(zone.id)) ?? null;
+
+    availability.push({ generationNumber, generationKey, unlockedZones, nextZone });
+  }
+
+  return availability;
+}
+
+function describeGenerations(candidates: GenerationAvailability[]): string {
+  return candidates.map((candidate) => candidate.generationKey).join(", ");
+}
+
+/**
+ * Décide en un seul endroit la génération ET le type de zone du raid.
+ *
+ * L'ordre est volontairement inversé par rapport à l'ancien code : on tire
+ * d'abord le TYPE de raid (nouvelle zone ou zone connue), puis la génération
+ * parmi celles qui peuvent réellement l'honorer. Tirer la génération d'abord
+ * revenait à gaspiller le tirage "nouvelle zone" chaque fois qu'il tombait sur
+ * une génération épuisée (gen2 aujourd'hui), et l'effet s'aggrave à chaque
+ * génération terminée. Aucune relance n'est nécessaire, donc pas de boucle
+ * potentiellement infinie quand toutes les générations sont épuisées.
+ */
+function selectGenerationAndZone(
+  guildId: string,
+  availability: GenerationAvailability[],
+  options: RaidGenerationOptions,
+): { generation: GenerationAvailability; zone: ZoneEntry; zoneType: "next" | "available" } {
+  const logger = getLoggerForGuild(guildId);
+  const nextZoneChance = getRaidNextZoneChance(guildId);
+
+  const pool =
+    options.generation !== undefined
+      ? availability.filter((candidate) => candidate.generationNumber === options.generation)
+      : availability;
+
+  const withNextZone = pool.filter((candidate) => candidate.nextZone !== null);
+  const withUnlockedZone = pool.filter((candidate) => candidate.unlockedZones.length > 0);
+
+  // Demande explicite (commande admin) : on n'improvise pas, on échoue clairement.
+  if (options.newZone === true && withNextZone.length === 0) {
     throw new Error(
-      `Aucune zone déjà débloquée disponible pour ${generationKey}.`,
+      options.generation !== undefined
+        ? `Aucune nouvelle zone à débloquer pour gen${options.generation} : toutes ses zones sont déjà débloquées.`
+        : "Aucune nouvelle zone à débloquer, toutes les générations ouvertes sont épuisées.",
     );
   }
 
-  return pickRandom(currentZones);
-}
+  if (options.newZone === false && withUnlockedZone.length === 0) {
+    throw new Error(
+      options.generation !== undefined
+        ? `Aucune zone déjà débloquée pour gen${options.generation}.`
+        : "Aucune zone déjà débloquée sur les générations ouvertes.",
+    );
+  }
 
-function pickRaidZone(
-  generationKey: GenerationKey,
-  unlockDb: UnlockZonesDb,
-  availableZonesDb: ZonesDb,
-  guildId: string,
-): ZoneEntry {
-  const logger = getLoggerForGuild(guildId);
-  const nextZoneChance = getRaidNextZoneChance(guildId);
-  const currentZones = availableZonesDb[generationKey] ?? [];
-  const unlockableZones = unlockDb[generationKey] ?? [];
-  const currentZoneIds = new Set(currentZones.map((zone) => zone.id));
-  const nextZone = unlockableZones.find((zone) => !currentZoneIds.has(zone.id));
+  const wantsNewZone = options.newZone ?? shouldUseNextZone(guildId);
 
-  if (nextZone && shouldUseNextZone(guildId)) {
+  if (wantsNewZone && withNextZone.length > 0) {
+    const generation = pickRandom(withNextZone);
+    const zone = generation.nextZone as ZoneEntry;
+
     logger.info(
       {
-        generationKey,
+        generationKey: generation.generationKey,
         nextZoneChance,
-        selectedZoneId: nextZone.id,
+        forcedGeneration: options.generation ?? null,
+        forcedZoneType: options.newZone ?? null,
+        eligibleGenerations: describeGenerations(withNextZone),
+        selectedZoneId: zone.id,
         selectedZoneType: "next",
       },
       "[RAID] Sélection de la prochaine zone à débloquer",
     );
 
-    return nextZone;
+    return { generation, zone, zoneType: "next" };
   }
 
-  if (currentZones.length > 0) {
-    const selectedZone = pickRandomAvailableZone(
-      generationKey,
-      availableZonesDb,
-    );
+  if (withUnlockedZone.length > 0) {
+    const generation = pickRandom(withUnlockedZone);
+    const zone = pickRandom(generation.unlockedZones);
 
     logger.info(
       {
-        generationKey,
+        generationKey: generation.generationKey,
         nextZoneChance,
-        selectedZoneId: selectedZone.id,
+        forcedGeneration: options.generation ?? null,
+        forcedZoneType: options.newZone ?? null,
+        eligibleGenerations: describeGenerations(withUnlockedZone),
+        degradedFromNextZone: wantsNewZone,
+        selectedZoneId: zone.id,
         selectedZoneType: "available",
       },
-      "[RAID] Sélection d’une zone déjà débloquée",
+      wantsNewZone
+        ? "[RAID] Plus aucune nouvelle zone disponible, repli sur une zone déjà débloquée"
+        : "[RAID] Sélection d’une zone déjà débloquée",
     );
 
-    return selectedZone;
+    return { generation, zone, zoneType: "available" };
   }
 
-  if (nextZone) {
+  // Aucune zone débloquée nulle part (démarrage d'un serveur) : on ouvre sur la
+  // première zone à débloquer, comme avant.
+  if (withNextZone.length > 0) {
+    const generation = pickRandom(withNextZone);
+    const zone = generation.nextZone as ZoneEntry;
+
     logger.info(
       {
-        generationKey,
+        generationKey: generation.generationKey,
         nextZoneChance,
-        selectedZoneId: nextZone.id,
+        forcedGeneration: options.generation ?? null,
+        selectedZoneId: zone.id,
         selectedZoneType: "next-fallback",
       },
       "[RAID] Aucune zone débloquée disponible, fallback sur la prochaine zone",
     );
 
-    return nextZone;
+    return { generation, zone, zoneType: "next" };
   }
 
   throw new Error(
-    `Aucune zone disponible ou à débloquer pour ${generationKey}.`,
+    options.generation !== undefined
+      ? `Aucune zone disponible ou à débloquer pour gen${options.generation}.`
+      : "Aucune zone disponible ou à débloquer sur les générations ouvertes.",
   );
 }
 
@@ -213,13 +298,13 @@ function extractResistances(
 }
 
 /**
- * forcedGeneration n'est utilisé que par les outils d'exploitation
- * (scripts/raid-tools) pour rejouer un raid sur une génération précise.
- * Le scheduler l'omet et garde le tirage aléatoire.
+ * options n'est renseigné que par les outils d'exploitation (scripts/raid-tools,
+ * commande admin /raid-force-start) pour rejouer un raid sur une génération ou
+ * un type de zone précis. Le scheduler l'omet et garde le tirage aléatoire.
  */
 export async function generateRaidState(
   guildId: string,
-  forcedGeneration?: number,
+  options: RaidGenerationOptions = {},
 ): Promise<RaidState> {
   const pokemonDb = getPokemonCatalog(guildId) as unknown as PokemonEntry[];
   const unlockDb = await readJsonFile<UnlockZonesDb>(zonesToUnlockDb(guildId));
@@ -227,18 +312,18 @@ export async function generateRaidState(
 
   const maxGeneration = getGenerationNumber(guildId);
 
-  if (forcedGeneration !== undefined) {
-    if (!Number.isInteger(forcedGeneration) || forcedGeneration < 1 || forcedGeneration > maxGeneration) {
+  if (options.generation !== undefined) {
+    if (!Number.isInteger(options.generation) || options.generation < 1 || options.generation > maxGeneration) {
       throw new Error(
-        `Génération forcée invalide : ${forcedGeneration} (attendu un entier entre 1 et ${maxGeneration} pour guildId=${guildId}).`,
+        `Génération forcée invalide : ${options.generation} (attendu un entier entre 1 et ${maxGeneration} pour guildId=${guildId}).`,
       );
     }
   }
 
-  const generationNumber = forcedGeneration ?? randomInt(1, maxGeneration);
-  const generationKey = toGenerationKey(generationNumber);
+  const availability = collectGenerationAvailability(maxGeneration, unlockDb, availableZonesDb);
+  const { generation, zone } = selectGenerationAndZone(guildId, availability, options);
+  const generationNumber = generation.generationNumber;
 
-  const zone = pickRaidZone(generationKey, unlockDb, availableZonesDb, guildId);
   const allPokemonsInZone = getPokemonsForZone(zone.id, pokemonDb);
   const pokemonsInZone = allPokemonsInZone.filter(
     (p) => p.rarity !== 'legendary' && p.rarity !== 'legendary_wandering',
