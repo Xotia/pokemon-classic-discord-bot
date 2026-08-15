@@ -5,6 +5,7 @@ import { Client, GatewayIntentBits, Events, Interaction } from "discord.js";
 import { pingCommand } from "./commands/pingCommand";
 import { cheatCommand } from "./commands/cheatCommand";
 import { forceEndRaidCommand } from "./commands/forceEndRaidCommand";
+import { forceStartRaidCommand } from "./commands/forceStartRaidCommand";
 import { pokedexCommand } from "./commands/pokedexCommand";
 import logger from "./utils/logger";
 import { execute } from "./commands/getStatsCommand";
@@ -323,6 +324,10 @@ async function handleInteraction(interaction: Interaction) {
 
   if (interaction.commandName === "raid-force-end") {
     return forceEndRaidCommand(interaction);
+  }
+
+  if (interaction.commandName === "raid-force-start") {
+    return forceStartRaidCommand(interaction);
   }
 
   if (interaction.commandName === "get-pokemon-info") {

@@ -3,6 +3,28 @@
 Tous les changements notables du **Pokémon Classic Discord Bot** sont documentés ici.  
 Format basé sur [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+# [3.6.0] - 2026-08-15
+
+## Corrections
+
+### Raids — le tirage « nouvelle zone » ne se perd plus sur une génération épuisée
+- Le raid tirait d'abord sa génération, puis décidait s'il ouvrait la prochaine zone à débloquer. Quand le tirage tombait sur une génération dont toutes les zones sont déjà débloquées (Johto aujourd'hui), la chance « nouvelle zone » était consommée pour rien et le raid repartait sur une zone connue. Plus une génération est terminée, plus la progression des autres ralentit.
+- L'ordre est inversé : le type de raid (nouvelle zone ou zone connue) est décidé en premier, puis la génération est tirée parmi celles qui peuvent réellement l'honorer. `RAID_NEXT_ZONE_CHANCE` redevient la fréquence réelle des raids de déblocage, et le comportement reste correct au fur et à mesure que gen1 puis gen3 s'épuiseront à leur tour.
+- Aucune relance de tirage n'est utilisée : quand plus aucune génération n'a de zone à débloquer, le raid part sur une zone déjà débloquée. Pas de boucle potentiellement infinie.
+- Le fallback historique est conservé : une génération sans aucune zone débloquée ouvre quand même sa première zone à débloquer.
+
+## Ajouts
+
+### `/raid-force-start` — lancement manuel d'un raid (admin)
+- Nouvelle commande réservée à l'`ADMIN_ID` du `.env`, avec deux paramètres facultatifs : `generation` (Kanto / Johto / Hoenn) et `nouvelle-zone` (prochaine zone à débloquer ou zone déjà débloquée). Sans paramètre, le raid suit le tirage normal.
+- La commande refuse de lancer un second raid si des inscriptions sont déjà ouvertes, et renvoie un message explicite quand la combinaison demandée est impossible (par exemple `generation: Johto` + `nouvelle-zone: true`, Johto n'ayant plus rien à débloquer).
+- Réponse éphémère côté admin ; l'annonce du raid part normalement dans le salon dédié.
+
+## Modifications
+- Numéro de version : 3.5.3 → 3.6.0.
+
+---
+
 # [3.5.3] - 2026-08-11
 
 ## Modifications
