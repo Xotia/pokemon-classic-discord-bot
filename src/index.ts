@@ -6,6 +6,7 @@ import { pingCommand } from "./commands/pingCommand";
 import { cheatCommand } from "./commands/cheatCommand";
 import { forceEndRaidCommand } from "./commands/forceEndRaidCommand";
 import { forceStartRaidCommand } from "./commands/forceStartRaidCommand";
+import { zoneCompletionCommand } from "./commands/zoneCompletionCommand";
 import { pokedexCommand } from "./commands/pokedexCommand";
 import logger from "./utils/logger";
 import { execute } from "./commands/getStatsCommand";
@@ -203,7 +204,11 @@ async function handleInteraction(interaction: Interaction) {
       return;
     }
 
-    if (interaction.commandName === "capture" || interaction.commandName === "capture-cible") {
+    if (
+      interaction.commandName === "capture" ||
+      interaction.commandName === "capture-cible" ||
+      interaction.commandName === "zone-progression"
+    ) {
       const focusedOption = interaction.options.getFocused(true);
 
       if (focusedOption.name === "zone") {
@@ -285,6 +290,10 @@ async function handleInteraction(interaction: Interaction) {
 
   if (interaction.commandName === "cheat") {
     return cheatCommand(interaction);
+  }
+
+  if (interaction.commandName === "zone-progression") {
+    return await zoneCompletionCommand(interaction);
   }
 
   if (interaction.commandName === "pokedex") {

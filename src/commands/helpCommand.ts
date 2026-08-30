@@ -13,6 +13,7 @@ export async function helpCommand(interaction: any) {
             { name: '/capture-cible', value: 'Cible une zone et une rareté précises en échange de données de recherche.' },
             { name: '/get-pokemon-info', value: 'Affiche les infos complètes d\'un Pokémon : rareté, types, faiblesses en défense et statistiques.' },
             { name: '/pokedex', value: 'Affiche la liste des pokemons capturés avec /capture.' },
+            { name: '/zone-progression', value: 'Affiche ton pourcentage de Pokémon capturés dans une zone donnée.' },
             { name: '/leaderboard', value: 'Affiche le classement des joueurs' },
             { name: '/cheat', value: 'Commande de triche à utiliser à vos risques et périls.' },
             { name: '/get-shiny-rate', value: 'Affiche le taux d\'apparition des pokemon shinys.' },

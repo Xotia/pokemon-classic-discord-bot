@@ -59,6 +59,17 @@ export const commands = [
     .setDescription("Voir ton nombre de Pokémon capturés avec /capture.")
     .toJSON(),
   new SlashCommandBuilder()
+    .setName("zone-progression")
+    .setDescription("Affiche ton pourcentage de Pokémon capturés dans une zone.")
+    .addStringOption((option) =>
+      option
+        .setName("zone")
+        .setDescription("Zone à consulter")
+        .setRequired(true)
+        .setAutocomplete(true),
+    )
+    .toJSON(),
+  new SlashCommandBuilder()
     .setName("get-shiny-rate")
     .setDescription("Affiche le taux d'apparition des Pokémon shinys.")
     .toJSON(),
