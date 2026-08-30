@@ -3,6 +3,23 @@
 Tous les changements notables du **Pokémon Classic Discord Bot** sont documentés ici.  
 Format basé sur [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+# [3.7.2] - 2026-08-30
+
+## Ajouts
+
+### `/zone-progression` sans argument : la progression de toutes les zones en un message
+- L'option `zone` devient facultative. Sans zone, la commande renvoie une ligne par zone consultable (barre, pourcentage, capturés/total), groupée par région dans l'ordre des générations. Avec une zone, la fiche détaillée existante est inchangée : elle reste le seul endroit qui affiche les shinys et les restants.
+- `computeAllZonesCompletion` applique la même visibilité que la fiche par zone : zones débloquées du serveur, plus la zone d'événement tant que l'événement est actif. Une zone débloquée mais sans Pokémon recensé est écartée, elle n'a pas de ratio à afficher.
+- Aucun pourcentage global n'est affiché, volontairement. Un Pokémon appartient souvent à plusieurs zones : sommer les capturés et les totaux le compterait plusieurs fois et produirait un chiffre faux. Les deux seuls agrégats honnêtes sont le nombre de zones terminées et la moyenne des ratios, et ce sont les deux qui sont affichés.
+- La barre de 10 blocs force un bloc plein dès la première capture et garde un bloc vide tant que la zone n'est pas finie : sans cela, 4 % rend la même barre que 0 % et 96 % la même que 100 %, précisément la distinction que la vue d'ensemble sert à faire.
+- Volumétrie vérifiée par test : 41 zones (tout `zones_all.json`) tiennent sous la limite de 4096 caractères d'une description d'embed.
+
+## Modifications
+- Numéro de version : 3.7.1 → 3.7.2.
+- `/zone-progression` doit être redéployée (`npm run deploy`) : l'option `zone` passe de requise à facultative.
+
+---
+
 # [3.7.1] - 2026-08-30
 
 ## Corrections

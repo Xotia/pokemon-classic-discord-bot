@@ -1,3 +1,42 @@
+# Mise à jour 3.7.2 — Toutes vos zones d'un coup d'oeil
+
+---
+
+## `/zone-progression` sans rien taper
+
+Jusqu'ici la commande demandait une zone, et il fallait la relancer six fois pour savoir où vous en étiez partout.
+
+Lancez maintenant **`/zone-progression` sans argument** : vous obtenez la liste complète de vos zones, région par région, avec pour chacune sa barre et son pourcentage.
+
+```
+Kanto
+██░░░░░░░░  18.2 %  Route bucolique (4/22)
+█████░░░░░  50 %    Chemin escarpé (7/14)
+
+Johto
+██████████  100 %   Colline florale (17/17) 🏆
+```
+
+En bas du message : le nombre de zones terminées et la moyenne de vos zones.
+
+L'ancien affichage n'a pas bougé. **`/zone-progression zone:<votre zone>`** donne toujours la fiche détaillée, avec vos shinys et ce qu'il vous reste à trouver. La vue d'ensemble sert à repérer où aller, la fiche à préparer la chasse.
+
+---
+
+## Pourquoi pas un pourcentage global ?
+
+Parce qu'il serait faux. Beaucoup de Pokémon vivent dans plusieurs zones : un total qui additionne toutes les zones les compte plusieurs fois. Le message affiche donc ce qui a du sens — vos zones terminées, et la moyenne de vos avancements — et rien qui prétende résumer votre Pokédex en un seul chiffre.
+
+---
+
+## Rien d'autre ne change
+
+Seules les zones débloquées sur votre serveur apparaissent, comme avant, et la zone d'événement s'ajoute à la liste tant que l'événement est en cours. Les captures comptées restent celles de la saison en cours.
+
+---
+
+---
+
 # Mise à jour 3.7.1 — La progression de zone compte enfin la bonne saison
 
 ---

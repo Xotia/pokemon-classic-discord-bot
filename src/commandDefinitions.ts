@@ -82,12 +82,14 @@ export const commands = [
     .toJSON(),
   new SlashCommandBuilder()
     .setName("zone-progression")
-    .setDescription("Affiche ton pourcentage de Pokémon capturés dans une zone.")
+    .setDescription(
+      "Affiche ta progression sur toutes les zones, ou sur une zone précise.",
+    )
     .addStringOption((option) =>
       option
         .setName("zone")
-        .setDescription("Zone à consulter")
-        .setRequired(true)
+        .setDescription("Zone à consulter (toutes les zones si laissé vide)")
+        .setRequired(false)
         .setAutocomplete(true),
     )
     .toJSON(),
