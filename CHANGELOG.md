@@ -3,6 +3,114 @@
 Tous les changements notables du **Pokémon Classic Discord Bot** sont documentés ici.  
 Format basé sur [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+# [3.7.0] - 2026-08-30
+
+## Ajouts
+
+### World Boss — un événement unique pour tous les serveurs
+- Nouveau système d'événement hebdomadaire, distinct du raid : **un seul boss, une seule équipe, un seul résultat** pour tout le parc de serveurs. Là où le raid est local à un serveur, le world boss agrège les défenseurs de tous les serveurs dans une ligne commune.
+- Créneau fixe : ouverture le **dimanche à 12h00**, clôture à **20h00**, fuseau `Europe/Paris`, identique partout. Le scheduler enregistre **deux crons pour tout le parc**, jamais un couple par serveur : boucler sur le registre aurait produit N ouvertures et N résolutions du même événement.
+- État global dans `data/world-boss.json` et `data/world-boss-history.json`, à la racine de `data/` et non par serveur. Toutes les écritures passent par un verrou par fichier.
+- Le moteur de combat du raid a été extrait en `computeBruteBattleResult` et est réutilisé tel quel : les deux événements ne peuvent pas diverger sur la résolution. La validation des Pokémon inscrits est elle aussi celle du raid, réutilisée sans copie.
+
+### Catalogue de boss autonome — les 33 Gigamax
+- `data/world-boss-list.json` : chaque entrée porte ses propres stats, types, efficacités défensives, sprite, portail et lore, sans dépendre du catalogue Pokémon. Le fichier est validé au chargement, une entrée malformée fait échouer le démarrage plutôt que l'événement du dimanche.
+- Peuplé avec les **33 formes Gigamax** du jeu (32 espèces, Shifours comptant pour ses deux styles). Les efficacités défensives sont dérivées de `data/all_types.json` en croisant les deux types, les stats sont les stats de base réelles de chaque espèce.
+- Tirage aléatoire uniforme parmi les boss jamais vaincus. Une **victoire retire le boss du vivier définitivement**, dans la même écriture verrouillée que l'entrée d'historique ; une défaite ne retire rien. Vivier épuisé : aucun événement n'est ouvert et l'état reste `idle`, traité comme un cas normal par le cron comme par le forçage admin.
+
+### `/get-pokemon-info` accepte les Gigamax
+- L'autocomplétion de la commande liste désormais les 33 Gigamax en plus du Pokédex du serveur, et la fiche d'un Gigamax affiche son lore, son portail, ses types, ses faiblesses et ses résistances.
+- Ni rareté ni statistiques sur cette fiche : les stats d'un world boss dépendent de la difficulté tirée à l'ouverture du portail et n'ont pas de valeur hors combat.
+
+### Difficulté héritée de la mobilisation précédente
+- La difficulté multiplie les stats de base du boss et vaut le **nombre de participants de l'événement précédent**, avec un repli à 6 s'il n'y a pas de précédent ou si le précédent n'a eu aucun inscrit.
+- L'historique est écrit à chaque cycle, défaite et événement désert compris, sans quoi la difficulté suivante repartirait sur une valeur périmée.
+
+### La difficulté n'est plus chiffrée côté joueur : elle est une couleur de portail
+- `worldBossPortalTier` traduit `boss.difficulty` en palier coloré, **un palier par point de difficulté de 1 à 9** : 🟢 vert, 🔵 bleu, 🟡 jaune, 🟠 orange, 🔴 rouge, 🟣 violet, 🟤 cuivré, ⚫ noir, ⚪ blanc. Le dernier palier est ouvert vers le haut : une mobilisation exceptionnelle ne sort pas de l'échelle. La couleur du palier noir est `0x0b0b0b` et non `0x000000`, que Discord interprète comme « pas de couleur ».
+- Les trois embeds joueurs (annonce, équipe, résultat) désignent le portail par sa couleur et prennent la **couleur du palier** comme couleur d'embed. Le nom de brèche propre à chaque boss (`portal`) ne figure plus dans les embeds de l'événement ; il reste consultable hors combat via `/get-pokemon-info`, et dans les logs.
+- Aucun changement de calcul : la difficulté reste le multiplicateur de stats et la source des récompenses. Elle reste chiffrée là où elle sert à opérer — logs, historique, réponse de `/world-boss-force-start`, option `difficulte` du forçage.
+
+### Annonce d'ouverture resserrée
+- Nouveau format : titre « 🌀 Un Portail {couleur} s'est ouvert au-dessus du centre de recherche ! », puis présence du boss, appel à mobilisation, types, commande, heure de fin. Plus de champs d'embed, tout tient dans la description.
+- Le caractère mondial tient en une phrase (« les dresseurs de l'ensemble des centres de recherche du monde sont appelés à se mobiliser : tous les portails ouvrent sur le même combat »), qui remplace l'ancienne explication sur l'équipe mondiale.
+- Retirés de l'annonce : le lore du boss, le nom de la brèche, la formule « X force le portail » et les lignes d'ambiance par palier. Un test verrouille leur absence.
+
+### `/world-boss` et `/world-boss-squad`
+- `/world-boss <pokemon_name> [type]` engage un Pokémon dans la ligne mondiale. L'unicité porte sur le **compte Discord seul**, pas sur le couple serveur/joueur : se réinscrire depuis un autre serveur remplace l'engagement au lieu de l'ajouter.
+- Le pseudo et le nom du serveur sont figés à l'inscription, `guild.members.fetch()` ne traversant pas les serveurs.
+- `/world-boss-squad` affiche la ligne complète, regroupée par serveur d'origine, et rend exactement le même contenu depuis n'importe quel serveur. Les plafonds Discord (25 champs, 1024 caractères par champ) sont gérés par regroupement et mention explicite du surplus, jamais par troncature silencieuse.
+
+### `/world-boss-force-start` et `/world-boss-force-end` (admin)
+- Ouverture et clôture manuelles, réservées à l'`ADMIN_ID`, en réponse éphémère. `force-start` accepte un `boss` (autocomplétion restreinte aux boss encore vivants) et une `difficulte`, refuse d'ouvrir si un événement est déjà en cours, refuse un boss déjà vaincu et annonce explicitement un vivier épuisé.
+
+### Récompenses
+- Chaque participant reçoit **XP** et **données de recherche** à hauteur des PV de base du boss × difficulté × **10**, crédités sur son serveur d'inscription. Le multiplicateur (`WORLD_BOSS_REWARD_MULTIPLIER`) tient au rythme de l'événement : un rendez-vous par semaine face à un raid quotidien. Pas de capture, pas de déblocage de zone.
+- Nouveau compteur `worldBossWins` dans les profils joueurs.
+- Les gains sont groupés par serveur : un seul `updatePlayers` par `players.json`, jamais un appel par joueur. Un serveur illisible ou un profil disparu ne prive pas les autres de leurs gains.
+
+### `/zone-progression` — avancement du joueur zone par zone
+- Nouvelle commande joueur : pour une zone donnée (autocomplétion, mêmes zones que `/capture`), affiche le nombre de Pokémon différents capturés sur le total présent dans la zone, le pourcentage, le reste à trouver et le nombre de shinys.
+- **Aucun compteur n'est stocké dans `players.json`** : le calcul est refait à chaque appel. Un compteur dérivé aurait dû être invalidé à chaque capture *et* à chaque modification des `zones[]` du catalogue (rééquilibrage, ajout d'un roster custom, nouvelle génération), avec un pourcentage faux et silencieux à la moindre invalidation manquée. Le coût évité est nul : le catalogue est déjà en mémoire et `captureList` est indexée par id.
+- L'unité comptée est le **Pokémon différent**, pas la capture : 12 captures du même Pokémon valent 1.
+- Un Pokémon présent dans plusieurs zones compte dans chacune. Les pourcentages de deux zones ne s'additionnent donc pas, et le pied de l'embed le dit.
+- Les Pokémon sans zone (les 4 formes de Deoxys, le roster custom de chaque serveur) n'entrent dans aucun total : la somme des zones ne fait pas le Pokédex complet, c'est voulu.
+- Une zone connue mais pas encore débloquée sur le serveur est refusée explicitement plutôt que traitée comme inconnue. La zone d'événement n'est consultable que pendant l'événement, exactement comme dans `/capture`.
+
+### Index zone -> Pokémon
+- `getZonePokemonIndex` construit une fois par serveur la table `zoneId -> Set<id>`, avec la même durée de vie que le cache du catalogue (le process). Le filtrage par zone de `getRandomPokemonFromRarity` passe par cet index : la capture et la progression partagent désormais une seule définition de « ce Pokémon appartient à cette zone », et le filtre est en O(1) par Pokémon au lieu d'un `includes` sur le tableau `zones`.
+### Simulateur de raid public (site statique)
+- Nouvel outil joueur : `tools/raid-simulator/`, publié sous forme de site **100 % statique** sur GitHub Pages (https://xotia.github.io/pokemon-classic-discord-bot/). Les joueurs saisissent la créature et l'équipe engagée, l'outil rejoue le combat et rend le verdict avant la clôture des inscriptions.
+- **Rien n'est hébergé sur le VPS.** Le simulateur ne vit pas sur la machine du bot, n'y ouvre aucun port et n'ajoute aucun service à superviser : le seul hébergement auto-géré envisagé (nginx sur le VPS) aurait ajouté une surface exposée sur la machine du bot pour un site qui n'a besoin de rien.
+- L'outil ne parle à rien — ni au bot, ni à Discord, ni à une base. Il ne connaît pas l'état du raid en cours, par choix : une version branchée sur les données live aurait demandé une API exposée depuis le VPS, pour un gain que la saisie manuelle couvre déjà.
+- Publication par `.github/workflows/deploy-raid-simulator.yml` : déclenchée par les push sur `main` touchant au simulateur ou aux fichiers `data/pokemon-gen*.json`, plus déclenchement manuel. Le workflow **rejoue les deux tests garde-fous avant de publier** : un simulateur qui a dérivé du moteur du bot n'atteint pas les joueurs. Permissions minimales au niveau workflow (`contents: read`), élévation `pages`/`id-token` sur le seul job de déploiement, actions épinglées par SHA, `concurrency` sans annulation d'un déploiement en cours.
+- `npm run build` ne construit **pas** le simulateur, volontairement : un pokédex malformé doit faire échouer la publication du site, pas un déploiement du bot. En local, `npm run raid-sim:build` construit et `npm run raid-sim` prévisualise.
+- Les chemins d'assets de la page sont tous relatifs : le site fonctionne sous le sous-chemin `/pokemon-classic-discord-bot/` de GitHub Pages.
+
+### Moteur de combat partagé et verrouillé
+- Le calcul du simulateur vit dans `tools/raid-simulator/src/raidSimCore.js`, chargeable à la fois par le navigateur et par Node.
+- `tests/raid/raidSimulatorParity.test.ts` compare ce moteur à `computeBruteBattleResult` sur une matrice de cas : immunités (division par zéro, défenses infinies), attaque sans effet, types absents des tables d'efficacité, type d'attaque non renseigné, équipes de 0 à 8 défenseurs. L'ordre d'accumulation des stats reproduit celui du bot, aux flottants près.
+- Sans ce test, une évolution du moteur côté bot ferait annoncer aux joueurs des victoires qui n'auront pas lieu. C'est le seul garde-fou contre cette dérive.
+
+### Habillage aux couleurs du centre de recherche
+- Refonte visuelle complète : identité « terminal du centre de recherche », panneaux numérotés, chiffres en chasse fixe, verdict en deux états lisibles d'un coup d'œil.
+- Libellés réécrits en langage joueur (« niveau de menace » au lieu de « multiplicateur de stats », stat affrontée explicitée avec le possessif correct).
+- Nouveaux blocs pédagogiques : règle des cinq axes, explication du verdict nommant les axes en déficit, et mention explicite que les PV ne décident de rien — ils sont affichés en gris, marqués « indicatif ».
+- Cas des défenses infinies (défenseur insensible au type d'attaque de la créature) accompagné d'une explication, au lieu d'un `∞` brut qui passait pour un bug d'affichage.
+- Page utilisable au téléphone : colonne unique sous 620 px, cibles tactiles à 44 px, tableaux larges dans un conteneur à défilement propre. Favicon et métadonnées de partage pour le lien collé dans Discord.
+
+## Sécurité
+
+- **Route `/data/` supprimée du serveur du simulateur.** Elle servait n'importe quel `.json` du dossier `data/` du bot : `players.json` (identifiants Discord et collections des joueurs) et `guilds.json` (identifiants de serveurs et de salons) étaient accessibles dès lors que le serveur tournait. En usage local l'exposition restait sur la machine ; mise en ligne telle quelle, c'était une fuite de données personnelles.
+- Le pokédex publié est désormais un **asset généré** (`pokedex.json`), reconstruit champ par champ à partir d'une liste blanche : id, nom, sprite, types, stats, efficacités défensives. Ni rareté, ni zones, ni génération, ni nom d'origine. Une entrée incomplète fait échouer le build plutôt que de produire un simulateur qui calcule faux. `tests/scripts/buildRaidSimulator.test.ts` verrouille cette liste.
+- `server.js` est désormais un serveur d'**aperçu local uniquement** : il ne sert que le dossier buildé, refuse les méthodes autres que GET/HEAD, n'accepte que les extensions attendues, et sa vérification de confinement compare sur `racine + séparateur` (un dossier voisin de même préfixe ne passe plus). Il écoute sur `127.0.0.1` par défaut.
+- **`package-lock.json` est désormais versionné** et le workflow installe avec `npm ci` (au lieu de `npm install`). Depuis cette version la CI build un site public : sans lockfile, une mise à jour de dépendance transitive pouvait changer le simulateur mis en ligne sans qu'aucun commit ne bouge. Le cache npm de `setup-node` devient utilisable au passage.
+- `.gitignore` : `tools/` était entièrement ignoré (« outil local, non déployé »). L'exception `!tools/raid-simulator/` est nécessaire pour que le workflow GitHub Pages trouve les sources à builder ; `dist-web/` reste ignoré, c'est un artefact.
+
+## Corrections
+
+- **`send-patchnote` ne tronque plus la fin d'une note de version.** La description d'un embed Discord plafonne à 4096 caractères ; au-delà, le script coupait net et remplaçait le reste par « *(suite sur le dépôt)* ». L'entrée 3.7.0 fait ~7 500 caractères : la moitié du patchnote n'aurait pas été lue. Le corps est désormais découpé aux séparateurs de section et envoyé en plusieurs messages (2 pour la 3.7.0), les entrées courtes restant en un seul message. Logique isolée dans `src/scripts/announcements/lib/patchnote.ts` et couverte par `tests/announcements/patchnote.test.ts`, dont un test qui vérifie qu'aucun mot n'est perdu au découpage.
+- **Sprites Gigamax corrigés.** Les deux formes de Shifours étaient interverties (Poing Final portait le sprite de Mille Poings) et Mille Poings pointait sur un PNG fixe au lieu d'un GIF animé. Pyrobut utilisait le sprite rétro `gen5ani`, seul de la liste dans ce style. Les 33 sprites ont été vérifiés un à un contre la référence PokéAPI.
+
+### Filet sur les commandes non câblées
+- `handleInteraction` était une chaîne de `if` sans cas par défaut : une commande déclarée dans `commandDefinitions.ts` mais absente du dispatch traversait tout, la fonction retournait, et Discord affichait « l'application ne répond pas » au bout de 3 secondes — sans une ligne de log. Le symptôme ne désignait pas sa cause.
+- La chaîne se termine désormais par un log `unhandled_command` et une réponse éphémère nommant la commande fautive.
+- `tests/commandWiring.test.ts` compare les noms déclarés dans `commandDefinitions.ts` à ceux aiguillés dans `index.ts` : un trou de câblage est rouge au test au lieu d'être silencieux en production.
+
+### Hygiène du dépôt
+- `src/scripts/raid-tools/simulateRaidZones.ts` et `simulateRaidModels.ts` étaient ignorés alors que `package.json` expose `npm run simulate:raid-zones` : la commande échouait sur tout clone neuf. Les deux scripts sont versionnés.
+- Ajoutés au `.gitignore` : `coverage/` (sortie `vitest --coverage`) et `.claude/settings.local.json`, qui ne dépendait jusqu'ici que du `.gitignore` global de la machine.
+- Commentaire explicite sur `data/players_example.json` : malgré son nom, le fichier contient de vrais identifiants Discord et de vrais pseudos. La règle qui l'ignore ne doit jamais être retirée.
+
+## Tests
+- Suite dédiée `tests/worldBoss/`, dont un scénario **bout-en-bout sur deux serveurs simulés** avec joueurs fictifs et vrais fichiers `players.json` : annonce double, vision partagée, inscriptions concurrentes, double inscription inter-serveurs, récompenses créditées des deux côtés, historique, difficulté héritée, boss vaincu jamais retiré, vivier épuisé.
+- Checklist de vérification manuelle : `data/spec/WORLD_BOSS_TESTING_CHECKLIST.md`.
+
+## Modifications
+- Numéro de version : 3.6.0 → 3.7.0.
+- `/help` liste les cinq nouvelles commandes.
+
+---
 # [3.6.0] - 2026-08-15
 
 ## Corrections

@@ -1,3 +1,173 @@
+# Mise à jour 3.7.0 — Les portails s'ouvrent
+
+---
+
+## Une créature, tous les centres, une seule équipe
+
+Un raid, vous le défendez chez vous. Un **world boss**, non.
+
+Chaque dimanche, un portail s'ouvre au-dessus de tous les centres de recherche en même temps. On ne le défend pas : on le **franchit**. De l'autre côté, les portails débouchent tous au même endroit — une dimension parallèle où les centres du monde entier se rejoignent, et où attend une créature de masse démesurée : une forme **Gigamax**.
+
+Pourquoi aller la chercher plutôt que l'attendre ? Parce qu'un portail se traverse dans les deux sens. Si elle le franchit avant d'avoir été vaincue, elle ne débarque pas au-dessus d'un centre : elle débarque au-dessus de **tous**, et aucun n'a de quoi encaisser une masse pareille. Le combat se fait de l'autre côté pour qu'il n'ait jamais lieu de celui-ci.
+
+Un dresseur qui franchit le portail depuis son centre apparaît sur les écrans de tous les autres : il est arrivé au même endroit qu'eux. Pas de classement entre centres — une seule équipe, un seul combat, un seul résultat, le même pour tout le monde.
+
+---
+
+## Le rythme
+
+**Dimanche 12h00** — le portail s'ouvre, la créature est identifiée, l'engagement est ouvert partout.
+**Jusqu'à 20h00** — vous pouvez engager un Pokémon, ou changer d'avis.
+**Dimanche 20h00** — le portail se ferme et le combat se joue de l'autre côté. Le résultat tombe partout en même temps.
+
+---
+
+## S'engager
+
+```
+ /world-boss <pokemon> [type]      franchir le portail avec un Pokémon
+ /world-boss-squad                 voir la créature et l'équipe déjà engagée
+```
+
+Un dresseur, un Pokémon, capturé dans la saison en cours comme pour les raids. Vous pouvez changer votre engagement jusqu'à 20h00, le dernier compte.
+
+Attention à un point : **l'unicité porte sur votre compte, pas sur le centre**. Si vous vous engagez depuis un second centre, votre nouvel engagement remplace le premier, il ne s'y ajoute pas.
+
+`/world-boss-squad` affiche la ligne **entière**, dresseurs des autres centres compris. Regardez-la avant de choisir : c'est le seul moyen de savoir ce qui manque encore.
+
+---
+
+## La créature apprend de nous
+
+Le point le plus dérangeant des relevés : **la créature de la semaine suivante se calibre sur le nombre de dresseurs qui se sont opposés à la précédente.**
+
+La menace suivra donc votre mobilisation. Ce n'est pas une raison de venir moins nombreux : une ligne clairsemée ne fait pas reculer la créature du moment, elle la laisse passer.
+
+**Comment la jauger ?** À la couleur du portail. Les relevés ne donnent aucun chiffre, seulement une lueur, et cette lueur monte avec ce qui pousse derrière :
+
+```
+ 🟢 vert       1 dresseur mobilisé la semaine précédente
+ 🔵 bleu       2
+ 🟡 jaune      3
+ 🟠 orange     4
+ 🔴 rouge      5
+ 🟣 violet     6
+ 🟤 cuivré     7
+ ⚫ noir       8
+ ⚪ blanc      9 et au-delà
+```
+
+L'annonce et `/world-boss-squad` portent la couleur du portail en cours. Lisez-la avant de vous engager : un portail orange ne se tient pas avec l'effectif d'un portail vert.
+
+---
+
+## Un portail refermé ne se rouvre pas
+
+Une créature vaincue ne revient jamais. Le portail qui menait jusqu'à elle se referme définitivement, et chaque victoire retire une menace de la liste, pour toujours.
+
+L'inverse est vrai aussi. Une créature qui n'a pas été vaincue reste où elle est, et rien n'empêche qu'un portail rouvre sur elle la semaine suivante. Une défaite ne fait gagner ni temps ni tranquillité.
+
+---
+
+## En cas de victoire
+
+Un world boss ne se capture pas. Ce n'est pas une prise, c'est une menace qui cesse d'exister.
+
+En revanche, une créature de cette masse laisse derrière elle une quantité de relevés **sans commune mesure avec un raid**. Chaque dresseur engagé reçoit de l'**expérience** et des **données de recherche** à la hauteur de ce qui a été vaincu, sur son centre d'origine. Une victoire de dimanche pèse plusieurs semaines de captures.
+
+Les dresseurs restés de ce côté-ci ne reçoivent rien.
+
+---
+
+## Vous n'avez plus à deviner
+
+Jusqu'ici, un raid se jouait à l'aveugle. Vous engagiez un Pokémon, vous
+attendiez la clôture, et vous appreniez à ce moment-là que la défense de
+l'équipe manquait de trente points. Trente points qu'un seul renfort aurait
+comblés — si quelqu'un avait pu les voir à temps.
+
+Le centre de recherche a reconstitué le calcul exact qui décide de l'issue d'un
+raid, et il vous l'ouvre. **Le simulateur de raid du centre de recherche est en
+ligne.**
+
+**Accès : https://xotia.github.io/pokemon-classic-discord-bot/**
+
+---
+
+## Ce qu'il fait
+
+Vous saisissez la créature du raid, son niveau de menace, et les Pokémon déjà
+engagés. Le simulateur rejoue le combat et vous rend le verdict — le vrai, celui
+qui tombera à la clôture.
+
+Surtout, il vous dit **pourquoi**. Un raid ne se joue pas en points de vie, il
+se joue sur **cinq axes** : vos attaques contre ses défenses, vos défenses
+contre ses attaques, et la vitesse face à la vitesse. Les stats de toute
+l'équipe sont additionnées, puis comparées axe par axe.
+
+**Il faut dépasser la créature sur les cinq à la fois.** Un seul axe à égalité
+suffit à faire échouer le raid, quelle que soit votre avance sur les autres.
+C'est la règle qui a coûté le plus de raids, et c'est celle que le simulateur
+vous montre en clair : il affiche l'écart sur chaque axe et nomme ceux qui
+manquent.
+
+Un bouton « Voir le calcul » détaille tout, ligne par ligne : les stats de la
+créature multipliées par sa menace, et l'apport de chaque défenseur, efficacités
+de type comprises.
+
+---
+
+## À quoi ça sert concrètement
+
+Avant la clôture des inscriptions, vous pouvez enfin répondre à des questions
+qui restaient sans réponse :
+
+- **Est-ce que l'équipe actuelle passe ?** Saisissez les inscrits, vous avez le
+  verdict.
+- **Qu'est-ce qui manque ?** Le simulateur nomme les axes en déficit.
+- **Un dresseur de plus suffirait-il ?** Ajoutez-le et regardez l'écart bouger.
+- **Faut-il changer de type d'attaque ?** Le type se choisit pour chaque
+  Pokémon, l'effet est immédiat.
+
+De quoi organiser une composition à plusieurs plutôt que de croiser les doigts.
+
+---
+
+## Ce qu'il ne fait pas
+
+Le simulateur **ne connaît pas le raid en cours**. Il ne sait pas quelle
+créature est apparue chez vous ni qui s'est déjà inscrit : c'est vous qui
+saisissez la composition. Une équipe saisie de travers donne une projection de
+travers.
+
+En revanche, le calcul, lui, est le vrai : c'est le moteur de combat du bot,
+à l'identique. Une composition qui gagne dans le simulateur gagne dans le raid.
+
+---
+
+## Aussi dans cette mise à jour
+
+- **`/zone-progression <zone>`** — pour la zone de votre choix, votre nombre de
+  Pokémon différents capturés sur le total présent, le pourcentage, ce qu'il
+  vous reste à trouver et vos shinys. Un Pokémon présent dans plusieurs zones
+  compte dans chacune : les pourcentages de deux zones ne s'additionnent pas.
+- **`/get-pokemon-info` connaît les Gigamax.** Tapez le nom d'un world boss et
+  vous obtenez sa fiche : lore, portail, types, faiblesses et résistances. Pas
+  de statistiques — celles d'un Gigamax dépendent du portail tiré le dimanche.
+- Le simulateur est utilisable au téléphone, ce qui est probablement là que vous
+  le consulterez en pleine négociation d'équipe sur Discord.
+- Les types s'affichent sous leur nom français partout dans l'outil.
+
+---
+
+## Rien ne change pour le reste
+
+Les raids quotidiens, les captures, le Pokédex et les classements continuent exactement comme avant. Le world boss s'ajoute, il ne remplace rien.
+
+---
+
+---
+
 # Mise à jour 3.6.0 — Les raids d'exploration repartent de l'avant
 
 ---
