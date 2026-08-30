@@ -43,19 +43,7 @@ Le point le plus dérangeant des relevés : **la créature de la semaine suivant
 
 La menace suivra donc votre mobilisation. Ce n'est pas une raison de venir moins nombreux : une ligne clairsemée ne fait pas reculer la créature du moment, elle la laisse passer.
 
-**Comment la jauger ?** À la couleur du portail. Les relevés ne donnent aucun chiffre, seulement une lueur, et cette lueur monte avec ce qui pousse derrière :
-
-```
- 🟢 vert       1 dresseur mobilisé la semaine précédente (ou aucun)
- 🔵 bleu       2
- 🟡 jaune      3
- 🟠 orange     4
- 🔴 rouge      5
- 🟣 violet     6
- 🟤 cuivré     7
- ⚫ noir       8
- ⚪ blanc      9 et au-delà
-```
+**Comment la jauger ?** À la couleur du portail. Les relevés ne donnent aucun chiffre, seulement une lueur, et cette lueur monte avec ce qui pousse derrière.
 
 L'annonce et `/world-boss-squad` portent la couleur du portail en cours. Lisez-la avant de vous engager : un portail orange ne se tient pas avec l'effectif d'un portail vert.
 
