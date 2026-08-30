@@ -37,26 +37,6 @@ Attention à un point : **l'unicité porte sur votre compte, pas sur le centre**
 
 ---
 
-## La créature apprend de nous
-
-Le point le plus dérangeant des relevés : **la créature de la semaine suivante se calibre sur le nombre de dresseurs qui se sont opposés à la précédente.**
-
-La menace suivra donc votre mobilisation. Ce n'est pas une raison de venir moins nombreux : une ligne clairsemée ne fait pas reculer la créature du moment, elle la laisse passer.
-
-**Comment la jauger ?** À la couleur du portail. Les relevés ne donnent aucun chiffre, seulement une lueur, et cette lueur monte avec ce qui pousse derrière.
-
-L'annonce et `/world-boss-squad` portent la couleur du portail en cours. Lisez-la avant de vous engager : un portail orange ne se tient pas avec l'effectif d'un portail vert.
-
----
-
-## Un portail refermé ne se rouvre pas
-
-Une créature vaincue ne revient jamais. Le portail qui menait jusqu'à elle se referme définitivement, et chaque victoire retire une menace de la liste, pour toujours.
-
-L'inverse est vrai aussi. Une créature qui n'a pas été vaincue reste où elle est, et rien n'empêche qu'un portail rouvre sur elle la semaine suivante. Une défaite ne fait gagner ni temps ni tranquillité.
-
----
-
 ## En cas de victoire
 
 Un world boss ne se capture pas. Ce n'est pas une prise, c'est une menace qui cesse d'exister.
