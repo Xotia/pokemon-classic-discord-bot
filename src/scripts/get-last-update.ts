@@ -97,11 +97,36 @@ function screenRun(cmd: string): void {
   screenExec(`stuff $'${cmd}\\n'`);
 }
 
+/**
+ * Pré-vol .env. `false` = des variables ont été ajoutées, elles portent les
+ * valeurs de .env.example : on rend la main pour relecture au lieu d'arrêter
+ * le bot. Toute autre erreur reste fatale.
+ */
+function syncEnv(): boolean {
+  try {
+    run("npx ts-node src/scripts/sync-env.ts");
+    return true;
+  } catch (error) {
+    if ((error as { status?: number }).status === 10) {
+      return false;
+    }
+    throw error;
+  }
+}
+
 function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 async function main(): Promise<void> {
+  // 0. Pré-vol : variables d'environnement manquantes.
+  // AVANT l'arrêt du bot, pour qu'un abandon ici laisse la prod en marche.
+  console.log("🔍 Vérification du .env...");
+  if (!syncEnv()) {
+    console.log("⏹️  Mise à jour interrompue, le bot tourne toujours.");
+    return;
+  }
+
   // 1. Message de maintenance
   console.log("📢 Envoi du message de maintenance...");
   run("npx ts-node src/scripts/announcements/send-quick-maintenance.ts");

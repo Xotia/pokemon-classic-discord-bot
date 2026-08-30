@@ -12,6 +12,7 @@ export interface Player {
   xp: number;
   level: number;
   raidWins?: number;
+  worldBossWins?: number;
   researchData: number;
 }
 

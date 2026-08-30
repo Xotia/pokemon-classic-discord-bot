@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simulateur de raid — Centre de recherche</title>
+  <meta name="description" content="Testez une composition d'équipe contre un boss de raid avant la clôture des inscriptions. Simulateur officiel du centre de recherche." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Simulateur de raid du centre de recherche" />
+  <meta property="og:description" content="Testez une composition d'équipe contre un boss de raid avant la clôture des inscriptions." />
+  <meta name="theme-color" content="#0a0e14" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <header class="page-header">
+    <div class="header-inner">
+      <div class="crest" aria-hidden="true">
+        <svg viewBox="0 0 48 48" role="presentation">
+          <circle cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="2" />
+          <path d="M4 24h40" stroke="currentColor" stroke-width="2" />
+          <circle cx="24" cy="24" r="7" fill="var(--bg)" stroke="currentColor" stroke-width="2" />
+          <circle cx="24" cy="24" r="2.5" fill="currentColor" />
+        </svg>
+      </div>
+      <div>
+        <p class="eyebrow">Centre de recherche &middot; Division analyse de combat</p>
+        <h1>Simulateur de raid</h1>
+      </div>
+    </div>
+    <p class="subtitle">
+      Projetez l'issue d'un raid avant la clôture des inscriptions&nbsp;: renseignez la créature
+      et l'équipe engagée, le simulateur applique le <strong>moteur de combat réel</strong> et
+      annonce le résultat que donnera le combat.
+    </p>
+  </header>
+
+  <main class="layout">
+    <section class="panel" aria-labelledby="boss-title">
+      <div class="panel-head">
+        <span class="panel-index">01</span>
+        <h2 id="boss-title">La créature</h2>
+      </div>
+
+      <div class="field">
+        <label for="boss-search">Pokémon du raid</label>
+        <input type="text" id="boss-search" list="pokemon-datalist" placeholder="Nom du Pokémon…" autocomplete="off" />
+        <p class="field-help">Tapez les premières lettres, puis choisissez dans la liste.</p>
+      </div>
+
+      <div class="field">
+        <label for="boss-difficulty">Niveau de menace</label>
+        <input type="number" id="boss-difficulty" min="1" max="15" step="1" value="3" inputmode="numeric" />
+        <p class="field-help">Le chiffre annoncé par le centre. Il multiplie toutes les stats de la créature.</p>
+      </div>
+
+      <div class="field">
+        <label for="boss-attack-type">Type d'attaque de la créature</label>
+        <select id="boss-attack-type" disabled></select>
+        <p class="field-help">Celui affiché sur l'annonce du raid. C'est lui qui use vos défenses.</p>
+      </div>
+
+      <div id="boss-card" class="pokemon-card empty">Aucune créature analysée.</div>
+    </section>
+
+    <section class="panel" aria-labelledby="team-title">
+      <div class="panel-head">
+        <span class="panel-index">02</span>
+        <h2 id="team-title">L'équipe engagée</h2>
+      </div>
+      <p class="panel-intro">
+        Un dresseur = un Pokémon. Ajoutez ceux qui sont déjà inscrits, puis testez ce que
+        change un renfort ou un changement de type.
+      </p>
+      <div id="defenders-list" class="defenders-list"></div>
+      <button type="button" id="add-defender" class="btn-secondary">+ Ajouter un défenseur</button>
+    </section>
+  </main>
+
+  <section class="panel results" id="results-panel" aria-labelledby="results-title" aria-live="polite">
+    <div class="panel-head">
+      <span class="panel-index">03</span>
+      <h2 id="results-title">Projection du combat</h2>
+    </div>
+    <div id="results-content" class="results-content">
+      <p class="hint">Renseignez une créature et au moins un défenseur pour lancer la projection.</p>
+    </div>
+  </section>
+
+  <section class="panel notice">
+    <h2>Comment lire cette projection</h2>
+    <p>
+      Un raid ne se joue pas en points de vie&nbsp;: il se joue sur <strong>cinq axes</strong>.
+      Les stats de toute l'équipe sont additionnées, puis chaque axe affronte l'axe opposé de la
+      créature — vos attaques contre ses défenses, vos défenses contre ses attaques, la vitesse
+      face à la vitesse.
+    </p>
+    <p>
+      <strong>Le raid est réussi si l'équipe dépasse la créature sur les cinq axes à la fois.</strong>
+      Un seul axe en dessous suffit à faire échouer le raid, quelle que soit l'avance sur les autres.
+      Les points de vie sont affichés à titre indicatif&nbsp;: ils n'entrent pas dans le verdict.
+    </p>
+    <p>
+      Les types comptent deux fois&nbsp;: le type d'attaque de vos Pokémon multiplie leurs deux
+      stats d'attaque selon son efficacité sur la créature, et le type d'attaque de la créature
+      divise vos deux stats de défense selon ce qu'elles encaissent.
+    </p>
+    <p class="notice-warning">
+      Le simulateur applique le moteur de combat du bot, à l'identique. Il ne connaît en revanche
+      rien de l'état réel du raid en cours&nbsp;: c'est à vous de saisir la créature et les
+      défenseurs. Une équipe saisie de travers donne une projection de travers.
+    </p>
+  </section>
+
+  <footer class="page-footer">
+    <p>Centre de recherche — outil d'analyse à destination des dresseurs.</p>
+  </footer>
+
+  <datalist id="pokemon-datalist"></datalist>
+
+  <template id="defender-row-template">
+    <div class="defender-row">
+      <div class="field">
+        <label>Pokémon</label>
+        <input type="text" class="defender-search" list="pokemon-datalist" placeholder="Nom du Pokémon…" autocomplete="off" />
+      </div>
+      <div class="field">
+        <label>Type d'attaque</label>
+        <select class="defender-attack-type" disabled></select>
+      </div>
+      <button type="button" class="btn-remove" title="Retirer ce défenseur" aria-label="Retirer ce défenseur">×</button>
+    </div>
+  </template>
+
+  <script src="raidSimCore.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

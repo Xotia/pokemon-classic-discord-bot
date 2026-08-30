@@ -1,0 +1,983 @@
+{
+  "bosses": [
+    {
+      "id": "wb-001-venusaur-gmax",
+      "name": "Florizarre Gigamax",
+      "portal": "Serre Éventrée de Jadielle",
+      "sprite": "https://www.pkparaiso.com/imagenes/espada_escudo/sprites/animados/venusaur-gigantamax.gif",
+      "types": [
+        "grass",
+        "poison"
+      ],
+      "attackType": "grass",
+      "stats": {
+        "hp": 80,
+        "attack": 82,
+        "defense": 83,
+        "specialAttack": 100,
+        "specialDefense": 100,
+        "speed": 80
+      },
+      "defenseEffectiveness": {
+        "electric": 0.5,
+        "fairy": 0.5,
+        "fighting": 0.5,
+        "fire": 2,
+        "flying": 2,
+        "grass": 0.25,
+        "ice": 2,
+        "psychic": 2,
+        "water": 0.5
+      },
+      "lore": "Les spores sont passées avant lui. Personne dans la serre n'a eu le temps de fermer une porte."
+    },
+    {
+      "id": "wb-002-charizard-gmax",
+      "name": "Dracaufeu Gigamax",
+      "portal": "Cheminée du Mont Braise",
+      "sprite": "https://play.pokemonshowdown.com/sprites/ani/charizard-gmax.gif",
+      "types": [
+        "fire",
+        "flying"
+      ],
+      "attackType": "fire",
+      "stats": {
+        "hp": 78,
+        "attack": 84,
+        "defense": 78,
+        "specialAttack": 109,
+        "specialDefense": 85,
+        "speed": 100
+      },
+      "defenseEffectiveness": {
+        "bug": 0.25,
+        "electric": 2,
+        "fairy": 0.5,
+        "fighting": 0.5,
+        "fire": 0.5,
+        "grass": 0.25,
+        "ground": 0,
+        "rock": 4,
+        "steel": 0.5,
+        "water": 2
+      },
+      "lore": "Le portail s'est ouvert au-dessus du cratère, et le cratère a répondu."
+    },
+    {
+      "id": "wb-003-blastoise-gmax",
+      "name": "Tortank Gigamax",
+      "portal": "Écluse Crevée de Carmin",
+      "sprite": "https://www.pkparaiso.com/imagenes/espada_escudo/sprites/animados/blastoise-gigantamax.gif",
+      "types": [
+        "water"
+      ],
+      "attackType": "water",
+      "stats": {
+        "hp": 79,
+        "attack": 83,
+        "defense": 100,
+        "specialAttack": 85,
+        "specialDefense": 105,
+        "speed": 78
+      },
+      "defenseEffectiveness": {
+        "electric": 2,
+        "fire": 0.5,
+        "grass": 2,
+        "ice": 0.5,
+        "steel": 0.5,
+        "water": 0.5
+      },
+      "lore": "Soixante-trois canons pointent la digue. La digue tiendra le temps que vous arriviez."
+    },
+    {
+      "id": "wb-004-butterfree-gmax",
+      "name": "Papilusion Gigamax",
+      "portal": "Voile de Poussière du Bois Vert",
+      "sprite": "https://play.pokemonshowdown.com/sprites/ani/butterfree-gmax.gif",
+      "types": [
+        "bug",
+        "flying"
+      ],
+      "attackType": "bug",
+      "stats": {
+        "hp": 60,
+        "attack": 45,
+        "defense": 50,
+        "specialAttack": 90,
+        "specialDefense": 80,
+        "speed": 70
+      },
+      "defenseEffectiveness": {
+        "bug": 0.5,
+        "electric": 2,
+        "fighting": 0.25,
+        "fire": 2,
+        "flying": 2,
+        "grass": 0.25,
+        "ground": 0,
+        "ice": 2,
+        "rock": 4
+      },
+      "lore": "Le nuage avance à hauteur de toit. Ceux qui l'ont regardé trop longtemps dorment encore."
+    },
+    {
+      "id": "wb-005-pikachu-gmax",
+      "name": "Pikachu Gigamax",
+      "portal": "Court-Circuit de la Centrale",
+      "sprite": "https://play.pokemonshowdown.com/sprites/ani/pikachu-gmax.gif",
+      "types": [
+        "electric"
+      ],
+      "attackType": "electric",
+      "stats": {
+        "hp": 35,
+        "attack": 55,
+        "defense": 40,
+        "specialAttack": 50,
+        "specialDefense": 50,
+        "speed": 90
+      },
+      "defenseEffectiveness": {
+        "electric": 0.5,
+        "flying": 0.5,
+        "ground": 2,
+        "steel": 0.5
+      },
+      "lore": "Le réseau est tombé d'un coup sur trois villes. Au centre, quelque chose de petit et de très content."
+    },
+    {
+      "id": "wb-006-meowth-gmax",
+      "name": "Miaouss Gigamax",
+      "portal": "Ruelle Dilatée de Céladopole",
+      "sprite": "https://play.pokemonshowdown.com/sprites/ani/meowth-gmax.gif",
+      "types": [
+        "normal"
+      ],
+      "attackType": "normal",
+      "stats": {
+        "hp": 40,
+        "attack": 45,
+        "defense": 35,
+        "specialAttack": 40,
+        "specialDefense": 40,
+        "speed": 90
+      },
+      "defenseEffectiveness": {
+        "fighting": 2,
+        "ghost": 0
+      },
+      "lore": "Il s'allonge entre les immeubles depuis ce matin. Les réserves de la ville, elles, ont déjà disparu."
+    },
+    {
+      "id": "wb-007-machamp-gmax",
+      "name": "Mackogneur Gigamax",
+      "portal": "Faille du Chantier Nord",
+      "sprite": "https://play.pokemonshowdown.com/sprites/ani/machamp-gmax.gif",
+      "types": [
+        "fighting"
+      ],
+      "attackType": "fighting",
+      "stats": {
+        "hp": 90,
+        "attack": 130,
+        "defense": 80,
+        "specialAttack": 65,
+        "specialDefense": 85,
+        "speed": 55
+      },
+      "defenseEffectiveness": {
+        "bug": 0.5,
+        "dark": 0.5,
+        "fairy": 2,
+        "flying": 2,
+        "psychic": 2,
+        "rock": 0.5
+      },
+      "lore": "Quatre bras sont sortis du portail avant le reste. Ils ont commencé à démonter le pont."
+    },
+    {
+      "id": "wb-008-gengar-gmax",
+      "name": "Ectoplasma Gigamax",
+      "portal": "Bouche d'Ombre de Lavanville",
+      "sprite": "https://play.pokemonshowdown.com/sprites/ani/gengar-gmax.gif",
+      "types": [
+        "ghost",
+        "poison"
+      ],
+      "attackType": "ghost",
+      "stats": {
+        "hp": 60,
+        "attack": 65,
+        "defense": 60,
+        "specialAttack": 130,
+        "specialDefense": 75,
+        "speed": 110
+      },
+      "defenseEffectiveness": {
+        "bug": 0.25,
+        "dark": 2,
+        "fairy": 0.5,
+        "fighting": 0,
+        "ghost": 2,
+        "grass": 0.5,
+        "ground": 2,
+        "normal": 0,
+        "poison": 0.25,
+        "psychic": 2
+      },
+      "lore": "Ce n'est pas un portail. C'est une bouche, et elle est ouverte depuis l'autre côté."
+    },
+    {
+      "id": "wb-009-kingler-gmax",
+      "name": "Krabboss Gigamax",
+      "portal": "Estran Broyé de Parmanie",
+      "sprite": "https://play.pokemonshowdown.com/sprites/ani/kingler-gmax.gif",
+      "types": [
+        "water"
+      ],
+      "attackType": "water",
+      "stats": {
+        "hp": 55,
+        "attack": 130,
+        "defense": 115,
+        "specialAttack": 50,
+        "specialDefense": 50,
+        "speed": 75
+      },
+      "defenseEffectiveness": {
+        "electric": 2,
+        "fire": 0.5,
+        "grass": 2,
+        "ice": 0.5,
+        "steel": 0.5,
+        "water": 0.5
+      },
+      "lore": "La pince a traversé le brise-lames comme du papier. Il n'en reste qu'une seule à convaincre."
+    },
+    {
+      "id": "wb-010-lapras-gmax",
+      "name": "Lokhlass Gigamax",
+      "portal": "Banquise Surgie du Lac Colère",
+      "sprite": "https://play.pokemonshowdown.com/sprites/ani/lapras-gmax.gif",
+      "types": [
+        "water",
+        "ice"
+      ],
+      "attackType": "ice",
+      "stats": {
+        "hp": 130,
+        "attack": 85,
+        "defense": 80,
+        "specialAttack": 85,
+        "specialDefense": 95,
+        "speed": 60
+      },
+      "defenseEffectiveness": {
+        "electric": 2,
+        "fighting": 2,
+        "grass": 2,
+        "ice": 0.25,
+        "rock": 2,
+        "water": 0.5
+      },
+      "lore": "Le lac a gelé en une nuit. Sur la glace, un anneau de débris tourne lentement autour d'elle."
+    },
+    {
+      "id": "wb-011-eevee-gmax",
+      "name": "Évoli Gigamax",
+      "portal": "Terrier Démesuré du Bourg Palette",
+      "sprite": "https://play.pokemonshowdown.com/sprites/ani/eevee-gmax.gif",
+      "types": [
+        "normal"
+      ],
+      "attackType": "normal",
+      "stats": {
+        "hp": 55,
+        "attack": 55,
+        "defense": 50,
+        "specialAttack": 45,
+        "specialDefense": 65,
+        "speed": 55
+      },
+      "defenseEffectiveness": {
+        "fighting": 2,
+        "ghost": 0
+      },
+      "lore": "Il veut jouer. C'est bien le problème : il pèse maintenant le poids d'un quartier."
+    },
+    {
+      "id": "wb-012-snorlax-gmax",
+      "name": "Ronflex Gigamax",
+      "portal": "Affaissement de la Route 12",
+      "sprite": "https://play.pokemonshowdown.com/sprites/ani/snorlax-gmax.gif",
+      "types": [
+        "normal"
+      ],
+      "attackType": "normal",
+      "stats": {
+        "hp": 160,
+        "attack": 110,
+        "defense": 65,
+        "specialAttack": 65,
+        "specialDefense": 110,
+        "speed": 30
+      },
+      "defenseEffectiveness": {
+        "fighting": 2,
+        "ghost": 0
+      },
+      "lore": "Il s'est endormi sur la route et la route a cédé. Le réveil est prévu pour dimanche."
+    },
+    {
+      "id": "wb-013-garbodor-gmax",
+      "name": "Miasmax Gigamax",
+      "portal": "Décharge Éventrée de Safrania",
+      "sprite": "https://play.pokemonshowdown.com/sprites/ani/garbodor-gmax.gif",
+      "types": [
+        "poison"
+      ],
+      "attackType": "poison",
+      "stats": {
+        "hp": 80,
+        "attack": 95,
+        "defense": 82,
+        "specialAttack": 60,
+        "specialDefense": 82,
+        "speed": 75
+      },
+      "defenseEffectiveness": {
+        "bug": 0.5,
+        "fairy": 0.5,
+        "fighting": 0.5,
+        "grass": 0.5,
+        "ground": 2,
+        "poison": 0.5,
+        "psychic": 2
+      },
+      "lore": "Tout ce que la ville a enterré depuis dix ans est en train de remonter, et ça marche."
+    },
+    {
+      "id": "wb-014-melmetal-gmax",
+      "name": "Melmetal Gigamax",
+      "portal": "Forge Scellée de l'Île Neuf",
+      "sprite": "https://play.pokemonshowdown.com/sprites/ani/melmetal-gmax.gif",
+      "types": [
+        "steel"
+      ],
+      "attackType": "steel",
+      "stats": {
+        "hp": 135,
+        "attack": 143,
+        "defense": 143,
+        "specialAttack": 80,
+        "specialDefense": 65,
+        "speed": 34
+      },
+      "defenseEffectiveness": {
+        "bug": 0.5,
+        "dragon": 0.5,
+        "fairy": 0.5,
+        "fighting": 2,
+        "fire": 2,
+        "flying": 0.5,
+        "grass": 0.5,
+        "ground": 2,
+        "ice": 0.5,
+        "normal": 0.5,
+        "poison": 0,
+        "psychic": 0.5,
+        "rock": 0.5,
+        "steel": 0.5
+      },
+      "lore": "Le portail crache du métal en fusion depuis l'aube. Le métal s'assemble tout seul."
+    },
+    {
+      "id": "wb-015-rillaboom-gmax",
+      "name": "Gorythmic Gigamax",
+      "portal": "Clairière Battante de Jade",
+      "sprite": "https://www.pkparaiso.com/imagenes/espada_escudo/sprites/animados/rillaboom-gigantamax.gif",
+      "types": [
+        "grass"
+      ],
+      "attackType": "grass",
+      "stats": {
+        "hp": 100,
+        "attack": 125,
+        "defense": 90,
+        "specialAttack": 60,
+        "specialDefense": 70,
+        "speed": 85
+      },
+      "defenseEffectiveness": {
+        "bug": 2,
+        "electric": 0.5,
+        "fire": 2,
+        "flying": 2,
+        "grass": 0.5,
+        "ground": 0.5,
+        "ice": 2,
+        "poison": 2,
+        "water": 0.5
+      },
+      "lore": "Le rythme s'entend à six kilomètres. Les arbres tombent en mesure."
+    },
+    {
+      "id": "wb-016-cinderace-gmax",
+      "name": "Pyrobut Gigamax",
+      "portal": "Stade Calciné de la Route 8",
+      "sprite": "https://www.pkparaiso.com/imagenes/espada_escudo/sprites/animados/cinderace-gigantamax.gif",
+      "types": [
+        "fire"
+      ],
+      "attackType": "fire",
+      "stats": {
+        "hp": 80,
+        "attack": 116,
+        "defense": 75,
+        "specialAttack": 65,
+        "specialDefense": 75,
+        "speed": 119
+      },
+      "defenseEffectiveness": {
+        "bug": 0.5,
+        "fairy": 0.5,
+        "fire": 0.5,
+        "grass": 0.5,
+        "ground": 2,
+        "ice": 0.5,
+        "rock": 2,
+        "steel": 0.5,
+        "water": 2
+      },
+      "lore": "Le ballon est passé une fois au-dessus du stade. Il n'y a plus de stade."
+    },
+    {
+      "id": "wb-017-inteleon-gmax",
+      "name": "Lézargus Gigamax",
+      "portal": "Tour de Guet Noyée d'Azuria",
+      "sprite": "https://play.pokemonshowdown.com/sprites/ani/inteleon-gmax.gif",
+      "types": [
+        "water"
+      ],
+      "attackType": "water",
+      "stats": {
+        "hp": 70,
+        "attack": 85,
+        "defense": 65,
+        "specialAttack": 125,
+        "specialDefense": 65,
+        "speed": 120
+      },
+      "defenseEffectiveness": {
+        "electric": 2,
+        "fire": 0.5,
+        "grass": 2,
+        "ice": 0.5,
+        "steel": 0.5,
+        "water": 0.5
+      },
+      "lore": "Il tire depuis une tour d'eau haute de cent mètres. Vous êtes déjà dans sa ligne de mire."
+    },
+    {
+      "id": "wb-018-corviknight-gmax",
+      "name": "Corvaillus Gigamax",
+      "portal": "Couloir Aérien Rompu",
+      "sprite": "https://play.pokemonshowdown.com/sprites/ani/corviknight-gmax.gif",
+      "types": [
+        "flying",
+        "steel"
+      ],
+      "attackType": "flying",
+      "stats": {
+        "hp": 98,
+        "attack": 87,
+        "defense": 105,
+        "specialAttack": 53,
+        "specialDefense": 85,
+        "speed": 67
+      },
+      "defenseEffectiveness": {
+        "bug": 0.25,
+        "dragon": 0.5,
+        "electric": 2,
+        "fairy": 0.5,
+        "fire": 2,
+        "flying": 0.5,
+        "grass": 0.25,
+        "ground": 0,
+        "normal": 0.5,
+        "poison": 0,
+        "psychic": 0.5,
+        "steel": 0.5
+      },
+      "lore": "L'ombre passe sur la ville toutes les huit minutes. Elle passe de plus en plus bas."
+    },
+    {
+      "id": "wb-019-orbeetle-gmax",
+      "name": "Astronelle Gigamax",
+      "portal": "Anneau Psychique de la Route 24",
+      "sprite": "https://play.pokemonshowdown.com/sprites/ani/orbeetle-gmax.gif",
+      "types": [
+        "bug",
+        "psychic"
+      ],
+      "attackType": "psychic",
+      "stats": {
+        "hp": 60,
+        "attack": 45,
+        "defense": 110,
+        "specialAttack": 80,
+        "specialDefense": 120,
+        "speed": 90
+      },
+      "defenseEffectiveness": {
+        "bug": 2,
+        "dark": 2,
+        "fighting": 0.25,
+        "fire": 2,
+        "flying": 2,
+        "ghost": 2,
+        "grass": 0.5,
+        "ground": 0.5,
+        "psychic": 0.5,
+        "rock": 2
+      },
+      "lore": "Elle lit tout le monde en même temps. Les équipes qui l'ont approchée ont oublié pourquoi elles venaient."
+    },
+    {
+      "id": "wb-020-drednaw-gmax",
+      "name": "Torgamord Gigamax",
+      "portal": "Carrière Inondée de Cramoisi",
+      "sprite": "https://play.pokemonshowdown.com/sprites/ani/drednaw-gmax.gif",
+      "types": [
+        "water",
+        "rock"
+      ],
+      "attackType": "rock",
+      "stats": {
+        "hp": 90,
+        "attack": 115,
+        "defense": 90,
+        "specialAttack": 48,
+        "specialDefense": 68,
+        "speed": 74
+      },
+      "defenseEffectiveness": {
+        "electric": 2,
+        "fighting": 2,
+        "fire": 0.25,
+        "flying": 0.5,
+        "grass": 4,
+        "ground": 2,
+        "ice": 0.5,
+        "normal": 0.5,
+        "poison": 0.5
+      },
+      "lore": "La carrière s'est remplie en une heure. Ce qui en sort mord la falaise pour se hisser."
+    },
+    {
+      "id": "wb-021-coalossal-gmax",
+      "name": "Monthracite Gigamax",
+      "portal": "Puits de Mine du Mont Sélénite",
+      "sprite": "https://play.pokemonshowdown.com/sprites/ani/coalossal-gmax.gif",
+      "types": [
+        "rock",
+        "fire"
+      ],
+      "attackType": "fire",
+      "stats": {
+        "hp": 110,
+        "attack": 80,
+        "defense": 120,
+        "specialAttack": 80,
+        "specialDefense": 90,
+        "speed": 30
+      },
+      "defenseEffectiveness": {
+        "bug": 0.5,
+        "fairy": 0.5,
+        "fighting": 2,
+        "fire": 0.25,
+        "flying": 0.5,
+        "ground": 4,
+        "ice": 0.5,
+        "normal": 0.5,
+        "poison": 0.5,
+        "rock": 2,
+        "water": 4
+      },
+      "lore": "La mine brûle par en dessous depuis quatre jours. Elle avance vers la surface d'un mètre par heure."
+    },
+    {
+      "id": "wb-022-flapple-gmax",
+      "name": "Pomdrapi Gigamax",
+      "portal": "Verger Retourné d'Azuria",
+      "sprite": "https://play.pokemonshowdown.com/sprites/ani/flapple-gmax.gif",
+      "types": [
+        "grass",
+        "dragon"
+      ],
+      "attackType": "dragon",
+      "stats": {
+        "hp": 70,
+        "attack": 110,
+        "defense": 80,
+        "specialAttack": 95,
+        "specialDefense": 60,
+        "speed": 70
+      },
+      "defenseEffectiveness": {
+        "bug": 2,
+        "dragon": 2,
+        "electric": 0.25,
+        "fairy": 2,
+        "flying": 2,
+        "grass": 0.25,
+        "ground": 0.5,
+        "ice": 4,
+        "poison": 2,
+        "water": 0.25
+      },
+      "lore": "Le verger est suspendu à l'envers au-dessus du portail. Quelque chose y a fait son nid."
+    },
+    {
+      "id": "wb-023-appletun-gmax",
+      "name": "Dratatin Gigamax",
+      "portal": "Coulée Sucrée de la Route 5",
+      "sprite": "https://play.pokemonshowdown.com/sprites/ani/appletun-gmax.gif",
+      "types": [
+        "grass",
+        "dragon"
+      ],
+      "attackType": "dragon",
+      "stats": {
+        "hp": 110,
+        "attack": 85,
+        "defense": 80,
+        "specialAttack": 100,
+        "specialDefense": 80,
+        "speed": 30
+      },
+      "defenseEffectiveness": {
+        "bug": 2,
+        "dragon": 2,
+        "electric": 0.25,
+        "fairy": 2,
+        "flying": 2,
+        "grass": 0.25,
+        "ground": 0.5,
+        "ice": 4,
+        "poison": 2,
+        "water": 0.25
+      },
+      "lore": "La coulée avance lentement et engloutit tout. Elle sent bon, et c'est ce qui est terrifiant."
+    },
+    {
+      "id": "wb-024-sandaconda-gmax",
+      "name": "Dunaja Gigamax",
+      "portal": "Tempête de Sable de la Route 4",
+      "sprite": "https://play.pokemonshowdown.com/sprites/ani/sandaconda-gmax.gif",
+      "types": [
+        "ground"
+      ],
+      "attackType": "ground",
+      "stats": {
+        "hp": 72,
+        "attack": 107,
+        "defense": 125,
+        "specialAttack": 65,
+        "specialDefense": 70,
+        "speed": 71
+      },
+      "defenseEffectiveness": {
+        "electric": 0,
+        "grass": 2,
+        "ice": 2,
+        "poison": 0.5,
+        "rock": 0.5,
+        "water": 2
+      },
+      "lore": "Le sable tourne en colonne depuis mardi. Au centre de la colonne, il n'y a pas de vent."
+    },
+    {
+      "id": "wb-025-toxtricity-gmax",
+      "name": "Salarsen Gigamax",
+      "portal": "Amplificateur Crevé de Carmin",
+      "sprite": "https://play.pokemonshowdown.com/sprites/ani/toxtricity-gmax.gif",
+      "types": [
+        "electric",
+        "poison"
+      ],
+      "attackType": "electric",
+      "stats": {
+        "hp": 75,
+        "attack": 98,
+        "defense": 70,
+        "specialAttack": 114,
+        "specialDefense": 70,
+        "speed": 75
+      },
+      "defenseEffectiveness": {
+        "bug": 0.5,
+        "electric": 0.5,
+        "fairy": 0.5,
+        "fighting": 0.5,
+        "flying": 0.5,
+        "grass": 0.5,
+        "ground": 4,
+        "poison": 0.5,
+        "psychic": 2,
+        "steel": 0.5
+      },
+      "lore": "Un seul accord, et les vitres du port ont sauté. Il accorde encore."
+    },
+    {
+      "id": "wb-026-centiskorch-gmax",
+      "name": "Scolocendre Gigamax",
+      "portal": "Galerie Chauffée à Blanc",
+      "sprite": "https://play.pokemonshowdown.com/sprites/ani/centiskorch-gmax.gif",
+      "types": [
+        "fire",
+        "bug"
+      ],
+      "attackType": "fire",
+      "stats": {
+        "hp": 100,
+        "attack": 115,
+        "defense": 65,
+        "specialAttack": 90,
+        "specialDefense": 90,
+        "speed": 65
+      },
+      "defenseEffectiveness": {
+        "bug": 0.5,
+        "fairy": 0.5,
+        "fighting": 0.5,
+        "flying": 2,
+        "grass": 0.25,
+        "ice": 0.5,
+        "rock": 4,
+        "steel": 0.5,
+        "water": 2
+      },
+      "lore": "Il fait le tour du bâtiment. Il l'a fait deux fois, et le bâtiment est encore debout."
+    },
+    {
+      "id": "wb-027-hatterene-gmax",
+      "name": "Sorcilence Gigamax",
+      "portal": "Bois Silencieux de la Route 6",
+      "sprite": "https://play.pokemonshowdown.com/sprites/ani/hatterene-gmax.gif",
+      "types": [
+        "psychic",
+        "fairy"
+      ],
+      "attackType": "psychic",
+      "stats": {
+        "hp": 57,
+        "attack": 90,
+        "defense": 95,
+        "specialAttack": 136,
+        "specialDefense": 103,
+        "speed": 29
+      },
+      "defenseEffectiveness": {
+        "dragon": 0,
+        "fighting": 0.25,
+        "ghost": 2,
+        "poison": 2,
+        "psychic": 0.5,
+        "steel": 2
+      },
+      "lore": "Le bois exige le silence. Les deux premières équipes ont parlé."
+    },
+    {
+      "id": "wb-028-grimmsnarl-gmax",
+      "name": "Angoliath Gigamax",
+      "portal": "Ronce d'Ombre du Bois Vert",
+      "sprite": "https://play.pokemonshowdown.com/sprites/ani/grimmsnarl-gmax.gif",
+      "types": [
+        "dark",
+        "fairy"
+      ],
+      "attackType": "dark",
+      "stats": {
+        "hp": 95,
+        "attack": 120,
+        "defense": 65,
+        "specialAttack": 95,
+        "specialDefense": 75,
+        "speed": 60
+      },
+      "defenseEffectiveness": {
+        "dark": 0.25,
+        "dragon": 0,
+        "fairy": 2,
+        "ghost": 0.5,
+        "poison": 2,
+        "psychic": 0,
+        "steel": 2
+      },
+      "lore": "Les cheveux ont pris la moitié du bois. Ils poussent plus vite quand on les coupe."
+    },
+    {
+      "id": "wb-029-alcremie-gmax",
+      "name": "Charmilly Gigamax",
+      "portal": "Gâteau Colossal de Céladopole",
+      "sprite": "https://play.pokemonshowdown.com/sprites/ani/alcremie-gmax.gif",
+      "types": [
+        "fairy"
+      ],
+      "attackType": "fairy",
+      "stats": {
+        "hp": 65,
+        "attack": 60,
+        "defense": 75,
+        "specialAttack": 110,
+        "specialDefense": 121,
+        "speed": 64
+      },
+      "defenseEffectiveness": {
+        "bug": 0.5,
+        "dark": 0.5,
+        "dragon": 0,
+        "fighting": 0.5,
+        "poison": 2,
+        "steel": 2
+      },
+      "lore": "Personne ne prend la menace au sérieux. C'est exactement comme ça qu'elle gagne."
+    },
+    {
+      "id": "wb-030-copperajah-gmax",
+      "name": "Pachyradjah Gigamax",
+      "portal": "Voie Ferrée Écrasée du Nord",
+      "sprite": "https://play.pokemonshowdown.com/sprites/ani/copperajah-gmax.gif",
+      "types": [
+        "steel"
+      ],
+      "attackType": "steel",
+      "stats": {
+        "hp": 122,
+        "attack": 130,
+        "defense": 69,
+        "specialAttack": 80,
+        "specialDefense": 69,
+        "speed": 30
+      },
+      "defenseEffectiveness": {
+        "bug": 0.5,
+        "dragon": 0.5,
+        "fairy": 0.5,
+        "fighting": 2,
+        "fire": 2,
+        "flying": 0.5,
+        "grass": 0.5,
+        "ground": 2,
+        "ice": 0.5,
+        "normal": 0.5,
+        "poison": 0,
+        "psychic": 0.5,
+        "rock": 0.5,
+        "steel": 0.5
+      },
+      "lore": "Il suit la voie ferrée sans en dévier. Rien de ce qui est sur la voie n'a survécu."
+    },
+    {
+      "id": "wb-031-duraludon-gmax",
+      "name": "Duralugon Gigamax",
+      "portal": "Tour Surgie de Safrania",
+      "sprite": "https://play.pokemonshowdown.com/sprites/ani/duraludon-gmax.gif",
+      "types": [
+        "steel",
+        "dragon"
+      ],
+      "attackType": "dragon",
+      "stats": {
+        "hp": 70,
+        "attack": 95,
+        "defense": 115,
+        "specialAttack": 120,
+        "specialDefense": 50,
+        "speed": 85
+      },
+      "defenseEffectiveness": {
+        "bug": 0.5,
+        "electric": 0.5,
+        "fighting": 2,
+        "flying": 0.5,
+        "grass": 0.25,
+        "ground": 2,
+        "normal": 0.5,
+        "poison": 0,
+        "psychic": 0.5,
+        "rock": 0.5,
+        "steel": 0.5,
+        "water": 0.5
+      },
+      "lore": "Une tour de plus dans le quartier des affaires. Elle n'y était pas hier, et elle regarde."
+    },
+    {
+      "id": "wb-032-urshifu-gmax",
+      "name": "Shifours Gigamax (Poing Final)",
+      "portal": "Dojo Effondré de l'Île d'Armure",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/10226.gif",
+      "types": [
+        "fighting",
+        "dark"
+      ],
+      "attackType": "dark",
+      "stats": {
+        "hp": 100,
+        "attack": 130,
+        "defense": 100,
+        "specialAttack": 63,
+        "specialDefense": 60,
+        "speed": 97
+      },
+      "defenseEffectiveness": {
+        "dark": 0.25,
+        "fairy": 4,
+        "fighting": 2,
+        "flying": 2,
+        "ghost": 0.5,
+        "psychic": 0,
+        "rock": 0.5
+      },
+      "lore": "Un seul coup part du portail. Ce qu'il touche cesse simplement d'être là."
+    },
+    {
+      "id": "wb-033-urshifu-rapid-gmax",
+      "name": "Shifours Gigamax (Mille Poings)",
+      "portal": "Cascade Renversée de l'Île d'Armure",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/10227.gif",
+      "types": [
+        "fighting",
+        "water"
+      ],
+      "attackType": "water",
+      "stats": {
+        "hp": 100,
+        "attack": 130,
+        "defense": 100,
+        "specialAttack": 63,
+        "specialDefense": 60,
+        "speed": 97
+      },
+      "defenseEffectiveness": {
+        "bug": 0.5,
+        "dark": 0.5,
+        "electric": 2,
+        "fairy": 2,
+        "fire": 0.5,
+        "flying": 2,
+        "grass": 2,
+        "ice": 0.5,
+        "psychic": 2,
+        "rock": 0.5,
+        "steel": 0.5,
+        "water": 0.5
+      },
+      "lore": "La cascade remonte. Dedans, une série de coups qu'aucun oeil ne suit."
+    }
+  ]
+}

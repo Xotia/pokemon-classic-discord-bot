@@ -1,11 +1,12 @@
 import "dotenv/config";
 
-import { Client, GatewayIntentBits, Events, Interaction } from "discord.js";
+import { Client, GatewayIntentBits, Events, Interaction, MessageFlags } from "discord.js";
 
 import { pingCommand } from "./commands/pingCommand";
 import { cheatCommand } from "./commands/cheatCommand";
 import { forceEndRaidCommand } from "./commands/forceEndRaidCommand";
 import { forceStartRaidCommand } from "./commands/forceStartRaidCommand";
+import { zoneCompletionCommand } from "./commands/zoneCompletionCommand";
 import { pokedexCommand } from "./commands/pokedexCommand";
 import logger from "./utils/logger";
 import { execute } from "./commands/getStatsCommand";
@@ -18,9 +19,15 @@ import { getPokemonInfoCommand } from "./commands/getPokemonInfoCommand";
 
 import { startRaidScheduler } from './features/raid/raidScheduler';
 import { startMeteoriteEventScheduler } from './features/meteoriteEvent/meteoriteEventScheduler';
+import { startWorldBossScheduler } from './features/worldBoss/worldBossScheduler';
 import { isMeteoriteEventActive, METEORITE_ZONE_ID, METEORITE_ZONE_LABEL } from './features/meteoriteEvent/meteoriteEventConfig';
 
 import { raidCommand } from "./commands/raidCommand";
+import { worldBossCommand } from "./commands/worldBossCommand";
+import { getWorldBossInfo } from "./commands/getWorldBossInfo";
+import { autocompleteWorldBossId, forceStartWorldBossCommand } from "./commands/forceStartWorldBossCommand";
+import { getWorldBossCatalog } from "./features/worldBoss/worldBossCatalog";
+import { forceEndWorldBossCommand } from "./commands/forceEndWorldBossCommand";
 import { loadUnlockedZones } from "./utils/loadUnlockedZones";
 import { readPlayers } from "./features/raid/prepareRaidDefenderFromPlayerPokemon";
 import { getPokemonCatalog } from "./utils/pokemonCatalog";
@@ -43,6 +50,7 @@ const client = new Client({
 
 startRaidScheduler(client);
 startMeteoriteEventScheduler(client);
+startWorldBossScheduler(client);
 
 client.on(Events.Error, (error) => {
   logger.error({ err: error }, "❌ Erreur client Discord non gérée");
@@ -104,7 +112,24 @@ async function handleInteraction(interaction: Interaction) {
   const logger = getLoggerForGuild(interaction.guildId);
 
   if (interaction.isAutocomplete()) {
-    if (interaction.commandName === "raid") {
+    if (interaction.commandName === "world-boss-force-start") {
+      const focusedOption = interaction.options.getFocused(true);
+
+      if (focusedOption.name === "boss") {
+        try {
+          await interaction.respond(
+            await autocompleteWorldBossId(focusedOption.value.trim().toLowerCase()),
+          );
+        } catch {
+          await interaction.respond([]);
+        }
+        return;
+      }
+    }
+
+    // /raid et /world-boss portent les mêmes options (pokemon_name, type) :
+    // même autocomplétion, sur le Pokédex du serveur d'où vient l'interaction.
+    if (interaction.commandName === "raid" || interaction.commandName === "world-boss") {
       const focusedOption = interaction.options.getFocused(true);
 
       if (focusedOption.name === "type") {
@@ -190,10 +215,19 @@ async function handleInteraction(interaction: Interaction) {
           const search = focusedOption.value.trim().toLowerCase();
           const pokemonList = getPokemonCatalog(interaction.guildId);
 
-          const suggestions = pokemonList
-            .filter((p) => p.name.toLowerCase().includes(search))
+          // Les Gigamax ne sont pas dans le Pokédex des serveurs : ils vivent
+          // dans la liste des world boss, mais restent consultables ici.
+          let worldBossNames: string[] = [];
+          try {
+            worldBossNames = getWorldBossCatalog().map((boss) => boss.name);
+          } catch {
+            worldBossNames = [];
+          }
+
+          const suggestions = [...pokemonList.map((p) => p.name), ...worldBossNames]
+            .filter((name) => name.toLowerCase().includes(search))
             .slice(0, 25)
-            .map((p) => ({ name: p.name, value: p.name }));
+            .map((name) => ({ name, value: name }));
 
           await interaction.respond(suggestions);
         } catch {
@@ -203,7 +237,11 @@ async function handleInteraction(interaction: Interaction) {
       return;
     }
 
-    if (interaction.commandName === "capture" || interaction.commandName === "capture-cible") {
+    if (
+      interaction.commandName === "capture" ||
+      interaction.commandName === "capture-cible" ||
+      interaction.commandName === "zone-progression"
+    ) {
       const focusedOption = interaction.options.getFocused(true);
 
       if (focusedOption.name === "zone") {
@@ -287,6 +325,10 @@ async function handleInteraction(interaction: Interaction) {
     return cheatCommand(interaction);
   }
 
+  if (interaction.commandName === "zone-progression") {
+    return await zoneCompletionCommand(interaction);
+  }
+
   if (interaction.commandName === "pokedex") {
     return await pokedexCommand(interaction);
   }
@@ -310,12 +352,28 @@ async function handleInteraction(interaction: Interaction) {
     return await captureCibleCommand(interaction);
   }
 
+  if (interaction.commandName === "world-boss") {
+    return await worldBossCommand(interaction);
+  }
+
   if (interaction.commandName === "raid") {
     return await raidCommand(interaction);
   }
 
   if (interaction.commandName === "help") {
     return helpCommand(interaction);
+  }
+
+  if (interaction.commandName === "world-boss-force-start") {
+    return await forceStartWorldBossCommand(interaction);
+  }
+
+  if (interaction.commandName === "world-boss-force-end") {
+    return await forceEndWorldBossCommand(interaction);
+  }
+
+  if (interaction.commandName === "world-boss-squad") {
+    return getWorldBossInfo(interaction);
   }
 
   if (interaction.commandName === "raid-squad") {
@@ -333,4 +391,19 @@ async function handleInteraction(interaction: Interaction) {
   if (interaction.commandName === "get-pokemon-info") {
     return await getPokemonInfoCommand(interaction);
   }
+
+  // Filet : une commande déclarée dans commandDefinitions.ts mais absente de la
+  // chaîne ci-dessus tombait jusqu'ici et la fonction retournait sans jamais
+  // accuser réception. Discord affiche alors « l'application ne répond pas »
+  // au bout de 3 secondes, sans une ligne de log — le symptôme ne désigne pas
+  // sa cause. On log, et on répond, pour que le trou de câblage se voie.
+  logger.error(
+    { event: "unhandled_command", commandName: interaction.commandName },
+    `❌ Commande "${interaction.commandName}" déclarée mais non câblée dans handleInteraction`,
+  );
+
+  await interaction.reply({
+    content: `❌ La commande \`/${interaction.commandName}\` est déclarée mais n'est pas branchée côté bot. Signale-le à l'administrateur.`,
+    flags: MessageFlags.Ephemeral,
+  });
 }

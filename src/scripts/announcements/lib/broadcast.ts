@@ -54,9 +54,32 @@ export function broadcastEmbed(
   scriptRelativePath: string,
   options: BroadcastOptions = {},
 ): void {
+  broadcastEmbeds([embed], scriptRelativePath, options);
+}
+
+/**
+ * Variante multi-embeds : chaque embed part dans son PROPRE message, dans
+ * l'ordre. Discord plafonne une description d'embed à 4096 caractères, et
+ * regrouper plusieurs embeds dans un seul message ne relâche pas la contrainte
+ * (6000 caractères cumulés) : un patchnote long a besoin de plusieurs
+ * messages, pas de plusieurs embeds.
+ *
+ * `content` n'est attaché qu'au premier message : une mention répétée à chaque
+ * partie serait du spam.
+ */
+export function broadcastEmbeds(
+  embeds: EmbedBuilder[],
+  scriptRelativePath: string,
+  options: BroadcastOptions = {},
+): void {
   const TOKEN = process.env.DISCORD_TOKEN;
   const CHANNEL_ID = parseChannelId(process.argv.slice(2));
   const { content, channelField = "main" } = options;
+
+  if (embeds.length === 0) {
+    console.error("Aucun embed à envoyer — rien n'a été diffusé.");
+    process.exit(1);
+  }
 
   if (!TOKEN) {
     console.error(`Usage: npx ts-node ${scriptRelativePath} [--channelId <id>]`);
@@ -73,8 +96,16 @@ export function broadcastEmbed(
         console.error(`Salon introuvable ou non envoyable (${label}, channelId=${channelId}).`);
         return;
       }
-      await channel.send(content ? { content, embeds: [embed] } : { embeds: [embed] });
-      console.log(`Message envoyé sur ${label}.`);
+      for (const [position, embed] of embeds.entries()) {
+        const withContent = Boolean(content) && position === 0;
+        await channel.send(withContent ? { content, embeds: [embed] } : { embeds: [embed] });
+      }
+
+      console.log(
+        embeds.length > 1
+          ? `${embeds.length} messages envoyés sur ${label}.`
+          : `Message envoyé sur ${label}.`,
+      );
     } catch (err) {
       console.error(`Erreur sur ${label} (channelId=${channelId}):`, err);
     }
