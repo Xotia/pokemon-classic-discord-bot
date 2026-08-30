@@ -15,10 +15,11 @@ const PATCHNOTE = fs
 describe("parsePatchnoteEntries", () => {
   it("lit les entrées dans l'ordre du fichier, la plus récente en tête", () => {
     const entries = parsePatchnoteEntries(PATCHNOTE);
+    const rank = (v: string) => v.split(".").map(Number);
 
     expect(entries.length).toBeGreaterThan(1);
-    expect(entries[0].version).toBe("3.7.0");
-    expect(entries[1].version).toBe("3.6.0");
+    // Aucun numéro en dur : le test survit à la release suivante.
+    expect(rank(entries[0].version) > rank(entries[1].version)).toBe(true);
   });
 });
 
@@ -27,9 +28,11 @@ describe("extractPatchnoteBody", () => {
     const entries = parsePatchnoteEntries(PATCHNOTE);
     const body = extractPatchnoteBody(PATCHNOTE, entries[0]);
 
-    expect(body).not.toContain("# Mise à jour 3.6.0");
-    expect(body).toContain("/world-boss");
-    expect(body).toContain("/zone-progression");
+    // Le corps de la première entrée ne doit contenir aucun autre en-tête.
+    for (const other of entries.slice(1)) {
+      expect(body).not.toContain(`# Mise à jour ${other.version}`);
+    }
+    expect(body.length).toBeGreaterThan(0);
   });
 });
 
@@ -56,12 +59,19 @@ describe("splitPatchnoteBody", () => {
     expect(words(rejoined)).toEqual(words(body));
   });
 
-  it("découpe la 3.7.0 en plusieurs parties plutôt que de la tronquer", () => {
-    const entries = parsePatchnoteEntries(PATCHNOTE);
-    const body = extractPatchnoteBody(PATCHNOTE, entries[0]);
+  it("découpe une entrée trop longue plutôt que de la tronquer", () => {
+    // Corps synthétique : le test porte sur le découpage, pas sur la taille
+    // qu'aura le patchnote du jour.
+    const paragraph = "Paragraphe de contenu.";
+    const section = Array(60).fill(paragraph).join("\n\n");
+    const body = [section, section, section].join("\n\n---\n\n");
 
     expect(body.length).toBeGreaterThan(MAX_DESCRIPTION_LENGTH);
-    expect(splitPatchnoteBody(body).length).toBeGreaterThan(1);
+
+    const parts = splitPatchnoteBody(body);
+
+    expect(parts.length).toBeGreaterThan(1);
+    expect(parts.every((part) => part.length <= MAX_DESCRIPTION_LENGTH)).toBe(true);
   });
 
   it("laisse une entrée courte en une seule partie", () => {
