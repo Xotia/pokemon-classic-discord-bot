@@ -56,6 +56,8 @@ npm run start
 | `npm run test:rarity` | Teste la distribution de rarete sur un grand echantillon |
 | `npm run compare:rarity` | Compare la rarete calculee avec les valeurs manuelles de reference |
 | `npm run force-end-raid` | Force la fin du raid en cours (utile en debug ou incident prod) |
+| `npm run raid-sim:build` | Construit le simulateur de raid statique dans `dist-web/raid-simulator/` |
+| `npm run raid-sim` | Construit le simulateur puis l'ouvre en apercu local sur http://127.0.0.1:4173 |
 
 ### Generation de donnees
 
@@ -205,6 +207,39 @@ npx ts-node src/scripts/announcements/send-patchnote.ts
 
 `send-patchnote.ts` lit automatiquement la derniere entree de `PATCHNOTE.md`
 et l'envoie en embed dans le salon dev de chaque serveur.
+
+---
+
+## Simulateur de raid (site public)
+
+Le simulateur de raid du centre de recherche est un **site statique** destine
+aux joueurs : ils saisissent la creature du raid et l'equipe engagee, l'outil
+rejoue le combat avec le moteur reel du bot et annonce le resultat avant la
+cloture des inscriptions.
+
+Sources dans `tools/raid-simulator/`, sortie du build dans
+`dist-web/raid-simulator/` (generee, non versionnee). Le site est publie sur
+**GitHub Pages** par `.github/workflows/deploy-raid-simulator.yml`, declenche
+par les push sur `main` qui touchent au simulateur ou aux fichiers pokedex.
+
+**URL publique : https://xotia.github.io/pokemon-classic-discord-bot/**
+
+Rien n'est heberge sur le VPS : l'outil ne tourne pas sur la machine du bot et
+n'ouvre aucun port. `npm run build` ne le reconstruit pas, volontairement — un
+pokedex malforme doit bloquer la publication du site, pas un deploiement du
+bot.
+
+Deux garde-fous couverts par la suite de tests :
+
+- `tests/raid/raidSimulatorParity.test.ts` compare le moteur du simulateur a
+  `computeBruteBattleResult`. Un simulateur qui derive annonce aux joueurs des
+  victoires qui n'auront pas lieu.
+- `tests/scripts/buildRaidSimulator.test.ts` verrouille la liste blanche des
+  champs publies : le pokedex mis en ligne ne contient ni rarete, ni zones, et
+  aucun fichier de `data/` n'est servi directement.
+
+Activation, cycle de publication et details : voir
+`tools/raid-simulator/README.md`.
 
 ---
 

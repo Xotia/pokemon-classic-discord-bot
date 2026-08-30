@@ -89,8 +89,14 @@ GUIDE_MESSAGE_MARKDOWN.md
 PROGRAM.md
 REFACTOR_MULTI_GUILD.md
 FEATURES.md
-# Raid simulator (outil local, non déployé)
-tools/
+# Outils : tout est local sauf le simulateur de raid, dont les sources sont
+# buildées et publiées sur GitHub Pages (voir tools/raid-simulator/README.md).
+tools/*
+!tools/raid-simulator/
+
+# Build web - sortie générée du simulateur de raid, reconstruite à chaque
+# `npm run raid-sim:build`. Ne jamais commit : c'est un artefact, pas une source.
+dist-web/
 
 # Data - runtime world boss (etat courant + historique global, recrees par le bot si absents)
 data/world-boss.json

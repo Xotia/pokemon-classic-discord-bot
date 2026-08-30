@@ -31,7 +31,8 @@
     "send-patchnote": "ts-node src/scripts/announcements/send-patchnote.ts",
     "send-meteorite-warning": "ts-node src/scripts/announcements/send-meteorite-warning.ts",
     "get-last-update": "ts-node src/scripts/get-last-update.ts",
-    "raid-sim": "node tools/raid-simulator/server.js"
+    "raid-sim:build": "npx ts-node src/scripts/raid-tools/buildRaidSimulator.ts",
+    "raid-sim": "npm run raid-sim:build && node tools/raid-simulator/server.js"
   },
   "keywords": [],
   "author": "",
