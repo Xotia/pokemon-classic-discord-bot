@@ -7,6 +7,7 @@ import { getPlayer } from "../utils/loadPlayer";
 import { getLoggerForGuild } from "../utils/logger";
 import { buildCapturedPokemonEmbed } from "../methods/embed/buildCapturedPokemonEmbed";
 import { isPokemonInPokedex } from "../methods/pokedex/isPokemonInPokedex";
+import { registerCapturedPokemon } from "../methods/player/registerCapturedPokemon";
 
 export async function cheatCommand(interaction: any) {
   const callerName = interaction.user.globalName || interaction.user.username;
@@ -60,32 +61,12 @@ export async function cheatCommand(interaction: any) {
     playerId,
   );
 
-  player.captureList ??= {};
-  player.captureList[String(pokemon.id)] ??= {
-    total: 0,
-    shiny: 0,
-    capturedInCurrentSeason: false,
-  };
-  player.captureList[String(pokemon.id)].total += 1;
-
-  if (isShiny) {
-    player.captureList[String(pokemon.id)].shiny += 1;
-  }
+  registerCapturedPokemon(player, pokemon.id, isShiny);
 
   await addAllStats(guildId, pokemon, isShiny, player);
 
   await updatePlayer(guildId, playerId, (fresh) => {
-    fresh.captureList ??= {};
-    fresh.captureList[String(pokemon.id)] ??= {
-      total: 0,
-      shiny: 0,
-      capturedInCurrentSeason: false,
-    };
-    fresh.captureList[String(pokemon.id)].total += 1;
-
-    if (isShiny) {
-      fresh.captureList[String(pokemon.id)].shiny += 1;
-    }
+    registerCapturedPokemon(fresh, pokemon.id, isShiny);
   });
 
   const trainerName = player.name;
