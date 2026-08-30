@@ -3,6 +3,21 @@
 Tous les changements notables du **Pokémon Classic Discord Bot** sont documentés ici.  
 Format basé sur [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+# [3.7.1] - 2026-08-30
+
+## Corrections
+
+### `/zone-progression` ne comptait pas les captures de la saison en cours
+- La progression d'une zone comptait toute entrée de `captureList` avec `total > 0`, saison d'origine comprise. Un Pokémon capturé lors d'une saison précédente gonflait donc le pourcentage d'une zone sans qu'aucune capture n'ait eu lieu cette saison, alors que le reste du jeu (raids, world boss, Pokédex) ne reconnaît que les Pokémon marqués `capturedInCurrentSeason`.
+- `computeZoneCompletion` ignore désormais toute entrée dont `capturedInCurrentSeason` est `false`. Les compteurs `captured`, `shiny`, `missing` et le pourcentage portent tous sur la saison en cours.
+- L'embed dit ce qu'il compte : le libellé passe de « Capturés » à « Capturés cette saison ».
+- Limite connue : `shiny` reste dérivé du compteur cumulé `stats.shiny`, qui n'est pas horodaté par saison. Un shiny obtenu la saison passée sur un Pokémon recapturé cette saison est encore compté comme shiny. Corriger cela demande un compteur shiny par saison dans `captureList`.
+
+## Modifications
+- Numéro de version : 3.7.0 → 3.7.1.
+
+---
+
 # [3.7.0] - 2026-08-30
 
 ## Ajouts

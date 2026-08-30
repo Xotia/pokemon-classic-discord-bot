@@ -22,13 +22,18 @@ import {
 
 const GUILD_ID = "test-guild";
 
-const player = (captureList: Record<string, { total: number; shiny: number }>) =>
+const player = (
+  captureList: Record<
+    string,
+    { total: number; shiny: number; capturedInCurrentSeason?: boolean }
+  >,
+) =>
   ({
     name: "Kevin",
     captureList: Object.fromEntries(
       Object.entries(captureList).map(([id, stats]) => [
         id,
-        { ...stats, capturedInCurrentSeason: false },
+        { capturedInCurrentSeason: true, ...stats },
       ]),
     ),
     pityCounter: 0,
@@ -120,6 +125,25 @@ describe("computeZoneCompletion", () => {
       "forest",
     );
     expect(completion.captured).toBe(0);
+  });
+
+  it("ignore les captures des saisons précédentes", () => {
+    const completion = computeZoneCompletion(
+      GUILD_ID,
+      player({
+        "1": { total: 3, shiny: 1, capturedInCurrentSeason: false },
+        "3": { total: 1, shiny: 0 },
+      }),
+      "volcano",
+    );
+
+    expect(completion).toMatchObject({
+      total: 3,
+      captured: 1,
+      shiny: 0,
+      missing: 2,
+      percentage: 33.3,
+    });
   });
 
   it("ne divise pas par zéro sur une zone vide", () => {

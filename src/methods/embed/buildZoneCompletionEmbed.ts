@@ -24,7 +24,7 @@ export function buildZoneCompletionEmbed(
   const lines = [
     `\`${buildProgressBar(completion.percentage)}\` **${completion.percentage} %**`,
     "",
-    `📗 **Capturés :** ${completion.captured} / ${completion.total}`,
+    `📗 **Capturés cette saison :** ${completion.captured} / ${completion.total}`,
     `🔍 **Restants :** ${completion.missing}`,
     `✨ **Dont shinys :** ${completion.shiny}`,
   ];

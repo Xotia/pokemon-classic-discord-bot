@@ -1,3 +1,25 @@
+# Mise à jour 3.7.1 — La progression de zone compte enfin la bonne saison
+
+---
+
+## `/zone-progression` affichait un pourcentage trop généreux
+
+La commande comptait **toutes** vos captures, y compris celles des saisons précédentes. Une zone pouvait afficher 60 % alors que vous n'y aviez rien attrapé depuis le début de la saison en cours.
+
+C'est incohérent avec le reste du jeu : les raids et le world boss n'acceptent que les Pokémon capturés dans la saison en cours, le Pokédex les marque d'un 🎯. Seule la progression de zone regardait plus loin en arrière.
+
+C'est corrigé. **Seules les captures de la saison en cours comptent**, et le libellé le dit : « Capturés cette saison ». Votre pourcentage va donc baisser sur les zones que vous aviez terminées lors d'une saison passée — il ne s'agit pas d'une perte, mais du chiffre réel de la saison.
+
+---
+
+## Rien d'autre ne change
+
+Le calcul reste local à la zone : un Pokémon présent dans plusieurs zones compte dans chacune, les pourcentages ne s'additionnent toujours pas. Aucune capture n'est effacée, aucune commande ne change de syntaxe.
+
+---
+
+---
+
 # Mise à jour 3.7.0 — Les portails s'ouvrent
 
 ---

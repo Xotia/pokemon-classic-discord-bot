@@ -5,9 +5,9 @@ export interface ZoneCompletion {
   zoneId: string;
   /** Nombre de Pokémon différents présents dans la zone. */
   total: number;
-  /** Nombre de ces Pokémon que le joueur possède au moins une fois. */
+  /** Nombre de ces Pokémon capturés au moins une fois pendant la saison en cours. */
   captured: number;
-  /** Nombre de ces Pokémon capturés au moins une fois en shiny. */
+  /** Nombre de ces Pokémon capturés en shiny pendant la saison en cours. */
   shiny: number;
   /** Reste à capturer dans la zone. */
   missing: number;
@@ -20,6 +20,9 @@ export interface ZoneCompletion {
  *
  * Un Pokémon peut appartenir à plusieurs zones : les pourcentages de deux zones
  * ne s'additionnent pas, chacun est un ratio local (capturés / présents).
+ *
+ * Seules les captures de la saison en cours comptent : une entrée héritée d'une
+ * saison précédente (capturedInCurrentSeason à false) est ignorée.
  */
 export function computeZoneCompletion(
   guildId: string,
@@ -35,6 +38,7 @@ export function computeZoneCompletion(
   for (const pokemonId of zonePokemonIds) {
     const stats = captureList[String(pokemonId)];
     if (!stats || stats.total <= 0) continue;
+    if (!stats.capturedInCurrentSeason) continue;
     captured += 1;
     if (stats.shiny > 0) shiny += 1;
   }
