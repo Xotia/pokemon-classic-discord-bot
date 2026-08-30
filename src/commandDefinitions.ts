@@ -55,6 +55,28 @@ export const commands = [
     )
     .toJSON(),
   new SlashCommandBuilder()
+    .setName("world-boss-force-end")
+    .setDescription("[Admin] Force la clôture et la résolution immédiate du world boss en cours.")
+    .toJSON(),
+  new SlashCommandBuilder()
+    .setName("world-boss-force-start")
+    .setDescription("[Admin] Ouvre immédiatement un world boss, avec boss et difficulté au choix.")
+    .addStringOption((option) =>
+      option
+        .setName("boss")
+        .setDescription("Boss à invoquer parmi ceux jamais vaincus (tirage aléatoire si omis)")
+        .setRequired(false)
+        .setAutocomplete(true),
+    )
+    .addIntegerOption((option) =>
+      option
+        .setName("difficulte")
+        .setDescription("Multiplicateur de statistiques (participants du précédent si omis)")
+        .setRequired(false)
+        .setMinValue(1),
+    )
+    .toJSON(),
+  new SlashCommandBuilder()
     .setName("pokedex")
     .setDescription("Voir ton nombre de Pokémon capturés avec /capture.")
     .toJSON(),
@@ -147,6 +169,30 @@ export const commands = [
     )
     .toJSON(),
   new SlashCommandBuilder()
+    .setName("world-boss")
+    .setDescription(
+      "Franchis le portail et affronte le world boss de la semaine avec les dresseurs du monde entier !",
+    )
+    .addStringOption((option) =>
+      option
+        .setName("pokemon_name")
+        .setDescription("Choisis le pokemon avec lequel tu souhaites participer au world boss")
+        .setRequired(true)
+        .setAutocomplete(true),
+    )
+    .addStringOption((option) =>
+      option
+        .setName("type")
+        .setDescription("Choisis le type d'attaque que ton pokémon utilisera")
+        .setRequired(false)
+        .setAutocomplete(true),
+    )
+    .toJSON(),
+  new SlashCommandBuilder()
+    .setName("world-boss-squad")
+    .setDescription("Affiche le world boss en cours et l'équipe mondiale, tous serveurs confondus.")
+    .toJSON(),
+  new SlashCommandBuilder()
     .setName("pity")
     .setDescription("Affiche le statut du compteur de pity.")
     .toJSON(),
@@ -164,11 +210,11 @@ export const commands = [
     .toJSON(),
   new SlashCommandBuilder()
     .setName("get-pokemon-info")
-    .setDescription("Affiche les informations détaillées d'un Pokémon.")
+    .setDescription("Affiche les informations détaillées d'un Pokémon ou d'un Gigamax.")
     .addStringOption((option) =>
       option
         .setName("pokemon")
-        .setDescription("Nom du Pokémon")
+        .setDescription("Nom du Pokémon ou du Gigamax")
         .setRequired(true)
         .setAutocomplete(true),
     )

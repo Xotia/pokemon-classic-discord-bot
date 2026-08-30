@@ -91,3 +91,7 @@ REFACTOR_MULTI_GUILD.md
 FEATURES.md
 # Raid simulator (outil local, non déployé)
 tools/
+
+# Data - runtime world boss (etat courant + historique global, recrees par le bot si absents)
+data/world-boss.json
+data/world-boss-history.json

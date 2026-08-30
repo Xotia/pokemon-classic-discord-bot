@@ -21,6 +21,10 @@ export async function helpCommand(interaction: any) {
             { name: '/get-rarity', value: 'Affiche les taux de rareté des Pokémon.' },
             { name: '/raid', value: 'Inscris un de tes Pokémon pour défendre le centre de recherche lors du raid quotidien.' },
             { name: '/raid-squad', value: 'Affiche les infos du raid et la composition actuel de l\'équipe de défense.' },
+            { name: '/world-boss', value: 'Franchis le portail avec un de tes Pokémon pour le combat mondial, le dimanche de 12h00 à 20h00.' },
+            { name: '/world-boss-squad', value: 'Affiche le world boss en cours et la ligne complète, tous serveurs confondus.' },
+            { name: '/world-boss-force-start', value: 'Ouvre un portail manuellement (admin).' },
+            { name: '/world-boss-force-end', value: 'Referme le portail en cours et résout le combat (admin).' },
         )
         .setFooter({ text: 'Amusez-vous bien avec Creatures Hoarder (Bot Pokémon) !' });
     return interaction.editReply({ embeds: [helpEmbed] });

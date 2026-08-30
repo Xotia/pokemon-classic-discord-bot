@@ -49,16 +49,43 @@ function getEffectivenessMultiplier(
   return defenseEffectiveness?.[attackType] ?? 1;
 }
 
-export function computeBruteRaidResult(state: RaidState): RaidResult {
-  if (!state.raidPokemon) {
-    throw new Error("Cannot resolve raid without raidPokemon.");
-  }
+/**
+ * Boss pur pour le calcul de combat : uniquement ce dont l'algorithme a
+ * besoin, sans notion de RaidState. Réutilisable par la feature world boss.
+ */
+export type BruteBattleBoss = {
+  finalStats: RaidStats;
+  attackType: string | undefined;
+  defenseEffectiveness: Record<string, number> | undefined;
+};
 
-  const bossStats = state.raidPokemon.finalStats;
-  const raidAttackType = state.raidPokemon.attackType;
-  const raidDefenseEffectiveness = state.raidPokemon.defenseEffectiveness;
+/**
+ * Défenseur pur pour le calcul de combat : idem, sans notion de RaidState.
+ */
+export type BruteBattleDefender = {
+  attackType: string | undefined;
+  snapshot: {
+    defenseEffectiveness: Record<string, number> | undefined;
+    stats: RaidStats;
+  };
+};
 
-  const teamStats = state.defenders.reduce<RaidStats>((total, defender) => {
+/**
+ * Calcul de combat "à la brute" partagé entre le raid et le world boss :
+ * additionne les stats des défenseurs (pondérées par les efficacités de
+ * type) et les compare aux stats du boss, appariées via RAID_STAT_MATCHUPS.
+ *
+ * Fonction pure, aucune dépendance à RaidState.
+ */
+export function computeBruteBattleResult(
+  boss: BruteBattleBoss,
+  defenders: BruteBattleDefender[],
+): RaidResult {
+  const bossStats = boss.finalStats;
+  const raidAttackType = boss.attackType;
+  const raidDefenseEffectiveness = boss.defenseEffectiveness;
+
+  const teamStats = defenders.reduce<RaidStats>((total, defender) => {
     const defenderStats = defender.snapshot.stats;
 
     const attackEffectivenessAgainstBoss = getEffectivenessMultiplier(
@@ -96,8 +123,16 @@ export function computeBruteRaidResult(state: RaidState): RaidResult {
   return {
     success: missingStats.length === 0,
     missingStats,
-    participantsCount: state.defenders.length,
+    participantsCount: defenders.length,
     teamStats,
     statDiffs,
   };
+}
+
+export function computeBruteRaidResult(state: RaidState): RaidResult {
+  if (!state.raidPokemon) {
+    throw new Error("Cannot resolve raid without raidPokemon.");
+  }
+
+  return computeBruteBattleResult(state.raidPokemon, state.defenders);
 }
