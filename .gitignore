@@ -5,7 +5,6 @@
 
 # Dependencies
 node_modules/
-package-lock.json
 
 # Build
 dist/
@@ -18,12 +17,19 @@ logs/
 .DS_Store
 Thumbs.db
 
-# IDE
+# IDE / outillage local
 .vscode/
 .idea/
+# Reglages Claude Code propres a une machine (permissions, chemins locaux).
+# Deja couverts par le gitignore global ici, mais pas sur les autres machines.
+.claude/settings.local.json
+
+# Couverture de tests (vitest --coverage) : artefact local, jamais commit.
+coverage/
 
 # Backups
 backups/
+backup
 
 # Scripts one-shot (migration, build data, etc.)
 src/scripts/send-lore.ts
@@ -67,7 +73,10 @@ data/othermons.json
 # Data - registre des serveurs (guildId visibles, ne doit pas être commit)
 data/guilds.json
 
-# Data - examples
+# Data - "examples" qui n'en sont pas : players_example.json contient de vrais
+# identifiants Discord et de vrais pseudos de joueurs. Le nom trompe, la regle
+# est juste : ne jamais la retirer. Le seul gabarit versionne pour la config
+# multi-serveur est data/guilds.json.example.
 data/players_example.json
 data/pokemon-list_example.json
 
@@ -80,8 +89,5 @@ GUIDE_MESSAGE_MARKDOWN.md
 PROGRAM.md
 REFACTOR_MULTI_GUILD.md
 FEATURES.md
-backup
 # Raid simulator (outil local, non déployé)
 tools/
-src/scripts/raid-tools/simulateRaidZones.ts
-src/scripts/raid-tools/simulateRaidModels.ts
