@@ -1,6 +1,6 @@
 import "dotenv/config";
 
-import { Client, GatewayIntentBits, Events, Interaction } from "discord.js";
+import { Client, GatewayIntentBits, Events, Interaction, MessageFlags } from "discord.js";
 
 import { pingCommand } from "./commands/pingCommand";
 import { cheatCommand } from "./commands/cheatCommand";
@@ -391,4 +391,19 @@ async function handleInteraction(interaction: Interaction) {
   if (interaction.commandName === "get-pokemon-info") {
     return await getPokemonInfoCommand(interaction);
   }
+
+  // Filet : une commande déclarée dans commandDefinitions.ts mais absente de la
+  // chaîne ci-dessus tombait jusqu'ici et la fonction retournait sans jamais
+  // accuser réception. Discord affiche alors « l'application ne répond pas »
+  // au bout de 3 secondes, sans une ligne de log — le symptôme ne désigne pas
+  // sa cause. On log, et on répond, pour que le trou de câblage se voie.
+  logger.error(
+    { event: "unhandled_command", commandName: interaction.commandName },
+    `❌ Commande "${interaction.commandName}" déclarée mais non câblée dans handleInteraction`,
+  );
+
+  await interaction.reply({
+    content: `❌ La commande \`/${interaction.commandName}\` est déclarée mais n'est pas branchée côté bot. Signale-le à l'administrateur.`,
+    flags: MessageFlags.Ephemeral,
+  });
 }
