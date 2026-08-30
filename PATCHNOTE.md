@@ -46,7 +46,7 @@ La menace suivra donc votre mobilisation. Ce n'est pas une raison de venir moins
 **Comment la jauger ?** À la couleur du portail. Les relevés ne donnent aucun chiffre, seulement une lueur, et cette lueur monte avec ce qui pousse derrière :
 
 ```
- 🟢 vert       1 dresseur mobilisé la semaine précédente
+ 🟢 vert       1 dresseur mobilisé la semaine précédente (ou aucun)
  🔵 bleu       2
  🟡 jaune      3
  🟠 orange     4

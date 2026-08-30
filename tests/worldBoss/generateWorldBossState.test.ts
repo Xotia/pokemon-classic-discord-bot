@@ -46,6 +46,20 @@ function makeHistory(overrides: Partial<WorldBossHistory> = {}): WorldBossHistor
   };
 }
 
+/**
+ * Historique d'un evenement precedent REEL : appendWorldBossHistoryEntry
+ * n'ecrit jamais lastParticipantsCount sans pousser l'entree correspondante.
+ * Un fixture avec un compteur mais zero entree decrirait un etat impossible,
+ * et c'est precisement la distinction que la difficulte lit desormais.
+ */
+function makeHistoryAfterEvent(participantsCount: number): WorldBossHistory {
+  return makeHistory({
+    lastParticipantsCount: participantsCount,
+    lastBossId: 'wb-a',
+    entries: [{ bossId: 'wb-a', participantsCount } as WorldBossHistory['entries'][number]],
+  });
+}
+
 const CATALOG = [makeEntry('wb-a'), makeEntry('wb-b')];
 
 beforeEach(() => {
@@ -61,18 +75,29 @@ describe('generateWorldBossState — difficulté', () => {
     expect(state?.boss?.finalStats.hp).toBe(150 * 6);
   });
 
-  it('ouvre à 6 quand le précédent n’a eu aucun inscrit', async () => {
-    mocks.loadWorldBossHistory.mockResolvedValue(
-      makeHistory({ lastParticipantsCount: 0, lastBossId: 'wb-a' }),
-    );
+  it('redescend au plancher quand le précédent n’a eu aucun inscrit', async () => {
+    // Une semaine deserte est une information : le portail redescend au vert.
+    // Il ne repart PAS sur la valeur d'un premier evenement.
+    mocks.loadWorldBossHistory.mockResolvedValue(makeHistoryAfterEvent(0));
 
     const state = await generateWorldBossState();
 
-    expect(state?.boss?.difficulty).toBe(6);
+    expect(state?.boss?.difficulty).toBe(1);
+    expect(state?.boss?.finalStats.hp).toBe(150);
+  });
+
+  it('ne produit jamais un boss aux statistiques nulles', async () => {
+    // Difficulte 0 rendrait le boss gratuit pour le premier inscrit de la
+    // semaine suivante, et brulerait un Gigamax du vivier.
+    mocks.loadWorldBossHistory.mockResolvedValue(makeHistoryAfterEvent(0));
+
+    const state = await generateWorldBossState();
+
+    expect(Object.values(state!.boss!.finalStats).every((value) => value > 0)).toBe(true);
   });
 
   it('reprend les 14 participants du précédent', async () => {
-    mocks.loadWorldBossHistory.mockResolvedValue(makeHistory({ lastParticipantsCount: 14 }));
+    mocks.loadWorldBossHistory.mockResolvedValue(makeHistoryAfterEvent(14));
 
     const state = await generateWorldBossState();
 

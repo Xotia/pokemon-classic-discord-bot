@@ -81,7 +81,7 @@ export async function generateWorldBossState(
   const difficulty =
     options.difficulty !== undefined
       ? resolveForcedDifficulty(options.difficulty)
-      : computeWorldBossDifficulty(history.lastParticipantsCount);
+      : computeWorldBossDifficulty(history.lastParticipantsCount, history.entries.length > 0);
 
   const now = new Date();
   const createdAt = now.toISOString();

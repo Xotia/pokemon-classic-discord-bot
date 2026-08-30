@@ -23,7 +23,9 @@ Format basé sur [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Ni rareté ni statistiques sur cette fiche : les stats d'un world boss dépendent de la difficulté tirée à l'ouverture du portail et n'ont pas de valeur hors combat.
 
 ### Difficulté héritée de la mobilisation précédente
-- La difficulté multiplie les stats de base du boss et vaut le **nombre de participants de l'événement précédent**, avec un repli à 6 s'il n'y a pas de précédent ou si le précédent n'a eu aucun inscrit.
+- La difficulté multiplie les stats de base du boss et vaut le **nombre de participants de l'événement précédent**, avec un plancher à 1.
+- Deux situations que le premier jet confondait, et qui n'ont pas la même réponse : **aucun événement n'a jamais eu lieu** (rien à suivre, on part à 6) et **l'événement précédent a été désert** (0 participant est une information, pas une absence d'information : le portail redescend au vert). Les confondre créait un état absorbant — désert donne violet, violet est hors de portée de l'effectif réel, donc désert à nouveau — et la couleur racontait alors l'inverse de la mobilisation qu'elle est censée refléter. `generateWorldBossState` tranche sur l'existence d'une entrée d'historique, pas sur la valeur du compteur.
+- Le plancher à 1 n'est pas cosmétique : `multiplyStats(stats, 0)` met toutes les stats du boss à zéro. La semaine déserte elle-même reste une défaite (`resolveWorldBoss` sort avant tout calcul sur une équipe vide), mais la suivante aurait vu un seul dresseur battre un boss à stats nulles et retirer définitivement un Gigamax d'un vivier de 33 entrées non renouvelables.
 - L'historique est écrit à chaque cycle, défaite et événement désert compris, sans quoi la difficulté suivante repartirait sur une valeur périmée.
 
 ### La difficulté n'est plus chiffrée côté joueur : elle est une couleur de portail
