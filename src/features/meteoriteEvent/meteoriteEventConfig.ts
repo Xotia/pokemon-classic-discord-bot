@@ -21,6 +21,15 @@ export function matchesMeteoriteZone(input: string): boolean {
   );
 }
 
+/**
+ * Zone d'évènement reconnue uniquement pendant l'évènement : hors fenêtre, un
+ * état qui la référence encore (raid resté ouvert par exemple) doit suivre le
+ * chemin standard au lieu d'attendre un scheduler d'évènement terminé.
+ */
+export function isActiveMeteoriteZone(input: string, now = new Date()): boolean {
+  return isMeteoriteEventActive(now) && matchesMeteoriteZone(input);
+}
+
 export interface MeteoriteRaidSlot {
   openTime: Date;
   closeTime: Date;
