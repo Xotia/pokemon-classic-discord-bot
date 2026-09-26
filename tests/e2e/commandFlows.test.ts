@@ -117,6 +117,7 @@ import { checkIfUserCanCatch } from "../../src/methods/cooldown/checkIfUserCanCa
 import { captureCommand } from "../../src/commands/captureCommand";
 import { tryCatchPokemon } from "../../src/methods/pokemon/tryCatchPokemon";
 import { resolveCaptureLocation } from "../../src/methods/zones/resolveCaptureLocation";
+import { getDayKey } from "../../src/methods/dailyBoost/dailyBoost";
 
 // ─── constants ───────────────────────────────────────────────────────────────
 
@@ -418,7 +419,7 @@ describe("E2E command flows (isolated guild: e2e-test-guild)", () => {
 
   describe("getPity", () => {
     it("returns the current pity counter and threshold in the reply", async () => {
-      await seedPlayer(USER_ID, { name: USERNAME, pityCounter: 7 });
+      await seedPlayer(USER_ID, { name: USERNAME, pityCounter: 7, lastDailyBoostDay: getDayKey() });
       const interaction = buildInteraction();
 
       await getPity(interaction);
@@ -426,7 +427,19 @@ describe("E2E command flows (isolated guild: e2e-test-guild)", () => {
       expect(interaction.editReply).toHaveBeenCalledOnce();
       const reply: string = interaction.editReply.mock.calls[0][0];
       expect(reply).toContain("7/10");
-      expect(reply).toContain("Non"); // not yet at threshold
+      expect(reply).toContain("Prochaine capture boostée : Non"); // not yet at threshold, daily boost used
+      expect(reply).toContain("déjà utilisé");
+    });
+
+    it("indicates boost is ready when the daily boost is still available", async () => {
+      await seedPlayer(USER_ID, { name: USERNAME, pityCounter: 2 });
+      const interaction = buildInteraction();
+
+      await getPity(interaction);
+
+      const reply: string = interaction.editReply.mock.calls[0][0];
+      expect(reply).toContain("Prochaine capture boostée : Oui");
+      expect(reply).toContain("Boost quotidien : disponible");
     });
 
     it("indicates boost is ready when counter equals threshold", async () => {

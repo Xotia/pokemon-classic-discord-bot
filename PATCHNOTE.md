@@ -1,3 +1,35 @@
+# Mise à jour 3.8.0 — Le boost quotidien
+
+---
+
+## Votre première capture du jour est boostée
+
+Chaque jour, votre **première `/capture`** profite des mêmes chances de rareté qu'une pity : les Pokémon rares, épiques et au-delà sortent bien plus souvent.
+
+Pas besoin d'y penser : le boost s'applique tout seul, et le message de capture vous le signale avec une ligne 🌅 **Boost quotidien**.
+
+Le boost revient chaque nuit à **minuit, heure de Paris**.
+
+---
+
+## Et votre pity dans tout ça ?
+
+Elle ne perd rien. La capture boostée du matin ne fait pas avancer votre compteur de pity, et si votre pity était prête, elle vous attend pour la capture suivante : deux captures boostées d'affilée.
+
+Si le boost vous fait tomber un Pokémon très rare ou mieux, le compteur repart à zéro, comme toujours.
+
+---
+
+## Où voir votre boost
+
+**`/pity`** vous dit maintenant si votre boost du jour est encore disponible ou déjà utilisé.
+
+Si la zone choisie ne donne aucun Pokémon, le boost n'est pas consommé : il reste là pour votre prochaine tentative.
+
+---
+
+---
+
 # Mise à jour 3.7.2 — Toutes vos zones d'un coup d'oeil
 
 ---

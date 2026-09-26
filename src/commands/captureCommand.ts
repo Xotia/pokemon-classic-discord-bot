@@ -33,7 +33,7 @@ export async function captureCommand(interaction: any) {
   const player = getCapturePlayer(interaction, guildId);
   if (!player) return;
 
-  const { pokemonCatched, rarity } = await tryCatchPokemon(
+  const { pokemonCatched, rarity, dailyBoostDay } = await tryCatchPokemon(
     guildId,
     player,
     generation,
@@ -52,5 +52,6 @@ export async function captureCommand(interaction: any) {
     pokemonCatched,
     rarity,
     zone,
+    dailyBoostDay,
   );
 }

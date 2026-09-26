@@ -13,7 +13,7 @@ Bot Discord de type gacha Pokemon en TypeScript. Les joueurs capturent des Pokem
 | `/pokedex` | Affiche ton Pokedex pagine avec progression et saison |
 | `/leaderboard` | Classement des joueurs, top shiny, top level, top raids et top Pokemon |
 | `/raid-squad` | Affiche l'etat du raid en cours et l'equipe de defense actuelle |
-| `/pity` | Affiche le compteur de pity |
+| `/pity` | Affiche le compteur de pity et le boost quotidien |
 | `/get-rarity` | Affiche les taux de rarete (normal et booste) |
 | `/get-shiny-rate` | Affiche le taux d'apparition des shinys |
 | `/cheat <player> <pokemon> <shiny>` | Commande admin pour attribuer un Pokemon |
@@ -258,6 +258,7 @@ src/
     gatcha/        Systeme gacha (tirage rarete + Pokemon)
     message/       Messages Discord (cooldown)
     pity/          Systeme de pity
+    dailyBoost/    Boost quotidien (premiere capture du jour)
     player/        Gestion des profils joueurs (creation, sauvegarde, recherche)
     pokedex/       Pokedex (affichage, pagination, stats)
     pokemon/       Pokemon (recherche, capture, shiny, XP)

@@ -2,6 +2,7 @@ import { createProfileIfNeeded } from '../methods/player/createProfileIfNeeded';
 import { getPlayer } from '../utils/loadPlayer';
 import { getLoggerForGuild } from '../utils/logger';
 import { getPityThreshold } from '../config/guildSettings';
+import { isDailyBoostAvailable } from '../methods/dailyBoost/dailyBoost';
 
 export async function getPity(interaction: any) {
     await interaction.deferReply();
@@ -27,6 +28,10 @@ export async function getPity(interaction: any) {
     }else{
         logger.info(`Compteur de pity actuel pour le joueur ${player.name} : ${player.pityCounter}/${pityThreshold}`);
     }
+    const dailyBoost = isDailyBoostAvailable(player);
     const pityTime = player.pityCounter >= pityThreshold;
-    return interaction.editReply(`Compteur de pity actuel : ${player.pityCounter}/${pityThreshold} - Prochaine capture boostée : ${pityTime ? 'Oui' : 'Non'}`);
+    return interaction.editReply(
+        `Compteur de pity actuel : ${player.pityCounter}/${pityThreshold} - Prochaine capture boostée : ${dailyBoost || pityTime ? 'Oui' : 'Non'}\n` +
+        `Boost quotidien : ${dailyBoost ? 'disponible (première capture du jour)' : 'déjà utilisé, retour à minuit'}`,
+    );
 }

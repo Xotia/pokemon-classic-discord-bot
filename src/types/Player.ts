@@ -9,6 +9,7 @@ export interface Player {
   captureList?: Record<string, PokemonCaptureStats>;
   lastCapture?: number;
   pityCounter: number;
+  lastDailyBoostDay?: string;
   xp: number;
   level: number;
   raidWins?: number;

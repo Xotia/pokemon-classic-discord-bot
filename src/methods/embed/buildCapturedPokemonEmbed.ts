@@ -19,6 +19,7 @@ export function buildCapturedPokemonEmbed({
   newLevel,
   isAlreadyInPokedex,
   zone,
+  dailyBoost = false,
 }: BuildCapturedPokemonEmbedParams) {
   const spriteUrl = getPokemonSpriteUrl(isShiny, pokemon);
   const isInPokedex = isAlreadyInPokedex ?? isPokemonInPokedex(guildId, player, pokemon.id, playerId);
@@ -40,7 +41,11 @@ export function buildCapturedPokemonEmbed({
       ? `\n\n⬆️ ${trainerName} est monté niveau ${newLevel} !`
       : "";
 
-  const description = `${baseDescription}${levelUpMessage}`;
+  const dailyBoostMessage = dailyBoost
+    ? "\n\n🌅 Boost quotidien : première capture du jour, raretés boostées !"
+    : "";
+
+  const description = `${baseDescription}${dailyBoostMessage}${levelUpMessage}`;
 
   const footer = editFooter({
     pokemonName: pokemon.name,
