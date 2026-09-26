@@ -28,5 +28,6 @@ export type BuildCapturedPokemonEmbedParams = {
   newLevel?: number;
   isAlreadyInPokedex?: boolean;
   zone?: string;
+  dailyBoost?: boolean;
 };
 

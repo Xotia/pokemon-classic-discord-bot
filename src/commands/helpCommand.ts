@@ -17,7 +17,7 @@ export async function helpCommand(interaction: any) {
             { name: '/leaderboard', value: 'Affiche le classement des joueurs' },
             { name: '/cheat', value: 'Commande de triche à utiliser à vos risques et périls.' },
             { name: '/get-shiny-rate', value: 'Affiche le taux d\'apparition des pokemon shinys.' },
-            { name: '/pity', value: 'Affiche l\'état du compteur de pity.' },
+            { name: '/pity', value: 'Affiche l\'état du compteur de pity et du boost quotidien.' },
             { name: '/get-rarity', value: 'Affiche les taux de rareté des Pokémon.' },
             { name: '/raid', value: 'Inscris un de tes Pokémon pour défendre le centre de recherche lors du raid quotidien.' },
             { name: '/raid-squad', value: 'Affiche les infos du raid et la composition actuel de l\'équipe de défense.' },

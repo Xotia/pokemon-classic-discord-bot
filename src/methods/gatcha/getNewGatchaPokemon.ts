@@ -1,5 +1,6 @@
 import { Rarity } from "../../config/rarity";
 import { getLoggerForGuild } from "../../utils/logger";
+import { getDayKey, isDailyBoostAvailable } from "../dailyBoost/dailyBoost";
 import { pitySystem } from "../pity/pitySystem";
 import { resetPityCounterIfNeeded } from "../pity/resetPityCounterIfNeeded";
 import { downgradeRarity } from "../rarity/downgradeRarity";
@@ -13,8 +14,18 @@ export async function getNewGatchaPokemon(
   zone: string,
 ) {
   const logger = getLoggerForGuild(guildId);
-  const pityTime = pitySystem(guildId, player);
-  let currentRarity = rollRarity(guildId, pityTime);
+
+  // Première capture du jour : tirage boosté comme la pity. Le compteur de pity
+  // n'avance pas sur ce tirage, pour ne pas gaspiller une pity qui tomberait en même temps.
+  const now = new Date();
+  const dailyBoost = isDailyBoostAvailable(player, now);
+  const dailyBoostDay = dailyBoost ? getDayKey(now) : undefined;
+  if (dailyBoost) {
+    logger.info(`Boost quotidien activé pour le joueur ${player.name} (${dailyBoostDay}).`);
+  }
+
+  const pityTime = dailyBoost ? false : pitySystem(guildId, player);
+  let currentRarity = rollRarity(guildId, dailyBoost || pityTime);
 
   resetPityCounterIfNeeded(guildId, player, currentRarity);
 
@@ -33,6 +44,7 @@ export async function getNewGatchaPokemon(
       return {
         pokemonCatched: undefined,
         rarity: currentRarity,
+        dailyBoostDay,
       };
     }
 
@@ -45,6 +57,7 @@ export async function getNewGatchaPokemon(
       return {
         pokemonCatched: undefined,
         rarity: currentRarity,
+        dailyBoostDay,
       };
     }
 
@@ -52,5 +65,5 @@ export async function getNewGatchaPokemon(
     result = await getPokemonByRarity(guildId, generation, zone, currentRarity);
   }
 
-  return result;
+  return { ...result, dailyBoostDay };
 }

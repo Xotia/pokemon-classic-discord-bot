@@ -3,6 +3,25 @@
 Tous les changements notables du **Pokémon Classic Discord Bot** sont documentés ici.  
 Format basé sur [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+# [3.8.0] - 2026-09-26
+
+## Ajouts
+
+### Boost quotidien : la première capture du jour est boostée
+- La première `/capture` de la journée tire sa rareté dans `rarityBoostedList`, exactement comme un tirage de pity. Le jour est le jour calendaire `Europe/Paris` (même fuseau que les raids et le world boss) : le boost se recharge à minuit, heure de Paris.
+- Nouveau champ joueur facultatif `lastDailyBoostDay` (`YYYY-MM-DD`). Absent sur les profils existants, il vaut « boost disponible » : aucune migration nécessaire.
+- Le boost n'est consommé que sur une capture réussie, dans l'écriture de `handleSuccessfulCapture`. Une zone vide (`handleNoPokemonFound`) ne le brûle pas.
+- Le compteur de pity n'avance pas sur le tirage boosté par le boost quotidien : une pity arrivée à échéance le même jour n'est pas gaspillée, elle s'applique à la capture suivante. Obtenir une rareté `very_rare` ou supérieure remet toujours le compteur à zéro, comme avant.
+- `/capture-cible` et `/cheat` ne passent pas par le tirage de rareté et ne sont pas concernés.
+- L'embed de capture affiche une ligne « 🌅 Boost quotidien » quand le boost s'applique.
+- `/pity` indique si le boost quotidien est disponible ou déjà utilisé, et « Prochaine capture boostée » en tient compte.
+
+## Modifications
+- Numéro de version : 3.7.2 → 3.8.0.
+- Aucune commande à redéployer : les options des commandes slash sont inchangées.
+
+---
+
 # [3.7.2] - 2026-08-30
 
 ## Ajouts

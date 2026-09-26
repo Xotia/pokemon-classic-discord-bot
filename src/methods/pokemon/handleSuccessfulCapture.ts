@@ -20,6 +20,7 @@ export async function handleSuccessfulCapture(
   pokemonCatched: any,
   rarity: string,
   zone: string,
+  dailyBoostDay?: string,
 ) {
   const isShiny = isThePokemonGonnaBeShiny(guildId);
   const trainerName = player.name;
@@ -50,6 +51,7 @@ export async function handleSuccessfulCapture(
     leveledUp,
     newLevel: xpResult.level,
     zone,
+    dailyBoost: dailyBoostDay !== undefined,
   });
 
   getLoggerForGuild(guildId).info(
@@ -70,6 +72,8 @@ export async function handleSuccessfulCapture(
     fresh.level = xpGain.level;
     fresh.researchData = (typeof fresh.researchData === "number" ? fresh.researchData : 0) + gainedXp;
     fresh.pityCounter = player.pityCounter;
+    // Consommé seulement sur une capture réussie : une zone vide ne brûle pas le boost.
+    if (dailyBoostDay) fresh.lastDailyBoostDay = dailyBoostDay;
     registerCapturedPokemon(fresh, pokemonCatched.id, isShiny);
   });
 }
