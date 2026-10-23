@@ -3,6 +3,25 @@
 Tous les changements notables du **Pokémon Classic Discord Bot** sont documentés ici.  
 Format basé sur [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+# [3.9.0] - 2026-10-23
+
+## Ajouts
+
+### XP proportionnelle à la rareté
+- L'XP d'une capture devient `PV de base × multiplicateur de rareté` (arrondi), puis ×10 si shiny et ×`METEORITE_XP_MULTIPLIER` pendant l'évènement météorite.
+- Grille dans `src/config/rarityXp.ts` : commun ×1, peu commun ×1,15, rare ×1,4, très rare ×1,75, épique ×2,5, ultra-rare ×3,25, mythique ×4,75, légendaire ×7,5, légendaire itinérant ×9, inconnu ×6. Une rareté non reconnue vaut ×1.
+- Le calcul, auparavant dupliqué dans `handleSuccessfulCapture` et `handleTargetedCapture`, est centralisé dans `computeCaptureXp`.
+- Le montant gagné alimente toujours à la fois l'XP et les données de recherche : le multiplicateur s'applique donc aussi aux données de recherche. Gain moyen estimé, pondéré par `rarityList` : environ +47 %.
+- Les récompenses de raid et de world boss ne sont pas concernées.
+
+## Modifications
+- Poids de `legendary_wandering` dans `rarityList` : 120 → 100. `rarityBoostedList` est inchangée.
+- Zones de capture revues pour plusieurs Pokémon de la génération 3 (Regirock, Registeel, Latias, Latios).
+- Numéro de version : 3.8.0 → 3.9.0.
+- Aucune commande à redéployer : les options des commandes slash sont inchangées.
+
+---
+
 # [3.8.0] - 2026-09-26
 
 ## Ajouts

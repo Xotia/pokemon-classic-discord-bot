@@ -1,3 +1,54 @@
+# Mise à jour 3.9.0 — La rareté paie
+
+---
+
+## Plus un Pokémon est rare, plus il rapporte
+
+Jusqu'ici, l'XP d'une capture dépendait seulement des PV du Pokémon : un légendaire durement trouvé pouvait rapporter moins qu'un Pokémon courant bien costaud.
+
+C'est fini. L'XP gagnée est maintenant **multipliée selon la rareté** :
+
+```
+Commun                ×1
+Peu commun            ×1,15
+Rare                  ×1,4
+Très rare             ×1,75
+Épique                ×2,5
+Ultra-Rare            ×3,25
+Mythique              ×4,75
+Légendaire            ×7,5
+Légendaire itinérant  ×9
+Inconnu               ×6
+```
+
+Le bonus shiny (×10) et le bonus de l'évènement météorite s'ajoutent par-dessus, comme avant.
+
+---
+
+## Vos données de recherche aussi
+
+Chaque point d'XP gagné reste aussi un point de données de recherche. Les captures rares remplissent donc plus vite votre réserve pour les **`/capture-cible`**.
+
+Le bonus s'applique aussi aux captures ciblées elles-mêmes : viser un Pokémon rare vous rembourse une partie de l'effort.
+
+Les récompenses de raid et de world boss ne changent pas.
+
+---
+
+## Les légendaires itinérants se font un peu plus discrets
+
+Raikou, Entei, Suicune, Latias, Latios et Mew apparaissent un tout petit peu moins souvent. En échange, chacun rapporte désormais gros.
+
+---
+
+## Des Pokémon ont déménagé
+
+Quelques Pokémon de Hoenn ont changé d'habitat, dont Regirock, Registeel, Latias et Latios. À vous de retrouver où ils se cachent désormais !
+
+---
+
+---
+
 # Mise à jour 3.8.0 — Le boost quotidien
 
 ---

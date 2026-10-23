@@ -26,7 +26,7 @@ export const rarityList: RarityData[] = [
   { rarity: 'ultra_rare', weight: 4000, color: 0xFF9800, french: 'Ultra-Rare' },
   { rarity: 'mythic', weight: 1000, color: 0xE91E63, french: 'Mythique' },
   { rarity: 'legendary', weight: 300, color: 0xFFD700, french: 'Légendaire' },
-  { rarity: 'legendary_wandering', weight: 120, color: 0x8A2BE2, french: 'Légendaire itinérant' },
+  { rarity: 'legendary_wandering', weight: 100, color: 0x8A2BE2, french: 'Légendaire itinérant' },
   { rarity: 'unknown', weight: 100, color: 0xCCCCCC, french: 'Inconnu' },
 ];
 

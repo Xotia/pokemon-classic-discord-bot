@@ -9,6 +9,7 @@ import { isThePokemonGonnaBeShiny } from "../pokemon/isThePokemonGonnaBeShiny";
 import { getCapturedPokemonHp } from "../pokemon/getCapturedPokemonHp";
 import { buildCapturedPokemonEmbed } from "../embed/buildCapturedPokemonEmbed";
 import { addXp } from "../xp/xp";
+import { computeCaptureXp } from "../xp/computeCaptureXp";
 import { getResearchCost, TargetableRarity } from "../../config/researchCost";
 import { InsufficientResearchDataError } from "./InsufficientResearchDataError";
 import { getLoggerForGuild } from "../../utils/logger";
@@ -18,7 +19,6 @@ import {
   matchesMeteoriteZone,
   METEORITE_ZONE_ID,
   METEORITE_GENERATION_TOKEN,
-  METEORITE_XP_MULTIPLIER,
 } from "../../features/meteoriteEvent/meteoriteEventConfig";
 
 export async function handleTargetedCapture(
@@ -74,11 +74,12 @@ export async function handleTargetedCapture(
   if (!canCatch) return;
 
   const isShiny = isThePokemonGonnaBeShiny(guildId);
-  const baseXp = getCapturedPokemonHp(guildId, pokemonCatched.id);
-  let gainedXp = isShiny ? baseXp * 10 : baseXp;
-  if (targetZone === METEORITE_ZONE_ID && isMeteoriteEventActive()) {
-    gainedXp *= METEORITE_XP_MULTIPLIER;
-  }
+  const gainedXp = computeCaptureXp(
+    getCapturedPokemonHp(guildId, pokemonCatched.id),
+    rarity,
+    isShiny,
+    targetZone === METEORITE_ZONE_ID && isMeteoriteEventActive(),
+  );
 
   let remainingBalance = 0;
   let newLevel = playerSnapshot.level ?? 1;

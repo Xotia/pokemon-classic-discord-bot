@@ -5881,7 +5881,7 @@
     },
     "generation": 3,
     "zones": [
-      "sunny-cove"
+      "arid-dunes"
     ]
   },
   {
@@ -6032,6 +6032,7 @@
       "underwater-cave",
       "magma-cave",
       "celestial-tower",
+      "paradise-island",
       "meteorite-crater"
     ]
   },
@@ -6091,6 +6092,7 @@
       "underwater-cave",
       "magma-cave",
       "celestial-tower",
+      "paradise-island",
       "meteorite-crater"
     ]
   },
