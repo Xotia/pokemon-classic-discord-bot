@@ -3,12 +3,8 @@ const path = require("path");
 require("dotenv").config();
 
 const dataDir = path.resolve(__dirname, "..", "data");
+// Toujours régénéré : un fichier existant serait périmé dès qu'un pokemon-genX.json change.
 const output = path.join(dataDir, "pokemon-list.json");
-
-if (fs.existsSync(output)) {
-  console.log(`[generate-pokemon-list] pokemon-list.json existe déjà, génération ignorée.`);
-  process.exit(0);
-}
 
 const defaultFiles = ["pokemon-gen1.json", "pokemon-gen2.json", "pokemon-gen3.json"];
 const extraFiles = process.env.EXTRA_POKEMON_FILES

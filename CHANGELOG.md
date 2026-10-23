@@ -3,6 +3,21 @@
 Tous les changements notables du **Pokémon Classic Discord Bot** sont documentés ici.  
 Format basé sur [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+# [3.9.1] - 2026-10-23
+
+## Corrections
+
+### `pokemon-list.json` régénéré à chaque build
+- `scripts/generate-pokemon-list.js` sautait la génération dès que `data/pokemon-list.json` existait : après la première génération, le fichier n'était plus jamais mis à jour, et une modification des `pokemon-genX.json` (zones, raretés, stats) n'y était pas reportée.
+- La garde est retirée : `npm run build` (et `npm run generate-pokemon-list`) réécrit toujours le fichier à partir des sources.
+- Sans effet sur le bot en jeu : il lit déjà les `pokemon-genX.json` directement via `getPokemonCatalog()`. Seuls les outils qui lisent `POKEMON_DB` (par exemple `test-raid-pokemon.ts`) voyaient des données périmées.
+
+## Modifications
+- Numéro de version : 3.9.0 → 3.9.1.
+- Aucune commande à redéployer.
+
+---
+
 # [3.9.0] - 2026-10-23
 
 ## Ajouts

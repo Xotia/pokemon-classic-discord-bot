@@ -1,3 +1,17 @@
+# Mise à jour 3.9.1 — Petite maintenance
+
+---
+
+## Des données toujours à jour
+
+Le fichier qui regroupe toutes les fiches des Pokémon est maintenant reconstruit à chaque mise à jour du bot. Quand un Pokémon change de zone, de rareté ou de stats, l'information suit sans intervention manuelle.
+
+Rien ne change de votre côté : vos captures, votre XP et vos données de recherche ne bougent pas.
+
+---
+
+---
+
 # Mise à jour 3.9.0 — La rareté paie
 
 ---
