@@ -3,6 +3,18 @@
 Tous les changements notables du **Pokémon Classic Discord Bot** sont documentés ici.  
 Format basé sur [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+# [3.9.2] - 2026-10-23
+
+## Modifications
+
+### Simulateur de captures : classement complet
+- `simulateCapture.ts` n'affiche plus un top 20 mais le classement de tous les Pokémon capturés pendant la simulation, avec leur nombre dans le titre. La largeur du rang s'adapte au nombre de lignes.
+- Outil de développement uniquement : aucun effet sur le bot en jeu.
+- Numéro de version : 3.9.1 → 3.9.2.
+- Aucune commande à redéployer.
+
+---
+
 # [3.9.1] - 2026-10-23
 
 ## Corrections

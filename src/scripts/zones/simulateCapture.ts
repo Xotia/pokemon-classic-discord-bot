@@ -212,10 +212,11 @@ async function main() {
   console.log(`   - shiny              : ${String(overall.shiny).padStart(6)} (${formatPercent(overall.shiny, overall.captures)}) — attendu ~${formatPercent(1, shinyRate)}`);
   console.log(`   - pity déclenché     : ${String(overall.pityTriggers).padStart(6)} (${formatPercent(overall.pityTriggers, overall.captures)})`);
 
-  const topPokemons = [...pokemonCounts.entries()].sort(([, a], [, b]) => b - a).slice(0, 20);
-  console.log('\n🏆 TOP 20 POKÉMON CAPTURÉS :');
-  topPokemons.forEach(([name, count], i) => {
-    console.log(`   ${String(i + 1).padStart(2)}. ${name.padEnd(20)} → ${count} (${formatPercent(count, overall.captures)})`);
+  const ranking = [...pokemonCounts.entries()].sort(([, a], [, b]) => b - a);
+  const rankWidth = String(ranking.length).length;
+  console.log(`\n🏆 CLASSEMENT DES POKÉMON CAPTURÉS (${ranking.length}) :`);
+  ranking.forEach(([name, count], i) => {
+    console.log(`   ${String(i + 1).padStart(rankWidth)}. ${name.padEnd(20)} → ${count} (${formatPercent(count, overall.captures)})`);
   });
 
   const outDir = path.resolve(__dirname, '..', '..', '..', 'data', 'simulations');

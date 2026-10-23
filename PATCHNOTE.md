@@ -1,3 +1,17 @@
+# Mise à jour 3.9.2 — En coulisses
+
+---
+
+## Un meilleur outil pour équilibrer les zones
+
+L'outil qui simule des milliers de captures pour régler les zones affiche maintenant le classement complet des Pokémon rencontrés, et plus seulement les plus fréquents. Les Pokémon les plus rares d'une zone sont désormais visibles dans les simulations, ce qui aide à régler leurs chances d'apparition.
+
+Rien ne change en jeu pour cette version.
+
+---
+
+---
+
 # Mise à jour 3.9.1 — Petite maintenance
 
 ---
