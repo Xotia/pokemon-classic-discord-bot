@@ -1,17 +1,16 @@
 import { getRarityXpMultiplier } from "../../config/rarityXp";
-import { METEORITE_XP_MULTIPLIER } from "../../features/meteoriteEvent/meteoriteEventConfig";
 
 const SHINY_XP_MULTIPLIER = 10;
 
-// XP d'une capture : PV de base × rareté × shiny × bonus météorite.
+// XP d'une capture : PV de base × rareté × shiny × multiplicateur de la zone d'évènement (1 hors évènement).
 export function computeCaptureXp(
   baseHp: number,
   rarity: string,
   isShiny: boolean,
-  hasMeteoriteBonus: boolean,
+  eventXpMultiplier: number,
 ): number {
   let gainedXp = Math.round(baseHp * getRarityXpMultiplier(rarity));
   if (isShiny) gainedXp *= SHINY_XP_MULTIPLIER;
-  if (hasMeteoriteBonus) gainedXp *= METEORITE_XP_MULTIPLIER;
+  gainedXp *= eventXpMultiplier;
   return gainedXp;
 }

@@ -20,7 +20,7 @@ import { getPokemonInfoCommand } from "./commands/getPokemonInfoCommand";
 import { startRaidScheduler } from './features/raid/raidScheduler';
 import { startMeteoriteEventScheduler } from './features/meteoriteEvent/meteoriteEventScheduler';
 import { startWorldBossScheduler } from './features/worldBoss/worldBossScheduler';
-import { isMeteoriteEventActive, METEORITE_ZONE_ID, METEORITE_ZONE_LABEL } from './features/meteoriteEvent/meteoriteEventConfig';
+import { listActiveEventZones } from './features/events/eventZones';
 
 import { raidCommand } from "./commands/raidCommand";
 import { worldBossCommand } from "./commands/worldBossCommand";
@@ -258,8 +258,10 @@ async function handleInteraction(interaction: Interaction) {
           ? unlockedZones[generation as keyof typeof unlockedZones]
           : Object.values(unlockedZones).flat();
 
-        if (!isGenerationFiltered && isMeteoriteEventActive()) {
-          pool.push({ id: METEORITE_ZONE_ID, label: METEORITE_ZONE_LABEL });
+        if (!isGenerationFiltered) {
+          for (const eventZone of listActiveEventZones()) {
+            pool.push({ id: eventZone.zoneId, label: eventZone.label });
+          }
         }
 
         const suggestions = pool

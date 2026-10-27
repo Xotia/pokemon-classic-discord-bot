@@ -1,12 +1,7 @@
 import { Zone } from "../../types/zones";
 import { loadUnlockedZones } from "../../utils/loadUnlockedZones";
 import { getAllZones } from "./getAllZones";
-import {
-  METEORITE_ZONE_ID,
-  METEORITE_ZONE_LABEL,
-  isMeteoriteEventActive,
-  matchesMeteoriteZone,
-} from "../../features/meteoriteEvent/meteoriteEventConfig";
+import { findActiveEventZone } from "../../features/events/eventZones";
 
 export type ResolvedZone =
   | { status: "ok"; zone: Zone }
@@ -29,10 +24,11 @@ export function resolveRequestedZone(guildId: string, rawInput: string): Resolve
   const input = rawInput.trim().toLowerCase();
   if (!input) return { status: "unknown" };
 
-  if (matchesMeteoriteZone(input) && isMeteoriteEventActive()) {
+  const eventZone = findActiveEventZone(input);
+  if (eventZone) {
     return {
       status: "ok",
-      zone: { id: METEORITE_ZONE_ID, label: METEORITE_ZONE_LABEL },
+      zone: { id: eventZone.zoneId, label: eventZone.label },
     };
   }
 

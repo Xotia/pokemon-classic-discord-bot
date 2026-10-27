@@ -1,11 +1,7 @@
 import { Player } from "../../types/Player";
 import { Zone } from "../../types/zones";
 import { loadUnlockedZones } from "../../utils/loadUnlockedZones";
-import {
-  METEORITE_ZONE_ID,
-  METEORITE_ZONE_LABEL,
-  isMeteoriteEventActive,
-} from "../../features/meteoriteEvent/meteoriteEventConfig";
+import { listActiveEventZones } from "../../features/events/eventZones";
 import { ZoneCompletion, computeZoneCompletion } from "./computeZoneCompletion";
 
 export interface ZoneCompletionEntry {
@@ -51,12 +47,14 @@ export function computeAllZonesCompletion(
     }))
     .filter((group) => group.zones.length > 0);
 
-  if (isMeteoriteEventActive()) {
-    const zone: Zone = { id: METEORITE_ZONE_ID, label: METEORITE_ZONE_LABEL };
+  const eventEntries: ZoneCompletionEntry[] = [];
+  for (const eventZone of listActiveEventZones()) {
+    const zone: Zone = { id: eventZone.zoneId, label: eventZone.label };
     const completion = computeZoneCompletion(guildId, player, zone.id);
-    if (completion.total > 0) {
-      groups.push({ generation: "event", zones: [{ zone, completion }] });
-    }
+    if (completion.total > 0) eventEntries.push({ zone, completion });
+  }
+  if (eventEntries.length > 0) {
+    groups.push({ generation: "event", zones: eventEntries });
   }
 
   return groups;

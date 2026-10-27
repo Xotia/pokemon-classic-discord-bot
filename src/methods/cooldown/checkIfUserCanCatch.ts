@@ -3,7 +3,7 @@ import { displayCannotCatchMessage } from '../message/displayCannotCatchMessage'
 import { updatePlayer } from '../../utils/jsonPlayers';
 import { getLoggerForGuild } from '../../utils/logger';
 import { getCooldownMs } from '../../config/guildSettings';
-import { isMeteoriteEventActive, METEORITE_ZONE_ID } from '../../features/meteoriteEvent/meteoriteEventConfig';
+import { getEventCooldownFactor } from '../../features/events/eventZones';
 
 export const NO_POKEMON_COOLDOWN_MS = 10 * 60 * 1000; // Cooldown réduit quand aucun Pokémon n'est trouvé
 
@@ -15,8 +15,7 @@ export async function checkIfUserCanCatch(
   const userId = interaction.user.id;
   const now = Date.now();
   const cooldownMs = getCooldownMs(guildId);
-  const effectiveCooldownMs =
-    zone === METEORITE_ZONE_ID && isMeteoriteEventActive() ? cooldownMs / 2 : cooldownMs;
+  const effectiveCooldownMs = cooldownMs * getEventCooldownFactor(zone);
 
   const players = await import('../../utils/jsonPlayers.js').then(m => m.readPlayers(guildId));
   const lastCapture = players[userId]?.lastCapture;

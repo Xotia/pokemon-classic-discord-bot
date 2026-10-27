@@ -14,12 +14,7 @@ import { getResearchCost, TargetableRarity } from "../../config/researchCost";
 import { InsufficientResearchDataError } from "./InsufficientResearchDataError";
 import { getLoggerForGuild } from "../../utils/logger";
 import { Player } from "../../types/Player";
-import {
-  isMeteoriteEventActive,
-  matchesMeteoriteZone,
-  METEORITE_ZONE_ID,
-  METEORITE_GENERATION_TOKEN,
-} from "../../features/meteoriteEvent/meteoriteEventConfig";
+import { findEventZone, getEventXpMultiplier } from "../../features/events/eventZones";
 
 export async function handleTargetedCapture(
   interaction: any,
@@ -27,17 +22,17 @@ export async function handleTargetedCapture(
   zone: string,
   rarity: TargetableRarity,
 ): Promise<void> {
-  // La zone météorite n'appartient à aucune génération et n'est pas dans les
+  // Une zone d'évènement n'appartient à aucune génération et n'est pas dans les
   // zones débloquées : elle est résolue à part, uniquement pendant l'évènement.
-  const isMeteoriteTarget = matchesMeteoriteZone(zone);
-  if (isMeteoriteTarget && !isMeteoriteEventActive()) {
+  const eventZone = findEventZone(zone);
+  if (eventZone && !eventZone.isActive()) {
     await interaction.editReply("❌ Cette zone n'est plus accessible.");
     return;
   }
 
-  const targetZone = isMeteoriteTarget ? METEORITE_ZONE_ID : zone;
-  const generation = isMeteoriteTarget
-    ? METEORITE_GENERATION_TOKEN
+  const targetZone = eventZone ? eventZone.zoneId : zone;
+  const generation = eventZone
+    ? eventZone.generationToken
     : getGenerationByZone(guildId, targetZone);
   if (!generation) {
     await interaction.editReply("Cette zone n'est pas débloquée ou n'existe pas.");
@@ -73,12 +68,12 @@ export async function handleTargetedCapture(
   const canCatch = await checkIfUserCanCatch(interaction, guildId, targetZone);
   if (!canCatch) return;
 
-  const isShiny = isThePokemonGonnaBeShiny(guildId);
+  const isShiny = isThePokemonGonnaBeShiny(guildId, targetZone);
   const gainedXp = computeCaptureXp(
     getCapturedPokemonHp(guildId, pokemonCatched.id),
     rarity,
     isShiny,
-    targetZone === METEORITE_ZONE_ID && isMeteoriteEventActive(),
+    getEventXpMultiplier(targetZone),
   );
 
   let remainingBalance = 0;

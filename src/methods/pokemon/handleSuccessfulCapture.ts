@@ -8,10 +8,7 @@ import { isThePokemonGonnaBeShiny } from "./isThePokemonGonnaBeShiny";
 import { addXp } from "../xp/xp";
 import { computeCaptureXp } from "../xp/computeCaptureXp";
 import { getCapturedPokemonHp } from "./getCapturedPokemonHp";
-import {
-  isMeteoriteEventActive,
-  METEORITE_ZONE_ID,
-} from "../../features/meteoriteEvent/meteoriteEventConfig";
+import { getEventXpMultiplier } from "../../features/events/eventZones";
 
 export async function handleSuccessfulCapture(
   interaction: any,
@@ -22,7 +19,7 @@ export async function handleSuccessfulCapture(
   zone: string,
   dailyBoostDay?: string,
 ) {
-  const isShiny = isThePokemonGonnaBeShiny(guildId);
+  const isShiny = isThePokemonGonnaBeShiny(guildId, zone);
   const trainerName = player.name;
 
   const currentXp = typeof player.xp === "number" ? player.xp : 0;
@@ -32,7 +29,7 @@ export async function handleSuccessfulCapture(
     getCapturedPokemonHp(guildId, pokemonCatched.id),
     rarity,
     isShiny,
-    zone === METEORITE_ZONE_ID && isMeteoriteEventActive(),
+    getEventXpMultiplier(zone),
   );
   const xpResult = addXp(currentXp, gainedXp);
   const leveledUp = xpResult.level > previousLevel;
