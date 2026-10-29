@@ -15,11 +15,20 @@ const PATCHNOTE = fs
 describe("parsePatchnoteEntries", () => {
   it("lit les entrées dans l'ordre du fichier, la plus récente en tête", () => {
     const entries = parsePatchnoteEntries(PATCHNOTE);
-    const rank = (v: string) => v.split(".").map(Number);
+    // Comparaison numérique segment par segment : comparés en texte, « 3.10.0 »
+    // passerait avant « 3.9.2 ».
+    const compareVersions = (a: string, b: string) => {
+      const [pa, pb] = [a, b].map((v) => v.split(".").map(Number));
+      for (let i = 0; i < Math.max(pa.length, pb.length); i++) {
+        const diff = (pa[i] ?? 0) - (pb[i] ?? 0);
+        if (diff !== 0) return diff;
+      }
+      return 0;
+    };
 
     expect(entries.length).toBeGreaterThan(1);
     // Aucun numéro en dur : le test survit à la release suivante.
-    expect(rank(entries[0].version) > rank(entries[1].version)).toBe(true);
+    expect(compareVersions(entries[0].version, entries[1].version)).toBeGreaterThan(0);
   });
 });
 

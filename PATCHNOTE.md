@@ -1,3 +1,64 @@
+# Mise à jour 3.10.0 — La nuit du Manoir
+
+---
+
+## Le Manoir hanté ouvre ses portes, une seule nuit
+
+Le **31 octobre**, de minuit à 23h59, une nouvelle zone apparaît : le **Manoir hanté**. Le lendemain, elle aura disparu.
+
+Pour y entrer : **`/capture zone:Manoir hanté`**.
+
+Dans le Manoir, et seulement là :
+
+```
+Cooldown de capture     divisé par deux
+XP gagnée               ×2
+Chances de chromatique  ×3
+```
+
+Des Pokémon spectres et ténèbres y rôdent, mais pas seulement : des Pokémon venus d'autres régions s'y sont glissés, et vous ne les croiserez nulle part ailleurs ce jour-là. Un légendaire hanterait même les couloirs.
+
+Certains Pokémon ont aussi revêtu leur costume d'Halloween pour la journée. Ouvrez l'œil.
+
+---
+
+## Des citrouilles à ramasser
+
+Chaque capture dans le Manoir a une chance de vous faire trouver une **citrouille** 🎃. Retrouvez-les avec **`/inventaire`**.
+
+---
+
+## Le concours de capture
+
+Toute la journée, chaque capture dans le Manoir rapporte des points, d'autant plus que le Pokémon est rare. Chaque citrouille rapporte **3 points** de plus.
+
+Suivez votre score et le classement de votre serveur avec **`/concours`**. À la fin de la nuit, le meilleur dresseur de chaque serveur gagne une **capture ciblée mythique** dans la zone de son choix. En cas d'égalité, tous les premiers gagnent.
+
+Les captures ciblées ne comptent pas pour le concours.
+
+---
+
+## Un World Boss d'un soir
+
+Le 31 octobre, de **12h à 20h**, un World Boss spécial sortira du Manoir. Il ne reviendra pas le dimanche suivant. Inscrivez-vous avec **`/world-boss`**.
+
+---
+
+## Capture ciblée : uniquement les nouveaux
+
+**`/capture-cible`** a une nouvelle option, **`deja_capture`**. Mettez-la à `false` pour ne viser qu'un Pokémon que vous n'avez jamais capturé. Si vous les avez déjà tous dans cette rareté et cette zone, la capture est annulée et vos données de recherche ne sont pas dépensées.
+
+---
+
+## Corrections
+
+- Les sprites de Florizarre, Tortank, Gorythmic et Pyrobut Gigamax s'affichent de nouveau dans les annonces de World Boss.
+- Registeel a déménagé.
+
+---
+
+---
+
 # Mise à jour 3.9.2 — En coulisses
 
 ---

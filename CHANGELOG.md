@@ -3,6 +3,41 @@
 Tous les changements notables du **Pokémon Classic Discord Bot** sont documentés ici.  
 Format basé sur [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+# [3.10.0] - 2026-10-29
+
+## Ajouts
+
+### Registre des zones d'évènement
+- `src/features/events/eventZones.ts` décrit chaque zone d'évènement (fenêtre d'activité, facteur de cooldown, multiplicateur d'XP, facteur de chromatique). Capture, capture ciblée, résolution de zone, progression et autocomplétion le consultent au lieu de conditions propres à la Météorite, dont le comportement est inchangé.
+- `isThePokemonGonnaBeShiny` prend la zone en paramètre ; `computeCaptureXp` prend un multiplicateur au lieu d'un booléen.
+
+### Évènement Halloween (31 octobre 2026, heure de Paris)
+- Zone `haunted-manor` (Manoir hanté), ouverte de 00h00 à 23h59 : cooldown divisé par deux, XP doublée, chance de chromatique triplée, dans la zone uniquement. `HALLOWEEN_EVENT_DEBUG=1` force l'activation en dev.
+- 50 Pokémon dans le manoir : 29 des générations 1 à 3 (zone ajoutée, rareté inchangée) et 21 Pokémon d'évènement des générations 4 à 8, dont Darkrai (légendaire de la zone) et les cinq formes de Motisma (ids custom 4106 à 4110). Les gen 4+ sont dans des fichiers `pokemon-gen4.json` à `pokemon-gen8.json` partiels, avec leur id national, et ne sont capturables que dans le manoir. Ils comptent dans le total du Pokédex.
+- Script `npm run generate-event-pokemon` : génère ces fichiers depuis PokéAPI, rareté fixée à la main.
+- Annonces par serveur : avertissement le 30 octobre à 18h, ouverture le 31 à minuit, fin à 23h59 avec les gagnants du concours. Chaque étape n'est marquée faite qu'en cas de succès (`data/guilds/<id>/halloween_event.json`).
+- Sprites d'Halloween : `data/halloween-sprites.json` remplace le sprite de 14 Pokémon dans les embeds de capture pendant l'évènement, dans toutes les zones.
+- Citrouilles : 15 % de chances d'en trouver une à chaque `/capture` réussie dans le manoir. Elles vont dans un inventaire d'objets générique (`Player.items`).
+- Concours de capture, un gagnant par serveur (ex aequo possibles) : chaque capture normale dans le manoir rapporte des points selon sa rareté (barème dans `src/config/halloweenContest.ts`), chaque citrouille 3 points. Les captures ciblées et les cadeaux admin ne comptent pas. Les faits sont enregistrés sur le joueur dans la même écriture que la capture ; le score est calculé à la lecture.
+- World Boss Darkrai le 31 octobre de 12h à 20h, ouvert et résolu par un scheduler global unique (`data/halloween_world_boss.json`). Marqué `eventOnly` dans le catalogue : exclu du tirage hebdomadaire et du décompte du vivier, mais forçable par un admin. `generateWorldBossState` accepte une fin d'inscription imposée.
+
+### Nouvelles commandes et options
+- `/concours` : score, rang (avec ex aequo) et top 10 du serveur, avant, pendant et après l'évènement.
+- `/inventaire` : objets possédés.
+- `/capture-cible-admin joueur zone rarity [deja_capture]` (réservée à `ADMIN_ID`) : capture offerte au joueur choisi, sans débit ni crédit de données de recherche et sans toucher à son cooldown.
+- Option `deja_capture` sur `/capture-cible` : à `false`, le tirage se limite aux Pokémon jamais capturés. Sans candidat, la commande est annulée avant tout débit, avec un message qui distingue une rareté absente de la zone et une rareté déjà entièrement capturée.
+
+## Corrections
+- Sprites des World Boss Florizarre, Tortank, Gorythmic et Pyrobut Gigamax : pkparaiso.com ne répond plus, ils pointent désormais vers les GIF animés de PokeAPI/sprites.
+- Registeel change de zone.
+- L'autocomplétion de `/pokemon-info` ne propose plus de doublon quand un nom est à la fois un Pokémon et un World Boss.
+
+## Modifications
+- Numéro de version : 3.9.2 → 3.10.0.
+- **Commandes à redéployer** (`npm run deploy`) : `/concours`, `/inventaire`, `/capture-cible-admin` et l'option `deja_capture` de `/capture-cible`.
+
+---
+
 # [3.9.2] - 2026-10-23
 
 ## Modifications
