@@ -4,7 +4,7 @@
       "id": "wb-001-venusaur-gmax",
       "name": "Florizarre Gigamax",
       "portal": "Serre Éventrée de Jadielle",
-      "sprite": "https://www.pkparaiso.com/imagenes/espada_escudo/sprites/animados/venusaur-gigantamax.gif",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/10195.gif",
       "types": [
         "grass",
         "poison"
@@ -67,7 +67,7 @@
       "id": "wb-003-blastoise-gmax",
       "name": "Tortank Gigamax",
       "portal": "Écluse Crevée de Carmin",
-      "sprite": "https://www.pkparaiso.com/imagenes/espada_escudo/sprites/animados/blastoise-gigantamax.gif",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/10197.gif",
       "types": [
         "water"
       ],
@@ -396,7 +396,7 @@
       "id": "wb-015-rillaboom-gmax",
       "name": "Gorythmic Gigamax",
       "portal": "Clairière Battante de Jade",
-      "sprite": "https://www.pkparaiso.com/imagenes/espada_escudo/sprites/animados/rillaboom-gigantamax.gif",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/10209.gif",
       "types": [
         "grass"
       ],
@@ -426,7 +426,7 @@
       "id": "wb-016-cinderace-gmax",
       "name": "Pyrobut Gigamax",
       "portal": "Stade Calciné de la Route 8",
-      "sprite": "https://www.pkparaiso.com/imagenes/espada_escudo/sprites/animados/cinderace-gigantamax.gif",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/10210.gif",
       "types": [
         "fire"
       ],
