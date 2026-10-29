@@ -1,5 +1,6 @@
 import { isPokemonInPokedex } from "../pokedex/isPokemonInPokedex";
 import { getPokemonSpriteUrl } from "../pokemon/getPokemonSpriteUrl";
+import { getEventSprite } from "../../features/halloweenEvent/halloweenSprites";
 import { buildTitleForRandomCaptureEmbed } from "./buildTitleForRandomCaptureEmbed";
 import { buildDescriptionForPokemonCaptureEmbed } from "./buildDescriptionForRandomCaptureEmbed";
 import { defineRarityColor } from "../rarity/defineRarityColor";
@@ -13,7 +14,7 @@ export function buildCaptureEmbedPayload(
   pokemonCatched: any,
   isShiny: boolean,
 ) {
-  const spriteUrl = getPokemonSpriteUrl(isShiny, pokemonCatched);
+  const spriteUrl = getEventSprite(pokemonCatched, isShiny) ?? getPokemonSpriteUrl(isShiny, pokemonCatched);
   const isInPokedex = isPokemonInPokedex(
     guildId,
     player,

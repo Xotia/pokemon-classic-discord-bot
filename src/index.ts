@@ -20,6 +20,7 @@ import { getPokemonInfoCommand } from "./commands/getPokemonInfoCommand";
 
 import { startRaidScheduler } from './features/raid/raidScheduler';
 import { startMeteoriteEventScheduler } from './features/meteoriteEvent/meteoriteEventScheduler';
+import { startHalloweenEventScheduler } from './features/halloweenEvent/halloweenEventScheduler';
 import { startWorldBossScheduler } from './features/worldBoss/worldBossScheduler';
 import { listActiveEventZones } from './features/events/eventZones';
 
@@ -51,6 +52,7 @@ const client = new Client({
 
 startRaidScheduler(client);
 startMeteoriteEventScheduler(client);
+startHalloweenEventScheduler(client);
 startWorldBossScheduler(client);
 
 client.on(Events.Error, (error) => {

@@ -50,3 +50,8 @@ export function othermonsDb(guildId: string): string {
 export function meteoriteEventStateDb(guildId: string): string {
   return path.join(guildDir(guildId), 'meteorite_event.json');
 }
+export function halloweenEventStateDb(guildId: string): string {
+  return path.join(guildDir(guildId), 'halloween_event.json');
+}
+
+export const HALLOWEEN_SPRITES_DB = path.join(DATA_DIR, 'halloween-sprites.json');
