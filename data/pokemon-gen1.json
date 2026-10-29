@@ -1927,7 +1927,8 @@
     "zones": [
       "towering-mountain",
       "grim-cave",
-      "haunted-tower"
+      "haunted-tower",
+      "haunted-manor"
     ],
     "generation": 1
   },
@@ -1977,7 +1978,8 @@
       "speed": 90
     },
     "zones": [
-      "grim-cave"
+      "grim-cave",
+      "haunted-manor"
     ],
     "generation": 1
   },

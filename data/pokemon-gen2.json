@@ -830,7 +830,8 @@
     },
     "zones": [
       "gloomy-cavern",
-      "rocky-trail"
+      "rocky-trail",
+      "haunted-manor"
     ],
     "generation": 2
   },

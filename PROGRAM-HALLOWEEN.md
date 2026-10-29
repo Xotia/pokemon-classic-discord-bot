@@ -232,9 +232,9 @@ Si le temps manque, on coupe dans cet ordre : World Boss (étape 6), sprites,
 
 ## Annexe : Pokémon proposés (D2)
 
-- Gen 1 : Pikachu, Raichu, Rattatac, Fantominus, Spectrum, Ectoplasma, Mélofée, Osselait, Ossatueur,
+- Gen 1 : Pikachu, Raichu, Rattatac, Nosferapti, Nosferalto, Fantominus, Spectrum, Ectoplasma, Mélofée, Osselait, Ossatueur,
   Hypnomade, M. Mime, Noeunoeuf.
-- Gen 2 : Pichu, Feuforêve, Zarbi, Noctali, Cornèbre, Malosse, Démolosse, Teddiursa, Togepi, Mimigal,
+- Gen 2 : Pichu, Nostenfer, Feuforêve, Zarbi, Noctali, Cornèbre, Malosse, Démolosse, Teddiursa, Togepi, Mimigal,
   Migalos.
 - Gen 3 : Polichombr, Branette, Skelénox, Téraclope, Ténéfix, Absol.
 - Gen 4+ : Spiritomb, Magirêve, Noctunoir, Momartik, Motisma, Corboss,

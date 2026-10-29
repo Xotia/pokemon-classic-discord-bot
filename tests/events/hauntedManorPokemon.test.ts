@@ -26,13 +26,13 @@ const gen4Plus = () => catalog().filter((p) => p.generation >= 4);
 afterEach(() => vi.restoreAllMocks());
 
 describe("Pokémon du Manoir hanté", () => {
-  it("la zone contient les 29 Pokémon gen1-3 et les 21 Pokémon gen4+ (formes comprises)", () => {
+  it("la zone contient les 32 Pokémon gen1-3 et les 21 Pokémon gen4+ (formes comprises)", () => {
     const ids = getZonePokemonIds(GUILD, HALLOWEEN_ZONE_ID);
     const byGen = (gen: number) => [...ids].filter((id) => catalog().find((p) => p.id === id)!.generation === gen);
 
-    expect(ids.size).toBe(50);
-    expect(byGen(1)).toHaveLength(12);
-    expect(byGen(2)).toHaveLength(11);
+    expect(ids.size).toBe(53);
+    expect(byGen(1)).toHaveLength(14);
+    expect(byGen(2)).toHaveLength(12);
     expect(byGen(3)).toHaveLength(6);
     expect([...ids].filter((id) => EVENT_ONLY_IDS.includes(id))).toHaveLength(21);
   });
