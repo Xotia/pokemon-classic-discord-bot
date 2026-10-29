@@ -15,6 +15,8 @@ export async function helpCommand(interaction: any) {
             { name: '/pokedex', value: 'Affiche la liste des pokemons capturés avec /capture.' },
             { name: '/zone-progression', value: 'Affiche ta progression sur toutes les zones, ou sur une zone donnée.' },
             { name: '/leaderboard', value: 'Affiche le classement des joueurs' },
+            { name: '/concours', value: 'Affiche ton score, ton rang et le top 10 du concours de capture d\'Halloween (Manoir hanté).' },
+            { name: '/inventaire', value: 'Affiche les objets que tu possèdes (citrouilles...).' },
             { name: '/cheat', value: 'Commande de triche à utiliser à vos risques et périls.' },
             { name: '/get-shiny-rate', value: 'Affiche le taux d\'apparition des pokemon shinys.' },
             { name: '/pity', value: 'Affiche l\'état du compteur de pity et du boost quotidien.' },

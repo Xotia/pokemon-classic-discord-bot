@@ -19,7 +19,7 @@ vi.mock("../src/features/raid/raidScheduler", () => ({
 vi.mock("../src/features/halloweenEvent/buildHalloweenLoreEmbeds", () => ({
   buildHalloweenWarningEmbed: () => ({ kind: "warning" }),
   buildHalloweenStartEmbed: () => ({ kind: "start" }),
-  buildHalloweenEndEmbed: () => ({ kind: "end" }),
+  buildHalloweenEndEmbed: (results?: unknown) => ({ kind: "end", results }),
 }));
 
 vi.mock("../src/utils/logger", () => {
@@ -29,6 +29,9 @@ vi.mock("../src/utils/logger", () => {
     getLoggerForGuild: () => ({ info: noop, error: noop }),
   };
 });
+
+let players: any = {};
+vi.mock("../src/utils/jsonPlayers", () => ({ readPlayers: async () => players }));
 
 import { runHalloweenEventTick } from "../src/features/halloweenEvent/halloweenEventScheduler";
 
@@ -50,6 +53,7 @@ beforeEach(() => {
   delete process.env.HALLOWEEN_EVENT_DEBUG;
   sendRaidAnnouncement.mockReset().mockResolvedValue(undefined);
   currentState = { warningAnnounced: false, zoneOpenedAnnounced: false, endAnnounced: false };
+  players = {};
 });
 
 describe("scheduler Halloween", () => {
@@ -81,6 +85,17 @@ describe("scheduler Halloween", () => {
     await runHalloweenEventTick(READY, GUILD, new Date("2026-11-01T10:00:00Z"));
     expect(kinds()).toEqual(["end"]);
     expect(currentState.endAnnounced).toBe(true);
+  });
+
+  it("la fin annonce les gagnants ex aequo du serveur", async () => {
+    currentState = { warningAnnounced: true, zoneOpenedAnnounced: true, endAnnounced: false };
+    const mk = (name: string, common: number) => ({ name, events: { halloween2026: { captures: { common }, pumpkins: 0 } } });
+    players = { a: mk("A", 5), b: mk("B", 5), c: mk("C", 1) };
+    await runHalloweenEventTick(READY, GUILD, AFTER_END);
+    const embed = sendRaidAnnouncement.mock.calls[0][2] as any;
+    expect(embed.results.value).toContain("<@a>");
+    expect(embed.results.value).toContain("<@b>");
+    expect(embed.results.value).toContain("5 points");
   });
 
   it("n'annonce pas la fin si l'ouverture n'a jamais été annoncée", async () => {

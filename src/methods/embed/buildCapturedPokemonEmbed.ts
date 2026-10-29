@@ -6,6 +6,7 @@ import { buildTitleForRandomCaptureEmbed } from "./buildTitleForRandomCaptureEmb
 import { buildDescriptionForPokemonCaptureEmbed } from "./buildDescriptionForRandomCaptureEmbed";
 import { editFooter } from "./editFooter";
 import { buildEmbed } from "./buildEmbed";
+import { PUMPKIN_POINTS } from "../../config/halloweenContest";
 import { BuildCapturedPokemonEmbedParams } from "../../types/Params";
 
 export function buildCapturedPokemonEmbed({
@@ -21,6 +22,7 @@ export function buildCapturedPokemonEmbed({
   isAlreadyInPokedex,
   zone,
   dailyBoost = false,
+  pumpkinFound = false,
 }: BuildCapturedPokemonEmbedParams) {
   const spriteUrl = getEventSprite(pokemon, isShiny) ?? getPokemonSpriteUrl(isShiny, pokemon);
   const isInPokedex = isAlreadyInPokedex ?? isPokemonInPokedex(guildId, player, pokemon.id, playerId);
@@ -61,6 +63,15 @@ export function buildCapturedPokemonEmbed({
     color.color,
     description,
     footer,
+    pumpkinFound
+      ? [
+          {
+            name: "🎃 Citrouille",
+            value: `Tu as trouvé une citrouille ! (+${PUMPKIN_POINTS} points)`,
+            inline: false,
+          },
+        ]
+      : [],
   );
 
   return {

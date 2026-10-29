@@ -5,8 +5,8 @@ export interface HalloweenEventState {
   warningAnnounced: boolean;
   zoneOpenedAnnounced: boolean;
   endAnnounced: boolean;
-  // Les données du concours (étape 5) s'ajouteront ici sous forme de champ
-  // optionnel : les fichiers déjà écrits restent lisibles.
+  // Les données du concours ne sont PAS ici : le scheduler réécrit ce fichier à chaque
+  // tick, elles vivent sur le Player (updatePlayer) pour éviter les écritures perdues.
 }
 
 function createDefaultState(): HalloweenEventState {

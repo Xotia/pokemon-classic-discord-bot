@@ -29,5 +29,6 @@ export type BuildCapturedPokemonEmbedParams = {
   isAlreadyInPokedex?: boolean;
   zone?: string;
   dailyBoost?: boolean;
+  pumpkinFound?: boolean;
 };
 

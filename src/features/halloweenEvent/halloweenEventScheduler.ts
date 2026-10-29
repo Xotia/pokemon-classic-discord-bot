@@ -15,6 +15,8 @@ import {
   buildHalloweenEndEmbed,
 } from "./buildHalloweenLoreEmbeds";
 import { getLoggerForGuild } from "../../utils/logger";
+import { readPlayers } from "../../utils/jsonPlayers";
+import { buildContestEndResults, getContestWinners } from "./halloweenContest.service";
 
 interface HalloweenGuild {
   guildId: string;
@@ -70,7 +72,19 @@ export async function runHalloweenEventTick(
   }
 
   if (state.zoneOpenedAnnounced && !state.endAnnounced && now > EVENT_END) {
-    await announce("endAnnounced", "halloween_end_embed_failed", buildHalloweenEndEmbed());
+    const players = await readPlayers(guild.guildId);
+    const winners = getContestWinners(players);
+    logger.info({
+      event: "halloween_contest_winners",
+      guildId: guild.guildId,
+      userIds: winners.map((w) => w.userId),
+      score: winners[0]?.score ?? 0,
+    });
+    await announce(
+      "endAnnounced",
+      "halloween_end_embed_failed",
+      buildHalloweenEndEmbed(buildContestEndResults(players)),
+    );
   }
 }
 

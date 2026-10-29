@@ -14,6 +14,8 @@ import { captureCommand } from "./commands/captureCommand";
 import { captureCibleCommand } from "./commands/captureCibleCommand";
 import { captureCibleAdminCommand } from "./commands/captureCibleAdminCommand";
 import { helpCommand } from "./commands/helpCommand";
+import { concoursCommand } from "./commands/concoursCommand";
+import { inventaireCommand } from "./commands/inventaireCommand";
 import { getPity } from "./commands/getPityCommand";
 import { getRarityCommand } from "./commands/getRarityCommand";
 import { getPokemonInfoCommand } from "./commands/getPokemonInfoCommand";
@@ -368,6 +370,14 @@ async function handleInteraction(interaction: Interaction) {
 
   if (interaction.commandName === "raid") {
     return await raidCommand(interaction);
+  }
+
+  if (interaction.commandName === "concours") {
+    return await concoursCommand(interaction);
+  }
+
+  if (interaction.commandName === "inventaire") {
+    return await inventaireCommand(interaction);
   }
 
   if (interaction.commandName === "help") {

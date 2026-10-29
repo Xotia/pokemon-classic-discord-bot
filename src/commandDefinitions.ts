@@ -254,6 +254,14 @@ export const commands = [
     .setDescription("Affiche les infos du raid et la composition actuel de l'équipe de défense.")
     .toJSON(),
   new SlashCommandBuilder()
+    .setName("concours")
+    .setDescription("Affiche ton score et le classement du concours de capture d'Halloween.")
+    .toJSON(),
+  new SlashCommandBuilder()
+    .setName("inventaire")
+    .setDescription("Affiche les objets que tu possèdes.")
+    .toJSON(),
+  new SlashCommandBuilder()
     .setName("get-pokemon-info")
     .setDescription("Affiche les informations détaillées d'un Pokémon ou d'un Gigamax.")
     .addStringOption((option) =>

@@ -9,6 +9,11 @@ import { addXp } from "../xp/xp";
 import { computeCaptureXp } from "../xp/computeCaptureXp";
 import { getCapturedPokemonHp } from "./getCapturedPokemonHp";
 import { getEventXpMultiplier } from "../../features/events/eventZones";
+import {
+  isContestCapture,
+  recordContestCapture,
+  rollPumpkin,
+} from "../../features/halloweenEvent/halloweenContest.service";
 
 export async function handleSuccessfulCapture(
   interaction: any,
@@ -18,6 +23,8 @@ export async function handleSuccessfulCapture(
   rarity: string,
   zone: string,
   dailyBoostDay?: string,
+  random: () => number = Math.random,
+  now: Date = new Date(),
 ) {
   const isShiny = isThePokemonGonnaBeShiny(guildId, zone);
   const trainerName = player.name;
@@ -31,6 +38,10 @@ export async function handleSuccessfulCapture(
     isShiny,
     getEventXpMultiplier(zone),
   );
+  // Concours : seule cette voie (/capture) compte, jamais la capture ciblée ni les cadeaux admin.
+  const countsForContest = isContestCapture(zone, now);
+  const pumpkinFound = countsForContest && rollPumpkin(random);
+
   const xpResult = addXp(currentXp, gainedXp);
   const leveledUp = xpResult.level > previousLevel;
 
@@ -50,6 +61,7 @@ export async function handleSuccessfulCapture(
     newLevel: xpResult.level,
     zone,
     dailyBoost: dailyBoostDay !== undefined,
+    pumpkinFound,
   });
 
   getLoggerForGuild(guildId).info(
@@ -73,5 +85,7 @@ export async function handleSuccessfulCapture(
     // Consommé seulement sur une capture réussie : une zone vide ne brûle pas le boost.
     if (dailyBoostDay) fresh.lastDailyBoostDay = dailyBoostDay;
     registerCapturedPokemon(fresh, pokemonCatched.id, isShiny);
+    // Même écriture verrouillée que la capture : pas de second écrivain, pas de point perdu.
+    if (countsForContest) recordContestCapture(fresh, rarity, pumpkinFound);
   });
 }
