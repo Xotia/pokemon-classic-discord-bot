@@ -124,6 +124,7 @@ import { getDayKey } from "../../src/methods/dailyBoost/dailyBoost";
 const GUILD_ID = "e2e-test-guild";
 const USER_ID = "user-e2e-001";
 const USERNAME = "Ash";
+const PAID = { chargeCost: true, onlyUncaptured: false };
 
 // ─── helpers ─────────────────────────────────────────────────────────────────
 
@@ -131,7 +132,7 @@ function buildInteraction(opts: {
   guildId?: string | null;
   userId?: string;
   username?: string;
-  options?: Record<string, string | number | null>;
+  options?: Record<string, string | number | boolean | null>;
 } = {}): any {
   const {
     guildId = GUILD_ID,
@@ -152,6 +153,7 @@ function buildInteraction(opts: {
     options: {
       getString: (name: string) => (options[name] as string) ?? null,
       getInteger: (name: string) => (options[name] as number) ?? null,
+      getBoolean: (name: string) => (options[name] as unknown as boolean | null) ?? null,
     },
     deferReply: vi.fn().mockResolvedValue(undefined),
     editReply: vi.fn().mockResolvedValue(undefined),
@@ -323,7 +325,7 @@ describe("E2E command flows (isolated guild: e2e-test-guild)", () => {
         options: { zone: "pastoral-route", rarity: "common" },
       });
 
-      await handleTargetedCapture(interaction, GUILD_ID, "pastoral-route", "common");
+      await handleTargetedCapture(interaction, GUILD_ID, "pastoral-route", "common", { userId: USER_ID, name: USERNAME }, PAID);
 
       const players = await readPlayers(GUILD_ID);
       const saved = players[USER_ID];
@@ -337,7 +339,7 @@ describe("E2E command flows (isolated guild: e2e-test-guild)", () => {
       await seedPlayer(USER_ID, { name: USERNAME, researchData: 5000 });
       const interaction = buildInteraction({ options: { zone: "pastoral-route", rarity: "common" } });
 
-      await handleTargetedCapture(interaction, GUILD_ID, "pastoral-route", "common");
+      await handleTargetedCapture(interaction, GUILD_ID, "pastoral-route", "common", { userId: USER_ID, name: USERNAME }, PAID);
 
       expect(checkIfUserCanCatch).toHaveBeenCalledOnce();
     });
@@ -346,7 +348,7 @@ describe("E2E command flows (isolated guild: e2e-test-guild)", () => {
       await seedPlayer(USER_ID, { name: USERNAME, researchData: 5000 });
       const interaction = buildInteraction({ options: { zone: "pastoral-route", rarity: "common" } });
 
-      await handleTargetedCapture(interaction, GUILD_ID, "pastoral-route", "common");
+      await handleTargetedCapture(interaction, GUILD_ID, "pastoral-route", "common", { userId: USER_ID, name: USERNAME }, PAID);
 
       expect(interaction.editReply).toHaveBeenCalledOnce();
       const arg = interaction.editReply.mock.calls[0][0];
@@ -362,7 +364,7 @@ describe("E2E command flows (isolated guild: e2e-test-guild)", () => {
       await seedPlayer(USER_ID, { name: USERNAME, researchData: 1000 });
       const interaction = buildInteraction({ options: { zone: "pastoral-route", rarity: "common" } });
 
-      await handleTargetedCapture(interaction, GUILD_ID, "pastoral-route", "common");
+      await handleTargetedCapture(interaction, GUILD_ID, "pastoral-route", "common", { userId: USER_ID, name: USERNAME }, PAID);
 
       const replyArg: string = interaction.editReply.mock.calls[0][0];
       expect(replyArg).toContain("insuffisantes");
@@ -377,7 +379,7 @@ describe("E2E command flows (isolated guild: e2e-test-guild)", () => {
       await seedPlayer(USER_ID, { name: USERNAME, researchData: 1000 });
       const interaction = buildInteraction({ options: { zone: "pastoral-route", rarity: "common" } });
 
-      await handleTargetedCapture(interaction, GUILD_ID, "pastoral-route", "common");
+      await handleTargetedCapture(interaction, GUILD_ID, "pastoral-route", "common", { userId: USER_ID, name: USERNAME }, PAID);
 
       const players = await readPlayers(GUILD_ID);
       expect(players[USER_ID].researchData).toBe(1000);

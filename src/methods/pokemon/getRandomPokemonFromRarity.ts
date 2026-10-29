@@ -3,12 +3,16 @@ import { Pokemon } from '../../types/Pokemon';
 import { getLoggerForGuild } from '../../utils/logger';
 import { getZonePokemonIds } from '../zones/getZonePokemonIndex';
 
-export function getRandomPokemonFromRarity(
+/**
+ * Pokémon tirables pour une rareté (et une zone si fournie), avant exclusion.
+ * Partagé entre le tirage et le diagnostic « zone vide / tout déjà capturé ».
+ */
+export function getPokemonPool(
   guildId: string,
   rarity: string,
   generation: string,
-  zoneId?: string  // optionnel : si fourni, filtre par zone
-): Pokemon | null {
+  zoneId?: string, // optionnel : si fourni, filtre par zone
+): Pokemon[] {
   const generationNumber = Number(generation.replace('gen', ''));
   const catalog = getPokemonCatalog(guildId);
 
@@ -21,6 +25,22 @@ export function getRandomPokemonFromRarity(
   if (zoneId) {
     const zonePokemonIds = getZonePokemonIds(guildId, zoneId);
     pool = pool.filter((p: Pokemon) => zonePokemonIds.has(p.id));
+  }
+
+  return pool;
+}
+
+export function getRandomPokemonFromRarity(
+  guildId: string,
+  rarity: string,
+  generation: string,
+  zoneId?: string,
+  excludeIds?: ReadonlySet<number>, // ids à écarter du tirage (défaut : aucun)
+): Pokemon | null {
+  let pool = getPokemonPool(guildId, rarity, generation, zoneId);
+
+  if (excludeIds && excludeIds.size > 0) {
+    pool = pool.filter((p) => !excludeIds.has(p.id));
   }
 
   if (pool.length === 0) {

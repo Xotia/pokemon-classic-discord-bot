@@ -12,6 +12,7 @@ import logger from "./utils/logger";
 import { execute } from "./commands/getStatsCommand";
 import { captureCommand } from "./commands/captureCommand";
 import { captureCibleCommand } from "./commands/captureCibleCommand";
+import { captureCibleAdminCommand } from "./commands/captureCibleAdminCommand";
 import { helpCommand } from "./commands/helpCommand";
 import { getPity } from "./commands/getPityCommand";
 import { getRarityCommand } from "./commands/getRarityCommand";
@@ -240,6 +241,7 @@ async function handleInteraction(interaction: Interaction) {
     if (
       interaction.commandName === "capture" ||
       interaction.commandName === "capture-cible" ||
+      interaction.commandName === "capture-cible-admin" ||
       interaction.commandName === "zone-progression"
     ) {
       const focusedOption = interaction.options.getFocused(true);
@@ -352,6 +354,10 @@ async function handleInteraction(interaction: Interaction) {
 
   if (interaction.commandName === "capture-cible") {
     return await captureCibleCommand(interaction);
+  }
+
+  if (interaction.commandName === "capture-cible-admin") {
+    return await captureCibleAdminCommand(interaction);
   }
 
   if (interaction.commandName === "world-boss") {

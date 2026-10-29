@@ -1,4 +1,4 @@
-import { SlashCommandBuilder } from "discord.js";
+import { PermissionFlagsBits, SlashCommandBuilder } from "discord.js";
 import { rarityList } from "./config/rarity";
 import { TARGETABLE_RARITIES } from "./config/researchCost";
 
@@ -148,6 +148,49 @@ export const commands = [
             value: rarity,
           })),
         ),
+    )
+    .addBooleanOption((option) =>
+      option
+        .setName("deja_capture")
+        .setDescription(
+          "false = uniquement un Pokémon que tu n'as jamais capturé (vrai par défaut)",
+        )
+        .setRequired(false),
+    )
+    .toJSON(),
+  new SlashCommandBuilder()
+    .setName("capture-cible-admin")
+    .setDescription("[Admin] Offre une capture ciblée à un joueur, sans toucher à ses données de recherche.")
+    .setDefaultMemberPermissions(PermissionFlagsBits.Administrator)
+    .addUserOption((option) =>
+      option.setName("joueur").setDescription("Joueur qui reçoit la capture").setRequired(true),
+    )
+    .addStringOption((option) =>
+      option
+        .setName("zone")
+        .setDescription("Choisis la zone de capture")
+        .setRequired(true)
+        .setAutocomplete(true),
+    )
+    .addStringOption((option) =>
+      option
+        .setName("rarity")
+        .setDescription("Choisis la rareté du Pokémon à capturer")
+        .setRequired(true)
+        .addChoices(
+          ...TARGETABLE_RARITIES.map((rarity) => ({
+            name: rarityList.find((r) => r.rarity === rarity)!.french,
+            value: rarity,
+          })),
+        ),
+    )
+    .addBooleanOption((option) =>
+      option
+        .setName("deja_capture")
+        .setDescription(
+          "false = uniquement un Pokémon que le joueur n'a jamais capturé (vrai par défaut)",
+        )
+        .setRequired(false),
     )
     .toJSON(),
   new SlashCommandBuilder()
