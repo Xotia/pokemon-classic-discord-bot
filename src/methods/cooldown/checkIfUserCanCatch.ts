@@ -1,6 +1,6 @@
 import { ChatInputCommandInteraction } from 'discord.js';
 import { displayCannotCatchMessage } from '../message/displayCannotCatchMessage';
-import { updatePlayer } from '../../utils/jsonPlayers';
+import { readPlayers, updatePlayer } from '../../utils/jsonPlayers';
 import { getLoggerForGuild } from '../../utils/logger';
 import { getCooldownMs } from '../../config/guildSettings';
 import { getEventCooldownFactor } from '../../features/events/eventZones';
@@ -17,7 +17,7 @@ export async function checkIfUserCanCatch(
   const cooldownMs = getCooldownMs(guildId);
   const effectiveCooldownMs = cooldownMs * getEventCooldownFactor(zone);
 
-  const players = await import('../../utils/jsonPlayers.js').then(m => m.readPlayers(guildId));
+  const players = await readPlayers(guildId);
   const lastCapture = players[userId]?.lastCapture;
 
   if (lastCapture && now - lastCapture < effectiveCooldownMs) {
