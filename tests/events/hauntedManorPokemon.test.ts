@@ -16,7 +16,8 @@ import zonesAll from "../../data/zones_all.json";
 // Serveur sans othermons.json : le catalogue ne contient que les fichiers partagés.
 const GUILD = "haunted-manor-test";
 const EVENT_ONLY_IDS = [
-  442, 429, 430, 477, 478, 479, 607, 608, 609, 710, 711, 778, 854, 855,
+  442, 407, 429, 430, 477, 478, 479, 491, 607, 608, 609, 710, 711, 778, 854, 855,
+  4106, 4107, 4108, 4109, 4110, // formes de Motisma (ids custom)
 ];
 
 const catalog = () => getPokemonCatalog(GUILD);
@@ -25,18 +26,18 @@ const gen4Plus = () => catalog().filter((p) => p.generation >= 4);
 afterEach(() => vi.restoreAllMocks());
 
 describe("Pokémon du Manoir hanté", () => {
-  it("la zone contient les 21 Pokémon gen1-3 et les 14 Pokémon gen4+", () => {
+  it("la zone contient les 29 Pokémon gen1-3 et les 21 Pokémon gen4+ (formes comprises)", () => {
     const ids = getZonePokemonIds(GUILD, HALLOWEEN_ZONE_ID);
     const byGen = (gen: number) => [...ids].filter((id) => catalog().find((p) => p.id === id)!.generation === gen);
 
-    expect(ids.size).toBe(35);
-    expect(byGen(1)).toHaveLength(7);
-    expect(byGen(2)).toHaveLength(8);
+    expect(ids.size).toBe(50);
+    expect(byGen(1)).toHaveLength(12);
+    expect(byGen(2)).toHaveLength(11);
     expect(byGen(3)).toHaveLength(6);
-    expect([...ids].filter((id) => EVENT_ONLY_IDS.includes(id))).toHaveLength(14);
+    expect([...ids].filter((id) => EVENT_ONLY_IDS.includes(id))).toHaveLength(21);
   });
 
-  it("les gen4+ du catalogue sont exactement les 14 Pokémon de l'évènement, uniquement dans le manoir", () => {
+  it("les gen4+ du catalogue sont exactement les 21 Pokémon de l'évènement, uniquement dans le manoir", () => {
     expect(gen4Plus().map((p) => p.id).sort((a, b) => a - b)).toEqual([...EVENT_ONLY_IDS].sort((a, b) => a - b));
     for (const pokemon of gen4Plus()) {
       expect(pokemon.zones).toEqual([HALLOWEEN_ZONE_ID]);
@@ -112,6 +113,6 @@ describe("total du Pokédex (D3)", () => {
   it("le total est la taille du catalogue, gen4+ inclus, sans filtre", () => {
     const total = getTotalPokemonNumber(GUILD);
     expect(total).toBe(catalog().length);
-    expect(total - catalog().filter((p) => p.generation <= 3).length).toBe(14);
+    expect(total - catalog().filter((p) => p.generation <= 3).length).toBe(21);
   });
 });

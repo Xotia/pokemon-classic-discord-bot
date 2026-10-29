@@ -1,1 +1,44 @@
-{}
+{
+  "20": {
+    "image": "https://ifd-spaces.sfo2.cdn.digitaloceanspaces.com/custom/20.362.png"
+  },
+  "25": {
+    "image": "https://assets.dittobase.com/go/pokemon/25-pikachu-halloween-2017.png"
+  },
+  "26": {
+    "image": "https://assets.dittobase.com/go/pokemon-unpadded/26-raichu-halloween-2017.png"
+  },
+  "35": {
+    "image": "https://ifd-spaces.sfo2.cdn.digitaloceanspaces.com/custom/295.35.png"
+  },
+  "102": {
+    "image": "https://ifd-spaces.sfo2.cdn.digitaloceanspaces.com/custom/92.102.png"
+  },
+  "104": {
+    "image": "https://ifd-spaces.sfo2.cdn.digitaloceanspaces.com/custom/104.105.png"
+  },
+  "105": {
+    "image": "https://ifd-spaces.sfo2.cdn.digitaloceanspaces.com/custom/105.104.png"
+  },
+  "122": {
+    "image": "https://ifd-spaces.sfo2.cdn.digitaloceanspaces.com/custom/373.122c.png"
+  },
+  "172": {
+    "image": "https://assets.dittobase.com/go/pokemon/172-pichu-halloween-2017.png"
+  },
+  "175": {
+    "image": "https://ifd-spaces.sfo2.cdn.digitaloceanspaces.com/custom/175.104.png"
+  },
+  "216": {
+    "image": "https://ifd-spaces.sfo2.cdn.digitaloceanspaces.com/custom/217.357.png"
+  },
+  "355": {
+    "image": "https://ifd-spaces.sfo2.cdn.digitaloceanspaces.com/custom/311.295.png"
+  },
+  "407": {
+    "image": "https://ifd-spaces.sfo2.cdn.digitaloceanspaces.com/custom/352.362.png"
+  },
+  "429": {
+    "image": "https://ifd-spaces.sfo2.cdn.digitaloceanspaces.com/custom/421.255.png"
+  }
+}

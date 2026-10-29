@@ -22,6 +22,7 @@ const EVENT_POKEMON: { id: number; generation: number; rarity: string }[] = [
   { id: 854, generation: 8, rarity: "rare" }, // Théffroi
   { id: 429, generation: 4, rarity: "very_rare" }, // Magirêve
   { id: 430, generation: 4, rarity: "very_rare" }, // Corboss
+  { id: 407, generation: 4, rarity: "very_rare" }, // Roserade
   { id: 442, generation: 4, rarity: "epic" }, // Spiritomb
   { id: 477, generation: 4, rarity: "epic" }, // Noctunoir
   { id: 478, generation: 4, rarity: "epic" }, // Momartik
@@ -30,6 +31,25 @@ const EVENT_POKEMON: { id: number; generation: number; rarity: string }[] = [
   { id: 479, generation: 4, rarity: "ultra_rare" }, // Motisma (Rotom de base)
   { id: 711, generation: 6, rarity: "ultra_rare" }, // Banshitrouye
   { id: 778, generation: 7, rarity: "ultra_rare" }, // Mimiqui
+  { id: 491, generation: 4, rarity: "legendary" }, // Darkrai
+];
+
+// Formes alternatives : ids custom à la suite des formes de Deoxys (4103–4105),
+// comme elles. `form` est le nom PokeAPI de la forme, `speciesId` l'espèce
+// d'origine (le nom français de la forme est fixé ici, l'espèce ne le donne pas).
+const EVENT_FORMS: {
+  id: number;
+  speciesId: number;
+  form: string;
+  name: string;
+  generation: number;
+  rarity: string;
+}[] = [
+  { id: 4106, speciesId: 479, form: "rotom-heat", name: "Motisma (Forme Chaleur)", generation: 4, rarity: "ultra_rare" },
+  { id: 4107, speciesId: 479, form: "rotom-wash", name: "Motisma (Forme Lavage)", generation: 4, rarity: "ultra_rare" },
+  { id: 4108, speciesId: 479, form: "rotom-frost", name: "Motisma (Forme Froid)", generation: 4, rarity: "ultra_rare" },
+  { id: 4109, speciesId: 479, form: "rotom-fan", name: "Motisma (Forme Hélice)", generation: 4, rarity: "ultra_rare" },
+  { id: 4110, speciesId: 479, form: "rotom-mow", name: "Motisma (Forme Tonte)", generation: 4, rarity: "ultra_rare" },
 ];
 
 // Noms PokeAPI de formes par défaut absents de Showdown : nom de sprite à utiliser.
@@ -53,6 +73,21 @@ async function main() {
       ...p,
       ...sprites,
       ...(spriteName ? { originalName: spriteName } : {}),
+      generation,
+      zones: [EVENT_ZONE],
+    };
+    byGen.set(generation, [...(byGen.get(generation) ?? []), entry]);
+    await new Promise((r) => setTimeout(r, 200));
+  }
+
+  for (const { id, speciesId, form, name, generation, rarity } of EVENT_FORMS) {
+    console.log(`Fetching forme ${form}...`);
+    const pokemon = await fetchPokemon(form);
+    const species = await fetchSpecies(speciesId);
+    const entry = {
+      ...buildPokemonJson(pokemon, species, id, rarity),
+      id,
+      name,
       generation,
       zones: [EVENT_ZONE],
     };

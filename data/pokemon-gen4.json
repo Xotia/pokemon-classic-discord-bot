@@ -1,5 +1,59 @@
 [
   {
+    "id": 407,
+    "name": "Roserade",
+    "rarity": "very_rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/roserade.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/roserade.gif",
+    "originalName": "roserade",
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "effectiveness": {
+      "defense": {
+        "electric": 0.5,
+        "grass": 0.25,
+        "ground": 1,
+        "water": 0.5,
+        "bug": 1,
+        "fire": 2,
+        "flying": 2,
+        "ice": 2,
+        "poison": 1,
+        "fairy": 0.5,
+        "fighting": 0.5,
+        "psychic": 2
+      },
+      "attack": {
+        "bug": 0.5,
+        "dragon": 0.5,
+        "fire": 0.5,
+        "flying": 0.5,
+        "grass": 1,
+        "poison": 0.25,
+        "steel": 0,
+        "ground": 1,
+        "rock": 1,
+        "water": 2,
+        "ghost": 0.5,
+        "fairy": 2
+      }
+    },
+    "stats": {
+      "hp": 60,
+      "attack": 70,
+      "defense": 65,
+      "specialAttack": 125,
+      "specialDefense": 105,
+      "speed": 90
+    },
+    "generation": 4,
+    "zones": [
+      "haunted-manor"
+    ]
+  },
+  {
     "id": 429,
     "name": "Magirêve",
     "rarity": "very_rare",
@@ -268,6 +322,291 @@
       "specialAttack": 95,
       "specialDefense": 77,
       "speed": 91
+    },
+    "generation": 4,
+    "zones": [
+      "haunted-manor"
+    ]
+  },
+  {
+    "id": 491,
+    "name": "Darkrai",
+    "rarity": "legendary",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/darkrai.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/darkrai.gif",
+    "originalName": "darkrai",
+    "types": [
+      "dark"
+    ],
+    "effectiveness": {
+      "defense": {
+        "psychic": 0,
+        "dark": 0.5,
+        "ghost": 0.5,
+        "bug": 2,
+        "fighting": 2,
+        "fairy": 2
+      },
+      "attack": {
+        "dark": 0.5,
+        "fighting": 0.5,
+        "fairy": 0.5,
+        "ghost": 2,
+        "psychic": 2
+      }
+    },
+    "stats": {
+      "hp": 70,
+      "attack": 90,
+      "defense": 90,
+      "specialAttack": 135,
+      "specialDefense": 90,
+      "speed": 125
+    },
+    "generation": 4,
+    "zones": [
+      "haunted-manor"
+    ]
+  },
+  {
+    "id": 4106,
+    "name": "Motisma (Forme Chaleur)",
+    "rarity": "ultra_rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/rotom-heat.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/rotom-heat.gif",
+    "originalName": "rotom-heat",
+    "types": [
+      "electric",
+      "fire"
+    ],
+    "effectiveness": {
+      "defense": {
+        "electric": 0.5,
+        "flying": 0.5,
+        "steel": 0.25,
+        "ground": 4,
+        "bug": 0.5,
+        "fairy": 0.5,
+        "fire": 0.5,
+        "grass": 0.5,
+        "ice": 0.5,
+        "rock": 2,
+        "water": 2
+      },
+      "attack": {
+        "ground": 0,
+        "dragon": 0.25,
+        "electric": 0.5,
+        "grass": 1,
+        "flying": 2,
+        "water": 1,
+        "fire": 0.5,
+        "rock": 0.5,
+        "bug": 2,
+        "ice": 2,
+        "steel": 2
+      }
+    },
+    "stats": {
+      "hp": 50,
+      "attack": 65,
+      "defense": 107,
+      "specialAttack": 105,
+      "specialDefense": 107,
+      "speed": 86
+    },
+    "generation": 4,
+    "zones": [
+      "haunted-manor"
+    ]
+  },
+  {
+    "id": 4107,
+    "name": "Motisma (Forme Lavage)",
+    "rarity": "ultra_rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/rotom-wash.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/rotom-wash.gif",
+    "originalName": "rotom-wash",
+    "types": [
+      "electric",
+      "water"
+    ],
+    "effectiveness": {
+      "defense": {
+        "electric": 1,
+        "flying": 0.5,
+        "steel": 0.25,
+        "ground": 2,
+        "fire": 0.5,
+        "ice": 0.5,
+        "water": 0.5,
+        "grass": 2
+      },
+      "attack": {
+        "ground": 0,
+        "dragon": 0.25,
+        "electric": 0.5,
+        "grass": 0.25,
+        "flying": 2,
+        "water": 1,
+        "fire": 2,
+        "rock": 2
+      }
+    },
+    "stats": {
+      "hp": 50,
+      "attack": 65,
+      "defense": 107,
+      "specialAttack": 105,
+      "specialDefense": 107,
+      "speed": 86
+    },
+    "generation": 4,
+    "zones": [
+      "haunted-manor"
+    ]
+  },
+  {
+    "id": 4108,
+    "name": "Motisma (Forme Froid)",
+    "rarity": "ultra_rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/rotom-frost.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/rotom-frost.gif",
+    "originalName": "rotom-frost",
+    "types": [
+      "electric",
+      "ice"
+    ],
+    "effectiveness": {
+      "defense": {
+        "electric": 0.5,
+        "flying": 0.5,
+        "steel": 1,
+        "ground": 2,
+        "ice": 0.5,
+        "fighting": 2,
+        "fire": 2,
+        "rock": 2
+      },
+      "attack": {
+        "ground": 0,
+        "dragon": 1,
+        "electric": 0.5,
+        "grass": 1,
+        "flying": 4,
+        "water": 1,
+        "fire": 0.5,
+        "ice": 0.5,
+        "steel": 0.5
+      }
+    },
+    "stats": {
+      "hp": 50,
+      "attack": 65,
+      "defense": 107,
+      "specialAttack": 105,
+      "specialDefense": 107,
+      "speed": 86
+    },
+    "generation": 4,
+    "zones": [
+      "haunted-manor"
+    ]
+  },
+  {
+    "id": 4109,
+    "name": "Motisma (Forme Hélice)",
+    "rarity": "ultra_rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/rotom-fan.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/rotom-fan.gif",
+    "originalName": "rotom-fan",
+    "types": [
+      "electric",
+      "flying"
+    ],
+    "effectiveness": {
+      "defense": {
+        "electric": 1,
+        "flying": 0.5,
+        "steel": 0.5,
+        "ground": 0,
+        "bug": 0.5,
+        "fighting": 0.5,
+        "grass": 0.5,
+        "ice": 2,
+        "rock": 2
+      },
+      "attack": {
+        "ground": 0,
+        "dragon": 0.5,
+        "electric": 0.25,
+        "grass": 1,
+        "flying": 2,
+        "water": 2,
+        "rock": 0.5,
+        "steel": 0.5,
+        "bug": 2,
+        "fighting": 2
+      }
+    },
+    "stats": {
+      "hp": 50,
+      "attack": 65,
+      "defense": 107,
+      "specialAttack": 105,
+      "specialDefense": 107,
+      "speed": 86
+    },
+    "generation": 4,
+    "zones": [
+      "haunted-manor"
+    ]
+  },
+  {
+    "id": 4110,
+    "name": "Motisma (Forme Tonte)",
+    "rarity": "ultra_rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/rotom-mow.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/rotom-mow.gif",
+    "originalName": "rotom-mow",
+    "types": [
+      "electric",
+      "grass"
+    ],
+    "effectiveness": {
+      "defense": {
+        "electric": 0.25,
+        "flying": 1,
+        "steel": 0.5,
+        "ground": 1,
+        "grass": 0.5,
+        "water": 0.5,
+        "bug": 2,
+        "fire": 2,
+        "ice": 2,
+        "poison": 2
+      },
+      "attack": {
+        "ground": 0,
+        "dragon": 0.25,
+        "electric": 0.5,
+        "grass": 0.25,
+        "flying": 1,
+        "water": 4,
+        "bug": 0.5,
+        "fire": 0.5,
+        "poison": 0.5,
+        "steel": 0.5,
+        "rock": 2
+      }
+    },
+    "stats": {
+      "hp": 50,
+      "attack": 65,
+      "defense": 107,
+      "specialAttack": 105,
+      "specialDefense": 107,
+      "speed": 86
     },
     "generation": 4,
     "zones": [

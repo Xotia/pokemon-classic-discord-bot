@@ -961,7 +961,8 @@
       "speed": 60
     },
     "zones": [
-      "megacity"
+      "megacity",
+      "haunted-manor"
     ],
     "generation": 2
   },
@@ -1088,7 +1089,8 @@
       "speed": 20
     },
     "zones": [
-      "megacity"
+      "megacity",
+      "haunted-manor"
     ],
     "generation": 2
   },
@@ -3035,7 +3037,8 @@
     "zones": [
       "gloomy-cavern",
       "rocky-trail",
-      "icy-track"
+      "icy-track",
+      "haunted-manor"
     ],
     "generation": 2
   },
