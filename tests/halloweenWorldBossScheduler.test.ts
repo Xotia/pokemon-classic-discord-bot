@@ -33,10 +33,10 @@ import { runHalloweenWorldBossTick } from "../src/features/halloweenEvent/hallow
 const READY = { isReady: () => true } as any;
 const NOT_READY = { isReady: () => false } as any;
 
-const BEFORE_OPEN = new Date("2026-10-31T10:59:00Z");
-const OPEN = new Date("2026-10-31T11:00:00Z");
-const DURING = new Date("2026-10-31T15:00:00Z");
-const CLOSE = new Date("2026-10-31T19:00:00Z");
+const BEFORE_OPEN = new Date("2026-10-31T16:59:00Z");
+const OPEN = new Date("2026-10-31T17:00:00Z");
+const DURING = new Date("2026-10-31T20:00:00Z");
+const CLOSE = new Date("2026-10-31T22:00:00Z");
 
 const DARKRAI_OPEN = { status: "registration", boss: { id: "wb-halloween-2026-darkrai" } };
 const WEEKLY_OPEN = { status: "registration", boss: { id: "wb-001-venusaur-gmax" } };
@@ -76,7 +76,7 @@ describe("tick global du World Boss d'Halloween", () => {
   });
 
   it("n'ouvre pas après la clôture (bot arrêté trop longtemps)", async () => {
-    await runHalloweenWorldBossTick(READY, new Date("2026-10-31T21:00:00Z"));
+    await runHalloweenWorldBossTick(READY, new Date("2026-10-31T22:30:00Z"));
 
     expect(openWorldBoss).not.toHaveBeenCalled();
     expect(closeWorldBossAndResolve).not.toHaveBeenCalled();

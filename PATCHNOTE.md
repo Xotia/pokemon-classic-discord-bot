@@ -40,13 +40,23 @@ Les captures ciblées ne comptent pas pour le concours.
 
 ## Un World Boss d'un soir
 
-Le 31 octobre, de **12h à 20h**, un World Boss spécial sortira du Manoir. Il ne reviendra pas le dimanche suivant. Inscrivez-vous avec **`/world-boss`**.
+Le 31 octobre, de **18h à 23h**, un World Boss spécial sortira du Manoir. Il ne reviendra pas le dimanche suivant. Inscrivez-vous avec **`/world-boss`**.
 
 ---
 
-## Capture ciblée : uniquement les nouveaux
+## Capture ciblée : choisissez votre cible, et payez moins
 
-**`/capture-cible`** a une nouvelle option, **`deja_capture`**. Mettez-la à `false` pour ne viser qu'un Pokémon que vous n'avez jamais capturé. Si vous les avez déjà tous dans cette rareté et cette zone, la capture est annulée et vos données de recherche ne sont pas dépensées.
+**`/capture-cible`** a une nouvelle option, **`deja_capture`**, et devient moins chère :
+
+```
+deja_capture: true    un Pokémon déjà capturé     coût ÷2
+(sans l'option)       n'importe lequel            coût ÷1,5
+deja_capture: false   un Pokémon jamais capturé   plein tarif
+```
+
+Par exemple, une capture ciblée mythique coûte désormais 50 000 données pour un Pokémon que vous avez déjà, 66 667 sans préciser, et 100 000 pour être sûr d'en obtenir un nouveau.
+
+S'il n'y a aucun Pokémon qui correspond à votre choix dans cette rareté et cette zone, la capture est annulée et vos données de recherche ne sont pas dépensées.
 
 ---
 

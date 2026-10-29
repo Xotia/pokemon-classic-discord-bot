@@ -12,7 +12,7 @@ export function buildHalloweenWarningEmbed(): EmbedBuilder {
         "",
         "Depuis la colline, on aperçoit une lueur dans les fenêtres du vieux manoir abandonné. Les volets claquent sans vent. Les Pokémon du coin refusent de s'en approcher.",
         "",
-        "Les anciens du village disent que les portes ne s'ouvrent qu'une nuit par an.",
+        "D'anciens rapports indiquent que les portes ne s'ouvrent qu'un jour par an.",
         "",
         "***Demain, elles s'ouvriront.***",
       ].join("\n"),
@@ -36,7 +36,7 @@ export function buildHalloweenStartEmbed(): EmbedBuilder {
         "",
         "Des Pokémon spectres et ténèbres rôdent dans les couloirs, et d'autres, venus de régions lointaines, se sont glissés à l'intérieur. Demain, ils auront disparu.",
         "",
-        "*Quelque chose rit dans la cave. Ne l'écoutez pas trop longtemps.*",
+        "*Des petits rires malicieux résonnent dans les couloirs. Amusés, espiègles… et un peu trop proches pour être rassurants.*",
       ].join("\n"),
     )
     .addFields(
@@ -58,7 +58,7 @@ export function buildHalloweenStartEmbed(): EmbedBuilder {
       {
         name: "🌑 World Boss : Darkrai",
         value:
-          "Le maître du Manoir se réveille. Inscriptions de 12h à 20h avec `/world-boss`, tous serveurs confondus.",
+          "Le maître du Manoir se réveille. Inscriptions de 18h à 23h avec `/world-boss`, tous serveurs confondus.",
       },
       {
         name: "📍 Pour entrer",

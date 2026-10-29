@@ -61,7 +61,7 @@ en UTC+2). Dates en UTC dans le code :
 - **D8** Chance de chromatique ×3 dans le Manoir hanté le 31 (1/85 environ
   avec `SHINY_RATE=256`), `shinyRateFactor = 3`.
 - **D7** World Boss d'Halloween : **Darkrai**, samedi 31 octobre 2026,
-  inscriptions de 12h00 à 20h00 (Paris). Dates modifiables dans
+  inscriptions de 18h00 à 23h00 (Paris). Dates modifiables dans
   `halloweenEventConfig.ts`. Il reste capturable dans le Manoir comme légendaire
   de la zone ; le World Boss ne donne pas de capture (règle existante).
 
@@ -144,8 +144,9 @@ chaque branche.
 - `getRandomPokemonFromRarity` (et `getNewPokemon`) acceptent un ensemble
   d'ids à exclure.
 - Nouveau paramètre optionnel `deja_capture` (booléen) sur `/capture-cible` :
-  - absent ou `true` : comportement actuel ;
-  - `false` : le tirage se limite aux Pokémon jamais capturés par le joueur ;
+  - `true` : uniquement les Pokémon déjà capturés, coût ÷2 ;
+  - absent : tous les Pokémon de la rareté dans la zone, coût ÷1,5 ;
+  - `false` : uniquement les Pokémon jamais capturés, plein tarif ;
   - aucun candidat : commande annulée **avant tout débit**, avec un message
     qui dit pourquoi et distingue les deux cas : « aucun Pokémon de rareté X
     dans la zone Y » et « tu as déjà capturé les N Pokémon de rareté X de la
@@ -191,7 +192,7 @@ chaque branche.
 
 ### Étape 6 : World Boss d'Halloween
 
-- **6.0** Fait : Pokémon et horaire fixés par D7 (Darkrai, 12h-20h). Entrée
+- **6.0** Fait : Pokémon et horaire fixés par D7 (Darkrai, 18h-23h). Entrée
   `wb-halloween-2026-darkrai` ajoutée avec ses données (portail « Chambre des
   Cauchemars du Manoir hanté », stats du Pokédex #491).
 - Ajouter l'entrée du boss (D7) dans `data/world-boss-list.json` avec un

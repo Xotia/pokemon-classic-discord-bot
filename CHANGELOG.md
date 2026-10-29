@@ -19,13 +19,20 @@ Format basé sur [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Sprites d'Halloween : `data/halloween-sprites.json` remplace le sprite de 14 Pokémon dans les embeds de capture pendant l'évènement, dans toutes les zones.
 - Citrouilles : 15 % de chances d'en trouver une à chaque `/capture` réussie dans le manoir. Elles vont dans un inventaire d'objets générique (`Player.items`).
 - Concours de capture, un gagnant par serveur (ex aequo possibles) : chaque capture normale dans le manoir rapporte des points selon sa rareté (barème dans `src/config/halloweenContest.ts`), chaque citrouille 3 points. Les captures ciblées et les cadeaux admin ne comptent pas. Les faits sont enregistrés sur le joueur dans la même écriture que la capture ; le score est calculé à la lecture.
-- World Boss Darkrai le 31 octobre de 12h à 20h, ouvert et résolu par un scheduler global unique (`data/halloween_world_boss.json`). Marqué `eventOnly` dans le catalogue : exclu du tirage hebdomadaire et du décompte du vivier, mais forçable par un admin. `generateWorldBossState` accepte une fin d'inscription imposée.
+- World Boss Darkrai le 31 octobre de 18h à 23h, ouvert et résolu par un scheduler global unique (`data/halloween_world_boss.json`). Marqué `eventOnly` dans le catalogue : exclu du tirage hebdomadaire et du décompte du vivier, mais forçable par un admin. `generateWorldBossState` accepte une fin d'inscription imposée.
 
 ### Nouvelles commandes et options
 - `/concours` : score, rang (avec ex aequo) et top 10 du serveur, avant, pendant et après l'évènement.
 - `/inventaire` : objets possédés.
 - `/capture-cible-admin joueur zone rarity [deja_capture]` (réservée à `ADMIN_ID`) : capture offerte au joueur choisi, sans débit ni crédit de données de recherche et sans toucher à son cooldown.
-- Option `deja_capture` sur `/capture-cible` : à `false`, le tirage se limite aux Pokémon jamais capturés. Sans candidat, la commande est annulée avant tout débit, avec un message qui distingue une rareté absente de la zone et une rareté déjà entièrement capturée.
+- Option `deja_capture` sur `/capture-cible`, trois modes (`getTargetedCaptureCost` dans `src/config/researchCost.ts`, arrondi supérieur) :
+  - `true` : uniquement les Pokémon déjà capturés, coût ÷2 ;
+  - absente : tous les Pokémon de la rareté dans la zone, coût ÷1,5 ;
+  - `false` : uniquement les Pokémon jamais capturés, plein tarif.
+  Sans candidat, la commande est annulée avant tout débit, avec un message propre à chaque cas (rareté absente de la zone, rien encore capturé, tout déjà capturé). `/capture-cible-admin` suit les mêmes modes, toujours gratuitement.
+
+## Modifications de gameplay
+- **Baisse du coût de `/capture-cible`** : sans l'option, le coût est divisé par 1,5 (3 300 → 2 200 en commun, 100 000 → 66 667 en mythique, 300 000 → 200 000 en légendaire). Le plein tarif ne s'applique plus qu'avec `deja_capture: false`.
 
 ## Corrections
 - Sprites des World Boss Florizarre, Tortank, Gorythmic et Pyrobut Gigamax : pkparaiso.com ne répond plus, ils pointent désormais vers les GIF animés de PokeAPI/sprites.
