@@ -58,11 +58,19 @@ import { Player } from "../src/types/Player";
 import { captureCibleCommand } from "../src/commands/captureCibleCommand";
 import { captureCibleAdminCommand } from "../src/commands/captureCibleAdminCommand";
 import { getRandomPokemonFromRarity } from "../src/methods/pokemon/getRandomPokemonFromRarity";
+import {
+  getTargetedCaptureCost,
+  getTargetedCaptureMode,
+  getResearchCost,
+  TARGETABLE_RARITIES,
+} from "../src/config/researchCost";
 
 const GUILD = "cible-guild";
 const ADMIN_ID = "admin-1";
 const PLAYER_ID = "player-1";
 const COMMON_COST = 3300;
+const COMMON_COST_ALL = 2200; // ceil(3300 / 1.5)
+const COMMON_COST_CAPTURED = 1650; // 3300 / 2
 
 function seed(players: Record<string, Partial<Player>>) {
   fs.mkdirSync(guildDirOf(GUILD), { recursive: true });
@@ -127,8 +135,133 @@ describe("getRandomPokemonFromRarity : exclusion", () => {
   });
 });
 
+describe("getTargetedCaptureMode / getTargetedCaptureCost", () => {
+  it("convertit l'option booléenne en mode", () => {
+    expect(getTargetedCaptureMode(true)).toBe("captured");
+    expect(getTargetedCaptureMode(false)).toBe("uncaptured");
+    expect(getTargetedCaptureMode(null)).toBe("all");
+    expect(getTargetedCaptureMode(undefined)).toBe("all");
+  });
+
+  it.each(TARGETABLE_RARITIES)("coût entier par mode pour %s", (rarity) => {
+    const base = getResearchCost(rarity);
+    expect(getTargetedCaptureCost(rarity, "uncaptured")).toBe(base);
+    expect(getTargetedCaptureCost(rarity, "captured")).toBe(Math.ceil(base / 2));
+    expect(getTargetedCaptureCost(rarity, "all")).toBe(Math.ceil(base / 1.5));
+    for (const mode of ["captured", "uncaptured", "all"] as const) {
+      expect(Number.isInteger(getTargetedCaptureCost(rarity, mode))).toBe(true);
+    }
+  });
+
+  it("arrondit au supérieur (uncommon : 4000 / 1.5 = 2667)", () => {
+    expect(getTargetedCaptureCost("uncommon", "all")).toBe(2667);
+    expect(getTargetedCaptureCost("uncommon", "captured")).toBe(2000);
+  });
+});
+
+describe("getRandomPokemonFromRarity : inclusion", () => {
+  it("ne tire que des ids inclus", () => {
+    for (let i = 0; i < 40; i++) {
+      const p = getRandomPokemonFromRarity(GUILD, "common", "gen1", "pastoral-route", undefined, new Set([4, 25]));
+      expect(p?.id).toBe(4);
+    }
+  });
+
+  it("retourne null quand aucun id inclus n'est dans le pool", () => {
+    expect(
+      getRandomPokemonFromRarity(GUILD, "common", "gen1", "pastoral-route", undefined, new Set([25])),
+    ).toBeNull();
+  });
+});
+
 describe("/capture-cible", () => {
   const caller = { id: PLAYER_ID, name: "Ash" };
+
+  it("deja_capture absent : tire dans tout le pool, coût ÷1,5", async () => {
+    const seen = new Set<string>();
+    for (let i = 0; i < 40; i++) {
+      await seed({ [PLAYER_ID]: { name: "Ash", researchData: 5000, captureList: captured(1) } });
+      await captureCibleCommand(buildInteraction(caller, { zone: "pastoral-route", rarity: "common" }));
+      const saved = (await readPlayers(GUILD))[PLAYER_ID];
+      expect(saved.researchData).toBe(5000 - COMMON_COST_ALL + 100);
+      if ((saved.captureList?.["1"]?.total ?? 0) > 1) seen.add("1");
+      if (saved.captureList?.["4"]) seen.add("4");
+      if (saved.captureList?.["7"]) seen.add("7");
+    }
+    expect(seen).toEqual(new Set(["1", "4", "7"]));
+  });
+
+  it("deja_capture=true : uniquement des Pokémon déjà capturés, coût ÷2", async () => {
+    for (let i = 0; i < 10; i++) {
+      await seed({ [PLAYER_ID]: { name: "Ash", researchData: 5000, captureList: captured(4) } });
+      await captureCibleCommand(
+        buildInteraction(caller, { zone: "pastoral-route", rarity: "common", deja_capture: true }),
+      );
+      const saved = (await readPlayers(GUILD))[PLAYER_ID];
+      expect(saved.captureList?.["4"]?.total).toBe(2);
+      expect(saved.captureList?.["1"]).toBeUndefined();
+      expect(saved.captureList?.["7"]).toBeUndefined();
+      expect(saved.researchData).toBe(5000 - COMMON_COST_CAPTURED + 100);
+    }
+  });
+
+  it("deja_capture=true et aucun capturé : annulé sans débit ni cooldown", async () => {
+    await seed({ [PLAYER_ID]: { name: "Ash", researchData: 5000, captureList: captured(25) } });
+    const interaction = buildInteraction(caller, {
+      zone: "pastoral-route",
+      rarity: "common",
+      deja_capture: true,
+    });
+    await captureCibleCommand(interaction);
+
+    expect(interaction.editReply.mock.calls[0][0]).toBe(
+      "Tu n'as encore capturé aucun des 3 Pokémon de rareté « Commun » de la zone « pastoral-route » : la capture ciblée est annulée et aucune donnée de recherche n'a été dépensée.",
+    );
+    const saved = (await readPlayers(GUILD))[PLAYER_ID];
+    expect(saved.researchData).toBe(5000);
+    expect(saved.lastCapture).toBeUndefined();
+  });
+
+  it("deja_capture=false : coût plein", async () => {
+    await seed({ [PLAYER_ID]: { name: "Ash", researchData: 5000, captureList: captured(1, 4) } });
+    await captureCibleCommand(
+      buildInteraction(caller, { zone: "pastoral-route", rarity: "common", deja_capture: false }),
+    );
+    expect((await readPlayers(GUILD))[PLAYER_ID].researchData).toBe(5000 - COMMON_COST + 100);
+  });
+
+  it.each([
+    [true, COMMON_COST_CAPTURED],
+    [false, COMMON_COST],
+    [null, COMMON_COST_ALL],
+  ])("solde insuffisant (deja_capture=%s) : coût effectif %i", async (dejaCapture, cost) => {
+    await seed({ [PLAYER_ID]: { name: "Ash", researchData: cost - 1, captureList: captured(1, 4) } });
+    const interaction = buildInteraction(caller, {
+      zone: "pastoral-route",
+      rarity: "common",
+      deja_capture: dejaCapture,
+    });
+    await captureCibleCommand(interaction);
+
+    expect(interaction.editReply.mock.calls[0][0]).toBe(
+      `Données de recherche insuffisantes pour cette capture ciblée : coût ${cost}, solde actuel ${cost - 1}.`,
+    );
+    expect((await readPlayers(GUILD))[PLAYER_ID].researchData).toBe(cost - 1);
+  });
+
+  it("deja_capture=true, rareté absente de la zone : message existant, sans débit", async () => {
+    await seed({ [PLAYER_ID]: { name: "Ash", researchData: 999999 } });
+    const interaction = buildInteraction(caller, {
+      zone: "pastoral-route",
+      rarity: "mythic",
+      deja_capture: true,
+    });
+    await captureCibleCommand(interaction);
+    expect(interaction.editReply).toHaveBeenCalledWith(
+      "Aucun Pokémon de rareté « mythic » n'est disponible dans la zone « pastoral-route ».",
+    );
+    expect((await readPlayers(GUILD))[PLAYER_ID].researchData).toBe(999999);
+  });
 
   it("comportement habituel : débit du coût, XP créditée, cooldown consommé", async () => {
     await seed({ [PLAYER_ID]: { name: "Ash", researchData: 5000, xp: 0, level: 1 } });
@@ -136,7 +269,7 @@ describe("/capture-cible", () => {
     await captureCibleCommand(buildInteraction(caller, { zone: "pastoral-route", rarity: "common" }));
 
     const saved = (await readPlayers(GUILD))[PLAYER_ID];
-    expect(saved.researchData).toBe(5000 - COMMON_COST + 100);
+    expect(saved.researchData).toBe(5000 - COMMON_COST_ALL + 100);
     expect(saved.lastCapture).toBeGreaterThanOrEqual(before);
   });
 
@@ -260,6 +393,41 @@ describe("/capture-cible-admin", () => {
     expect(players[PLAYER_ID].name).toBe("Misty");
     expect(players[PLAYER_ID].researchData).toBe(0);
     expect(Object.keys(players[PLAYER_ID].captureList ?? {})).toHaveLength(1);
+  });
+
+  it.each([true, false, null])("gratuite quel que soit le mode (deja_capture=%s)", async (dejaCapture) => {
+    await seed({
+      [PLAYER_ID]: { name: "Misty", researchData: 42, lastCapture: 12345, captureList: captured(1, 4) },
+    });
+    const interaction = buildInteraction(
+      admin,
+      { zone: "pastoral-route", rarity: "common", deja_capture: dejaCapture },
+      target,
+    );
+    await captureCibleAdminCommand(interaction);
+
+    const saved = (await readPlayers(GUILD))[PLAYER_ID];
+    expect(saved.researchData).toBe(42);
+    expect(saved.lastCapture).toBe(12345);
+    const total = Object.values(saved.captureList ?? {}).reduce((n, s) => n + s.total, 0);
+    expect(total).toBe(3);
+    if (dejaCapture === true) expect(saved.captureList?.["7"]).toBeUndefined();
+    if (dejaCapture === false) expect(saved.captureList?.["7"]?.total).toBe(1);
+  });
+
+  it("deja_capture=true : aucun capturé annule la capture cadeau", async () => {
+    await seed({ [PLAYER_ID]: { name: "Misty", researchData: 42 } });
+    const interaction = buildInteraction(
+      admin,
+      { zone: "pastoral-route", rarity: "common", deja_capture: true },
+      target,
+    );
+    await captureCibleAdminCommand(interaction);
+
+    expect(interaction.editReply.mock.calls[0][0]).toContain("Tu n'as encore capturé aucun des 3 Pokémon");
+    const saved = (await readPlayers(GUILD))[PLAYER_ID];
+    expect(saved.researchData).toBe(42);
+    expect(Object.keys(saved.captureList ?? {})).toHaveLength(0);
   });
 
   it("deja_capture=false : pool vide annule la capture cadeau", async () => {

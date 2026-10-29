@@ -153,7 +153,7 @@ export const commands = [
       option
         .setName("deja_capture")
         .setDescription(
-          "false = uniquement un Pokémon que tu n'as jamais capturé (vrai par défaut)",
+          "true : déjà capturés (coût ÷2) · false : jamais capturés · vide : tous (coût ÷1,5)",
         )
         .setRequired(false),
     )
@@ -188,7 +188,7 @@ export const commands = [
       option
         .setName("deja_capture")
         .setDescription(
-          "false = uniquement un Pokémon que le joueur n'a jamais capturé (vrai par défaut)",
+          "true : déjà capturés · false : jamais capturés · vide : tous (cadeau, sans coût)",
         )
         .setRequired(false),
     )

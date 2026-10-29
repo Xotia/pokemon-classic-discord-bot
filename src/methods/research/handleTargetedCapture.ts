@@ -12,7 +12,7 @@ import { getCapturedPokemonHp } from "../pokemon/getCapturedPokemonHp";
 import { buildCapturedPokemonEmbed } from "../embed/buildCapturedPokemonEmbed";
 import { addXp } from "../xp/xp";
 import { computeCaptureXp } from "../xp/computeCaptureXp";
-import { getResearchCost, TargetableRarity } from "../../config/researchCost";
+import { getTargetedCaptureCost, TargetableRarity, TargetedCaptureMode } from "../../config/researchCost";
 import { InsufficientResearchDataError } from "./InsufficientResearchDataError";
 import { getLoggerForGuild } from "../../utils/logger";
 import { Player } from "../../types/Player";
@@ -34,8 +34,12 @@ export interface TargetedCaptureOptions {
    * qui reçoit le Pokémon).
    */
   chargeCost: boolean;
-  /** true : tirage limité aux Pokémon jamais capturés par le joueur ciblé. */
-  onlyUncaptured: boolean;
+  /**
+   * Pool du tirage et prix (voir TargetedCaptureMode) : déjà capturés (coût ÷2),
+   * jamais capturés (coût plein) ou tous (coût ÷1,5). Sans effet sur le coût
+   * d'une capture cadeau (gratuite).
+   */
+  mode: TargetedCaptureMode;
 }
 
 /** Ids des Pokémon déjà capturés (clé présente dans captureList avec total > 0). */
@@ -56,7 +60,7 @@ export async function handleTargetedCapture(
   target: TargetedCaptureTarget,
   options: TargetedCaptureOptions,
 ): Promise<Pokemon | null> {
-  const { chargeCost, onlyUncaptured } = options;
+  const { chargeCost, mode } = options;
   // Une zone d'évènement n'appartient à aucune génération et n'est pas dans les
   // zones débloquées : elle est résolue à part, uniquement pendant l'évènement.
   const eventZone = findEventZone(zone);
@@ -74,20 +78,31 @@ export async function handleTargetedCapture(
     return null;
   }
 
-  // deja_capture = false : on écarte les Pokémon déjà capturés AVANT le tirage,
-  // et un pool vidé par cette exclusion annule la commande avant tout débit.
+  // Le pool est borné AVANT le tirage selon le mode ; un pool vidé par ce filtre
+  // annule la commande avant tout débit.
   let excludeIds: ReadonlySet<number> | undefined;
-  if (onlyUncaptured) {
+  let includeIds: ReadonlySet<number> | undefined;
+  if (mode !== "all") {
     const capturedIds = getCapturedPokemonIds((await readPlayers(guildId))[target.userId]);
     const pool = getPokemonPool(guildId, rarity, generation, targetZone);
-    if (pool.length > 0 && pool.every((p) => capturedIds.has(p.id))) {
-      const rarityFrench = rarityList.find((r) => r.rarity === rarity)?.french ?? rarity;
-      await interaction.editReply(
-        `Tu as déjà capturé les ${pool.length} Pokémon de rareté « ${rarityFrench} » de la zone « ${targetZone} » : la capture ciblée est annulée et aucune donnée de recherche n'a été dépensée.`,
-      );
-      return null;
+    const rarityFrench = rarityList.find((r) => r.rarity === rarity)?.french ?? rarity;
+    if (mode === "uncaptured") {
+      if (pool.length > 0 && pool.every((p) => capturedIds.has(p.id))) {
+        await interaction.editReply(
+          `Tu as déjà capturé les ${pool.length} Pokémon de rareté « ${rarityFrench} » de la zone « ${targetZone} » : la capture ciblée est annulée et aucune donnée de recherche n'a été dépensée.`,
+        );
+        return null;
+      }
+      excludeIds = capturedIds;
+    } else {
+      if (pool.length > 0 && !pool.some((p) => capturedIds.has(p.id))) {
+        await interaction.editReply(
+          `Tu n'as encore capturé aucun des ${pool.length} Pokémon de rareté « ${rarityFrench} » de la zone « ${targetZone} » : la capture ciblée est annulée et aucune donnée de recherche n'a été dépensée.`,
+        );
+        return null;
+      }
+      includeIds = capturedIds;
     }
-    excludeIds = capturedIds;
   }
 
   const { pokemonCatched } = await getPokemonByRarity(
@@ -96,6 +111,7 @@ export async function handleTargetedCapture(
     targetZone,
     rarity,
     excludeIds,
+    includeIds,
   );
   if (!pokemonCatched) {
     await interaction.editReply(
@@ -104,7 +120,7 @@ export async function handleTargetedCapture(
     return null;
   }
 
-  const cost = chargeCost ? getResearchCost(rarity) : 0;
+  const cost = chargeCost ? getTargetedCaptureCost(rarity, mode) : 0;
   const userId = target.userId;
 
   const players = await readPlayers(guildId);

@@ -36,8 +36,13 @@ export function getRandomPokemonFromRarity(
   generation: string,
   zoneId?: string,
   excludeIds?: ReadonlySet<number>, // ids à écarter du tirage (défaut : aucun)
+  includeIds?: ReadonlySet<number>, // si fourni, le tirage est limité à ces ids
 ): Pokemon | null {
   let pool = getPokemonPool(guildId, rarity, generation, zoneId);
+
+  if (includeIds) {
+    pool = pool.filter((p) => includeIds.has(p.id));
+  }
 
   if (excludeIds && excludeIds.size > 0) {
     pool = pool.filter((p) => !excludeIds.has(p.id));

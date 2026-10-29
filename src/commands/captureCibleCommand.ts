@@ -1,6 +1,6 @@
 import { createProfileIfNeeded } from "../methods/player/createProfileIfNeeded";
 import { ensureGuildDataFiles } from "../config/guilds";
-import { isTargetableRarity } from "../config/researchCost";
+import { getTargetedCaptureMode, isTargetableRarity } from "../config/researchCost";
 import { handleTargetedCapture } from "../methods/research/handleTargetedCapture";
 
 export async function captureCibleCommand(interaction: any) {
@@ -17,8 +17,8 @@ export async function captureCibleCommand(interaction: any) {
 
   const zone = interaction.options.getString("zone", true);
   const rarity = interaction.options.getString("rarity", true);
-  // Absent ou true : comportement habituel. false : uniquement des Pokémon jamais capturés.
-  const dejaCapture = interaction.options.getBoolean("deja_capture") ?? true;
+  // true : déjà capturés · false : jamais capturés · absent : tous (voir getTargetedCaptureMode).
+  const mode = getTargetedCaptureMode(interaction.options.getBoolean("deja_capture"));
 
   if (!isTargetableRarity(rarity)) {
     await interaction.editReply("Rareté invalide.");
@@ -31,6 +31,6 @@ export async function captureCibleCommand(interaction: any) {
     zone,
     rarity,
     { userId: interaction.user.id, name: interaction.user.globalName || interaction.user.username },
-    { chargeCost: true, onlyUncaptured: !dejaCapture },
+    { chargeCost: true, mode },
   );
 }

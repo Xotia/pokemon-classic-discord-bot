@@ -7,8 +7,9 @@ export async function getPokemonByRarity(
   zone: string,
   rarity: Rarity,
   excludeIds?: ReadonlySet<number>,
+  includeIds?: ReadonlySet<number>,
 ) {
-  const pokemonCatched = await getNewPokemon(guildId, rarity, generation, zone, excludeIds);
+  const pokemonCatched = await getNewPokemon(guildId, rarity, generation, zone, excludeIds, includeIds);
 
   return {
     pokemonCatched,

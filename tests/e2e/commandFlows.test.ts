@@ -124,7 +124,7 @@ import { getDayKey } from "../../src/methods/dailyBoost/dailyBoost";
 const GUILD_ID = "e2e-test-guild";
 const USER_ID = "user-e2e-001";
 const USERNAME = "Ash";
-const PAID = { chargeCost: true, onlyUncaptured: false };
+const PAID = { chargeCost: true, mode: "all" as const };
 
 // ─── helpers ─────────────────────────────────────────────────────────────────
 
@@ -317,8 +317,8 @@ describe("E2E command flows (isolated guild: e2e-test-guild)", () => {
 
   describe("handleTargetedCapture — sufficient balance", () => {
     it("debits researchData cost and adds gainedXp, persisting to JSON", async () => {
-      // Cost of "common" is 3300 (researchCost.ts); gainedXp = 100 (mocked).
-      // Expected final balance: (5000 - 3300) + 100 = 1800
+      // Mode "all" (deja_capture absent): cost of "common" is ceil(3300 / 1.5) = 2200; gainedXp = 100 (mocked).
+      // Expected final balance: (5000 - 2200) + 100 = 2900
       await seedPlayer(USER_ID, { name: USERNAME, xp: 0, level: 1, researchData: 5000 });
 
       const interaction = buildInteraction({
@@ -330,7 +330,7 @@ describe("E2E command flows (isolated guild: e2e-test-guild)", () => {
       const players = await readPlayers(GUILD_ID);
       const saved = players[USER_ID];
 
-      expect(saved.researchData).toBe(1800);
+      expect(saved.researchData).toBe(2900);
       expect(saved.xp).toBe(100);
       expect(saved.captureList?.["1"]?.total).toBe(1);
     });
@@ -360,7 +360,7 @@ describe("E2E command flows (isolated guild: e2e-test-guild)", () => {
 
   describe("handleTargetedCapture — insufficient balance", () => {
     it("replies with insuffisantes message and does NOT consume cooldown", async () => {
-      // cost = 3300, balance = 1000 → should reject immediately
+      // cost = 2200, balance = 1000 → should reject immediately
       await seedPlayer(USER_ID, { name: USERNAME, researchData: 1000 });
       const interaction = buildInteraction({ options: { zone: "pastoral-route", rarity: "common" } });
 
@@ -368,7 +368,7 @@ describe("E2E command flows (isolated guild: e2e-test-guild)", () => {
 
       const replyArg: string = interaction.editReply.mock.calls[0][0];
       expect(replyArg).toContain("insuffisantes");
-      expect(replyArg).toContain("3300"); // cost
+      expect(replyArg).toContain("2200"); // cost
       expect(replyArg).toContain("1000"); // current balance
 
       // Balance check fires BEFORE cooldown — no cooldown should be consumed.

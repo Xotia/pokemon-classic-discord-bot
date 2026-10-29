@@ -10,7 +10,7 @@ export async function helpCommand(interaction: any) {
         .addFields(
             { name: '/ping', value: 'Vérifie si le bot est en ligne.' },
             { name: '/capture', value: 'Attrape un Pokémon, la zone de recherche et la génération sont des paramètres facultatifs.' },
-            { name: '/capture-cible', value: 'Cible une zone et une rareté précises en échange de données de recherche. Option deja_capture : false = uniquement un Pokémon jamais capturé.' },
+            { name: '/capture-cible', value: 'Cible une zone et une rareté précises en échange de données de recherche. Option deja_capture : true = déjà capturés (coût ÷2), false = jamais capturés (coût plein), vide = tous (coût ÷1,5).' },
             { name: '/get-pokemon-info', value: 'Affiche les infos complètes d\'un Pokémon : rareté, types, faiblesses en défense et statistiques.' },
             { name: '/pokedex', value: 'Affiche la liste des pokemons capturés avec /capture.' },
             { name: '/zone-progression', value: 'Affiche ta progression sur toutes les zones, ou sur une zone donnée.' },

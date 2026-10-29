@@ -1,7 +1,7 @@
 import { ChatInputCommandInteraction, MessageFlags } from "discord.js";
 import { createProfileIfNeeded } from "../methods/player/createProfileIfNeeded";
 import { ensureGuildDataFiles } from "../config/guilds";
-import { isTargetableRarity } from "../config/researchCost";
+import { getTargetedCaptureMode, isTargetableRarity } from "../config/researchCost";
 import { handleTargetedCapture } from "../methods/research/handleTargetedCapture";
 import { getLoggerForGuild } from "../utils/logger";
 
@@ -27,7 +27,7 @@ export async function captureCibleAdminCommand(interaction: ChatInputCommandInte
   const targetUser = interaction.options.getUser("joueur", true);
   const zone = interaction.options.getString("zone", true);
   const rarity = interaction.options.getString("rarity", true);
-  const dejaCapture = interaction.options.getBoolean("deja_capture") ?? true;
+  const mode = getTargetedCaptureMode(interaction.options.getBoolean("deja_capture"));
 
   if (!isTargetableRarity(rarity)) {
     return interaction.reply({ content: "Rareté invalide.", flags: MessageFlags.Ephemeral });
@@ -44,7 +44,7 @@ export async function captureCibleAdminCommand(interaction: ChatInputCommandInte
     zone,
     rarity,
     { userId: targetUser.id, name: targetUser.globalName || targetUser.username },
-    { chargeCost: false, onlyUncaptured: !dejaCapture },
+    { chargeCost: false, mode },
   );
 
   getLoggerForGuild(guildId).info(
