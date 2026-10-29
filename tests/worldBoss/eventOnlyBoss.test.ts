@@ -82,6 +82,16 @@ describe('boss eventOnly : génération', () => {
     expect(state?.boss?.id).toBe('wb-event');
   });
 
+  it('est trouvé par son nom, sans tenir compte de la casse (texte tapé sans choisir la suggestion)', async () => {
+    const state = await generateWorldBossState({ bossId: 'boss WB-EVENT' });
+
+    expect(state?.boss?.id).toBe('wb-event');
+  });
+
+  it('refuse un nom inconnu', async () => {
+    await expect(generateWorldBossState({ bossId: 'Inconnu' })).rejects.toThrow('World boss inconnu');
+  });
+
   it('applique une fin d’inscriptions forcée', async () => {
     const state = await generateWorldBossState({
       bossId: 'wb-event',

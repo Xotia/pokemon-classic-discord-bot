@@ -36,13 +36,18 @@ function resolveForcedBoss(
   catalog: WorldBossEntry[],
   defeatedBossIds: string[],
 ): WorldBossEntry {
-  const entry = catalog.find((boss) => boss.id === bossId);
+  // Id d'abord (valeur de l'autocomplétion), sinon le nom affiché : un admin
+  // qui tape « Ectoplasma » sans choisir la suggestion envoie le texte brut.
+  const normalized = bossId.trim().toLowerCase();
+  const entry =
+    catalog.find((boss) => boss.id === bossId) ??
+    catalog.find((boss) => boss.name.toLowerCase() === normalized);
 
   if (!entry) {
     throw new Error(`World boss inconnu : "${bossId}" n'est pas dans data/world-boss-list.json.`);
   }
 
-  if (defeatedBossIds.includes(bossId)) {
+  if (defeatedBossIds.includes(entry.id)) {
     throw new Error(
       `World boss "${bossId}" déjà vaincu : son portail est scellé, il ne peut plus être ouvert.`,
     );
