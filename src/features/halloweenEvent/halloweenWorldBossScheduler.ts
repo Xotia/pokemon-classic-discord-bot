@@ -12,6 +12,7 @@ import {
 } from "./halloweenWorldBossState.service";
 import { closeWorldBossAndResolve, openWorldBoss } from "../worldBoss/worldBossScheduler";
 import { loadWorldBossState } from "../worldBoss/worldBossState.service";
+import { getDefeatedBossIds } from "../worldBoss/worldBossHistory.service";
 
 function errorMessage(error: unknown): string {
   return error instanceof Error ? error.message : String(error);
@@ -42,6 +43,20 @@ export async function runHalloweenWorldBossTick(client: Client, now = new Date()
 
   if (!state.openedDone && now < HALLOWEEN_WORLD_BOSS_CLOSE) {
     try {
+      // Un boss déjà vaincu ne peut pas être forcé (portail scellé) : inutile de
+      // retenter chaque minute, on abandonne l'ouverture avec la raison.
+      const defeatedBossIds = await getDefeatedBossIds();
+      if (defeatedBossIds.includes(HALLOWEEN_WORLD_BOSS_ID)) {
+        state.openedDone = true;
+        state.openSkippedReason = "boss_already_defeated";
+        await saveHalloweenWorldBossState(state);
+        logger.warn(
+          { event: "halloween_world_boss_open_skipped_defeated", bossId: HALLOWEEN_WORLD_BOSS_ID },
+          "[HALLOWEEN] World Boss non ouvert : le boss de l'évènement est déjà vaincu, ouverture abandonnée",
+        );
+        return;
+      }
+
       const opened = await openWorldBoss(client, {
         bossId: HALLOWEEN_WORLD_BOSS_ID,
         registrationClosesAt: HALLOWEEN_WORLD_BOSS_CLOSE,
@@ -52,7 +67,7 @@ export async function runHalloweenWorldBossTick(client: Client, now = new Date()
         await saveHalloweenWorldBossState(state);
       } else {
         // null = un world boss est déjà ouvert (le boss est forcé par id, le
-        // vivier n'entre pas en jeu). Si c'est déjà Darkrai (forcé par l'admin),
+        // vivier n'entre pas en jeu). Si c'est déjà le boss de l'évènement (forcé par l'admin),
         // l'étape est faite. Sinon un autre boss occupe le créneau : on retente
         // à la minute suivante (l'admin peut le clôturer), borné par la clôture.
         const current = await loadWorldBossState();

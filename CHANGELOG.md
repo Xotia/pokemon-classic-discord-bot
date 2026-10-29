@@ -19,7 +19,10 @@ Format basé sur [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Sprites d'Halloween : `data/halloween-sprites.json` remplace le sprite de 14 Pokémon dans les embeds de capture pendant l'évènement, dans toutes les zones.
 - Citrouilles : 15 % de chances d'en trouver une à chaque `/capture` réussie dans le manoir. Elles vont dans un inventaire d'objets générique (`Player.items`).
 - Concours de capture, un gagnant par serveur (ex aequo possibles) : chaque capture normale dans le manoir rapporte des points selon sa rareté (barème dans `src/config/halloweenContest.ts`), chaque citrouille 3 points. Les captures ciblées et les cadeaux admin ne comptent pas. Les faits sont enregistrés sur le joueur dans la même écriture que la capture ; le score est calculé à la lecture.
-- World Boss Darkrai le 31 octobre de 18h à 23h, ouvert et résolu par un scheduler global unique (`data/halloween_world_boss.json`). Marqué `eventOnly` dans le catalogue : exclu du tirage hebdomadaire et du décompte du vivier, mais forçable par un admin. `generateWorldBossState` accepte une fin d'inscription imposée.
+- World Boss Ectoplasma Gigamax (`wb-008-gengar-gmax`) le 31 octobre de 18h à 23h, ouvert et résolu par un scheduler global unique (`data/halloween_world_boss.json`). S'il a déjà été vaincu, l'ouverture est abandonnée et journalisée, sans nouvelle tentative. `generateWorldBossState` accepte une fin d'inscription imposée.
+- Champ `eventOnly` pour les entrées du catalogue des World Boss : une telle entrée est exclue du tirage hebdomadaire et du décompte du vivier, mais reste forçable par un admin. Aucune entrée ne l'utilise pour l'instant.
+- Raid du jour Darkrai le 31 octobre dans chaque serveur, aux horaires habituels : le cron d'ouverture génère un raid Darkrai (`generateHalloweenRaidState`) au lieu d'un tirage aléatoire. Génération `null`, donc aucun déblocage de zone ; un participant tiré au sort capture Darkrai en cas de victoire. Le générateur de raid d'évènement est commun avec la Météorite (`src/features/events/generateEventRaidState.ts`).
+- `/world-boss-force-start` accepte le nom affiché du boss en plus de son id.
 
 ### Nouvelles commandes et options
 - `/concours` : score, rang (avec ex aequo) et top 10 du serveur, avant, pendant et après l'évènement.

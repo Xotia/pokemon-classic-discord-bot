@@ -56,9 +56,14 @@ export function buildHalloweenStartEmbed(): EmbedBuilder {
           "Un gagnant par serveur, récompensé par une capture ciblée mythique. Détails avec `/concours`.",
       },
       {
-        name: "🌑 World Boss : Darkrai",
+        name: "👻 World Boss",
         value:
-          "Le maître du Manoir se réveille. Inscriptions de 18h à 23h avec `/world-boss`, tous serveurs confondus.",
+          "À la nuit tombée, quelque chose d'immense se réveillera dans le Manoir. Inscriptions de 18h à 23h avec `/world-boss`, tous serveurs confondus.",
+      },
+      {
+        name: "🌑 Raid du jour",
+        value:
+          "Le raid d'aujourd'hui ne ressemblera à aucun autre. Au créneau habituel des raids, inscrivez-vous avec `/raid`… si vous l'osez.",
       },
       {
         name: "📍 Pour entrer",

@@ -5,6 +5,8 @@ import { HALLOWEEN_WORLD_BOSS_DB } from "../../config/paths";
 export interface HalloweenWorldBossState {
   openedDone: boolean;
   closedDone: boolean;
+  /** Renseigné quand l'ouverture est abandonnée (ex. boss déjà vaincu). */
+  openSkippedReason?: string;
 }
 
 function createDefaultState(): HalloweenWorldBossState {

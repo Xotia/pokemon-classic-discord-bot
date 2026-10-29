@@ -60,10 +60,13 @@ en UTC+2). Dates en UTC dans le code :
   joueur reste juste. Pas d'option `gratuit`.
 - **D8** Chance de chromatique ×3 dans le Manoir hanté le 31 (1/85 environ
   avec `SHINY_RATE=256`), `shinyRateFactor = 3`.
-- **D7** World Boss d'Halloween : **Darkrai**, samedi 31 octobre 2026,
-  inscriptions de 18h00 à 23h00 (Paris). Dates modifiables dans
-  `halloweenEventConfig.ts`. Il reste capturable dans le Manoir comme légendaire
-  de la zone ; le World Boss ne donne pas de capture (règle existante).
+- **D7** World Boss d'Halloween : **Ectoplasma Gigamax** (`wb-008-gengar-gmax`,
+  entrée existante, pas `eventOnly`), samedi 31 octobre 2026, inscriptions de
+  18h00 à 23h00 (Paris). Dates modifiables dans `halloweenEventConfig.ts`.
+- **D10** Raid du jour du 31 octobre : **Darkrai** dans chaque serveur, aux
+  horaires habituels des raids. Génération `null` : aucune zone débloquée ; un
+  participant tiré au sort le capture en cas de victoire. Darkrai reste aussi
+  capturable dans le Manoir comme légendaire de la zone.
 
 ## Décisions à prendre
 
@@ -192,17 +195,17 @@ chaque branche.
 
 ### Étape 6 : World Boss d'Halloween
 
-- **6.0** Fait : Pokémon et horaire fixés par D7 (Darkrai, 18h-23h). Entrée
-  `wb-halloween-2026-darkrai` ajoutée avec ses données (portail « Chambre des
-  Cauchemars du Manoir hanté », stats du Pokédex #491).
-- Ajouter l'entrée du boss (D7) dans `data/world-boss-list.json` avec un
-  indicateur `eventOnly: true`. `getAliveWorldBosses` exclut les entrées
-  `eventOnly` du tirage hebdomadaire.
+- **6.0** Fait : Pokémon et horaire fixés par D7 (Ectoplasma Gigamax,
+  18h-23h). L'entrée Darkrai d'abord ajoutée a été retirée au profit du raid
+  du jour (D10).
+- Champ `eventOnly` disponible dans `data/world-boss-list.json` :
+  `getAliveWorldBosses` exclut ces entrées du tirage hebdomadaire. Aucune
+  entrée ne l'utilise pour l'instant.
 - Un tick global (`halloweenWorldBossScheduler.ts`, état dans
   `data/halloween_world_boss.json`) ouvre le World Boss le 31 via
   `openWorldBoss(client, { bossId })` et le ferme avec
   `closeWorldBossAndResolve` à l'horaire choisi, seulement si le boss ouvert
-  est Darkrai. Le World Boss est global : l'ouverture se fait une seule fois,
+  est celui d'Halloween. Le World Boss est global : l'ouverture se fait une seule fois,
   pas par serveur. Il utilise les dates explicites, pas `HALLOWEEN_EVENT_DEBUG`.
 - Vérifier qu'aucun World Boss hebdomadaire ne tombe dans la même fenêtre (le
   31 est un samedi) : sinon l'ouverture forcée tombe sur « déjà ouvert ».

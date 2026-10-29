@@ -95,11 +95,17 @@ function parseCronMinuteHour(cronExpression: string): { hour: number; minute: nu
   };
 }
 
-function getRegistrationDurationMinutes(guildId: string): number {
+/** Durée d'inscription d'un raid normal, déduite des heures de début et de fin du serveur. */
+export function getRegistrationDurationMinutes(guildId: string): number {
   const start = parseCronMinuteHour(getRaidStartHour(guildId));
   const end = parseCronMinuteHour(getRaidEndHour(guildId));
   const diff = end.hour * 60 + end.minute - (start.hour * 60 + start.minute);
   return diff > 0 ? diff : diff + 24 * 60;
+}
+
+/** Difficulté d'un raid normal : tirage entre 2 et 5. */
+export function rollRaidDifficulty(): number {
+  return randomInt(2, 5);
 }
 
 function createRaidId(): string {
@@ -334,7 +340,7 @@ export async function generateRaidState(
   }
 
   const selectedPokemon = pickRandom(pokemonsInZone);
-  const difficulty = randomInt(2, 5);
+  const difficulty = rollRaidDifficulty();
   const raidAttackType = pickRandom(selectedPokemon.types);
   const finalStats = multiplyStats(selectedPokemon.stats, difficulty);
 

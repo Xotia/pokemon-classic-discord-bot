@@ -38,9 +38,11 @@ Les captures ciblées ne comptent pas pour le concours.
 
 ---
 
-## Un World Boss d'un soir
+## Un World Boss et un raid d'un soir
 
-Le 31 octobre, de **18h à 23h**, un World Boss spécial sortira du Manoir. Il ne reviendra pas le dimanche suivant. Inscrivez-vous avec **`/world-boss`**.
+Le 31 octobre, de **18h à 23h**, un World Boss sortira du Manoir. Inscrivez-vous avec **`/world-boss`**.
+
+Le raid du jour, lui aussi, sera différent de d'habitude : quelque chose de bien plus sombre vous attend au créneau habituel. Inscrivez-vous avec **`/raid`**.
 
 ---
 

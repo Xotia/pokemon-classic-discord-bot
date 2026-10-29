@@ -3,6 +3,8 @@ import { EmbedBuilder, type Client } from "discord.js";
 import type { RaidState } from "../../types/raid/RaidState";
 import { loadRaidState, saveRaidState, resetRaidState } from "./raidState.service";
 import { generateRaidState } from "./raidGenerator.service";
+import { generateHalloweenRaidState } from "../halloweenEvent/generateHalloweenRaidState";
+import { isHalloweenEventActive } from "../halloweenEvent/halloweenEventConfig";
 import { buildRaidAnnouncementEmbed } from "./buildRaidAnnouncementEmbed";
 import { resolveRaid } from "./resolveRaid";
 import { applyRaidRewards } from "./applyRaidRewards";
@@ -98,6 +100,18 @@ export async function openRaidRegistration(
   await sendRaidAnnouncement(discordClient, announceChannelId, embed, guildId);
 
   logger.info(`[RAID] (${guildId}) Annonce envoyée dans le salon ${announceChannelId}.`);
+}
+
+/**
+ * Ouverture déclenchée par le cron générique. Pendant la Météorite, ses propres
+ * créneaux ouvrent les raids (le cron ne fait rien). Pendant Halloween, le raid
+ * du jour est Darkrai, aux horaires normaux du serveur ; sinon tirage aléatoire.
+ * La Météorite gagne si les deux fenêtres se chevauchent.
+ */
+export async function openRaidFromScheduler(guildId: string, announceChannelId: string): Promise<void> {
+  if (isMeteoriteEventActive()) return;
+  const factory = isHalloweenEventActive() ? generateHalloweenRaidState : undefined;
+  await openRaidRegistration(guildId, announceChannelId, factory);
 }
 
 export async function closeRaidAndResolve(guildId: string, announceChannelId: string): Promise<void> {
@@ -213,8 +227,7 @@ export function startRaidScheduler(client: Client): void {
     cron.schedule(
       openExpression,
       () => {
-        if (isMeteoriteEventActive()) return;
-        void openRaidRegistration(guild.guildId, guild.raidAnnounceChannelId).catch((error) => {
+        void openRaidFromScheduler(guild.guildId, guild.raidAnnounceChannelId).catch((error) => {
           getLoggerForGuild(guild.guildId).error({
             event: "raid_open_failed",
             guildId: guild.guildId,

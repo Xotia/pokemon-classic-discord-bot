@@ -978,34 +978,6 @@
         "water": 0.5
       },
       "lore": "La cascade remonte. Dedans, une série de coups qu'aucun oeil ne suit."
-    },
-    {
-      "id": "wb-halloween-2026-darkrai",
-      "name": "Darkrai",
-      "portal": "Chambre des Cauchemars du Manoir hanté",
-      "sprite": "https://play.pokemonshowdown.com/sprites/ani/darkrai.gif",
-      "types": [
-        "dark"
-      ],
-      "attackType": "dark",
-      "stats": {
-        "hp": 70,
-        "attack": 90,
-        "defense": 90,
-        "specialAttack": 135,
-        "specialDefense": 90,
-        "speed": 125
-      },
-      "defenseEffectiveness": {
-        "bug": 2,
-        "dark": 0.5,
-        "fairy": 2,
-        "fighting": 2,
-        "ghost": 0.5,
-        "psychic": 0
-      },
-      "lore": "Le maître du Manoir ne dort jamais, et personne ne dort tant qu'il veille. Chaque nuit, la chambre du fond se remplit un peu plus de cauchemars.",
-      "eventOnly": true
     }
   ]
 }

@@ -2,6 +2,7 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 
 let schedState: any;
 let wbState: any;
+let defeatedIds: string[] = [];
 
 vi.mock("../src/features/halloweenEvent/halloweenWorldBossState.service", () => ({
   loadHalloweenWorldBossState: async () => structuredClone(schedState),
@@ -21,11 +22,15 @@ vi.mock("../src/features/worldBoss/worldBossState.service", () => ({
   loadWorldBossState: async () => wbState,
 }));
 
+vi.mock("../src/features/worldBoss/worldBossHistory.service", () => ({
+  getDefeatedBossIds: async () => defeatedIds,
+}));
+
 vi.mock("node-cron", () => ({ default: { schedule: vi.fn() } }));
 
+const warn = vi.fn();
 vi.mock("../src/utils/logger", () => {
-  const noop = () => {};
-  return { default: { info: noop, warn: noop, error: noop } };
+  return { default: { info: vi.fn(), warn: (...a: unknown[]) => warn(...a), error: vi.fn() } };
 });
 
 import { runHalloweenWorldBossTick } from "../src/features/halloweenEvent/halloweenWorldBossScheduler";
@@ -38,7 +43,7 @@ const OPEN = new Date("2026-10-31T17:00:00Z");
 const DURING = new Date("2026-10-31T20:00:00Z");
 const CLOSE = new Date("2026-10-31T22:00:00Z");
 
-const DARKRAI_OPEN = { status: "registration", boss: { id: "wb-halloween-2026-darkrai" } };
+const EVENT_OPEN = { status: "registration", boss: { id: "wb-008-gengar-gmax" } };
 const WEEKLY_OPEN = { status: "registration", boss: { id: "wb-001-venusaur-gmax" } };
 const IDLE = { status: "idle", boss: null };
 
@@ -46,6 +51,8 @@ beforeEach(() => {
   delete process.env.HALLOWEEN_EVENT_DEBUG;
   schedState = { openedDone: false, closedDone: false };
   wbState = IDLE;
+  defeatedIds = [];
+  warn.mockReset();
   openWorldBoss.mockReset().mockResolvedValue({ status: "registration" });
   closeWorldBossAndResolve.mockReset().mockResolvedValue({});
 });
@@ -57,13 +64,13 @@ describe("tick global du World Boss d'Halloween", () => {
     expect(openWorldBoss).not.toHaveBeenCalled();
   });
 
-  it("ouvre Darkrai à la date d'ouverture, une seule fois, avec la clôture de l'évènement", async () => {
+  it("ouvre Ectoplasma Gigamax à la date d'ouverture, une seule fois, avec la clôture de l'évènement", async () => {
     await runHalloweenWorldBossTick(READY, OPEN);
     await runHalloweenWorldBossTick(READY, DURING);
 
     expect(openWorldBoss).toHaveBeenCalledTimes(1);
     expect(openWorldBoss).toHaveBeenCalledWith(READY, {
-      bossId: "wb-halloween-2026-darkrai",
+      bossId: "wb-008-gengar-gmax",
       registrationClosesAt: CLOSE,
     });
     expect(schedState.openedDone).toBe(true);
@@ -109,9 +116,9 @@ describe("tick global du World Boss d'Halloween", () => {
     expect(openWorldBoss).toHaveBeenCalledTimes(2);
   });
 
-  it("déjà ouvert sur Darkrai (forcé par l'admin) : marqué fait", async () => {
+  it("déjà ouvert sur le boss de l'évènement (forcé par l'admin) : marqué fait", async () => {
     openWorldBoss.mockResolvedValue(null);
-    wbState = DARKRAI_OPEN;
+    wbState = EVENT_OPEN;
 
     await runHalloweenWorldBossTick(READY, DURING);
 
@@ -129,9 +136,22 @@ describe("tick global du World Boss d'Halloween", () => {
     expect(openWorldBoss).toHaveBeenCalledTimes(2);
   });
 
-  it("clôture Darkrai en inscription à l'heure de clôture, une seule fois", async () => {
+  it("boss déjà vaincu : journalisé, marqué fait avec la raison, pas de nouvelle tentative", async () => {
+    defeatedIds = ["wb-008-gengar-gmax"];
+
+    await runHalloweenWorldBossTick(READY, DURING);
+    await runHalloweenWorldBossTick(READY, DURING);
+
+    expect(openWorldBoss).not.toHaveBeenCalled();
+    expect(schedState.openedDone).toBe(true);
+    expect(schedState.openSkippedReason).toBe("boss_already_defeated");
+    expect(warn).toHaveBeenCalledTimes(1);
+    expect(warn.mock.calls[0][0]).toMatchObject({ event: "halloween_world_boss_open_skipped_defeated" });
+  });
+
+  it("clôture le boss d'Halloween en inscription à l'heure de clôture, une seule fois", async () => {
     schedState = { openedDone: true, closedDone: false };
-    wbState = DARKRAI_OPEN;
+    wbState = EVENT_OPEN;
 
     await runHalloweenWorldBossTick(READY, CLOSE);
     await runHalloweenWorldBossTick(READY, CLOSE);
@@ -142,7 +162,7 @@ describe("tick global du World Boss d'Halloween", () => {
 
   it("ne clôture pas avant l'heure de clôture", async () => {
     schedState = { openedDone: true, closedDone: false };
-    wbState = DARKRAI_OPEN;
+    wbState = EVENT_OPEN;
 
     await runHalloweenWorldBossTick(READY, DURING);
 
@@ -169,7 +189,7 @@ describe("tick global du World Boss d'Halloween", () => {
 
   it("clôture non marquée faite si elle échoue, puis retentée", async () => {
     schedState = { openedDone: true, closedDone: false };
-    wbState = DARKRAI_OPEN;
+    wbState = EVENT_OPEN;
     closeWorldBossAndResolve.mockRejectedValueOnce(new Error("boom"));
 
     await runHalloweenWorldBossTick(READY, CLOSE);

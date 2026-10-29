@@ -16,7 +16,12 @@ export function isHalloweenEventActive(now = new Date()): boolean {
 // World Boss d'Halloween (global, un seul pour tous les serveurs). Samedi 31
 // octobre 2026, Paris en UTC+1. Le World Boss hebdomadaire est le dimanche,
 // donc aucun chevauchement. À modifier ici pour changer l'horaire.
-export const HALLOWEEN_WORLD_BOSS_ID = "wb-halloween-2026-darkrai";
+// Ectoplasma Gigamax : entrée normale du catalogue, non eventOnly (il reste dans
+// le vivier hebdomadaire ; vaincu le 31, il en sort par la règle habituelle).
+export const HALLOWEEN_WORLD_BOSS_ID = "wb-008-gengar-gmax";
+
+// Raid quotidien du 31 octobre, dans chaque serveur : Darkrai (#491).
+export const HALLOWEEN_RAID_POKEMON_ID = 491;
 // Ouverture des inscriptions : 31 octobre 18h00 Paris.
 export const HALLOWEEN_WORLD_BOSS_OPEN = new Date("2026-10-31T17:00:00Z");
 // Clôture et résolution : 31 octobre 23h00 Paris.
