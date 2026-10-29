@@ -1,7 +1,7 @@
 import { ChatInputCommandInteraction, MessageFlags } from "discord.js";
 import logger from "../utils/logger";
 import { openWorldBoss } from "../features/worldBoss/worldBossScheduler";
-import { getAliveWorldBosses } from "../features/worldBoss/selectWorldBoss";
+import { getForceableWorldBosses } from "../features/worldBoss/selectWorldBoss";
 import { getDefeatedBossIds } from "../features/worldBoss/worldBossHistory.service";
 import { loadWorldBossState } from "../features/worldBoss/worldBossState.service";
 import { formatWorldBossPortalName } from "../features/worldBoss/worldBossPortalTier";
@@ -74,7 +74,7 @@ export async function forceStartWorldBossCommand(interaction: ChatInputCommandIn
 export async function autocompleteWorldBossId(search: string) {
   const defeatedBossIds = await getDefeatedBossIds();
 
-  return getAliveWorldBosses(defeatedBossIds)
+  return getForceableWorldBosses(defeatedBossIds)
     .filter(
       (boss) =>
         boss.id.toLowerCase().includes(search) || boss.name.toLowerCase().includes(search),

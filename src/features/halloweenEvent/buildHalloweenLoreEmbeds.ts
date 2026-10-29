@@ -56,6 +56,11 @@ export function buildHalloweenStartEmbed(): EmbedBuilder {
           "Un gagnant par serveur, récompensé par une capture ciblée mythique. Détails avec `/concours`.",
       },
       {
+        name: "🌑 World Boss : Darkrai",
+        value:
+          "Le maître du Manoir se réveille. Inscriptions de 12h à 20h avec `/world-boss`, tous serveurs confondus.",
+      },
+      {
         name: "📍 Pour entrer",
         value: "`/capture zone:Manoir hanté`",
       },

@@ -13,6 +13,8 @@ export const POKEMON_PARTIAL_GEN_DBS = [4, 5, 6, 7, 8].map((gen) =>
 export const WORLD_BOSS_LIST_DB = path.join(DATA_DIR, 'world-boss-list.json');
 export const WORLD_BOSS_DB = path.join(DATA_DIR, 'world-boss.json');
 export const WORLD_BOSS_HISTORY_DB = path.join(DATA_DIR, 'world-boss-history.json');
+// État global (pas par serveur) du World Boss d'Halloween : ouvert / fermé.
+export const HALLOWEEN_WORLD_BOSS_DB = path.join(DATA_DIR, 'halloween_world_boss.json');
 
 export const GUILDS_ROOT = path.join(DATA_DIR, 'guilds');
 export const GUILDS_REGISTRY = path.join(DATA_DIR, 'guilds.json');

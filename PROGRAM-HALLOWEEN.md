@@ -60,13 +60,14 @@ en UTC+2). Dates en UTC dans le code :
   joueur reste juste. Pas d'option `gratuit`.
 - **D8** Chance de chromatique ×3 dans le Manoir hanté le 31 (1/85 environ
   avec `SHINY_RATE=256`), `shinyRateFactor = 3`.
+- **D7** World Boss d'Halloween : **Darkrai**, samedi 31 octobre 2026,
+  inscriptions de 12h00 à 20h00 (Paris). Dates modifiables dans
+  `halloweenEventConfig.ts`. Il reste capturable dans le Manoir comme légendaire
+  de la zone ; le World Boss ne donne pas de capture (règle existante).
 
 ## Décisions à prendre
 
-
-- **D7 (étape 6)** Pokémon du World Boss et horaire : choisi par Kévin (voir
-  la tâche 6.0). Suggestion : Ectoplasma Gigamax, cohérent avec les entrées
-  Gigamax déjà dans le catalogue.
+Aucune.
 
 ## Étapes
 
@@ -190,16 +191,18 @@ chaque branche.
 
 ### Étape 6 : World Boss d'Halloween
 
-- **6.0 (Kévin)** Choisir le Pokémon du World Boss et son horaire le 31, et
-  fournir ses données (nom, portail, sprite, types, stats). Bloque la suite
-  de l'étape, pas les autres étapes.
+- **6.0** Fait : Pokémon et horaire fixés par D7 (Darkrai, 12h-20h). Entrée
+  `wb-halloween-2026-darkrai` ajoutée avec ses données (portail « Chambre des
+  Cauchemars du Manoir hanté », stats du Pokédex #491).
 - Ajouter l'entrée du boss (D7) dans `data/world-boss-list.json` avec un
   indicateur `eventOnly: true`. `getAliveWorldBosses` exclut les entrées
   `eventOnly` du tirage hebdomadaire.
-- Le scheduler Halloween ouvre le World Boss le 31 via
+- Un tick global (`halloweenWorldBossScheduler.ts`, état dans
+  `data/halloween_world_boss.json`) ouvre le World Boss le 31 via
   `openWorldBoss(client, { bossId })` et le ferme avec
-  `closeWorldBossAndResolve` à l'horaire choisi. Le World Boss est global :
-  l'ouverture se fait une seule fois, pas par serveur.
+  `closeWorldBossAndResolve` à l'horaire choisi, seulement si le boss ouvert
+  est Darkrai. Le World Boss est global : l'ouverture se fait une seule fois,
+  pas par serveur. Il utilise les dates explicites, pas `HALLOWEEN_EVENT_DEBUG`.
 - Vérifier qu'aucun World Boss hebdomadaire ne tombe dans la même fenêtre (le
   31 est un samedi) : sinon l'ouverture forcée tombe sur « déjà ouvert ».
 - Tests : boss `eventOnly` jamais tiré au hasard, ouverture forcée.
@@ -225,9 +228,9 @@ Si le temps manque, on coupe dans cet ordre : World Boss (étape 6), sprites,
 
 ## Annexe : Pokémon proposés (D2)
 
-- Gen 1 : Fantominus, Spectrum, Ectoplasma, Mélofée, Osselait, Ossatueur,
-  Hypnomade.
-- Gen 2 : Feuforêve, Zarbi, Noctali, Cornèbre, Malosse, Démolosse, Mimigal,
+- Gen 1 : Pikachu, Raichu, Rattatac, Fantominus, Spectrum, Ectoplasma, Mélofée, Osselait, Ossatueur,
+  Hypnomade, M. Mime, Noeunoeuf.
+- Gen 2 : Pichu, Feuforêve, Zarbi, Noctali, Cornèbre, Malosse, Démolosse, Teddiursa, Togepi, Mimigal,
   Migalos.
 - Gen 3 : Polichombr, Branette, Skelénox, Téraclope, Ténéfix, Absol.
 - Gen 4+ : Spiritomb, Magirêve, Noctunoir, Momartik, Motisma, Corboss,
@@ -246,6 +249,7 @@ la rareté est donc fixée à la main (ajustable) :
 | 854 | Théffroi | rare |
 | 429 | Magirêve | very_rare |
 | 430 | Corboss | very_rare |
+| 407 | Roserade | very_rare |
 | 442 | Spiritomb | epic |
 | 477 | Noctunoir | epic |
 | 478 | Momartik | epic |
@@ -254,3 +258,5 @@ la rareté est donc fixée à la main (ajustable) :
 | 479 | Motisma | ultra_rare |
 | 711 | Banshitrouye | ultra_rare |
 | 778 | Mimiqui | ultra_rare |
+| 491 | Darkrai | legendary |
+| 4106–4110 | Motisma, formes Chaleur, Lavage, Froid, Hélice, Tonte (ids custom, comme les formes de Deoxys) | ultra_rare |

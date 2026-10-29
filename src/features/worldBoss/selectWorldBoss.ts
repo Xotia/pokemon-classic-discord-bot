@@ -7,10 +7,23 @@ function randomInt(min: number, max: number): number {
 }
 
 /**
- * Boss encore tirables : la liste moins les ids déjà vaincus. Un id vaincu
- * absent de la liste (entrée supprimée à la main) est simplement ignoré.
+ * Boss encore tirables : la liste moins les ids déjà vaincus et moins les boss
+ * `eventOnly` (réservés à un évènement, jamais dans le tirage hebdomadaire ni
+ * dans le décompte du vivier). Un id vaincu absent de la liste (entrée
+ * supprimée à la main) est simplement ignoré.
  */
 export function getAliveWorldBosses(
+  defeatedBossIds: string[],
+  catalog: WorldBossEntry[] = getWorldBossCatalog(),
+): WorldBossEntry[] {
+  return getForceableWorldBosses(defeatedBossIds, catalog).filter((boss) => !boss.eventOnly);
+}
+
+/**
+ * Boss qu'un admin peut forcer par id : le vivier hebdomadaire PLUS les boss
+ * d'évènement non vaincus (autocomplétion de la commande de forçage).
+ */
+export function getForceableWorldBosses(
   defeatedBossIds: string[],
   catalog: WorldBossEntry[] = getWorldBossCatalog(),
 ): WorldBossEntry[] {

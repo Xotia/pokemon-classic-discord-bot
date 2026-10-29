@@ -23,6 +23,7 @@ import { getPokemonInfoCommand } from "./commands/getPokemonInfoCommand";
 import { startRaidScheduler } from './features/raid/raidScheduler';
 import { startMeteoriteEventScheduler } from './features/meteoriteEvent/meteoriteEventScheduler';
 import { startHalloweenEventScheduler } from './features/halloweenEvent/halloweenEventScheduler';
+import { startHalloweenWorldBossScheduler } from "./features/halloweenEvent/halloweenWorldBossScheduler";
 import { startWorldBossScheduler } from './features/worldBoss/worldBossScheduler';
 import { listActiveEventZones } from './features/events/eventZones';
 
@@ -55,6 +56,7 @@ const client = new Client({
 startRaidScheduler(client);
 startMeteoriteEventScheduler(client);
 startHalloweenEventScheduler(client);
+startHalloweenWorldBossScheduler(client);
 startWorldBossScheduler(client);
 
 client.on(Events.Error, (error) => {
@@ -229,7 +231,7 @@ async function handleInteraction(interaction: Interaction) {
             worldBossNames = [];
           }
 
-          const suggestions = [...pokemonList.map((p) => p.name), ...worldBossNames]
+          const suggestions = [...new Set([...pokemonList.map((p) => p.name), ...worldBossNames])]
             .filter((name) => name.toLowerCase().includes(search))
             .slice(0, 25)
             .map((name) => ({ name, value: name }));

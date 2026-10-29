@@ -13,5 +13,14 @@ export function isHalloweenEventActive(now = new Date()): boolean {
   return now >= EVENT_START && now <= EVENT_END;
 }
 
+// World Boss d'Halloween (global, un seul pour tous les serveurs). Samedi 31
+// octobre 2026, Paris en UTC+1. Le World Boss hebdomadaire est le dimanche,
+// donc aucun chevauchement. À modifier ici pour changer l'horaire.
+export const HALLOWEEN_WORLD_BOSS_ID = "wb-halloween-2026-darkrai";
+// Ouverture des inscriptions : 31 octobre 12h00 Paris.
+export const HALLOWEEN_WORLD_BOSS_OPEN = new Date("2026-10-31T11:00:00Z");
+// Clôture et résolution : 31 octobre 20h00 Paris.
+export const HALLOWEEN_WORLD_BOSS_CLOSE = new Date("2026-10-31T19:00:00Z");
+
 // Annonce d'avance : 30 octobre 18h00 Paris (UTC+1, heure d'hiver).
 export const HALLOWEEN_WARNING_DATE = new Date("2026-10-30T17:00:00Z");

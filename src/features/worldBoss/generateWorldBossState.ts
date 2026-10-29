@@ -13,6 +13,8 @@ export type WorldBossGenerationOptions = {
   bossId?: string;
   /** Force le multiplicateur. Sinon participants du world boss précédent. */
   difficulty?: number;
+  /** Force la fin des inscriptions (évènement à horaire propre). Sinon durée hebdomadaire. */
+  registrationClosesAt?: Date;
 };
 
 function createWorldBossId(): string {
@@ -92,7 +94,9 @@ export async function generateWorldBossState(
     status: 'registration',
     createdAt,
     registrationOpensAt: createdAt,
-    registrationClosesAt: addMinutes(now, getWorldBossRegistrationDurationMinutes()),
+    registrationClosesAt:
+      options.registrationClosesAt?.toISOString() ??
+      addMinutes(now, getWorldBossRegistrationDurationMinutes()),
     boss: {
       id: entry.id,
       name: entry.name,

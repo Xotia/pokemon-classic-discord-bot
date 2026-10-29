@@ -14,4 +14,9 @@ export interface WorldBossEntry {
   stats: WorldBossStats;
   defenseEffectiveness: Record<string, number>;
   lore: string;
+  /**
+   * Boss d'évènement : jamais tiré au hasard par l'ouverture hebdomadaire ni
+   * compté dans le vivier. Il ne s'ouvre qu'en le forçant par son id.
+   */
+  eventOnly?: boolean;
 }
