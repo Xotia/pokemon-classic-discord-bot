@@ -232,4 +232,25 @@ Si le temps manque, on coupe dans cet ordre : World Boss (étape 6), sprites,
 - Gen 3 : Polichombr, Branette, Skelénox, Téraclope, Ténéfix, Absol.
 - Gen 4+ : Spiritomb, Magirêve, Noctunoir, Momartik, Motisma, Corboss,
   Pitrouille et Banshitrouye (le Pokémon citrouille, indispensable),
-  Funécire, Mélancolux, Lugulabre, Mimiqui, Polthegeist.
+  Funécire, Mélancolux, Lugulabre, Mimiqui, Théffroi, Polthegeist.
+
+Les Pokémon gen 1-3 gardent leur rareté actuelle. `computeRarity` s'appuie
+sur les rencontres des versions gen 3 : il ne sait pas noter les gen 4+, dont
+la rareté est donc fixée à la main (ajustable) :
+
+| Id | Pokémon | Rareté |
+|---|---|---|
+| 607 | Funécire | common |
+| 710 | Pitrouille | uncommon |
+| 608 | Mélancolux | rare |
+| 854 | Théffroi | rare |
+| 429 | Magirêve | very_rare |
+| 430 | Corboss | very_rare |
+| 442 | Spiritomb | epic |
+| 477 | Noctunoir | epic |
+| 478 | Momartik | epic |
+| 609 | Lugulabre | epic |
+| 855 | Polthegeist | epic |
+| 479 | Motisma | ultra_rare |
+| 711 | Banshitrouye | ultra_rare |
+| 778 | Mimiqui | ultra_rare |

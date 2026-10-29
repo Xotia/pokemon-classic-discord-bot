@@ -1,0 +1,170 @@
+[
+  {
+    "id": 607,
+    "name": "Funécire",
+    "rarity": "common",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/litwick.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/litwick.gif",
+    "originalName": "litwick",
+    "types": [
+      "ghost",
+      "fire"
+    ],
+    "effectiveness": {
+      "defense": {
+        "normal": 0,
+        "fighting": 0,
+        "bug": 0.25,
+        "poison": 0.5,
+        "ghost": 2,
+        "dark": 2,
+        "fairy": 0.5,
+        "fire": 0.5,
+        "grass": 0.5,
+        "ice": 0.5,
+        "steel": 0.5,
+        "ground": 2,
+        "rock": 2,
+        "water": 2
+      },
+      "attack": {
+        "normal": 0,
+        "dark": 0.5,
+        "ghost": 2,
+        "psychic": 2,
+        "dragon": 0.5,
+        "fire": 0.5,
+        "rock": 0.5,
+        "water": 0.5,
+        "bug": 2,
+        "grass": 2,
+        "ice": 2,
+        "steel": 2
+      }
+    },
+    "stats": {
+      "hp": 50,
+      "attack": 30,
+      "defense": 55,
+      "specialAttack": 65,
+      "specialDefense": 55,
+      "speed": 20
+    },
+    "generation": 5,
+    "zones": [
+      "haunted-manor"
+    ]
+  },
+  {
+    "id": 608,
+    "name": "Mélancolux",
+    "rarity": "rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/lampent.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/lampent.gif",
+    "originalName": "lampent",
+    "types": [
+      "ghost",
+      "fire"
+    ],
+    "effectiveness": {
+      "defense": {
+        "normal": 0,
+        "fighting": 0,
+        "bug": 0.25,
+        "poison": 0.5,
+        "ghost": 2,
+        "dark": 2,
+        "fairy": 0.5,
+        "fire": 0.5,
+        "grass": 0.5,
+        "ice": 0.5,
+        "steel": 0.5,
+        "ground": 2,
+        "rock": 2,
+        "water": 2
+      },
+      "attack": {
+        "normal": 0,
+        "dark": 0.5,
+        "ghost": 2,
+        "psychic": 2,
+        "dragon": 0.5,
+        "fire": 0.5,
+        "rock": 0.5,
+        "water": 0.5,
+        "bug": 2,
+        "grass": 2,
+        "ice": 2,
+        "steel": 2
+      }
+    },
+    "stats": {
+      "hp": 60,
+      "attack": 40,
+      "defense": 60,
+      "specialAttack": 95,
+      "specialDefense": 60,
+      "speed": 55
+    },
+    "generation": 5,
+    "zones": [
+      "haunted-manor"
+    ]
+  },
+  {
+    "id": 609,
+    "name": "Lugulabre",
+    "rarity": "epic",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/chandelure.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/chandelure.gif",
+    "originalName": "chandelure",
+    "types": [
+      "ghost",
+      "fire"
+    ],
+    "effectiveness": {
+      "defense": {
+        "normal": 0,
+        "fighting": 0,
+        "bug": 0.25,
+        "poison": 0.5,
+        "ghost": 2,
+        "dark": 2,
+        "fairy": 0.5,
+        "fire": 0.5,
+        "grass": 0.5,
+        "ice": 0.5,
+        "steel": 0.5,
+        "ground": 2,
+        "rock": 2,
+        "water": 2
+      },
+      "attack": {
+        "normal": 0,
+        "dark": 0.5,
+        "ghost": 2,
+        "psychic": 2,
+        "dragon": 0.5,
+        "fire": 0.5,
+        "rock": 0.5,
+        "water": 0.5,
+        "bug": 2,
+        "grass": 2,
+        "ice": 2,
+        "steel": 2
+      }
+    },
+    "stats": {
+      "hp": 60,
+      "attack": 55,
+      "defense": 90,
+      "specialAttack": 145,
+      "specialDefense": 90,
+      "speed": 80
+    },
+    "generation": 5,
+    "zones": [
+      "haunted-manor"
+    ]
+  }
+]

@@ -725,7 +725,8 @@
     },
     "zones": [
       "country-road",
-      "dark-woods"
+      "dark-woods",
+      "haunted-manor"
     ],
     "generation": 2
   },
@@ -777,7 +778,8 @@
       "speed": 40
     },
     "zones": [
-      "dark-woods"
+      "dark-woods",
+      "haunted-manor"
     ],
     "generation": 2
   },
@@ -2124,7 +2126,8 @@
     },
     "zones": [
       "megacity",
-      "archaeological-ruins"
+      "archaeological-ruins",
+      "haunted-manor"
     ],
     "generation": 2
   },
@@ -2177,7 +2180,8 @@
     "zones": [
       "dark-woods",
       "gloomy-cavern",
-      "rocky-trail"
+      "rocky-trail",
+      "haunted-manor"
     ],
     "generation": 2
   },
@@ -2269,7 +2273,8 @@
       "speed": 85
     },
     "zones": [
-      "archaeological-ruins"
+      "archaeological-ruins",
+      "haunted-manor"
     ],
     "generation": 2
   },
@@ -2308,7 +2313,8 @@
       "speed": 48
     },
     "zones": [
-      "archaeological-ruins"
+      "archaeological-ruins",
+      "haunted-manor"
     ],
     "generation": 2
   },
@@ -3617,7 +3623,8 @@
     },
     "zones": [
       "incandescent-tower",
-      "megacity"
+      "megacity",
+      "haunted-manor"
     ],
     "generation": 2
   },
@@ -3674,7 +3681,8 @@
     },
     "zones": [
       "incandescent-tower",
-      "megacity"
+      "megacity",
+      "haunted-manor"
     ],
     "generation": 2
   },

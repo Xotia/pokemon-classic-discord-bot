@@ -6,7 +6,7 @@ const dataDir = path.resolve(__dirname, "..", "data");
 // Toujours régénéré : un fichier existant serait périmé dès qu'un pokemon-genX.json change.
 const output = path.join(dataDir, "pokemon-list.json");
 
-const defaultFiles = ["pokemon-gen1.json", "pokemon-gen2.json", "pokemon-gen3.json"];
+const defaultFiles = [1, 2, 3, 4, 5, 6, 7, 8].map((gen) => `pokemon-gen${gen}.json`);
 const extraFiles = process.env.EXTRA_POKEMON_FILES
   ? process.env.EXTRA_POKEMON_FILES.split(",").map((f) => f.trim()).filter(Boolean)
   : [];

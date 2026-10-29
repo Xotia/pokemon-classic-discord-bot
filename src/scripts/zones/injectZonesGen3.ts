@@ -1,4 +1,6 @@
 // scripts/injectZonesGen3.ts
+// ATTENTION : écrase zones[] depuis data/gen3_zones.csv. Relancé tel quel, il effacerait
+// "haunted-manor" (Manoir hanté) des Pokémon gen3 concernés : à réinjecter ensuite.
 import * as fs from "fs";
 import * as path from "path";
 import { parse } from "csv-parse/sync";

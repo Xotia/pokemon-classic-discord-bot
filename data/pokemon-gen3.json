@@ -2374,7 +2374,8 @@
     },
     "generation": 3,
     "zones": [
-      "grim-cemetery"
+      "grim-cemetery",
+      "haunted-manor"
     ]
   },
   {
@@ -4801,7 +4802,8 @@
     "generation": 3,
     "zones": [
       "grim-cemetery",
-      "magma-cave"
+      "magma-cave",
+      "haunted-manor"
     ]
   },
   {
@@ -4840,7 +4842,8 @@
     },
     "generation": 3,
     "zones": [
-      "grim-cemetery"
+      "grim-cemetery",
+      "haunted-manor"
     ]
   },
   {
@@ -4880,7 +4883,8 @@
     "generation": 3,
     "zones": [
       "grim-cemetery",
-      "magma-cave"
+      "magma-cave",
+      "haunted-manor"
     ]
   },
   {
@@ -4919,7 +4923,8 @@
     },
     "generation": 3,
     "zones": [
-      "grim-cemetery"
+      "grim-cemetery",
+      "haunted-manor"
     ]
   },
   {
@@ -5055,7 +5060,8 @@
       "grim-cemetery",
       "enchanted-meadow",
       "celestial-tower",
-      "paradise-island"
+      "paradise-island",
+      "haunted-manor"
     ]
   },
   {

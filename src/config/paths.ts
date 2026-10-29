@@ -5,6 +5,10 @@ export const POKEMON_DB = path.join(DATA_DIR, 'pokemon-list.json');
 export const POKEMON_GEN1_DB = path.join(DATA_DIR, 'pokemon-gen1.json');
 export const POKEMON_GEN2_DB = path.join(DATA_DIR, 'pokemon-gen2.json');
 export const POKEMON_GEN3_DB = path.join(DATA_DIR, 'pokemon-gen3.json');
+// Générations 4+ : fichiers partiels (Pokémon d'évènement seulement, ids nationaux).
+export const POKEMON_PARTIAL_GEN_DBS = [4, 5, 6, 7, 8].map((gen) =>
+  path.join(DATA_DIR, `pokemon-gen${gen}.json`),
+);
 
 export const WORLD_BOSS_LIST_DB = path.join(DATA_DIR, 'world-boss-list.json');
 export const WORLD_BOSS_DB = path.join(DATA_DIR, 'world-boss.json');

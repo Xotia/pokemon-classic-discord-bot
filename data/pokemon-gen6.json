@@ -1,0 +1,116 @@
+[
+  {
+    "id": 710,
+    "name": "Pitrouille",
+    "rarity": "uncommon",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/pumpkaboo.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/pumpkaboo.gif",
+    "originalName": "pumpkaboo",
+    "types": [
+      "ghost",
+      "grass"
+    ],
+    "effectiveness": {
+      "defense": {
+        "normal": 0,
+        "fighting": 0,
+        "bug": 1,
+        "poison": 1,
+        "ghost": 2,
+        "dark": 2,
+        "electric": 0.5,
+        "grass": 0.5,
+        "ground": 0.5,
+        "water": 0.5,
+        "fire": 2,
+        "flying": 2,
+        "ice": 2
+      },
+      "attack": {
+        "normal": 0,
+        "dark": 0.5,
+        "ghost": 2,
+        "psychic": 2,
+        "bug": 0.5,
+        "dragon": 0.5,
+        "fire": 0.5,
+        "flying": 0.5,
+        "grass": 0.5,
+        "poison": 0.5,
+        "steel": 0.5,
+        "ground": 2,
+        "rock": 2,
+        "water": 2
+      }
+    },
+    "stats": {
+      "hp": 49,
+      "attack": 66,
+      "defense": 70,
+      "specialAttack": 44,
+      "specialDefense": 55,
+      "speed": 51
+    },
+    "generation": 6,
+    "zones": [
+      "haunted-manor"
+    ]
+  },
+  {
+    "id": 711,
+    "name": "Banshitrouye",
+    "rarity": "ultra_rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/gourgeist.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/gourgeist.gif",
+    "originalName": "gourgeist",
+    "types": [
+      "ghost",
+      "grass"
+    ],
+    "effectiveness": {
+      "defense": {
+        "normal": 0,
+        "fighting": 0,
+        "bug": 1,
+        "poison": 1,
+        "ghost": 2,
+        "dark": 2,
+        "electric": 0.5,
+        "grass": 0.5,
+        "ground": 0.5,
+        "water": 0.5,
+        "fire": 2,
+        "flying": 2,
+        "ice": 2
+      },
+      "attack": {
+        "normal": 0,
+        "dark": 0.5,
+        "ghost": 2,
+        "psychic": 2,
+        "bug": 0.5,
+        "dragon": 0.5,
+        "fire": 0.5,
+        "flying": 0.5,
+        "grass": 0.5,
+        "poison": 0.5,
+        "steel": 0.5,
+        "ground": 2,
+        "rock": 2,
+        "water": 2
+      }
+    },
+    "stats": {
+      "hp": 65,
+      "attack": 90,
+      "defense": 122,
+      "specialAttack": 58,
+      "specialDefense": 75,
+      "speed": 84
+    },
+    "generation": 6,
+    "zones": [
+      "haunted-manor"
+    ]
+  }
+]

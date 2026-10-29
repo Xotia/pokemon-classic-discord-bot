@@ -1,0 +1,80 @@
+[
+  {
+    "id": 854,
+    "name": "Théffroi",
+    "rarity": "rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/sinistea.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/sinistea.gif",
+    "originalName": "sinistea",
+    "types": [
+      "ghost"
+    ],
+    "effectiveness": {
+      "defense": {
+        "normal": 0,
+        "fighting": 0,
+        "bug": 0.5,
+        "poison": 0.5,
+        "ghost": 2,
+        "dark": 2
+      },
+      "attack": {
+        "normal": 0,
+        "dark": 0.5,
+        "ghost": 2,
+        "psychic": 2
+      }
+    },
+    "stats": {
+      "hp": 40,
+      "attack": 45,
+      "defense": 45,
+      "specialAttack": 74,
+      "specialDefense": 54,
+      "speed": 50
+    },
+    "generation": 8,
+    "zones": [
+      "haunted-manor"
+    ]
+  },
+  {
+    "id": 855,
+    "name": "Polthégeist",
+    "rarity": "epic",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/polteageist.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/polteageist.gif",
+    "originalName": "polteageist",
+    "types": [
+      "ghost"
+    ],
+    "effectiveness": {
+      "defense": {
+        "normal": 0,
+        "fighting": 0,
+        "bug": 0.5,
+        "poison": 0.5,
+        "ghost": 2,
+        "dark": 2
+      },
+      "attack": {
+        "normal": 0,
+        "dark": 0.5,
+        "ghost": 2,
+        "psychic": 2
+      }
+    },
+    "stats": {
+      "hp": 60,
+      "attack": 65,
+      "defense": 65,
+      "specialAttack": 134,
+      "specialDefense": 114,
+      "speed": 70
+    },
+    "generation": 8,
+    "zones": [
+      "haunted-manor"
+    ]
+  }
+]

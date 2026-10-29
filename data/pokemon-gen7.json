@@ -1,0 +1,49 @@
+[
+  {
+    "id": 778,
+    "name": "Mimiqui",
+    "rarity": "ultra_rare",
+    "image": "https://play.pokemonshowdown.com/sprites/xyani/mimikyu.gif",
+    "shinyImage": "https://play.pokemonshowdown.com/sprites/xyani-shiny/mimikyu.gif",
+    "originalName": "mimikyu",
+    "types": [
+      "ghost",
+      "fairy"
+    ],
+    "effectiveness": {
+      "defense": {
+        "normal": 0,
+        "fighting": 0,
+        "bug": 0.25,
+        "poison": 1,
+        "ghost": 2,
+        "dark": 1,
+        "dragon": 0,
+        "steel": 2
+      },
+      "attack": {
+        "normal": 0,
+        "dark": 1,
+        "ghost": 2,
+        "psychic": 2,
+        "fire": 0.5,
+        "poison": 0.5,
+        "steel": 0.5,
+        "dragon": 2,
+        "fighting": 2
+      }
+    },
+    "stats": {
+      "hp": 55,
+      "attack": 90,
+      "defense": 80,
+      "specialAttack": 50,
+      "specialDefense": 105,
+      "speed": 96
+    },
+    "generation": 7,
+    "zones": [
+      "haunted-manor"
+    ]
+  }
+]

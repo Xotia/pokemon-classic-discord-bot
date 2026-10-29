@@ -16,8 +16,8 @@ const regularList = pokemonList.filter((p) => p.id >= START_ID && p.id <= END_ID
 const eventList = pokemonList.filter((p) => p.id > END_ID);
 
 const validGen3ZoneIds = new Set((zonesAll.gen3 ?? []).map((z) => z.id));
-// Zone événementielle valide pour les Pokémon du cratère météorite
-const validEventZoneIds = new Set([...validGen3ZoneIds, "meteorite-crater"]);
+// Zones événementielles valides : cratère météorite et Manoir hanté
+const validEventZoneIds = new Set([...validGen3ZoneIds, "meteorite-crater", "haunted-manor"]);
 
 // Pokémon présents dans le catalogue gen3 mais uniquement accessibles comme boss de raid
 // (pas de champ zones voulu par construction)

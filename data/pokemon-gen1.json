@@ -1636,7 +1636,8 @@
     },
     "zones": [
       "towering-mountain",
-      "meteorite-crater"
+      "meteorite-crater",
+      "haunted-manor"
     ],
     "generation": 1
   },
@@ -4446,7 +4447,8 @@
     "zones": [
       "abandoned-industrial-city",
       "grim-cave",
-      "haunted-tower"
+      "haunted-tower",
+      "haunted-manor"
     ],
     "generation": 1
   },
@@ -4498,7 +4500,8 @@
     "zones": [
       "abandoned-industrial-city",
       "grim-cave",
-      "haunted-tower"
+      "haunted-tower",
+      "haunted-manor"
     ],
     "generation": 1
   },
@@ -4550,7 +4553,8 @@
     "zones": [
       "safari-zone",
       "abandoned-industrial-city",
-      "haunted-tower"
+      "haunted-tower",
+      "haunted-manor"
     ],
     "generation": 1
   },
@@ -4691,7 +4695,8 @@
       "safari-zone",
       "abandoned-industrial-city",
       "towering-mountain",
-      "haunted-tower"
+      "haunted-tower",
+      "haunted-manor"
     ],
     "generation": 1
   },
@@ -5020,7 +5025,8 @@
       "steep-path",
       "towering-mountain",
       "grim-cave",
-      "haunted-tower"
+      "haunted-tower",
+      "haunted-manor"
     ],
     "generation": 1
   },
@@ -5066,7 +5072,8 @@
       "isolated-valley",
       "towering-mountain",
       "grim-cave",
-      "haunted-tower"
+      "haunted-tower",
+      "haunted-manor"
     ],
     "generation": 1
   },
