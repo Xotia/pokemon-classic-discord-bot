@@ -57,6 +57,16 @@ beforeEach(() => {
 });
 
 describe("scheduler Halloween", () => {
+  it("envoie les annonces dans le salon dev, comme le patchnote", async () => {
+    await runHalloweenEventTick(READY, { ...GUILD, devChannelId: "dev-channel" }, WARNING);
+    expect(sendRaidAnnouncement.mock.calls[0][1]).toBe("dev-channel");
+  });
+
+  it("retombe sur le salon principal sans salon dev configuré", async () => {
+    await runHalloweenEventTick(READY, GUILD, WARNING);
+    expect(sendRaidAnnouncement.mock.calls[0][1]).toBe("main-channel");
+  });
+
   it("n'annonce rien avant la date d'avance", async () => {
     await runHalloweenEventTick(READY, GUILD, BEFORE_WARNING);
     expect(sendRaidAnnouncement).not.toHaveBeenCalled();

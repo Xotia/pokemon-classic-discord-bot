@@ -21,6 +21,7 @@ import { buildContestEndResults, getContestWinners } from "./halloweenContest.se
 interface HalloweenGuild {
   guildId: string;
   mainChannelId: string;
+  devChannelId?: string;
 }
 
 /**
@@ -51,7 +52,8 @@ export async function runHalloweenEventTick(
     embed: EmbedBuilder,
   ) => {
     try {
-      await sendRaidAnnouncement(client, guild.mainChannelId, embed, guild.guildId);
+      // Salon des annonces de dev, comme le patchnote ; repli sur le salon principal.
+      await sendRaidAnnouncement(client, guild.devChannelId ?? guild.mainChannelId, embed, guild.guildId);
       state[flag] = true;
       await saveHalloweenEventState(guild.guildId, state);
     } catch (error) {
