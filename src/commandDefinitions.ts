@@ -1,4 +1,4 @@
-import { PermissionFlagsBits, SlashCommandBuilder } from "discord.js";
+import { SlashCommandBuilder } from "discord.js";
 import { rarityList } from "./config/rarity";
 import { TARGETABLE_RARITIES } from "./config/researchCost";
 
@@ -161,7 +161,6 @@ export const commands = [
   new SlashCommandBuilder()
     .setName("capture-cible-admin")
     .setDescription("[Admin] Offre une capture ciblée à un joueur, sans toucher à ses données de recherche.")
-    .setDefaultMemberPermissions(PermissionFlagsBits.Administrator)
     .addUserOption((option) =>
       option.setName("joueur").setDescription("Joueur qui reçoit la capture").setRequired(true),
     )
